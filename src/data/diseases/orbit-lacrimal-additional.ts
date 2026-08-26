@@ -1,0 +1,190 @@
+import type { Disease } from '../../types/disease'
+
+export const orbitLacrimalAdditional: Disease[] = [
+  {
+    id: 'idiopathic-orbital-inflammation',
+    name: 'Idiopathic Orbital Inflammatory Syndrome',
+    aliases: ['Orbital Pseudotumor'],
+    category: 'Orbit & Lacrimal',
+    definition:
+      'A non-infectious, non-neoplastic inflammatory process of the orbit of unknown etiology, presenting with acute-to-subacute orbital pain, proptosis, and restricted ocular motility, and diagnosed by exclusion after ruling out infection, malignancy, and thyroid eye disease; classically shows a dramatic and rapid response to systemic corticosteroids.',
+    affectedStructure:
+      'Any orbital soft tissue structure may be involved, including extraocular muscles (with the myositic form classically involving the muscle tendon insertion), lacrimal gland (dacryoadenitis form), orbital fat, sclera (posterior scleritis-like presentation), and orbital apex; can be focal (localized to one structure) or diffuse',
+    pathologicalProcess:
+      'A non-specific, polyclonal lymphocytic and inflammatory cell infiltrate with variable fibrosis infiltrates orbital soft tissue in the absence of an identifiable infectious, neoplastic, or systemic autoimmune cause, producing acute inflammatory edema, tissue expansion, and secondary mechanical restriction/compressive effects within the closed orbital space.',
+    epidemiology: {
+      typicalAge: 'Can occur at any age, most commonly in adults in their 40s-50s; a distinct pediatric form exists and is more often bilateral',
+      sexDistribution: 'No strong sex predilection',
+      prevalence: 'One of the most common causes of painful orbital disease and the third most common orbital disorder after thyroid eye disease and lymphoproliferative disease',
+      importantPopulations: 'Adults presenting with acute unilateral orbital pain and proptosis; children more often present with bilateral disease and systemic symptoms (fever, headache, vomiting)',
+    },
+    riskFactors: [
+      { label: 'None consistently identified (idiopathic by definition)', tier: 'major' },
+      { label: 'Recent upper respiratory infection or systemic illness (reported antecedent in some cases)', tier: 'associated' },
+      { label: 'Association with systemic autoimmune/inflammatory conditions in a subset of patients', tier: 'associated' },
+    ],
+    pathophysiology: [
+      'An idiopathic, non-infectious inflammatory infiltrate (predominantly lymphocytes, plasma cells, and eosinophils, with variable fibrosis) develops within one or more orbital compartments',
+      'Inflammation can be localized (myositic form affecting one or more extraocular muscles; dacryoadenitis form affecting the lacrimal gland; anterior form affecting the globe/episclera; apical form affecting the orbital apex) or diffuse throughout the orbit',
+      'In the myositic form, inflammation characteristically involves the muscle belly AND its tendinous insertion, unlike thyroid eye disease, which characteristically spares the tendon and involves primarily the muscle belly',
+      'Inflammatory tissue expansion within the rigid, closed orbit produces pain, proptosis, and mechanical restriction of ocular motility, and can compress the optic nerve at the apex in severe cases',
+      'The inflammatory process is exquisitely and often rapidly sensitive to systemic corticosteroids, which is itself considered supportive (though not definitive) evidence for the diagnosis',
+      'True idiopathic orbital inflammation is a diagnosis of exclusion made only after infection, malignancy (especially orbital lymphoma), and thyroid eye disease have been reasonably ruled out',
+    ],
+    symptoms: {
+      common: ['Acute-to-subacute orbital/periocular pain (often out of proportion to external findings — a key distinguishing feature)', 'Pain worsened by eye movement', 'Eyelid swelling', 'Proptosis or globe displacement', 'Binocular diplopia'],
+      lessCommon: ['Decreased vision (with apical/orbital apex involvement)', 'Headache', 'Erythema over the affected orbit', 'Fever/systemic symptoms (more common in pediatric cases)'],
+      importantNegatives: ['Absence of fever/systemic toxicity and antecedent sinusitis argues against orbital cellulitis', 'Absence of chronic lid retraction and slow progressive course argues against thyroid eye disease'],
+      typicalProgression: 'Acute to subacute onset over days, often unilateral in adults; frequently a single self-limited episode, though recurrence occurs in a meaningful subset of patients, sometimes evolving into a chronic sclerosing form with recurrent or refractory disease.',
+    },
+    signs: [
+      { area: 'External', finding: 'Eyelid edema and erythema, ptosis, proptosis (may be axial or non-axial depending on the compartment involved), conjunctival chemosis and injection' },
+      { area: 'Other', finding: 'Restricted and painful extraocular motility, often out of proportion to the degree of external swelling; diplopia' },
+      { area: 'Other', finding: 'Globe displacement corresponding to the site of inflammation (e.g., inferior/lateral displacement with lacrimal gland involvement)' },
+      { area: 'Slit Lamp', finding: 'Episcleral/conjunctival injection; anterior segment inflammation uncommon but possible with anterior orbital involvement' },
+      { area: 'Optic Nerve', finding: 'Optic disc edema and/or decreased vision/color vision/RAPD may occur with orbital apex involvement causing compressive optic neuropathy' },
+    ],
+    differentialDiagnosis: [
+      { disease: 'Thyroid eye disease', whySimilar: 'Proptosis, restricted ocular motility, eyelid swelling', keyDistinguisher: 'Thyroid eye disease is typically bilateral, subacute-to-chronic and progressive over months, characteristically spares the tendon on imaging (muscle belly enlargement with tendon sparing), has lid retraction/lag, and is associated with thyroid dysfunction; idiopathic orbital inflammation is more often unilateral, acutely painful, and involves the tendon in the myositic form' },
+      { disease: 'Orbital cellulitis', whySimilar: 'Proptosis, painful/restricted motility, eyelid swelling', keyDistinguisher: 'Orbital cellulitis presents with fever, systemic toxicity, and an antecedent sinus/dental/traumatic source, with CT showing sinus disease and possible abscess; idiopathic orbital inflammation is typically afebrile without a sinus source and responds dramatically to steroids rather than antibiotics' },
+      { disease: 'Orbital lymphoma/lymphoproliferative disease', whySimilar: 'Orbital mass, proptosis, globe displacement', keyDistinguisher: 'Lymphoma classically presents as a painless, slowly progressive salmon-colored subconjunctival/orbital mass in an older patient, whereas idiopathic orbital inflammation presents acutely with pain out of proportion to findings; imaging and biopsy in atypical or non-steroid-responsive cases are required to differentiate' },
+    ],
+    diagnosticTesting: [
+      { name: 'CT orbits with contrast', whyOrdered: 'Characterize the pattern and extent of orbital inflammation and identify the specific form (myositic, lacrimal, diffuse, apical)', expectedFinding: 'Fat stranding, enlarged extraocular muscle(s) with tendon involvement (myositic form), lacrimal gland enlargement (dacryoadenitis form), or diffuse infiltrative orbital soft tissue changes; absence of bony erosion or sinus disease', contribution: 'Supports the diagnosis, defines the anatomic pattern, and helps exclude infection/mass lesion' },
+      { name: 'MRI orbits with contrast', whyOrdered: 'Further characterize soft tissue inflammation, particularly for orbital apex or intracranial extension', expectedFinding: 'T2 hyperintensity and enhancement of involved orbital structures', contribution: 'Complements CT, especially when apical/optic nerve involvement is suspected' },
+      { name: 'Thyroid function tests (TSH, free T4, TSI/TRAb)', whyOrdered: 'Exclude thyroid eye disease as the cause of orbital signs', expectedFinding: 'Normal in idiopathic orbital inflammation', contribution: 'Helps rule out the most common orbital inflammatory mimic' },
+      { name: 'Trial of systemic corticosteroids', whyOrdered: 'Assess for the characteristic dramatic, rapid clinical response', expectedFinding: 'Marked improvement in pain, swelling, and motility within 24-72 hours', contribution: 'Both therapeutic and supportive of the diagnosis, though not definitive on its own since some malignancies can also show partial steroid response' },
+      { name: 'Orbital biopsy', whyOrdered: 'Reserved for atypical presentations, poor or absent response to corticosteroids, or recurrent/refractory disease, to exclude malignancy (especially lymphoma) or infection', expectedFinding: 'Non-specific polymorphous lymphocytic/plasma cell infiltrate with variable fibrosis, without evidence of a monoclonal lymphoproliferative process or organisms', contribution: 'Definitive means of excluding malignancy when the clinical picture or steroid response is atypical' },
+    ],
+    diagnosis: {
+      criteria: 'Acute-to-subacute painful proptosis and/or restricted motility with imaging demonstrating orbital soft tissue inflammation, in the absence of an identifiable infectious, neoplastic, or thyroid-related cause',
+      confirmation: 'A clinical and radiographic diagnosis of exclusion; a dramatic response to systemic corticosteroids is supportive but not definitive, and biopsy is required to confirm the diagnosis (by excluding malignancy) in atypical or steroid-unresponsive cases.',
+      classification: 'Classified by anatomic pattern: myositic (extraocular muscle involvement, often with tendon involvement), lacrimal/dacryoadenitis (lacrimal gland involvement), anterior (globe/sclera), apical (orbital apex, risk of optic neuropathy), and diffuse',
+    },
+    management: [
+      { category: 'First-line treatment', detail: 'High-dose systemic corticosteroids, which typically produce a rapid and dramatic reduction in pain, swelling, and motility restriction within days' },
+      { category: 'Second-line treatment', detail: 'Steroid-sparing immunosuppressive or biologic agents for recurrent, chronic, or steroid-dependent/refractory disease' },
+      { category: 'Advanced treatment', detail: 'Low-dose orbital radiotherapy considered in select refractory cases unresponsive to medical therapy' },
+      { category: 'Referral', detail: 'Referral to oculoplastics/orbital specialist for further workup and biopsy if the diagnosis is atypical, response to steroids is poor, or presentation raises concern for malignancy' },
+      { category: 'Emergency management', detail: 'Urgent treatment and close monitoring for apical disease threatening the optic nerve, given the risk of compressive optic neuropathy' },
+    ],
+    followUp: {
+      typical: 'Close follow-up within days of starting corticosteroids to confirm the expected dramatic clinical response; steroids are then tapered gradually while monitoring for recurrence',
+      monitor: 'Pain, proptosis, extraocular motility, visual acuity, color vision, and optic nerve appearance, particularly with apical involvement',
+      progression: 'Poor or absent response to an adequate corticosteroid trial, or recurrence during taper, should prompt reconsideration of the diagnosis and biopsy to exclude malignancy',
+      shortenWhen: 'Any decline in vision or evidence of optic nerve compromise warrants urgent reassessment',
+    },
+    prognosis: {
+      typicalCourse: 'Most cases are a single, self-limited episode that responds well to corticosteroids; a subset of patients experience recurrence or evolve into a chronic, sclerosing, treatment-resistant form',
+      progressionRisk: 'Recurrence is not uncommon, and chronic/sclerosing forms can be difficult to control and may cause progressive fibrosis and motility restriction',
+      complications: 'Persistent diplopia, chronic proptosis, optic neuropathy (apical disease), orbital fibrosis with chronic sclerosing variants',
+      visualPrognosis: 'Generally good with prompt treatment; guarded with orbital apex involvement causing compressive optic neuropathy or with chronic sclerosing disease',
+    },
+    clinicalPearls: [
+      'Pain out of proportion to external findings, and often out of proportion to what is typically seen in orbital tumors, is a classic hallmark that should raise suspicion for idiopathic orbital inflammation.',
+      'In the myositic form, inflammation involving the tendon insertion (in addition to the muscle belly) helps distinguish it from thyroid eye disease, which characteristically spares the tendon.',
+      'A dramatic, rapid response to systemic corticosteroids supports the diagnosis but is not itself diagnostic — some orbital lymphomas can show a partial steroid response, so atypical or non-responsive cases require biopsy.',
+      'This remains a diagnosis of exclusion: infection, malignancy (especially lymphoma), and thyroid eye disease must be reasonably ruled out before labeling a case idiopathic.',
+      'Pediatric cases are more likely to be bilateral and associated with systemic symptoms such as fever and headache compared to the typically unilateral adult presentation.',
+    ],
+    highYield: [
+      'Idiopathic orbital inflammation (orbital pseudotumor) = non-infectious, non-neoplastic orbital inflammation presenting with acute pain, proptosis, and restricted motility',
+      'Pain out of proportion to findings is the classic distinguishing feature versus most orbital tumors, which tend to be painless',
+      'Myositic form involves the extraocular muscle AND its tendon; thyroid eye disease characteristically spares the tendon — a key imaging distinguisher',
+      'Dramatic, rapid response to systemic corticosteroids is both therapeutic and supportive of the diagnosis',
+      'Diagnosis of exclusion — must rule out infection, malignancy (especially lymphoma), and thyroid eye disease before diagnosing',
+      'Biopsy reserved for atypical presentations or poor/absent response to corticosteroids to exclude malignancy',
+    ],
+  },
+  {
+    id: 'lacrimal-gland-tumors',
+    name: 'Lacrimal Gland Tumors',
+    category: 'Orbit & Lacrimal',
+    definition:
+      'A group of primary neoplasms arising from the lacrimal gland, most importantly the benign pleomorphic adenoma and the malignant adenoid cystic carcinoma, which are classically distinguished by growth rate and pain: benign lesions cause slow, painless growth over months to years, while malignant lesions cause rapid, painful growth, with pain serving as a key red flag for malignancy.',
+    affectedStructure: 'Lacrimal gland (orbital and/or palpebral lobe), located in the superotemporal orbit; malignant lesions may extend to invade adjacent bone, nerves (perineural invasion), and orbital soft tissue',
+    pathologicalProcess:
+      'Pleomorphic adenoma (benign mixed tumor) arises from epithelial and myoepithelial elements of the lacrimal gland, forming a well-circumscribed, encapsulated mass with slow expansile growth; adenoid cystic carcinoma arises from lacrimal gland epithelium with malignant infiltrative growth, a characteristic cribriform ("Swiss cheese") histologic pattern, and a strong propensity for perineural invasion, bony erosion, and local infiltration.',
+    epidemiology: {
+      typicalAge: 'Pleomorphic adenoma typically presents in the 4th-5th decade of life; adenoid cystic carcinoma typically presents somewhat younger, often in the 4th decade, though it can occur across a wide age range',
+      sexDistribution: 'No strong sex predilection for either tumor type',
+      prevalence: 'Pleomorphic adenoma is the most common benign lacrimal gland tumor; adenoid cystic carcinoma is the most common malignant epithelial lacrimal gland tumor',
+      importantPopulations: 'Any adult presenting with a superotemporal orbital mass and globe displacement; malignancy should be strongly suspected when growth is rapid and painful',
+    },
+    riskFactors: [
+      { label: 'None well-established for pleomorphic adenoma (sporadic)', tier: 'major' },
+      { label: 'None well-established for adenoid cystic carcinoma (sporadic)', tier: 'major' },
+      { label: 'Long-standing untreated or recurrent pleomorphic adenoma (risk of malignant transformation to carcinoma ex pleomorphic adenoma with incomplete excision or long duration)', tier: 'moderate' },
+      { label: 'Incomplete excision or incisional biopsy of pleomorphic adenoma (increases risk of recurrence and malignant transformation)', tier: 'moderate' },
+    ],
+    pathophysiology: [
+      'Pleomorphic adenoma arises from the epithelial lacrimal gland lobules, forming a well-circumscribed, encapsulated, slow-growing mass typically in the orbital lobe of the gland, producing painless, gradually progressive proptosis and inferomedial globe displacement over months to years',
+      'The encapsulated nature of pleomorphic adenoma is clinically important: incomplete excision or incisional biopsy risks seeding tumor cells outside the capsule, leading to recurrence and, over time, an increased risk of malignant transformation (carcinoma ex pleomorphic adenoma)',
+      'Adenoid cystic carcinoma arises from lacrimal gland epithelium and grows in an infiltrative, invasive pattern with a classic cribriform histologic architecture',
+      'Adenoid cystic carcinoma has a strong predilection for perineural invasion, tracking along nerve sheaths (including branches of the trigeminal nerve), which produces early and severe pain and is a major driver of local recurrence and poor long-term prognosis even after apparent complete excision',
+      'Rapid tumor growth in adenoid cystic carcinoma can cause bony erosion of the lacrimal fossa, visible on imaging, distinguishing it from the smooth bony remodeling (without erosion) typically seen with the slow-growing, expansile pleomorphic adenoma',
+      'Both tumor types displace the globe inferomedially given their origin in the superotemporal orbit, but the rate of displacement/proptosis (months-to-years versus weeks-to-months) is a key clinical distinguisher',
+    ],
+    symptoms: {
+      common: ['Painless, slowly progressive proptosis/globe displacement over months to years (pleomorphic adenoma)', 'Rapid, painful proptosis/globe displacement over weeks to a few months (adenoid cystic carcinoma)', 'Palpable superotemporal orbital mass', 'Binocular diplopia'],
+      lessCommon: ['Ptosis with an S-shaped eyelid contour', 'Numbness in the distribution of an affected nerve (perineural invasion, adenoid cystic carcinoma)', 'Blurred vision from globe compression or exposure'],
+      importantNegatives: ['Absence of pain strongly favors a benign process (pleomorphic adenoma); presence of pain, especially early/prominent pain, is a red flag for malignancy (adenoid cystic carcinoma)'],
+      typicalProgression: 'Pleomorphic adenoma: indolent, painless growth over months to years. Adenoid cystic carcinoma: rapid, painful growth over weeks to months, often with earlier functional and sensory symptoms.',
+    },
+    signs: [
+      { area: 'External', finding: 'Firm, palpable mass in the superotemporal orbital rim; S-shaped ptosis of the upper eyelid from downward displacement by the mass' },
+      { area: 'Other', finding: 'Inferomedial globe displacement/proptosis; restricted extraocular motility, particularly with larger or infiltrative (malignant) lesions' },
+      { area: 'External', finding: 'Well-circumscribed, mobile, non-tender mass typical of pleomorphic adenoma versus a fixed, tender, infiltrative mass typical of adenoid cystic carcinoma' },
+      { area: 'Other', finding: 'Sensory loss/hypoesthesia in a nerve distribution suggests perineural invasion, characteristic of adenoid cystic carcinoma' },
+    ],
+    differentialDiagnosis: [
+      { disease: 'Pleomorphic adenoma vs. adenoid cystic carcinoma', whySimilar: 'Both present as a superotemporal orbital mass with proptosis and globe displacement', keyDistinguisher: 'Growth rate and pain are the key distinguishers: pleomorphic adenoma grows slowly and painlessly over months to years, while adenoid cystic carcinoma grows rapidly and painfully over weeks to months; imaging shows smooth bony remodeling without erosion in adenoma versus bony erosion/infiltration in carcinoma' },
+      { disease: 'Dacryoadenitis (inflammatory/idiopathic or infectious)', whySimilar: 'Lacrimal gland enlargement with eyelid swelling and S-shaped ptosis', keyDistinguisher: 'Dacryoadenitis presents acutely with diffuse gland swelling, erythema, and tenderness, often with a shorter (days) time course and a history of infection or systemic inflammatory disease, rather than a discrete, progressively enlarging mass' },
+      { disease: 'Lacrimal gland lymphoma/lymphoproliferative lesion', whySimilar: 'Painless lacrimal gland/orbital mass with globe displacement, typically in an older adult', keyDistinguisher: 'Lymphoma tends to mold to the globe and orbital walls rather than causing bony erosion or remodeling, is classically painless like pleomorphic adenoma, and requires biopsy with immunohistochemistry/flow cytometry to differentiate from an epithelial lacrimal tumor' },
+    ],
+    diagnosticTesting: [
+      { name: 'CT orbits with contrast', whyOrdered: 'Characterize the mass, assess bony involvement, and evaluate for malignant features', expectedFinding: 'Pleomorphic adenoma: well-circumscribed, round-to-oval mass in the lacrimal fossa with smooth bony remodeling/excavation, no erosion. Adenoid cystic carcinoma: irregular, infiltrative mass with bony erosion/destruction of the lacrimal fossa, and possible extension into adjacent orbital fat or intracranially', contribution: 'Key study for distinguishing benign from malignant lacrimal masses and for surgical planning' },
+      { name: 'MRI orbits with contrast', whyOrdered: 'Further evaluate soft tissue extent and, particularly, perineural spread', expectedFinding: 'Perineural enhancement along involved nerves in adenoid cystic carcinoma; well-defined capsule in pleomorphic adenoma', contribution: 'Superior soft-tissue and perineural detail compared to CT, important for adenoid cystic carcinoma staging' },
+      { name: 'Complete excisional biopsy (for suspected pleomorphic adenoma)', whyOrdered: 'Definitive treatment and diagnosis when clinical/imaging features are classic for a well-circumscribed, encapsulated benign mass', expectedFinding: 'Encapsulated tumor with epithelial and myoepithelial/mesenchymal elements on histopathology', contribution: 'Complete excision without prior incisional biopsy avoids capsule rupture, seeding, and recurrence' },
+      { name: 'Incisional biopsy (for suspected malignant lesion)', whyOrdered: 'Confirm diagnosis and guide treatment planning when imaging suggests malignancy (irregular margins, bony erosion, rapid painful growth)', expectedFinding: 'Cribriform ("Swiss cheese") pattern of basaloid cells with perineural invasion on histopathology, confirming adenoid cystic carcinoma', contribution: 'Establishes tissue diagnosis and guides multidisciplinary treatment planning before definitive surgery' },
+    ],
+    diagnosis: {
+      criteria: 'A superotemporal orbital mass with proptosis/globe displacement; painless slow growth over months to years favors pleomorphic adenoma, while painful rapid growth over weeks to months favors adenoid cystic carcinoma',
+      confirmation: 'Imaging characteristics (well-circumscribed with smooth bony remodeling versus irregular with bony erosion) combined with histopathology confirm the diagnosis; the biopsy approach itself differs by suspected diagnosis (complete excisional biopsy for suspected benign disease versus incisional biopsy for suspected malignancy).',
+      classification: 'Lacrimal gland tumors are broadly classified as epithelial (pleomorphic adenoma, adenoid cystic carcinoma, and other carcinomas) versus non-epithelial (lymphoproliferative/inflammatory); adenoid cystic carcinoma is further characterized histologically by growth pattern (cribriform, tubular, or solid/basaloid, the last carrying the worst prognosis)',
+    },
+    management: [
+      { category: 'Advanced treatment', detail: 'Pleomorphic adenoma: complete surgical excision with the tumor capsule intact, performed without prior incisional biopsy, to prevent tumor seeding and recurrence' },
+      { category: 'Advanced treatment', detail: 'Adenoid cystic carcinoma: radical surgical excision (often orbital exenteration in advanced disease), frequently combined with adjuvant radiotherapy given the propensity for perineural invasion and local recurrence' },
+      { category: 'Referral', detail: 'Prompt referral to oculoplastic/orbital surgery and, for suspected malignancy, multidisciplinary oncology co-management (radiation oncology, head and neck surgery) for staging and treatment planning' },
+      { category: 'Observation', detail: 'Not appropriate as primary management once a lacrimal gland mass is identified — timely imaging and surgical evaluation are indicated given the risk of malignancy and the risk of recurrence/malignant transformation with delayed or incomplete excision of pleomorphic adenoma' },
+    ],
+    followUp: {
+      typical: 'Postoperative monitoring for pleomorphic adenoma to detect rare recurrence; long-term, often lifelong, surveillance for adenoid cystic carcinoma given its propensity for late local and perineural recurrence and distant metastasis (commonly to lung)',
+      monitor: 'Signs of recurrent orbital mass, new pain, new sensory changes (perineural recurrence), and surveillance imaging per oncologic protocol for malignant disease',
+      progression: 'New pain, growth, or sensory symptoms after treatment of a presumed pleomorphic adenoma should raise concern for recurrence or malignant transformation and warrants prompt re-evaluation and imaging',
+      shortenWhen: 'Any postoperative new pain, numbness, or mass recurrence after treatment of adenoid cystic carcinoma warrants urgent oncologic re-evaluation',
+    },
+    prognosis: {
+      typicalCourse: 'Pleomorphic adenoma has an excellent prognosis with complete excision and capsule preservation; adenoid cystic carcinoma has a guarded long-term prognosis despite aggressive treatment because of its propensity for perineural spread and late recurrence',
+      progressionRisk: 'Pleomorphic adenoma: risk of recurrence and malignant transformation (carcinoma ex pleomorphic adenoma) if incompletely excised or biopsied through the capsule. Adenoid cystic carcinoma: high risk of local recurrence via perineural spread and distant metastasis (notably to lung) even after apparently complete resection',
+      complications: 'Pleomorphic adenoma: recurrence, rarely malignant transformation. Adenoid cystic carcinoma: perineural spread with pain and cranial nerve dysfunction, orbital/intracranial invasion, distant metastasis, and disfigurement from radical surgery (exenteration)',
+      visualPrognosis: 'Pleomorphic adenoma: excellent, vision typically preserved. Adenoid cystic carcinoma: variable and dependent on extent at diagnosis; vision and globe preservation may be compromised by both the tumor and the radical treatment required',
+    },
+    clinicalPearls: [
+      'Growth rate and pain are the single most useful bedside distinguishers between benign and malignant lacrimal gland masses: painless, slow (months-to-years) growth suggests pleomorphic adenoma, while painful, rapid (weeks-to-months) growth suggests adenoid cystic carcinoma.',
+      'Never perform an incisional biopsy on a lacrimal mass with classic imaging and clinical features of pleomorphic adenoma — this risks capsule rupture, tumor seeding, and recurrence; complete excisional biopsy is both diagnostic and therapeutic.',
+      'Perineural invasion is the histologic hallmark of adenoid cystic carcinoma and explains both its characteristic early pain and its poor long-term prognosis despite aggressive local treatment.',
+      'Bony erosion on CT favors malignancy, while smooth bony remodeling/excavation of the lacrimal fossa favors a benign, slow-growing process like pleomorphic adenoma.',
+      'S-shaped ptosis of the upper eyelid, from downward displacement by a superotemporal orbital mass, is a classic external sign of a lacrimal gland tumor of either type.',
+    ],
+    highYield: [
+      'Pleomorphic adenoma = most common benign lacrimal gland tumor: slow, painless growth over months to years, well-circumscribed on imaging',
+      'Adenoid cystic carcinoma = most common malignant lacrimal gland tumor: rapid, painful growth over weeks to months — pain is the key red flag for malignancy',
+      'Pleomorphic adenoma is treated with complete excision (capsule intact) WITHOUT prior incisional biopsy to prevent seeding/recurrence',
+      'Adenoid cystic carcinoma classically shows perineural invasion, driving both its characteristic pain and its poor prognosis',
+      'Bony erosion on CT suggests malignancy (adenoid cystic carcinoma); smooth bony remodeling without erosion suggests benign disease (pleomorphic adenoma)',
+      'Both tumors arise in the superotemporal orbit and cause inferomedial globe displacement with S-shaped ptosis',
+    ],
+  },
+]
