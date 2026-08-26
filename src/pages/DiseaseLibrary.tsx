@@ -14,6 +14,9 @@ const categoryColors: Record<Disease['category'], string> = {
   Retina: 'success',
   'Neuro-Ophthalmology': 'warning',
   'Anterior Segment': 'info',
+  'Eyelid & Adnexa': 'default',
+  'Orbit & Lacrimal': 'danger',
+  'Pediatric & Binocular Vision': 'success',
 }
 
 export function DiseaseLibrary() {

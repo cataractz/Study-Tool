@@ -71,6 +71,9 @@ export interface Disease {
     | 'Retina'
     | 'Neuro-Ophthalmology'
     | 'Anterior Segment'
+    | 'Eyelid & Adnexa'
+    | 'Orbit & Lacrimal'
+    | 'Pediatric & Binocular Vision'
   definition: string
   affectedStructure: string
   pathologicalProcess: string
