@@ -14,6 +14,7 @@ import { anteriorSegmentDiseases } from './anterior-segment'
 import { anteriorSegmentAdditional } from './anterior-segment-additional'
 import { eyelidAdnexaDiseases } from './eyelid-adnexa'
 import { orbitLacrimalDiseases } from './orbit-lacrimal'
+import { pediatricBinocularVisionDiseases } from './pediatric-binocular-vision'
 
 export const allDiseases: Disease[] = [
   ...corneaDiseases,
@@ -31,4 +32,5 @@ export const allDiseases: Disease[] = [
   ...anteriorSegmentAdditional,
   ...eyelidAdnexaDiseases,
   ...orbitLacrimalDiseases,
+  ...pediatricBinocularVisionDiseases,
 ]
