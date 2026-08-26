@@ -17,6 +17,8 @@ const categoryColors: Record<Disease['category'], string> = {
   'Eyelid & Adnexa': 'default',
   'Orbit & Lacrimal': 'danger',
   'Pediatric & Binocular Vision': 'success',
+  'Ocular Trauma': 'danger',
+  'Systemic & Genetic Disease': 'purple',
 }
 
 export function DiseaseLibrary() {

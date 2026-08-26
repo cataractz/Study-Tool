@@ -74,6 +74,8 @@ export interface Disease {
     | 'Eyelid & Adnexa'
     | 'Orbit & Lacrimal'
     | 'Pediatric & Binocular Vision'
+    | 'Ocular Trauma'
+    | 'Systemic & Genetic Disease'
   definition: string
   affectedStructure: string
   pathologicalProcess: string
