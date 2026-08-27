@@ -13,6 +13,17 @@ export type DrugClass =
   | 'Anesthetics'
   | 'Immunomodulators'
   | 'Hyperosmotics'
+  | 'Cardiovascular'
+  | 'Endocrine'
+  | 'Psychiatric'
+  | 'Neurologic'
+  | 'Rheumatologic / Immunosuppressant'
+  | 'Pulmonary'
+  | 'Gastrointestinal'
+  | 'Genitourinary'
+  | 'Anti-infective (systemic)'
+  | 'Dermatologic'
+  | 'Musculoskeletal'
   | 'Other'
 
 export interface DrugReference {
