@@ -31,6 +31,12 @@ import { RgpFinalPower, meta as rgpFinalPowerMeta } from './contact-lenses/RgpFi
 import { LARS, meta as larsMeta } from './contact-lenses/LARS'
 import { SagittalDepth, meta as sagittalDepthMeta } from './contact-lenses/SagittalDepth'
 import { OxygenTransmissibility, meta as oxygenTransmissibilityMeta } from './contact-lenses/OxygenTransmissibility'
+import { LinearAxialMagnification, meta as linearAxialMagnificationMeta } from './visual-optics/LinearAxialMagnification'
+import { AngularMagnification, meta as angularMagnificationMeta } from './visual-optics/AngularMagnification'
+import { SpectacleMagnification, meta as spectacleMagnificationMeta } from './visual-optics/SpectacleMagnification'
+import { RetinalImageAniseikonia, meta as retinalImageAniseikoniaMeta } from './visual-optics/RetinalImageAniseikonia'
+import { LowVisionMagnification, meta as lowVisionMagnificationMeta } from './low-vision/LowVisionMagnification'
+import { TelescopeMagnification, meta as telescopeMagnificationMeta } from './low-vision/TelescopeMagnification'
 
 export interface CalculatorEntry {
   meta: CalculatorMeta
@@ -68,6 +74,12 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: larsMeta, Component: LARS },
   { meta: sagittalDepthMeta, Component: SagittalDepth },
   { meta: oxygenTransmissibilityMeta, Component: OxygenTransmissibility },
+  { meta: linearAxialMagnificationMeta, Component: LinearAxialMagnification },
+  { meta: angularMagnificationMeta, Component: AngularMagnification },
+  { meta: spectacleMagnificationMeta, Component: SpectacleMagnification },
+  { meta: retinalImageAniseikoniaMeta, Component: RetinalImageAniseikonia },
+  { meta: lowVisionMagnificationMeta, Component: LowVisionMagnification },
+  { meta: telescopeMagnificationMeta, Component: TelescopeMagnification },
 ]
 
 export function getCalculatorById(id: string): CalculatorEntry | undefined {

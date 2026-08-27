@@ -1,6 +1,7 @@
 export type CalculatorCategory =
   | 'General Conversions'
   | 'Ophthalmic Optics'
+  | 'Visual Optics'
   | 'Spherocylindrical'
   | 'Prism'
   | 'Binocular Vision'
