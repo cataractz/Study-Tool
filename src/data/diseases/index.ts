@@ -34,6 +34,9 @@ import { ocularTraumaDiseases } from './ocular-trauma'
 import { systemicGeneticDisease1 } from './systemic-genetic-disease-1'
 import { systemicGeneticDisease2 } from './systemic-genetic-disease-2'
 import { systemicGeneticDisease3 } from './systemic-genetic-disease-3'
+import { systemicGeneticDisease4 } from './systemic-genetic-disease-4'
+import { systemicGeneticDisease5 } from './systemic-genetic-disease-5'
+import { systemicGeneticDisease6 } from './systemic-genetic-disease-6'
 
 export const allDiseases: Disease[] = [
   ...corneaDiseases,
@@ -71,4 +74,7 @@ export const allDiseases: Disease[] = [
   ...systemicGeneticDisease1,
   ...systemicGeneticDisease2,
   ...systemicGeneticDisease3,
+  ...systemicGeneticDisease4,
+  ...systemicGeneticDisease5,
+  ...systemicGeneticDisease6,
 ]
