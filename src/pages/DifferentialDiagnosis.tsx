@@ -7,6 +7,7 @@ import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
 import { MultiSelectChips } from '../components/differential/MultiSelectChips'
 import { DifferentialResultCard } from '../components/differential/DifferentialResultCard'
+import { AIDifferentialPanel } from '../components/differential/AIDifferentialPanel'
 import {
   symptomOptions,
   pupilOptions,
@@ -353,6 +354,8 @@ export function DifferentialDiagnosis() {
           )}
         </div>
       </div>
+
+      <AIDifferentialPanel findings={findings} results={results} />
 
       <style>{`.input { border: 1px solid #cbd5e1; border-radius: 0.5rem; padding: 0.5rem 0.75rem; font-size: 0.875rem; background: white; width: 100%; } .input:focus { outline: none; box-shadow: 0 0 0 2px #3b82f6; border-color: #3b82f6; }`}</style>
     </div>
