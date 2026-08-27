@@ -5,6 +5,7 @@ import { corneaAdditional2 } from './cornea-additional-2'
 import { corneaAdditional3 } from './cornea-additional-3'
 import { corneaAdditional4 } from './cornea-additional-4'
 import { corneaAdditional5 } from './cornea-additional-5'
+import { corneaAdditional6 } from './cornea-additional-6'
 import { glaucomaDiseases } from './glaucoma'
 import { glaucomaAdditional } from './glaucoma-additional'
 import { glaucomaAdditional2 } from './glaucoma-additional-2'
@@ -15,6 +16,8 @@ import { retinaAdditional2 } from './retina-additional-2'
 import { retinaAdditional3 } from './retina-additional-3'
 import { retinaAdditional4 } from './retina-additional-4'
 import { retinaAdditional5 } from './retina-additional-5'
+import { retinaAdditional6 } from './retina-additional-6'
+import { retinaAdditional7 } from './retina-additional-7'
 import { neuroOphthalmologyDiseases } from './neuro-ophthalmology'
 import { neuroOphthalmologyAdditional1 } from './neuro-ophthalmology-additional-1'
 import { neuroOphthalmologyAdditional2 } from './neuro-ophthalmology-additional-2'
@@ -25,13 +28,20 @@ import { anteriorSegmentDiseases } from './anterior-segment'
 import { anteriorSegmentAdditional } from './anterior-segment-additional'
 import { anteriorSegmentAdditional2 } from './anterior-segment-additional-2'
 import { anteriorSegmentAdditional3 } from './anterior-segment-additional-3'
+import { anteriorSegmentAdditional4 } from './anterior-segment-additional-4'
+import { anteriorSegmentAdditional5 } from './anterior-segment-additional-5'
 import { eyelidAdnexaDiseases } from './eyelid-adnexa'
 import { eyelidAdnexaAdditional } from './eyelid-adnexa-additional'
+import { eyelidAdnexaAdditional2 } from './eyelid-adnexa-additional-2'
 import { orbitLacrimalDiseases } from './orbit-lacrimal'
 import { orbitLacrimalAdditional } from './orbit-lacrimal-additional'
+import { orbitLacrimalAdditional2 } from './orbit-lacrimal-additional-2'
 import { pediatricBinocularVisionDiseases } from './pediatric-binocular-vision'
 import { pediatricBinocularVisionAdditional } from './pediatric-binocular-vision-additional'
+import { pediatricBinocularVisionAdditional2 } from './pediatric-binocular-vision-additional-2'
+import { pediatricBinocularVisionAdditional3 } from './pediatric-binocular-vision-additional-3'
 import { ocularTraumaDiseases } from './ocular-trauma'
+import { ocularTraumaAdditional } from './ocular-trauma-additional'
 import { systemicGeneticDisease1 } from './systemic-genetic-disease-1'
 import { systemicGeneticDisease2 } from './systemic-genetic-disease-2'
 import { systemicGeneticDisease3 } from './systemic-genetic-disease-3'
@@ -48,6 +58,7 @@ import { systemicGeneticDisease13 } from './systemic-genetic-disease-13'
 import { systemicGeneticDisease14 } from './systemic-genetic-disease-14'
 import { systemicGeneticDisease15 } from './systemic-genetic-disease-15'
 import { systemicGeneticDisease16 } from './systemic-genetic-disease-16'
+import { systemicGeneticDisease17 } from './systemic-genetic-disease-17'
 
 export const allDiseases: Disease[] = [
   ...corneaDiseases,
@@ -56,6 +67,7 @@ export const allDiseases: Disease[] = [
   ...corneaAdditional3,
   ...corneaAdditional4,
   ...corneaAdditional5,
+  ...corneaAdditional6,
   ...glaucomaDiseases,
   ...glaucomaAdditional,
   ...glaucomaAdditional2,
@@ -66,6 +78,8 @@ export const allDiseases: Disease[] = [
   ...retinaAdditional3,
   ...retinaAdditional4,
   ...retinaAdditional5,
+  ...retinaAdditional6,
+  ...retinaAdditional7,
   ...neuroOphthalmologyDiseases,
   ...neuroOphthalmologyAdditional1,
   ...neuroOphthalmologyAdditional2,
@@ -76,13 +90,20 @@ export const allDiseases: Disease[] = [
   ...anteriorSegmentAdditional,
   ...anteriorSegmentAdditional2,
   ...anteriorSegmentAdditional3,
+  ...anteriorSegmentAdditional4,
+  ...anteriorSegmentAdditional5,
   ...eyelidAdnexaDiseases,
   ...eyelidAdnexaAdditional,
+  ...eyelidAdnexaAdditional2,
   ...orbitLacrimalDiseases,
   ...orbitLacrimalAdditional,
+  ...orbitLacrimalAdditional2,
   ...pediatricBinocularVisionDiseases,
   ...pediatricBinocularVisionAdditional,
+  ...pediatricBinocularVisionAdditional2,
+  ...pediatricBinocularVisionAdditional3,
   ...ocularTraumaDiseases,
+  ...ocularTraumaAdditional,
   ...systemicGeneticDisease1,
   ...systemicGeneticDisease2,
   ...systemicGeneticDisease3,
@@ -99,4 +120,5 @@ export const allDiseases: Disease[] = [
   ...systemicGeneticDisease14,
   ...systemicGeneticDisease15,
   ...systemicGeneticDisease16,
+  ...systemicGeneticDisease17,
 ]
