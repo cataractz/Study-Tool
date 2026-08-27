@@ -132,6 +132,21 @@ export const visualFieldOptions: VocabTerm[] = [
   term('Enlarged blind spot', []),
 ]
 
+export const binocularVisionOptions: VocabTerm[] = [
+  term('Receded near point of convergence', ['receded near point', 'npc']),
+  term('Reduced positive fusional vergence', ['reduced positive fusional vergence']),
+  term('Reduced negative fusional vergence', ['reduced negative fusional vergence']),
+  term('Exophoria greater at near than distance', ['near exophoria', 'exophoria at near']),
+  term('Esophoria greater at near than distance', ['esophoria']),
+  term('Exodeviation greater at distance than near', ['greater at distance']),
+  term('Esodeviation greater at distance than near', ['greater at distance']),
+  term('High AC/A ratio', ['high ac/a']),
+  term('Fails Sheard\'s criterion', ['sheard']),
+  term('Reduced stereoacuity', ['reduced stereo']),
+  term('Reduced amplitude of accommodation', ['amplitude of accommodation']),
+  term('Near angle increases with +3.00 lens/patch test (pseudo pattern)', ['+3.00 d lens', 'patch test', 'prolonged monocular occlusion']),
+]
+
 export const otherTestingOptions: VocabTerm[] = [
   term('OCT findings', ['oct']),
   term('Topography findings', ['topography']),

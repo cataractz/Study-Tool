@@ -8,6 +8,7 @@ import {
   posteriorSegmentOptions,
   visualFieldOptions,
   otherTestingOptions,
+  binocularVisionOptions,
   type VocabTerm,
 } from '../config/differentialVocab'
 
@@ -18,6 +19,7 @@ const allVocab: VocabTerm[] = [
   ...posteriorSegmentOptions,
   ...visualFieldOptions,
   ...otherTestingOptions,
+  ...binocularVisionOptions,
 ]
 
 function vocabKeywords(label: string): string[] {
@@ -55,6 +57,21 @@ export function collectAllFindings(findings: DifferentialFindings): string[] {
     findings.posteriorSegmentOther,
     findings.visualFieldOther,
     findings.otherTestingOther,
+    findings.binocularVisionOther,
+    findings.npc,
+    findings.coverTestDistance,
+    findings.coverTestNear,
+    findings.vonGraefeDistance,
+    findings.vonGraefeNear,
+    findings.nra,
+    findings.pra,
+    findings.biRangeDistance,
+    findings.boRangeDistance,
+    findings.biRangeNear,
+    findings.boRangeNear,
+    findings.acaRatio,
+    findings.stereoacuity,
+    findings.amplitudeOfAccommodation,
   ]
     .map((o) => o?.trim())
     .filter((o): o is string => Boolean(o))
@@ -66,6 +83,7 @@ export function collectAllFindings(findings: DifferentialFindings): string[] {
     ...findings.posteriorSegment,
     ...findings.visualField,
     ...findings.otherTesting,
+    ...findings.binocularVision,
     ...others,
   ]
 }

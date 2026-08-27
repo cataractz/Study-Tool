@@ -14,6 +14,7 @@ import {
   posteriorSegmentOptions,
   visualFieldOptions,
   otherTestingOptions,
+  binocularVisionOptions,
 } from '../config/differentialVocab'
 import { runDifferential } from '../services/differentialService'
 import { buildDifferentialContext } from '../services/ai/contextService'
@@ -43,6 +44,22 @@ const emptyFindings: DifferentialFindings = {
   visualFieldOther: '',
   otherTesting: [],
   otherTestingOther: '',
+  binocularVision: [],
+  binocularVisionOther: '',
+  npc: '',
+  coverTestDistance: '',
+  coverTestNear: '',
+  vonGraefeDistance: '',
+  vonGraefeNear: '',
+  nra: '',
+  pra: '',
+  biRangeDistance: '',
+  boRangeDistance: '',
+  biRangeNear: '',
+  boRangeNear: '',
+  acaRatio: '',
+  stereoacuity: '',
+  amplitudeOfAccommodation: '',
 }
 
 export function DifferentialDiagnosis() {
@@ -202,6 +219,78 @@ export function DifferentialDiagnosis() {
                 otherPlaceholder="Describe the test/finding..."
               />
             </Card>
+          </Section>
+
+          <Section title="Binocular Vision & Accommodative Testing">
+            <div className="space-y-3">
+              <Card className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <Field label="NPC (break/recovery)">
+                  <input className="input" value={findings.npc} onChange={(e) => update('npc', e.target.value)} placeholder="e.g. 6cm / 10cm" />
+                </Field>
+                <Field label="Cover Test — Distance">
+                  <input className="input" value={findings.coverTestDistance} onChange={(e) => update('coverTestDistance', e.target.value)} placeholder="e.g. 4Δ XP'" />
+                </Field>
+                <Field label="Cover Test — Near">
+                  <input className="input" value={findings.coverTestNear} onChange={(e) => update('coverTestNear', e.target.value)} placeholder="e.g. 10Δ XP'" />
+                </Field>
+                <Field label="Von Graefe Phoria — Distance">
+                  <input className="input" value={findings.vonGraefeDistance} onChange={(e) => update('vonGraefeDistance', e.target.value)} placeholder="e.g. 2Δ exophoria" />
+                </Field>
+                <Field label="Von Graefe Phoria — Near">
+                  <input className="input" value={findings.vonGraefeNear} onChange={(e) => update('vonGraefeNear', e.target.value)} placeholder="e.g. 8Δ exophoria" />
+                </Field>
+                <Field label="AC/A Ratio">
+                  <input className="input" value={findings.acaRatio} onChange={(e) => update('acaRatio', e.target.value)} placeholder="e.g. 6:1" />
+                </Field>
+              </Card>
+
+              <Card>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-3">
+                  Vergence Ranges (prism diopters, blur/break/recovery)
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  <Field label="BI — Distance">
+                    <input className="input" value={findings.biRangeDistance} onChange={(e) => update('biRangeDistance', e.target.value)} placeholder="e.g. x/6/3" />
+                  </Field>
+                  <Field label="BO — Distance">
+                    <input className="input" value={findings.boRangeDistance} onChange={(e) => update('boRangeDistance', e.target.value)} placeholder="e.g. x/14/8" />
+                  </Field>
+                  <Field label="BI — Near">
+                    <input className="input" value={findings.biRangeNear} onChange={(e) => update('biRangeNear', e.target.value)} placeholder="e.g. 12/16/10" />
+                  </Field>
+                  <Field label="BO — Near">
+                    <input className="input" value={findings.boRangeNear} onChange={(e) => update('boRangeNear', e.target.value)} placeholder="e.g. 14/22/10" />
+                  </Field>
+                </div>
+              </Card>
+
+              <Card className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <Field label="NRA">
+                  <input className="input" value={findings.nra} onChange={(e) => update('nra', e.target.value)} placeholder="e.g. +2.00" />
+                </Field>
+                <Field label="PRA">
+                  <input className="input" value={findings.pra} onChange={(e) => update('pra', e.target.value)} placeholder="e.g. -2.50" />
+                </Field>
+                <Field label="Amplitude of Accommodation">
+                  <input className="input" value={findings.amplitudeOfAccommodation} onChange={(e) => update('amplitudeOfAccommodation', e.target.value)} placeholder="e.g. 8.00 D" />
+                </Field>
+                <Field label="Stereoacuity">
+                  <input className="input" value={findings.stereoacuity} onChange={(e) => update('stereoacuity', e.target.value)} placeholder="e.g. 40 arc sec" />
+                </Field>
+              </Card>
+
+              <Card>
+                <MultiSelectChips
+                  key={`binocular-${resetKey}`}
+                  options={binocularVisionOptions}
+                  selected={findings.binocularVision}
+                  onChange={(v) => update('binocularVision', v)}
+                  otherValue={findings.binocularVisionOther}
+                  onOtherChange={(v) => update('binocularVisionOther', v)}
+                  otherPlaceholder="Describe another binocular vision finding..."
+                />
+              </Card>
+            </div>
           </Section>
 
           <div className="flex gap-3">

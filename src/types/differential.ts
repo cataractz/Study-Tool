@@ -23,6 +23,22 @@ export interface DifferentialFindings {
   visualFieldOther?: string
   otherTesting: string[]
   otherTestingOther?: string
+  binocularVision: string[]
+  binocularVisionOther?: string
+  npc?: string
+  coverTestDistance?: string
+  coverTestNear?: string
+  vonGraefeDistance?: string
+  vonGraefeNear?: string
+  nra?: string
+  pra?: string
+  biRangeDistance?: string
+  boRangeDistance?: string
+  biRangeNear?: string
+  boRangeNear?: string
+  acaRatio?: string
+  stereoacuity?: string
+  amplitudeOfAccommodation?: string
 }
 
 export interface ConditionProfile {

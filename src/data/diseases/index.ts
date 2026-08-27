@@ -40,6 +40,7 @@ import { pediatricBinocularVisionDiseases } from './pediatric-binocular-vision'
 import { pediatricBinocularVisionAdditional } from './pediatric-binocular-vision-additional'
 import { pediatricBinocularVisionAdditional2 } from './pediatric-binocular-vision-additional-2'
 import { pediatricBinocularVisionAdditional3 } from './pediatric-binocular-vision-additional-3'
+import { pediatricBinocularVisionAdditional4 } from './pediatric-binocular-vision-additional-4'
 import { ocularTraumaDiseases } from './ocular-trauma'
 import { ocularTraumaAdditional } from './ocular-trauma-additional'
 import { systemicGeneticDisease1 } from './systemic-genetic-disease-1'
@@ -102,6 +103,7 @@ export const allDiseases: Disease[] = [
   ...pediatricBinocularVisionAdditional,
   ...pediatricBinocularVisionAdditional2,
   ...pediatricBinocularVisionAdditional3,
+  ...pediatricBinocularVisionAdditional4,
   ...ocularTraumaDiseases,
   ...ocularTraumaAdditional,
   ...systemicGeneticDisease1,

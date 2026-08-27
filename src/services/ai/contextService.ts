@@ -3,6 +3,7 @@ import type { Drug } from '../../types/drug'
 import type { AIContext } from '../../types/ai'
 import type { DifferentialFindings, DifferentialResult } from '../../types/differential'
 import type { PrescriptionCase, PrescriptionSubmission, GradingResult } from '../../types/prescription'
+import { collectAllFindings } from '../differentialService'
 
 export function buildDiseaseContext(disease: Disease): AIContext {
   const lines = [
@@ -42,22 +43,7 @@ export function buildDrugContext(drug: Drug): AIContext {
   }
 }
 
-function collectFindings(findings: DifferentialFindings): string[] {
-  return [
-    ...findings.symptoms,
-    ...findings.pupils,
-    ...findings.anteriorSegment,
-    ...findings.posteriorSegment,
-    ...findings.visualField,
-    ...findings.otherTesting,
-    findings.symptomsOther,
-    findings.pupilsOther,
-    findings.anteriorSegmentOther,
-    findings.posteriorSegmentOther,
-    findings.visualFieldOther,
-    findings.otherTestingOther,
-  ].filter((f): f is string => Boolean(f?.trim()))
-}
+const collectFindings = collectAllFindings
 
 export function buildDifferentialContext(findings: DifferentialFindings, results: DifferentialResult[]): AIContext {
   const patientLines = [
