@@ -26,6 +26,11 @@ import { OphthalmicDrops, meta as ophthalmicDropsMeta } from './pharmacology/Oph
 import { DiagnosticTestStatistics, meta as diagnosticTestMeta } from './diagnostics-statistics/DiagnosticTestStatistics'
 import { RiskStatistics, meta as riskStatisticsMeta } from './diagnostics-statistics/RiskStatistics'
 import { PerfusionPressure, meta as perfusionPressureMeta } from './ocular-hemodynamics/PerfusionPressure'
+import { TearLens, meta as tearLensMeta } from './contact-lenses/TearLens'
+import { RgpFinalPower, meta as rgpFinalPowerMeta } from './contact-lenses/RgpFinalPower'
+import { LARS, meta as larsMeta } from './contact-lenses/LARS'
+import { SagittalDepth, meta as sagittalDepthMeta } from './contact-lenses/SagittalDepth'
+import { OxygenTransmissibility, meta as oxygenTransmissibilityMeta } from './contact-lenses/OxygenTransmissibility'
 
 export interface CalculatorEntry {
   meta: CalculatorMeta
@@ -58,6 +63,11 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: diagnosticTestMeta, Component: DiagnosticTestStatistics },
   { meta: riskStatisticsMeta, Component: RiskStatistics },
   { meta: perfusionPressureMeta, Component: PerfusionPressure },
+  { meta: tearLensMeta, Component: TearLens },
+  { meta: rgpFinalPowerMeta, Component: RgpFinalPower },
+  { meta: larsMeta, Component: LARS },
+  { meta: sagittalDepthMeta, Component: SagittalDepth },
+  { meta: oxygenTransmissibilityMeta, Component: OxygenTransmissibility },
 ]
 
 export function getCalculatorById(id: string): CalculatorEntry | undefined {
