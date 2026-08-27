@@ -93,7 +93,7 @@ function getSystemInstruction(mode: unknown): string {
 }
 
 const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
-const DEFAULT_MODEL = 'gemini-2.5-flash'
+const DEFAULT_MODEL = 'gemini-3.6-flash'
 const MAX_OUTPUT_TOKENS = 4096
 const MAX_MESSAGES = 60
 const MAX_MESSAGE_CHARS = 12000
