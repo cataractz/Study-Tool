@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ChevronLeft, GraduationCap, Stethoscope, GitCompare, Sparkles, EyeOff, Eye } from 'lucide-react'
+import { buildDiseaseContext } from '../services/ai/contextService'
 import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
@@ -21,6 +22,7 @@ export function DiseaseDetail() {
   const disease = diseaseId ? getDiseaseById(diseaseId) : undefined
   const [activePanel, setActivePanel] = useState<InteractivePanel>(null)
   const [showHighYield, setShowHighYield] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     setActivePanel(null)
@@ -94,6 +96,18 @@ export function DiseaseDetail() {
             onClick={() => setShowHighYield((v) => !v)}
           >
             {showHighYield ? 'Hide High-Yield' : 'Show High-Yield Facts'}
+          </Button>
+          <Button
+            size="sm"
+            variant="outline"
+            icon={<Sparkles size={15} />}
+            onClick={() =>
+              navigate('/ai-assistant', {
+                state: { context: buildDiseaseContext(disease), mode: 'clinical-explanation' },
+              })
+            }
+          >
+            Ask AI About This Condition
           </Button>
         </div>
       </div>

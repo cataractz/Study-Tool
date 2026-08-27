@@ -1,14 +1,17 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { ChevronLeft, Pill, GraduationCap, BookMarked, Sparkles } from 'lucide-react'
 import { Badge } from '../components/ui/Badge'
+import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
 import { getDrugById } from '../services/drugService'
+import { buildDrugContext } from '../services/ai/contextService'
 
 export function DrugDetail() {
   const { drugId } = useParams<{ drugId: string }>()
   const drug = drugId ? getDrugById(drugId) : undefined
+  const navigate = useNavigate()
 
   if (!drug) {
     return (
@@ -27,11 +30,27 @@ export function DrugDetail() {
         <Link to="/drugs" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
           <ChevronLeft size={15} /> Back to Drug Database
         </Link>
-        <Badge tone="purple">{drug.drugClass}</Badge>
-        <h1 className="text-2xl lg:text-3xl font-semibold text-slate-900 tracking-tight mt-2">
-          {drug.genericName}
-        </h1>
-        <p className="text-sm text-slate-500 mt-1">Brand names: {drug.brandNames.join(', ') || '—'}</p>
+        <div className="flex items-start justify-between gap-4 flex-wrap">
+          <div>
+            <Badge tone="purple">{drug.drugClass}</Badge>
+            <h1 className="text-2xl lg:text-3xl font-semibold text-slate-900 tracking-tight mt-2">
+              {drug.genericName}
+            </h1>
+            <p className="text-sm text-slate-500 mt-1">Brand names: {drug.brandNames.join(', ') || '—'}</p>
+          </div>
+          <Button
+            size="sm"
+            variant="outline"
+            icon={<Sparkles size={15} />}
+            onClick={() =>
+              navigate('/ai-assistant', {
+                state: { context: buildDrugContext(drug), mode: 'pharmacology' },
+              })
+            }
+          >
+            Ask AI About This Medication
+          </Button>
+        </div>
       </div>
 
       <Section title="Mechanism of Action">

@@ -7,6 +7,7 @@ import { DifferentialDiagnosis } from './pages/DifferentialDiagnosis'
 import { DrugDatabase } from './pages/DrugDatabase'
 import { DrugDetail } from './pages/DrugDetail'
 import { PrescriptionTrainer } from './pages/PrescriptionTrainer'
+import { AIClinicalAssistant } from './pages/AIClinicalAssistant'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/drugs" element={<DrugDatabase />} />
         <Route path="/drugs/:drugId" element={<DrugDetail />} />
         <Route path="/prescription-trainer" element={<PrescriptionTrainer />} />
+        <Route path="/ai-assistant" element={<AIClinicalAssistant />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

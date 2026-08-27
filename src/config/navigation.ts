@@ -12,6 +12,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Differential Diagnosis', path: '/differential', icon: 'git-compare' },
   { label: 'Drug Database', path: '/drugs', icon: 'pill' },
   { label: 'Prescription Trainer', path: '/prescription-trainer', icon: 'file-text' },
+  { label: 'AI Clinical Assistant', path: '/ai-assistant', icon: 'sparkles' },
 ]
 
 export const futureToolsNav: NavItem[] = [
