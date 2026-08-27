@@ -4,6 +4,7 @@ import { corneaAdditional1 } from './cornea-additional-1'
 import { corneaAdditional2 } from './cornea-additional-2'
 import { corneaAdditional3 } from './cornea-additional-3'
 import { corneaAdditional4 } from './cornea-additional-4'
+import { corneaAdditional5 } from './cornea-additional-5'
 import { glaucomaDiseases } from './glaucoma'
 import { glaucomaAdditional } from './glaucoma-additional'
 import { glaucomaAdditional2 } from './glaucoma-additional-2'
@@ -37,6 +38,16 @@ import { systemicGeneticDisease3 } from './systemic-genetic-disease-3'
 import { systemicGeneticDisease4 } from './systemic-genetic-disease-4'
 import { systemicGeneticDisease5 } from './systemic-genetic-disease-5'
 import { systemicGeneticDisease6 } from './systemic-genetic-disease-6'
+import { systemicGeneticDisease7 } from './systemic-genetic-disease-7'
+import { systemicGeneticDisease8 } from './systemic-genetic-disease-8'
+import { systemicGeneticDisease9 } from './systemic-genetic-disease-9'
+import { systemicGeneticDisease10 } from './systemic-genetic-disease-10'
+import { systemicGeneticDisease11 } from './systemic-genetic-disease-11'
+import { systemicGeneticDisease12 } from './systemic-genetic-disease-12'
+import { systemicGeneticDisease13 } from './systemic-genetic-disease-13'
+import { systemicGeneticDisease14 } from './systemic-genetic-disease-14'
+import { systemicGeneticDisease15 } from './systemic-genetic-disease-15'
+import { systemicGeneticDisease16 } from './systemic-genetic-disease-16'
 
 export const allDiseases: Disease[] = [
   ...corneaDiseases,
@@ -44,6 +55,7 @@ export const allDiseases: Disease[] = [
   ...corneaAdditional2,
   ...corneaAdditional3,
   ...corneaAdditional4,
+  ...corneaAdditional5,
   ...glaucomaDiseases,
   ...glaucomaAdditional,
   ...glaucomaAdditional2,
@@ -77,4 +89,14 @@ export const allDiseases: Disease[] = [
   ...systemicGeneticDisease4,
   ...systemicGeneticDisease5,
   ...systemicGeneticDisease6,
+  ...systemicGeneticDisease7,
+  ...systemicGeneticDisease8,
+  ...systemicGeneticDisease9,
+  ...systemicGeneticDisease10,
+  ...systemicGeneticDisease11,
+  ...systemicGeneticDisease12,
+  ...systemicGeneticDisease13,
+  ...systemicGeneticDisease14,
+  ...systemicGeneticDisease15,
+  ...systemicGeneticDisease16,
 ]
