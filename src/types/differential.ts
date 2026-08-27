@@ -8,15 +8,21 @@ export interface DifferentialFindings {
   duration?: string
   laterality?: string
   symptoms: string[]
+  symptomsOther?: string
   vaOD?: string
   vaOS?: string
   pupils: string[]
+  pupilsOther?: string
   iopOD?: string
   iopOS?: string
   anteriorSegment: string[]
+  anteriorSegmentOther?: string
   posteriorSegment: string[]
+  posteriorSegmentOther?: string
   visualField: string[]
+  visualFieldOther?: string
   otherTesting: string[]
+  otherTestingOther?: string
 }
 
 export interface ConditionProfile {

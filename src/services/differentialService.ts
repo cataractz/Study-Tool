@@ -48,6 +48,17 @@ function deriveUrgency(disease: Disease): Urgency {
 }
 
 export function collectAllFindings(findings: DifferentialFindings): string[] {
+  const others = [
+    findings.symptomsOther,
+    findings.pupilsOther,
+    findings.anteriorSegmentOther,
+    findings.posteriorSegmentOther,
+    findings.visualFieldOther,
+    findings.otherTestingOther,
+  ]
+    .map((o) => o?.trim())
+    .filter((o): o is string => Boolean(o))
+
   return [
     ...findings.symptoms,
     ...findings.pupils,
@@ -55,6 +66,7 @@ export function collectAllFindings(findings: DifferentialFindings): string[] {
     ...findings.posteriorSegment,
     ...findings.visualField,
     ...findings.otherTesting,
+    ...others,
   ]
 }
 

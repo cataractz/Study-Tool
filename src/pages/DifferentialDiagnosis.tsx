@@ -26,20 +26,27 @@ const emptyFindings: DifferentialFindings = {
   duration: '',
   laterality: '',
   symptoms: [],
+  symptomsOther: '',
   vaOD: '',
   vaOS: '',
   pupils: [],
+  pupilsOther: '',
   iopOD: '',
   iopOS: '',
   anteriorSegment: [],
+  anteriorSegmentOther: '',
   posteriorSegment: [],
+  posteriorSegmentOther: '',
   visualField: [],
+  visualFieldOther: '',
   otherTesting: [],
+  otherTestingOther: '',
 }
 
 export function DifferentialDiagnosis() {
   const [findings, setFindings] = useState<DifferentialFindings>(emptyFindings)
   const [results, setResults] = useState<DifferentialResult[] | null>(null)
+  const [resetKey, setResetKey] = useState(0)
 
   function update<K extends keyof DifferentialFindings>(key: K, value: DifferentialFindings[K]) {
     setFindings((f) => ({ ...f, [key]: value }))
@@ -50,6 +57,7 @@ export function DifferentialDiagnosis() {
   }
 
   function handleReset() {
+    setResetKey((k) => k + 1)
     setFindings(emptyFindings)
     setResults(null)
   }
@@ -102,7 +110,15 @@ export function DifferentialDiagnosis() {
 
           <Section title="Symptoms">
             <Card>
-              <MultiSelectChips options={symptomOptions} selected={findings.symptoms} onChange={(v) => update('symptoms', v)} />
+              <MultiSelectChips
+                key={`symptoms-${resetKey}`}
+                options={symptomOptions}
+                selected={findings.symptoms}
+                onChange={(v) => update('symptoms', v)}
+                otherValue={findings.symptomsOther}
+                onOtherChange={(v) => update('symptomsOther', v)}
+                otherPlaceholder="Describe the symptom..."
+              />
             </Card>
           </Section>
 
@@ -116,23 +132,73 @@ export function DifferentialDiagnosis() {
           </Section>
 
           <Section title="Pupils">
-            <Card><MultiSelectChips options={pupilOptions} selected={findings.pupils} onChange={(v) => update('pupils', v)} /></Card>
+            <Card>
+              <MultiSelectChips
+                key={`pupils-${resetKey}`}
+                options={pupilOptions}
+                selected={findings.pupils}
+                onChange={(v) => update('pupils', v)}
+                otherValue={findings.pupilsOther}
+                onOtherChange={(v) => update('pupilsOther', v)}
+                otherPlaceholder="Describe the pupil finding..."
+              />
+            </Card>
           </Section>
 
           <Section title="Anterior Segment">
-            <Card><MultiSelectChips options={anteriorSegmentOptions} selected={findings.anteriorSegment} onChange={(v) => update('anteriorSegment', v)} /></Card>
+            <Card>
+              <MultiSelectChips
+                key={`anterior-${resetKey}`}
+                options={anteriorSegmentOptions}
+                selected={findings.anteriorSegment}
+                onChange={(v) => update('anteriorSegment', v)}
+                otherValue={findings.anteriorSegmentOther}
+                onOtherChange={(v) => update('anteriorSegmentOther', v)}
+                otherPlaceholder="Describe the anterior segment finding..."
+              />
+            </Card>
           </Section>
 
           <Section title="Posterior Segment">
-            <Card><MultiSelectChips options={posteriorSegmentOptions} selected={findings.posteriorSegment} onChange={(v) => update('posteriorSegment', v)} /></Card>
+            <Card>
+              <MultiSelectChips
+                key={`posterior-${resetKey}`}
+                options={posteriorSegmentOptions}
+                selected={findings.posteriorSegment}
+                onChange={(v) => update('posteriorSegment', v)}
+                otherValue={findings.posteriorSegmentOther}
+                onOtherChange={(v) => update('posteriorSegmentOther', v)}
+                otherPlaceholder="Describe the posterior segment finding..."
+              />
+            </Card>
           </Section>
 
           <Section title="Visual Field">
-            <Card><MultiSelectChips options={visualFieldOptions} selected={findings.visualField} onChange={(v) => update('visualField', v)} /></Card>
+            <Card>
+              <MultiSelectChips
+                key={`visualfield-${resetKey}`}
+                options={visualFieldOptions}
+                selected={findings.visualField}
+                onChange={(v) => update('visualField', v)}
+                otherValue={findings.visualFieldOther}
+                onOtherChange={(v) => update('visualFieldOther', v)}
+                otherPlaceholder="Describe the visual field defect..."
+              />
+            </Card>
           </Section>
 
           <Section title="Other Testing">
-            <Card><MultiSelectChips options={otherTestingOptions} selected={findings.otherTesting} onChange={(v) => update('otherTesting', v)} /></Card>
+            <Card>
+              <MultiSelectChips
+                key={`othertesting-${resetKey}`}
+                options={otherTestingOptions}
+                selected={findings.otherTesting}
+                onChange={(v) => update('otherTesting', v)}
+                otherValue={findings.otherTestingOther}
+                onOtherChange={(v) => update('otherTestingOther', v)}
+                otherPlaceholder="Describe the test/finding..."
+              />
+            </Card>
           </Section>
 
           <div className="flex gap-3">
