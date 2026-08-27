@@ -11,6 +11,7 @@ export type CalculatorCategory =
   | 'Low Vision'
   | 'Pharmacology'
   | 'Diagnostics & Statistics'
+  | 'Ocular Hemodynamics'
   | 'Physical Optics'
   | 'Clinical Utilities'
 

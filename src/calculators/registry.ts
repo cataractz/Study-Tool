@@ -19,6 +19,13 @@ import { PercivalsCriterion, meta as percivalsCriterionMeta } from './binocular-
 import { Accommodation, meta as accommodationMeta } from './accommodation/Accommodation'
 import { VisualAcuity, meta as visualAcuityMeta } from './visual-acuity/VisualAcuity'
 import { Keratometry, meta as keratometryMeta } from './keratometry/Keratometry'
+import { ConcentrationConverter, meta as concentrationMeta } from './pharmacology/ConcentrationConverter'
+import { DilutionCalculator, meta as dilutionMeta } from './pharmacology/DilutionCalculator'
+import { DoseCalculator, meta as doseMeta } from './pharmacology/DoseCalculator'
+import { OphthalmicDrops, meta as ophthalmicDropsMeta } from './pharmacology/OphthalmicDrops'
+import { DiagnosticTestStatistics, meta as diagnosticTestMeta } from './diagnostics-statistics/DiagnosticTestStatistics'
+import { RiskStatistics, meta as riskStatisticsMeta } from './diagnostics-statistics/RiskStatistics'
+import { PerfusionPressure, meta as perfusionPressureMeta } from './ocular-hemodynamics/PerfusionPressure'
 
 export interface CalculatorEntry {
   meta: CalculatorMeta
@@ -44,6 +51,13 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: accommodationMeta, Component: Accommodation },
   { meta: visualAcuityMeta, Component: VisualAcuity },
   { meta: keratometryMeta, Component: Keratometry },
+  { meta: concentrationMeta, Component: ConcentrationConverter },
+  { meta: dilutionMeta, Component: DilutionCalculator },
+  { meta: doseMeta, Component: DoseCalculator },
+  { meta: ophthalmicDropsMeta, Component: OphthalmicDrops },
+  { meta: diagnosticTestMeta, Component: DiagnosticTestStatistics },
+  { meta: riskStatisticsMeta, Component: RiskStatistics },
+  { meta: perfusionPressureMeta, Component: PerfusionPressure },
 ]
 
 export function getCalculatorById(id: string): CalculatorEntry | undefined {
