@@ -8,6 +8,8 @@ import { DrugDatabase } from './pages/DrugDatabase'
 import { DrugDetail } from './pages/DrugDetail'
 import { PrescriptionTrainer } from './pages/PrescriptionTrainer'
 import { AIClinicalAssistant } from './pages/AIClinicalAssistant'
+import { CalculationsConversions } from './pages/CalculationsConversions'
+import { CalculatorDetail } from './pages/CalculatorDetail'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path="/drugs/:drugId" element={<DrugDetail />} />
         <Route path="/prescription-trainer" element={<PrescriptionTrainer />} />
         <Route path="/ai-assistant" element={<AIClinicalAssistant />} />
+        <Route path="/calculators" element={<CalculationsConversions />} />
+        <Route path="/calculators/:calculatorId" element={<CalculatorDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

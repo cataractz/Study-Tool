@@ -1,0 +1,62 @@
+import type { ComponentType } from 'react'
+import type { CalculatorMeta } from '../types/calculator'
+
+import { UnitConversions, meta as unitConversionsMeta } from './general/UnitConversions'
+import { FocalLengthDiopter, meta as focalLengthMeta } from './ophthalmic-optics/FocalLengthDiopter'
+import { Vergence, meta as vergenceMeta } from './ophthalmic-optics/Vergence'
+import { LensCombination, meta as lensCombinationMeta } from './ophthalmic-optics/LensCombination'
+import { VertexPower, meta as vertexPowerMeta } from './ophthalmic-optics/VertexPower'
+import { SpectacleContactLens, meta as spectacleContactLensMeta } from './ophthalmic-optics/SpectacleContactLens'
+import { Transposition, meta as transpositionMeta } from './spherocylindrical/Transposition'
+import { SphericalEquivalent, meta as sphericalEquivalentMeta } from './spherocylindrical/SphericalEquivalent'
+import { MeridionalPower, meta as meridionalPowerMeta } from './spherocylindrical/MeridionalPower'
+import { PrenticesRule, meta as prenticesRuleMeta } from './prism/PrenticesRule'
+import { PrismCombination, meta as prismCombinationMeta } from './prism/PrismCombination'
+import { PrismResolution, meta as prismResolutionMeta } from './prism/PrismResolution'
+import { ACA, meta as acaMeta } from './binocular-vision/ACA'
+import { SheardsCriterion, meta as sheardsCriterionMeta } from './binocular-vision/SheardsCriterion'
+import { PercivalsCriterion, meta as percivalsCriterionMeta } from './binocular-vision/PercivalsCriterion'
+import { Accommodation, meta as accommodationMeta } from './accommodation/Accommodation'
+import { VisualAcuity, meta as visualAcuityMeta } from './visual-acuity/VisualAcuity'
+import { Keratometry, meta as keratometryMeta } from './keratometry/Keratometry'
+
+export interface CalculatorEntry {
+  meta: CalculatorMeta
+  Component: ComponentType
+}
+
+export const calculatorRegistry: CalculatorEntry[] = [
+  { meta: unitConversionsMeta, Component: UnitConversions },
+  { meta: focalLengthMeta, Component: FocalLengthDiopter },
+  { meta: vergenceMeta, Component: Vergence },
+  { meta: lensCombinationMeta, Component: LensCombination },
+  { meta: vertexPowerMeta, Component: VertexPower },
+  { meta: spectacleContactLensMeta, Component: SpectacleContactLens },
+  { meta: transpositionMeta, Component: Transposition },
+  { meta: sphericalEquivalentMeta, Component: SphericalEquivalent },
+  { meta: meridionalPowerMeta, Component: MeridionalPower },
+  { meta: prenticesRuleMeta, Component: PrenticesRule },
+  { meta: prismCombinationMeta, Component: PrismCombination },
+  { meta: prismResolutionMeta, Component: PrismResolution },
+  { meta: acaMeta, Component: ACA },
+  { meta: sheardsCriterionMeta, Component: SheardsCriterion },
+  { meta: percivalsCriterionMeta, Component: PercivalsCriterion },
+  { meta: accommodationMeta, Component: Accommodation },
+  { meta: visualAcuityMeta, Component: VisualAcuity },
+  { meta: keratometryMeta, Component: Keratometry },
+]
+
+export function getCalculatorById(id: string): CalculatorEntry | undefined {
+  return calculatorRegistry.find((c) => c.meta.id === id)
+}
+
+export function searchCalculators(query: string): CalculatorEntry[] {
+  const q = query.trim().toLowerCase()
+  if (!q) return calculatorRegistry
+  return calculatorRegistry.filter((c) => {
+    const haystack = [c.meta.name, c.meta.description, c.meta.formula, c.meta.category, ...c.meta.keywords].join(' ').toLowerCase()
+    return haystack.includes(q)
+  })
+}
+
+export const categories: CalculatorMeta['category'][] = Array.from(new Set(calculatorRegistry.map((c) => c.meta.category)))

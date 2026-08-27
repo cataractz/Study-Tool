@@ -17,6 +17,7 @@ import {
   ChevronDown,
   Stethoscope,
   Sparkles,
+  Calculator,
   type LucideIcon,
 } from 'lucide-react'
 import { primaryNav, futureToolsNav } from '../../config/navigation'
@@ -35,6 +36,7 @@ const iconMap: Record<string, LucideIcon> = {
   'circle-dot': CircleDot,
   'flask-conical': FlaskConical,
   sparkles: Sparkles,
+  calculator: Calculator,
 }
 
 export function Sidebar({
