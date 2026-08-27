@@ -15,5 +15,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["api", "src/types/ai.ts", "src/config/aiModes.ts"]
+  "include": ["api"]
 }
