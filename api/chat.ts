@@ -1,10 +1,12 @@
-// This function is intentionally self-contained (no imports from src/) so its
-// dependency graph can't be affected by how the Vercel Edge bundler traces
-// relative imports across top-level directories. The mode definitions below
-// are duplicated from src/config/aiModes.ts — keep them in sync if that file
-// changes.
+// Runs on Vercel's standard Node.js runtime (the Edge runtime convention this
+// project used previously is deprecated on Vercel and produced silent
+// platform-level 502s with no logging). Self-contained on purpose — no
+// imports from src/ — so its dependency graph can't be affected by how
+// Vercel's bundler traces relative imports across top-level directories.
+// The mode definitions below are duplicated from src/config/aiModes.ts —
+// keep them in sync if that file changes.
 
-export const config = { runtime: 'edge' }
+import type { VercelRequest, VercelResponse } from '@vercel/node'
 
 type AIMode =
   | 'general'
@@ -85,8 +87,8 @@ Mode: Clinical Case. Build an interactive clinical case that reveals information
 Mode: Compare. The user wants a side-by-side comparison of diseases, medications, clinical findings, diagnostic tests, treatment approaches, anatomical structures, or other optometric concepts. Use a Markdown table with clear row labels when the comparison has several dimensions (e.g. IOP, optic nerve, visual field, risk factors, management). Follow the table with brief prose on the most clinically important distinguishing points.`,
 }
 
-function getSystemInstruction(mode: string | undefined): string {
-  if (mode && mode in MODE_INSTRUCTIONS) return MODE_INSTRUCTIONS[mode as AIMode]
+function getSystemInstruction(mode: unknown): string {
+  if (typeof mode === 'string' && mode in MODE_INSTRUCTIONS) return MODE_INSTRUCTIONS[mode as AIMode]
   return MODE_INSTRUCTIONS.general
 }
 
@@ -98,11 +100,8 @@ const MAX_MESSAGE_CHARS = 12000
 const MAX_ATTACHMENTS_PER_REQUEST = 5
 const MAX_ATTACHMENT_BASE64_CHARS = 6_000_000 // ~4.5MB decoded, matches the client-side 4MB cap with headroom
 
-function errorResponse(status: number, error: ErrorKind, message: string): Response {
-  return new Response(JSON.stringify({ error, message }), {
-    status,
-    headers: { 'Content-Type': 'application/json' },
-  })
+function sendJsonError(res: VercelResponse, status: number, error: ErrorKind, message: string): void {
+  res.status(status).json({ error, message })
 }
 
 interface ChatRequestBody {
@@ -131,31 +130,34 @@ function validateBody(body: ChatRequestBody): string | null {
   return null
 }
 
-export default async function handler(req: Request): Promise<Response> {
+export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   try {
     if (req.method !== 'POST') {
-      return errorResponse(405, 'invalid_request', 'Method not allowed.')
+      sendJsonError(res, 405, 'invalid_request', 'Method not allowed.')
+      return
     }
 
     const apiKey = process.env.GEMINI_API_KEY
     if (!apiKey) {
-      return errorResponse(
+      sendJsonError(
+        res,
         500,
         'not_configured',
         'The AI Assistant is not yet configured. Set GEMINI_API_KEY in the deployment environment.',
       )
+      return
     }
 
-    let body: ChatRequestBody
-    try {
-      body = (await req.json()) as ChatRequestBody
-    } catch {
-      return errorResponse(400, 'invalid_request', 'Malformed request body.')
+    const body = (typeof req.body === 'string' ? JSON.parse(req.body || '{}') : req.body) as ChatRequestBody
+    if (!body || typeof body !== 'object') {
+      sendJsonError(res, 400, 'invalid_request', 'Malformed request body.')
+      return
     }
 
     const validationError = validateBody(body)
     if (validationError) {
-      return errorResponse(400, 'invalid_request', validationError)
+      sendJsonError(res, 400, 'invalid_request', validationError)
+      return
     }
 
     const systemInstructionBase = getSystemInstruction(body.mode)
@@ -199,7 +201,8 @@ export default async function handler(req: Request): Promise<Response> {
       })
     } catch (err) {
       console.error('[api/chat] fetch to Gemini failed', model, String(err))
-      return errorResponse(502, 'server_error', 'Could not reach the AI service. Please try again.')
+      sendJsonError(res, 502, 'server_error', 'Could not reach the AI service. Please try again.')
+      return
     }
 
     if (!geminiResponse.ok) {
@@ -207,81 +210,91 @@ export default async function handler(req: Request): Promise<Response> {
       console.error('[api/chat] Gemini returned an error', model, geminiResponse.status, errorBodyText)
 
       if (geminiResponse.status === 429) {
-        return errorResponse(
+        sendJsonError(
+          res,
           429,
           'quota',
           'The AI Assistant has reached its current usage limit. Please try again later.',
         )
+        return
       }
       if (geminiResponse.status === 400 || geminiResponse.status === 404) {
-        return errorResponse(
+        sendJsonError(
+          res,
           400,
           'invalid_request',
           'That request could not be processed. Try rephrasing it, or contact the site administrator if this persists.',
         )
+        return
       }
       if (geminiResponse.status === 401 || geminiResponse.status === 403) {
-        return errorResponse(
+        sendJsonError(
+          res,
           500,
           'not_configured',
           'The AI Assistant could not authenticate with the AI service. Check that GEMINI_API_KEY is set correctly.',
         )
+        return
       }
-      return errorResponse(502, 'server_error', 'The AI Assistant ran into a problem. Please try again.')
+      sendJsonError(res, 502, 'server_error', 'The AI Assistant ran into a problem. Please try again.')
+      return
     }
 
     if (!geminiResponse.body) {
-      return errorResponse(502, 'server_error', 'The AI Assistant returned an empty response.')
+      sendJsonError(res, 502, 'server_error', 'The AI Assistant returned an empty response.')
+      return
     }
+
+    res.writeHead(200, {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'no-cache',
+    })
 
     const reader = geminiResponse.body.getReader()
     const decoder = new TextDecoder()
-    const encoder = new TextEncoder()
+    let buffer = ''
+    let cancelled = false
+    req.on('close', () => {
+      cancelled = true
+    })
 
-    const stream = new ReadableStream<Uint8Array>({
-      async start(controller) {
-        let buffer = ''
-        try {
-          while (true) {
-            const { done, value } = await reader.read()
-            if (done) break
-            buffer += decoder.decode(value, { stream: true })
+    try {
+      while (true) {
+        if (cancelled) break
+        const { done, value } = await reader.read()
+        if (done) break
+        buffer += decoder.decode(value, { stream: true })
 
-            const lines = buffer.split('\n')
-            buffer = lines.pop() ?? ''
+        const lines = buffer.split('\n')
+        buffer = lines.pop() ?? ''
 
-            for (const line of lines) {
-              const trimmed = line.trim()
-              if (!trimmed.startsWith('data:')) continue
-              const jsonStr = trimmed.slice(5).trim()
-              if (!jsonStr || jsonStr === '[DONE]') continue
-              try {
-                const parsed = JSON.parse(jsonStr)
-                const text = parsed?.candidates?.[0]?.content?.parts
-                  ?.map((p: { text?: string }) => p.text ?? '')
-                  .join('')
-                if (text) controller.enqueue(encoder.encode(text))
-              } catch {
-                // skip malformed SSE chunk
-              }
-            }
+        for (const line of lines) {
+          const trimmed = line.trim()
+          if (!trimmed.startsWith('data:')) continue
+          const jsonStr = trimmed.slice(5).trim()
+          if (!jsonStr || jsonStr === '[DONE]') continue
+          try {
+            const parsed = JSON.parse(jsonStr)
+            const text = parsed?.candidates?.[0]?.content?.parts
+              ?.map((p: { text?: string }) => p.text ?? '')
+              .join('')
+            if (text) res.write(text)
+          } catch {
+            // skip malformed SSE chunk
           }
-        } catch (err) {
-          console.error('[api/chat] stream reading failed', String(err))
-        } finally {
-          controller.close()
         }
-      },
-    })
-
-    return new Response(stream, {
-      headers: {
-        'Content-Type': 'text/plain; charset=utf-8',
-        'Cache-Control': 'no-cache',
-      },
-    })
+      }
+    } catch (err) {
+      console.error('[api/chat] stream reading failed', String(err))
+    } finally {
+      res.end()
+    }
   } catch (err) {
     console.error('[api/chat] unhandled error', String(err))
-    return errorResponse(500, 'server_error', 'The AI Assistant ran into an unexpected problem. Please try again.')
+    if (!res.headersSent) {
+      sendJsonError(res, 500, 'server_error', 'The AI Assistant ran into an unexpected problem. Please try again.')
+    } else {
+      res.end()
+    }
   }
 }
