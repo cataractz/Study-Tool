@@ -11,6 +11,10 @@ import { systemicNeurologic } from './systemic-neurologic'
 import { systemicGiPulmonary } from './systemic-gi-pulmonary'
 import { systemicImmunosuppressant1 } from './systemic-immunosuppressant-1'
 import { systemicImmunosuppressant2AntiInfective } from './systemic-immunosuppressant-2-antiinfective'
+import { antiVegfAndGlaucomaAdditional } from './anti-vegf-and-glaucoma-additional'
+import { ophthalmicAdditional } from './ophthalmic-additional'
+import { systemicDiseaseSpecific } from './systemic-disease-specific'
+import { systemicAdditional } from './systemic-additional'
 
 export const allDrugs: Drug[] = [
   ...antiInfectiveDrugs,
@@ -25,4 +29,8 @@ export const allDrugs: Drug[] = [
   ...systemicGiPulmonary,
   ...systemicImmunosuppressant1,
   ...systemicImmunosuppressant2AntiInfective,
+  ...antiVegfAndGlaucomaAdditional,
+  ...ophthalmicAdditional,
+  ...systemicDiseaseSpecific,
+  ...systemicAdditional,
 ]
