@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { RotateCcw, Stethoscope, User } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { RotateCcw, Stethoscope, User, Sparkles } from 'lucide-react'
 import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
 import { Badge } from '../components/ui/Badge'
@@ -7,6 +8,7 @@ import { EmptyState } from '../components/ui/EmptyState'
 import { PrescriptionForm } from '../components/prescription/PrescriptionForm'
 import { GradingResultView } from '../components/prescription/GradingResultView'
 import { getRandomCase, gradeSubmission } from '../services/prescriptionService'
+import { buildPrescriptionContext } from '../services/ai/contextService'
 import type { PrescriptionCase, PrescriptionDifficulty, PrescriptionSubmission, GradingResult } from '../types/prescription'
 
 const difficulties: { value: PrescriptionDifficulty; description: string }[] = [
@@ -27,16 +29,20 @@ export function PrescriptionTrainer() {
   const [difficulty, setDifficulty] = useState<PrescriptionDifficulty>('Easy')
   const [currentCase, setCurrentCase] = useState<PrescriptionCase | undefined>(() => getRandomCase('Easy'))
   const [result, setResult] = useState<GradingResult | null>(null)
+  const [lastSubmission, setLastSubmission] = useState<PrescriptionSubmission | null>(null)
+  const navigate = useNavigate()
 
   function newCase(diff: PrescriptionDifficulty) {
     setDifficulty(diff)
     setCurrentCase(getRandomCase(diff))
     setResult(null)
+    setLastSubmission(null)
   }
 
   function handleSubmit(submission: PrescriptionSubmission) {
     if (!currentCase) return
     setResult(gradeSubmission(currentCase, submission))
+    setLastSubmission(submission)
   }
 
   return (
@@ -112,9 +118,27 @@ export function PrescriptionTrainer() {
           ) : (
             <div className="space-y-4">
               <GradingResultView result={result} />
-              <Button variant="outline" icon={<RotateCcw size={16} />} onClick={() => newCase(difficulty)}>
-                Try Another Case
-              </Button>
+              <div className="flex gap-3">
+                <Button variant="outline" icon={<RotateCcw size={16} />} onClick={() => newCase(difficulty)}>
+                  Try Another Case
+                </Button>
+                {lastSubmission && (
+                  <Button
+                    variant="outline"
+                    icon={<Sparkles size={16} />}
+                    onClick={() =>
+                      navigate('/ai-assistant', {
+                        state: {
+                          context: buildPrescriptionContext(currentCase, lastSubmission, result),
+                          mode: 'clinical-explanation',
+                        },
+                      })
+                    }
+                  >
+                    Explain This Answer
+                  </Button>
+                )}
+              </div>
             </div>
           )}
         </>

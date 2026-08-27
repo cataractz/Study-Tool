@@ -5,6 +5,7 @@ import { ChatInput } from './ChatInput'
 import { ModeSelector } from './ModeSelector'
 import { SuggestedActions } from './SuggestedActions'
 import { LoadingState } from './LoadingState'
+import { ResourceLibrary } from './ResourceLibrary'
 import { getAIMode } from '../../config/aiModes'
 import { streamChatResponse, AIAssistantError } from '../../services/ai/geminiService'
 import {
@@ -31,6 +32,8 @@ export function AIChat({
   const [mode, setMode] = useState<AIMode>(initialMode ?? 'general')
   const [sending, setSending] = useState(false)
   const [pendingContext, setPendingContext] = useState<AIContext | null>(initialContext ?? null)
+  const [pendingAttachments, setPendingAttachments] = useState<PendingAttachment[]>([])
+  const [libraryOpen, setLibraryOpen] = useState(false)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -196,7 +199,7 @@ export function AIChat({
   const remaining = getRemainingMessages()
 
   return (
-    <div className="flex flex-col h-full bg-slate-50">
+    <div className="relative flex flex-col h-full bg-slate-50">
       <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-slate-200 bg-white shrink-0">
         <ModeSelector value={mode} onChange={setMode} />
         {remaining <= 20 && (
@@ -246,14 +249,24 @@ export function AIChat({
       </div>
 
       <ChatInput
+        attachments={pendingAttachments}
+        onAttachmentsChange={setPendingAttachments}
         onSend={handleSend}
         onNewConversation={() => {
           const created = createConversation(mode)
           setConversation(created)
+          setPendingAttachments([])
           onConversationChange(created)
         }}
+        onOpenLibrary={() => setLibraryOpen(true)}
         disabled={sending}
         placeholder={activeMode.placeholder}
+      />
+
+      <ResourceLibrary
+        open={libraryOpen}
+        onClose={() => setLibraryOpen(false)}
+        onAttach={(attachment) => setPendingAttachments((prev) => [...prev, attachment])}
       />
     </div>
   )

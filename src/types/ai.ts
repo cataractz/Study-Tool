@@ -46,6 +46,39 @@ export interface AIContext {
   summary: string
 }
 
+export type ResourceCategory =
+  | 'Ocular Disease'
+  | 'Pharmacology'
+  | 'Optics'
+  | 'Neuro-Ophthalmology'
+  | 'Contact Lenses'
+  | 'Clinical Procedures'
+  | 'Class Lectures'
+  | 'Board Preparation'
+  | 'Other'
+
+export const RESOURCE_CATEGORIES: ResourceCategory[] = [
+  'Ocular Disease',
+  'Pharmacology',
+  'Optics',
+  'Neuro-Ophthalmology',
+  'Contact Lenses',
+  'Clinical Procedures',
+  'Class Lectures',
+  'Board Preparation',
+  'Other',
+]
+
+export interface ClinicalResource {
+  id: string
+  name: string
+  mimeType: string
+  size: number
+  category: ResourceCategory
+  base64: string
+  createdAt: number
+}
+
 export interface ChatApiRequestMessage {
   role: 'user' | 'assistant'
   content: string

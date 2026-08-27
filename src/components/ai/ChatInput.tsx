@@ -1,22 +1,27 @@
 import { useRef, useState, type KeyboardEvent } from 'react'
-import { Send, Paperclip, RotateCcw } from 'lucide-react'
+import { Send, Paperclip, RotateCcw, FolderOpen } from 'lucide-react'
 import { FileAttachmentChip } from './FileAttachment'
 import { fileToAttachment, isAcceptedFile, MAX_ATTACHMENT_BYTES } from '../../services/ai/fileService'
 import type { PendingAttachment } from '../../types/ai'
 
 export function ChatInput({
+  attachments,
+  onAttachmentsChange,
   onSend,
   onNewConversation,
+  onOpenLibrary,
   disabled,
   placeholder,
 }: {
+  attachments: PendingAttachment[]
+  onAttachmentsChange: (attachments: PendingAttachment[]) => void
   onSend: (text: string, attachments: PendingAttachment[]) => void
   onNewConversation: () => void
+  onOpenLibrary: () => void
   disabled: boolean
   placeholder: string
 }) {
   const [text, setText] = useState('')
-  const [attachments, setAttachments] = useState<PendingAttachment[]>([])
   const [fileError, setFileError] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -27,7 +32,7 @@ export function ChatInput({
     if (disabled) return
     onSend(trimmed, attachments)
     setText('')
-    setAttachments([])
+    onAttachmentsChange([])
     setFileError(null)
     if (textareaRef.current) textareaRef.current.style.height = 'auto'
   }
@@ -42,6 +47,7 @@ export function ChatInput({
   async function handleFiles(files: FileList | null) {
     if (!files || files.length === 0) return
     setFileError(null)
+    const next = [...attachments]
     for (const file of Array.from(files)) {
       if (!isAcceptedFile(file)) {
         setFileError(`"${file.name}" is not a supported file type (PDF, TXT, or image).`)
@@ -51,9 +57,9 @@ export function ChatInput({
         setFileError(`"${file.name}" is too large (max 4MB).`)
         continue
       }
-      const attachment = await fileToAttachment(file)
-      setAttachments((prev) => [...prev, attachment])
+      next.push(await fileToAttachment(file))
     }
+    onAttachmentsChange(next)
     if (fileInputRef.current) fileInputRef.current.value = ''
   }
 
@@ -63,12 +69,20 @@ export function ChatInput({
         <p className="text-[11px] text-slate-400">
           Do not upload identifiable patient information — remove names, DOB, MRNs, and other PHI before attaching clinical material.
         </p>
-        <button
-          onClick={onNewConversation}
-          className="hidden sm:inline-flex items-center gap-1 text-xs text-slate-400 hover:text-slate-700 cursor-pointer shrink-0"
-        >
-          <RotateCcw size={12} /> Clear
-        </button>
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
+          <button
+            onClick={onOpenLibrary}
+            className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-slate-700 cursor-pointer"
+          >
+            <FolderOpen size={12} /> My Resources
+          </button>
+          <button
+            onClick={onNewConversation}
+            className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-slate-700 cursor-pointer"
+          >
+            <RotateCcw size={12} /> Clear
+          </button>
+        </div>
       </div>
 
       {(attachments.length > 0 || fileError) && (
@@ -79,7 +93,7 @@ export function ChatInput({
                 <FileAttachmentChip
                   key={a.id}
                   attachment={a}
-                  onRemove={() => setAttachments((prev) => prev.filter((x) => x.id !== a.id))}
+                  onRemove={() => onAttachmentsChange(attachments.filter((x) => x.id !== a.id))}
                 />
               ))}
             </div>

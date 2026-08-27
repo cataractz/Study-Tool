@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Search, RotateCcw, Info } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { Search, RotateCcw, Info, Sparkles } from 'lucide-react'
 import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
 import { Section } from '../components/ui/Section'
@@ -15,6 +16,7 @@ import {
   otherTestingOptions,
 } from '../config/differentialVocab'
 import { runDifferential } from '../services/differentialService'
+import { buildDifferentialContext } from '../services/ai/contextService'
 import type { DifferentialFindings, DifferentialResult } from '../types/differential'
 import { GitCompare } from 'lucide-react'
 
@@ -46,6 +48,7 @@ const emptyFindings: DifferentialFindings = {
 export function DifferentialDiagnosis() {
   const [findings, setFindings] = useState<DifferentialFindings>(emptyFindings)
   const [results, setResults] = useState<DifferentialResult[] | null>(null)
+  const navigate = useNavigate()
   const [resetKey, setResetKey] = useState(0)
 
   function update<K extends keyof DifferentialFindings>(key: K, value: DifferentialFindings[K]) {
@@ -239,6 +242,21 @@ export function DifferentialDiagnosis() {
                   not replace clinical judgment.
                 </p>
               </Card>
+              <Button
+                variant="outline"
+                size="sm"
+                icon={<Sparkles size={14} />}
+                onClick={() =>
+                  navigate('/ai-assistant', {
+                    state: {
+                      context: buildDifferentialContext(findings, results),
+                      mode: 'differential-diagnosis',
+                    },
+                  })
+                }
+              >
+                Explain This Differential
+              </Button>
               {results.map((r, i) => (
                 <DifferentialResultCard key={r.diseaseId} result={r} rank={i + 1} />
               ))}
