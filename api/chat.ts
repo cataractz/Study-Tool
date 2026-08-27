@@ -4,7 +4,7 @@ import type { AIContext, AIMode, ChatApiErrorPayload, ChatApiRequestMessage } fr
 export const config = { runtime: 'edge' }
 
 const GEMINI_API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models'
-const DEFAULT_MODEL = 'gemini-flash-latest'
+const DEFAULT_MODEL = 'gemini-2.5-flash'
 const MAX_OUTPUT_TOKENS = 4096
 const MAX_MESSAGES = 60
 const MAX_MESSAGE_CHARS = 12000
@@ -110,11 +110,15 @@ export default async function handler(req: Request): Promise<Response> {
         },
       }),
     })
-  } catch {
+  } catch (err) {
+    console.error('[api/chat] fetch to Gemini failed', model, err)
     return errorResponse(502, 'server_error', 'Could not reach the AI service. Please try again.')
   }
 
   if (!geminiResponse.ok) {
+    const errorBodyText = await geminiResponse.text().catch(() => '<unreadable>')
+    console.error('[api/chat] Gemini returned an error', model, geminiResponse.status, errorBodyText)
+
     if (geminiResponse.status === 429) {
       return errorResponse(
         429,
