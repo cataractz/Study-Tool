@@ -1,12 +1,107 @@
-import { useMemo, useState } from 'react'
-import { Sparkles } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { ChevronDown, Sparkles } from 'lucide-react'
+import clsx from 'clsx'
 import { Card } from '../ui/Card'
 import { Button } from '../ui/Button'
+import { SearchInput } from '../ui/SearchInput'
 import { getAllDiseases } from '../../services/diseaseService'
 import type { Disease } from '../../types/disease'
 
 function signsSummary(disease: Disease): string {
   return disease.signs.slice(0, 3).map((s) => s.finding).join('; ') || '—'
+}
+
+function DiseasePicker({
+  others,
+  selectedId,
+  onSelect,
+}: {
+  others: Disease[]
+  selectedId: string
+  onSelect: (id: string) => void
+}) {
+  const [open, setOpen] = useState(false)
+  const [query, setQuery] = useState('')
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function onClickOutside(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', onClickOutside)
+    return () => document.removeEventListener('mousedown', onClickOutside)
+  }, [])
+
+  const grouped = useMemo(() => {
+    const q = query.trim().toLowerCase()
+    const filtered = others.filter((d) => !q || d.name.toLowerCase().includes(q))
+    const map = new Map<string, Disease[]>()
+    for (const d of filtered) {
+      const arr = map.get(d.category) ?? []
+      arr.push(d)
+      map.set(d.category, arr)
+    }
+    for (const arr of map.values()) arr.sort((a, b) => a.name.localeCompare(b.name))
+    return Array.from(map.entries()).sort((a, b) => a[0].localeCompare(b[0]))
+  }, [others, query])
+
+  const selected = others.find((d) => d.id === selectedId)
+
+  return (
+    <div ref={containerRef} className="relative w-full sm:w-80">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="w-full flex items-center justify-between gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 hover:bg-slate-50 cursor-pointer"
+      >
+        <span className="truncate">{selected?.name ?? 'Select a disease'}</span>
+        <ChevronDown size={15} className="text-slate-400 shrink-0" />
+      </button>
+
+      {open && (
+        <div className="absolute z-20 mt-1.5 w-full max-h-96 overflow-y-auto bg-white border border-slate-200 rounded-lg shadow-lg">
+          <div className="p-2 sticky top-0 bg-white border-b border-slate-100">
+            <SearchInput
+              autoFocus
+              placeholder="Search diseases..."
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </div>
+          {grouped.length === 0 ? (
+            <p className="px-3 py-4 text-sm text-slate-400">No diseases found.</p>
+          ) : (
+            grouped.map(([category, items]) => (
+              <div key={category}>
+                <p className="px-3 pt-2 pb-1 text-xs font-semibold text-slate-500 uppercase tracking-wide bg-slate-50">
+                  {category}
+                </p>
+                {items.map((d) => (
+                  <button
+                    key={d.id}
+                    type="button"
+                    onClick={() => {
+                      onSelect(d.id)
+                      setOpen(false)
+                      setQuery('')
+                    }}
+                    className={clsx(
+                      'w-full text-left px-3 py-1.5 text-sm hover:bg-brand-50 cursor-pointer',
+                      d.id === selectedId ? 'bg-brand-50 text-brand-700 font-medium' : 'text-slate-700',
+                    )}
+                  >
+                    {d.name}
+                  </button>
+                ))}
+              </div>
+            ))
+          )}
+        </div>
+      )}
+    </div>
+  )
 }
 
 export function CompareDiseasesPanel({ disease }: { disease: Disease }) {
@@ -38,20 +133,14 @@ export function CompareDiseasesPanel({ disease }: { disease: Disease }) {
     <div className="space-y-4">
       <div className="flex flex-col sm:flex-row sm:items-center gap-2">
         <label className="text-sm text-slate-600 shrink-0">Compare {disease.name} with:</label>
-        <select
-          value={otherId}
-          onChange={(e) => {
-            setOtherId(e.target.value)
+        <DiseasePicker
+          others={others}
+          selectedId={otherId}
+          onSelect={(id) => {
+            setOtherId(id)
             setShowPearl(false)
           }}
-          className="rounded-lg border border-slate-300 text-sm px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
-        >
-          {others.map((o) => (
-            <option key={o.id} value={o.id}>
-              {o.name}
-            </option>
-          ))}
-        </select>
+        />
       </div>
 
       <Card padded={false} className="overflow-x-auto">

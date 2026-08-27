@@ -35,21 +35,27 @@ const categoryColors: Record<Disease['category'], string> = {
 
 export function DiseaseLibrary() {
   const [query, setQuery] = useState('')
-  const [activeCategory, setActiveCategory] = useState<string>('All')
+  const [activeCategories, setActiveCategories] = useState<string[]>([])
 
   const diseases = getAllDiseases()
-  const categories = ['All', ...getDiseaseCategories()]
+  const categories = getDiseaseCategories()
+
+  function toggleCategory(cat: string) {
+    setActiveCategories((prev) =>
+      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat],
+    )
+  }
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
     return diseases.filter((d) => {
-      const matchesCategory = activeCategory === 'All' || d.category === activeCategory
+      const matchesCategory = activeCategories.length === 0 || activeCategories.includes(d.category)
       const matchesQuery =
         !q ||
         [d.name, ...(d.aliases ?? [])].join(' ').toLowerCase().includes(q)
       return matchesCategory && matchesQuery
     })
-  }, [diseases, query, activeCategory])
+  }, [diseases, query, activeCategories])
 
   const grouped = useMemo(() => {
     const map = new Map<string, Disease[]>()
@@ -73,20 +79,30 @@ export function DiseaseLibrary() {
         </p>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-3">
+      <div className="space-y-3">
         <SearchInput
           placeholder="Search diseases (e.g. keratoconus, uveitis)..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="sm:max-w-sm"
+          className="max-w-xl"
         />
         <div className="flex gap-1.5 flex-wrap">
+          <button
+            onClick={() => setActiveCategories([])}
+            className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
+              activeCategories.length === 0
+                ? 'bg-brand-600 text-white border-brand-600'
+                : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+            }`}
+          >
+            All
+          </button>
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => toggleCategory(cat)}
               className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
-                activeCategory === cat
+                activeCategories.includes(cat)
                   ? 'bg-brand-600 text-white border-brand-600'
                   : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
               }`}
