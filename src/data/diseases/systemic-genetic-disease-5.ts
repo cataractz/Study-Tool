@@ -5,7 +5,7 @@ export const systemicGeneticDisease5: Disease[] = [
     id: 'ocular-ischemic-syndrome',
     name: 'Ocular Ischemic Syndrome',
     aliases: ['OIS', 'Venous Stasis Retinopathy'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Cardiovascular',
     definition:
       'A constellation of anterior and posterior segment findings resulting from chronic hypoperfusion of the globe, most commonly caused by severe (typically greater than 90%) stenosis or occlusion of the ipsilateral carotid artery; it represents a distinct entity from central retinal vein occlusion and hypertensive retinopathy and is a critical marker of systemic atherosclerotic vascular disease.',
     affectedStructure: 'Retinal and choroidal microvasculature (global hypoperfusion), iris and anterior chamber angle (rubeosis iridis, neovascular glaucoma), ciliary body (aqueous production)',
@@ -103,7 +103,7 @@ export const systemicGeneticDisease5: Disease[] = [
   {
     id: 'sickle-cell-retinopathy',
     name: 'Sickle Cell Retinopathy',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'A peripheral retinal vaso-occlusive disease occurring in patients with sickle cell disease or sickle cell trait, in which abnormal sickling of red blood cells within the peripheral retinal microvasculature causes progressive arteriolar occlusion, arteriovenous shunting, and characteristic "sea fan" neovascularization that can lead to vitreous hemorrhage and tractional retinal detachment.',
     affectedStructure: 'Peripheral retinal microvasculature (arterioles, capillaries), vitreous, and in advanced disease the macula and posterior pole via traction',
@@ -194,7 +194,7 @@ export const systemicGeneticDisease5: Disease[] = [
   {
     id: 'diabetes-mellitus-ocular-overview',
     name: 'Diabetes Mellitus: Systemic Ocular Overview',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Endocrine',
     definition:
       'A systemic metabolic disease of chronic hyperglycemia (type 1 or type 2) that affects nearly every ocular structure beyond the retina, including the crystalline lens (osmotic refractive fluctuation, earlier cataract), the anterior chamber angle (increased open-angle glaucoma risk), the cranial nerves supplying extraocular muscles (ischemic mononeuropathy), and the cornea (reduced sensation, delayed epithelial healing); comprehensive understanding of these non-retinal effects is essential alongside diabetic retinopathy management.',
     affectedStructure: 'Crystalline lens, trabecular meshwork/aqueous outflow system, cranial nerves III/IV/VI, corneal epithelium and subbasal nerve plexus',
@@ -286,7 +286,7 @@ export const systemicGeneticDisease5: Disease[] = [
     id: 'preeclampsia-eclampsia-ocular',
     name: 'Preeclampsia and Eclampsia',
     aliases: ['Pregnancy-Induced Hypertension Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Cardiovascular',
     definition:
       'Hypertensive disorders unique to pregnancy in which preeclampsia (new-onset hypertension with proteinuria or end-organ dysfunction after 20 weeks gestation) can progress to eclampsia (preeclampsia plus new-onset seizures), producing a spectrum of ocular findings ranging from mild retinal vasospasm to sight-threatening serous retinal detachment and cortical blindness that generally correlate with disease severity and typically improve with blood pressure control and delivery.',
     affectedStructure: 'Retinal arterioles (vasospasm), choroid (ischemia/infarction leading to serous retinal detachment), occipital cortex (posterior reversible encephalopathy syndrome in eclampsia)',

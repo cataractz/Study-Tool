@@ -4,7 +4,7 @@ export const systemicGeneticDisease10: Disease[] = [
   {
     id: 'gout-ocular',
     name: 'Gout',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A metabolic disorder of purine metabolism characterized by chronic hyperuricemia and the deposition of monosodium urate crystals in joints and soft tissues, classically causing acute inflammatory monoarthritis; less commonly, urate crystals deposit in ocular tissues, producing conjunctival/scleral deposits and an association with episcleritis, scleritis, and rarely band keratopathy.',
     affectedStructure: 'Conjunctiva and sclera (urate crystal deposition), episclera/sclera (inflammatory association), cornea (band keratopathy in chronic tophaceous disease), and rarely the uveal tract',
@@ -98,7 +98,7 @@ export const systemicGeneticDisease10: Disease[] = [
     id: 'polyarteritis-nodosa',
     name: 'Polyarteritis Nodosa',
     aliases: ['PAN'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A systemic necrotizing vasculitis of medium-sized muscular arteries that is classically ANCA-negative and non-granulomatous, sparing the lungs and typically not affecting the smallest vessels (capillaries, venules, arterioles); ocular manifestations reflect ischemic and inflammatory damage to vessels supplying the sclera, cornea, and retina, occurring in the context of a life-threatening multisystem illness affecting the kidneys, gastrointestinal tract, and peripheral nerves.',
     affectedStructure: 'Sclera and episclera (medium-vessel necrotizing inflammation), peripheral cornea (vasculitis-driven ulcerative keratitis), retinal and choroidal vasculature (vaso-occlusive/ischemic disease)',
@@ -189,7 +189,7 @@ export const systemicGeneticDisease10: Disease[] = [
     id: 'systemic-sclerosis-ocular',
     name: 'Systemic Sclerosis',
     aliases: ['Scleroderma'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A chronic autoimmune connective tissue disease characterized by excessive collagen deposition and fibrosis of the skin and internal organs, driven by vascular injury, immune dysregulation, and fibroblast activation, producing periocular skin tightening, secondary keratoconjunctivitis sicca, and conjunctival telangiectasias among its ocular manifestations.',
     affectedStructure: 'Periocular and eyelid skin (fibrosis/tightening), lacrimal gland and ocular surface (secondary Sjögren-like sicca), conjunctiva (telangiectasias), retina (hypertensive changes if renal crisis occurs)',
@@ -282,7 +282,7 @@ export const systemicGeneticDisease10: Disease[] = [
   {
     id: 'parkinson-disease-ocular',
     name: 'Parkinson Disease',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'A progressive neurodegenerative movement disorder resulting from loss of dopaminergic neurons in the substantia nigra pars compacta, classically producing resting tremor, rigidity, bradykinesia, and postural instability, with several distinct and clinically significant ocular manifestations including markedly reduced blink rate, convergence insufficiency, blepharospasm/apraxia of eyelid opening, impaired saccadic eye movements, and decreased contrast sensitivity.',
     affectedStructure: 'Ocular surface (secondary to reduced blink), extraocular motor control and convergence pathways, eyelid neuromuscular control, and visual processing pathways affecting contrast sensitivity',

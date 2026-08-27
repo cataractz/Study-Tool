@@ -5,7 +5,7 @@ export const systemicGeneticDisease8: Disease[] = [
     id: 'congenital-rubella-syndrome',
     name: 'Congenital Rubella Syndrome',
     aliases: ['Congenital Rubella'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'A constellation of congenital defects resulting from transplacental infection with rubella virus (a TORCH pathogen — Toxoplasmosis, Other [including rubella and syphilis], Cytomegalovirus, Herpes simplex), classically producing an ocular-cardiac-auditory triad of congenital cataract, congenital glaucoma, and sensorineural hearing loss with patent ductus arteriosus, and now largely preventable through maternal MMR (measles-mumps-rubella) vaccination.',
     affectedStructure: 'Crystalline lens (cataract), anterior chamber angle/trabecular meshwork (glaucoma), retinal pigment epithelium (pigmentary retinopathy), globe (microphthalmia), and iris (stromal hypoplasia)',
@@ -102,7 +102,7 @@ export const systemicGeneticDisease8: Disease[] = [
     id: 'reactive-arthritis',
     name: 'Reactive Arthritis',
     aliases: ['Reiter Syndrome'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A seronegative spondyloarthropathy triggered by a preceding genitourinary (classically Chlamydia trachomatis) or gastrointestinal (Salmonella, Shigella, Campylobacter, or Yersinia) infection in a genetically susceptible individual, classically remembered by the triad of conjunctivitis, urethritis, and arthritis ("can\'t see, can\'t pee, can\'t climb a tree"), and strongly associated with HLA-B27.',
     affectedStructure: 'Conjunctiva (mucopurulent conjunctivitis) and, less commonly, the uveal tract (anterior uveitis)',
@@ -197,7 +197,7 @@ export const systemicGeneticDisease8: Disease[] = [
     id: 'osa-ocular',
     name: 'Obstructive Sleep Apnea: Ocular Associations',
     aliases: ['OSA Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Pulmonary',
     definition:
       'A cluster of recognized associations between obstructive sleep apnea (OSA) — recurrent partial or complete upper airway obstruction during sleep causing intermittent hypoxia, hypercapnia, and sleep fragmentation — and several distinct ophthalmic conditions, including floppy eyelid syndrome, non-arteritic anterior ischemic optic neuropathy (NAION), papilledema/idiopathic intracranial hypertension (IIH), and normal-tension glaucoma.',
     affectedStructure: 'Varies by associated condition: the eyelid tarsal plate (floppy eyelid syndrome), the optic nerve head (NAION and papilledema), and retinal ganglion cells/optic nerve (normal-tension glaucoma)',
@@ -288,7 +288,7 @@ export const systemicGeneticDisease8: Disease[] = [
     id: 'ocular-tuberculosis',
     name: 'Ocular Tuberculosis',
     aliases: ['Ocular TB'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'Ocular involvement by Mycobacterium tuberculosis, occurring either through direct hematogenous infection of ocular tissue or as an immune-mediated (delayed-type) hypersensitivity reaction to mycobacterial antigens, producing a spectrum of findings from phlyctenular keratoconjunctivitis to choroidal tubercles to granulomatous anterior uveitis or panuveitis.',
     affectedStructure: 'Conjunctiva and limbus (phlyctenule), choroid (tubercles/tuberculoma), and uveal tract (granulomatous anterior uveitis or panuveitis)',

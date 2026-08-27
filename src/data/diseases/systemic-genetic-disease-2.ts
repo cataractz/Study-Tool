@@ -4,7 +4,7 @@ export const systemicGeneticDisease2: Disease[] = [
   {
     id: 'hiv-aids-ocular',
     name: 'HIV/AIDS Ocular Manifestations',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'A spectrum of ocular findings occurring in patients infected with human immunodeficiency virus (HIV), ranging from a direct HIV retinal microvasculopathy to sight-threatening opportunistic infections and neoplasms that emerge as CD4+ T-cell count declines and cell-mediated immunity fails.',
     affectedStructure: 'Retina and retinal microvasculature, choroid, optic nerve, eyelid/conjunctiva, and cornea',
@@ -97,7 +97,7 @@ export const systemicGeneticDisease2: Disease[] = [
     id: 'toxocariasis-ocular',
     name: 'Toxocariasis',
     aliases: ['Ocular Larva Migrans'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'Ocular infection with larvae of the roundworm Toxocara canis (or less commonly T. cati), producing a localized intraocular granulomatous inflammatory reaction distinct from the systemic visceral larva migrans syndrome caused by the same organism.',
     affectedStructure: 'Peripheral retina/vitreous base, posterior pole retina/macula, and vitreous',
@@ -190,7 +190,7 @@ export const systemicGeneticDisease2: Disease[] = [
     id: 'ocular-histoplasmosis-syndrome',
     name: 'Ocular Histoplasmosis Syndrome',
     aliases: ['POHS', 'Presumed Ocular Histoplasmosis Syndrome'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'A presumed chorioretinal sequela of prior systemic infection with Histoplasma capsulatum, characterized by a classic triad of peripapillary atrophy, multiple "punched-out" chorioretinal scars, and a notable absence of vitreous or anterior chamber inflammation, with choroidal neovascularization as its principal vision-threatening complication.',
     affectedStructure: 'Choroid and retinal pigment epithelium, peripapillary region, macula',
@@ -281,7 +281,7 @@ export const systemicGeneticDisease2: Disease[] = [
     id: 'sturge-weber-syndrome',
     name: 'Sturge-Weber Syndrome',
     aliases: ['Encephalotrigeminal Angiomatosis'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'A sporadic neurocutaneous syndrome (phakomatosis) caused by a somatic mosaic mutation in the GNAQ gene, characterized by a facial capillary malformation (port-wine stain) in the trigeminal distribution, leptomeningeal angiomatosis, and ipsilateral ocular vascular anomalies, most notably glaucoma and choroidal hemangioma.',
     affectedStructure: 'Episclera/choroid (vascular malformation), anterior chamber angle, optic nerve; facial skin and leptomeninges (extraocular)',

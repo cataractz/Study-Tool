@@ -5,7 +5,7 @@ export const systemicGeneticDisease7: Disease[] = [
     id: 'multiple-sclerosis-ocular',
     name: 'Multiple Sclerosis: Ocular Overview',
     aliases: ['MS Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'A chronic autoimmune demyelinating disease of the central nervous system in which the eye and visual pathway are among the most common and often the earliest sites of clinical involvement; this entry ties together the overall ocular presentation of MS (optic neuritis, internuclear ophthalmoplegia, nystagmus, and intermediate uveitis) as a unified clinical picture rather than detailing any single lesion in isolation.',
     affectedStructure: 'Optic nerve (demyelination), medial longitudinal fasciculus and other brainstem/cerebellar white matter tracts controlling eye movements, and, less commonly, the peripheral retina/pars plana (intermediate uveitis)',
@@ -115,7 +115,7 @@ export const systemicGeneticDisease7: Disease[] = [
   {
     id: 'anemia-ocular',
     name: 'Anemia: Ocular Manifestations',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'A reduction in circulating hemoglobin/red blood cell mass that, when significant, produces characteristic conjunctival and retinal findings from reduced oxygen-carrying capacity; ocular findings incidentally discovered on a routine eye examination can be the first identification of a significant underlying hematologic problem.',
     affectedStructure: 'Palpebral and bulbar conjunctiva (pallor), retina (hemorrhages, cotton wool spots, Roth spots), and, in severe/prolonged cases, the optic nerve (disc edema)',
@@ -205,7 +205,7 @@ export const systemicGeneticDisease7: Disease[] = [
   {
     id: 'leukemia-ocular',
     name: 'Leukemia: Ocular Manifestations',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'A group of hematologic malignancies of white blood cell precursors that can involve the eye either through direct leukemic infiltration of ocular/orbital tissue or indirectly through the hematologic derangements of anemia, thrombocytopenia, and hyperviscosity that leukemia produces; ocular findings can reflect disease activity and, in the case of optic nerve infiltration, constitute a true ophthalmic emergency.',
     affectedStructure: 'Retina and choroid (direct infiltration, hemorrhage), optic nerve (direct infiltration), orbit (granulocytic sarcoma/chloroma), and retinal vasculature (hyperviscosity changes)',
@@ -297,7 +297,7 @@ export const systemicGeneticDisease7: Disease[] = [
   {
     id: 'lyme-disease-ocular',
     name: 'Lyme Disease: Ocular Manifestations',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'A tick-borne infection caused by the spirochete Borrelia burgdorferi that can produce ocular findings varying by disease stage, most notably facial nerve (CN VII) palsy in disseminated disease that can closely mimic idiopathic Bell\'s palsy, making travel/exposure history and awareness of endemic regions critical to correct diagnosis.',
     affectedStructure: 'Conjunctiva (early localized disease), cranial nerve VII and other cranial nerves (disseminated disease), uveal tract (uveitis of any anatomic type), and cornea (late disease, keratitis)',

@@ -5,7 +5,7 @@ export const systemicGeneticDisease15: Disease[] = [
     id: 'sjs-ten',
     name: 'Stevens-Johnson Syndrome and Toxic Epidermal Necrolysis',
     aliases: ['SJS', 'TEN', 'Erythema Multiforme Major'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Dermatologic',
     definition:
       'A spectrum of severe, acute, immune-mediated mucocutaneous hypersensitivity reactions—most commonly drug-induced—characterized by widespread epidermal necrosis and mucosal (including conjunctival) sloughing; Stevens-Johnson syndrome (SJS) and toxic epidermal necrolysis (TEN) represent the same underlying disease process distinguished by percentage of body surface area (BSA) involved, with TEN being the more extensive and severe end of the spectrum (SJS <10% BSA, SJS/TEN overlap 10-30% BSA, TEN >30% BSA).',
     affectedStructure:
@@ -101,7 +101,7 @@ export const systemicGeneticDisease15: Disease[] = [
     id: 'mmp-pemphigus-vulgaris',
     name: 'Mucous Membrane Pemphigoid and Pemphigus Vulgaris',
     aliases: ['Ocular Cicatricial Pemphigoid', 'MMP'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Dermatologic',
     definition:
       'Two distinct chronic autoimmune blistering diseases frequently compared: mucous membrane pemphigoid (MMP), an autoantibody-mediated attack on basement membrane zone proteins of mucous membranes (including the conjunctiva) that produces progressive, insidious subepithelial fibrosis and cicatricial conjunctival scarring, and pemphigus vulgaris, an autoantibody-mediated attack on desmosomal proteins (desmogleins) causing intraepithelial mucocutaneous blistering with comparatively less common and less severe conjunctival cicatricial involvement.',
     affectedStructure:
@@ -193,7 +193,7 @@ export const systemicGeneticDisease15: Disease[] = [
   {
     id: 'fabry-disease',
     name: 'Fabry Disease',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Genetic & Chromosomal',
     definition:
       'An X-linked lysosomal storage disorder caused by deficient activity of the enzyme alpha-galactosidase A, leading to progressive accumulation of glycosphingolipids (primarily globotriaosylceramide) within lysosomes of multiple tissues, with a highly distinctive ocular finding of corneal verticillata alongside systemic manifestations including angiokeratomas, progressive renal disease, cardiomyopathy, and stroke risk.',
     affectedStructure: 'Corneal epithelium (verticillata), lens (posterior subcapsular cataract), conjunctival and retinal vasculature (tortuosity)',
@@ -281,7 +281,7 @@ export const systemicGeneticDisease15: Disease[] = [
     id: 'cystic-fibrosis-ocular',
     name: 'Cystic Fibrosis',
     aliases: ['CF'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Pulmonary',
     definition:
       'An autosomal recessive disorder caused by mutations in the CFTR (cystic fibrosis transmembrane conductance regulator) gene, resulting in abnormally thick secretions that primarily affect the lungs, pancreas, and other exocrine glands; ocular findings are less prominent than the primary pulmonary and gastrointestinal disease but are clinically relevant, arising mainly from fat-soluble vitamin (A and E) malabsorption due to pancreatic exocrine insufficiency, from generalized exocrine gland dysfunction causing dry eye, and from ocular side effects of certain chronic CF medications.',
     affectedStructure: 'Ocular surface and lacrimal gland (dry eye from exocrinopathy), retina (vitamin A/E deficiency-related findings), cornea/lens (medication-related monitoring)',

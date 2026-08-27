@@ -5,7 +5,7 @@ export const systemicGeneticDisease17: Disease[] = [
     id: 'ebv-ocular',
     name: 'Epstein-Barr Virus Infection',
     aliases: ['EBV Infection', 'Infectious Mononucleosis Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'Direct ocular involvement by Epstein-Barr virus (human herpesvirus 4), most often occurring during acute infectious mononucleosis, producing a spectrum of findings ranging from a relatively common mild follicular conjunctivitis and dacryoadenitis to less common keratitis, uveitis, and rare neuro-ophthalmic disease such as optic neuritis; this is distinct from EBV\'s separately recognized role as an environmental trigger implicated in autoimmune conditions such as multiple sclerosis and Sjögren syndrome.',
     affectedStructure: 'Palpebral and bulbar conjunctiva, lacrimal gland, corneal stroma/epithelium, uveal tract, and rarely the optic nerve/afferent visual pathway',
@@ -98,7 +98,7 @@ export const systemicGeneticDisease17: Disease[] = [
   {
     id: 'psoriasis-ocular',
     name: 'Psoriasis: Ocular Manifestations',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Dermatologic',
     definition:
       'A chronic, immune-mediated papulosquamous skin disease that can directly involve the eyelid margin and periocular skin with erythematous, scaly plaques and secondary lid margin/tear film disease, distinct from the uveitis associated with psoriatic arthritis (a joint-disease-associated manifestation covered separately under HLA-B27 Associated Uveitis); this entry addresses psoriasis\'s direct ocular surface and skin-adjacent findings, which can occur even in patients without joint involvement.',
     affectedStructure: 'Eyelid skin and margin, meibomian glands, eyelashes, tarsal/palpebral conjunctiva, and ocular surface tear film',
@@ -187,7 +187,7 @@ export const systemicGeneticDisease17: Disease[] = [
   {
     id: 'thrombocytopenia-ocular',
     name: 'Thrombocytopenia: Ocular Manifestations',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'A reduction in circulating platelet count, from any cause, that impairs normal hemostasis and produces a spectrum of ocular bleeding manifestations ranging from spontaneous subconjunctival hemorrhage to retinal, preretinal, or vitreous hemorrhage, with severity generally correlating with the degree of platelet reduction; this entry addresses the direct ocular hemorrhagic consequences of thrombocytopenia itself, regardless of underlying cause, distinct from its role as a contributing factor briefly noted within specific hematologic and hepatic disease entries elsewhere in this library (Anemia, Leukemia, and Liver Disease).',
     affectedStructure: 'Subconjunctival space, retinal and preretinal vasculature/tissue planes, and vitreous cavity',

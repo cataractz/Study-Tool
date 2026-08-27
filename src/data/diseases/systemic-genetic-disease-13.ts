@@ -5,7 +5,7 @@ export const systemicGeneticDisease13: Disease[] = [
     id: 'ocular-orbital-lymphoma',
     name: 'Ocular and Orbital Lymphoma',
     aliases: ['Orbital MALT Lymphoma', 'Primary Vitreoretinal Lymphoma', 'Primary Intraocular Lymphoma', 'Ocular Adnexal Lymphoma'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'A spectrum of lymphoproliferative malignancies affecting the eye and its adnexa, comprising two clinically distinct entities: orbital/adnexal lymphoma, most often an indolent low-grade B-cell non-Hodgkin lymphoma (classically extranodal marginal zone/MALT type) that presents as a painless mass of the orbit, conjunctiva, or lacrimal gland; and primary vitreoretinal (intraocular) lymphoma, a high-grade B-cell lymphoma that infiltrates the vitreous, retina, and subretinal space and classically masquerades as chronic, treatment-resistant posterior uveitis, most often in older adults and carrying a high rate of eventual CNS lymphoma involvement.',
     affectedStructure:
@@ -118,7 +118,7 @@ export const systemicGeneticDisease13: Disease[] = [
     id: 'hyperviscosity-syndrome',
     name: 'Hyperviscosity and Hematologic Disorders',
     aliases: ['Polycythemia Vera', 'Multiple Myeloma Ocular Manifestations', 'Waldenstrom Macroglobulinemia'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'A group of systemic hematologic conditions — including polycythemia vera (excess red cell mass), paraproteinemic disorders such as multiple myeloma and Waldenstrom macroglobulinemia (excess circulating monoclonal immunoglobulin), and hypercoagulable states/thrombophilias — that share the capacity to increase blood viscosity or coagulability, producing a characteristic spectrum of retinal vascular findings ranging from dilated, sluggish, "sausage-link" veins to frank retinal vein occlusion.',
     affectedStructure: 'Retinal venous and capillary circulation; optic nerve head (disc edema in severe hyperviscosity); occasionally choroidal circulation',
@@ -212,7 +212,7 @@ export const systemicGeneticDisease13: Disease[] = [
     id: 'chronic-kidney-disease-ocular',
     name: 'Chronic Kidney Disease and Uremia',
     aliases: ['Uremia', 'Renal Failure Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Renal',
     definition:
       'Progressive, irreversible loss of kidney function producing a range of ocular manifestations independent of the well-known overlap with diabetic and hypertensive retinopathy, most notably band keratopathy and conjunctival/corneal calcification from secondary hyperparathyroidism-driven calcium-phosphate imbalance, the "red eye of renal failure" from calcific ocular surface irritation, and, rarely, uremic optic neuropathy in severe untreated disease.',
     affectedStructure: 'Corneal Bowman layer and conjunctival/corneal surface (calcium deposition), optic nerve (rare uremic optic neuropathy); retinal vasculature is affected primarily via comorbid diabetes and hypertension rather than uremia itself',
@@ -304,7 +304,7 @@ export const systemicGeneticDisease13: Disease[] = [
   {
     id: 'alport-syndrome',
     name: 'Alport Syndrome',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Renal',
     definition:
       'A hereditary disorder of type IV collagen, most commonly X-linked (due to COL4A5 mutations) though autosomal recessive and autosomal dominant forms also occur, characterized by the classic triad of progressive glomerulonephritis often leading to renal failure, sensorineural hearing loss, and characteristic ocular findings, most notably anterior lenticonus, which is essentially pathognomonic when present.',
     affectedStructure: 'Lens (anterior capsule and lens fibers — anterior lenticonus), retina (perimacular and mid-peripheral retinal pigment epithelium — dot-and-fleck retinopathy), and, less commonly, cornea (posterior polymorphous corneal dystrophy-like changes and recurrent corneal erosion have been described)',

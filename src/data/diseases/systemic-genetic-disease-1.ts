@@ -4,7 +4,7 @@ export const systemicGeneticDisease1: Disease[] = [
   {
     id: 'sjogren-syndrome',
     name: 'Sjögren Syndrome',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A chronic autoimmune exocrinopathy in which lymphocytic infiltration and destruction of the lacrimal and salivary glands produces severe aqueous-deficient dry eye (keratoconjunctivitis sicca) and dry mouth (xerostomia); it occurs as a primary (isolated) disorder or secondary to another autoimmune disease such as rheumatoid arthritis or systemic lupus erythematosus.',
     affectedStructure: 'Lacrimal gland (aqueous tear production), accessory lacrimal glands, conjunctiva, and corneal epithelium; salivary glands systemically',
@@ -99,7 +99,7 @@ export const systemicGeneticDisease1: Disease[] = [
   {
     id: 'marfan-syndrome',
     name: 'Marfan Syndrome',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Musculoskeletal',
     definition:
       'An autosomal dominant connective tissue disorder caused by mutations in the FBN1 gene encoding fibrillin-1, resulting in defective elastic microfibrils throughout the body, with classic ocular manifestation of ectopia lentis (superotemporal lens subluxation) alongside skeletal and cardiovascular abnormalities.',
     affectedStructure: 'Lens zonules (zonular fiber weakness/dehiscence causing ectopia lentis), cornea (flattening), sclera, and retina (predisposition to detachment) due to fibrillin-1 deficient connective tissue',
@@ -187,7 +187,7 @@ export const systemicGeneticDisease1: Disease[] = [
     id: 'down-syndrome-ocular',
     name: 'Down Syndrome',
     aliases: ['Trisomy 21 Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Genetic & Chromosomal',
     definition:
       'A chromosomal disorder caused by trisomy of chromosome 21, associated with a characteristic and high-prevalence spectrum of ocular findings including keratoconus, Brushfield spots, refractive error, strabismus, congenital cataract, and nasolacrimal duct obstruction, making comprehensive routine eye examination essential in this population.',
     affectedStructure: 'Cornea (ectasia risk), iris (stromal hypoplasia), lens (cataract risk), extraocular muscles/visual pathways (strabismus, nystagmus), and nasolacrimal system',
@@ -274,7 +274,7 @@ export const systemicGeneticDisease1: Disease[] = [
     id: 'wilson-disease-ocular',
     name: 'Wilson Disease',
     aliases: ['Kayser-Fleischer Ring', 'Hepatolenticular Degeneration'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Genetic & Chromosomal',
     definition:
       'An autosomal recessive disorder of copper metabolism caused by mutations in the ATP7B gene, resulting in impaired biliary copper excretion and pathologic copper accumulation in the liver, brain, and eye, with the classic ocular finding of the Kayser-Fleischer ring formed by copper deposition in corneal Descemet membrane.',
     affectedStructure: 'Descemet membrane at the corneal limbus (Kayser-Fleischer ring), lens capsule (sunflower cataract)',

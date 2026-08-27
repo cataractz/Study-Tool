@@ -4,7 +4,7 @@ export const systemicGeneticDisease14: Disease[] = [
   {
     id: 'liver-disease-ocular',
     name: 'Liver Disease: Ocular Manifestations',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Gastrointestinal & Hepatic',
     definition:
       'A spectrum of ocular findings that can accompany hepatic dysfunction, most classically scleral icterus (yellow discoloration of the sclera and conjunctiva from hyperbilirubinemia), along with an increased bleeding tendency from impaired hepatic synthesis of clotting factors in cirrhosis/chronic liver disease and an association between cholestatic liver disease and xanthelasma from secondary hyperlipidemia; certain specific hepatic/metabolic diseases (e.g., Wilson disease) produce their own distinct, named ocular signs.',
     affectedStructure:
@@ -96,7 +96,7 @@ export const systemicGeneticDisease14: Disease[] = [
     id: 'nutritional-deficiency-ocular',
     name: 'Nutritional Deficiency Syndromes: Thiamine, Vitamin E, and Zinc',
     aliases: ['Thiamine Deficiency', 'Vitamin E Deficiency', 'Zinc Deficiency', 'Wernicke Encephalopathy'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Nutritional',
     definition:
       'Three distinct micronutrient deficiencies with characteristic ocular findings: thiamine (vitamin B1) deficiency causing Wernicke encephalopathy, a neuro-ophthalmic emergency presenting with the classic triad of confusion, ataxia, and ophthalmoplegia/nystagmus; vitamin E deficiency, typically from chronic fat malabsorption, causing a pigmentary retinopathy resembling retinitis pigmentosa along with ataxia and peripheral neuropathy; and zinc deficiency, which impairs vitamin A metabolism and causes night blindness that persists despite vitamin A supplementation alone unless zinc is also corrected. This entry is distinct from vitamin A deficiency and from B12/folate-related toxic and nutritional optic neuropathy, covered separately in this library.',
     affectedStructure:
@@ -193,7 +193,7 @@ export const systemicGeneticDisease14: Disease[] = [
   {
     id: 'ocular-rosacea',
     name: 'Ocular Rosacea',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Dermatologic',
     definition:
       'A chronic inflammatory ocular surface and eyelid condition occurring as a manifestation of rosacea, a common chronic inflammatory skin disorder, characterized by blepharitis, marked meibomian gland dysfunction, recurrent chalazia, and conjunctival hyperemia, with severe cases progressing to rosacea keratitis involving peripheral corneal infiltrates, vascularization, and thinning that can threaten vision; ocular involvement can occur with or without prominent facial cutaneous findings.',
     affectedStructure: 'Eyelid margin and meibomian glands (chronic posterior blepharitis, MGD), conjunctiva (hyperemia), cornea (peripheral infiltrates, vascularization, thinning in rosacea keratitis)',
@@ -286,7 +286,7 @@ export const systemicGeneticDisease14: Disease[] = [
     id: 'osteogenesis-imperfecta',
     name: 'Osteogenesis Imperfecta',
     aliases: ['Brittle Bone Disease'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Musculoskeletal',
     definition:
       'An inherited disorder, most commonly autosomal dominant, of type I collagen synthesis or structure causing bone fragility and fractures with minimal or no trauma, with the classic and distinctive ocular finding of blue sclera from scleral thinning that allows the underlying uveal pigment/choroid to show through; also associated with an increased risk of keratoconus and, systemically, with conductive or mixed hearing loss.',
     affectedStructure: 'Sclera (thinning, abnormal collagen composition producing blue-gray discoloration), cornea (increased keratoconus risk from shared connective tissue defect)',

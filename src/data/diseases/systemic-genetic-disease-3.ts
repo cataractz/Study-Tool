@@ -5,7 +5,7 @@ export const systemicGeneticDisease3: Disease[] = [
     id: 'albinism-ocular',
     name: 'Albinism',
     aliases: ['Oculocutaneous Albinism', 'Ocular Albinism'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Genetic & Chromosomal',
     definition:
       'A genetic disorder of melanin biosynthesis or melanocyte function resulting in hypopigmentation of the skin, hair, and eyes (oculocutaneous albinism) or of the eyes alone with normal or near-normal skin and hair pigmentation (ocular albinism); the resulting deficiency of melanin in the retinal pigment epithelium and iris pigment epithelium disrupts normal visual system development, producing foveal hypoplasia, nystagmus, high refractive error, and abnormal decussation of retinal ganglion cell axons at the chiasm.',
     affectedStructure:
@@ -106,7 +106,7 @@ export const systemicGeneticDisease3: Disease[] = [
     id: 'vitamin-a-deficiency',
     name: 'Vitamin A Deficiency',
     aliases: ['Xerophthalmia'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Nutritional',
     definition:
       'A nutritional deficiency of vitamin A (retinol) producing a well-defined spectrum of ocular surface and retinal findings termed xerophthalmia, ranging from early night blindness through progressive conjunctival and corneal xerosis to potentially blinding corneal melting (keratomalacia) in severe, untreated cases; it remains a leading cause of preventable childhood blindness worldwide.',
     affectedStructure:

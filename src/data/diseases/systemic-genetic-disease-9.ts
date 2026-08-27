@@ -5,7 +5,7 @@ export const systemicGeneticDisease9: Disease[] = [
     id: 'carotid-artery-dissection',
     name: 'Carotid Artery Dissection',
     aliases: ['Cervical Artery Dissection', 'Internal Carotid Artery Dissection'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Cardiovascular',
     definition:
       'A tear in the wall of the internal carotid artery that allows blood to enter and split the arterial layers (creating an intramural hematoma/false lumen), most often occurring after trauma (including trivial neck trauma, chiropractic neck manipulation, or sudden neck movement) or spontaneously in younger patients, sometimes with an underlying connective tissue predisposition; it is distinct from atherosclerotic carotid stenosis (covered elsewhere in this library as a cause of Ocular Ischemic Syndrome) and is a true medical emergency because of high stroke and embolic risk.',
     affectedStructure: 'Internal carotid artery wall (subadventitial or subintimal plane), oculosympathetic pathway (postganglionic fibers traveling with the carotid plexus), retinal and cerebral circulation (embolic target organs)',
@@ -100,7 +100,7 @@ export const systemicGeneticDisease9: Disease[] = [
     id: 'hypothyroidism-ocular',
     name: 'Hypothyroidism',
     aliases: ['Ocular Manifestations of Hypothyroidism', 'Myxedema'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Endocrine',
     definition:
       'A state of insufficient circulating thyroid hormone, most commonly from autoimmune (Hashimoto) thyroiditis, that produces a distinct constellation of periocular and ocular findings — including periorbital edema, lateral eyebrow madarosis, dry eye, and ptosis — that is clinically and mechanistically distinct from the hyperthyroid-associated orbitopathy of Graves disease/Thyroid Eye Disease already covered elsewhere in this library.',
     affectedStructure: 'Periorbital and eyelid soft tissue (myxedematous edema), eyebrows (lateral madarosis), lacrimal/ocular surface (dry eye), Müller muscle (sympathetic tone-dependent eyelid retractor), and rarely the optic nerve in severe untreated disease',
@@ -191,7 +191,7 @@ export const systemicGeneticDisease9: Disease[] = [
     id: 'parathyroid-calcium-disorders',
     name: 'Parathyroid Disease and Calcium Disorders',
     aliases: ['Hyperparathyroidism', 'Hypoparathyroidism', 'Ocular Manifestations of Calcium Disorders'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Endocrine',
     definition:
       'A spectrum of endocrine disorders of parathyroid hormone (PTH) secretion that disturb serum calcium homeostasis — hyperparathyroidism (primary, from a parathyroid adenoma/hyperplasia, or secondary, most often from chronic kidney disease) causing hypercalcemia, and hypoparathyroidism causing hypocalcemia — each producing distinct, clinically recognizable ocular findings that can serve as an important diagnostic clue to the underlying systemic calcium abnormality.',
     affectedStructure: 'Corneal Bowman layer and superficial stroma (band keratopathy from hypercalcemia), conjunctiva (rare calcium deposition), lens (early-onset cataract from hypocalcemia), and optic nerve (papilledema in severe hypocalcemia-associated intracranial hypertension)',
@@ -284,7 +284,7 @@ export const systemicGeneticDisease9: Disease[] = [
     id: 'amaurosis-fugax',
     name: 'Amaurosis Fugax',
     aliases: ['Transient Monocular Vision Loss', 'Retinal TIA'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Cardiovascular',
     definition:
       'Transient, painless monocular vision loss classically described as a "curtain coming down" over the vision, lasting seconds to minutes with complete recovery, representing a retinal transient ischemic attack (TIA) most commonly caused by embolic material (from carotid atherosclerotic plaque or a cardiac source) transiently occluding retinal circulation; it must be distinguished from a completed Retinal Artery Occlusion (covered elsewhere in this library), in which vision loss is permanent, and carries the same urgent stroke-risk workup as any other TIA.',
     affectedStructure: 'Retinal arterial circulation (central retinal artery and its branches), embolic source vessels (carotid arteries, cardiac chambers/valves)',
@@ -379,7 +379,7 @@ export const systemicGeneticDisease9: Disease[] = [
     id: 'pseudoxanthoma-elasticum',
     name: 'Pseudoxanthoma Elasticum',
     aliases: ['PXE'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Musculoskeletal',
     definition:
       'An inherited (typically autosomal recessive) elastic tissue disorder caused by mutations in the ABCC6 gene, resulting in progressive mineralization and fragmentation of elastic fibers in the skin, cardiovascular system, and eye; it is the most common systemic disease associated with angioid streaks (covered as its own entry in this library within the "PEPSI" mnemonic differential) and carries a vision-threatening risk of choroidal neovascularization arising from these streaks.',
     affectedStructure: 'Bruch membrane (elastic layer, site of angioid streaks and subsequent choroidal neovascularization), skin (dermal elastic fibers), and the arterial wall media (cardiovascular elastic tissue)',

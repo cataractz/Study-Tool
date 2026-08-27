@@ -5,7 +5,7 @@ export const systemicGeneticDisease16: Disease[] = [
     id: 'choroidal-orbital-metastasis',
     name: 'Choroidal and Orbital Metastasis',
     aliases: ['Metastatic Choroidal Tumor', 'Metastatic Carcinoma of the Uvea'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'Secondary spread of a systemic malignancy to the uveal tract (most commonly the choroid) or orbit via hematogenous dissemination; the choroid is the most common site of intraocular metastasis owing to its rich, high-flow vascular supply, and a new choroidal or orbital mass is frequently the presenting sign of an otherwise undiagnosed systemic cancer.',
     affectedStructure: 'Choroid (most common intraocular site), less commonly iris or ciliary body; orbital soft tissue and extraocular muscles for orbital metastasis',
@@ -97,7 +97,7 @@ export const systemicGeneticDisease16: Disease[] = [
     id: 'paraneoplastic-ocular-syndromes',
     name: 'Paraneoplastic Ocular Syndromes',
     aliases: ['Cancer-Associated Retinopathy', 'Melanoma-Associated Retinopathy', 'Lambert-Eaton Myasthenic Syndrome'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Hematologic & Oncologic',
     definition:
       'A group of autoimmune syndromes in which antibodies generated against a remote systemic malignancy cross-react with shared antigens on retinal photoreceptors or the neuromuscular junction, producing visual or ocular motor dysfunction; recognition is clinically critical because the ocular syndrome frequently precedes and can lead to detection of an otherwise occult cancer.',
     affectedStructure: 'Retinal photoreceptors (rod and/or cone) in Cancer-Associated Retinopathy and Melanoma-Associated Retinopathy; presynaptic neuromuscular junction (voltage-gated calcium channels) in Lambert-Eaton Myasthenic Syndrome, affecting the levator and extraocular muscles',
@@ -186,7 +186,7 @@ export const systemicGeneticDisease16: Disease[] = [
     id: 'turner-klinefelter-syndrome',
     name: 'Turner and Klinefelter Syndrome',
     aliases: ['Sex Chromosome Disorders', '45,X Monosomy', '47,XXY'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Genetic & Chromosomal',
     definition:
       'Two distinct sex chromosome aneuploidies with associated ocular findings: Turner syndrome (45,X monosomy, affecting females) is associated with strabismus, ptosis, epicanthal folds, and an increased prevalence of red-green color vision deficiency; Klinefelter syndrome (47,XXY, affecting males) has less prominent ocular associations but some reported increase in strabismus risk, and both warrant routine comprehensive eye care as part of coordinated syndromic management.',
     affectedStructure: 'Extraocular muscles/binocular alignment (strabismus), eyelids (ptosis, epicanthal folds), and X-linked cone photopigment genes (color vision) in Turner syndrome; less well-defined ocular structures in Klinefelter syndrome',
@@ -266,7 +266,7 @@ export const systemicGeneticDisease16: Disease[] = [
     id: 'stickler-syndrome',
     name: 'Stickler Syndrome',
     aliases: ['Hereditary Progressive Arthro-Ophthalmopathy'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Musculoskeletal',
     definition:
       'A hereditary connective tissue disorder, most commonly caused by mutations in COL2A1 or related collagen genes (COL11A1, COL11A2), that produces a distinctive triad of high, early-onset ocular myopia with vitreoretinal abnormalities, midfacial/cleft palate craniofacial anomalies, and sensorineural or conductive hearing loss with early joint disease; it is one of the most common identifiable causes of syndromic and non-syndromic early-onset high myopia and of retinal detachment in children and young adults.',
     affectedStructure: 'Vitreous (abnormal collagen scaffold producing an optically empty vitreous with membranous veils), retina (elevated rhegmatogenous detachment risk), sclera/globe (axial myopia); systemically the craniofacial skeleton, palate, cochlea/middle ear, and joints',
@@ -359,7 +359,7 @@ export const systemicGeneticDisease16: Disease[] = [
     id: 'usher-bardet-biedl-syndrome',
     name: 'Usher and Bardet-Biedl Syndrome',
     aliases: ['Syndromic Retinitis Pigmentosa', 'Ciliopathy-Associated Retinal Dystrophy'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Genetic & Chromosomal',
     definition:
       'Two classic autosomal recessive syndromic causes of a retinitis pigmentosa-pattern rod-cone dystrophy: Usher syndrome, the most common cause of combined hereditary deaf-blindness, in which retinal degeneration occurs alongside sensorineural hearing loss and, in some subtypes, vestibular dysfunction; and Bardet-Biedl syndrome, a ciliopathy in which rod-cone dystrophy occurs alongside obesity, polydactyly, intellectual disability, hypogonadism, and renal anomalies.',
     affectedStructure: 'Rod and cone photoreceptors (progressive peripheral-to-central degeneration matching the classic retinitis pigmentosa pattern); cochlear hair cells and vestibular apparatus in Usher syndrome; primary cilia-dependent tissues (kidney, reproductive organs, digits) in Bardet-Biedl syndrome',

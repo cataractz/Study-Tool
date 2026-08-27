@@ -5,7 +5,7 @@ export const systemicGeneticDisease4: Disease[] = [
     id: 'rheumatoid-arthritis-ocular',
     name: 'Rheumatoid Arthritis',
     aliases: ['RA Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A chronic systemic autoimmune inflammatory disease driven by synovial and extra-articular immune complex-mediated inflammation, producing a well-recognized spectrum of ocular findings ranging from secondary Sjögren-like keratoconjunctivitis sicca to sight- and life-threatening necrotizing scleritis and peripheral ulcerative keratitis; patients are also frequently maintained on hydroxychloroquine, making retinal toxicity screening a core optometric responsibility.',
     affectedStructure: 'Lacrimal gland (secondary dry eye), episclera and sclera, peripheral cornea/limbus (vasculitis-driven melt), and retina (hydroxychloroquine toxicity surveillance)',
@@ -107,7 +107,7 @@ export const systemicGeneticDisease4: Disease[] = [
     id: 'lupus-ocular',
     name: 'Systemic Lupus Erythematosus',
     aliases: ['SLE', 'Lupus Ocular Manifestations'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A chronic autoimmune multisystem disease characterized by widespread immune complex deposition and vasculopathy, producing ocular manifestations that range from keratoconjunctivitis sicca and discoid eyelid lesions to sight-threatening lupus retinopathy (retinal vasculopathy), and requiring lifelong ophthalmic surveillance for hydroxychloroquine retinal toxicity given the medication\'s central role in SLE therapy.',
     affectedStructure: 'Retinal microvasculature (arterioles and capillaries), lacrimal gland, episclera/sclera, eyelid skin (discoid lesions), and macula (hydroxychloroquine toxicity surveillance)',
@@ -205,7 +205,7 @@ export const systemicGeneticDisease4: Disease[] = [
     id: 'anca-vasculitis-ocular',
     name: 'ANCA-Associated Vasculitis (Granulomatosis with Polyangiitis)',
     aliases: ['Wegener Granulomatosis', 'GPA'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Rheumatologic & Autoimmune',
     definition:
       'A systemic necrotizing granulomatous vasculitis affecting small- to medium-sized vessels, classically associated with c-ANCA/PR3-ANCA positivity and involvement of the upper and lower respiratory tract and kidneys, that produces aggressive, often bilateral ocular disease — necrotizing scleritis, peripheral ulcerative keratitis, and orbital granulomatous inflammation — representing one of the most vision- and life-threatening systemic vasculitides encountered in eye care.',
     affectedStructure: 'Sclera (necrotizing scleritis), peripheral cornea/limbus (PUK), orbital soft tissue and lacrimal gland (granulomatous pseudotumor-like inflammation), and retinal/optic nerve vasculature in severe cases',
@@ -297,7 +297,7 @@ export const systemicGeneticDisease4: Disease[] = [
     id: 'ibd-uveitis',
     name: 'Inflammatory Bowel Disease',
     aliases: ['Crohn Disease', 'Ulcerative Colitis'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Gastrointestinal & Hepatic',
     definition:
       'A group of chronic immune-mediated inflammatory bowel conditions — Crohn disease and ulcerative colitis — with recognized extraintestinal ocular manifestations, most notably episcleritis, which tends to parallel bowel disease activity, and anterior uveitis, which can occur independent of bowel activity and sometimes overlaps with HLA-B27-associated spondyloarthropathy.',
     affectedStructure: 'Episclera and sclera, anterior uveal tract (iris and ciliary body); rarely posterior segment/optic nerve in severe cases',

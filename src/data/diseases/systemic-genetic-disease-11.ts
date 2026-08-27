@@ -4,7 +4,7 @@ export const systemicGeneticDisease11: Disease[] = [
   {
     id: 'alzheimer-disease-ocular',
     name: 'Alzheimer Disease',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'A progressive neurodegenerative disease characterized by extracellular amyloid-beta plaque deposition and intracellular neurofibrillary tangles (hyperphosphorylated tau), causing cortical neuronal loss and the most common cause of dementia in older adults; beyond memory and cognitive decline, Alzheimer disease produces measurable visual and visual-processing deficits, and a distinct posterior cortical atrophy variant can present primarily through visual symptoms.',
     affectedStructure: 'Visual association cortex and occipitoparietal/occipitotemporal pathways (dorsal and ventral streams), retinal ganglion cells and the retinal nerve fiber layer (area of active research interest), and central visual processing/attention networks',
@@ -104,7 +104,7 @@ export const systemicGeneticDisease11: Disease[] = [
     id: 'cat-scratch-disease',
     name: 'Bartonella Infection (Cat-Scratch Disease)',
     aliases: ['Bartonella henselae Infection', 'Bartonellosis'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'An infection caused by the gram-negative bacterium Bartonella henselae, classically transmitted via a scratch or bite from an infected cat (especially kittens), typically producing regional lymphadenopathy and low-grade systemic illness; the eye is one of the most clinically distinctive extranodal sites of involvement, with two classic testable presentations: Parinaud oculoglandular syndrome and neuroretinitis with a macular star.',
     affectedStructure: 'Conjunctiva and ipsilateral preauricular lymph node (Parinaud oculoglandular syndrome); optic nerve head and macula (neuroretinitis)',
@@ -195,7 +195,7 @@ export const systemicGeneticDisease11: Disease[] = [
     id: 'onchocerciasis',
     name: 'Onchocerciasis',
     aliases: ['River Blindness'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'A parasitic infection caused by the filarial nematode Onchocerca volvulus, transmitted through the bite of infected Simulium (blackfly) vectors that breed near fast-flowing rivers, producing chronic dermatologic and ocular disease from inflammation surrounding microfilariae; it is one of the leading infectious causes of blindness worldwide.',
     affectedStructure: 'Cornea (punctate and sclerosing keratitis), anterior chamber/uvea (anterior uveitis), choroid and retina (chorioretinitis), and optic nerve (optic atrophy in advanced disease)',
@@ -285,7 +285,7 @@ export const systemicGeneticDisease11: Disease[] = [
     id: 'leprosy-ocular',
     name: 'Leprosy',
     aliases: ['Hansen Disease'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'A chronic granulomatous infection caused by Mycobacterium leprae (and M. lepromatosis), primarily affecting skin and peripheral nerves, that produces sight-threatening ocular disease through a combination of direct ocular infection and nerve damage (facial and trigeminal), making it, together with trachoma and onchocerciasis, one of the leading global infectious causes of preventable blindness.',
     affectedStructure: 'Eyebrows/eyelashes (madarosis), eyelids and orbicularis oculi (lagophthalmos via CN VII involvement), cornea (exposure keratopathy, neurotrophic keratopathy via CN V involvement), and anterior uvea (iridocyclitis)',

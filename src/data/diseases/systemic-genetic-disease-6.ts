@@ -5,7 +5,7 @@ export const systemicGeneticDisease6: Disease[] = [
     id: 'neurofibromatosis',
     name: 'Neurofibromatosis',
     aliases: ['NF1', 'NF2', 'Von Recklinghausen Disease'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'A group of autosomal dominant neurocutaneous disorders (phakomatoses) caused by mutations in tumor suppressor genes that predispose to the growth of benign and, less commonly, malignant tumors of neural crest-derived tissue; neurofibromatosis type 1 (NF1, von Recklinghausen disease) is caused by NF1 gene (neurofibromin) mutations and is characterized by café-au-lait macules, cutaneous/plexiform neurofibromas, and iris Lisch nodules, while neurofibromatosis type 2 (NF2) is caused by NF2 gene (merlin) mutations and is characterized primarily by bilateral vestibular schwannomas with distinct, less prominent ocular findings.',
     affectedStructure:
@@ -114,7 +114,7 @@ export const systemicGeneticDisease6: Disease[] = [
     id: 'tuberous-sclerosis',
     name: 'Tuberous Sclerosis Complex',
     aliases: ['TSC'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'An autosomal dominant phakomatosis caused by mutations in the TSC1 (hamartin) or TSC2 (tuberin) tumor suppressor genes, resulting in dysregulated mTOR signaling and the growth of benign hamartomas in multiple organ systems, classically described by the historical Vogt triad of seizures, intellectual disability, and facial angiofibromas (adenoma sebaceum), with the hallmark ocular finding being the retinal astrocytic hamartoma.',
     affectedStructure: 'Retina and optic nerve head (astrocytic hamartoma); also skin, brain, heart, kidney, and lungs systemically',
@@ -202,7 +202,7 @@ export const systemicGeneticDisease6: Disease[] = [
     id: 'von-hippel-lindau-disease',
     name: 'Von Hippel-Lindau Disease',
     aliases: ['VHL'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'An autosomal dominant phakomatosis caused by mutations in the VHL tumor suppressor gene, resulting in the growth of highly vascular tumors in multiple organs; the hallmark ocular finding is the retinal capillary hemangioblastoma, and systemic manifestations including CNS hemangioblastomas, renal cell carcinoma, and pheochromocytoma drive most of the disease morbidity and mortality, making the eye exam an important early systemic screening tool.',
     affectedStructure: 'Retina and retinal vasculature (capillary hemangioblastoma); also cerebellum/spinal cord, kidney, adrenal medulla, and pancreas systemically',
@@ -291,7 +291,7 @@ export const systemicGeneticDisease6: Disease[] = [
   {
     id: 'eds-homocystinuria',
     name: 'Ehlers-Danlos Syndrome and Homocystinuria',
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Musculoskeletal',
     definition:
       'Two distinct connective tissue/metabolic disorders classically compared alongside Marfan syndrome for their ocular manifestations: Ehlers-Danlos syndrome (EDS) is a group of autosomal dominant or recessive connective tissue disorders caused by defects in collagen synthesis or processing, producing tissue fragility with ocular findings such as blue sclera, keratoconus/keratoglobus, and high risk of globe rupture; homocystinuria is an autosomal recessive metabolic disorder of methionine metabolism (most commonly cystathionine beta-synthase deficiency) that causes ectopia lentis classically displaced inferonasally, in contrast to the superotemporal displacement of Marfan syndrome.',
     affectedStructure:

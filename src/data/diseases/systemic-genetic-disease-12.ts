@@ -5,7 +5,7 @@ export const systemicGeneticDisease12: Disease[] = [
     id: 'candida-endophthalmitis',
     name: 'Candida Endophthalmitis',
     aliases: ['Endogenous Fungal Endophthalmitis', 'Ocular Candidiasis'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Infectious Disease',
     definition:
       'A vision-threatening intraocular infection caused by hematogenous (endogenous) spread of Candida species from the bloodstream to the choroid and retina, with secondary extension into the vitreous; distinct from the more commonly encountered exogenous (postoperative/traumatic) bacterial endophthalmitis in both mechanism and typical clinical tempo.',
     affectedStructure: 'Choroid and retina initially (chorioretinitis), with progressive extension into the vitreous cavity as infection advances',
@@ -102,7 +102,7 @@ export const systemicGeneticDisease12: Disease[] = [
     id: 'infective-endocarditis-ocular',
     name: 'Infective Endocarditis',
     aliases: ['Ocular Manifestations of Endocarditis'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Cardiovascular',
     definition:
       'A systemic infection of the endocardial surface of the heart, most often involving native or prosthetic heart valves, that produces ocular findings through two distinct mechanisms — septic embolization of infected vegetation fragments and immune complex-mediated vasculitis — making the eye exam a potential window into an underlying, life-threatening cardiac infection.',
     affectedStructure: 'Retinal vasculature (embolic occlusion), retina (Roth spots from immune complex-mediated capillary injury), vitreous/uvea (endogenous endophthalmitis in severe cases), and conjunctiva (petechiae)',
@@ -195,7 +195,7 @@ export const systemicGeneticDisease12: Disease[] = [
     id: 'cpeo-kearns-sayre',
     name: 'Chronic Progressive External Ophthalmoplegia and Kearns-Sayre Syndrome',
     aliases: ['Chronic Progressive External Ophthalmoplegia', 'CPEO'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Neurologic',
     definition:
       'A spectrum of mitochondrial DNA disorders characterized by slowly progressive, typically symmetric ptosis and external ophthalmoplegia (CPEO); when accompanied by pigmentary retinopathy, onset before age 20, and at least one additional systemic feature (cardiac conduction abnormality, elevated CSF protein, or cerebellar ataxia), the more severe multisystem variant Kearns-Sayre syndrome (KSS) is diagnosed.',
     affectedStructure: 'Levator palpebrae superioris and extraocular muscles (progressive weakness from mitochondrial myopathy), retinal pigment epithelium (pigmentary retinopathy in KSS), and cardiac conduction system (in KSS)',
@@ -286,7 +286,7 @@ export const systemicGeneticDisease12: Disease[] = [
     id: 'multiple-endocrine-neoplasia',
     name: 'Multiple Endocrine Neoplasia',
     aliases: ['MEN Syndrome', 'MEN2B'],
-    category: 'Systemic & Genetic Disease',
+    category: 'Systemic Health - Endocrine',
     definition:
       'A group of hereditary autosomal dominant syndromes characterized by tumors arising in multiple endocrine glands; the ocularly relevant form is MEN type 2B, which produces a highly distinctive combination of mucosal neuromas and prominent, thickened corneal nerves that can be the first clinical clue leading to diagnosis of an underlying RET proto-oncogene mutation and its associated malignancy risk.',
     affectedStructure: 'Conjunctiva, eyelid margins, and oral/lingual mucosa (mucosal neuromas), and cornea (visibly thickened corneal nerves) in MEN2B',

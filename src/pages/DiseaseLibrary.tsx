@@ -18,7 +18,19 @@ const categoryColors: Record<Disease['category'], string> = {
   'Orbit & Lacrimal': 'danger',
   'Pediatric & Binocular Vision': 'success',
   'Ocular Trauma': 'danger',
-  'Systemic & Genetic Disease': 'purple',
+  'Systemic Health - Endocrine': 'warning',
+  'Systemic Health - Cardiovascular': 'danger',
+  'Systemic Health - Pulmonary': 'info',
+  'Systemic Health - Rheumatologic & Autoimmune': 'purple',
+  'Systemic Health - Musculoskeletal': 'default',
+  'Systemic Health - Gastrointestinal & Hepatic': 'success',
+  'Systemic Health - Renal': 'brand',
+  'Systemic Health - Hematologic & Oncologic': 'danger',
+  'Systemic Health - Neurologic': 'purple',
+  'Systemic Health - Infectious Disease': 'warning',
+  'Systemic Health - Dermatologic': 'info',
+  'Systemic Health - Genetic & Chromosomal': 'success',
+  'Systemic Health - Nutritional': 'default',
 }
 
 export function DiseaseLibrary() {

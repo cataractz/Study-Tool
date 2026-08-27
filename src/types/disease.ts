@@ -75,7 +75,19 @@ export interface Disease {
     | 'Orbit & Lacrimal'
     | 'Pediatric & Binocular Vision'
     | 'Ocular Trauma'
-    | 'Systemic & Genetic Disease'
+    | 'Systemic Health - Endocrine'
+    | 'Systemic Health - Cardiovascular'
+    | 'Systemic Health - Pulmonary'
+    | 'Systemic Health - Rheumatologic & Autoimmune'
+    | 'Systemic Health - Musculoskeletal'
+    | 'Systemic Health - Gastrointestinal & Hepatic'
+    | 'Systemic Health - Renal'
+    | 'Systemic Health - Hematologic & Oncologic'
+    | 'Systemic Health - Neurologic'
+    | 'Systemic Health - Infectious Disease'
+    | 'Systemic Health - Dermatologic'
+    | 'Systemic Health - Genetic & Chromosomal'
+    | 'Systemic Health - Nutritional'
   definition: string
   affectedStructure: string
   pathologicalProcess: string
