@@ -5,6 +5,7 @@ export type DrugClass =
   | 'Steroids'
   | 'NSAIDs'
   | 'Glaucoma medications'
+  | 'Anti-VEGF / Retina'
   | 'Allergy medications'
   | 'Dry eye medications'
   | 'Mydriatics'
