@@ -4,16 +4,22 @@ import { NumberField, ResultStat, ResultActions } from '../shared/ui'
 import { CalculatorShell } from '../shared/CalculatorShell'
 import { PracticePanel } from '../shared/PracticePanel'
 import { parseNumeric, roundTo } from '../shared/format'
-import { distanceCmToDiopters, diopterToDistanceCm, amplitudeFromNearPoint, nearPointFromAmplitude } from './accommodation.engine'
+import {
+  distanceCmToDiopters,
+  diopterToDistanceCm,
+  amplitudeFromNearPoint,
+  nearPointFromAmplitude,
+  estimatedAddHalfAmplitudeRule,
+} from './accommodation.engine'
 import type { CalculatorMeta, Difficulty, PracticeProblem } from '../../types/calculator'
 
 export const meta: CalculatorMeta = {
   id: 'accommodation',
   name: 'Working Distance, Accommodative Demand & Amplitude',
   category: 'Accommodation & Near Vision',
-  description: 'Convert between working distance and diopters, and between near point and amplitude of accommodation.',
-  formula: 'D = 1/d(m)   ·   AA = 1/NPA(m) − 1/FPA(m)',
-  keywords: ['working distance', 'accommodative demand', 'amplitude of accommodation', 'near point'],
+  description: 'Convert between working distance and diopters, between near point and amplitude of accommodation, and estimate a near add (rule of thumb).',
+  formula: 'D = 1/d(m)   ·   AA = 1/NPA(m) − 1/FPA(m)   ·   Add ≈ Demand − AA/2 (rule of thumb)',
+  keywords: ['working distance', 'accommodative demand', 'amplitude of accommodation', 'near point', 'near add', 'reading add'],
   boardRelevance: 'High',
   clinicalRelevance: 'Estimating accommodative demand for a task, and assessing accommodative amplitude relative to age-expected norms.',
   supportsPractice: true,
@@ -88,12 +94,40 @@ function AmplitudeTab() {
   )
 }
 
+function NearAddTab() {
+  const [demand, setDemand] = useState('')
+  const [amplitude, setAmplitude] = useState('')
+  const d = parseNumeric(demand)
+  const a = parseNumeric(amplitude)
+  const result = d !== null && a !== null ? estimatedAddHalfAmplitudeRule(d, a) : null
+
+  return (
+    <div className="space-y-3">
+      <div className="grid grid-cols-2 gap-3">
+        <NumberField label="Accommodative demand" unit="D" value={demand} onChange={setDemand} />
+        <NumberField label="Amplitude of accommodation" unit="D" value={amplitude} onChange={setAmplitude} />
+      </div>
+      {result !== null && <ResultStat label="Estimated add (rule of thumb)" value={`+${roundTo(result, 2)} D`} />}
+      <p className="text-xs text-slate-500">
+        RULE OF THUMB — keeps roughly half the amplitude of accommodation in reserve for comfortable sustained near
+        work. This is one common estimation approach, not a universal formula; always refine by patient response.
+      </p>
+    </div>
+  )
+}
+
 function Calculate() {
-  const [tab, setTab] = useState<'demand' | 'amplitude'>('demand')
+  const [tab, setTab] = useState<'demand' | 'amplitude' | 'add'>('demand')
   return (
     <Card className="space-y-4">
-      <div className="flex gap-1.5">
-        {(['demand', 'amplitude'] as const).map((t) => (
+      <div className="flex flex-wrap gap-1.5">
+        {(
+          [
+            ['demand', 'Working Distance ↔ Demand'],
+            ['amplitude', 'Amplitude of Accommodation'],
+            ['add', 'Estimated Near Add'],
+          ] as const
+        ).map(([t, label]) => (
           <button
             key={t}
             onClick={() => setTab(t)}
@@ -102,11 +136,13 @@ function Calculate() {
               (tab === t ? 'bg-brand-600 text-white border-brand-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50')
             }
           >
-            {t === 'demand' ? 'Working Distance ↔ Demand' : 'Amplitude of Accommodation'}
+            {label}
           </button>
         ))}
       </div>
-      {tab === 'demand' ? <WorkingDistanceTab /> : <AmplitudeTab />}
+      {tab === 'demand' && <WorkingDistanceTab />}
+      {tab === 'amplitude' && <AmplitudeTab />}
+      {tab === 'add' && <NearAddTab />}
       <ResultActions onReset={() => setTab('demand')} />
     </Card>
   )

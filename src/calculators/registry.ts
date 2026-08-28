@@ -45,6 +45,9 @@ import { Polarization, meta as polarizationMeta } from './physical-optics/Polari
 import { FresnelReflection, meta as fresnelReflectionMeta } from './physical-optics/FresnelReflection'
 import { Photometry, meta as photometryMeta } from './physical-optics/Photometry'
 import { Mirror, meta as mirrorMeta } from './physical-optics/Mirror'
+import { LensThicknessWeight, meta as lensThicknessWeightMeta } from './ophthalmic-optics/LensThicknessWeight'
+import { RelativeSpectacleMagnification, meta as relativeSpectacleMagnificationMeta } from './visual-optics/RelativeSpectacleMagnification'
+import { ContactLensDiameter, meta as contactLensDiameterMeta } from './contact-lenses/ContactLensDiameter'
 
 export interface CalculatorEntry {
   meta: CalculatorMeta
@@ -96,6 +99,9 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: fresnelReflectionMeta, Component: FresnelReflection },
   { meta: photometryMeta, Component: Photometry },
   { meta: mirrorMeta, Component: Mirror },
+  { meta: lensThicknessWeightMeta, Component: LensThicknessWeight },
+  { meta: relativeSpectacleMagnificationMeta, Component: RelativeSpectacleMagnification },
+  { meta: contactLensDiameterMeta, Component: ContactLensDiameter },
 ]
 
 export function getCalculatorById(id: string): CalculatorEntry | undefined {

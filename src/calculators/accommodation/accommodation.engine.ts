@@ -26,3 +26,30 @@ export function nearPointFromAmplitude(amplitudeD: number, farPointCm: number | 
   if (nearD === 0) throw new Error('Resulting near point would be at infinity.')
   return 100 / nearD
 }
+
+// RULE OF THUMB ONLY — one common clinical estimation approach (the "half-amplitude" reserve
+// method), not a universal formula: keep roughly half of the amplitude of accommodation in
+// reserve for comfortable sustained near work, and prescribe an add for the remainder of the
+// demand. Other methods exist (e.g. age-based starting-point tables, trial-and-response);
+// final add should always be refined by subjective response, not taken from this alone.
+export function estimatedAddHalfAmplitudeRule(accommodativeDemandD: number, amplitudeOfAccommodationD: number): number {
+  const estimatedAdd = accommodativeDemandD - amplitudeOfAccommodationD / 2
+  return Math.max(0, estimatedAdd)
+}
+
+// Hofstetter's formulas: standard modern estimates for expected amplitude of accommodation by
+// age, commonly used alongside (and preferred over) the older Donders' table for a
+// standardized reference. Values below 0 are clamped since amplitude cannot be negative.
+export interface HofstetterAmplitudes {
+  minimum: number
+  average: number
+  maximum: number
+}
+
+export function hofstetterAmplitudes(age: number): HofstetterAmplitudes {
+  return {
+    minimum: Math.max(0, 15 - 0.25 * age),
+    average: Math.max(0, 18.5 - 0.3 * age),
+    maximum: Math.max(0, 25 - 0.4 * age),
+  }
+}
