@@ -75,10 +75,10 @@ export function LensDatabase() {
           UV status applies to its sibling.{' '}
           <span className="font-medium text-slate-700">Still, always confirm exact parameters against the current
           manufacturer package insert before dispensing</span> — specs change with product revisions, and this is
-          {' '}<strong>34 of the most commonly prescribed/discussed lenses, not every lens on the market.</strong> Notably
-          absent: colored/cosmetic lenses, most Asian-market brands (Menicon, Seed), and some additional myopia-control
-          and material families beyond MiSight. RGP, scleral, and hybrid entries describe lab-custom material families
-          rather than one fixed catalog product.
+          {' '}<strong>38 of the most commonly prescribed/discussed lenses (including Proclear, Total30, MiSight,
+          Abiliti 1-Day, and NaturalVue Multifocal), not every lens on the market.</strong> Notably absent by choice:
+          colored/cosmetic lenses and non-US-market brands (Menicon, Seed). RGP, scleral, and hybrid entries describe
+          lab-custom material families rather than one fixed catalog product.
         </p>
       </Card>
 

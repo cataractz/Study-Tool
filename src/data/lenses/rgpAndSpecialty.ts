@@ -72,7 +72,7 @@ export const rgpAndSpecialtyLenses: ContactLens[] = [
     design: 'RGP Spherical',
     materialClass: 'RGP (rigid gas permeable)',
     materialName: 'paflufocon D',
-    dk: '100',
+    dk: '100–101 (sources vary slightly)',
     baseCurves: ['Custom lab order, typically 7.00–8.50 mm'],
     diameter: 'Custom lab order, typically 9.0–10.5 mm',
     sphereRange: 'Custom lab order',
