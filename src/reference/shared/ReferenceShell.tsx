@@ -1,14 +1,13 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { Star } from 'lucide-react'
 import { Badge } from '../../components/ui/Badge'
-import { isFavorite, toggleFavorite, recordRecentlyUsed } from '../../calculators/shared/storage'
+import { isFavorite, toggleFavorite } from '../../calculators/shared/storage'
 import type { ReferenceMeta } from '../../types/reference'
 
 export function ReferenceShell({ meta, children }: { meta: ReferenceMeta; children: ReactNode }) {
   const [fav, setFav] = useState(false)
 
   useEffect(() => {
-    recordRecentlyUsed(meta.id)
     setFav(isFavorite(meta.id))
   }, [meta.id])
 

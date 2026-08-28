@@ -1,10 +1,10 @@
 import { useMemo, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, Star, Clock, Calculator as CalculatorIcon } from 'lucide-react'
+import { Search, Star, Calculator as CalculatorIcon } from 'lucide-react'
 import { Card } from '../components/ui/Card'
 import { Badge, type BadgeTone } from '../components/ui/Badge'
 import { calculatorRegistry, searchCalculators, categories, getCalculatorById } from '../calculators/registry'
-import { getFavorites, getRecents } from '../calculators/shared/storage'
+import { getFavorites } from '../calculators/shared/storage'
 import type { CalculatorMeta } from '../types/calculator'
 
 function boardTone(relevance: CalculatorMeta['boardRelevance']): BadgeTone {
@@ -42,11 +42,9 @@ export function CalculationsConversions() {
   const [query, setQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [favorites, setFavorites] = useState<string[]>([])
-  const [recents, setRecents] = useState<string[]>([])
 
   useEffect(() => {
     setFavorites(getFavorites())
-    setRecents(getRecents())
   }, [])
 
   const results = useMemo(() => {
@@ -56,7 +54,6 @@ export function CalculationsConversions() {
   }, [query, activeCategory])
 
   const favoriteEntries = favorites.map((id) => getCalculatorById(id)).filter((c): c is NonNullable<typeof c> => Boolean(c))
-  const recentEntries = recents.map((id) => getCalculatorById(id)).filter((c): c is NonNullable<typeof c> => Boolean(c))
 
   return (
     <div className="space-y-8">
@@ -115,19 +112,6 @@ export function CalculationsConversions() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {favoriteEntries.map((c) => (
-              <CalculatorCard key={c.meta.id} meta={c.meta} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {!query && !activeCategory && recentEntries.length > 0 && (
-        <section>
-          <h2 className="text-sm font-semibold text-slate-700 flex items-center gap-1.5 mb-3">
-            <Clock size={14} className="text-slate-400" /> Recently Used
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {recentEntries.map((c) => (
               <CalculatorCard key={c.meta.id} meta={c.meta} />
             ))}
           </div>

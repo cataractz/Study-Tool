@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { Star, Info } from 'lucide-react'
 import { Card } from '../../components/ui/Card'
 import { Badge, type BadgeTone } from '../../components/ui/Badge'
-import { isFavorite, toggleFavorite, recordRecentlyUsed } from './storage'
+import { isFavorite, toggleFavorite } from './storage'
 import type { CalculatorMeta } from '../../types/calculator'
 
 function boardTone(relevance: CalculatorMeta['boardRelevance']): BadgeTone {
@@ -35,7 +35,6 @@ export function CalculatorShell({
   const [fav, setFav] = useState(false)
 
   useEffect(() => {
-    recordRecentlyUsed(meta.id)
     setFav(isFavorite(meta.id))
   }, [meta.id])
 

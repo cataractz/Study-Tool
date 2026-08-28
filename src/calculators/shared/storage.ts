@@ -1,6 +1,4 @@
 const FAVORITES_KEY = 'study-tool.calculators.favorites.v1'
-const RECENTS_KEY = 'study-tool.calculators.recents.v1'
-const MAX_RECENTS = 8
 
 function readList(key: string): string[] {
   try {
@@ -17,7 +15,7 @@ function writeList(key: string, list: string[]): void {
   try {
     localStorage.setItem(key, JSON.stringify(list))
   } catch {
-    // ignore — favorites/recents are a soft convenience, not critical state
+    // ignore — favorites are a soft convenience, not critical state
   }
 }
 
@@ -33,16 +31,5 @@ export function toggleFavorite(id: string): string[] {
   const current = getFavorites()
   const next = current.includes(id) ? current.filter((x) => x !== id) : [...current, id]
   writeList(FAVORITES_KEY, next)
-  return next
-}
-
-export function getRecents(): string[] {
-  return readList(RECENTS_KEY)
-}
-
-export function recordRecentlyUsed(id: string): string[] {
-  const current = getRecents().filter((x) => x !== id)
-  const next = [id, ...current].slice(0, MAX_RECENTS)
-  writeList(RECENTS_KEY, next)
   return next
 }

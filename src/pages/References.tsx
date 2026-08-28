@@ -1,10 +1,10 @@
 import { useMemo, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, Star, Clock, Library } from 'lucide-react'
+import { Search, Star, Library } from 'lucide-react'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { referenceRegistry, searchReferences, getReferenceById } from '../reference/registry'
-import { getFavorites, getRecents } from '../calculators/shared/storage'
+import { getFavorites } from '../calculators/shared/storage'
 import type { ReferenceMeta } from '../types/reference'
 
 function ReferenceCard({ meta }: { meta: ReferenceMeta }) {
@@ -23,11 +23,9 @@ export function References() {
   const [query, setQuery] = useState('')
   const [activeCategory, setActiveCategory] = useState<string | null>(null)
   const [favorites, setFavorites] = useState<string[]>([])
-  const [recents, setRecents] = useState<string[]>([])
 
   useEffect(() => {
     setFavorites(getFavorites())
-    setRecents(getRecents())
   }, [])
 
   const categories = useMemo(() => Array.from(new Set(referenceRegistry.map((r) => r.meta.category))), [])
@@ -39,7 +37,6 @@ export function References() {
   }, [query, activeCategory])
 
   const favoriteEntries = favorites.map((id) => getReferenceById(id)).filter((r): r is NonNullable<typeof r> => Boolean(r))
-  const recentEntries = recents.map((id) => getReferenceById(id)).filter((r): r is NonNullable<typeof r> => Boolean(r))
 
   return (
     <div className="space-y-8">
@@ -99,19 +96,6 @@ export function References() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {favoriteEntries.map((r) => (
-              <ReferenceCard key={r.meta.id} meta={r.meta} />
-            ))}
-          </div>
-        </section>
-      )}
-
-      {!query && !activeCategory && recentEntries.length > 0 && (
-        <section>
-          <h2 className="text-sm font-semibold text-slate-700 flex items-center gap-1.5 mb-3">
-            <Clock size={14} className="text-slate-400" /> Recently Used
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {recentEntries.map((r) => (
               <ReferenceCard key={r.meta.id} meta={r.meta} />
             ))}
           </div>
