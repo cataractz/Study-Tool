@@ -69,6 +69,27 @@ function buildSections(findings: DifferentialFindings): { vocab: VocabTerm[]; se
 const PERTINENT_NEGATIVE_MIN_WEIGHT = 3
 const PERTINENT_NEGATIVE_PENALTY_FACTOR = 0.5
 
+/**
+ * Distributes whole percentage points across values so they sum to exactly 100 (when total > 0)
+ * instead of drifting a point or two off from independent rounding — the "largest remainder"
+ * apportionment method.
+ */
+export function roundPercentagesToSum100(rawPercentages: number[]): number[] {
+  if (rawPercentages.every((v) => v === 0)) return rawPercentages.map(() => 0)
+
+  const floors = rawPercentages.map((v) => Math.floor(v))
+  const deficit = 100 - floors.reduce((sum, v) => sum + v, 0)
+  const remainders = rawPercentages
+    .map((v, i) => ({ i, remainder: v - Math.floor(v) }))
+    .sort((a, b) => b.remainder - a.remainder)
+
+  const result = [...floors]
+  for (let k = 0; k < deficit && k < remainders.length; k++) {
+    result[remainders[k].i] += 1
+  }
+  return result
+}
+
 function deriveUrgency(disease: Disease): Urgency {
   const categories = disease.management.map((m) => m.category)
   if (categories.includes('Emergency management')) return 'Emergency'
@@ -150,6 +171,11 @@ export function runDifferential(findings: DifferentialFindings, limit = 8): Diff
 
     const rawScore = possibleScore > 0 ? ((positiveScore - negativeScore) / possibleScore) * 100 : 0
     const matchScore = Math.max(0, Math.min(100, Math.round(rawScore)))
+    // Unrounded, unclamped evidence total — used only to rank/normalize probability across
+    // candidates. All diseases share the same `possibleScore` denominator (it depends on the
+    // user's selections, not the disease), so comparing this raw value directly across diseases
+    // is valid even though the displayed matchScore has already been rounded and clamped.
+    const evidenceScore = Math.max(0, positiveScore - negativeScore)
 
     const distinguishing = disease.differentialDiagnosis
       .slice(0, 2)
@@ -162,21 +188,37 @@ export function runDifferential(findings: DifferentialFindings, limit = 8): Diff
       if (firstLine) nextSteps.push(firstLine.detail)
     }
 
-    const result: DifferentialResult = {
+    return {
       diseaseId: disease.id,
       name: disease.name,
       matchScore,
+      evidenceScore,
       whyItMatches: matched,
       findingsAgainst: pertinentNegatives.slice(0, 4),
       distinguishingFactors: distinguishing,
       urgency: deriveUrgency(disease),
       nextSteps,
     }
-    return result
   })
 
-  return scored
+  const candidates = scored
     .filter((r) => r.matchScore > 0)
-    .sort((a, b) => b.matchScore - a.matchScore)
+    // Sorted by the unrounded evidence total rather than the displayed (rounded) matchScore, so
+    // the ORDER reflects real differences even when two diseases' matchScore rounds to the same
+    // integer — this is what actually fixes ranking ties, not just the added probability number.
+    .sort((a, b) => b.evidenceScore - a.evidenceScore)
     .slice(0, limit)
+
+  // Probability is normalized ONLY across the candidates actually being shown, so it answers
+  // "given it's one of these possibilities, how likely is each" rather than trying to be an
+  // absolute/population probability (which would require disease prevalence data this tool
+  // doesn't have).
+  const totalEvidence = candidates.reduce((sum, r) => sum + r.evidenceScore, 0)
+  const rawPercentages = candidates.map((r) => (totalEvidence > 0 ? (r.evidenceScore / totalEvidence) * 100 : 0))
+  const probabilities = roundPercentagesToSum100(rawPercentages)
+
+  return candidates.map(({ evidenceScore: _evidenceScore, ...rest }, i): DifferentialResult => ({
+    ...rest,
+    probability: probabilities[i],
+  }))
 }

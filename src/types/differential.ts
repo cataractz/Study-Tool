@@ -54,7 +54,15 @@ export interface ConditionProfile {
 export interface DifferentialResult {
   diseaseId: string
   name: string
+  /** How well the entered findings match this disease's typical presentation (0-100). Judged
+   * independently per disease, so it is normal for several candidates to score similarly or
+   * even tie — this is a fit score, not a probability. */
   matchScore: number
+  /** Relative likelihood among the candidates actually shown (they sum to ~100%), derived from
+   * each candidate's underlying weighted evidence total. Ranks the differential; it is NOT an
+   * absolute/population probability, since it doesn't account for real-world disease
+   * prevalence — see the Differential Diagnosis page for the full caveat. */
+  probability: number
   whyItMatches: string[]
   findingsAgainst: string[]
   distinguishingFactors: string[]

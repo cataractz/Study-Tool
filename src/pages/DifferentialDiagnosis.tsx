@@ -326,10 +326,14 @@ export function DifferentialDiagnosis() {
               <Card className="bg-slate-50 border-slate-200 flex gap-2.5">
                 <Info size={16} className="text-slate-400 shrink-0 mt-0.5" />
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  <span className="font-medium text-slate-700">Clinical Match Score</span> reflects
-                  how closely your entered findings match each condition's typical presentation in
-                  this educational database. It is not a validated diagnostic probability and does
-                  not replace clinical judgment.
+                  <span className="font-medium text-slate-700">Probability</span> ranks the
+                  conditions shown relative to each other (they sum to ~100%) — it is not an
+                  absolute or population probability, since this tool has no real-world disease
+                  prevalence data. <span className="font-medium text-slate-700">Clinical match
+                  score</span> separately reflects how closely your entered findings match each
+                  condition's typical presentation, judged independently per condition, so it's
+                  normal for a few to score similarly. Neither is a validated diagnostic probability
+                  and neither replaces clinical judgment.
                 </p>
               </Card>
               <Button

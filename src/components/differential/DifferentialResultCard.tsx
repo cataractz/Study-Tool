@@ -27,20 +27,26 @@ export function DifferentialResultCard({
             </Link>
             <div className="flex items-center gap-2 mt-1">
               <Badge tone={urgencyTone(result.urgency)}>{result.urgency}</Badge>
-              <span className="text-xs text-slate-400">Clinical Match Score</span>
             </div>
           </div>
         </div>
         <div className="text-right shrink-0">
-          <p className="text-2xl font-semibold text-brand-600 leading-none">{result.matchScore}%</p>
+          <p className="text-2xl font-semibold text-brand-600 leading-none">{result.probability}%</p>
+          <p className="text-[11px] text-slate-400 mt-0.5">probability</p>
         </div>
       </div>
 
-      <div className="w-full h-1.5 rounded-full bg-slate-100 overflow-hidden">
-        <div
-          className="h-full bg-brand-500 rounded-full"
-          style={{ width: `${result.matchScore}%` }}
-        />
+      <div>
+        <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
+          <span>Clinical match score</span>
+          <span className="font-medium text-slate-600">{result.matchScore}%</span>
+        </div>
+        <div className="w-full h-1.5 rounded-full bg-slate-100 overflow-hidden">
+          <div
+            className="h-full bg-brand-500 rounded-full"
+            style={{ width: `${result.matchScore}%` }}
+          />
+        </div>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
