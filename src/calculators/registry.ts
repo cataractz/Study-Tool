@@ -37,6 +37,14 @@ import { SpectacleMagnification, meta as spectacleMagnificationMeta } from './vi
 import { RetinalImageAniseikonia, meta as retinalImageAniseikoniaMeta } from './visual-optics/RetinalImageAniseikonia'
 import { LowVisionMagnification, meta as lowVisionMagnificationMeta } from './low-vision/LowVisionMagnification'
 import { TelescopeMagnification, meta as telescopeMagnificationMeta } from './low-vision/TelescopeMagnification'
+import { AgeCalculator, meta as ageCalculatorMeta } from './clinical-utilities/AgeCalculator'
+import { DateFollowUpCalculator, meta as dateFollowUpMeta } from './clinical-utilities/DateFollowUpCalculator'
+import { WavelengthFrequencyEnergy, meta as wavelengthFrequencyMeta } from './physical-optics/WavelengthFrequencyEnergy'
+import { Diffraction, meta as diffractionMeta } from './physical-optics/Diffraction'
+import { Polarization, meta as polarizationMeta } from './physical-optics/Polarization'
+import { FresnelReflection, meta as fresnelReflectionMeta } from './physical-optics/FresnelReflection'
+import { Photometry, meta as photometryMeta } from './physical-optics/Photometry'
+import { Mirror, meta as mirrorMeta } from './physical-optics/Mirror'
 
 export interface CalculatorEntry {
   meta: CalculatorMeta
@@ -80,6 +88,14 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: retinalImageAniseikoniaMeta, Component: RetinalImageAniseikonia },
   { meta: lowVisionMagnificationMeta, Component: LowVisionMagnification },
   { meta: telescopeMagnificationMeta, Component: TelescopeMagnification },
+  { meta: ageCalculatorMeta, Component: AgeCalculator },
+  { meta: dateFollowUpMeta, Component: DateFollowUpCalculator },
+  { meta: wavelengthFrequencyMeta, Component: WavelengthFrequencyEnergy },
+  { meta: diffractionMeta, Component: Diffraction },
+  { meta: polarizationMeta, Component: Polarization },
+  { meta: fresnelReflectionMeta, Component: FresnelReflection },
+  { meta: photometryMeta, Component: Photometry },
+  { meta: mirrorMeta, Component: Mirror },
 ]
 
 export function getCalculatorById(id: string): CalculatorEntry | undefined {
