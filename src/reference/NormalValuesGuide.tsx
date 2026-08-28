@@ -32,13 +32,20 @@ export const meta: ReferenceMeta = {
     'anterior chamber angle',
     'cup to disc ratio',
     'C/D ratio',
+    'slit lamp findings',
+    'anterior segment normal',
+    'posterior segment normal',
+    'interpupillary distance',
+    'myopia hyperopia classification',
     'exam form',
     'quick reference',
     'cheat sheet',
   ],
 }
 
-interface Row {
+/** For tests with a real, meaningful two-directional numeric/ordinal scale (e.g. phoria can
+ * shift exo OR eso; IOP can be too low OR too high). */
+interface QuantRow {
   test: string
   normal: string
   low: string
@@ -46,7 +53,18 @@ interface Row {
   link?: { to: string; label: string }
 }
 
-const VISUAL_ACUITY: Row[] = [
+/** For pass/fail or presence-absence findings that don't have a meaningful "too much of a good
+ * thing" direction (e.g. color vision is either normal or deficient — there's no such thing as
+ * "too much" color vision). Using a Low/High table for these produced nonsensical rows (e.g.
+ * restricted EOMs is not a "high" finding), so these get their own simpler format instead. */
+interface QualRow {
+  test: string
+  normal: string
+  abnormal: string
+  link?: { to: string; label: string }
+}
+
+const VISUAL_ACUITY: QuantRow[] = [
   {
     test: 'Visual acuity (best corrected)',
     normal: '20/20 (decimal 1.0, logMAR 0.0) or better',
@@ -54,21 +72,43 @@ const VISUAL_ACUITY: Row[] = [
     high: '—',
     link: { to: '/references/low-vision-classification', label: 'Legal Blindness & Low Vision Classification' },
   },
+]
+
+const VISUAL_ACUITY_ADDITIONAL: QualRow[] = [
   {
-    test: 'Pinhole (PH) acuity',
-    normal: 'Improves to (or maintains) normal VA if the reduction was refractive in origin',
-    low: '—',
-    high: 'No improvement with pinhole — suggests a non-refractive cause (media opacity, retinal/optic nerve pathology, amblyopia) rather than uncorrected refractive error',
+    test: 'Pinhole (PH) response',
+    normal: 'Improves (or maintains) VA when the reduction was refractive in origin',
+    abnormal: 'No improvement with pinhole — suggests a non-refractive cause (media opacity, retinal/optic nerve pathology, amblyopia) rather than uncorrected refractive error',
   },
   {
     test: 'Color vision (e.g. Ishihara plates)',
     normal: 'Correctly identifies the test plates',
-    low: '—',
-    high: 'Plates missed in a red-green pattern suggest congenital red-green color vision deficiency (~8% of males, ~0.5% of females) — the most common cause; an acquired/non-red-green pattern raises suspicion for optic nerve or macular disease instead',
+    abnormal: 'Plates missed in a red-green pattern suggest congenital red-green color vision deficiency (~8% of males, ~0.5% of females) — the most common cause; a non-red-green pattern raises suspicion for acquired optic nerve or macular disease instead',
   },
 ]
 
-const PUPILS: Row[] = [
+const REFRACTIVE_ERROR: QuantRow[] = [
+  {
+    test: 'Interpupillary distance (PD), adult',
+    normal: 'Roughly 54–68 mm is a commonly cited typical adult range',
+    low: 'Uncommon but not itself pathological — just a smaller-than-typical measurement; ensure accurate measurement for lens/segment centration',
+    high: 'Uncommon but not itself pathological — same as above',
+  },
+  {
+    test: 'Myopia severity (spherical equivalent)',
+    normal: 'Emmetropia (plano) is the optical "ideal," but any refractive error is common and not itself abnormal',
+    low: '—',
+    high: 'Classification cutoffs are NOT standardized across sources — commonly cited tiers: low myopia to about −3.00 D, moderate −3.00 to −6.00 D, high myopia beyond −6.00 D (the WHO threshold); some texts instead use −8.00 D as the high-myopia cutoff. High myopia carries increased lifetime risk of retinal detachment, myopic maculopathy, and glaucoma.',
+  },
+  {
+    test: 'Hyperopia severity (spherical equivalent)',
+    normal: 'See myopia note above — any amount is common, not itself abnormal',
+    low: '—',
+    high: 'Commonly cited tiers: low to about +2.00 D, moderate +2.00 to +5.00 D, high beyond +5.00 D — again, exact cutoffs vary by source. +2.00 D or more is common in children and may not need correction if asymptomatic.',
+  },
+]
+
+const PUPILS: QuantRow[] = [
   {
     test: 'Pupil size — photopic (bright light)',
     normal: '~3–4 mm average (commonly cited range ~2–5 mm)',
@@ -78,14 +118,8 @@ const PUPILS: Row[] = [
   {
     test: 'Pupil size — scotopic (dim light)',
     normal: '~6 mm average (commonly cited range ~4–8 mm)',
-    low: '—',
-    high: '—',
-  },
-  {
-    test: 'Pupil reactivity (direct / consensual / near)',
-    normal: 'Brisk and equal in both eyes',
-    low: 'Sluggish or poor reaction — consider an afferent (sensory) or efferent (motor) pupillary pathway lesion depending on the pattern',
-    high: '—',
+    low: 'Unusually small dark pupil — same differential as photopic miosis above',
+    high: 'Unusually large dark pupil — same differential as photopic mydriasis above; also clinically relevant to refractive surgery candidacy (larger scotopic pupils carry more risk of night-vision symptoms such as glare/halos post-op)',
   },
   {
     test: 'Anisocoria (difference between pupil sizes)',
@@ -93,30 +127,44 @@ const PUPILS: Row[] = [
     low: '—',
     high: 'Larger difference, or one that changes between light and dark — the pupil that fails to react appropriately (won\'t constrict = parasympathetic/efferent problem; won\'t dilate = sympathetic problem) points to the abnormal side',
   },
+]
+
+const PUPILS_QUALITATIVE: QualRow[] = [
+  {
+    test: 'Pupil shape',
+    normal: 'Round, regular',
+    abnormal: 'Irregular — consider prior trauma/surgery, posterior synechiae (iritis), coloboma, or iris atrophy',
+  },
+  {
+    test: 'Pupil reactivity (direct / consensual / near)',
+    normal: 'Brisk and equal in both eyes',
+    abnormal: 'Sluggish or poor reaction — consider an afferent (sensory) or efferent (motor) pupillary pathway lesion depending on the pattern',
+  },
   {
     test: 'APD (afferent pupillary defect / Marcus Gunn)',
     normal: 'Negative/absent',
-    low: '—',
-    high: 'Present — suggests asymmetric optic nerve or severe/extensive retinal pathology on the affected side',
+    abnormal: 'Present (graded roughly 1+ to 4+ by density of neutral-density filter needed to neutralize it on reverse swinging-flashlight testing) — suggests asymmetric optic nerve or severe/extensive retinal pathology on the affected side',
   },
 ]
 
-const MOTILITY_AND_FIELDS: Row[] = [
+const MOTILITY: QuantRow[] = [
   {
     test: 'Extraocular motility (EOMs)',
     normal: 'Full and smooth through all positions of gaze OU, no restriction, pain, or diplopia',
-    low: '—',
-    high: 'Restriction or limitation of movement — consider cranial nerve palsy (III/IV/VI), restrictive strabismus, or orbital pathology (e.g. thyroid eye disease, orbital fracture)',
-  },
-  {
-    test: 'Confrontation visual fields (CVF)',
-    normal: 'Full to finger counting in all 4 quadrants OU, matching the examiner\'s field',
-    low: '—',
-    high: 'Any quadrant or area of loss — correlate with formal perimetry; the pattern of loss helps localize the lesion (e.g. respecting the vertical midline suggests a chiasmal/retrochiasmal cause)',
+    low: 'Underaction/restriction of movement in one or more directions — consider cranial nerve palsy (III/IV/VI), restrictive strabismus, or orbital pathology (e.g. thyroid eye disease, orbital fracture with entrapment)',
+    high: 'Overaction of a muscle relative to its normal excursion — e.g. inferior oblique overaction, a real and commonly tested finding in some strabismus patterns (often paired with contralateral superior oblique underaction)',
   },
 ]
 
-const BINOCULAR_VISION: Row[] = [
+const VISUAL_FIELDS_QUALITATIVE: QualRow[] = [
+  {
+    test: 'Confrontation visual fields (CVF)',
+    normal: 'Full to finger counting in all 4 quadrants OU, matching the examiner\'s field',
+    abnormal: 'Any quadrant or area of loss — correlate with formal perimetry; the pattern of loss helps localize the lesion (e.g. respecting the vertical midline suggests a chiasmal/retrochiasmal cause)',
+  },
+]
+
+const BINOCULAR_VISION: QuantRow[] = [
   {
     test: 'Distance lateral phoria',
     normal: '1Δ exophoria (±2Δ)',
@@ -131,9 +179,9 @@ const BINOCULAR_VISION: Row[] = [
   },
   {
     test: 'Vertical phoria (distance or near)',
-    normal: 'Zero to negligible — unlike horizontal phoria, any consistently measurable vertical phoria is often clinically noted',
+    normal: '0Δ (or clinically negligible)',
     low: '—',
-    high: 'Hyperphoria/hypophoria present — consider superior oblique palsy, skew deviation, or other vertical-deviation causes, especially if symptomatic or long-standing',
+    high: 'Any consistently measurable amount present (a hyperphoria of one eye is equivalent to a hypophoria of the other) — unlike a small horizontal phoria, this is often clinically noted regardless of size; consider superior oblique palsy, skew deviation, or a decompensating vertical phoria, especially if symptomatic',
   },
   {
     test: 'NPC — break',
@@ -204,7 +252,7 @@ const BINOCULAR_VISION: Row[] = [
   },
 ]
 
-const ACCOMMODATION: Row[] = [
+const ACCOMMODATION: QuantRow[] = [
   {
     test: 'Amplitude of accommodation',
     normal: 'Age-dependent — see Hofstetter\'s formulas / Donders\' table',
@@ -214,7 +262,7 @@ const ACCOMMODATION: Row[] = [
   },
 ]
 
-const CORNEA_ANTERIOR: Row[] = [
+const CORNEA_ANTERIOR: QuantRow[] = [
   {
     test: 'Central corneal thickness (CCT)',
     normal: '~540–550 µm average (501–570 µm typical range)',
@@ -244,7 +292,17 @@ const CORNEA_ANTERIOR: Row[] = [
   },
 ]
 
-const IOP: Row[] = [
+const ANTERIOR_SEGMENT_STRUCTURES: QualRow[] = [
+  { test: 'Lids/lashes', normal: 'Normal position and closure, lashes directed away from the globe, no lesions', abnormal: 'Ptosis/lid retraction, entropion/ectropion, trichiasis, blepharitis, chalazion/hordeolum, or other lesions' },
+  { test: 'Conjunctiva', normal: 'White/clear, no significant injection, no discharge', abnormal: 'Injection (redness), follicles/papillae, discharge, chemosis, or subconjunctival hemorrhage' },
+  { test: 'Sclera', normal: 'White', abnormal: 'Redness/injection (episcleritis, scleritis), jaundice (yellow), or focal thinning/staphyloma' },
+  { test: 'Cornea', normal: 'Clear, smooth, no staining', abnormal: 'Staining/epithelial defect, edema, infiltrate, scarring, neovascularization, or irregular surface' },
+  { test: 'Anterior chamber', normal: 'Deep and quiet — no cells or flare', abnormal: 'Cells and/or flare (uveitis), hyphema, hypopyon, or shallow depth (angle-closure risk)' },
+  { test: 'Iris', normal: 'Round, normal color and pattern, no neovascularization', abnormal: 'Neovascularization (rubeosis), nodules, atrophy, or posterior synechiae' },
+  { test: 'Lens', normal: 'Clear', abnormal: 'Cataract (any type/density), subluxation/dislocation' },
+]
+
+const IOP: QuantRow[] = [
   {
     test: 'Intraocular pressure (IOP)',
     normal: '10–21 mmHg (average ~15–16 mmHg)',
@@ -254,7 +312,7 @@ const IOP: Row[] = [
   },
 ]
 
-const OPTIC_NERVE: Row[] = [
+const OPTIC_NERVE: QuantRow[] = [
   {
     test: 'Cup-to-disc ratio (C/D)',
     normal: '~0.3–0.4 average (up to ~0.5–0.6 can be normal if symmetric and proportionate to disc size)',
@@ -263,7 +321,15 @@ const OPTIC_NERVE: Row[] = [
   },
 ]
 
-function Section({ title, rows }: { title: string; rows: Row[] }) {
+const POSTERIOR_SEGMENT_STRUCTURES: QualRow[] = [
+  { test: 'Vitreous', normal: 'Clear, formed, no cells', abnormal: 'Cells/haze (vitritis), hemorrhage, or symptomatic posterior vitreous detachment (flashes/floaters)' },
+  { test: 'Disc', normal: 'Well-defined margins, normal (pink/orange) color, no edema or hemorrhage', abnormal: 'Pallor (optic atrophy), edema/blurred margins (papilledema, disc edema), or peripapillary hemorrhage' },
+  { test: 'Macula', normal: 'Normal foveal reflex, flat, no pigment/fluid changes', abnormal: 'Edema, drusen, pigmentary changes, hemorrhage, hole, or epiretinal membrane' },
+  { test: 'Vessels', normal: 'Normal caliber and course, normal arteriovenous ratio, no crossing changes', abnormal: 'AV nicking, attenuation, hemorrhages, cotton-wool spots, or neovascularization' },
+  { test: 'Periphery', normal: 'Flat, attached, no holes/tears/degeneration', abnormal: 'Retinal holes/tears/detachment, lattice degeneration, or other peripheral pathology' },
+]
+
+function QuantitativeSection({ title, rows }: { title: string; rows: QuantRow[] }) {
   return (
     <div>
       <h2 className="text-sm font-semibold text-slate-700 mb-2">{title}</h2>
@@ -294,31 +360,68 @@ function Section({ title, rows }: { title: string; rows: Row[] }) {
   )
 }
 
+function QualitativeSection({ title, rows }: { title: string; rows: QualRow[] }) {
+  return (
+    <div>
+      <h2 className="text-sm font-semibold text-slate-700 mb-2">{title}</h2>
+      <ReferenceTable
+        headers={['Test / structure', 'Normal / expected finding', 'If abnormal, suggests']}
+        rows={rows.map((r) => [
+          <span key="test" className="font-medium text-slate-800">
+            {r.link ? (
+              <Link to={r.link.to} className="text-brand-600 hover:underline">
+                {r.test}
+              </Link>
+            ) : (
+              r.test
+            )}
+          </span>,
+          <span key="normal" className="text-slate-700 whitespace-normal">
+            {r.normal}
+          </span>,
+          <span key="abnormal" className="text-slate-600 whitespace-normal">
+            {r.abnormal}
+          </span>,
+        ])}
+      />
+    </div>
+  )
+}
+
 export function NormalValuesGuide() {
   return (
     <ReferenceShell meta={meta}>
       <p className="text-sm text-slate-600 -mt-2">
         Every exam finding with a documented normal/expected value elsewhere on this site, gathered into one
-        interpretation table — organized to follow a typical comprehensive exam, from preliminary testing through
-        posterior segment. Click a test name to open its full calculator or source reference table — each of those
-        pages carries the fuller citation, convention, and caveats for that specific value.
+        interpretation guide — organized to follow a typical comprehensive exam, from preliminary testing through
+        posterior segment. Tests with a genuine two-directional scale (e.g. a phoria can shift exo or eso, IOP can
+        be too low or too high) use a Low/High table; pass-fail or presence/absence findings (e.g. color vision,
+        APD) use a simpler Normal/Abnormal table instead, since forcing those into "high" and "low" produced
+        nonsensical rows. Click a test name to open its full calculator or source reference table.
       </p>
 
-      <Section title="Visual Acuity &amp; Color Vision" rows={VISUAL_ACUITY} />
-      <Section title="Pupils" rows={PUPILS} />
-      <Section title="Extraocular Motility &amp; Visual Fields" rows={MOTILITY_AND_FIELDS} />
-      <Section title="Binocular Vision &amp; Vergence" rows={BINOCULAR_VISION} />
-      <Section title="Accommodation" rows={ACCOMMODATION} />
-      <Section title="Cornea &amp; Anterior Segment" rows={CORNEA_ANTERIOR} />
-      <Section title="Intraocular Pressure" rows={IOP} />
-      <Section title="Optic Nerve / Posterior Segment" rows={OPTIC_NERVE} />
+      <QuantitativeSection title="Visual Acuity" rows={VISUAL_ACUITY} />
+      <QualitativeSection title="Pinhole &amp; Color Vision" rows={VISUAL_ACUITY_ADDITIONAL} />
+      <QuantitativeSection title="Refractive Error &amp; Interpupillary Distance" rows={REFRACTIVE_ERROR} />
+      <QuantitativeSection title="Pupils — Size &amp; Anisocoria" rows={PUPILS} />
+      <QualitativeSection title="Pupils — Shape, Reactivity &amp; Afferent Pathway" rows={PUPILS_QUALITATIVE} />
+      <QuantitativeSection title="Extraocular Motility" rows={MOTILITY} />
+      <QualitativeSection title="Confrontation Visual Fields" rows={VISUAL_FIELDS_QUALITATIVE} />
+      <QuantitativeSection title="Binocular Vision &amp; Vergence" rows={BINOCULAR_VISION} />
+      <QuantitativeSection title="Accommodation" rows={ACCOMMODATION} />
+      <QuantitativeSection title="Cornea &amp; Anterior Chamber Angle" rows={CORNEA_ANTERIOR} />
+      <QualitativeSection title="Anterior Segment Structures (Slit Lamp)" rows={ANTERIOR_SEGMENT_STRUCTURES} />
+      <QuantitativeSection title="Intraocular Pressure" rows={IOP} />
+      <QuantitativeSection title="Optic Nerve" rows={OPTIC_NERVE} />
+      <QualitativeSection title="Posterior Segment Structures" rows={POSTERIOR_SEGMENT_STRUCTURES} />
 
       <p className="text-xs text-slate-500">
         These are population norms and commonly cited clinical thresholds, not fixed diagnostic cutoffs for a
         specific patient — normal individual variation is real, symptoms matter as much as the number, and several
-        of these values (Morgan's norms especially) vary somewhat across textbook reproductions. Where a row links
-        to a fuller reference or calculator, that page documents the source, convention, and limitations in more
-        depth than fits here.
+        of these values (Morgan's norms especially, and refractive error severity tiers) vary across textbook and
+        source reproductions — where that's the case it's stated explicitly in the row itself. Where a row links to
+        a fuller reference or calculator, that page documents the source, convention, and limitations in more depth
+        than fits here.
       </p>
     </ReferenceShell>
   )
