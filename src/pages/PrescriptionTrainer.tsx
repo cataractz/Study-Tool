@@ -9,6 +9,7 @@ import { PrescriptionForm } from '../components/prescription/PrescriptionForm'
 import { GradingResultView } from '../components/prescription/GradingResultView'
 import { getRandomCase, gradeSubmission } from '../services/prescriptionService'
 import { buildPrescriptionContext } from '../services/ai/contextService'
+import { Linkify } from '../components/shared/Linkify'
 import type { PrescriptionCase, PrescriptionDifficulty, PrescriptionSubmission, GradingResult } from '../types/prescription'
 
 const difficulties: { value: PrescriptionDifficulty; description: string }[] = [
@@ -90,7 +91,9 @@ export function PrescriptionTrainer() {
               </div>
               <Badge tone={difficultyTone[currentCase.difficulty]}>{currentCase.difficulty}</Badge>
             </div>
-            <p className="text-sm text-slate-800 leading-relaxed">{currentCase.scenario}</p>
+            <p className="text-sm text-slate-800 leading-relaxed">
+              <Linkify text={currentCase.scenario} typesAllowed={['disease']} />
+            </p>
             {(currentCase.patientContext.allergies.length > 0 ||
               currentCase.patientContext.medicalHistory.length > 0) && (
               <div className="flex flex-wrap gap-4 text-xs text-slate-500 border-t border-slate-100 pt-3">

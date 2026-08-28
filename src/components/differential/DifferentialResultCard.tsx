@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, XCircle, Compass, ArrowRightCircle } from 'lucide-react'
 import { Card } from '../ui/Card'
 import { Badge, urgencyTone } from '../ui/Badge'
+import { Linkify } from '../shared/Linkify'
 import type { DifferentialResult } from '../../types/differential'
 
 export function DifferentialResultCard({
@@ -79,7 +80,7 @@ export function DifferentialResultCard({
             <Compass size={13} className="text-brand-500" /> What would distinguish it
           </p>
           <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">
-            {result.distinguishingFactors.map((f, i) => <li key={i}>{f}</li>)}
+            {result.distinguishingFactors.map((f, i) => <li key={i}><Linkify text={f} excludeId={result.diseaseId} /></li>)}
           </ul>
         </div>
         <div>
@@ -87,7 +88,7 @@ export function DifferentialResultCard({
             <ArrowRightCircle size={13} className="text-slate-400" /> Recommended next steps
           </p>
           <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">
-            {result.nextSteps.map((f, i) => <li key={i}>{f}</li>)}
+            {result.nextSteps.map((f, i) => <li key={i}><Linkify text={f} excludeId={result.diseaseId} /></li>)}
           </ul>
         </div>
       </div>

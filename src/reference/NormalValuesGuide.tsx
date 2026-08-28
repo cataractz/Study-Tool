@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ReferenceShell } from './shared/ReferenceShell'
 import { ReferenceTable } from './shared/ReferenceTable'
+import { Linkify } from '../components/shared/Linkify'
 import type { ReferenceMeta } from '../types/reference'
 
 export const meta: ReferenceMeta = {
@@ -349,10 +350,10 @@ function QuantitativeSection({ title, rows }: { title: string; rows: QuantRow[] 
             {r.normal}
           </span>,
           <span key="low" className="text-slate-600 whitespace-normal">
-            {r.low}
+            <Linkify text={r.low} />
           </span>,
           <span key="high" className="text-slate-600 whitespace-normal">
-            {r.high}
+            <Linkify text={r.high} />
           </span>,
         ])}
       />
@@ -380,7 +381,7 @@ function QualitativeSection({ title, rows }: { title: string; rows: QualRow[] })
             {r.normal}
           </span>,
           <span key="abnormal" className="text-slate-600 whitespace-normal">
-            {r.abnormal}
+            <Linkify text={r.abnormal} />
           </span>,
         ])}
       />

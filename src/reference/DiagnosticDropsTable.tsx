@@ -1,5 +1,6 @@
 import { ReferenceShell } from './shared/ReferenceShell'
 import { ReferenceTable } from './shared/ReferenceTable'
+import { Linkify } from '../components/shared/Linkify'
 import type { ReferenceMeta } from '../types/reference'
 
 export const meta: ReferenceMeta = {
@@ -21,7 +22,7 @@ export function DiagnosticDropsTable() {
           ['Cyclopentolate 1%', 'Cycloplegic (+ mydriatic)', '30–60 minutes', '~24 hours'],
           ['Phenylephrine 2.5%', 'Mydriatic only (no cycloplegia)', '~15 minutes', '3–4 hours'],
           ['Cyclopentolate + Phenylephrine (combination)', 'Mydriatic + cycloplegic', '3–6 minutes (partial effect)', 'Usually < 24 hours'],
-        ]}
+        ].map((row) => [<Linkify key="agent" text={row[0]} />, row[1], row[2], row[3]])}
       />
       <p className="text-xs text-slate-500">
         Phenylephrine dilates via alpha-1 agonism on the iris dilator but does not relax the ciliary body, so it

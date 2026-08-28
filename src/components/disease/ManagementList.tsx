@@ -1,5 +1,6 @@
 import type { ManagementItem } from '../../types/disease'
 import { Badge } from '../ui/Badge'
+import { Linkify } from '../shared/Linkify'
 
 const order: ManagementItem['category'][] = [
   'Observation',
@@ -19,7 +20,7 @@ const tone: Record<ManagementItem['category'], 'default' | 'brand' | 'purple' | 
   'Emergency management': 'danger',
 }
 
-export function ManagementList({ items }: { items: ManagementItem[] }) {
+export function ManagementList({ items, excludeId }: { items: ManagementItem[]; excludeId?: string }) {
   const sorted = order
     .map((cat) => items.find((i) => i.category === cat))
     .filter((i): i is ManagementItem => Boolean(i))
@@ -31,7 +32,9 @@ export function ManagementList({ items }: { items: ManagementItem[] }) {
           <div className="w-40 shrink-0 pt-0.5">
             <Badge tone={tone[item.category]}>{item.category}</Badge>
           </div>
-          <p className="text-sm text-slate-700 leading-relaxed">{item.detail}</p>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            <Linkify text={item.detail} excludeId={excludeId} />
+          </p>
         </div>
       ))}
     </div>

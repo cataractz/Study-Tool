@@ -7,6 +7,7 @@ import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
 import { getDrugById } from '../services/drugService'
 import { buildDrugContext } from '../services/ai/contextService'
+import { Linkify, LinkifyLine } from '../components/shared/Linkify'
 
 export function DrugDetail() {
   const { drugId } = useParams<{ drugId: string }>()
@@ -54,15 +55,15 @@ export function DrugDetail() {
       </div>
 
       <Section title="Mechanism of Action">
-        <Card><p className="text-sm text-slate-700 leading-relaxed">{drug.mechanismOfAction}</p></Card>
+        <Card><p className="text-sm text-slate-700 leading-relaxed"><Linkify text={drug.mechanismOfAction} excludeId={drug.id} /></p></Card>
       </Section>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Section title="Indications">
-          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.indications.map((i, k) => <li key={k}>{i}</li>)}</ul></Card>
+          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.indications.map((i, k) => <li key={k}><LinkifyLine text={i} excludeId={drug.id} /></li>)}</ul></Card>
         </Section>
         <Section title="Ocular Uses">
-          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.ocularUses.map((i, k) => <li key={k}>{i}</li>)}</ul></Card>
+          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.ocularUses.map((i, k) => <li key={k}><LinkifyLine text={i} excludeId={drug.id} /></li>)}</ul></Card>
         </Section>
       </div>
 
@@ -78,38 +79,38 @@ export function DrugDetail() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <Card>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Ocular</p>
-            <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.sideEffects.ocular.map((i, k) => <li key={k}>{i}</li>)}</ul>
+            <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.sideEffects.ocular.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul>
           </Card>
           <Card>
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Systemic</p>
-            <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.sideEffects.systemic.map((i, k) => <li key={k}>{i}</li>)}</ul>
+            <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.sideEffects.systemic.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul>
           </Card>
         </div>
       </Section>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Section title="Contraindications">
-          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.contraindications.map((i, k) => <li key={k}>{i}</li>)}</ul></Card>
+          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.contraindications.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
         </Section>
         <Section title="Precautions">
-          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.precautions.map((i, k) => <li key={k}>{i}</li>)}</ul></Card>
+          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.precautions.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
         </Section>
       </div>
 
       <Section title="Drug Interactions">
-        <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.drugInteractions.map((i, k) => <li key={k}>{i}</li>)}</ul></Card>
+        <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.drugInteractions.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
       </Section>
 
       <Section title="Important Patient Counseling">
-        <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.patientCounseling.map((i, k) => <li key={k}>{i}</li>)}</ul></Card>
+        <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.patientCounseling.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
       </Section>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Section title="Pregnancy / Lactation">
-          <Card><p className="text-sm text-slate-700">{drug.pregnancyLactation}</p></Card>
+          <Card><p className="text-sm text-slate-700"><Linkify text={drug.pregnancyLactation} excludeId={drug.id} /></p></Card>
         </Section>
         <Section title="Monitoring">
-          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.monitoring.map((i, k) => <li key={k}>{i}</li>)}</ul></Card>
+          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.monitoring.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
         </Section>
       </div>
 
@@ -118,7 +119,7 @@ export function DrugDetail() {
           <ul className="space-y-2">
             {drug.clinicalPearls.map((p, i) => (
               <li key={i} className="flex gap-2 text-sm text-amber-900">
-                <Sparkles size={15} className="shrink-0 mt-0.5 text-amber-500" /><span>{p}</span>
+                <Sparkles size={15} className="shrink-0 mt-0.5 text-amber-500" /><span><Linkify text={p} excludeId={drug.id} /></span>
               </li>
             ))}
           </ul>
@@ -130,7 +131,7 @@ export function DrugDetail() {
           <ul className="space-y-2">
             {drug.highYield.map((p, i) => (
               <li key={i} className="flex gap-2 text-sm text-violet-900">
-                <GraduationCap size={15} className="shrink-0 mt-0.5 text-violet-500" /><span>{p}</span>
+                <GraduationCap size={15} className="shrink-0 mt-0.5 text-violet-500" /><span><Linkify text={p} excludeId={drug.id} /></span>
               </li>
             ))}
           </ul>

@@ -1,6 +1,7 @@
 import { CheckCircle2, XCircle } from 'lucide-react'
 import { Card } from '../ui/Card'
 import { Badge } from '../ui/Badge'
+import { Linkify } from '../shared/Linkify'
 import type { GradingResult } from '../../types/prescription'
 
 export function GradingResultView({ result }: { result: GradingResult }) {
@@ -42,7 +43,7 @@ export function GradingResultView({ result }: { result: GradingResult }) {
           </p>
           {result.whatYouGotRight.length > 0 ? (
             <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">
-              {result.whatYouGotRight.map((r, i) => <li key={i}>{r}</li>)}
+              {result.whatYouGotRight.map((r, i) => <li key={i}><Linkify text={r} /></li>)}
             </ul>
           ) : (
             <p className="text-sm text-slate-400">Nothing matched yet — review the reasoning below.</p>
@@ -54,7 +55,7 @@ export function GradingResultView({ result }: { result: GradingResult }) {
           </p>
           {result.whatYouMissed.length > 0 ? (
             <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">
-              {result.whatYouMissed.map((r, i) => <li key={i}>{r}</li>)}
+              {result.whatYouMissed.map((r, i) => <li key={i}><Linkify text={r} /></li>)}
             </ul>
           ) : (
             <p className="text-sm text-slate-400">Nothing missed — great work.</p>
@@ -66,7 +67,7 @@ export function GradingResultView({ result }: { result: GradingResult }) {
         <p className="text-xs font-semibold uppercase tracking-wide text-brand-700 mb-2">
           Why the correct prescription is appropriate
         </p>
-        <p className="text-sm text-brand-900 leading-relaxed">{result.whyCorrectIsAppropriate}</p>
+        <p className="text-sm text-brand-900 leading-relaxed"><Linkify text={result.whyCorrectIsAppropriate} /></p>
       </Card>
     </div>
   )

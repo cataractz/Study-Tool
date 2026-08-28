@@ -13,6 +13,7 @@ import { ManagementList } from '../components/disease/ManagementList'
 import { QuizPanel } from '../components/disease/QuizPanel'
 import { CasePanel } from '../components/disease/CasePanel'
 import { CompareDiseasesPanel } from '../components/disease/CompareDiseasesPanel'
+import { Linkify, LinkifyLine } from '../components/shared/Linkify'
 import { getDiseaseById } from '../services/diseaseService'
 
 type InteractivePanel = 'quiz' | 'case' | 'compare' | null
@@ -122,14 +123,14 @@ export function DiseaseDetail() {
 
       <Section title="1. Definition">
         <div className="prose-clinical text-slate-700 text-sm">
-          <p>{disease.definition}</p>
+          <p><Linkify text={disease.definition} excludeId={disease.id} /></p>
           <p>
             <span className="font-medium text-slate-900">Affected structure: </span>
             {disease.affectedStructure}
           </p>
           <p>
             <span className="font-medium text-slate-900">Pathological process: </span>
-            {disease.pathologicalProcess}
+            <Linkify text={disease.pathologicalProcess} excludeId={disease.id} />
           </p>
         </div>
       </Section>
@@ -163,7 +164,7 @@ export function DiseaseDetail() {
                 <span className="shrink-0 w-5 h-5 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold flex items-center justify-center mt-0.5">
                   {i + 1}
                 </span>
-                <span className="leading-relaxed">{step}</span>
+                <span className="leading-relaxed"><Linkify text={step} excludeId={disease.id} /></span>
               </li>
             ))}
           </ol>
@@ -197,7 +198,7 @@ export function DiseaseDetail() {
           {disease.symptoms.typicalProgression && (
             <Card>
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Typical Progression</p>
-              <p className="text-sm text-slate-700">{disease.symptoms.typicalProgression}</p>
+              <p className="text-sm text-slate-700"><Linkify text={disease.symptoms.typicalProgression} excludeId={disease.id} /></p>
             </Card>
           )}
         </div>
@@ -211,9 +212,11 @@ export function DiseaseDetail() {
         <div className="space-y-2.5">
           {disease.differentialDiagnosis.map((d, i) => (
             <Card key={i}>
-              <p className="text-sm font-semibold text-slate-900 mb-1.5">{d.disease}</p>
-              <p className="text-sm text-slate-600"><span className="text-slate-400">Why it looks similar: </span>{d.whySimilar}</p>
-              <p className="text-sm text-slate-600 mt-1"><span className="text-slate-400">Key distinguisher: </span>{d.keyDistinguisher}</p>
+              <p className="text-sm font-semibold text-slate-900 mb-1.5">
+                <LinkifyLine text={d.disease} excludeId={disease.id} />
+              </p>
+              <p className="text-sm text-slate-600"><span className="text-slate-400">Why it looks similar: </span><Linkify text={d.whySimilar} excludeId={disease.id} /></p>
+              <p className="text-sm text-slate-600 mt-1"><span className="text-slate-400">Key distinguisher: </span><Linkify text={d.keyDistinguisher} excludeId={disease.id} /></p>
             </Card>
           ))}
         </div>
@@ -234,9 +237,9 @@ export function DiseaseDetail() {
               {disease.diagnosticTesting.map((t, i) => (
                 <tr key={i} className="border-b border-slate-100 last:border-0">
                   <td className="px-4 py-2.5 font-medium text-slate-800 align-top whitespace-nowrap">{t.name}</td>
-                  <td className="px-4 py-2.5 text-slate-600 align-top">{t.whyOrdered}</td>
-                  <td className="px-4 py-2.5 text-slate-600 align-top">{t.expectedFinding}</td>
-                  <td className="px-4 py-2.5 text-slate-600 align-top">{t.contribution}</td>
+                  <td className="px-4 py-2.5 text-slate-600 align-top"><Linkify text={t.whyOrdered} excludeId={disease.id} /></td>
+                  <td className="px-4 py-2.5 text-slate-600 align-top"><Linkify text={t.expectedFinding} excludeId={disease.id} /></td>
+                  <td className="px-4 py-2.5 text-slate-600 align-top"><Linkify text={t.contribution} excludeId={disease.id} /></td>
                 </tr>
               ))}
             </tbody>
@@ -246,33 +249,33 @@ export function DiseaseDetail() {
 
       <Section title="9. Diagnosis">
         <Card className="space-y-2 text-sm text-slate-700">
-          {disease.diagnosis.criteria && <p><span className="font-medium text-slate-900">Diagnostic criteria: </span>{disease.diagnosis.criteria}</p>}
-          <p><span className="font-medium text-slate-900">Confirmation: </span>{disease.diagnosis.confirmation}</p>
-          {disease.diagnosis.classification && <p><span className="font-medium text-slate-900">Classification: </span>{disease.diagnosis.classification}</p>}
+          {disease.diagnosis.criteria && <p><span className="font-medium text-slate-900">Diagnostic criteria: </span><Linkify text={disease.diagnosis.criteria} excludeId={disease.id} /></p>}
+          <p><span className="font-medium text-slate-900">Confirmation: </span><Linkify text={disease.diagnosis.confirmation} excludeId={disease.id} /></p>
+          {disease.diagnosis.classification && <p><span className="font-medium text-slate-900">Classification: </span><Linkify text={disease.diagnosis.classification} excludeId={disease.id} /></p>}
         </Card>
       </Section>
 
       <Section title="10. Management">
         <Card>
-          <ManagementList items={disease.management} />
+          <ManagementList items={disease.management} excludeId={disease.id} />
         </Card>
       </Section>
 
       <Section title="11. Follow-Up">
         <Card className="space-y-2 text-sm text-slate-700">
-          <p><span className="font-medium text-slate-900">Typical follow-up: </span>{disease.followUp.typical}</p>
-          <p><span className="font-medium text-slate-900">What to monitor: </span>{disease.followUp.monitor}</p>
-          <p><span className="font-medium text-slate-900">Signs of progression: </span>{disease.followUp.progression}</p>
-          {disease.followUp.shortenWhen && <p><span className="font-medium text-slate-900">Shorten follow-up when: </span>{disease.followUp.shortenWhen}</p>}
+          <p><span className="font-medium text-slate-900">Typical follow-up: </span><Linkify text={disease.followUp.typical} excludeId={disease.id} /></p>
+          <p><span className="font-medium text-slate-900">What to monitor: </span><Linkify text={disease.followUp.monitor} excludeId={disease.id} /></p>
+          <p><span className="font-medium text-slate-900">Signs of progression: </span><Linkify text={disease.followUp.progression} excludeId={disease.id} /></p>
+          {disease.followUp.shortenWhen && <p><span className="font-medium text-slate-900">Shorten follow-up when: </span><Linkify text={disease.followUp.shortenWhen} excludeId={disease.id} /></p>}
         </Card>
       </Section>
 
       <Section title="12. Prognosis">
         <Card className="space-y-2 text-sm text-slate-700">
-          <p><span className="font-medium text-slate-900">Typical course: </span>{disease.prognosis.typicalCourse}</p>
-          <p><span className="font-medium text-slate-900">Risk of progression: </span>{disease.prognosis.progressionRisk}</p>
-          <p><span className="font-medium text-slate-900">Potential complications: </span>{disease.prognosis.complications}</p>
-          <p><span className="font-medium text-slate-900">Visual prognosis: </span>{disease.prognosis.visualPrognosis}</p>
+          <p><span className="font-medium text-slate-900">Typical course: </span><Linkify text={disease.prognosis.typicalCourse} excludeId={disease.id} /></p>
+          <p><span className="font-medium text-slate-900">Risk of progression: </span><Linkify text={disease.prognosis.progressionRisk} excludeId={disease.id} /></p>
+          <p><span className="font-medium text-slate-900">Potential complications: </span><Linkify text={disease.prognosis.complications} excludeId={disease.id} /></p>
+          <p><span className="font-medium text-slate-900">Visual prognosis: </span><Linkify text={disease.prognosis.visualPrognosis} excludeId={disease.id} /></p>
         </Card>
       </Section>
 
@@ -282,7 +285,7 @@ export function DiseaseDetail() {
             {disease.clinicalPearls.map((p, i) => (
               <li key={i} className="flex gap-2 text-sm text-amber-900">
                 <Sparkles size={15} className="shrink-0 mt-0.5 text-amber-500" />
-                <span>{p}</span>
+                <span><Linkify text={p} excludeId={disease.id} /></span>
               </li>
             ))}
           </ul>
@@ -296,7 +299,7 @@ export function DiseaseDetail() {
               {disease.highYield.map((p, i) => (
                 <li key={i} className="flex gap-2 text-sm text-violet-900">
                   <GraduationCap size={15} className="shrink-0 mt-0.5 text-violet-500" />
-                  <span>{p}</span>
+                  <span><Linkify text={p} excludeId={disease.id} /></span>
                 </li>
               ))}
             </ul>

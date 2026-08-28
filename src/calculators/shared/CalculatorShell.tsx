@@ -4,6 +4,7 @@ import { Star, Info } from 'lucide-react'
 import { Card } from '../../components/ui/Card'
 import { Badge, type BadgeTone } from '../../components/ui/Badge'
 import { isFavorite, toggleFavorite } from './storage'
+import { Linkify } from '../../components/shared/Linkify'
 import type { CalculatorMeta } from '../../types/calculator'
 
 function boardTone(relevance: CalculatorMeta['boardRelevance']): BadgeTone {
@@ -101,7 +102,7 @@ export function CalculatorShell({
         <div className="px-4 text-sm text-slate-600 space-y-2">
           <p>
             <span className="font-medium text-slate-700">Used for: </span>
-            {meta.clinicalRelevance}
+            <Linkify text={meta.clinicalRelevance} />
           </p>
           <p>
             <span className="font-medium text-slate-700">Formula: </span>
@@ -113,7 +114,7 @@ export function CalculatorShell({
               <p className="font-medium text-slate-700">Assumptions &amp; limitations:</p>
               <ul className="list-disc pl-5 space-y-0.5 mt-1">
                 {meta.limitations.map((l, i) => (
-                  <li key={i}>{l}</li>
+                  <li key={i}><Linkify text={l} /></li>
                 ))}
               </ul>
             </div>
