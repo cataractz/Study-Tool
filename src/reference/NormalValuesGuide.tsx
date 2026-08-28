@@ -13,12 +13,26 @@ export const meta: ReferenceMeta = {
     'expected findings',
     'interpretation',
     'vergence ranges',
+    'vertical vergence',
     'stereopsis',
     'stereoacuity',
     'IOP',
     'intraocular pressure',
     'keratometry normal',
     'corneal thickness normal',
+    'pupils',
+    'anisocoria',
+    'APD',
+    'color vision',
+    'ishihara',
+    'EOM',
+    'extraocular motility',
+    'confrontation visual fields',
+    'van herick',
+    'anterior chamber angle',
+    'cup to disc ratio',
+    'C/D ratio',
+    'exam form',
     'quick reference',
     'cheat sheet',
   ],
@@ -32,6 +46,76 @@ interface Row {
   link?: { to: string; label: string }
 }
 
+const VISUAL_ACUITY: Row[] = [
+  {
+    test: 'Visual acuity (best corrected)',
+    normal: '20/20 (decimal 1.0, logMAR 0.0) or better',
+    low: 'Reduced VA — refractive error, media opacity, retinal/optic nerve pathology, amblyopia, etc.; see the classification table for low-vision/legal-blindness thresholds',
+    high: '—',
+    link: { to: '/references/low-vision-classification', label: 'Legal Blindness & Low Vision Classification' },
+  },
+  {
+    test: 'Pinhole (PH) acuity',
+    normal: 'Improves to (or maintains) normal VA if the reduction was refractive in origin',
+    low: '—',
+    high: 'No improvement with pinhole — suggests a non-refractive cause (media opacity, retinal/optic nerve pathology, amblyopia) rather than uncorrected refractive error',
+  },
+  {
+    test: 'Color vision (e.g. Ishihara plates)',
+    normal: 'Correctly identifies the test plates',
+    low: '—',
+    high: 'Plates missed in a red-green pattern suggest congenital red-green color vision deficiency (~8% of males, ~0.5% of females) — the most common cause; an acquired/non-red-green pattern raises suspicion for optic nerve or macular disease instead',
+  },
+]
+
+const PUPILS: Row[] = [
+  {
+    test: 'Pupil size — photopic (bright light)',
+    normal: '~3–4 mm average (commonly cited range ~2–5 mm)',
+    low: 'Miotic — consider pharmacologic (e.g. pilocarpine), Horner syndrome, iritis/synechiae, age-related miosis',
+    high: 'Mydriatic — consider pharmacologic dilation, third nerve palsy, Adie tonic pupil, trauma',
+  },
+  {
+    test: 'Pupil size — scotopic (dim light)',
+    normal: '~6 mm average (commonly cited range ~4–8 mm)',
+    low: '—',
+    high: '—',
+  },
+  {
+    test: 'Pupil reactivity (direct / consensual / near)',
+    normal: 'Brisk and equal in both eyes',
+    low: 'Sluggish or poor reaction — consider an afferent (sensory) or efferent (motor) pupillary pathway lesion depending on the pattern',
+    high: '—',
+  },
+  {
+    test: 'Anisocoria (difference between pupil sizes)',
+    normal: 'Equal, or a small difference (commonly cited up to ~1 mm, roughly consistent between light and dark) — "physiologic" anisocoria is common',
+    low: '—',
+    high: 'Larger difference, or one that changes between light and dark — the pupil that fails to react appropriately (won\'t constrict = parasympathetic/efferent problem; won\'t dilate = sympathetic problem) points to the abnormal side',
+  },
+  {
+    test: 'APD (afferent pupillary defect / Marcus Gunn)',
+    normal: 'Negative/absent',
+    low: '—',
+    high: 'Present — suggests asymmetric optic nerve or severe/extensive retinal pathology on the affected side',
+  },
+]
+
+const MOTILITY_AND_FIELDS: Row[] = [
+  {
+    test: 'Extraocular motility (EOMs)',
+    normal: 'Full and smooth through all positions of gaze OU, no restriction, pain, or diplopia',
+    low: '—',
+    high: 'Restriction or limitation of movement — consider cranial nerve palsy (III/IV/VI), restrictive strabismus, or orbital pathology (e.g. thyroid eye disease, orbital fracture)',
+  },
+  {
+    test: 'Confrontation visual fields (CVF)',
+    normal: 'Full to finger counting in all 4 quadrants OU, matching the examiner\'s field',
+    low: '—',
+    high: 'Any quadrant or area of loss — correlate with formal perimetry; the pattern of loss helps localize the lesion (e.g. respecting the vertical midline suggests a chiasmal/retrochiasmal cause)',
+  },
+]
+
 const BINOCULAR_VISION: Row[] = [
   {
     test: 'Distance lateral phoria',
@@ -44,6 +128,12 @@ const BINOCULAR_VISION: Row[] = [
     normal: '3Δ exophoria (±3Δ)',
     low: 'More exophoric than expected — consider convergence insufficiency',
     high: 'Esophoric — consider convergence excess / accommodative esotropia pattern',
+  },
+  {
+    test: 'Vertical phoria (distance or near)',
+    normal: 'Zero to negligible — unlike horizontal phoria, any consistently measurable vertical phoria is often clinically noted',
+    low: '—',
+    high: 'Hyperphoria/hypophoria present — consider superior oblique palsy, skew deviation, or other vertical-deviation causes, especially if symptomatic or long-standing',
   },
   {
     test: 'NPC — break',
@@ -73,6 +163,12 @@ const BINOCULAR_VISION: Row[] = [
     test: 'Near base-in (NFV) — break',
     normal: '21Δ',
     low: 'Reduced — may suggest a convergence excess pattern is less compensated',
+    high: '—',
+  },
+  {
+    test: 'Vertical fusional vergence (BD/BU) — break',
+    normal: '2–3Δ (recovery ≥ ~1.5Δ), and symmetric between the two eyes',
+    low: 'Reduced or asymmetric between eyes — may indicate difficulty compensating a vertical phoria',
     high: '—',
   },
   {
@@ -140,6 +236,12 @@ const CORNEA_ANTERIOR: Row[] = [
     high: 'Larger amounts (particularly > 1.00–1.50 D) become increasingly visually/optically significant',
     link: { to: '/calculators/keratometry', label: 'Keratometry calculator' },
   },
+  {
+    test: 'Van Herick angle grade (peripheral AC depth : corneal thickness)',
+    normal: 'Grade 3–4 (AC depth ≥ 25–100%+ of corneal thickness) — angle open, low probability of closure',
+    low: 'Grade 0–2 (AC depth < 25% of corneal thickness, down to no visible gap) — narrow to closed angle, increasing risk of angle closure; consider gonioscopy and caution with pharmacologic dilation',
+    high: '—',
+  },
 ]
 
 const IOP: Row[] = [
@@ -152,13 +254,12 @@ const IOP: Row[] = [
   },
 ]
 
-const VISUAL_ACUITY: Row[] = [
+const OPTIC_NERVE: Row[] = [
   {
-    test: 'Visual acuity (best corrected)',
-    normal: '20/20 (decimal 1.0, logMAR 0.0) or better',
-    low: 'Reduced VA — refractive error, media opacity, retinal/optic nerve pathology, amblyopia, etc.; see the classification table for low-vision/legal-blindness thresholds',
-    high: '—',
-    link: { to: '/references/low-vision-classification', label: 'Legal Blindness & Low Vision Classification' },
+    test: 'Cup-to-disc ratio (C/D)',
+    normal: '~0.3–0.4 average (up to ~0.5–0.6 can be normal if symmetric and proportionate to disc size)',
+    low: '—',
+    high: '> 0.6, or asymmetry ≥ 0.2 between the two eyes — a glaucoma risk factor/suspicious finding (inter-eye asymmetry this large occurs in only ~2% of people without glaucoma) that warrants further workup, not a diagnosis by itself',
   },
 ]
 
@@ -198,15 +299,19 @@ export function NormalValuesGuide() {
     <ReferenceShell meta={meta}>
       <p className="text-sm text-slate-600 -mt-2">
         Every exam finding with a documented normal/expected value elsewhere on this site, gathered into one
-        interpretation table. Click a test name to open its full calculator or source reference table — each of
-        those pages carries the fuller citation, convention, and caveats for that specific value.
+        interpretation table — organized to follow a typical comprehensive exam, from preliminary testing through
+        posterior segment. Click a test name to open its full calculator or source reference table — each of those
+        pages carries the fuller citation, convention, and caveats for that specific value.
       </p>
 
+      <Section title="Visual Acuity &amp; Color Vision" rows={VISUAL_ACUITY} />
+      <Section title="Pupils" rows={PUPILS} />
+      <Section title="Extraocular Motility &amp; Visual Fields" rows={MOTILITY_AND_FIELDS} />
       <Section title="Binocular Vision &amp; Vergence" rows={BINOCULAR_VISION} />
       <Section title="Accommodation" rows={ACCOMMODATION} />
       <Section title="Cornea &amp; Anterior Segment" rows={CORNEA_ANTERIOR} />
       <Section title="Intraocular Pressure" rows={IOP} />
-      <Section title="Visual Acuity" rows={VISUAL_ACUITY} />
+      <Section title="Optic Nerve / Posterior Segment" rows={OPTIC_NERVE} />
 
       <p className="text-xs text-slate-500">
         These are population norms and commonly cited clinical thresholds, not fixed diagnostic cutoffs for a
