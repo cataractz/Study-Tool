@@ -12,6 +12,8 @@ import { CalculationsConversions } from './pages/CalculationsConversions'
 import { CalculatorDetail } from './pages/CalculatorDetail'
 import { References } from './pages/References'
 import { ReferenceDetail } from './pages/ReferenceDetail'
+import { LensDatabase } from './pages/LensDatabase'
+import { LensDetail } from './pages/LensDetail'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
         <Route path="/calculators/:calculatorId" element={<CalculatorDetail />} />
         <Route path="/references" element={<References />} />
         <Route path="/references/:referenceId" element={<ReferenceDetail />} />
+        <Route path="/lenses" element={<LensDatabase />} />
+        <Route path="/lenses/:lensId" element={<LensDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

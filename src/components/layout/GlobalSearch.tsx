@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Search, BookOpen, Pill, Calculator, Library, type LucideIcon } from 'lucide-react'
+import { Search, BookOpen, Pill, Calculator, Library, Disc, type LucideIcon } from 'lucide-react'
 import { globalSearch, type SearchResult } from '../../services/searchService'
 
 const typeIcon: Record<SearchResult['type'], LucideIcon> = {
@@ -8,6 +8,7 @@ const typeIcon: Record<SearchResult['type'], LucideIcon> = {
   drug: Pill,
   calculator: Calculator,
   reference: Library,
+  lens: Disc,
 }
 
 const typeIconClass: Record<SearchResult['type'], string> = {
@@ -15,6 +16,7 @@ const typeIconClass: Record<SearchResult['type'], string> = {
   drug: 'text-teal-accent',
   calculator: 'text-violet-500',
   reference: 'text-amber-600',
+  lens: 'text-sky-600',
 }
 
 export function GlobalSearch() {
@@ -53,7 +55,7 @@ export function GlobalSearch() {
             setOpen(true)
           }}
           onFocus={() => setOpen(true)}
-          placeholder="Search diseases, drugs, calculators, references..."
+          placeholder="Search diseases, drugs, calculators, references, lenses..."
           className="w-full rounded-lg border border-slate-300 bg-slate-50 py-2 pl-9 pr-3 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:bg-white transition-colors"
         />
       </div>

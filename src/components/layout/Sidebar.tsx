@@ -19,6 +19,7 @@ import {
   Sparkles,
   Calculator,
   Library,
+  Disc,
   type LucideIcon,
 } from 'lucide-react'
 import { primaryNav, futureToolsNav } from '../../config/navigation'
@@ -39,6 +40,7 @@ const iconMap: Record<string, LucideIcon> = {
   sparkles: Sparkles,
   calculator: Calculator,
   library: Library,
+  disc: Disc,
 }
 
 export function Sidebar({

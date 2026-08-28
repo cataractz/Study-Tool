@@ -1,9 +1,10 @@
 import { getAllDiseases } from './diseaseService'
 import { getAllDrugs } from './drugService'
+import { getAllLenses } from './lensService'
 import { calculatorRegistry } from '../calculators/registry'
 import { referenceRegistry } from '../reference/registry'
 
-export type SearchResultType = 'disease' | 'drug' | 'calculator' | 'reference'
+export type SearchResultType = 'disease' | 'drug' | 'calculator' | 'reference' | 'lens'
 
 export interface SearchResult {
   type: SearchResultType
@@ -65,6 +66,17 @@ const searchReferencesProvider: SearchProvider = (q) =>
       path: `/references/${r.meta.id}`,
     }))
 
+const searchLensesProvider: SearchProvider = (q) =>
+  getAllLenses()
+    .filter((l) => matches([l.brand, l.manufacturer, l.design, l.materialClass, l.materialName ?? ''].join(' '), q))
+    .map((l) => ({
+      type: 'lens',
+      id: l.id,
+      title: l.brand,
+      subtitle: `Lens · ${l.design}`,
+      path: `/lenses/${l.id}`,
+    }))
+
 /**
  * Every searchable content source on the site, in one place. Adding a future tool to search
  * (once it's built) means writing one provider function like the ones above and pushing it here —
@@ -75,6 +87,7 @@ const searchProviders: SearchProvider[] = [
   searchDrugsProvider,
   searchCalculatorsProvider,
   searchReferencesProvider,
+  searchLensesProvider,
 ]
 
 export function globalSearch(query: string, limit = 10): SearchResult[] {

@@ -1,7 +1,8 @@
 import { getAllDiseases } from './diseaseService'
 import { getAllDrugs } from './drugService'
+import { getAllLenses } from './lensService'
 
-export type LinkableType = 'disease' | 'drug'
+export type LinkableType = 'disease' | 'drug' | 'lens'
 
 export interface LinkTarget {
   id: string
@@ -75,6 +76,16 @@ function buildIndex(): void {
       if (!trimmed) continue
       const key = trimmed.toLowerCase()
       if (names.has(key)) continue
+      entries.push({ pattern: trimmed, target })
+      names.set(key, target)
+    }
+  }
+
+  for (const lens of getAllLenses()) {
+    const target: LinkTarget = { id: lens.id, type: 'lens', path: `/lenses/${lens.id}`, label: lens.brand }
+    const trimmed = lens.brand.trim()
+    const key = trimmed.toLowerCase()
+    if (trimmed && !names.has(key)) {
       entries.push({ pattern: trimmed, target })
       names.set(key, target)
     }

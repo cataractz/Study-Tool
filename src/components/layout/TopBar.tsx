@@ -1,5 +1,6 @@
 import { Menu } from 'lucide-react'
 import { GlobalSearch } from './GlobalSearch'
+import { OfflineBadge } from '../pwa/OfflineBadge'
 
 export function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
   return (
@@ -14,6 +15,7 @@ export function TopBar({ onMenuClick }: { onMenuClick: () => void }) {
       <div className="flex-1 max-w-xl">
         <GlobalSearch />
       </div>
+      <OfflineBadge />
     </header>
   )
 }

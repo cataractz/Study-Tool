@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import clsx from 'clsx'
-import { Star, Info } from 'lucide-react'
+import { Star, Info, Disc } from 'lucide-react'
 import { Card } from '../../components/ui/Card'
 import { Badge, type BadgeTone } from '../../components/ui/Badge'
 import { isFavorite, toggleFavorite } from './storage'
@@ -109,6 +110,14 @@ export function CalculatorShell({
             <span className="font-mono">{meta.formula}</span>
           </p>
           {aboutExtra}
+          {meta.category === 'Contact Lenses' && (
+            <p>
+              <Link to="/lenses" className="inline-flex items-center gap-1 text-brand-600 hover:underline font-medium">
+                <Disc size={13} /> Browse the Contact Lens Database
+              </Link>{' '}
+              for real lens parameters (base curve, Dk/t, power range) to use with this calculator.
+            </p>
+          )}
           {meta.limitations && meta.limitations.length > 0 && (
             <div>
               <p className="font-medium text-slate-700">Assumptions &amp; limitations:</p>
