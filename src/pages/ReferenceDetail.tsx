@@ -13,8 +13,8 @@ export function ReferenceDetail() {
 
   return (
     <div className="space-y-4">
-      <Link to="/calculators" className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800">
-        <ArrowLeft size={14} /> All Calculators
+      <Link to="/references" className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800">
+        <ArrowLeft size={14} /> All References
       </Link>
       <Component />
     </div>

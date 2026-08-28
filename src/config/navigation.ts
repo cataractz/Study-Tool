@@ -14,6 +14,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Prescription Trainer', path: '/prescription-trainer', icon: 'file-text' },
   { label: 'AI Clinical Assistant', path: '/ai-assistant', icon: 'sparkles' },
   { label: 'Calculations & Conversions', path: '/calculators', icon: 'calculator' },
+  { label: 'References', path: '/references', icon: 'library' },
 ]
 
 export const futureToolsNav: NavItem[] = [

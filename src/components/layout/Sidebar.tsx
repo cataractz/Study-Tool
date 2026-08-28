@@ -18,6 +18,7 @@ import {
   Stethoscope,
   Sparkles,
   Calculator,
+  Library,
   type LucideIcon,
 } from 'lucide-react'
 import { primaryNav, futureToolsNav } from '../../config/navigation'
@@ -37,6 +38,7 @@ const iconMap: Record<string, LucideIcon> = {
   'flask-conical': FlaskConical,
   sparkles: Sparkles,
   calculator: Calculator,
+  library: Library,
 }
 
 export function Sidebar({

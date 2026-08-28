@@ -10,6 +10,7 @@ import { PrescriptionTrainer } from './pages/PrescriptionTrainer'
 import { AIClinicalAssistant } from './pages/AIClinicalAssistant'
 import { CalculationsConversions } from './pages/CalculationsConversions'
 import { CalculatorDetail } from './pages/CalculatorDetail'
+import { References } from './pages/References'
 import { ReferenceDetail } from './pages/ReferenceDetail'
 import { NotFound } from './pages/NotFound'
 
@@ -26,8 +27,9 @@ function App() {
         <Route path="/prescription-trainer" element={<PrescriptionTrainer />} />
         <Route path="/ai-assistant" element={<AIClinicalAssistant />} />
         <Route path="/calculators" element={<CalculationsConversions />} />
-        <Route path="/calculators/reference/:referenceId" element={<ReferenceDetail />} />
         <Route path="/calculators/:calculatorId" element={<CalculatorDetail />} />
+        <Route path="/references" element={<References />} />
+        <Route path="/references/:referenceId" element={<ReferenceDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

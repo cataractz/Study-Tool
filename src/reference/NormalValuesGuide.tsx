@@ -114,7 +114,7 @@ const ACCOMMODATION: Row[] = [
     normal: 'Age-dependent — see Hofstetter\'s formulas / Donders\' table',
     low: 'Lower than age-expected — accommodative insufficiency (if not age-appropriate presbyopia)',
     high: '—',
-    link: { to: '/calculators/reference/donders-table', label: "Donders' Table & Hofstetter's Formulas" },
+    link: { to: '/references/donders-table', label: "Donders' Table & Hofstetter's Formulas" },
   },
 ]
 
@@ -124,7 +124,7 @@ const CORNEA_ANTERIOR: Row[] = [
     normal: '~540–550 µm average (501–570 µm typical range)',
     low: 'Thin (≤ 500 µm) — glaucoma risk factor; applanation tonometry tends to UNDER-read true IOP',
     high: 'Thick (> 570 µm) — applanation tonometry tends to OVER-read true IOP',
-    link: { to: '/calculators/reference/corneal-thickness-table', label: 'Central Corneal Thickness Reference' },
+    link: { to: '/references/corneal-thickness-table', label: 'Central Corneal Thickness Reference' },
   },
   {
     test: 'Corneal power (K)',
@@ -158,7 +158,7 @@ const VISUAL_ACUITY: Row[] = [
     normal: '20/20 (decimal 1.0, logMAR 0.0) or better',
     low: 'Reduced VA — refractive error, media opacity, retinal/optic nerve pathology, amblyopia, etc.; see the classification table for low-vision/legal-blindness thresholds',
     high: '—',
-    link: { to: '/calculators/reference/low-vision-classification', label: 'Legal Blindness & Low Vision Classification' },
+    link: { to: '/references/low-vision-classification', label: 'Legal Blindness & Low Vision Classification' },
   },
 ]
 
