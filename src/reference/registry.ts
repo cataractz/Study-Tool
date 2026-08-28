@@ -7,6 +7,10 @@ import { VisualAcuityTable, meta as visualAcuityTableMeta } from './VisualAcuity
 import { RefractiveIndicesTable, meta as refractiveIndicesTableMeta } from './RefractiveIndicesTable'
 import { LensDensityTable, meta as lensDensityTableMeta } from './LensDensityTable'
 import { ClinicalRulesOfThumb, meta as clinicalRulesOfThumbMeta } from './ClinicalRulesOfThumb'
+import { MorgansNorms, meta as morgansNormsMeta } from './MorgansNorms'
+import { LowVisionClassification, meta as lowVisionClassificationMeta } from './LowVisionClassification'
+import { CornealThicknessTable, meta as cornealThicknessTableMeta } from './CornealThicknessTable'
+import { DiagnosticDropsTable, meta as diagnosticDropsTableMeta } from './DiagnosticDropsTable'
 
 export interface ReferenceEntry {
   meta: ReferenceMeta
@@ -20,6 +24,10 @@ export const referenceRegistry: ReferenceEntry[] = [
   { meta: refractiveIndicesTableMeta, Component: RefractiveIndicesTable },
   { meta: lensDensityTableMeta, Component: LensDensityTable },
   { meta: clinicalRulesOfThumbMeta, Component: ClinicalRulesOfThumb },
+  { meta: morgansNormsMeta, Component: MorgansNorms },
+  { meta: lowVisionClassificationMeta, Component: LowVisionClassification },
+  { meta: cornealThicknessTableMeta, Component: CornealThicknessTable },
+  { meta: diagnosticDropsTableMeta, Component: DiagnosticDropsTable },
 ]
 
 export function getReferenceById(id: string): ReferenceEntry | undefined {
