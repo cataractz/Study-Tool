@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { getAllLenses, getLensById, getLensDesigns, getLensManufacturers, searchLenses } from '../lensService'
+import { getAllLenses, getLensById, getLensDesigns, getLensManufacturers, searchLenses, formatBaseCurveDiopters } from '../lensService'
 
 describe('lens data integrity', () => {
   it('has no duplicate lens ids', () => {
@@ -56,5 +56,30 @@ describe('searchLenses', () => {
 
   it('returns everything for an empty query with no filters', () => {
     expect(searchLenses('')).toHaveLength(getAllLenses().length)
+  })
+})
+
+describe('formatBaseCurveDiopters', () => {
+  it('converts a plain mm value to "D (mm)", diopters first', () => {
+    // F = 337.5 / r — same formula/constant as the Keratometry calculator.
+    expect(formatBaseCurveDiopters('8.6')).toBe('39.24 D (8.6 mm)')
+  })
+
+  it('matches the Keratometry calculator\'s conversion for a round number', () => {
+    // 337.5 / 7.5 = 45 exactly.
+    expect(formatBaseCurveDiopters('7.5')).toBe('45 D (7.5 mm)')
+  })
+
+  it('leaves a non-numeric / descriptive base curve string unchanged', () => {
+    const custom = 'Custom lab order, typically 39.71–48.21 D (7.00–8.50 mm)'
+    expect(formatBaseCurveDiopters(custom)).toBe(custom)
+  })
+
+  it('every lens in the database renders a base curve without throwing', () => {
+    for (const lens of getAllLenses()) {
+      for (const bc of lens.baseCurves) {
+        expect(() => formatBaseCurveDiopters(bc)).not.toThrow()
+      }
+    }
   })
 })

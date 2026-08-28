@@ -1,5 +1,5 @@
 import { X } from 'lucide-react'
-import { getLensById } from '../../services/lensService'
+import { getLensById, formatBaseCurveDiopters } from '../../services/lensService'
 
 export function LensCompareDrawer({
   open,
@@ -20,7 +20,7 @@ export function LensCompareDrawer({
     { label: 'Material', render: (l) => `${l.materialClass}${l.materialName ? ` — ${l.materialName}` : ''}` },
     { label: 'Water content', render: (l) => l.waterContent ?? '—' },
     { label: 'Dk/t', render: (l) => l.dkt ?? (l.dk ? `Dk ${l.dk}` : '—') },
-    { label: 'Base curve(s)', render: (l) => l.baseCurves.join(', ') },
+    { label: 'Base curve(s)', render: (l) => l.baseCurves.map(formatBaseCurveDiopters).join('; ') },
     { label: 'Diameter', render: (l) => l.diameter },
     { label: 'Sphere range', render: (l) => l.sphereRange },
     { label: 'Cylinder range', render: (l) => l.cylinderRange ?? '—' },

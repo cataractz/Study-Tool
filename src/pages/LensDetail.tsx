@@ -5,7 +5,7 @@ import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
-import { getLensById } from '../services/lensService'
+import { getLensById, formatBaseCurveDiopters } from '../services/lensService'
 import { isLensFavorite, toggleLensFavorite } from '../services/lensFavorites'
 import { calculatorRegistry } from '../calculators/registry'
 import { Linkify } from '../components/shared/Linkify'
@@ -109,7 +109,7 @@ export function LensDetail() {
         <Card className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
           <div>
             <p className="text-xs text-slate-400">Base curve(s)</p>
-            <p className="text-slate-800 mt-0.5">{lens.baseCurves.join(', ')}</p>
+            <p className="text-slate-800 mt-0.5">{lens.baseCurves.map(formatBaseCurveDiopters).join('; ')}</p>
           </div>
           <div>
             <p className="text-xs text-slate-400">Diameter</p>
