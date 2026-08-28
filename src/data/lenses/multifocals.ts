@@ -55,10 +55,13 @@ export const multifocalLenses: ContactLens[] = [
     addPowers: 'Low (up to +1.00), Medium (+1.25 to +2.00), High (+2.25 and above) — center-near aspheric design',
     replacementSchedule: 'Monthly (4 weeks)',
     wearSchedule: 'Extended wear (up to 30 nights)',
-    uvBlocking: true,
+    uvBlocking: false,
     handlingTint: true,
     bestFor: ['Presbyopes wanting a high-Dk/t monthly multifocal', 'Extended-wear candidates'],
-    clinicalNotes: ['Aspheric center-near design with a smooth power gradient rather than discrete rings.'],
+    clinicalNotes: [
+      'Aspheric center-near design with a smooth power gradient rather than discrete rings.',
+      'Does NOT include a UV blocker, unlike some other Alcon daily lenses (e.g. Dailies Total1, Precision1).',
+    ],
   },
   {
     id: 'dailies-total1-multifocal',

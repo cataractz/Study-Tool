@@ -69,10 +69,16 @@ export function LensDatabase() {
       <Card className="bg-slate-50 border-slate-200 flex gap-2.5">
         <Info size={16} className="text-slate-400 shrink-0 mt-0.5" />
         <p className="text-xs text-slate-500 leading-relaxed">
-          Parameters reflect publicly published manufacturer specifications and may not capture the latest revision —
-          <span className="font-medium text-slate-700"> always confirm exact base curve, diameter, power availability,
-          and UV-blocking status against the current manufacturer package insert or fitting guide before dispensing.</span>{' '}
-          RGP, scleral, and hybrid entries describe lab-custom material families rather than one fixed catalog product.
+          Core specs (base curve, diameter, water content, Dk/t, UV-blocking status) have been checked against
+          manufacturer/practitioner sources, including catching a few cases where a sphere and toric version of the
+          same lens family differ in UV-blocking status (e.g. Dailies Total1) — don&apos;t assume one variant&apos;s
+          UV status applies to its sibling.{' '}
+          <span className="font-medium text-slate-700">Still, always confirm exact parameters against the current
+          manufacturer package insert before dispensing</span> — specs change with product revisions, and this is
+          {' '}<strong>34 of the most commonly prescribed/discussed lenses, not every lens on the market.</strong> Notably
+          absent: colored/cosmetic lenses, most Asian-market brands (Menicon, Seed), and some additional myopia-control
+          and material families beyond MiSight. RGP, scleral, and hybrid entries describe lab-custom material families
+          rather than one fixed catalog product.
         </p>
       </Card>
 

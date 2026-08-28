@@ -90,14 +90,15 @@ export const toricLenses: ContactLens[] = [
     materialClass: 'Silicone hydrogel',
     materialName: 'delefilcon A',
     waterContent: '33% core / >80% surface (water-gradient design)',
-    dkt: '156 (at -3.00 D, sphere power)',
+    dkt: '127 (at -3.00 D, cyl power; the sphere Dailies Total1 is 156 at the same reference power)',
     baseCurves: ['8.6'],
-    diameter: '14.1',
+    diameter: '14.5',
     sphereRange: '+6.00 to -9.00',
     cylinderRange: '-0.75, -1.25, -1.75, -2.25',
     axesAvailable: '10°–180° in 10° steps',
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
+    uvBlocking: true,
     handlingTint: true,
     bestFor: ['Astigmats with dryness/end-of-day discomfort on other daily torics'],
     clinicalNotes: ['Same water-gradient material as the spherical Dailies Total1, in a toric design.'],
@@ -120,7 +121,10 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Daily wear only',
     handlingTint: true,
     bestFor: ['Higher water content daily toric preference'],
-    clinicalNotes: ['Uses Optimized Toric Lens Geometry, the same dynamic stabilization family as Biofinity Toric.'],
+    clinicalNotes: [
+      'Uses Optimized Toric Lens Geometry, the same dynamic stabilization family as Biofinity Toric.',
+      'UV-blocking status not independently confirmed for this toric variant — the spherical MyDay is a confirmed UV blocker, but sphere and toric variants within the same lens family can differ (e.g. Dailies Total1 blocks UV only in its toric version, not its sphere), so this isn\'t assumed either way. Verify against the current package insert.',
+    ],
   },
   {
     id: 'ultra-astigmatism',
@@ -140,7 +144,10 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Extended wear (up to 6 nights)',
     handlingTint: true,
     bestFor: ['Higher astigmatism via the XR extended range', 'High-Dk/t monthly toric'],
-    clinicalNotes: ['Extended-range cylinder options make this useful for astigmatism beyond what standard toric parameters cover.'],
+    clinicalNotes: [
+      'Extended-range cylinder options make this useful for astigmatism beyond what standard toric parameters cover.',
+      'UV-blocking status not independently confirmed for this toric variant — the spherical Ultra is a confirmed UV blocker, but sphere and toric variants within the same lens family can differ (e.g. Dailies Total1 blocks UV only in its toric version, not its sphere), so this isn\'t assumed either way. Verify against the current package insert.',
+    ],
   },
   {
     id: 'biotrue-oneday-astigmatism',
@@ -161,6 +168,9 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Daily wear only',
     handlingTint: true,
     bestFor: ['High-water hydrogel preference in a daily toric'],
-    clinicalNotes: ['Narrower sphere power range than most silicone hydrogel dailies — check availability for higher refractive errors before committing a patient to this lens.'],
+    clinicalNotes: [
+      'Narrower sphere power range than most silicone hydrogel dailies — check availability for higher refractive errors before committing a patient to this lens.',
+      'The spherical Biotrue ONEday contains a UV-absorbing monomer (with weaker transmittance limits than a Class 1 lens); this toric variant\'s UV status wasn\'t independently confirmed, and sphere/toric UV status can differ within a lens family (e.g. Dailies Total1), so it isn\'t assumed here. Verify against the current package insert.',
+    ],
   },
 ]

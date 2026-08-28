@@ -59,9 +59,10 @@ export function LensDetail() {
 
       <Card className="bg-slate-50 border-slate-200">
         <p className="text-xs text-slate-500 leading-relaxed">
-          Parameters reflect publicly published manufacturer specifications and may not capture the latest revision —
-          confirm exact base curve, diameter, power availability, and UV-blocking status against the current
-          manufacturer package insert or fitting guide before dispensing.
+          Core specs checked against manufacturer/practitioner sources, but confirm exact base curve, diameter, power
+          availability, and UV-blocking status against the current manufacturer package insert before dispensing —
+          specs change with product revisions, and a sphere/toric sibling within the same lens family can differ in
+          UV-blocking status (this happens in this database — see the clinical notes below for specifics).
         </p>
       </Card>
 
