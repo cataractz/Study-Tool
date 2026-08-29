@@ -1,14 +1,16 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Pill, ChevronRight, GitCompare } from 'lucide-react'
+import { Pill, ChevronRight, GitCompare, ShieldAlert } from 'lucide-react'
 import { SearchInput } from '../components/ui/SearchInput'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
 import { EmptyState } from '../components/ui/EmptyState'
+import { Tabs } from '../components/ui/Tabs'
 import { searchDrugs, getDrugClasses } from '../services/drugService'
 import type { DrugClass } from '../types/drug'
 import { DrugCompareDrawer } from '../components/drug/DrugCompareDrawer'
+import { InteractionChecker } from '../components/drug/InteractionChecker'
 
 export function DrugDatabase() {
   const [query, setQuery] = useState('')
@@ -48,63 +50,81 @@ export function DrugDatabase() {
         )}
       </div>
 
-      <SearchInput
-        placeholder="Search by generic name, brand name, class, or indication..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="max-w-xl"
-      />
+      <Tabs
+        tabs={[
+          {
+            id: 'browse',
+            label: 'Browse Database',
+            content: (
+              <div className="space-y-6">
+                <SearchInput
+                  placeholder="Search by generic name, brand name, class, or indication..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  className="max-w-xl"
+                />
 
-      <div className="flex gap-1.5 flex-wrap">
-        {classes.map((cls) => (
-          <button
-            key={cls}
-            onClick={() => toggleClass(cls)}
-            className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
-              activeClasses.includes(cls)
-                ? 'bg-brand-600 text-white border-brand-600'
-                : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
-            }`}
-          >
-            {cls}
-          </button>
-        ))}
-      </div>
+                <div className="flex gap-1.5 flex-wrap">
+                  {classes.map((cls) => (
+                    <button
+                      key={cls}
+                      onClick={() => toggleClass(cls)}
+                      className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
+                        activeClasses.includes(cls)
+                          ? 'bg-brand-600 text-white border-brand-600'
+                          : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      {cls}
+                    </button>
+                  ))}
+                </div>
 
-      {results.length === 0 ? (
-        <EmptyState icon={Pill} title="No drugs found" description="Try a different search term or filter." />
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {results.map((drug) => (
-            <Card key={drug.id} className="flex flex-col gap-2">
-              <div className="flex items-start justify-between gap-2">
-                <Badge tone="purple">{drug.drugClass}</Badge>
-                <label className="flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer select-none">
-                  <input
-                    type="checkbox"
-                    checked={compareIds.includes(drug.id)}
-                    onChange={() => toggleCompare(drug.id)}
-                    className="accent-brand-600"
-                  />
-                  Compare
-                </label>
+                {results.length === 0 ? (
+                  <EmptyState icon={Pill} title="No drugs found" description="Try a different search term or filter." />
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {results.map((drug) => (
+                      <Card key={drug.id} className="flex flex-col gap-2">
+                        <div className="flex items-start justify-between gap-2">
+                          <Badge tone="purple">{drug.drugClass}</Badge>
+                          <label className="flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer select-none">
+                            <input
+                              type="checkbox"
+                              checked={compareIds.includes(drug.id)}
+                              onChange={() => toggleCompare(drug.id)}
+                              className="accent-brand-600"
+                            />
+                            Compare
+                          </label>
+                        </div>
+                        <Link to={`/drugs/${drug.id}`} className="group">
+                          <h3 className="text-sm font-semibold text-slate-900 group-hover:text-brand-600">
+                            {drug.genericName}
+                          </h3>
+                          <p className="text-xs text-slate-500 mt-0.5">{drug.brandNames.join(', ')}</p>
+                          <p className="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
+                            {drug.mechanismOfAction}
+                          </p>
+                          <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-600 mt-2">
+                            View details <ChevronRight size={13} />
+                          </span>
+                        </Link>
+                      </Card>
+                    ))}
+                  </div>
+                )}
               </div>
-              <Link to={`/drugs/${drug.id}`} className="group">
-                <h3 className="text-sm font-semibold text-slate-900 group-hover:text-brand-600">
-                  {drug.genericName}
-                </h3>
-                <p className="text-xs text-slate-500 mt-0.5">{drug.brandNames.join(', ')}</p>
-                <p className="text-xs text-slate-500 mt-2 line-clamp-2 leading-relaxed">
-                  {drug.mechanismOfAction}
-                </p>
-                <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-600 mt-2">
-                  View details <ChevronRight size={13} />
-                </span>
-              </Link>
-            </Card>
-          ))}
-        </div>
-      )}
+            ),
+          },
+          {
+            id: 'interactions',
+            label: 'Interaction Checker',
+            badge: <ShieldAlert size={14} />,
+            content: <InteractionChecker />,
+          },
+        ]}
+      />
 
       <DrugCompareDrawer
         open={compareOpen}
