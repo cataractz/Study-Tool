@@ -60,6 +60,7 @@ import { systemicGeneticDisease14 } from './systemic-genetic-disease-14'
 import { systemicGeneticDisease15 } from './systemic-genetic-disease-15'
 import { systemicGeneticDisease16 } from './systemic-genetic-disease-16'
 import { systemicGeneticDisease17 } from './systemic-genetic-disease-17'
+import { systemicGeneticDisease18 } from './systemic-genetic-disease-18'
 
 export const allDiseases: Disease[] = [
   ...corneaDiseases,
@@ -123,4 +124,5 @@ export const allDiseases: Disease[] = [
   ...systemicGeneticDisease15,
   ...systemicGeneticDisease16,
   ...systemicGeneticDisease17,
+  ...systemicGeneticDisease18,
 ]
