@@ -105,11 +105,12 @@ const rightHalfWithMacularSparing = (
 const smallRightCentralScotoma = <rect x="50" y="35" width="18" height="30" rx="2" fill={SHADE} />
 const incongruousRightHalf = <rect x="58" y="10" width="36" height="80" fill={SHADE} />
 const farTemporalCrescent = <rect x="80" y="0" width="20" height="100" fill={SHADE} />
-/** Dense but not total loss — a wide shaded field with a thin surviving peripheral rim, distinct
- * from fullField's edge-to-edge total loss. */
-const denseLossWithRim = <circle cx="50" cy="50" r="40" fill={SHADE} />
 /** A small, partial supero-temporal wedge — smaller than a full quadrant. */
 const smallSuperoTemporalWedge = <rect x="58" y="4" width="38" height="40" fill={SHADE} />
+/** A narrow horizontal wedge/sector (not a simple half or quadrant) — the distinctive LGN
+ * sectoranopia pattern from its dual (anterior + lateral posterior choroidal artery) blood
+ * supply, split along a horizontal line rather than the vertical midline. */
+const horizontalSectorWedge = <polygon points="50,50 100,32 100,68" fill={SHADE} />
 
 // --- Pathway overview diagram ------------------------------------------------------------------
 
@@ -240,7 +241,7 @@ const SITES: Site[] = [
     number: 2,
     title: 'Posterior Optic Nerve (junctional)',
     defectName: 'Junctional scotoma — ipsilateral vision loss + contralateral supero-temporal defect',
-    os: denseLossWithRim,
+    os: fullField,
     od: smallSuperoTemporalWedge,
     description:
       'A lesion right where the optic nerve joins the chiasm damages that nerve\'s own fibers (ipsilateral vision loss) plus a small bundle of already-crossing fibers from the OPPOSITE eye\'s inferonasal retina, producing a small contralateral superior temporal field defect. The classic anatomic explanation is an anterior loop of crossing fibers into the posterior contralateral nerve ("Wilbrand\'s knee") — modern anatomic studies suggest this loop may actually be an artifact of the enucleated specimens it was first described in, but the clinical localizing value of the finding itself is unchanged either way.',
@@ -275,13 +276,13 @@ const SITES: Site[] = [
   {
     number: 5,
     title: 'Lateral Geniculate Nucleus (LGN)',
-    defectName: 'Homonymous hemianopia (sometimes a horizontal sectoranopia)',
-    od: rightHalf,
-    os: rightHalf,
+    defectName: 'Homonymous sectoranopia (or a plain homonymous hemianopia)',
+    od: horizontalSectorWedge,
+    os: horizontalSectorWedge,
     description:
-      'An isolated LGN lesion is uncommon and produces a contralateral homonymous defect like a tract or radiation lesion. Because the LGN has a dual blood supply (anterior and lateral posterior choroidal arteries) split along a horizontal line, a vascular LGN lesion can occasionally produce a distinctive horizontal sector defect instead of a simple hemianopia.',
-    causes: 'Anterior or posterior choroidal artery infarct (rare as an isolated finding)',
-    pearl: 'The LGN is the rarest isolated localization on this list — most exam "homonymous hemianopia" questions are really testing the tract, radiations, or cortex.',
+      'An isolated LGN lesion is uncommon. Because the LGN has a dual blood supply — the anterior choroidal artery supplies one wedge-shaped sector and the lateral posterior choroidal artery supplies another — a vascular LGN lesion can produce a distinctive horizontal, wedge-shaped sector defect (shown here) rather than a simple hemianopia, depending on which vessel is affected. A non-vascular LGN lesion can still just produce a plain contralateral homonymous hemianopia like a tract or radiation lesion.',
+    causes: 'Anterior or lateral posterior choroidal artery infarct (rare as an isolated finding)',
+    pearl: 'The LGN is the rarest isolated localization on this list — most exam "homonymous hemianopia" questions are really testing the tract, radiations, or cortex. A wedge-shaped (not simple half) defect is the one clue that specifically points to the LGN.',
     diseaseId: 'homonymous-hemianopia',
   },
   {
