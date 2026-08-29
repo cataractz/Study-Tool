@@ -156,56 +156,95 @@ function Waypoint({
   )
 }
 
+/** A stylized eye shape (almond outline + iris + pupil) rather than a plain circle. */
+function EyeShape({ cx, cy, eyeLabel, subLabel }: { cx: number; cy: number; eyeLabel: string; subLabel: string }) {
+  const w = 34
+  const h = 20
+  return (
+    <g>
+      <path
+        d={`M${cx - w},${cy} C${cx - w * 0.55},${cy - h} ${cx + w * 0.55},${cy - h} ${cx + w},${cy} C${cx + w * 0.55},${cy + h} ${cx - w * 0.55},${cy + h} ${cx - w},${cy} Z`}
+        fill="#f8fafc"
+        stroke="#334155"
+        strokeWidth="2"
+      />
+      <circle cx={cx} cy={cy} r="11" fill="#bae6fd" stroke="#0284c7" strokeWidth="1.5" />
+      <circle cx={cx} cy={cy} r="4.5" fill="#0c4a6e" />
+      <text x={cx} y={cy + 42} textAnchor="middle" fontSize="12" fontWeight="700" fill="#0369a1">{eyeLabel}</text>
+      <text x={cx} y={cy + 58} textAnchor="middle" fontSize="10.5" fill="#64748b">{subLabel}</text>
+    </g>
+  )
+}
+
 /**
- * An original schematic of the visual pathway — eyes at top, crossing at the chiasm, continuing
- * down through the tract/LGN/radiations of ONE hemisphere (labeled, not copied from any published
- * figure) to the occipital cortex at bottom. It mirrors the layout used in classic teaching
+ * An original schematic of the visual pathway — two eyes, a brain (simplified top-down
+ * silhouette), and the pathway connecting them, crossing at the chiasm and continuing through the
+ * tract/LGN/radiations of one hemisphere (labeled, not copied from any published figure) to the
+ * occipital cortex at the back of the brain. It mirrors the layout used in classic teaching
  * diagrams (eyes-to-occipital-cortex with numbered lesion sites) without reproducing any specific
  * published illustration.
  */
 function PathwayDiagram() {
   return (
-    <svg viewBox="0 0 620 720" className="w-full h-auto" role="img" aria-label="Schematic of the visual pathway from the eyes to the occipital cortex, with 11 numbered classic lesion sites plus one bonus site">
+    <svg viewBox="0 0 620 780" className="w-full h-auto" role="img" aria-label="Illustration of two eyes, the brain, and the visual pathway connecting them, with 11 numbered classic lesion sites plus one bonus site">
+      {/* brain silhouette (simplified top-down outline) */}
+      <path
+        d="M310,175
+           C400,177 450,195 470,245
+           C495,300 540,340 540,415
+           C540,485 500,525 475,565
+           C450,605 425,655 365,685
+           C340,700 320,710 310,713
+           C300,710 280,700 255,685
+           C195,655 170,605 145,565
+           C120,525 80,485 80,415
+           C80,340 125,300 150,245
+           C170,195 220,177 310,175 Z"
+        fill="#f5f3ff"
+        stroke="#c4b5fd"
+        strokeWidth="2.5"
+      />
+      {/* soft sulcus/gyrus hint lines for texture, purely decorative */}
+      <path d="M235,240 C255,270 260,310 245,345" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M385,240 C365,270 360,310 375,345" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M150,470 C210,500 250,505 300,495" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M470,470 C410,500 370,505 320,495" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+
       {/* eyes */}
-      <circle cx="210" cy="36" r="22" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2" />
-      <text x="210" y="36" textAnchor="middle" dominantBaseline="central" fontSize="12" fontWeight="700" fill="#0369a1">OS</text>
-      <text x="210" y="68" textAnchor="middle" fontSize="10.5" fill="#64748b">Left eye</text>
+      <EyeShape cx={210} cy={40} eyeLabel="OS" subLabel="Left eye" />
+      <EyeShape cx={410} cy={40} eyeLabel="OD" subLabel="Right eye" />
 
-      <circle cx="410" cy="36" r="22" fill="#e0f2fe" stroke="#0284c7" strokeWidth="2" />
-      <text x="410" y="36" textAnchor="middle" dominantBaseline="central" fontSize="12" fontWeight="700" fill="#0369a1">OD</text>
-      <text x="410" y="68" textAnchor="middle" fontSize="10.5" fill="#64748b">Right eye</text>
-
-      {/* nerve fibers converging on the chiasm */}
-      <line x1="210" y1="58" x2="300" y2="150" stroke="#94a3b8" strokeWidth="3" />
-      <line x1="410" y1="58" x2="300" y2="150" stroke="#94a3b8" strokeWidth="3" />
+      {/* optic nerves converging on the chiasm */}
+      <line x1="210" y1="102" x2="300" y2="150" stroke="#94a3b8" strokeWidth="3.5" strokeLinecap="round" />
+      <line x1="410" y1="102" x2="300" y2="150" stroke="#94a3b8" strokeWidth="3.5" strokeLinecap="round" />
 
       {/* the highlighted single-hemisphere pathway from chiasm onward */}
       <line x1="300" y1="150" x2="300" y2="300" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
-      <path d="M300,300 Q225,350 210,420 Q225,485 280,540" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
-      <path d="M300,300 Q375,350 390,420 Q375,485 320,540" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
+      <path d="M300,300 Q225,350 210,420 Q225,470 265,505" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
+      <path d="M300,300 Q375,350 390,420 Q375,470 335,505" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
+      <path d="M265,505 Q285,530 300,545" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
+      <path d="M335,505 Q315,530 300,545" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
 
       <ellipse cx="300" cy="270" rx="28" ry="19" fill="#ede9fe" stroke="#7c3aed" strokeWidth="2" />
 
-      {/* occipital cortex box */}
-      <rect x="150" y="540" width="320" height="150" rx="14" fill="#faf5ff" stroke="#7c3aed" strokeWidth="2" />
-      <text x="310" y="670" textAnchor="middle" fontSize="12.5" fontWeight="700" fill="#5b21b6">Occipital (Calcarine) Cortex</text>
+      <text x="310" y="578" textAnchor="middle" fontSize="12.5" fontWeight="700" fill="#5b21b6">Occipital (Calcarine) Cortex</text>
 
       {/* waypoints 1 & 2: on the pre-chiasmal left optic nerve */}
-      <Waypoint cx={252} cy={100} n={1} label="Optic nerve" labelDx={12} labelDy={-10} />
-      <Waypoint cx={282} cy={132} n={2} label="Junctional" labelDx={-14} labelDy={-12} anchor="end" />
+      <Waypoint cx={252} cy={106} n={1} label="Optic nerve" labelDx={12} labelDy={-10} />
+      <Waypoint cx={282} cy={133} n={2} label="Junctional" labelDx={-14} labelDy={-12} anchor="end" />
 
       <Waypoint cx={300} cy={150} n={3} label="Chiasm" labelDx={16} labelDy={14} />
       <Waypoint cx={300} cy={210} n={4} label="Optic tract" labelDx={16} labelDy={0} />
       <Waypoint cx={300} cy={270} n={5} label="LGN" labelDx={34} labelDy={0} />
-      <Waypoint cx={210} cy={392} n={6} label="Temporal lobe" labelDx={-14} labelDy={-14} anchor="end" />
-      <Waypoint cx={390} cy={392} n={7} label="Parietal lobe" labelDx={14} labelDy={-14} />
+      <Waypoint cx={205} cy={392} n={6} label="Temporal lobe" labelDx={-14} labelDy={-14} anchor="end" />
+      <Waypoint cx={395} cy={392} n={7} label="Parietal lobe" labelDx={14} labelDy={-14} />
 
-      <Waypoint cx={200} cy={575} n={8} label="Upper bank" labelDx={0} labelDy={22} anchor="middle" />
-      <Waypoint cx={280} cy={575} n={9} label="Lower bank" labelDx={0} labelDy={22} anchor="middle" />
-      <Waypoint cx={360} cy={575} n={10} label="Complete" labelDx={0} labelDy={22} anchor="middle" />
-      <Waypoint cx={440} cy={575} n={11} label="Pole" labelDx={0} labelDy={22} anchor="middle" />
+      <Waypoint cx={300} cy={545} n={12} label="Ant. calcarine (bonus)" labelDx={18} labelDy={0} color="#059669" />
 
-      <Waypoint cx={300} cy={512} n={12} label="Ant. calcarine (bonus)" labelDx={16} labelDy={-2} color="#059669" />
+      <Waypoint cx={165} cy={600} n={8} label="Upper bank" labelDx={0} labelDy={22} anchor="middle" />
+      <Waypoint cx={265} cy={610} n={9} label="Lower bank" labelDx={0} labelDy={22} anchor="middle" />
+      <Waypoint cx={365} cy={610} n={10} label="Complete" labelDx={0} labelDy={22} anchor="middle" />
+      <Waypoint cx={455} cy={600} n={11} label="Pole" labelDx={0} labelDy={22} anchor="middle" />
     </svg>
   )
 }
