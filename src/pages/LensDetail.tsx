@@ -143,6 +143,12 @@ export function LensDetail() {
               <p className="text-slate-800 mt-0.5">{lens.centerThickness}</p>
             </div>
           )}
+          {lens.multifocalOpticalDesign && (
+            <div className="sm:col-span-2">
+              <p className="text-xs text-slate-400">Multifocal optical design</p>
+              <p className="text-slate-800 mt-0.5">{lens.multifocalOpticalDesign}</p>
+            </div>
+          )}
           {lens.edgeDesign && (
             <div className="sm:col-span-2">
               <p className="text-xs text-slate-400">Edge / fit design</p>
@@ -165,7 +171,13 @@ export function LensDetail() {
           <div>
             <p className="text-xs text-slate-400">UV blocking</p>
             <p className="text-slate-800 mt-0.5">
-              {lens.uvBlocking === undefined ? 'Not confirmed — verify with manufacturer' : lens.uvBlocking ? 'Yes' : 'No'}
+              {lens.uvBlocking === undefined
+                ? 'Not confirmed — verify with manufacturer'
+                : lens.uvBlocking
+                  ? lens.uvBlockingClass
+                    ? `Yes — ${lens.uvBlockingClass} (${lens.uvBlockingClass === 'Class 1' ? '≥90% UVA / ≥99% UVB blocked' : '≥50% UVA / ≥95% UVB blocked'})`
+                    : 'Yes (class not confirmed)'
+                  : 'No'}
             </p>
           </div>
           <div>

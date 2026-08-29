@@ -17,6 +17,7 @@ export const dailyDisposableLenses: ContactLens[] = [
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
     uvBlocking: true,
+    uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Dry eye / limited daily wear time', 'Allergy sufferers (fresh lens each day)', 'Occasional wear (sports, part-time)'],
     clinicalNotes: [
@@ -41,6 +42,7 @@ export const dailyDisposableLenses: ContactLens[] = [
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
     uvBlocking: true,
+    uvBlockingClass: 'Class 2',
     handlingTint: true,
     bestFor: ['Sensitive eyes preferring a conventional hydrogel over silicone hydrogel', 'Lower myopes/hyperopes needing only a moderate power range'],
     clinicalNotes: [
@@ -107,12 +109,12 @@ export const dailyDisposableLenses: ContactLens[] = [
     sphereRange: '+6.00 to -9.00 (extended range available by special order)',
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
-    uvBlocking: true,
+    uvBlocking: false,
     handlingTint: true,
     bestFor: ['Very high water content preference', 'Intermittent dryness with conventional hydrogel comfort'],
     clinicalNotes: [
       'Marketed to match the ~78% water content of the cornea; a high-water conventional hydrogel rather than a silicone hydrogel.',
-      'Contains a UV-absorbing monomer, but with weaker transmittance limits (<50% UVA, <5% UVB) than a Class 1 lens — meaningfully less UV absorption than e.g. Dailies Total1 or the Acuvue family.',
+      'Correction: an earlier pass here had this marked as a weak UV blocker. Bausch + Lomb\'s own current consumer guidance states Biotrue ONEday does NOT offer UV protection and recommends sunglasses/UV-blocking eyewear outdoors — counsel patients accordingly rather than assuming any UV benefit from the lens itself.',
     ],
   },
   {
@@ -130,6 +132,7 @@ export const dailyDisposableLenses: ContactLens[] = [
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
     uvBlocking: true,
+    uvBlockingClass: 'Class 2',
     handlingTint: true,
     bestFor: ['Budget-friendly silicone hydrogel daily option', 'Wide available power range including high myopia/hyperopia'],
     clinicalNotes: ['One of the widest standard power ranges among daily silicone hydrogel lenses, useful for higher refractive errors without a specialty order.'],
@@ -149,6 +152,7 @@ export const dailyDisposableLenses: ContactLens[] = [
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
     uvBlocking: true,
+    uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Two base curve options for a steeper or flatter fit', 'General daily silicone hydrogel wear'],
     clinicalNotes: ['Shares Dailies Total1\'s water-gradient philosophy at a lower price point (Alcon\'s "value" SiHy daily), though the surface chemistry differs.'],
@@ -168,7 +172,9 @@ export const dailyDisposableLenses: ContactLens[] = [
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
     uvBlocking: true,
+    uvBlockingClass: 'Class 1',
     handlingTint: true,
+    multifocalOpticalDesign: 'Ring focus (concentric alternating correction/treatment zones) — a myopia-control design, not a presbyopia add',
     bestFor: [
       'Myopia progression control in children (FDA-approved indication)',
       'A myopic child whose eye is too small/steep for adult-sized daily lenses — this lens is specifically sized and curved for pediatric eyes',
@@ -195,6 +201,7 @@ export const dailyDisposableLenses: ContactLens[] = [
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
     handlingTint: false,
+    multifocalOpticalDesign: 'ActivControl dual-focus (concentric alternating correction/treatment zones) — a myopia-control design, not a presbyopia add',
     bestFor: [
       'Myopia progression control in children (FDA-approved indication)',
       'Myopic children ages 8-12 at the start of treatment (per the original clinical trial population)',

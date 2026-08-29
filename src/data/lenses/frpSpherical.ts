@@ -16,6 +16,7 @@ export const frpSphericalLenses: ContactLens[] = [
     replacementSchedule: 'Bi-weekly (2 weeks)',
     wearSchedule: 'Extended wear (up to 6 nights)',
     uvBlocking: true,
+    uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Established 2-week wearers wanting a proven, widely available SiHy lens', 'Occasional overnight wear (with appropriate follow-up)'],
     clinicalNotes: ['One of the most widely fit 2-week silicone hydrogels; two base curve options accommodate a flatter or steeper cornea.'],
@@ -142,6 +143,7 @@ export const frpSphericalLenses: ContactLens[] = [
     replacementSchedule: 'Monthly (4 weeks)',
     wearSchedule: 'Daily wear only',
     uvBlocking: true,
+    uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Patients wanting Dailies Total1-style water-gradient comfort in a monthly modality', 'Monthly wearers with end-of-day dryness on other monthly SiHy lenses'],
     clinicalNotes: [

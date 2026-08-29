@@ -49,8 +49,15 @@ export interface ContactLens {
    * inferred, since telling a wearer a lens blocks UV when it doesn't (or vice versa) is a real
    * clinical/counseling error, not just a wrong spec. */
   uvBlocking?: boolean
+  /** FDA UV-blocking performance tier — Class 1 filters ≥90% UVA/≥99% UVB, Class 2 a lower bar
+   * (commonly cited as ≥50% UVA/≥95% UVB). Only set when explicitly published; a lens can have
+   * uvBlocking: true with this left blank if the class specifically wasn't confirmed. */
+  uvBlockingClass?: 'Class 1' | 'Class 2'
   handlingTint: boolean
   edgeDesign?: string
+  /** Multifocal optical zone layout — e.g. "Center-near", "Center-distance", "D/N (paired
+   * distance-/near-dominant design)", "3-Zone Progressive". Undefined for non-multifocal designs. */
+  multifocalOpticalDesign?: string
   bestFor: string[]
   clinicalNotes: string[]
   /** Calculator ids (from the Contact Lenses calculator category) relevant to fitting this lens. */

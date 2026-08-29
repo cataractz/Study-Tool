@@ -25,9 +25,14 @@ export function LensCompareDrawer({
     { label: 'Sphere range', render: (l) => l.sphereRange },
     { label: 'Cylinder range', render: (l) => l.cylinderRange ?? '—' },
     { label: 'Add powers', render: (l) => l.addPowers ?? '—' },
+    { label: 'Multifocal design', render: (l) => l.multifocalOpticalDesign ?? '—' },
     { label: 'Replacement', render: (l) => l.replacementSchedule },
     { label: 'Wear schedule', render: (l) => l.wearSchedule },
-    { label: 'UV blocking', render: (l) => (l.uvBlocking === undefined ? 'Not confirmed' : l.uvBlocking ? 'Yes' : 'No') },
+    {
+      label: 'UV blocking',
+      render: (l) =>
+        l.uvBlocking === undefined ? 'Not confirmed' : l.uvBlocking ? (l.uvBlockingClass ? `Yes — ${l.uvBlockingClass}` : 'Yes (class n/a)') : 'No',
+    },
     { label: 'Handling tint', render: (l) => (l.handlingTint ? 'Yes' : 'No') },
   ]
 

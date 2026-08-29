@@ -102,6 +102,7 @@ export const toricLenses: ContactLens[] = [
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
     uvBlocking: true,
+    uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Astigmats with dryness/end-of-day discomfort on other daily torics'],
     clinicalNotes: ['Same water-gradient material as the spherical Dailies Total1, in a toric design.'],
@@ -170,11 +171,12 @@ export const toricLenses: ContactLens[] = [
     axesAvailable: '10°–180° in 10° steps',
     replacementSchedule: 'Daily disposable',
     wearSchedule: 'Daily wear only',
+    uvBlocking: false,
     handlingTint: true,
     bestFor: ['High-water hydrogel preference in a daily toric'],
     clinicalNotes: [
       'Narrower sphere power range than most silicone hydrogel dailies — check availability for higher refractive errors before committing a patient to this lens.',
-      'The spherical Biotrue ONEday contains a UV-absorbing monomer (with weaker transmittance limits than a Class 1 lens); this toric variant\'s UV status wasn\'t independently confirmed, and sphere/toric UV status can differ within a lens family (e.g. Dailies Total1), so it isn\'t assumed here. Verify against the current package insert.',
+      'Like the spherical Biotrue ONEday, this lens does NOT offer UV protection (Bausch + Lomb\'s own consumer guidance) — counsel patients to wear sunglasses/UV-blocking eyewear outdoors rather than assuming any UV benefit from the lens.',
     ],
   },
 ]

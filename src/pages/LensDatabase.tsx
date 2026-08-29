@@ -78,7 +78,9 @@ export function LensDatabase() {
           {' '}<strong>38 of the most commonly prescribed/discussed lenses (including Proclear, Total30, MiSight,
           Abiliti 1-Day, and NaturalVue Multifocal), not every lens on the market.</strong> Notably absent by choice:
           colored/cosmetic lenses and non-US-market brands (Menicon, Seed). RGP, scleral, and hybrid entries describe
-          lab-custom material families rather than one fixed catalog product.
+          lab-custom material families rather than one fixed catalog product. Fields deliberately left out (unlike
+          print parameter guides): packaging/box count and retail cost — these vary by retailer and change too often
+          to belong in a clinical reference; check a distributor site for current pricing.
         </p>
       </Card>
 
