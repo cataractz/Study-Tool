@@ -12,6 +12,7 @@ import { LowVisionClassification, meta as lowVisionClassificationMeta } from './
 import { CornealThicknessTable, meta as cornealThicknessTableMeta } from './CornealThicknessTable'
 import { DiagnosticDropsTable, meta as diagnosticDropsTableMeta } from './DiagnosticDropsTable'
 import { NormalValuesGuide, meta as normalValuesGuideMeta } from './NormalValuesGuide'
+import { VisualFieldDefectLocalization, meta as visualFieldDefectLocalizationMeta } from './VisualFieldDefectLocalization'
 
 export interface ReferenceEntry {
   meta: ReferenceMeta
@@ -30,6 +31,7 @@ export const referenceRegistry: ReferenceEntry[] = [
   { meta: cornealThicknessTableMeta, Component: CornealThicknessTable },
   { meta: diagnosticDropsTableMeta, Component: DiagnosticDropsTable },
   { meta: normalValuesGuideMeta, Component: NormalValuesGuide },
+  { meta: visualFieldDefectLocalizationMeta, Component: VisualFieldDefectLocalization },
 ]
 
 export function getReferenceById(id: string): ReferenceEntry | undefined {
