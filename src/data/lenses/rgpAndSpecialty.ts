@@ -124,7 +124,10 @@ export const rgpAndSpecialtyLenses: ContactLens[] = [
     materialClass: 'RGP (rigid gas permeable)',
     materialName: 'Typically a high-Dk RGP material (e.g. Boston XO2, Optimum Extreme)',
     dk: '100–141 depending on chosen material',
-    baseCurves: ['Sagittal depth-based fitting rather than a traditional base curve — ordered in microns of vault over the cornea'],
+    baseCurves: [
+      'Primarily fit by sagittal depth (microns of vault), not a fixed base curve — see clinical notes',
+      'Where a lab does specify a central/posterior curve, commonly cited ranges run roughly 38.00–45.00 D (7.50–8.88 mm), varying widely by design, lab, and corneal shape',
+    ],
     diameter: 'Mini-scleral 14.5–15.8 mm; large scleral 16.5–18.2 mm',
     sphereRange: 'Custom lab order',
     replacementSchedule: 'Quarterly to annual (custom RGP/scleral)',
@@ -134,6 +137,7 @@ export const rgpAndSpecialtyLenses: ContactLens[] = [
     bestFor: ['Irregular cornea (keratoconus, post-keratoplasty, pellucid marginal degeneration)', 'Severe dry eye / ocular surface disease (the fluid reservoir provides continuous corneal hydration)', 'High irregular astigmatism not correctable with a corneal RGP'],
     clinicalNotes: [
       'Fit by sagittal depth/vault rather than base curve — image-based or profilometry-based fitting systems are increasingly used for the initial diagnostic lens selection.',
+      'The field has shifted away from base-curve nomenclature toward sagittal depth specifically because sag captures the combined effect of base curve, optical zone diameter, and peripheral curve design in one number — a base curve/diopter figure alone doesn\'t fully describe how a scleral lens will vault. Some labs still order by base curve/D; most now order primarily by sag.',
       'Because the lens is thick and doesn\'t move with the blink like a corneal RGP, material Dk and lens thickness both matter more for corneal oxygenation — this is why the highest-Dk RGP materials are preferred here.',
     ],
     relatedCalculatorIds: ['sagittal-depth', 'oxygen-transmissibility'],
@@ -146,7 +150,7 @@ export const rgpAndSpecialtyLenses: ContactLens[] = [
     materialClass: 'Hybrid (RGP center / soft skirt)',
     materialName: 'Hyper-Dk RGP center (e.g. paflufocon-family material) fused to a silicone hydrogel skirt',
     dk: 'RGP center typically Dk ~130+',
-    baseCurves: ['Custom lab order'],
+    baseCurves: ['Custom lab order (rigid center curve), typically 40.75–47.50 D (7.10–8.30 mm) — the current SynergEyes iD range; the earlier SynergEyes A used a narrower 7.10–8.00 mm range'],
     diameter: 'Typically ~14.5 mm overall',
     sphereRange: 'Custom lab order',
     replacementSchedule: 'Quarterly to annual (custom RGP/scleral)',
