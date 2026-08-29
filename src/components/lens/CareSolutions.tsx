@@ -1,66 +1,8 @@
 import { Link } from 'react-router-dom'
 import { AlertTriangle, GraduationCap, Info } from 'lucide-react'
-import { ReferenceShell } from './shared/ReferenceShell'
-import { ReferenceTable } from './shared/ReferenceTable'
-import { Card } from '../components/ui/Card'
-import { Linkify } from '../components/shared/Linkify'
-import type { ReferenceMeta } from '../types/reference'
-
-export const meta: ReferenceMeta = {
-  id: 'contact-lens-care-solutions',
-  name: 'Contact Lens Care Solutions',
-  category: 'Contact Lenses',
-  description:
-    'Solution types, preservatives, disinfection standards, compatibility rules, and the classic solution-associated outbreaks — everything about lens care systems tested on boards.',
-  keywords: [
-    'contact lens solution',
-    'multipurpose solution',
-    'MPS',
-    'hydrogen peroxide',
-    'Clear Care',
-    'AOSept',
-    'saline',
-    'enzymatic cleaner',
-    'papain',
-    'subtilisin',
-    'PHMB',
-    'polyquad',
-    'polyquaternium-1',
-    'benzalkonium chloride',
-    'BAK',
-    'rub and rinse',
-    'no rub',
-    'ISO 14729',
-    'stand-alone test',
-    'disinfection efficacy',
-    'solution-induced corneal staining',
-    'SICS',
-    'ReNu MoistureLoc',
-    'Complete MoisturePlus',
-    'Fusarium keratitis',
-    'Acanthamoeba keratitis',
-    'compliance',
-    'case hygiene',
-    'HydraGlyde',
-    'TearGlyde',
-    'hyaluronan',
-    'poloxamine',
-    'comfort agent',
-    'wetting agent',
-    'rewetting drops',
-    'lubricating drops',
-    'discard after opening',
-    '90 days',
-    'CLARE',
-    'contact lens acute red eye',
-    'CLPU',
-    'contact lens peripheral ulcer',
-    'infiltrative keratitis',
-    'corneal infiltrative event',
-    '510(k)',
-    'Class II medical device',
-  ],
-}
+import { ReferenceTable } from '../../reference/shared/ReferenceTable'
+import { Card } from '../ui/Card'
+import { Linkify } from '../shared/Linkify'
 
 interface SolutionType {
   type: string
@@ -300,10 +242,10 @@ const HISTORICAL_RECALLS: HistoricalRecall[] = [
   },
 ]
 
-export function ContactLensCareSolutions() {
+export function CareSolutions() {
   return (
-    <ReferenceShell meta={meta}>
-      <p className="text-sm text-slate-600 -mt-2">
+    <div className="space-y-6">
+      <p className="text-sm text-slate-600">
         Every solution type, active ingredient, and compatibility rule that shows up in lens-care patient
         counseling and on exams — organized from the basic solution categories through named commercial products,
         disinfection standards, complications (including the corneal infiltrative event spectrum), and the two
@@ -611,6 +553,6 @@ export function ContactLensCareSolutions() {
         Product examples and preservative pairings reflect commonly cited formulations and can change with product
         revisions — always confirm against the current manufacturer package insert before dispensing or counseling.
       </p>
-    </ReferenceShell>
+    </div>
   )
 }

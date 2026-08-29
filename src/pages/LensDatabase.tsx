@@ -1,15 +1,17 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Disc, ChevronRight, GitCompare, Star, Info } from 'lucide-react'
+import { Disc, ChevronRight, GitCompare, Star, Info, Droplets } from 'lucide-react'
 import { SearchInput } from '../components/ui/SearchInput'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
 import { EmptyState } from '../components/ui/EmptyState'
+import { Tabs } from '../components/ui/Tabs'
 import { searchLenses, getLensDesigns, getLensManufacturers } from '../services/lensService'
 import { getLensFavorites, isLensFavorite, toggleLensFavorite } from '../services/lensFavorites'
 import type { LensDesign } from '../types/lens'
 import { LensCompareDrawer } from '../components/lens/LensCompareDrawer'
+import { CareSolutions } from '../components/lens/CareSolutions'
 
 export function LensDatabase() {
   const [query, setQuery] = useState('')
@@ -66,118 +68,138 @@ export function LensDatabase() {
         )}
       </div>
 
-      <Card className="bg-slate-50 border-slate-200 flex gap-2.5">
-        <Info size={16} className="text-slate-400 shrink-0 mt-0.5" />
-        <p className="text-xs text-slate-500 leading-relaxed">
-          Core specs (base curve, diameter, water content, Dk/t, UV-blocking status) have been checked against
-          manufacturer/practitioner sources, including catching a few cases where a sphere and toric version of the
-          same lens family differ in UV-blocking status (e.g. Dailies Total1) — don&apos;t assume one variant&apos;s
-          UV status applies to its sibling.{' '}
-          <span className="font-medium text-slate-700">Still, always confirm exact parameters against the current
-          manufacturer package insert before dispensing</span> — specs change with product revisions, and this is
-          {' '}<strong>41 of the most commonly prescribed/discussed lenses (including Proclear, Total30, MiSight,
-          Abiliti 1-Day, NaturalVue Multifocal, and — new — Paragon CRT and Euclid Emerald orthokeratology), not
-          every lens on the market.</strong> Notably absent by choice: colored/cosmetic lenses and non-US-market
-          brands (Menicon, Seed). RGP, scleral, hybrid, and orthokeratology entries describe lab-custom material
-          families rather than one fixed catalog product — an ortho-k base curve in particular is calculated per
-          eye from topography, not looked up. Fields deliberately left out (unlike print parameter guides):
-          packaging/box count and retail cost — these vary by retailer and change too often to belong in a clinical
-          reference; check a distributor site for current pricing.
-        </p>
-      </Card>
+      <Tabs
+        tabs={[
+          {
+            id: 'browse',
+            label: 'Browse Lenses',
+            content: (
+              <div className="space-y-6">
+                <Card className="bg-slate-50 border-slate-200 flex gap-2.5">
+                  <Info size={16} className="text-slate-400 shrink-0 mt-0.5" />
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Core specs (base curve, diameter, water content, Dk/t, UV-blocking status) have been checked
+                    against manufacturer/practitioner sources, including catching a few cases where a sphere and
+                    toric version of the same lens family differ in UV-blocking status (e.g. Dailies Total1) —
+                    don&apos;t assume one variant&apos;s UV status applies to its sibling.{' '}
+                    <span className="font-medium text-slate-700">Still, always confirm exact parameters against the
+                    current manufacturer package insert before dispensing</span> — specs change with product
+                    revisions, and this is{' '}
+                    <strong>41 of the most commonly prescribed/discussed lenses (including Proclear, Total30,
+                    MiSight, Abiliti 1-Day, NaturalVue Multifocal, and — new — Paragon CRT and Euclid Emerald
+                    orthokeratology), not every lens on the market.</strong> Notably absent by choice: colored/cosmetic
+                    lenses and non-US-market brands (Menicon, Seed). RGP, scleral, hybrid, and orthokeratology
+                    entries describe lab-custom material families rather than one fixed catalog product — an ortho-k
+                    base curve in particular is calculated per eye from topography, not looked up. Fields
+                    deliberately left out (unlike print parameter guides): packaging/box count and retail cost —
+                    these vary by retailer and change too often to belong in a clinical reference; check a
+                    distributor site for current pricing.
+                  </p>
+                </Card>
 
-      <SearchInput
-        placeholder="Search by brand, manufacturer, material, or clinical use..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        className="max-w-xl"
-      />
+                <SearchInput
+                  placeholder="Search by brand, manufacturer, material, or clinical use..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  className="max-w-xl"
+                />
 
-      <div className="space-y-2.5">
-        <div className="flex gap-1.5 flex-wrap items-center">
-          {designs.map((d) => (
-            <button
-              key={d}
-              onClick={() => toggleDesign(d)}
-              className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
-                activeDesigns.includes(d)
-                  ? 'bg-brand-600 text-white border-brand-600'
-                  : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
-              }`}
-            >
-              {d}
-            </button>
-          ))}
-        </div>
-        <div className="flex gap-1.5 flex-wrap items-center">
-          <select
-            value={manufacturer ?? ''}
-            onChange={(e) => setManufacturer(e.target.value || null)}
-            className="px-3 py-1.5 rounded-lg text-sm border border-slate-300 bg-white text-slate-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-500"
-          >
-            <option value="">All manufacturers</option>
-            {manufacturers.map((m) => (
-              <option key={m} value={m}>
-                {m}
-              </option>
-            ))}
-          </select>
-          <button
-            onClick={() => setFavoritesOnly((v) => !v)}
-            className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
-              favoritesOnly
-                ? 'bg-amber-50 text-amber-700 border-amber-300'
-                : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
-            }`}
-          >
-            <Star size={14} className={favoritesOnly ? 'fill-amber-400 text-amber-400' : ''} /> Favorites only
-          </button>
-        </div>
-      </div>
-
-      {results.length === 0 ? (
-        <EmptyState icon={Disc} title="No lenses found" description="Try a different search term or filter." />
-      ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-          {results.map((lens) => (
-            <Card key={lens.id} className="flex flex-col gap-2">
-              <div className="flex items-start justify-between gap-2">
-                <Badge tone="purple">{lens.design}</Badge>
-                <div className="flex items-center gap-2 shrink-0">
-                  <button
-                    onClick={() => toggleFav(lens.id)}
-                    aria-label={isLensFavorite(lens.id) ? `Remove ${lens.brand} from favorites` : `Add ${lens.brand} to favorites`}
-                    className="text-slate-300 hover:text-amber-400 cursor-pointer"
-                  >
-                    <Star size={15} className={favorites.includes(lens.id) ? 'fill-amber-400 text-amber-400' : ''} />
-                  </button>
-                  <label className="flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer select-none">
-                    <input
-                      type="checkbox"
-                      checked={compareIds.includes(lens.id)}
-                      onChange={() => toggleCompare(lens.id)}
-                      className="accent-brand-600"
-                    />
-                    Compare
-                  </label>
+                <div className="space-y-2.5">
+                  <div className="flex gap-1.5 flex-wrap items-center">
+                    {designs.map((d) => (
+                      <button
+                        key={d}
+                        onClick={() => toggleDesign(d)}
+                        className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
+                          activeDesigns.includes(d)
+                            ? 'bg-brand-600 text-white border-brand-600'
+                            : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+                        }`}
+                      >
+                        {d}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="flex gap-1.5 flex-wrap items-center">
+                    <select
+                      value={manufacturer ?? ''}
+                      onChange={(e) => setManufacturer(e.target.value || null)}
+                      className="px-3 py-1.5 rounded-lg text-sm border border-slate-300 bg-white text-slate-600 cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-500"
+                    >
+                      <option value="">All manufacturers</option>
+                      {manufacturers.map((m) => (
+                        <option key={m} value={m}>
+                          {m}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      onClick={() => setFavoritesOnly((v) => !v)}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
+                        favoritesOnly
+                          ? 'bg-amber-50 text-amber-700 border-amber-300'
+                          : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      <Star size={14} className={favoritesOnly ? 'fill-amber-400 text-amber-400' : ''} /> Favorites only
+                    </button>
+                  </div>
                 </div>
+
+                {results.length === 0 ? (
+                  <EmptyState icon={Disc} title="No lenses found" description="Try a different search term or filter." />
+                ) : (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {results.map((lens) => (
+                      <Card key={lens.id} className="flex flex-col gap-2">
+                        <div className="flex items-start justify-between gap-2">
+                          <Badge tone="purple">{lens.design}</Badge>
+                          <div className="flex items-center gap-2 shrink-0">
+                            <button
+                              onClick={() => toggleFav(lens.id)}
+                              aria-label={isLensFavorite(lens.id) ? `Remove ${lens.brand} from favorites` : `Add ${lens.brand} to favorites`}
+                              className="text-slate-300 hover:text-amber-400 cursor-pointer"
+                            >
+                              <Star size={15} className={favorites.includes(lens.id) ? 'fill-amber-400 text-amber-400' : ''} />
+                            </button>
+                            <label className="flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer select-none">
+                              <input
+                                type="checkbox"
+                                checked={compareIds.includes(lens.id)}
+                                onChange={() => toggleCompare(lens.id)}
+                                className="accent-brand-600"
+                              />
+                              Compare
+                            </label>
+                          </div>
+                        </div>
+                        <Link to={`/lenses/${lens.id}`} className="group">
+                          <h3 className="text-sm font-semibold text-slate-900 group-hover:text-brand-600">{lens.brand}</h3>
+                          <p className="text-xs text-slate-500 mt-0.5">{lens.manufacturer}</p>
+                          <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500 mt-2">
+                            {lens.dkt && <span>Dk/t {lens.dkt.split(' ')[0]}</span>}
+                            {lens.waterContent && <span>{lens.waterContent}</span>}
+                            <span>{lens.replacementSchedule}</span>
+                          </div>
+                          <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-600 mt-2">
+                            View full parameters <ChevronRight size={13} />
+                          </span>
+                        </Link>
+                      </Card>
+                    ))}
+                  </div>
+                )}
               </div>
-              <Link to={`/lenses/${lens.id}`} className="group">
-                <h3 className="text-sm font-semibold text-slate-900 group-hover:text-brand-600">{lens.brand}</h3>
-                <p className="text-xs text-slate-500 mt-0.5">{lens.manufacturer}</p>
-                <div className="flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-slate-500 mt-2">
-                  {lens.dkt && <span>Dk/t {lens.dkt.split(' ')[0]}</span>}
-                  {lens.waterContent && <span>{lens.waterContent}</span>}
-                  <span>{lens.replacementSchedule}</span>
-                </div>
-                <span className="inline-flex items-center gap-1 text-xs font-medium text-brand-600 mt-2">
-                  View full parameters <ChevronRight size={13} />
-                </span>
-              </Link>
-            </Card>
-          ))}
-        </div>
-      )}
+            ),
+          },
+          {
+            id: 'care-solutions',
+            label: 'Care Solutions',
+            badge: <Droplets size={14} />,
+            content: <CareSolutions />,
+          },
+        ]}
+      />
 
       <LensCompareDrawer
         open={compareOpen}
