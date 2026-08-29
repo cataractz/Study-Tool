@@ -11,7 +11,6 @@ export const primaryNav: NavItem[] = [
   { label: 'Disease Library', path: '/diseases', icon: 'book-open' },
   { label: 'Differential Diagnosis', path: '/differential', icon: 'git-compare' },
   { label: 'Drug Database', path: '/drugs', icon: 'pill' },
-  { label: 'Prescription Trainer', path: '/prescription-trainer', icon: 'file-text' },
   { label: 'AI Clinical Assistant', path: '/ai-assistant', icon: 'sparkles' },
   { label: 'Calculations & Conversions', path: '/calculators', icon: 'calculator' },
   { label: 'References', path: '/references', icon: 'library' },

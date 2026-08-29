@@ -6,7 +6,6 @@ import { DiseaseDetail } from './pages/DiseaseDetail'
 import { DifferentialDiagnosis } from './pages/DifferentialDiagnosis'
 import { DrugDatabase } from './pages/DrugDatabase'
 import { DrugDetail } from './pages/DrugDetail'
-import { PrescriptionTrainer } from './pages/PrescriptionTrainer'
 import { AIClinicalAssistant } from './pages/AIClinicalAssistant'
 import { CalculationsConversions } from './pages/CalculationsConversions'
 import { CalculatorDetail } from './pages/CalculatorDetail'
@@ -26,7 +25,6 @@ function App() {
         <Route path="/differential" element={<DifferentialDiagnosis />} />
         <Route path="/drugs" element={<DrugDatabase />} />
         <Route path="/drugs/:drugId" element={<DrugDetail />} />
-        <Route path="/prescription-trainer" element={<PrescriptionTrainer />} />
         <Route path="/ai-assistant" element={<AIClinicalAssistant />} />
         <Route path="/calculators" element={<CalculationsConversions />} />
         <Route path="/calculators/:calculatorId" element={<CalculatorDetail />} />

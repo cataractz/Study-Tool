@@ -2,7 +2,10 @@ import {
   BookOpen,
   GitCompare,
   Pill,
-  FileText,
+  Sparkles,
+  Calculator,
+  Library,
+  Disc,
   Aperture,
   ScanEye,
   Eye,
@@ -15,10 +18,15 @@ import { ToolCard } from '../components/ui/ToolCard'
 import { Card } from '../components/ui/Card'
 import { getAllDiseases } from '../services/diseaseService'
 import { getAllDrugs } from '../services/drugService'
+import { calculatorRegistry } from '../calculators/registry'
+import { referenceRegistry } from '../reference/registry'
+import { getAllLenses } from '../services/lensService'
 
 export function Dashboard() {
   const diseaseCount = getAllDiseases().length
   const drugCount = getAllDrugs().length
+  const activeToolCount = 7
+  const futureToolCount = 7
 
   return (
     <div className="space-y-8">
@@ -42,11 +50,11 @@ export function Dashboard() {
           <p className="text-xs text-slate-500 mt-0.5">Drugs in database</p>
         </Card>
         <Card className="text-center py-4">
-          <p className="text-2xl font-semibold text-slate-900">4</p>
+          <p className="text-2xl font-semibold text-slate-900">{activeToolCount}</p>
           <p className="text-xs text-slate-500 mt-0.5">Active tools</p>
         </Card>
         <Card className="text-center py-4">
-          <p className="text-2xl font-semibold text-slate-900">7</p>
+          <p className="text-2xl font-semibold text-slate-900">{futureToolCount}</p>
           <p className="text-xs text-slate-500 mt-0.5">Tools coming soon</p>
         </Card>
       </div>
@@ -79,12 +87,36 @@ export function Dashboard() {
             path="/drugs"
           />
           <ToolCard
-            icon={FileText}
-            iconTone="#b45309"
-            title="Prescription Trainer"
-            description="Practice selecting medications and writing complete ophthalmic prescriptions."
-            buttonLabel="Practice Prescribing"
-            path="/prescription-trainer"
+            icon={Sparkles}
+            iconTone="#db2777"
+            title="AI Clinical Assistant"
+            description="Ask follow-up questions about a disease, drug, or differential in plain language."
+            buttonLabel="Open AI Assistant"
+            path="/ai-assistant"
+          />
+          <ToolCard
+            icon={Calculator}
+            iconTone="#0891b2"
+            title="Calculations & Conversions"
+            description={`${calculatorRegistry.length} clinical and optical calculators, from prism to pharmacology to keratometry.`}
+            buttonLabel="Open Calculators"
+            path="/calculators"
+          />
+          <ToolCard
+            icon={Library}
+            iconTone="#65a30d"
+            title="References"
+            description={`${referenceRegistry.length} quick-reference tables — normal values, Morgan's norms, rules of thumb, and more.`}
+            buttonLabel="Open References"
+            path="/references"
+          />
+          <ToolCard
+            icon={Disc}
+            iconTone="#4f46e5"
+            title="Contact Lens Database"
+            description={`${getAllLenses().length} soft, RGP, scleral, and hybrid lenses with full fitting parameters.`}
+            buttonLabel="Open Lens Database"
+            path="/lenses"
           />
         </div>
       </div>
