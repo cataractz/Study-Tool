@@ -1,6 +1,6 @@
 import { useId, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { GraduationCap, ArrowRight, Info } from 'lucide-react'
+import { GraduationCap, ArrowRight } from 'lucide-react'
 import { ReferenceShell } from './shared/ReferenceShell'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
@@ -13,7 +13,7 @@ export const meta: ReferenceMeta = {
   name: 'Visual Field Defect Localization',
   category: 'Neuro-Ophthalmology',
   description:
-    'The visual pathway from retina to occipital cortex, with the exact field defect produced by a lesion at each of the 11 classic teaching sites — junctional scotoma, bitemporal hemianopia, incongruous vs. congruous homonymous defects, quadrantanopias, macular sparing, and more.',
+    'The visual pathway from retina to occipital cortex, with the exact field defect produced by a lesion at each of the 11 classic teaching sites — both the left-sided and right-sided version of each — junctional scotoma, bitemporal hemianopia, incongruous vs. congruous homonymous defects, quadrantanopias, macular sparing, and more.',
   keywords: [
     'visual field defect',
     'visual pathway',
@@ -49,6 +49,8 @@ export const meta: ReferenceMeta = {
     'relative afferent pupillary defect',
     'bowtie atrophy',
     'neuro-ophthalmology',
+    'left sided lesion',
+    'right sided lesion',
   ],
 }
 
@@ -91,9 +93,8 @@ function EyePair({ od, os }: { od?: ReactNode; os?: ReactNode }) {
   )
 }
 
+// Right-sided defect shapes (defect on the right half/side of each eye's own circle)
 const rightHalf = <rect x="50" y="0" width="50" height="100" fill={SHADE} />
-const leftHalf = <rect x="0" y="0" width="50" height="100" fill={SHADE} />
-const fullField = <rect x="0" y="0" width="100" height="100" fill={SHADE} />
 const upperRightQuad = <rect x="50" y="0" width="50" height="50" fill={SHADE} />
 const lowerRightQuad = <rect x="50" y="50" width="50" height="50" fill={SHADE} />
 const rightHalfWithMacularSparing = (
@@ -106,352 +107,208 @@ const smallRightCentralScotoma = <rect x="50" y="35" width="18" height="30" rx="
 const incongruousRightHalf = <rect x="58" y="10" width="36" height="80" fill={SHADE} />
 const farTemporalCrescent = <rect x="80" y="0" width="20" height="100" fill={SHADE} />
 /** A small, partial supero-temporal wedge — smaller than a full quadrant. */
-const smallSuperoTemporalWedge = <rect x="58" y="4" width="38" height="40" fill={SHADE} />
+const smallSuperoTemporalWedgeRight = <rect x="58" y="4" width="38" height="40" fill={SHADE} />
 /** A narrow horizontal wedge/sector (not a simple half or quadrant) — the distinctive LGN
  * sectoranopia pattern from its dual (anterior + lateral posterior choroidal artery) blood
  * supply, split along a horizontal line rather than the vertical midline. */
-const horizontalSectorWedge = <polygon points="50,50 100,32 100,68" fill={SHADE} />
+const horizontalSectorWedgeRight = <polygon points="50,50 100,32 100,68" fill={SHADE} />
 
-// --- Pathway overview diagram ------------------------------------------------------------------
-
-function Waypoint({
-  cx,
-  cy,
-  n,
-  label,
-  labelDx = 16,
-  labelDy = 0,
-  color = '#6d28d9',
-  anchor = 'start',
-}: {
-  cx: number
-  cy: number
-  n: number | string
-  label?: string
-  labelDx?: number
-  labelDy?: number
-  color?: string
-  anchor?: 'start' | 'middle' | 'end'
-}) {
-  return (
-    <g>
-      <circle cx={cx} cy={cy} r="12" fill={color} stroke="#fff" strokeWidth="2" />
-      <text x={cx} y={cy} textAnchor="middle" dominantBaseline="central" fontSize="12" fontWeight="700" fill="#fff">
-        {n}
-      </text>
-      {label && (
-        <text
-          x={cx + labelDx}
-          y={cy + labelDy}
-          textAnchor={anchor}
-          dominantBaseline="central"
-          fontSize="11.5"
-          fontWeight="600"
-          fill="#334155"
-        >
-          {label}
-        </text>
-      )}
-    </g>
-  )
-}
-
-/**
- * A stylized eye/globe shape, colored by retinal zone rather than plain white — the half facing
- * the midline (toward the other eye) is the NASAL retina (warm), the half facing outward is the
- * TEMPORAL retina (cool). This isn't decorative: nasal retina fibers are the ones that cross at
- * the chiasm, so this coloring sets up the crossing visually before it even happens.
- */
-function EyeShape({
-  cx,
-  cy,
-  eyeLabel,
-  subLabel,
-  nasalSide,
-}: {
-  cx: number
-  cy: number
-  eyeLabel: string
-  subLabel: string
-  nasalSide: 'left' | 'right'
-}) {
-  const w = 36
-  const h = 22
-  const clipId = `eye-clip-${eyeLabel}`
-  const nasalX = nasalSide === 'left' ? cx - w : cx
-  const temporalX = nasalSide === 'left' ? cx : cx + w
-  return (
-    <g>
-      <defs>
-        <clipPath id={clipId}>
-          <path
-            d={`M${cx - w},${cy} C${cx - w * 0.55},${cy - h} ${cx + w * 0.55},${cy - h} ${cx + w},${cy} C${cx + w * 0.55},${cy + h} ${cx - w * 0.55},${cy + h} ${cx - w},${cy} Z`}
-          />
-        </clipPath>
-      </defs>
-      <g clipPath={`url(#${clipId})`}>
-        <rect x={nasalX} y={cy - h} width={w} height={h * 2} fill="#fecaca" />
-        <rect x={temporalX} y={cy - h} width={w} height={h * 2} fill="#bfdbfe" />
-      </g>
-      <path
-        d={`M${cx - w},${cy} C${cx - w * 0.55},${cy - h} ${cx + w * 0.55},${cy - h} ${cx + w},${cy} C${cx + w * 0.55},${cy + h} ${cx - w * 0.55},${cy + h} ${cx - w},${cy} Z`}
-        fill="none"
-        stroke="#334155"
-        strokeWidth="2.25"
-      />
-      <circle cx={cx} cy={cy} r="12" fill="#1e293b" opacity="0.12" />
-      <circle cx={cx} cy={cy} r="10" fill="#38bdf8" stroke="#0369a1" strokeWidth="1.5" />
-      <circle cx={cx} cy={cy} r="4.5" fill="#0c1e33" />
-      <circle cx={cx - 3} cy={cy - 3} r="1.6" fill="#e0f2fe" />
-      <text x={cx} y={cy + 44} textAnchor="middle" fontSize="12" fontWeight="700" fill="#0369a1">{eyeLabel}</text>
-      <text x={cx} y={cy + 60} textAnchor="middle" fontSize="10.5" fill="#64748b">{subLabel}</text>
-    </g>
-  )
-}
-
-/**
- * An original schematic of the visual pathway — two eyes, a brain (simplified top-down
- * silhouette), and the pathway connecting them, crossing at the chiasm and continuing through the
- * tract/LGN/radiations of one hemisphere (labeled, not copied from any published figure) to the
- * occipital cortex at the back of the brain. It mirrors the layout used in classic teaching
- * diagrams (eyes-to-occipital-cortex with numbered lesion sites) without reproducing any specific
- * published illustration.
- */
-function PathwayDiagram() {
-  return (
-    <svg viewBox="0 0 620 780" className="w-full h-auto" role="img" aria-label="Illustration of two eyes, the brain, and the visual pathway connecting them, with 11 numbered classic lesion sites plus one bonus site">
-      {/* brain silhouette — an organic (deliberately not-perfectly-symmetric) top-down outline
-          with a few extra bulges to suggest gyri, and a small posterior notch where the
-          interhemispheric fissure reaches the occipital pole */}
-      <path
-        d="M310,175
-           C375,176 410,182 435,205
-           C458,226 452,250 472,248
-           C500,300 542,335 538,412
-           C536,455 512,460 518,495
-           C512,540 478,528 475,565
-           C460,598 435,645 368,682
-           C350,692 335,700 320,706
-           C316,700 306,700 302,706
-           C287,700 270,692 252,682
-           C185,645 160,598 145,565
-           C142,528 108,540 102,495
-           C108,460 84,455 82,412
-           C78,335 120,300 148,248
-           C168,250 162,226 185,205
-           C210,182 245,176 310,175 Z"
-        fill="#f5f3ff"
-        stroke="#c4b5fd"
-        strokeWidth="2.5"
-      />
-      {/* soft sulcus/gyrus hint lines for texture, purely decorative */}
-      <path d="M228,232 C250,262 256,304 240,340" fill="none" stroke="#ddd6fe" strokeWidth="2" />
-      <path d="M392,232 C370,262 364,304 380,340" fill="none" stroke="#ddd6fe" strokeWidth="2" />
-      <path d="M175,300 C205,320 215,350 200,378" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
-      <path d="M445,300 C415,320 405,350 420,378" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
-      <path d="M145,470 C205,502 250,507 300,497" fill="none" stroke="#ddd6fe" strokeWidth="2" />
-      <path d="M475,470 C415,502 370,507 320,497" fill="none" stroke="#ddd6fe" strokeWidth="2" />
-      <path d="M180,560 C220,585 260,592 300,588" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
-      <path d="M440,560 C400,585 360,592 320,588" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
-
-      {/* eyes — colored by retinal zone: nasal (warm) fibers cross at the chiasm, temporal (cool) fibers stay uncrossed */}
-      <EyeShape cx={210} cy={40} eyeLabel="OS" subLabel="Left eye" nasalSide="right" />
-      <EyeShape cx={410} cy={40} eyeLabel="OD" subLabel="Right eye" nasalSide="left" />
-
-      {/* optic nerves — given a slight S-curve/hook near the globe (the nerve has real anatomic
-          slack there) before straightening out toward the chiasm */}
-      <path d="M210,104 C205,120 235,128 260,138 S292,146 300,150" fill="none" stroke="#94a3b8" strokeWidth="4" strokeLinecap="round" />
-      <path d="M410,104 C415,120 385,128 360,138 S328,146 300,150" fill="none" stroke="#94a3b8" strokeWidth="4" strokeLinecap="round" />
-
-      {/* the highlighted single-hemisphere pathway from chiasm onward */}
-      <line x1="300" y1="150" x2="300" y2="300" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
-      <path d="M300,300 Q225,350 210,420 Q225,470 265,505" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
-      <path d="M300,300 Q375,350 390,420 Q375,470 335,505" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
-      <path d="M265,505 Q285,530 300,545" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
-      <path d="M335,505 Q315,530 300,545" fill="none" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
-
-      <ellipse cx="300" cy="270" rx="28" ry="19" fill="#ede9fe" stroke="#7c3aed" strokeWidth="2" />
-
-      <text x="310" y="578" textAnchor="middle" fontSize="12.5" fontWeight="700" fill="#5b21b6">Occipital (Calcarine) Cortex</text>
-
-      {/* waypoints 1 & 2: on the pre-chiasmal left optic nerve */}
-      <Waypoint cx={252} cy={106} n={1} label="Optic nerve" labelDx={12} labelDy={-10} />
-      <Waypoint cx={282} cy={133} n={2} label="Junctional" labelDx={-14} labelDy={-12} anchor="end" />
-
-      <Waypoint cx={300} cy={150} n={3} label="Chiasm" labelDx={16} labelDy={14} />
-      <Waypoint cx={300} cy={210} n={4} label="Optic tract" labelDx={16} labelDy={0} />
-      <Waypoint cx={300} cy={270} n={5} label="LGN" labelDx={34} labelDy={0} />
-      <Waypoint cx={205} cy={392} n={6} label="Temporal lobe" labelDx={-14} labelDy={-14} anchor="end" />
-      <Waypoint cx={395} cy={392} n={7} label="Parietal lobe" labelDx={14} labelDy={-14} />
-
-      <Waypoint cx={300} cy={545} n={12} label="Ant. calcarine (bonus)" labelDx={18} labelDy={0} color="#059669" />
-
-      <Waypoint cx={165} cy={600} n={8} label="Upper bank" labelDx={0} labelDy={22} anchor="middle" />
-      <Waypoint cx={265} cy={610} n={9} label="Lower bank" labelDx={0} labelDy={22} anchor="middle" />
-      <Waypoint cx={365} cy={610} n={10} label="Complete" labelDx={0} labelDy={22} anchor="middle" />
-      <Waypoint cx={455} cy={600} n={11} label="Pole" labelDx={0} labelDy={22} anchor="middle" />
-    </svg>
-  )
-}
+// Left-sided defect shapes — exact mirror images of the right-sided set above, reflected across
+// the vertical midline (x=50), used for the right-sided-lesion example of every site.
+const leftHalf = <rect x="0" y="0" width="50" height="100" fill={SHADE} />
+const upperLeftQuad = <rect x="0" y="0" width="50" height="50" fill={SHADE} />
+const lowerLeftQuad = <rect x="0" y="50" width="50" height="50" fill={SHADE} />
+const leftHalfWithMacularSparing = (
+  <>
+    <rect x="0" y="0" width="50" height="100" fill={SHADE} />
+    <circle cx="50" cy="50" r="9" fill="#fff" stroke={SHADE} strokeWidth="1.5" />
+  </>
+)
+const smallLeftCentralScotoma = <rect x="32" y="35" width="18" height="30" rx="2" fill={SHADE} />
+const incongruousLeftHalf = <rect x="6" y="10" width="36" height="80" fill={SHADE} />
+const farTemporalCrescentLeft = <rect x="0" y="0" width="20" height="100" fill={SHADE} />
+const smallSuperoTemporalWedgeLeft = <rect x="4" y="4" width="38" height="40" fill={SHADE} />
+const horizontalSectorWedgeLeft = <polygon points="50,50 0,32 0,68" fill={SHADE} />
+/** Both eyes totally out — used for a full prechiasmal optic nerve lesion, symmetric so no
+ * left/right mirroring is needed. */
+const fullField = <rect x="0" y="0" width="100" height="100" fill={SHADE} />
 
 // --- Site data ------------------------------------------------------------------------------
+
+interface LesionExample {
+  /** "Left", "Right", or "Central" for the one site (the chiasm) that has no lateralized version. */
+  side: 'Left' | 'Right' | 'Central'
+  structureLabel: string
+  od?: ReactNode
+  os?: ReactNode
+  resultLabel: string
+}
 
 interface Site {
   number: number
   title: string
-  defectName: string
-  od?: ReactNode
-  os?: ReactNode
   description: string
   causes: string
   pearl: string
   diseaseId?: string
+  examples: LesionExample[]
 }
 
 const SITES: Site[] = [
   {
     number: 1,
     title: 'Optic Nerve (prechiasmal)',
-    defectName: 'Monocular vision loss (total or a central scotoma)',
-    os: fullField,
-    od: undefined,
     description:
-      'A lesion anywhere along one optic nerve — from the globe to just short of the chiasm — affects only that eye, since the nerve carries all of that eye\'s fibers before any crossing occurs. Depending on severity this ranges from a dense central scotoma to complete monocular blindness, and produces a relative afferent pupillary defect (RAPD) in the affected eye.',
+      'A lesion anywhere along one optic nerve — from the globe to just short of the chiasm — affects only that eye, since the nerve carries all of that eye\'s fibers before any crossing occurs. Depending on severity this ranges from a dense central scotoma to complete monocular blindness, and produces a relative afferent pupillary defect (RAPD) in the affected eye. Which side is affected is simply whichever nerve the lesion sits on — a left optic nerve lesion affects only the left eye, a right optic nerve lesion affects only the right eye.',
     causes: 'Optic neuritis, ischemic optic neuropathy, compressive optic nerve tumor, traumatic optic neuropathy',
     pearl: 'A RAPD localizes to the optic nerve/retina of that eye (or a severe, asymmetric chiasmal/tract lesion) — it never occurs from a lesion purely behind the chiasm affecting both eyes equally.',
     diseaseId: 'optic-neuritis',
+    examples: [
+      { side: 'Left', structureLabel: 'Left optic nerve', os: fullField, od: undefined, resultLabel: 'Decreased vision, left eye (OS)' },
+      { side: 'Right', structureLabel: 'Right optic nerve', od: fullField, os: undefined, resultLabel: 'Decreased vision, right eye (OD)' },
+    ],
   },
   {
     number: 2,
     title: 'Posterior Optic Nerve (junctional)',
-    defectName: 'Junctional scotoma — ipsilateral vision loss + contralateral supero-temporal defect',
-    os: fullField,
-    od: smallSuperoTemporalWedge,
     description:
       'A lesion right where the optic nerve joins the chiasm damages that nerve\'s own fibers (ipsilateral vision loss) plus a small bundle of already-crossing fibers from the OPPOSITE eye\'s inferonasal retina, producing a small contralateral superior temporal field defect. The classic anatomic explanation is an anterior loop of crossing fibers into the posterior contralateral nerve ("Wilbrand\'s knee") — modern anatomic studies suggest this loop may actually be an artifact of the enucleated specimens it was first described in, but the clinical localizing value of the finding itself is unchanged either way.',
     causes: 'Pituitary adenoma or other sellar/parasellar mass extending anteriorly to the junction of nerve and chiasm, anterior communicating artery aneurysm',
     pearl: 'Terminology varies by source: some restrict "junctional scotoma of Traquair" to a contralateral peripheral TEMPORAL CRESCENT defect only, and use plain "junctional scotoma" for the more commonly described contralateral SUPERO-TEMPORAL QUADRANT defect shown here — know the pattern more than the exact label.',
     diseaseId: 'chiasmal-syndrome',
+    examples: [
+      { side: 'Left', structureLabel: 'Left posterior optic nerve', os: fullField, od: smallSuperoTemporalWedgeRight, resultLabel: 'Vision loss OS + supero-temporal defect OD' },
+      { side: 'Right', structureLabel: 'Right posterior optic nerve', od: fullField, os: smallSuperoTemporalWedgeLeft, resultLabel: 'Vision loss OD + supero-temporal defect OS' },
+    ],
   },
   {
     number: 3,
     title: 'Optic Chiasm — Central Compression',
-    defectName: 'Bitemporal hemianopia',
-    od: rightHalf,
-    os: leftHalf,
     description:
-      'Crossing (decussating) nasal-retina fibers from both eyes are compressed at the chiasm, taking out the temporal field of each eye — the two "outer" halves — while the nasal fields (which stay uncrossed) are spared. The defect classically respects the vertical midline.',
+      'Crossing (decussating) nasal-retina fibers from both eyes are compressed at the chiasm, taking out the temporal field of each eye — the two "outer" halves — while the nasal fields (which stay uncrossed) are spared. The defect classically respects the vertical midline. This is the one site on this list with no separate "left" and "right" version: the chiasm sits on the midline, so a central compressive lesion hits the crossing fibers from both eyes symmetrically regardless of which side the mass first grew from. (A rare LATERAL chiasmal compression — e.g. from a calcified carotid artery pressing on one side of the chiasm — is lateralized instead, and produces an ipsilateral nasal hemianopia rather than a temporal one; that variant is a distinct, uncommon exception to the pattern below.)',
     causes: 'Pituitary adenoma (compresses from below → bitemporal SUPERIOR quadrant loss first), craniopharyngioma (compresses from above, at the pituitary stalk → bitemporal INFERIOR quadrant loss first)',
     pearl: 'Direction of first quadrant loss tells you which way the mass is pushing: adenoma pushes UP into the chiasm from below → superior defect first; craniopharyngioma pushes DOWN from above → inferior defect first.',
     diseaseId: 'chiasmal-syndrome',
+    examples: [
+      { side: 'Central', structureLabel: 'Chiasm (central compression)', od: rightHalf, os: leftHalf, resultLabel: 'Bitemporal hemianopia' },
+    ],
   },
   {
     number: 4,
     title: 'Optic Tract',
-    defectName: 'Incongruous contralateral homonymous hemianopia',
-    od: rightHalf,
-    os: incongruousRightHalf,
     description:
-      'Just past the chiasm, each tract carries a mix of crossed and uncrossed fibers representing the opposite (contralateral) visual field of both eyes — a left tract lesion causes a right-sided defect in both eyes. Because the crossed and uncrossed fibers haven\'t yet been reorganized (that happens at the LGN), the two eyes\' defects are usually unequal in size/shape — "incongruous."',
+      'Just past the chiasm, each tract carries a mix of crossed and uncrossed fibers representing the opposite (contralateral) visual field of both eyes — a left tract lesion causes a right-sided defect in both eyes, and a right tract lesion causes a left-sided defect in both eyes. Because the crossed and uncrossed fibers haven\'t yet been reorganized (that happens at the LGN), the two eyes\' defects are usually unequal in size/shape — "incongruous," shown below as a smaller defect in the eye with the lesser involvement.',
     causes: 'Pituitary tumor extending posteriorly, craniopharyngioma, meningioma, trauma, stroke',
     pearl: 'A contralateral RAPD (in the eye with the temporal field loss) plus a "bowtie" pattern of optic disc pallor is the classic combination that localizes to the tract rather than farther back in the pathway.',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left optic tract', od: rightHalf, os: incongruousRightHalf, resultLabel: 'Right homonymous hemianopia (incongruous)' },
+      { side: 'Right', structureLabel: 'Right optic tract', os: leftHalf, od: incongruousLeftHalf, resultLabel: 'Left homonymous hemianopia (incongruous)' },
+    ],
   },
   {
     number: 5,
     title: 'Lateral Geniculate Nucleus (LGN)',
-    defectName: 'Homonymous sectoranopia (or a plain homonymous hemianopia)',
-    od: horizontalSectorWedge,
-    os: horizontalSectorWedge,
     description:
       'An isolated LGN lesion is uncommon. Because the LGN has a dual blood supply — the anterior choroidal artery supplies one wedge-shaped sector and the lateral posterior choroidal artery supplies another — a vascular LGN lesion can produce a distinctive horizontal, wedge-shaped sector defect (shown here) rather than a simple hemianopia, depending on which vessel is affected. A non-vascular LGN lesion can still just produce a plain contralateral homonymous hemianopia like a tract or radiation lesion.',
     causes: 'Anterior or lateral posterior choroidal artery infarct (rare as an isolated finding)',
     pearl: 'The LGN is the rarest isolated localization on this list — most exam "homonymous hemianopia" questions are really testing the tract, radiations, or cortex. A wedge-shaped (not simple half) defect is the one clue that specifically points to the LGN.',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left LGN', od: horizontalSectorWedgeRight, os: horizontalSectorWedgeRight, resultLabel: 'Right homonymous sectoranopia' },
+      { side: 'Right', structureLabel: 'Right LGN', od: horizontalSectorWedgeLeft, os: horizontalSectorWedgeLeft, resultLabel: 'Left homonymous sectoranopia' },
+    ],
   },
   {
     number: 6,
     title: "Temporal Lobe (Meyer's Loop)",
-    defectName: 'Contralateral homonymous superior quadrantanopia — "pie in the sky"',
-    od: upperRightQuad,
-    os: upperRightQuad,
     description:
       "Inferior optic radiation fibers carrying the SUPERIOR visual field loop forward through the temporal lobe (Meyer's loop) before heading back to the occipital cortex, making them vulnerable to temporal lobe lesions. The defect is usually incongruous and denser/larger than its parietal counterpart.",
     causes: 'Temporal lobe tumor, temporal lobe epilepsy surgery/resection, middle cerebral artery branch stroke',
     pearl: 'Mnemonic — PITS: Parietal = Inferior field, Temporal = Superior field. "Pie in the sky" (temporal) vs. "pie on the floor" (parietal).',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: "Left temporal lobe (Meyer's loop)", od: upperRightQuad, os: upperRightQuad, resultLabel: 'Right homonymous superior quadrantanopia — "pie in the sky"' },
+      { side: 'Right', structureLabel: "Right temporal lobe (Meyer's loop)", od: upperLeftQuad, os: upperLeftQuad, resultLabel: 'Left homonymous superior quadrantanopia — "pie in the sky"' },
+    ],
   },
   {
     number: 7,
     title: 'Parietal Lobe',
-    defectName: 'Contralateral homonymous inferior quadrantanopia — "pie on the floor"',
-    od: lowerRightQuad,
-    os: lowerRightQuad,
     description:
       'Superior optic radiation fibers carrying the INFERIOR visual field take a more direct route through the parietal lobe. Parietal quadrantanopias tend to be more congruous than temporal ones and may come with other parietal signs (e.g. asymmetric optokinetic nystagmus, neglect with a non-dominant hemisphere lesion).',
     causes: 'Parietal lobe tumor, middle cerebral artery branch stroke',
     pearl: 'Same mnemonic as Meyer\'s loop — PITS: Parietal = Inferior, Temporal = Superior.',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left parietal lobe', od: lowerRightQuad, os: lowerRightQuad, resultLabel: 'Right homonymous inferior quadrantanopia — "pie on the floor"' },
+      { side: 'Right', structureLabel: 'Right parietal lobe', od: lowerLeftQuad, os: lowerLeftQuad, resultLabel: 'Left homonymous inferior quadrantanopia — "pie on the floor"' },
+    ],
   },
   {
     number: 8,
     title: 'Occipital Lobe — Upper Bank (cuneus)',
-    defectName: 'Contralateral homonymous inferior quadrantanopia',
-    od: lowerRightQuad,
-    os: lowerRightQuad,
     description:
       'The calcarine cortex is retinotopically inverted: the UPPER (dorsal) bank of the calcarine fissure — the cuneus — represents the LOWER visual field. A lesion confined to just this bank produces an inferior quadrantanopia. The field defect looks identical to a parietal radiation lesion (#7); what usually distinguishes them is congruity and associated signs, not the visual field shape alone.',
     causes: 'Posterior cerebral artery branch infarct limited to the upper calcarine bank, tumor',
     pearl: 'Same visual field result as parietal lobe (#7), different anatomic level — cortical quadrantanopias from a bank lesion tend to be even more congruous/complete than the radiation-level version.',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left occipital lobe, upper bank', od: lowerRightQuad, os: lowerRightQuad, resultLabel: 'Right homonymous inferior quadrantanopia' },
+      { side: 'Right', structureLabel: 'Right occipital lobe, upper bank', od: lowerLeftQuad, os: lowerLeftQuad, resultLabel: 'Left homonymous inferior quadrantanopia' },
+    ],
   },
   {
     number: 9,
     title: 'Occipital Lobe — Lower Bank (lingual gyrus)',
-    defectName: 'Contralateral homonymous superior quadrantanopia',
-    od: upperRightQuad,
-    os: upperRightQuad,
     description:
-      'The LOWER (ventral) bank of the calcarine fissure — the lingual gyrus — represents the UPPER visual field (again, the inverted retinotopic map). A lesion confined to just this bank produces a superior quadrantanopia, looking identical to a Meyer\'s loop/temporal lobe lesion (#6) but arising at the cortex instead of the radiations.',
+      "The LOWER (ventral) bank of the calcarine fissure — the lingual gyrus — represents the UPPER visual field (again, the inverted retinotopic map). A lesion confined to just this bank produces a superior quadrantanopia, looking identical to a Meyer's loop/temporal lobe lesion (#6) but arising at the cortex instead of the radiations.",
     causes: 'Posterior cerebral artery branch infarct limited to the lower calcarine bank, tumor',
     pearl: 'Upper bank (cuneus) = inferior field out. Lower bank (lingual gyrus) = superior field out. It\'s the mirror-image logic of Meyer\'s loop (temporal, superior) vs. parietal (inferior) — but one anatomic level further back.',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left occipital lobe, lower bank', od: upperRightQuad, os: upperRightQuad, resultLabel: 'Right homonymous superior quadrantanopia' },
+      { side: 'Right', structureLabel: 'Right occipital lobe, lower bank', od: upperLeftQuad, os: upperLeftQuad, resultLabel: 'Left homonymous superior quadrantanopia' },
+    ],
   },
   {
     number: 10,
     title: 'Occipital Cortex — Complete Lesion',
-    defectName: 'Congruous complete homonymous hemianopia with macular sparing',
-    od: rightHalfWithMacularSparing,
-    os: rightHalfWithMacularSparing,
     description:
       'A complete lesion of the primary visual cortex (calcarine fissure) produces a dense, highly congruous homonymous hemianopia — but classically WITH macular sparing. The macular representation at the occipital pole has a dual blood supply (middle cerebral artery collaterals plus posterior cerebral artery), so a PCA-territory infarct that takes out the rest of the hemifield often spares the pole.',
     causes: 'Posterior cerebral artery (PCA) territory stroke (the classic cause), occipital lobe trauma, tumor',
     pearl: 'Macular sparing + high congruity between the two eyes = the cortex. Incongruous = further forward (tract or radiations).',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left occipital cortex, complete', od: rightHalfWithMacularSparing, os: rightHalfWithMacularSparing, resultLabel: 'Right homonymous hemianopia with macular sparing' },
+      { side: 'Right', structureLabel: 'Right occipital cortex, complete', od: leftHalfWithMacularSparing, os: leftHalfWithMacularSparing, resultLabel: 'Left homonymous hemianopia with macular sparing' },
+    ],
   },
   {
     number: 11,
     title: 'Occipital Pole (isolated)',
-    defectName: 'Small homonymous central/paracentral scotoma',
-    od: smallRightCentralScotoma,
-    os: smallRightCentralScotoma,
     description:
       'The occipital pole itself is the posterior-most tip of the calcarine cortex and represents the macula. A small, isolated lesion confined to just the pole produces the mirror image of #10: a small central, homonymous (vertical-midline-respecting) scotoma with the peripheral field otherwise intact.',
     causes: 'Small PCA-territory watershed infarct limited to the occipital pole, embolic occipital pole infarct',
     pearl: 'Pole lesion = only the center is out. Everything-but-the-pole lesion (#10) = macular sparing. They are inverses of each other.',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left occipital pole', od: smallRightCentralScotoma, os: smallRightCentralScotoma, resultLabel: 'Right homonymous central scotoma' },
+      { side: 'Right', structureLabel: 'Right occipital pole', od: smallLeftCentralScotoma, os: smallLeftCentralScotoma, resultLabel: 'Left homonymous central scotoma' },
+    ],
   },
   {
     number: 12,
     title: 'Anterior Calcarine Cortex (bonus — beyond the classic 11)',
-    defectName: 'Temporal crescent syndrome — a MONOCULAR peripheral field defect',
-    od: farTemporalCrescent,
-    os: undefined,
     description:
       "The most anterior tip of the calcarine cortex, near the parieto-occipital sulcus, represents only the extreme peripheral temporal crescent (roughly 30°-60°) of the CONTRALATERAL eye — the one sliver of visual field with no corresponding input from the other eye. A lesion confined to this small region (supplied by the parieto-occipital artery) is the one retrochiasmal defect that is genuinely monocular, not binocular/homonymous.",
     causes: 'Parieto-occipital artery territory infarct, anterior occipital lobe tumor',
     pearl: 'The classic "trick question": every other retrochiasmal lesion on this list produces a BINOCULAR (homonymous) defect. Temporal crescent syndrome is the sole exception — a cortical lesion that looks monocular.',
     diseaseId: 'homonymous-hemianopia',
+    examples: [
+      { side: 'Left', structureLabel: 'Left anterior calcarine cortex', od: farTemporalCrescent, os: undefined, resultLabel: 'Right monocular temporal crescent loss (OD only)' },
+      { side: 'Right', structureLabel: 'Right anterior calcarine cortex', os: farTemporalCrescentLeft, od: undefined, resultLabel: 'Left monocular temporal crescent loss (OS only)' },
+    ],
   },
 ]
 
@@ -462,47 +319,43 @@ export function VisualFieldDefectLocalization() {
     <ReferenceShell meta={meta}>
       <p className="text-sm text-slate-600 -mt-2">
         Walk the visual pathway from the retina to the occipital cortex — each numbered stop below shows exactly
-        what the visual field looks like when a lesion strikes there, using the standard field-printout convention:
-        OS plotted on the left, OD on the right, each eye's OUTER edge is its own temporal field and its INNER edge
-        (toward the other circle) is its own nasal field. A shaded region is field loss. Sites 1-11 are the classic
-        teaching set; #12 is a bonus, less commonly taught but genuinely high-yield addition.
+        what the visual field looks like when a lesion strikes there, for BOTH the left-sided and right-sided
+        version of that lesion (the chiasm is the one exception — it's a midline structure with no lateralized
+        version). Field icons use the standard printout convention: OS plotted on the left, OD on the right, each
+        eye's OUTER edge is its own temporal field and its INNER edge (toward the other circle) is its own nasal
+        field. A shaded region is field loss. Sites 1-11 are the classic teaching set; #12 is a bonus, less commonly
+        taught but genuinely high-yield addition.
       </p>
 
-      <Card className="overflow-x-auto">
-        <div className="min-w-[600px] max-w-2xl mx-auto">
-          <PathwayDiagram />
-        </div>
-      </Card>
-
-      <Card className="bg-sky-50 border-sky-200 flex gap-2.5">
-        <Info size={16} className="text-sky-500 shrink-0 mt-0.5" />
-        <p className="text-xs text-sky-900 leading-relaxed">
-          The diagram above is an original schematic built for this page — not a reproduction of any textbook
-          figure — laid out in the same eyes-to-occipital-cortex, numbered-waypoint style used by classic
-          neuro-ophthalmology teaching diagrams (e.g. the widely reproduced figure in <em>Color Atlas of
-          Neurology</em>). It shows the left-hemisphere pathway only, labeled directly rather than relying on
-          left/right position, since the right-hemisphere pathway is simply its mirror image.
-        </p>
-      </Card>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {SITES.map((site) => (
           <Card key={site.number} className="space-y-3">
             <div className="flex items-start gap-2.5">
               <span className="shrink-0 w-6 h-6 rounded-full bg-violet-600 text-white text-xs font-bold flex items-center justify-center mt-0.5">
                 {site.number}
               </span>
-              <div>
-                <h3 className="text-sm font-semibold text-slate-900">{site.title}</h3>
-                <Badge tone="purple" className="mt-1">
-                  {site.defectName}
-                </Badge>
-              </div>
+              <h3 className="text-sm font-semibold text-slate-900">{site.title}</h3>
             </div>
 
-            <EyePair od={site.od} os={site.os} />
-
             <p className="text-xs text-slate-600 leading-relaxed">{site.description}</p>
+
+            <div className="space-y-3">
+              {site.examples.map((ex) => (
+                <div key={ex.side} className="border-t border-slate-100 pt-3 first:border-t-0 first:pt-0">
+                  <div className="flex items-center gap-2 flex-wrap mb-2">
+                    {ex.side !== 'Central' && (
+                      <Badge tone={ex.side === 'Left' ? 'info' : 'success'}>{ex.side}-sided lesion</Badge>
+                    )}
+                    <span className="text-xs font-semibold text-slate-700">{ex.structureLabel}</span>
+                  </div>
+                  <EyePair od={ex.od} os={ex.os} />
+                  <Badge tone="purple" className="mt-2">
+                    {ex.resultLabel}
+                  </Badge>
+                </div>
+              ))}
+            </div>
+
             <p className="text-xs text-slate-600">
               <span className="font-medium text-slate-700">Classic causes: </span>
               <Linkify text={site.causes} />
