@@ -60,18 +60,28 @@ describe('searchLenses', () => {
 })
 
 describe('formatBaseCurveDiopters', () => {
-  it('converts a plain mm value to "D (mm)", diopters first', () => {
-    // F = 337.5 / r — same formula/constant as the Keratometry calculator.
-    expect(formatBaseCurveDiopters('8.6')).toBe('39.24 D (8.6 mm)')
+  it('converts a plain mm value to "D (mm)", diopters first, rounded to the nearest quarter diopter', () => {
+    // F = 337.5 / 8.6 = 39.244... which the standard NCLE/keratometry convention rounds to
+    // the nearest 0.25 D (39.25), not the raw unrounded value — real conversion charts and
+    // packaging don't show arbitrary-precision decimals.
+    expect(formatBaseCurveDiopters('8.6')).toBe('39.25 D (8.6 mm)')
+  })
+
+  it('matches a published real-world conversion-chart value (7.80 mm = 43.25 D)', () => {
+    // Raw calculation is 337.5 / 7.80 = 43.269..., but every published keratometry/base-curve
+    // conversion table lists 43.25 D for 7.80 mm — confirmed against lens lab and NCLE
+    // board-prep sources. This is the concrete case that caught the original bug (this
+    // function used to return the raw 43.27 unrounded).
+    expect(formatBaseCurveDiopters('7.80')).toBe('43.25 D (7.80 mm)')
   })
 
   it('matches the Keratometry calculator\'s conversion for a round number', () => {
-    // 337.5 / 7.5 = 45 exactly.
-    expect(formatBaseCurveDiopters('7.5')).toBe('45 D (7.5 mm)')
+    // 337.5 / 7.5 = 45 exactly, already a whole number so quarter-diopter rounding is a no-op.
+    expect(formatBaseCurveDiopters('7.5')).toBe('45.00 D (7.5 mm)')
   })
 
   it('leaves a non-numeric / descriptive base curve string unchanged', () => {
-    const custom = 'Custom lab order, typically 39.71–48.21 D (7.00–8.50 mm)'
+    const custom = 'Custom lab order, typically 39.75–48.25 D (7.00–8.50 mm)'
     expect(formatBaseCurveDiopters(custom)).toBe(custom)
   })
 
