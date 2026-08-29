@@ -54,7 +54,7 @@ export const rgpAndSpecialtyLenses: ContactLens[] = [
     manufacturer: 'Bausch + Lomb (material licensed to multiple labs)',
     design: 'RGP Spherical',
     materialClass: 'RGP (rigid gas permeable)',
-    materialName: 'itafocon B',
+    materialName: 'oprifocon A',
     dk: '85',
     baseCurves: ['Custom lab order, typically 39.75–48.25 D (7.00–8.50 mm)'],
     diameter: 'Custom lab order, typically 9.0–10.5 mm',

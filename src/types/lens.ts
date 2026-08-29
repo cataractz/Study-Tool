@@ -8,6 +8,7 @@ export type LensDesign =
   | 'RGP Multifocal'
   | 'Scleral'
   | 'Hybrid'
+  | 'Orthokeratology'
 
 export type MaterialClass =
   | 'Silicone hydrogel'
@@ -21,7 +22,11 @@ export type ReplacementSchedule =
   | 'Monthly (4 weeks)'
   | 'Quarterly to annual (custom RGP/scleral)'
 
-export type WearSchedule = 'Daily wear only' | 'Extended wear (up to 6 nights)' | 'Extended wear (up to 30 nights)'
+export type WearSchedule =
+  | 'Daily wear only'
+  | 'Extended wear (up to 6 nights)'
+  | 'Extended wear (up to 30 nights)'
+  | 'Overnight wear only (removed each morning)'
 
 export interface ContactLens {
   id: string

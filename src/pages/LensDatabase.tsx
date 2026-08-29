@@ -75,12 +75,14 @@ export function LensDatabase() {
           UV status applies to its sibling.{' '}
           <span className="font-medium text-slate-700">Still, always confirm exact parameters against the current
           manufacturer package insert before dispensing</span> — specs change with product revisions, and this is
-          {' '}<strong>38 of the most commonly prescribed/discussed lenses (including Proclear, Total30, MiSight,
-          Abiliti 1-Day, and NaturalVue Multifocal), not every lens on the market.</strong> Notably absent by choice:
-          colored/cosmetic lenses and non-US-market brands (Menicon, Seed). RGP, scleral, and hybrid entries describe
-          lab-custom material families rather than one fixed catalog product. Fields deliberately left out (unlike
-          print parameter guides): packaging/box count and retail cost — these vary by retailer and change too often
-          to belong in a clinical reference; check a distributor site for current pricing.
+          {' '}<strong>41 of the most commonly prescribed/discussed lenses (including Proclear, Total30, MiSight,
+          Abiliti 1-Day, NaturalVue Multifocal, and — new — Paragon CRT and Euclid Emerald orthokeratology), not
+          every lens on the market.</strong> Notably absent by choice: colored/cosmetic lenses and non-US-market
+          brands (Menicon, Seed). RGP, scleral, hybrid, and orthokeratology entries describe lab-custom material
+          families rather than one fixed catalog product — an ortho-k base curve in particular is calculated per
+          eye from topography, not looked up. Fields deliberately left out (unlike print parameter guides):
+          packaging/box count and retail cost — these vary by retailer and change too often to belong in a clinical
+          reference; check a distributor site for current pricing.
         </p>
       </Card>
 
