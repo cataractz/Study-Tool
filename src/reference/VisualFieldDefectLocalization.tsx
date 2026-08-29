@@ -156,22 +156,55 @@ function Waypoint({
   )
 }
 
-/** A stylized eye shape (almond outline + iris + pupil) rather than a plain circle. */
-function EyeShape({ cx, cy, eyeLabel, subLabel }: { cx: number; cy: number; eyeLabel: string; subLabel: string }) {
-  const w = 34
-  const h = 20
+/**
+ * A stylized eye/globe shape, colored by retinal zone rather than plain white — the half facing
+ * the midline (toward the other eye) is the NASAL retina (warm), the half facing outward is the
+ * TEMPORAL retina (cool). This isn't decorative: nasal retina fibers are the ones that cross at
+ * the chiasm, so this coloring sets up the crossing visually before it even happens.
+ */
+function EyeShape({
+  cx,
+  cy,
+  eyeLabel,
+  subLabel,
+  nasalSide,
+}: {
+  cx: number
+  cy: number
+  eyeLabel: string
+  subLabel: string
+  nasalSide: 'left' | 'right'
+}) {
+  const w = 36
+  const h = 22
+  const clipId = `eye-clip-${eyeLabel}`
+  const nasalX = nasalSide === 'left' ? cx - w : cx
+  const temporalX = nasalSide === 'left' ? cx : cx + w
   return (
     <g>
+      <defs>
+        <clipPath id={clipId}>
+          <path
+            d={`M${cx - w},${cy} C${cx - w * 0.55},${cy - h} ${cx + w * 0.55},${cy - h} ${cx + w},${cy} C${cx + w * 0.55},${cy + h} ${cx - w * 0.55},${cy + h} ${cx - w},${cy} Z`}
+          />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${clipId})`}>
+        <rect x={nasalX} y={cy - h} width={w} height={h * 2} fill="#fecaca" />
+        <rect x={temporalX} y={cy - h} width={w} height={h * 2} fill="#bfdbfe" />
+      </g>
       <path
         d={`M${cx - w},${cy} C${cx - w * 0.55},${cy - h} ${cx + w * 0.55},${cy - h} ${cx + w},${cy} C${cx + w * 0.55},${cy + h} ${cx - w * 0.55},${cy + h} ${cx - w},${cy} Z`}
-        fill="#f8fafc"
+        fill="none"
         stroke="#334155"
-        strokeWidth="2"
+        strokeWidth="2.25"
       />
-      <circle cx={cx} cy={cy} r="11" fill="#bae6fd" stroke="#0284c7" strokeWidth="1.5" />
-      <circle cx={cx} cy={cy} r="4.5" fill="#0c4a6e" />
-      <text x={cx} y={cy + 42} textAnchor="middle" fontSize="12" fontWeight="700" fill="#0369a1">{eyeLabel}</text>
-      <text x={cx} y={cy + 58} textAnchor="middle" fontSize="10.5" fill="#64748b">{subLabel}</text>
+      <circle cx={cx} cy={cy} r="12" fill="#1e293b" opacity="0.12" />
+      <circle cx={cx} cy={cy} r="10" fill="#38bdf8" stroke="#0369a1" strokeWidth="1.5" />
+      <circle cx={cx} cy={cy} r="4.5" fill="#0c1e33" />
+      <circle cx={cx - 3} cy={cy - 3} r="1.6" fill="#e0f2fe" />
+      <text x={cx} y={cy + 44} textAnchor="middle" fontSize="12" fontWeight="700" fill="#0369a1">{eyeLabel}</text>
+      <text x={cx} y={cy + 60} textAnchor="middle" fontSize="10.5" fill="#64748b">{subLabel}</text>
     </g>
   )
 }
@@ -187,36 +220,48 @@ function EyeShape({ cx, cy, eyeLabel, subLabel }: { cx: number; cy: number; eyeL
 function PathwayDiagram() {
   return (
     <svg viewBox="0 0 620 780" className="w-full h-auto" role="img" aria-label="Illustration of two eyes, the brain, and the visual pathway connecting them, with 11 numbered classic lesion sites plus one bonus site">
-      {/* brain silhouette (simplified top-down outline) */}
+      {/* brain silhouette — an organic (deliberately not-perfectly-symmetric) top-down outline
+          with a few extra bulges to suggest gyri, and a small posterior notch where the
+          interhemispheric fissure reaches the occipital pole */}
       <path
         d="M310,175
-           C400,177 450,195 470,245
-           C495,300 540,340 540,415
-           C540,485 500,525 475,565
-           C450,605 425,655 365,685
-           C340,700 320,710 310,713
-           C300,710 280,700 255,685
-           C195,655 170,605 145,565
-           C120,525 80,485 80,415
-           C80,340 125,300 150,245
-           C170,195 220,177 310,175 Z"
+           C375,176 410,182 435,205
+           C458,226 452,250 472,248
+           C500,300 542,335 538,412
+           C536,455 512,460 518,495
+           C512,540 478,528 475,565
+           C460,598 435,645 368,682
+           C350,692 335,700 320,706
+           C316,700 306,700 302,706
+           C287,700 270,692 252,682
+           C185,645 160,598 145,565
+           C142,528 108,540 102,495
+           C108,460 84,455 82,412
+           C78,335 120,300 148,248
+           C168,250 162,226 185,205
+           C210,182 245,176 310,175 Z"
         fill="#f5f3ff"
         stroke="#c4b5fd"
         strokeWidth="2.5"
       />
       {/* soft sulcus/gyrus hint lines for texture, purely decorative */}
-      <path d="M235,240 C255,270 260,310 245,345" fill="none" stroke="#ddd6fe" strokeWidth="2" />
-      <path d="M385,240 C365,270 360,310 375,345" fill="none" stroke="#ddd6fe" strokeWidth="2" />
-      <path d="M150,470 C210,500 250,505 300,495" fill="none" stroke="#ddd6fe" strokeWidth="2" />
-      <path d="M470,470 C410,500 370,505 320,495" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M228,232 C250,262 256,304 240,340" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M392,232 C370,262 364,304 380,340" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M175,300 C205,320 215,350 200,378" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
+      <path d="M445,300 C415,320 405,350 420,378" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
+      <path d="M145,470 C205,502 250,507 300,497" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M475,470 C415,502 370,507 320,497" fill="none" stroke="#ddd6fe" strokeWidth="2" />
+      <path d="M180,560 C220,585 260,592 300,588" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
+      <path d="M440,560 C400,585 360,592 320,588" fill="none" stroke="#ddd6fe" strokeWidth="1.5" />
 
-      {/* eyes */}
-      <EyeShape cx={210} cy={40} eyeLabel="OS" subLabel="Left eye" />
-      <EyeShape cx={410} cy={40} eyeLabel="OD" subLabel="Right eye" />
+      {/* eyes — colored by retinal zone: nasal (warm) fibers cross at the chiasm, temporal (cool) fibers stay uncrossed */}
+      <EyeShape cx={210} cy={40} eyeLabel="OS" subLabel="Left eye" nasalSide="right" />
+      <EyeShape cx={410} cy={40} eyeLabel="OD" subLabel="Right eye" nasalSide="left" />
 
-      {/* optic nerves converging on the chiasm */}
-      <line x1="210" y1="102" x2="300" y2="150" stroke="#94a3b8" strokeWidth="3.5" strokeLinecap="round" />
-      <line x1="410" y1="102" x2="300" y2="150" stroke="#94a3b8" strokeWidth="3.5" strokeLinecap="round" />
+      {/* optic nerves — given a slight S-curve/hook near the globe (the nerve has real anatomic
+          slack there) before straightening out toward the chiasm */}
+      <path d="M210,104 C205,120 235,128 260,138 S292,146 300,150" fill="none" stroke="#94a3b8" strokeWidth="4" strokeLinecap="round" />
+      <path d="M410,104 C415,120 385,128 360,138 S328,146 300,150" fill="none" stroke="#94a3b8" strokeWidth="4" strokeLinecap="round" />
 
       {/* the highlighted single-hemisphere pathway from chiasm onward */}
       <line x1="300" y1="150" x2="300" y2="300" stroke="#7c3aed" strokeWidth="6" strokeLinecap="round" />
