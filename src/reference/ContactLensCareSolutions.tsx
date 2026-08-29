@@ -1,4 +1,4 @@
-import { AlertTriangle, GraduationCap } from 'lucide-react'
+import { AlertTriangle, GraduationCap, Info } from 'lucide-react'
 import { ReferenceShell } from './shared/ReferenceShell'
 import { ReferenceTable } from './shared/ReferenceTable'
 import { Card } from '../components/ui/Card'
@@ -40,6 +40,24 @@ export const meta: ReferenceMeta = {
     'Acanthamoeba keratitis',
     'compliance',
     'case hygiene',
+    'HydraGlyde',
+    'TearGlyde',
+    'hyaluronan',
+    'poloxamine',
+    'comfort agent',
+    'wetting agent',
+    'rewetting drops',
+    'lubricating drops',
+    'discard after opening',
+    '90 days',
+    'CLARE',
+    'contact lens acute red eye',
+    'CLPU',
+    'contact lens peripheral ulcer',
+    'infiltrative keratitis',
+    'corneal infiltrative event',
+    '510(k)',
+    'Class II medical device',
   ],
 }
 
@@ -132,6 +150,98 @@ const PRESERVATIVES: Preservative[] = [
   },
 ]
 
+interface ProductEntry {
+  product: string
+  manufacturer: string
+  disinfectant: string
+  comfortAgent: string
+  note: string
+}
+
+const COMMON_PRODUCTS: ProductEntry[] = [
+  {
+    product: 'Opti-Free PureMoist',
+    manufacturer: 'Alcon',
+    disinfectant: 'Polyquad 0.001% + Aldox 0.0006% (dual)',
+    comfortAgent: 'HydraGlyde',
+    note: 'Alcon\'s current flagship MPS; HydraGlyde is a block copolymer wetting agent shared with several other Alcon products below.',
+  },
+  {
+    product: 'Opti-Free Replenish',
+    manufacturer: 'Alcon',
+    disinfectant: 'Polyquad + Aldox (dual)',
+    comfortAgent: 'TearGlyde',
+    note: 'Same dual-preservative system as PureMoist, older comfort-agent technology.',
+  },
+  {
+    product: 'ReNu Fresh / ReNu MultiPlus',
+    manufacturer: 'Bausch + Lomb',
+    disinfectant: 'PHMB (Dymed)',
+    comfortAgent: '—',
+    note: 'Not the same formulation as the discontinued ReNu with MoistureLoc (see the recall case below) — current ReNu products were not implicated in that outbreak.',
+  },
+  {
+    product: 'Biotrue',
+    manufacturer: 'Bausch + Lomb',
+    disinfectant: 'PHMB + polyquaternium-1 (dual)',
+    comfortAgent: 'Hyaluronan (hyaluronic acid)',
+    note: 'Marketed as biomimetic — isotonic and buffered to a pH of about 7.4–7.6 to match human tears.',
+  },
+  {
+    product: 'Clear Care Plus with HydraGlyde / AOSept Plus with HydraGlyde',
+    manufacturer: 'Alcon',
+    disinfectant: 'Hydrogen peroxide 3% (self-neutralizing)',
+    comfortAgent: 'HydraGlyde',
+    note: 'The peroxide handles disinfection; HydraGlyde is added after neutralization purely for lens comfort, not as a preservative.',
+  },
+  {
+    product: 'Boston Simplus / Boston Advance',
+    manufacturer: 'Bausch + Lomb',
+    disinfectant: 'PHMB + chlorhexidine gluconate (dual)',
+    comfortAgent: 'Poloxamine 1107',
+    note: 'RGP-specific conditioning solution — different preservative concentrations than any soft-lens product above; never use on soft lenses.',
+  },
+]
+
+interface InfiltrativeEvent {
+  condition: string
+  epithelialDefect: string
+  pain: string
+  associatedWith: string
+  management: string
+}
+
+const INFILTRATIVE_EVENTS: InfiltrativeEvent[] = [
+  {
+    condition: 'CLARE (contact lens-induced acute red eye)',
+    epithelialDefect: 'Absent — infiltrates without an overlying stain',
+    pain: 'Mild to moderate; sudden-onset redness, tearing, photophobia',
+    associatedWith: 'Extended/overnight wear, a tight-fitting lens, and gram-negative bacterial endotoxin (often Pseudomonas) trapped against the cornea rather than active infection',
+    management: 'Discontinue lens wear; typically self-limited and resolves without antibiotics once the lens and the endotoxin trigger are removed',
+  },
+  {
+    condition: 'CLPU (contact lens-induced peripheral ulcer)',
+    epithelialDefect: 'Small, if present — a single, well-circumscribed peripheral lesion',
+    pain: 'Mild to moderate, localized',
+    associatedWith: 'An inflammatory reaction to exotoxins from gram-positive bacteria (classically Staphylococcus) colonizing the lens or lid margin, rather than direct corneal infection',
+    management: 'Discontinue lens wear and monitor closely; most resolve without antibiotics, but must be watched for progression since it can be difficult to distinguish from early microbial keratitis',
+  },
+  {
+    condition: 'Infiltrative keratitis (IK)',
+    epithelialDefect: 'Absent or minimal',
+    pain: 'Mild, often asymptomatic or found incidentally',
+    associatedWith: 'A milder, more diffuse inflammatory reaction to lens-related antigens/debris — the least severe of this group',
+    management: 'Discontinue lens wear; observe — the mildest of the four and typically resolves quickly',
+  },
+  {
+    condition: 'Microbial keratitis (MK)',
+    epithelialDefect: 'Present — a significant epithelial defect that stains with fluorescein, overlying a dense infiltrate',
+    pain: 'Moderate to severe, progressive, with mucopurulent discharge',
+    associatedWith: 'True corneal infection — most often Pseudomonas aeruginosa in lens wearers; a true ocular emergency',
+    management: 'Urgent culture and aggressive topical antibiotic therapy (e.g. fortified or fluoroquinolone) — this is the one member of the group that cannot simply be observed',
+  },
+]
+
 const DISINFECTION_ORGANISMS: [string, string, string][] = [
   ['Pseudomonas aeruginosa', 'Bacteria', 'Primary criterion: ≥ 3-log (99.9%) reduction'],
   ['Staphylococcus aureus', 'Bacteria', 'Primary criterion: ≥ 3-log (99.9%) reduction'],
@@ -189,8 +299,9 @@ export function ContactLensCareSolutions() {
     <ReferenceShell meta={meta}>
       <p className="text-sm text-slate-600 -mt-2">
         Every solution type, active ingredient, and compatibility rule that shows up in lens-care patient
-        counseling and on exams — organized from the basic solution categories through disinfection standards,
-        complications, and the two outbreak-and-recall cases that reshaped how the industry tests these products.
+        counseling and on exams — organized from the basic solution categories through named commercial products,
+        disinfection standards, complications (including the corneal infiltrative event spectrum), and the two
+        outbreak-and-recall cases that reshaped how the industry tests these products.
       </p>
 
       <div>
@@ -216,6 +327,17 @@ export function ContactLensCareSolutions() {
           ])}
         />
       </div>
+
+      <Card className="bg-sky-50 border-sky-200 flex gap-2.5">
+        <Info size={16} className="text-sky-500 shrink-0 mt-0.5" />
+        <p className="text-xs text-sky-900 leading-relaxed">
+          <strong>Rewetting/lubricating drops are not a care solution.</strong> They're a separate, typically
+          preservative-free product meant to be instilled directly onto a lens while it's on the eye, for comfort
+          only — they don't clean, disinfect, or replace the soak step. The reverse is just as important to
+          counsel: multipurpose solution is <strong>never</strong> instilled in the eye as a drop while a lens is
+          being worn.
+        </p>
+      </Card>
 
       <Card className="bg-red-50 border-red-200 flex gap-2.5">
         <AlertTriangle size={16} className="text-red-500 shrink-0 mt-0.5" />
@@ -264,6 +386,36 @@ export function ContactLensCareSolutions() {
       </div>
 
       <div>
+        <h2 className="text-sm font-semibold text-slate-700 mb-2">Common Multipurpose Solutions At a Glance</h2>
+        <p className="text-sm text-slate-600 mb-2">
+          "Comfort" or "wetting" agents (HydraGlyde, TearGlyde, hyaluronan, poloxamine) are a separate ingredient
+          category from the preservative — they improve lens surface wettability and comfort but contribute
+          essentially nothing to disinfection. Don't confuse a product's marketed comfort technology with what's
+          actually killing microorganisms in the case.
+        </p>
+        <ReferenceTable
+          headers={['Product', 'Manufacturer', 'Disinfectant', 'Comfort/wetting agent', 'Note']}
+          rows={COMMON_PRODUCTS.map((p) => [
+            <span key="product" className="font-medium text-slate-800 whitespace-normal">
+              {p.product}
+            </span>,
+            <span key="mfr" className="text-slate-600 whitespace-normal">
+              {p.manufacturer}
+            </span>,
+            <span key="disinfect" className="text-slate-600 whitespace-normal">
+              {p.disinfectant}
+            </span>,
+            <span key="comfort" className="text-slate-600 whitespace-normal">
+              {p.comfortAgent}
+            </span>,
+            <span key="note" className="text-slate-600 whitespace-normal">
+              {p.note}
+            </span>,
+          ])}
+        />
+      </div>
+
+      <div>
         <h2 className="text-sm font-semibold text-slate-700 mb-2">Enzymatic Cleaner Active Ingredients</h2>
         <ReferenceTable
           headers={['Enzyme', 'Source', 'Notes']}
@@ -281,7 +433,9 @@ export function ContactLensCareSolutions() {
           The regulatory "stand-alone" microbiological test every marketed chemical disinfection product is
           measured against. A test organism panel of three bacteria and two fungi is inoculated onto/into the
           product at a known starting concentration, then the product is left in contact for its own labeled
-          minimum disinfection time before the surviving organisms are counted.
+          minimum disinfection time before the surviving organisms are counted. In the U.S., contact lens care
+          products are regulated by the FDA as Class II medical devices, cleared through the 510(k) premarket
+          notification pathway — ISO 14729 stand-alone testing is the microbiology component of that clearance.
         </p>
         <ReferenceTable headers={['Organism', 'Category', 'Primary acceptance criterion']} rows={DISINFECTION_ORGANISMS} />
         <p className="text-xs text-slate-500 mt-2">
@@ -335,6 +489,45 @@ export function ContactLensCareSolutions() {
       </div>
 
       <div>
+        <h2 className="text-sm font-semibold text-slate-700 mb-2">
+          The Corneal Infiltrative Event Spectrum — CLARE, CLPU, IK &amp; Microbial Keratitis
+        </h2>
+        <p className="text-sm text-slate-600 mb-2">
+          Solution choice, wear schedule, and case hygiene all feed into this spectrum of contact lens-associated
+          inflammatory/infectious events. They overlap enough clinically that distinguishing them with certainty at
+          the slit lamp is genuinely difficult — the table below lists the features that shift suspicion toward one
+          over another, not hard diagnostic cutoffs. When in doubt, treat as though it could be{' '}
+          <Linkify text="Bacterial Keratitis" />: culture and start aggressive antibiotic therapy rather than
+          watching a true infection.
+        </p>
+        <ReferenceTable
+          headers={['Condition', 'Epithelial defect', 'Pain', 'Associated with', 'Management']}
+          rows={INFILTRATIVE_EVENTS.map((e) => [
+            <span key="cond" className="font-medium text-slate-800 whitespace-normal">
+              {e.condition}
+            </span>,
+            <span key="epi" className="text-slate-600 whitespace-normal">
+              {e.epithelialDefect}
+            </span>,
+            <span key="pain" className="text-slate-600 whitespace-normal">
+              {e.pain}
+            </span>,
+            <span key="assoc" className="text-slate-600 whitespace-normal">
+              {e.associatedWith}
+            </span>,
+            <span key="mgmt" className="text-slate-600 whitespace-normal">
+              {e.management}
+            </span>,
+          ])}
+        />
+        <p className="text-xs text-slate-500 mt-2">
+          Features favoring a non-infectious event (CLARE/CLPU/IK) over true microbial keratitis: peripheral
+          location, small size (roughly ≤1–2 mm), a minimal or absent epithelial defect, mild-to-moderate
+          discomfort, no mucopurulent discharge, and rapid improvement after the lens is removed.
+        </p>
+      </div>
+
+      <div>
         <h2 className="text-sm font-semibold text-slate-700 mb-2">Historical Recalls — Solution Safety Case Studies</h2>
         <ReferenceTable
           headers={['Product', 'Year', 'Organism', 'Outcome']}
@@ -366,11 +559,13 @@ export function ContactLensCareSolutions() {
             ['Wash and dry hands before handling lenses', 'Reduces transfer of organisms (including Acanthamoeba and Pseudomonas) from the skin to the lens or case.'],
             ['Rub and rinse the lens even if the label says "no-rub"', 'Mechanically dislodges organisms and debris the chemical disinfectant alone may not reach — see the FDA 2009 finding above.'],
             ['Never "top off" old solution — always empty the case and use fresh solution', 'Topping off dilutes the disinfectant below its tested effective concentration and lets organisms accumulate.'],
-            ['Never use tap water or saliva on lenses or in the case', 'Tap water is a classic Acanthamoeba exposure route; saliva introduces oral bacteria.'],
+            ['Never use tap water, distilled/boiled water, or saliva on lenses or in the case — and never make homemade saline', 'Tap and homemade-saline exposure is the classic Acanthamoeba route; saliva introduces oral bacteria. Distilled/boiled water is not sterile or isotonic and is not a substitute for commercial saline.'],
             ['Air-dry the empty case face-down between uses and replace it every 1–3 months', 'Case biofilm is a major reservoir for the organisms implicated in microbial keratitis.'],
             ['Avoid showering, swimming, and hot tubs while wearing lenses', 'Same water-exposure risk as tap water rinsing — remove lenses first, or use single-use daily disposables around water.'],
             ['Follow the labeled replacement schedule for the lens itself', 'Extended wear beyond the approved schedule increases deposit buildup and infection risk independent of the solution used.'],
             ['Do not sleep in lenses unless specifically approved for extended/overnight wear', 'Overnight wear is one of the strongest modifiable risk factors for microbial keratitis regardless of solution.'],
+            ['Discard an opened solution bottle 90 days after opening, or at the printed expiration date, whichever comes first', 'Preservative concentration and disinfecting power decline with time and repeated air/cap exposure even before the printed expiration date.'],
+            ['Never use rewetting/lubricating drops as a substitute for the disinfecting soak', 'Rewetting drops are for on-eye comfort only and are not tested or labeled as disinfectants.'],
           ]}
         />
       </div>
@@ -388,6 +583,9 @@ export function ContactLensCareSolutions() {
             'The 2009 FDA rub-and-rinse guidance applies to every MPS, including ones marketed "no-rub."',
             'ReNu with MoistureLoc (2006) → Fusarium keratitis outbreak, worldwide withdrawal. Complete MoisturePlus (2007) → Acanthamoeba keratitis outbreak, ~7× relative risk, voluntary recall. Different organisms, same underlying lesson: a solution can pass a lab test yet still underperform in real-world biofilm/compliance conditions.',
             'Modern MPS preservatives (PHMB, polyquaternium-1) are reasonably bactericidal but only weakly effective against fungi and essentially ineffective against Acanthamoeba — hygiene and avoiding water exposure carry more of the burden against those organisms than the solution chemistry does.',
+            'A "comfort agent" (HydraGlyde, TearGlyde, hyaluronan, poloxamine) is not a preservative — it improves wettability, not disinfection.',
+            'Of the corneal infiltrative event spectrum, only microbial keratitis has a true epithelial defect with dense infiltrate and mucopurulent discharge — CLARE, CLPU, and infiltrative keratitis are inflammatory, not infectious, and are managed by removing the lens rather than starting antibiotics.',
+            'Discard an opened MPS bottle 90 days after opening (or its printed expiration date, whichever is first) — patients keeping a bottle "because it\'s not empty yet" is a common, correctable compliance gap.',
           ].map((p, i) => (
             <li key={i} className="flex gap-2 text-sm text-violet-900">
               <GraduationCap size={15} className="shrink-0 mt-0.5 text-violet-500" />
