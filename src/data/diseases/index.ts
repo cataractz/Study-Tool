@@ -6,6 +6,7 @@ import { corneaAdditional3 } from './cornea-additional-3'
 import { corneaAdditional4 } from './cornea-additional-4'
 import { corneaAdditional5 } from './cornea-additional-5'
 import { corneaAdditional6 } from './cornea-additional-6'
+import { corneaAdditional7 } from './cornea-additional-7'
 import { glaucomaDiseases } from './glaucoma'
 import { glaucomaAdditional } from './glaucoma-additional'
 import { glaucomaAdditional2 } from './glaucoma-additional-2'
@@ -70,6 +71,7 @@ export const allDiseases: Disease[] = [
   ...corneaAdditional4,
   ...corneaAdditional5,
   ...corneaAdditional6,
+  ...corneaAdditional7,
   ...glaucomaDiseases,
   ...glaucomaAdditional,
   ...glaucomaAdditional2,

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { AlertTriangle, GraduationCap, Info } from 'lucide-react'
 import { ReferenceShell } from './shared/ReferenceShell'
 import { ReferenceTable } from './shared/ReferenceTable'
@@ -205,6 +206,7 @@ const COMMON_PRODUCTS: ProductEntry[] = [
 
 interface InfiltrativeEvent {
   condition: string
+  diseaseId?: string
   epithelialDefect: string
   pain: string
   associatedWith: string
@@ -214,6 +216,7 @@ interface InfiltrativeEvent {
 const INFILTRATIVE_EVENTS: InfiltrativeEvent[] = [
   {
     condition: 'CLARE (contact lens-induced acute red eye)',
+    diseaseId: 'clare-contact-lens-acute-red-eye',
     epithelialDefect: 'Absent — infiltrates without an overlying stain',
     pain: 'Mild to moderate; sudden-onset redness, tearing, photophobia',
     associatedWith: 'Extended/overnight wear, a tight-fitting lens, and gram-negative bacterial endotoxin (often Pseudomonas) trapped against the cornea rather than active infection',
@@ -221,6 +224,7 @@ const INFILTRATIVE_EVENTS: InfiltrativeEvent[] = [
   },
   {
     condition: 'CLPU (contact lens-induced peripheral ulcer)',
+    diseaseId: 'contact-lens-induced-peripheral-ulcer',
     epithelialDefect: 'Small, if present — a single, well-circumscribed peripheral lesion',
     pain: 'Mild to moderate, localized',
     associatedWith: 'An inflammatory reaction to exotoxins from gram-positive bacteria (classically Staphylococcus) colonizing the lens or lid margin, rather than direct corneal infection',
@@ -228,6 +232,7 @@ const INFILTRATIVE_EVENTS: InfiltrativeEvent[] = [
   },
   {
     condition: 'Infiltrative keratitis (IK)',
+    diseaseId: 'infiltrative-keratitis-contact-lens',
     epithelialDefect: 'Absent or minimal',
     pain: 'Mild, often asymptomatic or found incidentally',
     associatedWith: 'A milder, more diffuse inflammatory reaction to lens-related antigens/debris — the least severe of this group',
@@ -235,6 +240,7 @@ const INFILTRATIVE_EVENTS: InfiltrativeEvent[] = [
   },
   {
     condition: 'Microbial keratitis (MK)',
+    diseaseId: 'bacterial-keratitis',
     epithelialDefect: 'Present — a significant epithelial defect that stains with fluorescein, overlying a dense infiltrate',
     pain: 'Moderate to severe, progressive, with mucopurulent discharge',
     associatedWith: 'True corneal infection — most often Pseudomonas aeruginosa in lens wearers; a true ocular emergency',
@@ -504,7 +510,13 @@ export function ContactLensCareSolutions() {
           headers={['Condition', 'Epithelial defect', 'Pain', 'Associated with', 'Management']}
           rows={INFILTRATIVE_EVENTS.map((e) => [
             <span key="cond" className="font-medium text-slate-800 whitespace-normal">
-              {e.condition}
+              {e.diseaseId ? (
+                <Link to={`/diseases/${e.diseaseId}`} className="text-brand-600 hover:underline font-medium">
+                  {e.condition}
+                </Link>
+              ) : (
+                e.condition
+              )}
             </span>,
             <span key="epi" className="text-slate-600 whitespace-normal">
               {e.epithelialDefect}
