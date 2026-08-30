@@ -1,9 +1,10 @@
-import { useId, type ReactNode } from 'react'
+import { useId, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import { GraduationCap, ArrowRight } from 'lucide-react'
 import { ReferenceShell } from './shared/ReferenceShell'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
+import { Button } from '../components/ui/Button'
 import { Linkify } from '../components/shared/Linkify'
 import { getDiseaseById } from '../services/diseaseService'
 import type { ReferenceMeta } from '../types/reference'
@@ -135,6 +136,10 @@ const fullField = <rect x="0" y="0" width="100" height="100" fill={SHADE} />
 
 // --- Site data ------------------------------------------------------------------------------
 
+/** A quadrant ('ul'/'ur'/'ll'/'lr') or the center of one eye's field, used by the interactive
+ * field-defect checker below to score a clicked-on pattern against each site's known signature. */
+type Zone = 'ul' | 'ur' | 'll' | 'lr' | 'center'
+
 interface LesionExample {
   /** "Left", "Right", or "Central" for the one site (the chiasm) that has no lateralized version. */
   side: 'Left' | 'Right' | 'Central'
@@ -142,6 +147,12 @@ interface LesionExample {
   od?: ReactNode
   os?: ReactNode
   resultLabel: string
+  /** Simplified quadrant/center pattern for this example, used only by the interactive checker —
+   * intentionally coarser than the icons above (e.g. size/congruity isn't captured), which is why
+   * some sites are deliberately designed to tie with another (tract vs. LGN, temporal lobe vs.
+   * occipital lower bank, parietal vs. occipital upper bank) — that ambiguity mirrors real exam
+   * teaching that field shape alone can't distinguish them. */
+  signature: { od: Zone[]; os: Zone[] }
 }
 
 interface Site {
@@ -164,8 +175,8 @@ const SITES: Site[] = [
     pearl: 'A RAPD localizes to the optic nerve/retina of that eye (or a severe, asymmetric chiasmal/tract lesion) — it never occurs from a lesion purely behind the chiasm affecting both eyes equally.',
     diseaseId: 'optic-neuritis',
     examples: [
-      { side: 'Left', structureLabel: 'Left optic nerve', os: fullField, od: undefined, resultLabel: 'Decreased vision, left eye (OS)' },
-      { side: 'Right', structureLabel: 'Right optic nerve', od: fullField, os: undefined, resultLabel: 'Decreased vision, right eye (OD)' },
+      { side: 'Left', structureLabel: 'Left optic nerve', os: fullField, od: undefined, resultLabel: 'Decreased vision, left eye (OS)', signature: { os: ['ul', 'ur', 'll', 'lr', 'center'], od: [] } },
+      { side: 'Right', structureLabel: 'Right optic nerve', od: fullField, os: undefined, resultLabel: 'Decreased vision, right eye (OD)', signature: { od: ['ul', 'ur', 'll', 'lr', 'center'], os: [] } },
     ],
   },
   {
@@ -177,8 +188,8 @@ const SITES: Site[] = [
     pearl: 'Terminology varies by source: some restrict "junctional scotoma of Traquair" to a contralateral peripheral TEMPORAL CRESCENT defect only, and use plain "junctional scotoma" for the more commonly described contralateral SUPERO-TEMPORAL QUADRANT defect shown here — know the pattern more than the exact label.',
     diseaseId: 'chiasmal-syndrome',
     examples: [
-      { side: 'Left', structureLabel: 'Left posterior optic nerve', os: fullField, od: smallSuperoTemporalWedgeRight, resultLabel: 'Vision loss OS + supero-temporal defect OD' },
-      { side: 'Right', structureLabel: 'Right posterior optic nerve', od: fullField, os: smallSuperoTemporalWedgeLeft, resultLabel: 'Vision loss OD + supero-temporal defect OS' },
+      { side: 'Left', structureLabel: 'Left posterior optic nerve', os: fullField, od: smallSuperoTemporalWedgeRight, resultLabel: 'Vision loss OS + supero-temporal defect OD', signature: { os: ['ul', 'ur', 'll', 'lr', 'center'], od: ['ur'] } },
+      { side: 'Right', structureLabel: 'Right posterior optic nerve', od: fullField, os: smallSuperoTemporalWedgeLeft, resultLabel: 'Vision loss OD + supero-temporal defect OS', signature: { od: ['ul', 'ur', 'll', 'lr', 'center'], os: ['ul'] } },
     ],
   },
   {
@@ -190,7 +201,7 @@ const SITES: Site[] = [
     pearl: 'Direction of first quadrant loss tells you which way the mass is pushing: adenoma pushes UP into the chiasm from below → superior defect first; craniopharyngioma pushes DOWN from above → inferior defect first.',
     diseaseId: 'chiasmal-syndrome',
     examples: [
-      { side: 'Central', structureLabel: 'Chiasm (central compression)', od: rightHalf, os: leftHalf, resultLabel: 'Bitemporal hemianopia' },
+      { side: 'Central', structureLabel: 'Chiasm (central compression)', od: rightHalf, os: leftHalf, resultLabel: 'Bitemporal hemianopia', signature: { od: ['ur', 'lr'], os: ['ul', 'll'] } },
     ],
   },
   {
@@ -202,8 +213,8 @@ const SITES: Site[] = [
     pearl: 'A contralateral RAPD (in the eye with the temporal field loss) plus a "bowtie" pattern of optic disc pallor is the classic combination that localizes to the tract rather than farther back in the pathway.',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left optic tract', od: rightHalf, os: incongruousRightHalf, resultLabel: 'Right homonymous hemianopia (incongruous)' },
-      { side: 'Right', structureLabel: 'Right optic tract', os: leftHalf, od: incongruousLeftHalf, resultLabel: 'Left homonymous hemianopia (incongruous)' },
+      { side: 'Left', structureLabel: 'Left optic tract', od: rightHalf, os: incongruousRightHalf, resultLabel: 'Right homonymous hemianopia (incongruous)', signature: { od: ['ur', 'lr', 'center'], os: ['ur', 'lr', 'center'] } },
+      { side: 'Right', structureLabel: 'Right optic tract', os: leftHalf, od: incongruousLeftHalf, resultLabel: 'Left homonymous hemianopia (incongruous)', signature: { od: ['ul', 'll', 'center'], os: ['ul', 'll', 'center'] } },
     ],
   },
   {
@@ -215,8 +226,8 @@ const SITES: Site[] = [
     pearl: 'The LGN is the rarest isolated localization on this list — most exam "homonymous hemianopia" questions are really testing the tract, radiations, or cortex. A wedge-shaped (not simple half) defect is the one clue that specifically points to the LGN.',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left LGN', od: horizontalSectorWedgeRight, os: horizontalSectorWedgeRight, resultLabel: 'Right homonymous sectoranopia' },
-      { side: 'Right', structureLabel: 'Right LGN', od: horizontalSectorWedgeLeft, os: horizontalSectorWedgeLeft, resultLabel: 'Left homonymous sectoranopia' },
+      { side: 'Left', structureLabel: 'Left LGN', od: horizontalSectorWedgeRight, os: horizontalSectorWedgeRight, resultLabel: 'Right homonymous sectoranopia', signature: { od: ['ur', 'lr', 'center'], os: ['ur', 'lr', 'center'] } },
+      { side: 'Right', structureLabel: 'Right LGN', od: horizontalSectorWedgeLeft, os: horizontalSectorWedgeLeft, resultLabel: 'Left homonymous sectoranopia', signature: { od: ['ul', 'll', 'center'], os: ['ul', 'll', 'center'] } },
     ],
   },
   {
@@ -228,8 +239,8 @@ const SITES: Site[] = [
     pearl: 'Mnemonic — PITS: Parietal = Inferior field, Temporal = Superior field. "Pie in the sky" (temporal) vs. "pie on the floor" (parietal).',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: "Left temporal lobe (Meyer's loop)", od: upperRightQuad, os: upperRightQuad, resultLabel: 'Right homonymous superior quadrantanopia — "pie in the sky"' },
-      { side: 'Right', structureLabel: "Right temporal lobe (Meyer's loop)", od: upperLeftQuad, os: upperLeftQuad, resultLabel: 'Left homonymous superior quadrantanopia — "pie in the sky"' },
+      { side: 'Left', structureLabel: "Left temporal lobe (Meyer's loop)", od: upperRightQuad, os: upperRightQuad, resultLabel: 'Right homonymous superior quadrantanopia — "pie in the sky"', signature: { od: ['ur'], os: ['ur'] } },
+      { side: 'Right', structureLabel: "Right temporal lobe (Meyer's loop)", od: upperLeftQuad, os: upperLeftQuad, resultLabel: 'Left homonymous superior quadrantanopia — "pie in the sky"', signature: { od: ['ul'], os: ['ul'] } },
     ],
   },
   {
@@ -241,8 +252,8 @@ const SITES: Site[] = [
     pearl: 'Same mnemonic as Meyer\'s loop — PITS: Parietal = Inferior, Temporal = Superior.',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left parietal lobe', od: lowerRightQuad, os: lowerRightQuad, resultLabel: 'Right homonymous inferior quadrantanopia — "pie on the floor"' },
-      { side: 'Right', structureLabel: 'Right parietal lobe', od: lowerLeftQuad, os: lowerLeftQuad, resultLabel: 'Left homonymous inferior quadrantanopia — "pie on the floor"' },
+      { side: 'Left', structureLabel: 'Left parietal lobe', od: lowerRightQuad, os: lowerRightQuad, resultLabel: 'Right homonymous inferior quadrantanopia — "pie on the floor"', signature: { od: ['lr'], os: ['lr'] } },
+      { side: 'Right', structureLabel: 'Right parietal lobe', od: lowerLeftQuad, os: lowerLeftQuad, resultLabel: 'Left homonymous inferior quadrantanopia — "pie on the floor"', signature: { od: ['ll'], os: ['ll'] } },
     ],
   },
   {
@@ -254,8 +265,8 @@ const SITES: Site[] = [
     pearl: 'Same visual field result as parietal lobe (#7), different anatomic level — cortical quadrantanopias from a bank lesion tend to be even more congruous/complete than the radiation-level version.',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left occipital lobe, upper bank', od: lowerRightQuad, os: lowerRightQuad, resultLabel: 'Right homonymous inferior quadrantanopia' },
-      { side: 'Right', structureLabel: 'Right occipital lobe, upper bank', od: lowerLeftQuad, os: lowerLeftQuad, resultLabel: 'Left homonymous inferior quadrantanopia' },
+      { side: 'Left', structureLabel: 'Left occipital lobe, upper bank', od: lowerRightQuad, os: lowerRightQuad, resultLabel: 'Right homonymous inferior quadrantanopia', signature: { od: ['lr'], os: ['lr'] } },
+      { side: 'Right', structureLabel: 'Right occipital lobe, upper bank', od: lowerLeftQuad, os: lowerLeftQuad, resultLabel: 'Left homonymous inferior quadrantanopia', signature: { od: ['ll'], os: ['ll'] } },
     ],
   },
   {
@@ -267,8 +278,8 @@ const SITES: Site[] = [
     pearl: 'Upper bank (cuneus) = inferior field out. Lower bank (lingual gyrus) = superior field out. It\'s the mirror-image logic of Meyer\'s loop (temporal, superior) vs. parietal (inferior) — but one anatomic level further back.',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left occipital lobe, lower bank', od: upperRightQuad, os: upperRightQuad, resultLabel: 'Right homonymous superior quadrantanopia' },
-      { side: 'Right', structureLabel: 'Right occipital lobe, lower bank', od: upperLeftQuad, os: upperLeftQuad, resultLabel: 'Left homonymous superior quadrantanopia' },
+      { side: 'Left', structureLabel: 'Left occipital lobe, lower bank', od: upperRightQuad, os: upperRightQuad, resultLabel: 'Right homonymous superior quadrantanopia', signature: { od: ['ur'], os: ['ur'] } },
+      { side: 'Right', structureLabel: 'Right occipital lobe, lower bank', od: upperLeftQuad, os: upperLeftQuad, resultLabel: 'Left homonymous superior quadrantanopia', signature: { od: ['ul'], os: ['ul'] } },
     ],
   },
   {
@@ -280,8 +291,8 @@ const SITES: Site[] = [
     pearl: 'Macular sparing + high congruity between the two eyes = the cortex. Incongruous = further forward (tract or radiations).',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left occipital cortex, complete', od: rightHalfWithMacularSparing, os: rightHalfWithMacularSparing, resultLabel: 'Right homonymous hemianopia with macular sparing' },
-      { side: 'Right', structureLabel: 'Right occipital cortex, complete', od: leftHalfWithMacularSparing, os: leftHalfWithMacularSparing, resultLabel: 'Left homonymous hemianopia with macular sparing' },
+      { side: 'Left', structureLabel: 'Left occipital cortex, complete', od: rightHalfWithMacularSparing, os: rightHalfWithMacularSparing, resultLabel: 'Right homonymous hemianopia with macular sparing', signature: { od: ['ur', 'lr'], os: ['ur', 'lr'] } },
+      { side: 'Right', structureLabel: 'Right occipital cortex, complete', od: leftHalfWithMacularSparing, os: leftHalfWithMacularSparing, resultLabel: 'Left homonymous hemianopia with macular sparing', signature: { od: ['ul', 'll'], os: ['ul', 'll'] } },
     ],
   },
   {
@@ -293,8 +304,8 @@ const SITES: Site[] = [
     pearl: 'Pole lesion = only the center is out. Everything-but-the-pole lesion (#10) = macular sparing. They are inverses of each other.',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left occipital pole', od: smallRightCentralScotoma, os: smallRightCentralScotoma, resultLabel: 'Right homonymous central scotoma' },
-      { side: 'Right', structureLabel: 'Right occipital pole', od: smallLeftCentralScotoma, os: smallLeftCentralScotoma, resultLabel: 'Left homonymous central scotoma' },
+      { side: 'Left', structureLabel: 'Left occipital pole', od: smallRightCentralScotoma, os: smallRightCentralScotoma, resultLabel: 'Right homonymous central scotoma', signature: { od: ['center'], os: ['center'] } },
+      { side: 'Right', structureLabel: 'Right occipital pole', od: smallLeftCentralScotoma, os: smallLeftCentralScotoma, resultLabel: 'Left homonymous central scotoma', signature: { od: ['center'], os: ['center'] } },
     ],
   },
   {
@@ -306,11 +317,183 @@ const SITES: Site[] = [
     pearl: 'The classic "trick question": every other retrochiasmal lesion on this list produces a BINOCULAR (homonymous) defect. Temporal crescent syndrome is the sole exception — a cortical lesion that looks monocular.',
     diseaseId: 'homonymous-hemianopia',
     examples: [
-      { side: 'Left', structureLabel: 'Left anterior calcarine cortex', od: farTemporalCrescent, os: undefined, resultLabel: 'Right monocular temporal crescent loss (OD only)' },
-      { side: 'Right', structureLabel: 'Right anterior calcarine cortex', os: farTemporalCrescentLeft, od: undefined, resultLabel: 'Left monocular temporal crescent loss (OS only)' },
+      { side: 'Left', structureLabel: 'Left anterior calcarine cortex', od: farTemporalCrescent, os: undefined, resultLabel: 'Right monocular temporal crescent loss (OD only)', signature: { od: ['ur', 'lr'], os: [] } },
+      { side: 'Right', structureLabel: 'Right anterior calcarine cortex', os: farTemporalCrescentLeft, od: undefined, resultLabel: 'Left monocular temporal crescent loss (OS only)', signature: { od: [], os: ['ul', 'll'] } },
     ],
   },
 ]
+
+// --- Interactive field-defect checker ---------------------------------------------------------
+
+const QUADRANT_PATHS: { zone: Zone; d: string }[] = [
+  { zone: 'ur', d: 'M50,50 L50,4 A46,46 0 0 1 96,50 Z' },
+  { zone: 'lr', d: 'M50,50 L96,50 A46,46 0 0 1 50,96 Z' },
+  { zone: 'll', d: 'M50,50 L50,96 A46,46 0 0 1 4,50 Z' },
+  { zone: 'ul', d: 'M50,50 L4,50 A46,46 0 0 1 50,4 Z' },
+]
+
+/** Clickable version of the field circle above — quadrants and center each toggle independently
+ * so the user can build up a shaded pattern to test against the 12 sites' known signatures. */
+function ClickableEye({
+  zones,
+  onToggle,
+  label,
+}: {
+  zones: Set<Zone>
+  onToggle: (zone: Zone) => void
+  label: string
+}) {
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <svg viewBox="0 0 100 100" width="96" height="96" className="shrink-0">
+        <circle cx="50" cy="50" r="46" fill="#fff" />
+        {QUADRANT_PATHS.map(({ zone, d }) => (
+          <path
+            key={zone}
+            d={d}
+            fill={zones.has(zone) ? SHADE : 'transparent'}
+            stroke="#e2e8f0"
+            strokeWidth="1"
+            className="cursor-pointer"
+            onClick={() => onToggle(zone)}
+          />
+        ))}
+        <circle
+          cx="50"
+          cy="50"
+          r="13"
+          fill={zones.has('center') ? SHADE : '#fff'}
+          stroke="#e2e8f0"
+          strokeWidth="1"
+          className="cursor-pointer"
+          onClick={() => onToggle('center')}
+        />
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#94a3b8" strokeWidth="2.5" pointerEvents="none" />
+      </svg>
+      <span className="text-[10px] font-semibold text-slate-500 tracking-wide">{label}</span>
+    </div>
+  )
+}
+
+interface MatchCandidate {
+  site: Site
+  example: LesionExample
+  score: number
+}
+
+function signatureTags(signature: { od: Zone[]; os: Zone[] }): Set<string> {
+  const tags = new Set<string>()
+  signature.od.forEach((z) => tags.add(`od:${z}`))
+  signature.os.forEach((z) => tags.add(`os:${z}`))
+  return tags
+}
+
+function InteractiveFieldChecker() {
+  const [odZones, setOdZones] = useState<Set<Zone>>(new Set())
+  const [osZones, setOsZones] = useState<Set<Zone>>(new Set())
+  const [results, setResults] = useState<MatchCandidate[] | null>(null)
+
+  function toggle(eye: 'od' | 'os', zone: Zone) {
+    const setter = eye === 'od' ? setOdZones : setOsZones
+    setter((prev) => {
+      const next = new Set(prev)
+      if (next.has(zone)) next.delete(zone)
+      else next.add(zone)
+      return next
+    })
+    setResults(null)
+  }
+
+  function handleSubmit() {
+    const userTags = new Set<string>()
+    odZones.forEach((z) => userTags.add(`od:${z}`))
+    osZones.forEach((z) => userTags.add(`os:${z}`))
+    if (userTags.size === 0) return
+
+    const candidates: MatchCandidate[] = SITES.flatMap((site) =>
+      site.examples.map((example) => {
+        const sigTags = signatureTags(example.signature)
+        let matches = 0
+        sigTags.forEach((t) => {
+          if (userTags.has(t)) matches += 1
+        })
+        let extra = 0
+        userTags.forEach((t) => {
+          if (!sigTags.has(t)) extra += 1
+        })
+        const missing = sigTags.size - matches
+        return { site, example, score: matches - extra - missing }
+      }),
+    )
+
+    const maxScore = Math.max(...candidates.map((c) => c.score))
+    setResults(maxScore > 0 ? candidates.filter((c) => c.score === maxScore) : [])
+  }
+
+  function handleReset() {
+    setOdZones(new Set())
+    setOsZones(new Set())
+    setResults(null)
+  }
+
+  const hasSelection = odZones.size > 0 || osZones.size > 0
+
+  return (
+    <Card className="bg-violet-50/60 border-violet-200 space-y-3">
+      <div>
+        <h2 className="text-sm font-semibold text-slate-900">Interactive: where is the defect?</h2>
+        <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+          Click the quadrant(s) or center of each eye's field where vision is missing, then submit to see which
+          lesion site(s) below produce that exact pattern.
+        </p>
+      </div>
+
+      <div className="flex items-end gap-4 flex-wrap">
+        <ClickableEye zones={osZones} onToggle={(z) => toggle('os', z)} label="OS" />
+        <ClickableEye zones={odZones} onToggle={(z) => toggle('od', z)} label="OD" />
+        <div className="flex gap-2">
+          <Button onClick={handleSubmit} disabled={!hasSelection} size="sm">
+            Submit
+          </Button>
+          <Button onClick={handleReset} variant="outline" size="sm">
+            Reset
+          </Button>
+        </div>
+      </div>
+
+      {results && results.length > 0 && (
+        <div className="border-t border-violet-200 pt-3 space-y-2">
+          {results.length > 1 && (
+            <p className="text-xs text-amber-700 leading-relaxed">
+              This exact field pattern is shared by {results.length} sites below — they can't be told apart by
+              field shape alone. Other exam findings (RAPD, congruity between the two eyes, disc appearance) are
+              needed to localize further.
+            </p>
+          )}
+          {results.map((r, i) => (
+            <a
+              key={i}
+              href={`#site-${r.site.number}`}
+              className="block bg-white rounded-lg border border-violet-200 px-3 py-2 hover:border-violet-400 transition-colors"
+            >
+              <span className="text-xs font-semibold text-violet-700">
+                #{r.site.number} {r.site.title}
+              </span>
+              <span className="block text-xs text-slate-600 mt-0.5">{r.example.resultLabel}</span>
+            </a>
+          ))}
+        </div>
+      )}
+
+      {results && results.length === 0 && (
+        <p className="text-xs text-slate-500 border-t border-violet-200 pt-3">
+          No site on this page produces that exact pattern — try a simpler shape (a single quadrant, a full half,
+          or the center only) that matches one of the 23 examples below.
+        </p>
+      )}
+    </Card>
+  )
+}
 
 // --- Page -------------------------------------------------------------------------------------
 
@@ -327,9 +510,11 @@ export function VisualFieldDefectLocalization() {
         taught but genuinely high-yield addition.
       </p>
 
+      <InteractiveFieldChecker />
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
         {SITES.map((site) => (
-          <Card key={site.number} className="space-y-3">
+          <Card key={site.number} id={`site-${site.number}`} className="space-y-3 scroll-mt-4">
             <div className="flex items-start gap-2.5">
               <span className="shrink-0 w-6 h-6 rounded-full bg-violet-600 text-white text-xs font-bold flex items-center justify-center mt-0.5">
                 {site.number}
