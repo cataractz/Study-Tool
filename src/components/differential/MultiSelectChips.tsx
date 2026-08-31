@@ -9,6 +9,9 @@ export function MultiSelectChips({
   otherValue,
   onOtherChange,
   otherPlaceholder = 'Describe the finding...',
+  details,
+  onDetailChange,
+  detailPlaceholder = 'Value or description...',
 }: {
   options: VocabTerm[]
   selected: string[]
@@ -16,12 +19,18 @@ export function MultiSelectChips({
   otherValue?: string
   onOtherChange?: (next: string) => void
   otherPlaceholder?: string
+  /** When provided, each selected chip gets its own inline text box (keyed by label) so the user
+   * can record the actual value/description for that finding, e.g. "Tear breakup time" -> "8 sec". */
+  details?: Record<string, string>
+  onDetailChange?: (label: string, value: string) => void
+  detailPlaceholder?: string
 }) {
   const [otherOpen, setOtherOpen] = useState(Boolean(otherValue?.trim()))
 
   function toggle(label: string) {
     if (selected.includes(label)) {
       onChange(selected.filter((s) => s !== label))
+      onDetailChange?.(label, '')
     } else {
       onChange([...selected, label])
     }
@@ -84,6 +93,25 @@ export function MultiSelectChips({
           placeholder={otherPlaceholder}
           autoFocus
         />
+      )}
+      {onDetailChange && selected.length > 0 && (
+        <div className="space-y-1.5 pt-0.5">
+          {selected.map((label) => (
+            <div key={label} className="flex items-center gap-2">
+              <span className="text-xs text-slate-500 shrink-0 w-40 truncate" title={label}>
+                {label}
+              </span>
+              <input
+                type="text"
+                className="input"
+                value={details?.[label] ?? ''}
+                onChange={(e) => onDetailChange(label, e.target.value)}
+                placeholder={detailPlaceholder}
+                autoFocus
+              />
+            </div>
+          ))}
+        </div>
       )}
     </div>
   )

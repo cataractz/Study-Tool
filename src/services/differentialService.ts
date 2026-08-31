@@ -125,6 +125,13 @@ export function collectAllFindings(findings: DifferentialFindings): string[] {
     .map((o) => o?.trim())
     .filter((o): o is string => Boolean(o))
 
+  // Per-finding value/description entered for a selected Other Testing chip (e.g. "Tear breakup
+  // time: 8 sec") — folded in as its own entry so it reaches the AI context and reasoning even
+  // though, like the other free-text fields above, it isn't matched by the local vocab scorer.
+  const otherTestingDetails = Object.entries(findings.otherTestingDetails ?? {})
+    .map(([label, value]) => (value?.trim() ? `${label}: ${value.trim()}` : null))
+    .filter((o): o is string => Boolean(o))
+
   return [
     ...findings.symptoms,
     ...findings.pupils,
@@ -134,6 +141,7 @@ export function collectAllFindings(findings: DifferentialFindings): string[] {
     ...findings.otherTesting,
     ...findings.binocularVision,
     ...others,
+    ...otherTestingDetails,
   ]
 }
 

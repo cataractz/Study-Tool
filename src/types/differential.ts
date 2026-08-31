@@ -23,6 +23,9 @@ export interface DifferentialFindings {
   visualFieldOther?: string
   otherTesting: string[]
   otherTestingOther?: string
+  /** Free-text value/description entered for a selected Other Testing finding, keyed by its label
+   * (e.g. { 'Tear breakup time': '8 sec', 'OCT findings': 'subretinal fluid, hyperreflective foci' }). */
+  otherTestingDetails?: Record<string, string>
   binocularVision: string[]
   binocularVisionOther?: string
   npc?: string

@@ -44,6 +44,7 @@ const emptyFindings: DifferentialFindings = {
   visualFieldOther: '',
   otherTesting: [],
   otherTestingOther: '',
+  otherTestingDetails: {},
   binocularVision: [],
   binocularVisionOther: '',
   npc: '',
@@ -219,6 +220,11 @@ export function DifferentialDiagnosis() {
                 otherValue={findings.otherTestingOther}
                 onOtherChange={(v) => update('otherTestingOther', v)}
                 otherPlaceholder="Describe the test/finding..."
+                details={findings.otherTestingDetails}
+                onDetailChange={(label, value) =>
+                  update('otherTestingDetails', { ...findings.otherTestingDetails, [label]: value })
+                }
+                detailPlaceholder="Value or what you observed..."
               />
             </Card>
           </Section>
