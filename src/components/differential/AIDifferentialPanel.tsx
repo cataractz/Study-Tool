@@ -112,8 +112,7 @@ export function AIDifferentialPanel({
       <Card className="space-y-3">
         <p className="text-sm text-slate-500">
           Describe the case in your own words, or upload a document (exam form, referral letter, chart note) and
-          let Gemini independently reason through a differential — a second perspective alongside the structured
-          match above. This doesn't use the local match-scoring engine; it's the AI reading and reasoning on its own.
+          let Gemini independently reason through a differential.
         </p>
 
         {hasStructuredResults && (
@@ -124,7 +123,7 @@ export function AIDifferentialPanel({
               onChange={(e) => setIncludeStructured(e.target.checked)}
               className="rounded border-slate-300"
             />
-            Also give it the findings and results already entered above
+            Also give it the findings and results entered below
           </label>
         )}
 

@@ -15,7 +15,6 @@ import {
   posteriorSegmentOptions,
   visualFieldOptions,
   otherTestingOptions,
-  binocularVisionOptions,
 } from '../config/differentialVocab'
 import { runDifferential } from '../services/differentialService'
 import { buildDifferentialContext } from '../services/ai/contextService'
@@ -94,6 +93,8 @@ export function DifferentialDiagnosis() {
           differential diagnosis.
         </p>
       </div>
+
+      <AIDifferentialPanel findings={findings} results={results} />
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-6 items-start">
         <div className="space-y-6">
@@ -280,17 +281,6 @@ export function DifferentialDiagnosis() {
                 </Field>
               </Card>
 
-              <Card>
-                <MultiSelectChips
-                  key={`binocular-${resetKey}`}
-                  options={binocularVisionOptions}
-                  selected={findings.binocularVision}
-                  onChange={(v) => update('binocularVision', v)}
-                  otherValue={findings.binocularVisionOther}
-                  onOtherChange={(v) => update('binocularVisionOther', v)}
-                  otherPlaceholder="Describe another binocular vision finding..."
-                />
-              </Card>
             </div>
           </Section>
 
@@ -358,8 +348,6 @@ export function DifferentialDiagnosis() {
           )}
         </div>
       </div>
-
-      <AIDifferentialPanel findings={findings} results={results} />
 
       <style>{`.input { border: 1px solid #cbd5e1; border-radius: 0.5rem; padding: 0.5rem 0.75rem; font-size: 0.875rem; background: white; width: 100%; } .input:focus { outline: none; box-shadow: 0 0 0 2px #3b82f6; border-color: #3b82f6; }`}</style>
     </div>
