@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ChevronLeft, GraduationCap, Stethoscope, GitCompare, Sparkles, EyeOff, Eye } from 'lucide-react'
+import { ChevronLeft, GraduationCap, Stethoscope, GitCompare, Sparkles, EyeOff, Eye, Image as ImageIcon } from 'lucide-react'
 import { buildDiseaseContext } from '../services/ai/contextService'
 import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
@@ -43,6 +43,8 @@ export function DiseaseDetail() {
     )
   }
 
+  const googleImagesUrl = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(disease.name)}`
+
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
@@ -64,6 +66,14 @@ export function DiseaseDetail() {
         </div>
 
         <div className="flex flex-wrap gap-2 mt-4">
+          <a
+            href={googleImagesUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors cursor-pointer text-sm px-3 py-1.5 bg-white text-slate-700 border border-slate-300 hover:bg-slate-50"
+          >
+            <ImageIcon size={15} /> See Images
+          </a>
           <Button
             size="sm"
             variant={activePanel === 'compare' ? 'primary' : 'outline'}
