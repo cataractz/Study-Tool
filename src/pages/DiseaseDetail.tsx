@@ -10,13 +10,12 @@ import { EmptyState } from '../components/ui/EmptyState'
 import { SignsByArea } from '../components/disease/SignsByArea'
 import { RiskFactorList } from '../components/disease/RiskFactorList'
 import { ManagementList } from '../components/disease/ManagementList'
-import { QuizPanel } from '../components/disease/QuizPanel'
 import { CasePanel } from '../components/disease/CasePanel'
 import { CompareDiseasesPanel } from '../components/disease/CompareDiseasesPanel'
 import { Linkify, LinkifyLine } from '../components/shared/Linkify'
 import { getDiseaseById } from '../services/diseaseService'
 
-type InteractivePanel = 'quiz' | 'case' | 'compare' | null
+type InteractivePanel = 'case' | 'compare' | null
 
 export function DiseaseDetail() {
   const { diseaseId } = useParams<{ diseaseId: string }>()
@@ -68,14 +67,6 @@ export function DiseaseDetail() {
         <div className="flex flex-wrap gap-2 mt-4">
           <Button
             size="sm"
-            variant={activePanel === 'quiz' ? 'primary' : 'outline'}
-            icon={<GraduationCap size={15} />}
-            onClick={() => setActivePanel(activePanel === 'quiz' ? null : 'quiz')}
-          >
-            Quiz Me
-          </Button>
-          <Button
-            size="sm"
             variant={activePanel === 'case' ? 'primary' : 'outline'}
             icon={<Stethoscope size={15} />}
             onClick={() => setActivePanel(activePanel === 'case' ? null : 'case')}
@@ -115,7 +106,6 @@ export function DiseaseDetail() {
 
       {activePanel && (
         <Card className="bg-slate-50/60 border-slate-200">
-          {activePanel === 'quiz' && <QuizPanel disease={disease} />}
           {activePanel === 'case' && <CasePanel disease={disease} />}
           {activePanel === 'compare' && <CompareDiseasesPanel disease={disease} />}
         </Card>
