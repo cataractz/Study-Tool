@@ -12,6 +12,13 @@ export const meta: CalculatorMeta = {
   category: 'Binocular Vision',
   description: 'Checks whether the phoria/demand falls within the middle third of the total fusional vergence range.',
   formula: 'Met when max(BI, BO) ≤ 2 × min(BI, BO);  Rx = (larger − 2 × smaller) / 3 otherwise',
+  variables: [
+    { symbol: 'BI', meaning: 'Base-in fusional vergence reserve (Δ)' },
+    { symbol: 'BO', meaning: 'Base-out fusional vergence reserve (Δ)' },
+    { symbol: 'Rx', meaning: 'Indicated prism magnitude (Δ)' },
+    { symbol: 'larger', meaning: 'The larger of the BI/BO reserves (Δ)' },
+    { symbol: 'smaller', meaning: 'The smaller of the BI/BO reserves (Δ)' },
+  ],
   keywords: ['percival', "percival's criterion", 'fusional vergence', 'middle third rule'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'A second check (alongside Sheard\'s) for whether vergence reserves are comfortably balanced.',

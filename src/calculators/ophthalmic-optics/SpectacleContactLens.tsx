@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Ophthalmic Optics',
   description: 'Convert a spherocylindrical Rx between the spectacle plane and the corneal (contact lens) plane.',
   formula: "F' = F / (1 − d·F), applied to each principal meridian",
+  variables: [
+    { symbol: "F'", meaning: 'Power at the new vertex plane (D)' },
+    { symbol: 'F', meaning: 'Power at the original vertex plane (D)' },
+    { symbol: 'd', meaning: 'Vertex distance between the two planes (m)' },
+  ],
   keywords: ['contact lens conversion', 'vertex distance', 'spectacle to contact lens', 'CL power'],
   boardRelevance: 'High',
   clinicalRelevance: 'Deriving a starting contact lens power from a refraction performed at spectacle plane, and vice versa.',

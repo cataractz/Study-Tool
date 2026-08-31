@@ -12,6 +12,13 @@ export const meta: CalculatorMeta = {
   category: 'Pharmacology',
   description: 'Estimate drops per day, total doses, and days of supply for a bottle of eye drops.',
   formula: 'Total drops = bottle volume (µL) / drop size (µL);  Days of supply = total drops / drops per day',
+  variables: [
+    { symbol: 'Total drops', meaning: 'Total number of drops in the bottle' },
+    { symbol: 'bottle volume', meaning: 'Volume of the bottle (µL)' },
+    { symbol: 'drop size', meaning: 'Assumed volume per drop (µL)' },
+    { symbol: 'Days of supply', meaning: 'Estimated number of days the bottle will last' },
+    { symbol: 'drops per day', meaning: 'Total drops administered per day (drops/day)' },
+  ],
   keywords: ['eye drops', 'bottle duration', 'days of supply', 'drop size'],
   boardRelevance: 'Clinical only',
   clinicalRelevance: 'Estimating how long a prescribed bottle of drops will last, and counseling patients on refill timing.',

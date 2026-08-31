@@ -12,6 +12,13 @@ export const meta: CalculatorMeta = {
   category: 'Physical Optics',
   description: 'Illuminance from a point source (inverse square law) or from luminous flux spread over an area.',
   formula: 'E = I / d²   ·   E = Φ / Area',
+  variables: [
+    { symbol: 'E', meaning: 'Illuminance (lux)' },
+    { symbol: 'I', meaning: 'Luminous intensity of the point source (candela)' },
+    { symbol: 'd', meaning: 'Distance from the source (m)' },
+    { symbol: 'Φ', meaning: 'Luminous flux (lumens)' },
+    { symbol: 'Area', meaning: 'Illuminated surface area (m²)' },
+  ],
   keywords: ['photometry', 'lumens', 'lux', 'candela', 'illuminance', 'inverse square law'],
   boardRelevance: 'Low',
   clinicalRelevance: 'Relating light source intensity/output to the illuminance actually reaching a surface, e.g. exam room or task lighting.',

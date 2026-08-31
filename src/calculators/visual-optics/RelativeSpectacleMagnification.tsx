@@ -12,6 +12,11 @@ export const meta: CalculatorMeta = {
   category: 'Visual Optics',
   description: 'Compares an ametropic eye\'s corrected retinal image size to the schematic emmetropic eye, distinguishing axial from refractive ametropia.',
   formula: "Axial (Knapp's Law): RSM ≈ 1.00   ·   Refractive: RSM = 1/(1 − d·Fv)",
+  variables: [
+    { symbol: 'RSM', meaning: "Relative spectacle magnification vs. the schematic emmetropic eye's retinal image size" },
+    { symbol: 'd', meaning: 'Vertex distance (m)' },
+    { symbol: 'Fv', meaning: 'Back vertex power of the correcting lens (D)' },
+  ],
   keywords: ['relative spectacle magnification', 'RSM', "knapp's law", 'axial ametropia', 'refractive ametropia'],
   boardRelevance: 'Moderate',
   clinicalRelevance: "Explains why axial myopes/hyperopes see comparatively little image-size change in spectacles (but do with contact lenses), while refractive ametropia behaves differently.",

@@ -19,6 +19,11 @@ export const meta: CalculatorMeta = {
   category: 'Prism',
   description: 'Solve for induced prism, required decentration, or lens power. P = cF.',
   formula: 'P (Δ) = c (cm) × F (D)',
+  variables: [
+    { symbol: 'P', meaning: 'Induced prism power (Δ, prism diopters)' },
+    { symbol: 'c', meaning: 'Decentration of the optical center from the visual axis (cm)' },
+    { symbol: 'F', meaning: 'Lens power (D)' },
+  ],
   keywords: ['prentice', "prentice's rule", 'prism', 'decentration', 'induced prism'],
   boardRelevance: 'High',
   clinicalRelevance: 'Predicting unwanted prism from optical-center misalignment, or intentionally prescribing prism via decentration.',

@@ -12,6 +12,12 @@ export const meta: CalculatorMeta = {
   category: 'Visual Optics',
   description: 'Image magnification from object and image vergence, and the corresponding axial magnification.',
   formula: 'm (transverse) = U / V   ·   m (axial) = m² (in air)',
+  variables: [
+    { symbol: 'm (transverse)', meaning: 'Transverse (lateral) magnification = object vergence / image vergence' },
+    { symbol: 'U', meaning: 'Object vergence (D)' },
+    { symbol: 'V', meaning: 'Image vergence (D)' },
+    { symbol: 'm (axial)', meaning: 'Axial magnification = m(transverse)² (system in air, n = n′ = 1)' },
+  ],
   keywords: ['linear magnification', 'transverse magnification', 'axial magnification', 'lateral magnification'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Predicting image size and depth distortion through a simple optical system.',

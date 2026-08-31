@@ -12,6 +12,10 @@ export const meta: CalculatorMeta = {
   category: 'Contact Lenses',
   description: 'A quick starting-point estimate for soft lens total diameter from HVID.',
   formula: `Estimated diameter ≈ HVID + ${CL_DIAMETER_RULE_OF_THUMB_ADD_MM} mm`,
+  variables: [
+    { symbol: 'Estimated diameter', meaning: 'Suggested starting total soft lens diameter (mm)' },
+    { symbol: 'HVID', meaning: 'Horizontal visible iris diameter (mm)' },
+  ],
   keywords: ['contact lens diameter', 'HVID', 'horizontal visible iris diameter', 'rule of thumb', 'lens selection'],
   boardRelevance: 'Low',
   clinicalRelevance: 'A rough starting point when selecting a soft lens diameter before fine-tuning by fit assessment.',

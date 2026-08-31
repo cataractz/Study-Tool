@@ -14,6 +14,11 @@ export const meta: CalculatorMeta = {
   category: 'Contact Lenses',
   description: 'Power of the tear layer trapped under a rigid (GP) lens, and whether it follows SAM or FAP.',
   formula: 'Tear lens power = K power − Base curve power',
+  variables: [
+    { symbol: 'Tear lens power', meaning: 'Power of the tear film trapped between the back of the GP lens and the cornea (D)' },
+    { symbol: 'K power', meaning: 'Corneal power computed from the keratometry reading (D)' },
+    { symbol: 'Base curve power', meaning: "Power computed from the lens back surface radius, i.e. the lens's base curve (D)" },
+  ],
   keywords: ['tear lens', 'SAM', 'FAP', 'steeper add minus', 'flatter add plus', 'base curve', 'RGP fitting'],
   boardRelevance: 'High',
   clinicalRelevance: 'Understanding how a GP base curve fit relative to K affects the power delivered to the eye.',

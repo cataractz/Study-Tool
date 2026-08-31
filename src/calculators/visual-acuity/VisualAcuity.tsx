@@ -20,6 +20,12 @@ export const meta: CalculatorMeta = {
   category: 'Visual Acuity',
   description: 'Convert visual acuity between Snellen, decimal, logMAR, and ETDRS letter score.',
   formula: 'decimal = num/denom;  logMAR = −log10(decimal)',
+  variables: [
+    { symbol: 'decimal', meaning: 'Decimal visual acuity (dimensionless, e.g. 20/20 = 1.0)' },
+    { symbol: 'num', meaning: 'Snellen numerator — testing distance' },
+    { symbol: 'denom', meaning: 'Snellen denominator — distance at which the letter subtends 5 arcmin' },
+    { symbol: 'logMAR', meaning: 'Logarithm (base 10) of the minimum angle of resolution' },
+  ],
   keywords: ['visual acuity', 'snellen', 'logmar', 'decimal acuity', 'ETDRS', 'letters'],
   boardRelevance: 'High',
   clinicalRelevance: 'Comparing acuity across different notations and charts, and quantifying visual acuity change over time.',

@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Spherocylindrical',
   description: 'The single-power sphere that best approximates a spherocylindrical Rx.',
   formula: 'SE = Sphere + Cylinder / 2',
+  variables: [
+    { symbol: 'SE', meaning: 'Spherical equivalent power (D)' },
+    { symbol: 'Sphere', meaning: 'Sphere power (D)' },
+    { symbol: 'Cylinder', meaning: 'Cylinder power (D)' },
+  ],
   keywords: ['spherical equivalent', 'SE', 'sphere', 'cylinder'],
   boardRelevance: 'High',
   clinicalRelevance: 'Contact lens fitting, quick comparison of Rx magnitude, and refractive surgery planning.',

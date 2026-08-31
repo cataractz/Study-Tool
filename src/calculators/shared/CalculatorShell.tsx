@@ -65,6 +65,19 @@ export function CalculatorShell({
         <p className="text-xs font-medium text-slate-500 mb-1">Formula</p>
         <p className="font-mono text-sm text-slate-800">{meta.formula}</p>
         {meta.convention && <p className="text-xs text-slate-500 mt-2">Sign convention: {meta.convention}</p>}
+        {meta.variables && meta.variables.length > 0 && (
+          <div className="mt-3 pt-3 border-t border-slate-200">
+            <p className="text-xs font-medium text-slate-500 mb-1.5">Key</p>
+            <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
+              {meta.variables.map((v, i) => (
+                <div key={i} className="flex gap-1.5 text-sm">
+                  <dt className="font-mono font-semibold text-slate-700 shrink-0">{v.symbol} =</dt>
+                  <dd className="text-slate-600">{v.meaning}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )}
       </Card>
 
       {practiceContent && (

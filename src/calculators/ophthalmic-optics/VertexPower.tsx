@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Ophthalmic Optics',
   description: 'Power change when a lens moves along the optical axis — vertex distance changes and effective power at a new reference plane are the same calculation.',
   formula: "F' = F / (1 − d·F)",
+  variables: [
+    { symbol: "F'", meaning: 'Effective power at the new reference plane (D)' },
+    { symbol: 'F', meaning: 'Original power at the initial reference plane (D)' },
+    { symbol: 'd', meaning: 'Distance the new plane moves toward the eye (m)' },
+  ],
   keywords: ['vertex distance', 'effective power', 'reference plane', 'spectacle plane'],
   boardRelevance: 'High',
   clinicalRelevance: 'Power for high-Rx spectacles fit at a different vertex distance than refracted, or moving power to a new reference plane.',

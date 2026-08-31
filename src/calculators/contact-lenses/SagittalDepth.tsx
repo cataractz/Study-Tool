@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Contact Lenses',
   description: 'Sagittal depth (sag) of a spherical lens/cornea from its radius and chord diameter, or radius from a known sag.',
   formula: 'sag = r − √(r² − (d/2)²)',
+  variables: [
+    { symbol: 'sag', meaning: 'Sagittal depth (mm)' },
+    { symbol: 'r', meaning: 'Radius of curvature (mm)' },
+    { symbol: 'd', meaning: 'Chord diameter (mm)' },
+  ],
   keywords: ['sagitta', 'sagittal depth', 'sag', 'base curve', 'chord', 'lens fitting'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Relating base curve and diameter to how deeply a lens vaults the cornea — relevant to both GP and scleral lens fitting.',

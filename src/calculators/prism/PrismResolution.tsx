@@ -13,6 +13,12 @@ export const meta: CalculatorMeta = {
   category: 'Prism',
   description: 'Break a resultant (oblique) prism into its horizontal and vertical components.',
   formula: 'H = R·cos(θ),  V = R·sin(θ)',
+  variables: [
+    { symbol: 'H', meaning: 'Horizontal prism component (Δ; + = Base Out, − = Base In)' },
+    { symbol: 'R', meaning: 'Resultant (oblique) prism magnitude (Δ)' },
+    { symbol: 'V', meaning: 'Vertical prism component (Δ; + = Base Up, − = Base Down)' },
+    { symbol: 'θ', meaning: 'Angle of the resultant prism from the horizontal (Base Out) axis (°)' },
+  ],
   keywords: ['prism resolution', 'oblique prism', 'horizontal component', 'vertical component'],
   boardRelevance: 'High',
   clinicalRelevance: 'Prescribing an oblique prism as separate horizontal and vertical prism, or interpreting a measured oblique prism.',

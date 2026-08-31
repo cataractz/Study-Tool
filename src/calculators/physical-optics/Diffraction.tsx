@@ -12,6 +12,11 @@ export const meta: CalculatorMeta = {
   category: 'Physical Optics',
   description: "Diffraction-limited angular resolution of a circular aperture (e.g. the pupil).",
   formula: 'θ (rad) = 1.22 × λ / D',
+  variables: [
+    { symbol: 'θ', meaning: 'Minimum resolvable angular separation (radians)' },
+    { symbol: 'λ', meaning: 'Wavelength of light (nm)' },
+    { symbol: 'D', meaning: 'Aperture diameter, e.g. pupil (mm)' },
+  ],
   keywords: ['diffraction', 'rayleigh criterion', 'angular resolution', 'diffraction limit', 'pupil size'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Explains why very small pupils degrade acuity — resolution is diffraction-limited below a certain pupil size, even with perfect focus.',

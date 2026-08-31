@@ -12,6 +12,10 @@ export const meta: CalculatorMeta = {
   category: 'Visual Optics',
   description: 'Angular magnification of a simple magnifier/loupe from its power, for a relaxed or accommodating eye.',
   formula: 'Relaxed: M = F/4   ·   At near point: M = 1 + F/4',
+  variables: [
+    { symbol: 'M', meaning: 'Angular magnification (×)' },
+    { symbol: 'F', meaning: 'Magnifier/loupe power (D)' },
+  ],
   keywords: ['angular magnification', 'magnifier', 'loupe', 'equivalent viewing power', 'EVP'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Estimating the magnification a hand/stand magnifier or low-vision device provides; equivalent to "equivalent viewing power" as used in low-vision practice.',

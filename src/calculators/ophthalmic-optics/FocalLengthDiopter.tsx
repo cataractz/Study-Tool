@@ -13,6 +13,10 @@ export const meta: CalculatorMeta = {
   category: 'Ophthalmic Optics',
   description: 'Convert between dioptric power and focal length.',
   formula: 'F = 1 / f  (f in meters)',
+  variables: [
+    { symbol: 'F', meaning: 'Dioptric power (D)' },
+    { symbol: 'f', meaning: 'Focal length (m)' },
+  ],
   keywords: ['focal length', 'diopter', 'power', 'lens'],
   boardRelevance: 'High',
   clinicalRelevance: 'Foundational relationship underlying nearly every ophthalmic optics calculation.',

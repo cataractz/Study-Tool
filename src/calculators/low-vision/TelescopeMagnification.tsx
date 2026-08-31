@@ -12,6 +12,11 @@ export const meta: CalculatorMeta = {
   category: 'Low Vision',
   description: 'Magnification, image orientation, and tube length of a Galilean or Keplerian telescope from objective and eyepiece power.',
   formula: 'M = −F(eyepiece) / F(objective)',
+  variables: [
+    { symbol: 'M', meaning: 'Telescope angular magnification (×); sign gives image orientation' },
+    { symbol: 'F(eyepiece)', meaning: 'Eyepiece lens power (D), signed — plus lens positive, minus lens negative' },
+    { symbol: 'F(objective)', meaning: 'Objective lens power (D), signed — plus lens positive, minus lens negative' },
+  ],
   keywords: ['telescope', 'galilean', 'keplerian', 'objective power', 'eyepiece power', 'bioptic telescope'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Understanding low-vision telescopic devices (handheld or bioptic).',

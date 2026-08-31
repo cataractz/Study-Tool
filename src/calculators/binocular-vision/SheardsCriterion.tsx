@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Binocular Vision',
   description: 'Checks whether compensating fusional reserve is at least twice the phoria, and calculates prism to prescribe if not.',
   formula: 'Rx = (2 × Phoria − Reserve) / 3',
+  variables: [
+    { symbol: 'Rx', meaning: 'Prism to prescribe (Δ)' },
+    { symbol: 'Phoria', meaning: 'Measured phoria magnitude (Δ)' },
+    { symbol: 'Reserve', meaning: 'Compensating fusional vergence reserve (Δ)' },
+  ],
   keywords: ['sheard', "sheard's criterion", 'fusional reserve', 'phoria', 'prism prescribing'],
   boardRelevance: 'High',
   clinicalRelevance: 'Deciding whether a symptomatic heterophoria warrants prism prescription.',

@@ -12,6 +12,11 @@ export const meta: CalculatorMeta = {
   category: 'Physical Optics',
   description: 'Fraction of light reflected at an interface between two media, for light striking straight on.',
   formula: 'R = [(n₂ − n₁) / (n₂ + n₁)]²',
+  variables: [
+    { symbol: 'R', meaning: 'Reflectance — fraction of incident light intensity reflected (unitless, 0–1)' },
+    { symbol: 'n₂', meaning: 'Refractive index of the second medium (unitless)' },
+    { symbol: 'n₁', meaning: 'Refractive index of the incident (first) medium (unitless)' },
+  ],
   keywords: ['fresnel', 'reflectance', 'reflection', 'refractive index', 'anti-reflective coating'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Explains surface reflections such as corneal light reflex/Purkinje images, and why AR coatings reduce lens reflections.',

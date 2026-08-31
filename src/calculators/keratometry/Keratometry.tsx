@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Keratometry & Cornea',
   description: 'Convert corneal radius ↔ power, and calculate corneal astigmatism / mean K from two K readings.',
   formula: "F = (n' − 1) × 1000 / r(mm)",
+  variables: [
+    { symbol: 'F', meaning: 'Corneal power (D)' },
+    { symbol: "n'", meaning: "Keratometric index (standard instrument index, unitless; default 1.3375)" },
+    { symbol: 'r', meaning: 'Anterior corneal radius of curvature (mm)' },
+  ],
   keywords: ['keratometry', 'K readings', 'corneal power', 'corneal astigmatism', 'mean K', 'radius'],
   boardRelevance: 'High',
   clinicalRelevance: 'Contact lens fitting and corneal astigmatism assessment.',

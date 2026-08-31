@@ -12,6 +12,13 @@ export const meta: CalculatorMeta = {
   category: 'Ocular Hemodynamics',
   description: 'Estimate MAP from blood pressure, and mean ocular perfusion pressure (MOPP) from MAP and IOP.',
   formula: 'MAP = DBP + ⅓(SBP − DBP)   ·   MOPP = ⅔ × MAP − IOP',
+  variables: [
+    { symbol: 'MAP', meaning: 'Mean arterial pressure (mmHg)' },
+    { symbol: 'DBP', meaning: 'Diastolic blood pressure (mmHg)' },
+    { symbol: 'SBP', meaning: 'Systolic blood pressure (mmHg)' },
+    { symbol: 'MOPP', meaning: 'Mean ocular perfusion pressure (mmHg)' },
+    { symbol: 'IOP', meaning: 'Intraocular pressure (mmHg)' },
+  ],
   keywords: ['MAP', 'mean arterial pressure', 'ocular perfusion pressure', 'OPP', 'MOPP', 'glaucoma risk'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Estimating ocular perfusion pressure, a factor studied in glaucoma epidemiology (e.g. Baltimore Eye Survey).',

@@ -12,6 +12,13 @@ export const meta: CalculatorMeta = {
   category: 'Physical Optics',
   description: 'Image distance and magnification for a spherical mirror from its radius of curvature and object distance.',
   formula: '1/do + 1/di = 1/f = 2/r   ·   m = −di/do',
+  variables: [
+    { symbol: 'do', meaning: 'Object distance from the mirror (mm), positive for a real object' },
+    { symbol: 'di', meaning: 'Image distance from the mirror (mm), positive for a real image, negative for virtual' },
+    { symbol: 'f', meaning: 'Focal length of the mirror (mm), positive for concave, negative for convex' },
+    { symbol: 'r', meaning: 'Radius of curvature of the mirror (mm), positive for concave, negative for convex' },
+    { symbol: 'm', meaning: 'Magnification (unitless), negative indicates an inverted image' },
+  ],
   keywords: ['mirror equation', 'concave mirror', 'convex mirror', 'radius of curvature', 'image distance'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Understanding image formation by curved mirrors (e.g. keratometry/Placido disc principles use corneal reflection as a convex mirror).',

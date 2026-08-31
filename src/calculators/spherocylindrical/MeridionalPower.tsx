@@ -13,6 +13,13 @@ export const meta: CalculatorMeta = {
   category: 'Spherocylindrical',
   description: 'Power of a spherocylindrical lens in any meridian, plus the two principal meridian powers.',
   formula: 'Fθ = S + C·sin²(θ − axis)',
+  variables: [
+    { symbol: 'Fθ', meaning: 'Lens power in the meridian of interest, θ (D)' },
+    { symbol: 'S', meaning: 'Sphere power (D)' },
+    { symbol: 'C', meaning: 'Cylinder power (D)' },
+    { symbol: 'θ', meaning: 'Meridian of interest (°)' },
+    { symbol: 'axis', meaning: 'Cylinder axis of the lens (°)' },
+  ],
   keywords: ['meridional power', 'principal meridians', 'sphere', 'cylinder', 'axis', 'toric'],
   boardRelevance: 'High',
   clinicalRelevance: "Understanding a toric lens's power in an arbitrary meridian, e.g. for keratometry or topography correlation.",

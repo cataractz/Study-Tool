@@ -13,6 +13,12 @@ export const meta: CalculatorMeta = {
   category: 'Contact Lenses',
   description: 'Final power to order from a trial lens power, spherical over-refraction, and any base-curve change (SAM-FAP).',
   formula: 'Final power = Trial power + Over-refraction + SAM-FAP adjustment',
+  variables: [
+    { symbol: 'Final power', meaning: 'Lens power to order (D)' },
+    { symbol: 'Trial power', meaning: 'Power of the diagnostic/trial GP lens used for the over-refraction (D)' },
+    { symbol: 'Over-refraction', meaning: 'Spherical over-refraction measured over the trial lens (D)' },
+    { symbol: 'SAM-FAP adjustment', meaning: 'Power correction for any base-curve change between the trial and final lens (D)' },
+  ],
   keywords: ['RGP', 'GP lens power', 'over-refraction', 'final lens power', 'SAM', 'FAP', 'base curve change'],
   boardRelevance: 'High',
   clinicalRelevance: 'Determining what power to order after a diagnostic/trial GP lens fitting and over-refraction.',

@@ -20,6 +20,12 @@ export type BoardRelevance = 'High' | 'Moderate' | 'Low' | 'Clinical only'
 
 export type Difficulty = 'Basic' | 'Intermediate' | 'Advanced'
 
+/** One symbol used in `formula`, defined for the "Key" shown under it — e.g. { symbol: 'F', meaning: 'Vergence/power (D)' }. */
+export interface CalculatorVariable {
+  symbol: string
+  meaning: string
+}
+
 export interface CalculatorMeta {
   id: string
   name: string
@@ -27,6 +33,8 @@ export interface CalculatorMeta {
   description: string
   /** Display string of the primary formula, e.g. "F = 1 / f" */
   formula: string
+  /** Definitions for every symbol in `formula`, rendered as a compact key beneath it. */
+  variables?: CalculatorVariable[]
   /** Extra search terms beyond name/description/formula/category */
   keywords: string[]
   boardRelevance: BoardRelevance

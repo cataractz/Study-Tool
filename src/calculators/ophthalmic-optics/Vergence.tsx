@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Ophthalmic Optics',
   description: 'Solve the vergence equation U + F = V for object vergence, image vergence, or lens power.',
   formula: 'U + F = V',
+  variables: [
+    { symbol: 'U', meaning: 'Object vergence (D)' },
+    { symbol: 'F', meaning: 'Power of the refracting element (D)' },
+    { symbol: 'V', meaning: 'Image vergence (D)' },
+  ],
   keywords: ['vergence', 'object vergence', 'image vergence', 'U', 'V', 'F'],
   boardRelevance: 'High',
   clinicalRelevance: 'Core equation for ray tracing through any single refracting element.',

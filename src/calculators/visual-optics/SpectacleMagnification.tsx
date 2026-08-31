@@ -12,6 +12,11 @@ export const meta: CalculatorMeta = {
   category: 'Visual Optics',
   description: 'Estimated spectacle magnification from lens power and vertex distance.',
   formula: 'SM ≈ 1 / (1 − d·Fv)',
+  variables: [
+    { symbol: 'SM', meaning: 'Spectacle magnification (power factor only)' },
+    { symbol: 'd', meaning: 'Vertex distance (m)' },
+    { symbol: 'Fv', meaning: 'Back vertex power of the lens (D)' },
+  ],
   keywords: ['spectacle magnification', 'power factor', 'shape factor', 'anisometropia'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Estimating how much a spectacle correction magnifies or minifies the retinal image, e.g. in anisometropia.',

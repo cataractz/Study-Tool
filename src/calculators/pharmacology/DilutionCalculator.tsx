@@ -13,6 +13,12 @@ export const meta: CalculatorMeta = {
   category: 'Pharmacology',
   description: 'Solve the dilution equation C1V1 = C2V2 for whichever quantity is unknown.',
   formula: 'C1 × V1 = C2 × V2',
+  variables: [
+    { symbol: 'C1', meaning: 'Stock (starting) concentration' },
+    { symbol: 'V1', meaning: 'Stock (starting) volume' },
+    { symbol: 'C2', meaning: 'Final (desired) concentration' },
+    { symbol: 'V2', meaning: 'Final (desired) volume' },
+  ],
   keywords: ['dilution', 'C1V1', 'C2V2', 'stock concentration', 'compounding'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Compounding a target concentration from a stock solution.',

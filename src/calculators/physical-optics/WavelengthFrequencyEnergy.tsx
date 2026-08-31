@@ -12,6 +12,13 @@ export const meta: CalculatorMeta = {
   category: 'Physical Optics',
   description: 'Convert light wavelength to frequency and photon energy.',
   formula: 'c = λf   ·   E = hf = hc/λ',
+  variables: [
+    { symbol: 'c', meaning: 'Speed of light in vacuum (m/s)' },
+    { symbol: 'λ', meaning: 'Wavelength (nm)' },
+    { symbol: 'f', meaning: 'Frequency (Hz)' },
+    { symbol: 'E', meaning: 'Photon energy (J or eV)' },
+    { symbol: 'h', meaning: "Planck's constant (J·s)" },
+  ],
   keywords: ['wavelength', 'frequency', 'photon energy', 'electromagnetic spectrum', 'nm', 'eV'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Relating visible-light wavelength to frequency and photon energy, e.g. for laser or UV exposure discussions.',

@@ -13,6 +13,11 @@ export const meta: CalculatorMeta = {
   category: 'Prism',
   description: 'Combine horizontal and vertical prism components into a single resultant prism.',
   formula: 'Resultant = √(H² + V²)',
+  variables: [
+    { symbol: 'Resultant', meaning: 'Combined (resultant) prism magnitude (Δ)' },
+    { symbol: 'H', meaning: 'Horizontal prism component (Δ; + = Base Out, − = Base In)' },
+    { symbol: 'V', meaning: 'Vertical prism component (Δ; + = Base Up, − = Base Down)' },
+  ],
   keywords: ['prism combination', 'resultant prism', 'oblique prism', 'horizontal', 'vertical'],
   boardRelevance: 'High',
   clinicalRelevance: 'Determining the total prismatic effect when horizontal and vertical prism both act on the same eye.',

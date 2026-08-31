@@ -13,6 +13,13 @@ export const meta: CalculatorMeta = {
   category: 'Contact Lenses',
   description: "Adjust a toric soft contact lens axis for observed rotation using the LARS rule.",
   formula: 'LARS: Left, Add. Right, Subtract.',
+  variables: [
+    { symbol: 'LARS', meaning: 'Mnemonic for adjusting a toric lens axis after observed rotation: Left, Add; Right, Subtract' },
+    { symbol: 'Left', meaning: "Reference mark rotates to the examiner's left as viewed on the eye" },
+    { symbol: 'Add', meaning: 'Add the rotation amount to the ordered axis' },
+    { symbol: 'Right', meaning: "Reference mark rotates to the examiner's right as viewed on the eye" },
+    { symbol: 'Subtract', meaning: 'Subtract the rotation amount from the ordered axis' },
+  ],
   keywords: ['LARS', 'toric', 'soft lens rotation', 'axis adjustment', 'left add right subtract'],
   boardRelevance: 'High',
   clinicalRelevance: 'Reordering a toric soft contact lens after observing on-eye rotation of the reference mark.',

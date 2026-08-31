@@ -12,6 +12,11 @@ export const meta: CalculatorMeta = {
   category: 'Contact Lenses',
   description: 'Lens oxygen transmissibility from material Dk and center thickness.',
   formula: 'Dk/t = Dk / t',
+  variables: [
+    { symbol: 'Dk/t', meaning: 'Oxygen transmissibility of the lens (×10⁻⁹ (cm/sec)(mLO2/mL·mmHg))' },
+    { symbol: 'Dk', meaning: 'Oxygen permeability of the lens material (×10⁻¹¹ (cm²/sec)(mLO2/mL·mmHg))' },
+    { symbol: 't', meaning: 'Lens center thickness (mm)' },
+  ],
   keywords: ['Dk/t', 'oxygen transmissibility', 'Dk', 'permeability', 'lens thickness', 'hypoxia'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Comparing how much oxygen a given lens material/thickness combination delivers to the cornea.',

@@ -12,6 +12,10 @@ export const meta: CalculatorMeta = {
   category: 'Pharmacology',
   description: 'Convert a drug concentration between %, mg/mL, mg/L, and ratio strength.',
   formula: '% w/v × 10 = mg/mL',
+  variables: [
+    { symbol: '% w/v', meaning: 'Concentration, percent weight/volume (g solute per 100 mL solution)' },
+    { symbol: 'mg/mL', meaning: 'Concentration in milligrams of solute per milliliter of solution' },
+  ],
   keywords: ['concentration', 'percent', 'mg/mL', 'mg/L', 'ratio strength', 'dilution'],
   boardRelevance: 'Moderate',
   clinicalRelevance: 'Reading and converting ophthalmic drug concentrations across the notations used on labels, in compounding, and in the literature.',

@@ -13,6 +13,12 @@ export const meta: CalculatorMeta = {
   category: 'Ophthalmic Optics',
   description: 'Equivalent power of two thin lenses, in contact or separated by a known distance.',
   formula: 'Feq = F1 + F2 − d·F1·F2',
+  variables: [
+    { symbol: 'Feq', meaning: 'Equivalent power of the combined lens system (D)' },
+    { symbol: 'F1', meaning: 'Power of lens 1 (D)' },
+    { symbol: 'F2', meaning: 'Power of lens 2 (D)' },
+    { symbol: 'd', meaning: 'Separation between the two lenses (m)' },
+  ],
   keywords: ['lens combination', 'equivalent power', 'thin lens', 'separated lenses'],
   boardRelevance: 'High',
   clinicalRelevance: 'Combining spectacle + add power, or any two-element optical system.',
