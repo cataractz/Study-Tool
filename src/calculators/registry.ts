@@ -16,6 +16,8 @@ import { PrismResolution, meta as prismResolutionMeta } from './prism/PrismResol
 import { ACA, meta as acaMeta } from './binocular-vision/ACA'
 import { SheardsCriterion, meta as sheardsCriterionMeta } from './binocular-vision/SheardsCriterion'
 import { PercivalsCriterion, meta as percivalsCriterionMeta } from './binocular-vision/PercivalsCriterion'
+import { CACRatio, meta as cacRatioMeta } from './binocular-vision/CACRatio'
+import { FixationDisparity, meta as fixationDisparityMeta } from './binocular-vision/FixationDisparity'
 import { Accommodation, meta as accommodationMeta } from './accommodation/Accommodation'
 import { VisualAcuity, meta as visualAcuityMeta } from './visual-acuity/VisualAcuity'
 import { Keratometry, meta as keratometryMeta } from './keratometry/Keratometry'
@@ -70,6 +72,8 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: acaMeta, Component: ACA },
   { meta: sheardsCriterionMeta, Component: SheardsCriterion },
   { meta: percivalsCriterionMeta, Component: PercivalsCriterion },
+  { meta: cacRatioMeta, Component: CACRatio },
+  { meta: fixationDisparityMeta, Component: FixationDisparity },
   { meta: accommodationMeta, Component: Accommodation },
   { meta: visualAcuityMeta, Component: VisualAcuity },
   { meta: keratometryMeta, Component: Keratometry },

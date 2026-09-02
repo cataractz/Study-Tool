@@ -11,6 +11,8 @@ import {
   logMARToDecimal,
   logMARFromETDRSLetters,
   etdrsLettersFromLogMAR,
+  decimalFromM,
+  mFromDecimal,
 } from './visualAcuity.engine'
 import type { CalculatorMeta, Difficulty, PracticeProblem } from '../../types/calculator'
 
@@ -26,7 +28,7 @@ export const meta: CalculatorMeta = {
     { symbol: 'denom', meaning: 'Snellen denominator — distance at which the letter subtends 5 arcmin' },
     { symbol: 'logMAR', meaning: 'Logarithm (base 10) of the minimum angle of resolution' },
   ],
-  keywords: ['visual acuity', 'snellen', 'logmar', 'decimal acuity', 'ETDRS', 'letters'],
+  keywords: ['visual acuity', 'snellen', 'logmar', 'decimal acuity', 'ETDRS', 'letters', 'M notation', 'M-unit', 'reduced Snellen'],
   boardRelevance: 'High',
   clinicalRelevance: 'Comparing acuity across different notations and charts, and quantifying visual acuity change over time.',
   supportsPractice: true,
@@ -106,8 +108,47 @@ function ETDRSTab() {
   )
 }
 
+function MNotationTab() {
+  const [testDistanceM, setTestDistanceM] = useState('6')
+  const [mSize, setMSize] = useState('')
+  const [decimal, setDecimal] = useState('')
+
+  const distM = parseNumeric(testDistanceM)
+  const mSizeN = parseNumeric(mSize)
+  const decimalFromMSize = distM !== null && mSizeN !== null && mSizeN !== 0 ? decimalFromM(distM, mSizeN) : null
+
+  const decimalN = parseNumeric(decimal)
+  const mSizeFromDecimal = distM !== null && decimalN !== null && decimalN !== 0 ? mFromDecimal(distM, decimalN) : null
+
+  return (
+    <div className="space-y-4">
+      <NumberField label="Test distance" unit="m" value={testDistanceM} onChange={setTestDistanceM} placeholder="e.g. 6 for 6 m, 0.4 for 40 cm" />
+      <div>
+        <p className="text-xs font-semibold text-slate-500 mb-1.5">From M-size</p>
+        <NumberField label="M-notation size" unit="M" value={mSize} onChange={setMSize} />
+        {decimalFromMSize !== null && (
+          <div className="grid grid-cols-2 gap-3 mt-3">
+            <ResultStat tone="slate" label="Decimal" value={roundTo(decimalFromMSize, 3).toString()} />
+            <ResultStat tone="slate" label="logMAR" value={roundTo(decimalToLogMAR(decimalFromMSize), 2).toString()} />
+          </div>
+        )}
+      </div>
+      <div className="pt-3 border-t border-slate-100">
+        <p className="text-xs font-semibold text-slate-500 mb-1.5">From decimal acuity</p>
+        <NumberField label="Decimal acuity" value={decimal} onChange={setDecimal} />
+        {mSizeFromDecimal !== null && (
+          <div className="grid grid-cols-2 gap-3 mt-3">
+            <ResultStat tone="slate" label="M-notation size" value={`${roundTo(mSizeFromDecimal, 2)} M`} />
+            <ResultStat tone="slate" label="Snellen (20/X)" value={`20/${roundTo(decimalToSnellenDenominator(decimalN as number), 1)}`} />
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function Calculate() {
-  const [tab, setTab] = useState<'snellen' | 'etdrs'>('snellen')
+  const [tab, setTab] = useState<'snellen' | 'etdrs' | 'm'>('snellen')
   return (
     <Card className="space-y-4">
       <div className="flex gap-1.5">
@@ -117,8 +158,11 @@ function Calculate() {
         <button onClick={() => setTab('etdrs')} className={'px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer border ' + (tab === 'etdrs' ? 'bg-brand-600 text-white border-brand-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50')}>
           ETDRS Letters
         </button>
+        <button onClick={() => setTab('m')} className={'px-3 py-1.5 rounded-md text-xs font-medium cursor-pointer border ' + (tab === 'm' ? 'bg-brand-600 text-white border-brand-600' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50')}>
+          M-Notation
+        </button>
       </div>
-      {tab === 'snellen' ? <SnellenLogMARTab /> : <ETDRSTab />}
+      {tab === 'snellen' ? <SnellenLogMARTab /> : tab === 'etdrs' ? <ETDRSTab /> : <MNotationTab />}
       <ResultActions onReset={() => setTab('snellen')} />
     </Card>
   )
