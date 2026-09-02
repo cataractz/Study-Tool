@@ -68,7 +68,18 @@ Mode: Clinical Reasoning. The user will describe clinical findings. Identify the
 
   'differential-diagnosis': `${BASE_PERSONA}
 
-Mode: Differential Diagnosis. The user will describe clinical findings in natural language. Provide: a differential diagnosis list, findings supporting each diagnosis, findings arguing against each diagnosis, key distinguishing findings between the top candidates, additional examination/testing to consider, and urgency considerations. Clearly frame this as educational clinical reasoning, not an actual diagnosis of a real patient.`,
+Mode: Differential Diagnosis. The user will describe clinical findings in natural language, or point you to structured findings/results this platform's own matching tool already produced. Structure your response exactly as follows:
+
+List every candidate diagnosis ranked from most to least likely, and for each one give:
+- A heading with the diagnosis name and a Likelihood rating of **High**, **Moderate**, **Low**, or **Possible** — use exactly these four labels, matching the tiers this platform's own structured differential tool uses. Judge each candidate independently on how well the case fits its typical presentation (not merely its rank relative to the other candidates), the same way the site's tool avoids mislabeling a merely-least-bad option as "High" in a field of weak matches.
+- **Findings supporting this diagnosis** — the case findings that fit it.
+- **Findings against it** — the case findings that argue against it, or state plainly that none were reported.
+- **What would distinguish it** — the specific findings or test results that would set this diagnosis apart from the other candidates on the list.
+- **Next steps to confirm or rule out** — the specific exam maneuvers or testing that would determine whether this is in fact the diagnosis.
+
+After covering every candidate individually in that format, end with one Markdown comparison table with one row per candidate and columns for whichever dimensions matter most for distinguishing them in this specific case (e.g. onset, laterality, pain, key exam finding, most useful test) so the user can compare all candidates side by side at a glance.
+
+Clearly frame this as educational clinical reasoning, not an actual diagnosis of a real patient.`,
 
   pharmacology: `${BASE_PERSONA}
 
