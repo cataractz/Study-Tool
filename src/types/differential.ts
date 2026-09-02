@@ -1,5 +1,11 @@
 export type Urgency = 'Emergency' | 'Urgent' | 'Prompt' | 'Routine'
 
+/** Qualitative confidence tier shown to the user in place of a raw match-score number —
+ * derived from matchScore (each candidate's independent fit), not from the relative probability
+ * share, so it reflects genuine evidence strength rather than just rank among whatever candidates
+ * happen to be shown. */
+export type Likelihood = 'High' | 'Moderate' | 'Low' | 'Possible'
+
 export interface DifferentialFindings {
   age?: string
   sex?: string
@@ -66,6 +72,9 @@ export interface DifferentialResult {
    * absolute/population probability, since it doesn't account for real-world disease
    * prevalence — see the Differential Diagnosis page for the full caveat. */
   probability: number
+  /** Descriptive tier for the UI — see the `Likelihood` type above for how this differs from
+   * `probability`. This is what the differential result card displays instead of a percentage. */
+  likelihood: Likelihood
   whyItMatches: string[]
   findingsAgainst: string[]
   distinguishingFactors: string[]

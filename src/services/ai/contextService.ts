@@ -66,7 +66,7 @@ export function buildDifferentialContext(findings: DifferentialFindings, results
       .slice(0, 8)
       .map(
         (r, i) =>
-          `${i + 1}. ${r.name} — probability ${r.probability}% (relative likelihood among these candidates, not a population probability), match score ${r.matchScore}%, urgency ${r.urgency}. Matched: ${r.whyItMatches.join(', ') || 'none'}. Not reported: ${r.findingsAgainst.join(', ') || 'none'}. Distinguishing factors: ${r.distinguishingFactors.join('; ') || 'none'}.`,
+          `${i + 1}. ${r.name} — likelihood ${r.likelihood} (shown to the user as this label, not a number; internally match score ${r.matchScore}/100, relative share ${r.probability}% among these candidates), urgency ${r.urgency}. Matched: ${r.whyItMatches.join(', ') || 'none'}. Not reported: ${r.findingsAgainst.join(', ') || 'none'}. Distinguishing factors: ${r.distinguishingFactors.join('; ') || 'none'}.`,
       ),
   ]
 

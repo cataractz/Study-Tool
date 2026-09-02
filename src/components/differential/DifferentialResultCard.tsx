@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom'
+import clsx from 'clsx'
 import { ArrowRight, CheckCircle2, XCircle, Compass, ArrowRightCircle } from 'lucide-react'
 import { Card } from '../ui/Card'
 import { Badge, urgencyTone } from '../ui/Badge'
 import { Linkify } from '../shared/Linkify'
-import type { DifferentialResult } from '../../types/differential'
+import type { DifferentialResult, Likelihood } from '../../types/differential'
+
+const LIKELIHOOD_STYLES: Record<Likelihood, string> = {
+  High: 'bg-emerald-600 text-white border-emerald-600',
+  Moderate: 'bg-sky-100 text-sky-700 border-sky-300',
+  Low: 'bg-slate-100 text-slate-600 border-slate-300',
+  Possible: 'bg-slate-50 text-slate-400 border-slate-200',
+}
 
 export function DifferentialResultCard({
   result,
@@ -32,16 +40,19 @@ export function DifferentialResultCard({
           </div>
         </div>
         <div className="text-right shrink-0">
-          <p className="text-2xl font-semibold text-brand-600 leading-none">{result.probability}%</p>
-          <p className="text-[11px] text-slate-400 mt-0.5">probability</p>
+          <span
+            className={clsx(
+              'inline-block px-3 py-1 rounded-full text-sm font-semibold border whitespace-nowrap',
+              LIKELIHOOD_STYLES[result.likelihood],
+            )}
+          >
+            {result.likelihood === 'Possible' ? 'Possible' : `${result.likelihood} likelihood`}
+          </span>
         </div>
       </div>
 
       <div>
-        <div className="flex items-center justify-between text-xs text-slate-500 mb-1">
-          <span>Clinical match score</span>
-          <span className="font-medium text-slate-600">{result.matchScore}%</span>
-        </div>
+        <p className="text-xs text-slate-500 mb-1">Clinical match strength</p>
         <div className="w-full h-1.5 rounded-full bg-slate-100 overflow-hidden">
           <div
             className="h-full bg-brand-500 rounded-full"

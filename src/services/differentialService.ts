@@ -1,6 +1,6 @@
 import { getAllDiseases } from './diseaseService'
 import type { Disease } from '../types/disease'
-import type { DifferentialFindings, DifferentialResult, Urgency } from '../types/differential'
+import type { DifferentialFindings, DifferentialResult, Likelihood, Urgency } from '../types/differential'
 import {
   symptomOptions,
   pupilOptions,
@@ -88,6 +88,20 @@ export function roundPercentagesToSum100(rawPercentages: number[]): number[] {
     result[remainders[k].i] += 1
   }
   return result
+}
+
+// Thresholds against matchScore (0-100, judged independently per disease) — NOT against
+// probability, which is only a relative share among whatever candidates happen to be shown and
+// would mislabel a merely-least-bad candidate as "High" in a field of weak matches.
+const LIKELIHOOD_HIGH_MIN = 70
+const LIKELIHOOD_MODERATE_MIN = 45
+const LIKELIHOOD_LOW_MIN = 20
+
+function deriveLikelihood(matchScore: number): Likelihood {
+  if (matchScore >= LIKELIHOOD_HIGH_MIN) return 'High'
+  if (matchScore >= LIKELIHOOD_MODERATE_MIN) return 'Moderate'
+  if (matchScore >= LIKELIHOOD_LOW_MIN) return 'Low'
+  return 'Possible'
 }
 
 function deriveUrgency(disease: Disease): Urgency {
@@ -200,6 +214,7 @@ export function runDifferential(findings: DifferentialFindings, limit = 8): Diff
       diseaseId: disease.id,
       name: disease.name,
       matchScore,
+      likelihood: deriveLikelihood(matchScore),
       evidenceScore,
       whyItMatches: matched,
       findingsAgainst: pertinentNegatives.slice(0, 4),
