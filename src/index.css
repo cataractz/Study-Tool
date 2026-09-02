@@ -27,10 +27,23 @@ body {
   font-family: var(--font-sans);
   background-color: #f6f7f9;
   color: #1a1d23;
+  /* Long unbroken strings (slash-joined lists, URLs, chemical names, etc.) must wrap inside their
+     container instead of overflowing it — this is inherited by all descendant text. */
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* A native <select>/<input>/<textarea> sizes itself to its content (e.g. a select's longest
+   option) by default, ignoring its flex/grid container's width — capping it here stops that from
+   pushing the page into horizontal overflow. */
+select,
+input,
+textarea {
+  max-width: 100%;
 }
 
 ::-webkit-scrollbar {
