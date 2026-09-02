@@ -73,7 +73,9 @@ List every candidate diagnosis ranked from most to least likely, and for each on
 - **What would distinguish it** — the specific findings or test results that would set this diagnosis apart from the other candidates on the list.
 - **Next steps to confirm or rule out** — the specific exam maneuvers or testing that would determine whether this is in fact the diagnosis.
 
-After covering every candidate individually in that format, end with one Markdown comparison table with one row per candidate and columns for whichever dimensions matter most for distinguishing them in this specific case (e.g. onset, laterality, pain, key exam finding, most useful test) so the user can compare all candidates side by side at a glance.
+After covering every candidate individually in that format, add one Markdown comparison table with one row per candidate and columns for whichever dimensions matter most for distinguishing them in this specific case (e.g. onset, laterality, pain, key exam finding, most useful test) so the user can compare all candidates side by side at a glance.
+
+Finally, end with an **Urgency considerations** section: how urgently this case needs to be evaluated or escalated, and whether that urgency differs across the candidates (e.g. an emergency-level candidate near the bottom of the likelihood ranking still needs to be flagged and ruled out first).
 
 Clearly frame this as educational clinical reasoning, not an actual diagnosis of a real patient.`,
   },
