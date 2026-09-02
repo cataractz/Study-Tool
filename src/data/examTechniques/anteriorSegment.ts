@@ -1377,4 +1377,68 @@ export const anteriorSegmentTechniques: ExamTechnique[] = [
       'Ting DSJ, Ho CS, Deshmukh R, Said DG, Dua HS. Infectious keratitis: an update on epidemiology, causative microorganisms, risk factors, and antimicrobial resistance. Eye (Lond). 2021;35(4):1084-1101.',
     ],
   },
+  {
+    id: 'iris-transillumination-testing',
+    name: 'Iris (Ocular) Transillumination Testing',
+    aliases: ['Transillumination', 'Iris transillumination defect testing', 'TID testing'],
+    category: 'Anterior Segment',
+    section: 'Iris & Anterior Chamber',
+    isSpecialTest: true,
+    purpose:
+      'Detects focal defects in the iris pigment epithelium by directing a bright light through the pupil and observing for abnormal light transmission through the iris stroma itself, distinct from retroillumination (which uses the iris or fundus as a background reflector to backlight a different structure, such as the cornea or lens).',
+    clinicalIndications: [
+      'Suspected pigment dispersion syndrome (posterior iris bowing rubbing against zonules produces characteristic mid-peripheral, spoke-like transillumination defects)',
+      'Suspected ocular or oculocutaneous albinism (diffuse transillumination throughout the iris from globally deficient pigment epithelium)',
+      'History of blunt or penetrating iris trauma, iridodialysis, or prior intraocular surgery, where a focal defect may indicate structural iris damage',
+      'Unexplained pigment dispersion in the anterior chamber or on the corneal endothelium (Krukenberg spindle), unexplained elevated IOP, or a red reflex asymmetry',
+      'Suspected iris coloboma or other congenital iris anomaly, to characterize its extent',
+    ],
+    equipment: ['Slit lamp biomicroscope', 'A dark examination room is essential — ambient light degrades the test'],
+    patientPreparation: [
+      'Best performed before pupillary dilation, since dilation can mask or alter the appearance of pre-existing defects and changes iris geometry',
+      'Fully dim or turn off room lights and allow both the examiner and patient a brief period to dark-adapt for the best contrast',
+    ],
+    technique: [
+      'Darken the room completely (or as close to completely as practical) and allow adequate dark adaptation',
+      'Set the slit lamp to a small, bright, focused beam (not a wide diffuse beam)',
+      'Direct the beam through the pupil, roughly perpendicular to the plane of the iris, so light passes through the pupil and illuminates the iris stroma and pigment epithelium from behind/within',
+      'Observe the anterior iris surface (not the pupil itself) through the viewing oculars for areas that glow orange-red — these are zones where the iris pigment epithelium is thinned or absent and light is transmitted through relatively unobstructed, rather than being absorbed as it is by normal, fully pigmented iris',
+      'Systematically survey the full 360° circumference of the iris, since defect distribution (mid-peripheral spoke-like vs. diffuse vs. focal/sectoral) is itself diagnostically informative',
+      'Compare the two eyes, and document defect location, pattern, and extent (ideally with a slit-lamp photograph, since infrared transillumination photography is more sensitive than direct observation, especially in darkly pigmented irides)',
+    ],
+    normalFindings: ['No transillumination — the iris stroma and pigment epithelium uniformly block transmitted light, so no orange-red glow is seen through the iris tissue itself'],
+    abnormalFindings: [
+      'Mid-peripheral, radially oriented, spoke-like (slit-like) transillumination defects — the classic pattern of pigment dispersion syndrome, from posterior iris bowing chronically rubbing against the zonules',
+      'Diffuse, generalized transillumination throughout the iris — seen in albinism, where iris pigment epithelium is globally hypopigmented',
+      'A focal, irregular, non-radial defect corresponding to a site of prior trauma, surgery, or iridodialysis',
+      'A sector-shaped or wedge defect that may correspond to a coloboma or other structural iris anomaly',
+    ],
+    interpretation:
+      'The pattern and distribution of transillumination is often more diagnostically useful than its mere presence: mid-peripheral, radial, slit-like defects strongly support pigment dispersion syndrome and warrant IOP monitoring given the associated risk of pigmentary glaucoma; diffuse defects across the entire iris support an albinism-spectrum diagnosis; a solitary irregular defect corresponds to focal structural damage rather than a diffuse pigment-epithelial disorder. Direct slit-lamp observation is less sensitive in darkly pigmented irides, where infrared transillumination photography has been shown to detect defects missed on routine slit-lamp exam.',
+    associatedConditionIds: ['pigmentary-glaucoma', 'albinism-ocular', 'angle-recession-iridodialysis'],
+    clinicalPearls: [
+      'Perform this test before dilating the pupil — dilation can obscure or alter the appearance of transillumination defects and makes the mid-peripheral spoke pattern of pigment dispersion syndrome harder to appreciate.',
+      'A small, bright, focused beam through the pupil (not a wide diffuse beam over the iris surface) gives the best contrast between normal iris and a transillumination defect.',
+      'In patients with darkly pigmented irides, a transillumination defect can be genuinely present but difficult to see on routine slit-lamp exam — infrared transillumination photography is more sensitive and should be considered when clinical suspicion is high despite an unremarkable direct exam.',
+      'Krukenberg spindle (vertical pigment deposition on the corneal endothelium), pigment on the trabecular meshwork on gonioscopy, and mid-peripheral iris transillumination defects together strongly support pigment dispersion syndrome — look for all three rather than relying on transillumination alone.',
+    ],
+    commonErrors: [
+      'Performing the test with incomplete room darkening, which washes out the low-contrast orange-red glow of a genuine defect',
+      'Confusing transillumination (light passing through the iris tissue itself) with retroillumination of another structure (using the iris as a backlighting source to view the cornea or lens) — these are distinct techniques with different beam geometry and different purposes',
+      'Testing after pupillary dilation, which can mask the characteristic mid-peripheral spoke pattern of pigment dispersion syndrome',
+      'Failing to survey the full 360° circumference, missing defects outside the initially examined quadrant',
+    ],
+    limitations: [
+      'Sensitivity is reduced in darkly pigmented irides on routine slit-lamp examination; infrared transillumination photography is more sensitive but not universally available in general practice',
+      'A negative transillumination test does not fully exclude pigment dispersion syndrome, particularly early in the disease course or in darkly pigmented eyes',
+      'Purely a qualitative, examiner-dependent observation on routine slit-lamp exam — formal grading (e.g. none/possible/definite/prominent, as used in some infrared videography research protocols) is not standardized for routine clinical use',
+    ],
+    relatedTechniqueIds: ['slit-lamp-illumination-techniques', 'gonioscopy'],
+    references: [
+      'American Academy of Ophthalmology. "Dx and Tx of Pigment Dispersion Syndrome and Pigmentary Glaucoma." EyeNet.',
+      'Roberts DK, Chaglasian MA, et al. Iris transillumination defects in the pigment dispersion syndrome as detected with infrared videography: a comparison between a group of blacks and a group of nonblacks. Optom Vis Sci. 1999;76(10):693-8.',
+      'Roberts DK, et al. Infrared imaging technique may help demonstrate iris transillumination defects in blacks who show other pigment dispersion syndrome clinical signs. J Glaucoma. 2007.',
+      'American Academy of Ophthalmology. Basic and Clinical Science Course (BCSC), Section 10: Glaucoma — pigment dispersion syndrome examination.',
+    ],
+  },
 ]
