@@ -417,4 +417,76 @@ export const pediatricsTechniques: ExamTechnique[] = [
       'American Academy of Ophthalmology Preferred Practice Pattern: Amblyopia — interocular acuity difference criteria and optotype selection by age.',
     ],
   },
+  {
+    id: 'instrument-based-pediatric-vision-screening',
+    name: 'Instrument-Based Pediatric Vision Screening (Photoscreening)',
+    aliases: ['Photoscreening', 'Automated vision screening', 'Video/photorefractive screening'],
+    category: 'Pediatrics',
+    section: 'Vision Screening',
+    isSpecialTest: true,
+    purpose:
+      'Automated, image- or reflex-based detection of amblyogenic risk factors — significant refractive error, strabismus, and media opacity — using a handheld photoscreener or autorefractor-based screening device, without requiring a subjective response from the child, enabling screening of preverbal, nonverbal, or otherwise difficult-to-test children in settings (pediatric primary care offices, school and community screening programs, Head Start/early-childhood programs) where a full optotype-based or dilated exam is not feasible for every child.',
+    clinicalIndications: [
+      'Vision screening in preverbal infants and toddlers who cannot perform optotype-based acuity testing',
+      'Screening children with developmental delay, autism spectrum disorder, or other conditions limiting cooperation with subjective, chart-based screening',
+      'Routine amblyopia risk-factor screening beginning around age 1 and continuing through the preschool years, as recommended by AAP/AAPOS/AAO joint policy and by the US Preventive Services Task Force for children 3-5 years',
+      'School-based and community vision screening programs needing a rapid, high-throughput method',
+      'Any child who fails, or cannot complete, a traditional acuity-chart-based screening attempt, as an alternative or adjunct screening method',
+    ],
+    equipment: [
+      'Handheld photoscreening or autorefractor-based screening instrument (e.g., devices marketed as the Spot Vision Screener, PlusoptiX, or Retinomax/SureSight-type autorefractor-based screeners)',
+      'The device\'s current, AAPOS-validated age-specific referral criteria/software version',
+    ],
+    patientPreparation: [
+      'No cycloplegia, dilation, or verbal response from the child is required',
+      'Dim ambient room lighting somewhat to improve pupil size and image quality, though most devices are designed to operate in normal room lighting',
+      'Have the child seated calmly (in a caregiver\'s lap for infants/toddlers) and briefly attend to the device\'s fixation target/light or sound cue',
+    ],
+    technique: [
+      'Position the handheld device at its specified working distance from the child (commonly around 1 meter, device-specific) directly in front of and at the child\'s eye level',
+      'Direct the child\'s attention to the device\'s built-in fixation target (a light, image, or sound) while the device captures an image of both eyes\' red reflexes/corneal reflections (photoscreening) or performs a rapid automated estimate of refractive error (autorefractor-based screening), typically simultaneously in both eyes within seconds and without drops',
+      'Repeat the capture attempt if the device flags the image as unusable (e.g., due to blinking, poor fixation, or eccentric gaze)',
+      'The device software analyzes the captured data against its internal, age-adjusted algorithm and outputs a result — typically "pass," "refer," or "unable to test/inconclusive"',
+      'Confirm which referral-criteria version/threshold set the device is using and that it reflects current AAPOS-validated criteria (referral thresholds have been revised over time, most recently in 2021) rather than an outdated calibration',
+      'Document the result, and for any "refer" or repeatedly "unable to test" result, refer the child for a comprehensive, dilated pediatric eye examination rather than repeating the screening indefinitely',
+    ],
+    normalFindings: [
+      'A "pass" result in both eyes, indicating the device did not detect a manifest strabismus, refractive error, or media opacity exceeding its age-specific referral thresholds',
+    ],
+    abnormalFindings: [
+      'A "refer" result triggered by refractive error exceeding the device\'s referral thresholds — under the 2021 AAPOS uniform guidelines, confirmatory comprehensive-exam failure levels include anisometropia >1.25 D and hyperopia >4.00 D (both regardless of age), astigmatism >3.00 D in any meridian and myopia worse than -3.00 D in children under 48 months, and astigmatism >1.75 D and myopia worse than -2.00 D in children 48 months and older',
+      'A "refer" result triggered by any detected media opacity greater than approximately 1 mm, or by manifest strabismus greater than approximately 8 prism diopters',
+      'Repeated "unable to test"/inconclusive results despite adequate attempts — itself a reason for referral, since poor fixation or an unobtainable red reflex can reflect an underlying visual problem rather than simple non-cooperation',
+    ],
+    interpretation:
+      'A device "pass" result substantially lowers the likelihood of a significant amblyogenic risk factor but is a screening result, not a diagnosis, and does not replace a comprehensive eye examination when other risk factors are present (family history of strabismus/amblyopia/high refractive error, caregiver concern, or an abnormal red reflex noted separately). A "refer" result likewise is not diagnostic on its own — it indicates the child should undergo a comprehensive, typically cycloplegic, examination to confirm or refute the finding and to characterize it precisely (e.g., with cycloplegic retinoscopy) before treatment decisions are made. Referral thresholds are device- and criteria-version-specific: the 2021 AAPOS uniform guidelines revised thresholds from the prior 2013 guidelines specifically to reduce over-referral for non-amblyogenic symmetric astigmatism, so results should be interpreted against the criteria version the specific device/software is validated to, not treated as a fixed universal number.',
+    associatedConditionIds: ['amblyopia', 'accommodative-esotropia', 'intermittent-exotropia', 'myopia', 'hyperopia', 'anisometropia-aniseikonia', 'congenital-cataract'],
+    clinicalPearls: [
+      'A "refer" result is a prompt for a comprehensive, typically cycloplegic, eye examination — never a basis for prescribing glasses or diagnosing amblyopia directly from the screening output alone.',
+      'Confirm that the office\'s device is running current, AAPOS-validated referral criteria — because thresholds have been revised over time (2013 versus 2021 guidelines differ, notably in the symmetric astigmatism and anisometropia thresholds), an outdated calibration can meaningfully over- or under-refer.',
+      'Instrument-based screening detects amblyogenic risk factors (refractive error, strabismus, media opacity); it does not measure acuity directly, so it complements rather than replaces optotype-based testing once a child is old enough to cooperate with LEA Symbols or similar picture-optotype charts.',
+      'A child who repeatedly cannot be successfully screened (poor fixation, unobtainable reflex) should be referred for a comprehensive exam rather than assumed to simply be uncooperative, since some causes of poor fixation are themselves pathologic.',
+    ],
+    commonErrors: [
+      'Treating a device "pass" as equivalent to a comprehensive eye exam and deferring evaluation of a child with other known amblyopia risk factors (family history, caregiver-reported concern) on the strength of a screening pass alone',
+      'Using a device or software version calibrated to outdated referral criteria, leading to systematic over- or under-referral relative to current AAPOS-validated thresholds',
+      'Testing at an incorrect working distance or in suboptimal lighting for the specific device, degrading capture quality and increasing inconclusive results',
+      'Assuming a normal refractive/media result from the device excludes strabismus, when photoscreening and autorefraction-based devices vary in how directly and reliably they assess ocular alignment as opposed to refractive error',
+      'Repeating a failed capture attempt many times in a fussy child rather than referring for a comprehensive exam when the child cannot be reliably screened',
+    ],
+    limitations: [
+      'Provides a categorical pass/refer/inconclusive screening output rather than a quantitative acuity measurement',
+      'Accuracy (sensitivity/specificity) varies meaningfully by device, software/referral-criteria version, and the child\'s age and cooperation, and no instrument-based screener achieves perfect detection of all amblyogenic risk factors',
+      'Can miss subtle or intermittent strabismus, or mild amblyopia not associated with a detectable refractive error or media opacity, since the device screens for risk factors rather than functional vision loss directly',
+      'Inconclusive/unable-to-test results are common in very young, uncooperative, or crying children, limiting the effective screening rate in some populations',
+      'A single passing screen does not guarantee freedom from future amblyogenic risk factors — periodic rescreening or comprehensive examination at recommended intervals is still advised, per AAP/AAPOS guidance, even though the USPSTF statement addresses only a single screening episode within the 3-5 year age window',
+    ],
+    relatedTechniqueIds: ['cycloplegic-retinoscopy', 'lea-symbols-allen-figures-acuity', 'fix-and-follow-assessment', 'bruckner-test'],
+    references: [
+      'Donahue SP, Baker CN; AAPOS Vision Screening Committee. AAPOS uniform guidelines for instrument-based pediatric vision screen validation 2021. J AAPOS. 2022;26(1):1-6.',
+      'Donahue SP, Baker CN. Procedures for the evaluation of the visual system by pediatricians. Pediatrics. 2016;137(1):e20153597 (AAP/AAPOS/AAO joint policy statement on pediatric vision screening).',
+      'US Preventive Services Task Force. Vision Screening in Children Ages 6 Months to 5 Years: US Preventive Services Task Force Recommendation Statement. JAMA. 2017;318(9):836-844.',
+      'Arnold RW, et al. Instrument referral criteria for PlusoptiX and SureSight based on 2021 AAPOS guidelines: a population-based study. Front Public Health. 2022;10:959757 — applied comparison of device referral criteria under the 2021 AAPOS thresholds.',
+    ],
+  },
 ]
