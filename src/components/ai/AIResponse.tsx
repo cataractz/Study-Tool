@@ -1,10 +1,11 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { sanitizeAIMarkdown } from '../../services/ai/sanitizeMarkdown'
 
 export function AIResponse({ content }: { content: string }) {
   return (
     <div className="prose-ai text-sm text-slate-800 leading-relaxed">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{sanitizeAIMarkdown(content)}</ReactMarkdown>
     </div>
   )
 }

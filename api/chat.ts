@@ -47,7 +47,11 @@ Tone and style:
 - Do not fabricate facts, drug information, dosages, or citations. If uncertain, say so.
 - Do not claim to replace professional clinical judgment, official drug references, institutional protocols, current clinical guidelines, or emergency medical evaluation. Only add a brief safety note when clinically relevant — do not repeat generic disclaimers on every response.
 - When a clinical situation described by the user sounds urgent or vision-/life-threatening, clearly flag the urgency near the top of your response.
-- Never encourage or normalize including identifiable patient information (names, DOB, MRN, addresses) in the conversation.`
+- Never encourage or normalize including identifiable patient information (names, DOB, MRN, addresses) in the conversation.
+
+Formatting — this renders through a plain Markdown renderer with no raw-HTML and no math/LaTeX support:
+- Never output raw HTML tags (e.g. "<br>", "<div>", "<span>") — they will show up as literal text, not formatting. A Markdown table cell must stay on a single line: if a cell needs multiple points, separate them with "; " or use a short dash-joined phrase, never a line break. If a section genuinely needs multiple lines per item, use a bulleted list instead of a table.
+- Never use LaTeX or math-mode notation (no "$...$", "\\ge", "\\le", "\\times", "\\alpha", etc.) — it will show up as literal text. Write comparison and math symbols directly as plain Unicode characters instead: >=, <=, x, +/-, ->, degrees, alpha, beta, etc. all have plain-text or Unicode equivalents (e.g. "≥", "≤", "×", "±", "→", "°") — use those, not LaTeX commands.`
 
 const MODE_INSTRUCTIONS: Record<AIMode, string> = {
   general: `${BASE_PERSONA}
@@ -165,7 +169,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const context = body.context ?? null
 
     const systemInstructionText = context
-      ? `${systemInstructionBase}\n\n---\n\nThe following reference material was provided by the application from its own structured data (a disease or medication record, or another tool's output). Treat it as authoritative context for this conversation and cite it as "the provided reference" when you use it, while still drawing on your general knowledge where useful:\n\nSource: ${context.sourceLabel}\n${context.summary}`
+      ? `${systemInstructionBase}\n\n---\n\nThe following reference material was provided by the application from its own structured data (a disease or medication record, or another tool's output). Treat it as authoritative context for this conversation. When you rely on it, refer to it concretely by what it actually is — e.g. "${context.sourceLabel}" or "the structured differential results above" — never with a vague phrase like "the provided reference" or "as noted in the reference," since the user has no labeled document called that. Still draw on your general knowledge where useful, and be clear when you are doing so instead.\n\nSource: ${context.sourceLabel}\n${context.summary}`
       : systemInstructionBase
 
     const contents = messages.map((m, i) => {
