@@ -830,4 +830,65 @@ export const neuroOphthalmologyTechniques: ExamTechnique[] = [
       'American Academy of Ophthalmology, Basic and Clinical Science Course, Section 5: Neuro-Ophthalmology — nystagmus classification and localization.',
     ],
   },
+  {
+    id: 'frequency-doubling-technology-perimetry',
+    name: 'Frequency Doubling Technology (FDT) Perimetry',
+    aliases: ['FDT perimetry', 'Matrix perimetry', 'Frequency doubling perimetry'],
+    category: 'Neuro-Ophthalmology',
+    section: 'Visual Fields',
+    isSpecialTest: true,
+    purpose:
+      'A rapid, portable form of visual field testing that presents a low-spatial-frequency sinusoidal grating undergoing high-temporal-frequency counterphase flicker, exploiting the frequency-doubling illusion this generates to preferentially test the sparse, large-diameter magnocellular (M-cell) retinal ganglion cell pathway, used as a fast screening or supplemental test for glaucomatous and other visual field loss.',
+    clinicalIndications: [
+      'Glaucoma screening, particularly in settings where a fast, low-cost test is valuable (e.g. community/population screening programs)',
+      'Supplemental or adjunct visual field testing in glaucoma suspects or established glaucoma patients alongside standard automated perimetry',
+      'Detection of early glaucomatous field loss, since FDT abnormalities have been reported to precede standard automated perimetry defects by a period of time in some patients',
+      'Patients who have difficulty completing longer standard automated (e.g. Humphrey) perimetry, given FDT\'s substantially shorter test time',
+    ],
+    equipment: ['FDT perimeter (e.g. original Humphrey Matrix or earlier-generation FDT device)', 'Patient\'s near correction, if applicable, per the specific device\'s testing protocol'],
+    patientPreparation: [
+      'Explain the flickering/appearing-and-disappearing grating stimulus and the button-press response task before starting',
+      'Ensure appropriate near/distance correction is in place per the device manufacturer\'s instructions, since some FDT protocols do not require full refractive correction the way standard automated perimetry does',
+    ],
+    technique: [
+      'Position the patient at the device with appropriate head/chin stabilization and monocular testing (fellow eye occluded), per device instructions',
+      'Instruct the patient to fixate centrally and press a response button whenever a flickering grating stimulus is detected in a given test location',
+      'The device presents low-spatial-frequency gratings undergoing rapid counterphase flicker at multiple test locations (screening or full-threshold protocols, depending on the device and clinical goal)',
+      'Complete the full test sequence for each eye, typically far faster than standard automated perimetry (commonly under a minute or two per eye for screening protocols, several minutes for full-threshold testing)',
+      'Review the printed/digital output for the pattern and location of any depressed sensitivity, along with reliability indices',
+    ],
+    normalFindings: ['Full detection of the flickering grating stimulus across all tested locations, within age-corrected normal limits, with acceptable reliability indices'],
+    abnormalFindings: [
+      'Localized or diffuse areas of reduced sensitivity/missed stimuli, particularly in an arcuate, nasal step, or paracentral pattern suggestive of glaucomatous retinal ganglion cell loss',
+      'Generalized depression, which can reflect diffuse glaucomatous loss, media opacity, or poor test reliability rather than a focal neurologic or glaucomatous defect',
+      'Defect patterns respecting the vertical midline (chiasmal) or homonymous, respecting the vertical meridian (retrochiasmal), when the field loss is neurologic rather than glaucomatous in origin',
+    ],
+    interpretation:
+      'Because FDT tests a small, functionally distinct subset of retinal ganglion cells that some evidence suggests are preferentially affected early in glaucoma, an abnormal FDT result — especially a repeatable, localized defect — raises concern for glaucomatous damage and generally warrants confirmatory standard automated perimetry (e.g. Humphrey 24-2/30-2) along with structural evaluation (optic nerve head assessment, OCT RNFL/ganglion cell analysis) rather than being treated as diagnostic on its own. Reported sensitivity and specificity vary considerably by study, threshold criteria, and population tested (a commonly cited two-or-more-defective-location criterion has been reported with roughly 90% sensitivity and 90%+ specificity for glaucomatous field loss in some clinic-based studies, while population-based screening series report lower figures) — because of this variability, FDT is best used as a screening or adjunct tool rather than a stand-alone diagnostic test, and an abnormal result should prompt full threshold perimetry rather than a glaucoma diagnosis by itself.',
+    associatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension', 'normal-tension-glaucoma'],
+    clinicalPearls: [
+      'FDT\'s major practical advantage is speed — a screening protocol can often be completed in well under a minute per eye, making it useful where standard automated perimetry is impractical (e.g. large-scale screening, limited patient stamina/attention).',
+      'An abnormal FDT screening result should be confirmed with standard automated perimetry rather than acted upon alone, since false-positive screening defects occur and full threshold testing better characterizes the pattern and depth of any true defect.',
+      'FDT is relatively insensitive to blur/uncorrected refractive error and small pupil size compared with standard automated perimetry, which can make it more forgiving in patients where those factors would otherwise degrade test reliability — though device-specific correction requirements should still be followed.',
+      'A vertical-midline-respecting or homonymous defect pattern on FDT should prompt the same neurologic consideration (chiasmal or retrochiasmal pathology) as a similar pattern found on standard automated perimetry, not just glaucoma.',
+    ],
+    commonErrors: [
+      'Treating an abnormal FDT screening result as a definitive glaucoma diagnosis rather than an indication for confirmatory full-threshold perimetry and structural testing',
+      'Ignoring poor reliability indices (fixation losses, false positives/negatives) when interpreting an abnormal-appearing field',
+      'Not correlating FDT findings with optic nerve head appearance, IOP, and OCT structural data before assigning clinical significance to a borderline result',
+      'Assuming FDT and standard automated perimetry are interchangeable — they test different functional pathways and are not directly equivalent test-for-test',
+    ],
+    limitations: [
+      'Reported sensitivity and specificity vary substantially across studies depending on the specific device generation, testing protocol, and population (clinic-based versus community screening), so a single figure should not be treated as universally applicable',
+      'Primarily validated and used as a screening/adjunct tool rather than a full replacement for standard automated (threshold) perimetry in the ongoing management of established glaucoma',
+      'Like all subjective perimetry, results depend on patient attention, cooperation, and understanding of the task',
+    ],
+    relatedTechniqueIds: ['humphrey-visual-field', 'goldmann-kinetic-perimetry', 'optic-nerve-head-cup-disc-ratio-assessment'],
+    references: [
+      'Johnson CA, Samuels SJ. Screening for glaucomatous visual field loss with frequency-doubling perimetry. Invest Ophthalmol Vis Sci. 1997;38(2):413-425 (original description and screening performance criteria).',
+      'EyeWiki (American Academy of Ophthalmology). "Frequency Doubling Technology."',
+      'Patel SC, Friedman DS, Varadkar P, Robin AL. Algorithm for interpreting the results of frequency doubling perimetry. Am J Ophthalmol. 2000;129(3):323-327.',
+      'Iowa Perimetry Society / University of Iowa Department of Ophthalmology. "Frequency Doubling Technology (FDT) Perimetry" — history and technique overview.',
+    ],
+  },
 ]
