@@ -15,6 +15,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Calculations & Conversions', path: '/calculators', icon: 'calculator' },
   { label: 'References', path: '/references', icon: 'library' },
   { label: 'Contact Lens Database', path: '/lenses', icon: 'disc' },
+  { label: 'Clinical Exam & Workups', path: '/exam-workup', icon: 'clipboard-check' },
 ]
 
 export const futureToolsNav: NavItem[] = [

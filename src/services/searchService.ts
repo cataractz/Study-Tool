@@ -1,10 +1,19 @@
 import { getAllDiseases } from './diseaseService'
 import { getAllDrugs } from './drugService'
 import { getAllLenses } from './lensService'
+import { getAllExamTechniques } from './examTechniqueService'
+import { getAllClinicalWorkups } from './clinicalWorkupService'
 import { calculatorRegistry } from '../calculators/registry'
 import { referenceRegistry } from '../reference/registry'
 
-export type SearchResultType = 'disease' | 'drug' | 'calculator' | 'reference' | 'lens'
+export type SearchResultType =
+  | 'disease'
+  | 'drug'
+  | 'calculator'
+  | 'reference'
+  | 'lens'
+  | 'exam-technique'
+  | 'clinical-workup'
 
 export interface SearchResult {
   type: SearchResultType
@@ -77,6 +86,28 @@ const searchLensesProvider: SearchProvider = (q) =>
       path: `/lenses/${l.id}`,
     }))
 
+const searchExamTechniquesProvider: SearchProvider = (q) =>
+  getAllExamTechniques()
+    .filter((t) => matches([t.name, ...(t.aliases ?? []), t.category, t.section].join(' '), q))
+    .map((t) => ({
+      type: 'exam-technique',
+      id: t.id,
+      title: t.name,
+      subtitle: `Exam Technique · ${t.category}`,
+      path: `/exam-workup/technique/${t.id}`,
+    }))
+
+const searchClinicalWorkupsProvider: SearchProvider = (q) =>
+  getAllClinicalWorkups()
+    .filter((w) => matches([w.name, w.chiefComplaint].join(' '), q))
+    .map((w) => ({
+      type: 'clinical-workup',
+      id: w.id,
+      title: w.name,
+      subtitle: 'Clinical Workup',
+      path: `/exam-workup/workup/${w.id}`,
+    }))
+
 /**
  * Every searchable content source on the site, in one place. Adding a future tool to search
  * (once it's built) means writing one provider function like the ones above and pushing it here —
@@ -88,6 +119,8 @@ const searchProviders: SearchProvider[] = [
   searchCalculatorsProvider,
   searchReferencesProvider,
   searchLensesProvider,
+  searchExamTechniquesProvider,
+  searchClinicalWorkupsProvider,
 ]
 
 export function globalSearch(query: string, limit = 10): SearchResult[] {

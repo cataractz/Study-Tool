@@ -226,7 +226,9 @@ export function DiseaseDetail() {
             <tbody>
               {disease.diagnosticTesting.map((t, i) => (
                 <tr key={i} className="border-b border-slate-100 last:border-0">
-                  <td className="px-4 py-2.5 font-medium text-slate-800 align-top whitespace-nowrap">{t.name}</td>
+                  <td className="px-4 py-2.5 font-medium text-slate-800 align-top whitespace-nowrap">
+                    <Linkify text={t.name} excludeId={disease.id} />
+                  </td>
                   <td className="px-4 py-2.5 text-slate-600 align-top"><Linkify text={t.whyOrdered} excludeId={disease.id} /></td>
                   <td className="px-4 py-2.5 text-slate-600 align-top"><Linkify text={t.expectedFinding} excludeId={disease.id} /></td>
                   <td className="px-4 py-2.5 text-slate-600 align-top"><Linkify text={t.contribution} excludeId={disease.id} /></td>
