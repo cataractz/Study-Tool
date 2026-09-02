@@ -27,6 +27,21 @@ describe('globalSearch', () => {
     expect(results.some((r) => r.type === 'reference')).toBe(true)
   })
 
+  it('finds an exam technique by name', () => {
+    const results = globalSearch('Van Herick')
+    expect(results.some((r) => r.type === 'exam-technique' && r.id === 'van-herick-test')).toBe(true)
+  })
+
+  it('finds an exam technique by alias', () => {
+    const results = globalSearch('GAT')
+    expect(results.some((r) => r.type === 'exam-technique' && r.id === 'goldmann-applanation-tonometry')).toBe(true)
+  })
+
+  it('finds a clinical workup by name', () => {
+    const results = globalSearch('red eye')
+    expect(results.some((r) => r.type === 'clinical-workup' && r.id === 'red-eye-workup')).toBe(true)
+  })
+
   it('interleaves results across content types rather than one type crowding out the rest', () => {
     // "glaucoma" matches diseases and at least one calculator (ocular perfusion pressure mentions
     // glaucoma risk in its clinical relevance / keywords).

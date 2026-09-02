@@ -27,6 +27,17 @@ describe('findExactLink', () => {
   it('returns undefined for a phrase that is not a whole disease/drug name', () => {
     expect(findExactLink('some unrelated sentence about eyes')).toBeUndefined()
   })
+
+  it('resolves an exam technique by its exact name', () => {
+    const link = findExactLink('Seidel Test')
+    expect(link?.type).toBe('exam-technique')
+    expect(link?.id).toBe('seidel-test')
+  })
+
+  it('resolves an exam technique by an alias', () => {
+    const link = findExactLink('Van Herick technique')
+    expect(link?.id).toBe('van-herick-test')
+  })
 })
 
 describe('linkifySegments', () => {
@@ -76,5 +87,11 @@ describe('linkifySegments', () => {
 
   it('handles empty text without throwing', () => {
     expect(linkifySegments('')).toEqual([{ text: '' }])
+  })
+
+  it('finds a known exam technique name mentioned inside disease prose (bidirectional cross-linking)', () => {
+    const segments = linkifySegments('Slit lamp examination with van Herick technique was performed.')
+    const linked = segments.filter((s) => s.link)
+    expect(linked.some((s) => s.link?.type === 'exam-technique' && s.link?.id === 'van-herick-test')).toBe(true)
   })
 })
