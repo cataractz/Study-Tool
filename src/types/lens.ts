@@ -64,6 +64,11 @@ export interface ContactLens {
    * distance-/near-dominant design)", "3-Zone Progressive". Undefined for non-multifocal designs. */
   multifocalOpticalDesign?: string
   bestFor: string[]
+  /** When NOT to prescribe this lens — ocular surface disease, anatomy, or patient factors that
+   * rule it out or warrant real caution, not just "not ideal for." */
+  contraindications: string[]
+  pros: string[]
+  cons: string[]
   clinicalNotes: string[]
   /** Calculator ids (from the Contact Lenses calculator category) relevant to fitting this lens. */
   relatedCalculatorIds?: string[]

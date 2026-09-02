@@ -19,6 +19,24 @@ export const frpSphericalLenses: ContactLens[] = [
     uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Established 2-week wearers wanting a proven, widely available SiHy lens', 'Occasional overnight wear (with appropriate follow-up)'],
+    contraindications: [
+      'Active blepharitis, MGD, or ocular surface inflammation if any overnight/extended wear is being considered',
+      'History of contact lens-related corneal infiltrates or microbial keratitis (relative contraindication to overnight wear)',
+      'Monocular patients or those with reduced corneal sensation, given the overnight-wear option',
+      'Poor compliance with the 2-week replacement schedule or lens hygiene',
+    ],
+    pros: [
+      'Hydraclear Plus surface treatment improves wettability and comfort across the 2-week wear cycle',
+      'Two base curve options (8.4/8.8) fit a flatter or steeper cornea better than single-BC competitors',
+      'High Dk/t (147) supports daytime wear and occasional overnight use',
+      'Class 1 UV blocking adds incidental UV protection',
+      'Extensive prescriber familiarity and broad parameter availability ease refits and emergency replacement',
+    ],
+    cons: [
+      '2-week replacement means more frequent lens purchases than monthly alternatives',
+      'Firm SiHy surface can feel less immediately cushiony than newer water-gradient designs for sensitive patients',
+      'Toric and multifocal needs require switching to separate Oasys product lines, not this base SKU',
+    ],
     clinicalNotes: ['One of the most widely fit 2-week silicone hydrogels; two base curve options accommodate a flatter or steeper cornea.'],
     relatedCalculatorIds: ['tear-lens'],
   },
@@ -38,6 +56,24 @@ export const frpSphericalLenses: ContactLens[] = [
     wearSchedule: 'Extended wear (up to 6 nights)',
     handlingTint: true,
     bestFor: ['Monthly wearers wanting a single-base-curve lens with a wide power range', 'FDA-cleared for up to 6 nights extended wear'],
+    contraindications: [
+      'Active corneal neovascularization or hypoxia-related complications from prior extended wear',
+      'Significant blepharitis/MGD if overnight wear is planned',
+      'Irregular astigmatism or keratoconus (standard spherical design is not intended for irregular corneas)',
+      'History of giant papillary conjunctivitis with prior silicone hydrogel lenses, unless tolerance is reconfirmed',
+    ],
+    pros: [
+      'Single base curve simplifies fitting and inventory while still covering a wide sphere range (extended to +15.00/-20.00)',
+      'Naturally wettable comfilcon A surface needs no separate plasma or coating treatment, reducing deposit-related irritation over the month',
+      'High Dk/t (160) supports the FDA clearance for up to 6-night extended wear',
+      'Monthly replacement is cost-effective relative to 2-week/daily options',
+      'Wide parameter range reduces the need to special-order for higher refractive errors',
+    ],
+    cons: [
+      'No confirmed UV-blocking claim in this lens, so incidental UV protection should not be promised to patients',
+      'Moderate 48% water content can leave some patients with late-day dryness compared to lower-water or water-gradient designs',
+      'A single base curve may not fit unusually flat or steep corneas as well as multi-BC lenses such as Oasys',
+    ],
     clinicalNotes: ['Naturally wettable material (no separate surface treatment) is marketed as reducing lipid/protein deposition.'],
   },
   {
@@ -57,6 +93,23 @@ export const frpSphericalLenses: ContactLens[] = [
     uvBlocking: false,
     handlingTint: true,
     bestFor: ['Patients wanting the option of extended overnight wear (with appropriate monitoring)', 'High-Dk/t monthly lens for a low-water material'],
+    contraindications: [
+      'Patients who need confirmed UV protection — this lens has none, so continued UV-blocking sunglasses/spectacles should be advised',
+      'History of corneal edema, GPC, or infiltrative keratitis with prior extended wear',
+      'Poor follow-up compliance where 30-night extended wear is being considered, given the rising hypoxia/infection risk with wear duration',
+      'Active anterior blepharitis or meibomitis given the extended-wear indication',
+    ],
+    pros: [
+      'Among the highest-Dk/t monthly lenses (138) despite a low 33% water content, supporting long-duration wear',
+      'HydraGlyde Moisture Matrix surface treatment improves wettability and reduces dryness/discomfort symptoms',
+      'FDA-cleared for up to 30 nights continuous wear, the longest wear window in this lineup',
+      'Handling tint aids insertion/removal and lens orientation checks',
+    ],
+    cons: [
+      'No UV blocker, unlike sibling Alcon daily lenses — UV protection must not be assumed across the Alcon lineup',
+      'Low water content can feel less immediately wet/cushiony on insertion than higher-water designs',
+      '30-night extended wear, even when FDA-cleared, carries materially higher microbial keratitis risk than daily wear and requires careful patient selection',
+    ],
     clinicalNotes: [
       'Among the highest-Dk/t monthly lenses on the market — the low water content itself contributes to the high oxygen transmissibility.',
       'Does NOT include a UV blocker, unlike some other Alcon daily lenses (e.g. Dailies Total1, Precision1) — don\'t assume UV protection across the Alcon lineup.',
@@ -78,6 +131,23 @@ export const frpSphericalLenses: ContactLens[] = [
     wearSchedule: 'Extended wear (up to 30 nights)',
     handlingTint: true,
     bestFor: ['Extended-wear candidates', 'Established Bausch + Lomb SiHy wearers'],
+    contraindications: [
+      'UV-sensitive patients relying on the lens for UV protection, since UV-blocking status is unconfirmed for this product',
+      'Active lid margin disease (blepharitis/MGD) given the extended-wear indication',
+      'History of contact lens-associated corneal infiltrative events',
+      'Known sensitivity or reaction to prior balafilcon A (PureVision family) lenses',
+    ],
+    pros: [
+      'Plasma surface treatment increases wettability of the underlying silicone hydrogel, aiding comfort through the wear cycle',
+      'FDA-cleared for up to 30 nights extended wear',
+      'Established balafilcon A material family with a large base of clinical experience',
+      'Monthly replacement offers lower per-lens cost than 2-week/daily options',
+    ],
+    cons: [
+      'UV-blocking status for this specific lens is unconfirmed/conflicting across sources — do not counsel UV protection without verifying the current package insert',
+      'Lower Dk/t (130) than several other monthly SiHy options in this database (e.g. Ultra, Total30, Biofinity)',
+      'Extended wear carries elevated infection risk regardless of material, requiring careful patient selection and follow-up',
+    ],
     clinicalNotes: [
       'Surface-treated with a plasma process to increase wettability of the underlying silicone hydrogel.',
       'Sources conflict on UV-blocking status for this specific lens — left unconfirmed rather than guessed; verify against the current Bausch + Lomb package insert.',
@@ -101,6 +171,24 @@ export const frpSphericalLenses: ContactLens[] = [
     uvBlocking: true,
     handlingTint: true,
     bestFor: ['Monthly wearers wanting a high-Dk/t, moderate-water-content option', 'MoistureSeal technology marketed for maintained comfort/wettability through the wear cycle'],
+    contraindications: [
+      'Active blepharitis/MGD or lid margin disease if overnight wear is being considered',
+      'History of corneal infiltrates or microbial keratitis with a previous extended-wear lens',
+      'Irregular astigmatism or keratoconus (standard spherical design)',
+      'Patients unable to commit to timely follow-up during an extended-wear trial',
+    ],
+    pros: [
+      'One of the highest published Dk/t values (163) among monthly silicone hydrogels, supporting daytime and occasional overnight oxygenation',
+      'MoistureSeal technology is marketed to retain moisture and wettability through the full month, not just at insertion',
+      'Confirmed UV blocking adds incidental protection',
+      'Thin center thickness (0.07 mm at -3.00 D) can improve comfort and reduce lens awareness',
+      'Wide sphere range with fine 0.25 D steps through low-to-moderate powers',
+    ],
+    cons: [
+      'Moderate 46% water content can still show late-cycle deposit buildup typical of the material class if replacement isn\'t followed',
+      'Single base curve (8.5) offers less fitting flexibility than multi-BC options like Oasys',
+      'Extended wear approval limited to 6 nights, shorter than Air Optix or PureVision2\'s 30-night claims',
+    ],
     clinicalNotes: ['One of the highest published Dk/t values among monthly silicone hydrogels.'],
   },
   {
@@ -122,6 +210,24 @@ export const frpSphericalLenses: ContactLens[] = [
     bestFor: [
       'Patients with dryness symptoms wanting a conventional (non-silicone) hydrogel with a biomimetic surface',
       'Unusually high or low refractive errors — one of the widest standard sphere power ranges of any lens in this database',
+    ],
+    contraindications: [
+      'Patients needing overnight or extended wear — this lens is daily wear only',
+      'Corneas with low oxygen tolerance, given its comparatively low Dk/t (42) versus silicone hydrogel options',
+      'Active corneal neovascularization or hypoxia history (a lower-Dk/t hydrogel is less suited to a compromised cornea)',
+      'Known sensitivity to conventional hydrogel materials or phosphorylcholine-based coatings',
+    ],
+    pros: [
+      'PC Technology (phosphorylcholine) biomimetic coating is FDA-cleared specifically for patients with mild dryness/discomfort during lens wear — a claim uncommon among spherical soft lenses',
+      'One of the widest standard sphere power ranges in this database (+20.00 to -20.00), useful for high myopes/hyperopes',
+      'High 62% water content improves initial comfort for dryness-prone patients',
+      'Monthly replacement is cost-effective',
+      'Non-silicone hydrogel material may suit patients who report SiHy-related discomfort or GPC',
+    ],
+    cons: [
+      'Low Dk/t (42) relative to every silicone hydrogel lens in this database — unsuitable for extended wear and less appropriate for higher-oxygen-demand corneas',
+      'Daily wear only, with no extended/overnight wear option',
+      'Higher-water-content hydrogels are generally more prone to dehydration-related tightening/dryness later in the day and to protein deposit buildup than SiHy materials',
     ],
     clinicalNotes: [
       'Uses PC Technology (phosphorylcholine) — a biomimetic coating intended to attract and bind water at the lens surface, marketed similarly in spirit to Biotrue\'s biomimetic approach but a different specific chemistry.',
@@ -146,6 +252,25 @@ export const frpSphericalLenses: ContactLens[] = [
     uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Patients wanting Dailies Total1-style water-gradient comfort in a monthly modality', 'Monthly wearers with end-of-day dryness on other monthly SiHy lenses'],
+    contraindications: [
+      'Patients requiring confirmed extended/overnight wear — this lens is daily wear only despite its monthly replacement schedule',
+      'Active blepharitis/MGD or ocular surface inflammation, since the water-gradient surface doesn\'t address underlying lid disease',
+      'History of poor compliance with monthly replacement/cleaning — the water-gradient surface can be more delicate to handle than firmer SiHy surfaces',
+      'Irregular astigmatism or keratoconus (standard spherical design)',
+    ],
+    pros: [
+      'Water-gradient design (55% core to ~100% surface) is intended to deliver daily-disposable-style comfort in a monthly modality',
+      'CELLIGENT Technology is marketed to resist bacteria and lipid/protein deposits across the full 30-day cycle',
+      'Confirmed Class 1 UV blocking, unlike the spherical Dailies Total1',
+      'High Dk/t (154) supports strong daytime oxygen transmission',
+      'Useful option for monthly-lens patients with end-of-day dryness on conventional SiHy monthlies',
+    ],
+    cons: [
+      'Daily wear only, with no extended-wear option despite the premium comfort positioning',
+      'Newer lehfilcon A material has a shorter clinical track record than established monthlies (Biofinity, PureVision2, Air Optix)',
+      'Water-gradient surface, while comfort-enhancing, may need more careful handling/cleaning than firmer conventional SiHy surfaces to preserve the surface layer',
+      'Narrower standard sphere range (+6.00 to -10.00) than some competitors, e.g. Biofinity\'s extended range',
+    ],
     clinicalNotes: [
       'A newer, distinct water-gradient material (lehfilcon A) from Dailies Total1\'s delefilcon A — don\'t assume they share identical surface chemistry just because both use a "water gradient" description.',
       'CELLIGENT Technology is marketed as resisting bacteria and lipid/protein deposits across the full 30-day wear cycle.',

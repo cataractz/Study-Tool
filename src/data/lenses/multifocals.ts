@@ -19,6 +19,24 @@ export const multifocalLenses: ContactLens[] = [
     handlingTint: true,
     multifocalOpticalDesign: 'Center-near, concentric-ring',
     bestFor: ['Early-to-moderate presbyopes wanting daily-disposable convenience'],
+    contraindications: [
+      'Advanced presbyopia needing more plus than the High add band provides',
+      'Meaningful residual astigmatism — no toric multifocal version exists in this line',
+      'Patients whose occupation/hobbies demand crisp uncorrected distance vision (e.g. frequent night driving) and who are unwilling to trial simultaneous-vision optics first',
+      'Dry eye severe enough to limit consistent full-day wear',
+    ],
+    pros: [
+      'Daily disposable modality removes deposit buildup and lens-care compliance as variables in troubleshooting',
+      'Silicone hydrogel with high Dk/t (121) supports all-day comfort and corneal health',
+      'Low/Mid/High add bands cover early through advanced presbyopia from one fitting set',
+      'Concentric-ring center-near geometry is a familiar, well-studied optical approach with predictable troubleshooting',
+    ],
+    cons: [
+      'Band-based add powers (rather than exact diopter steps) can leave some patients between bands',
+      'Simultaneous-vision optics reduce contrast sensitivity versus single-vision lenses or glasses',
+      'Some patients never neuroadapt and report persistent glare/halos, especially at night',
+      'No toric option, so it cannot correct significant corneal astigmatism',
+    ],
     clinicalNotes: ['Center-near, concentric-ring optical design; add power is grouped into Low/Mid/High bands rather than exact diopter add — fit using the manufacturer\'s guide, not just the spectacle add.'],
     relatedCalculatorIds: ['tear-lens'],
   },
@@ -40,6 +58,24 @@ export const multifocalLenses: ContactLens[] = [
     handlingTint: true,
     multifocalOpticalDesign: 'D/N paired design — center-near "N" lens and a distance-biased "D" lens fit together per eye, rather than one universal center-near optic',
     bestFor: ['Presbyopes needing to fine-tune distance- vs near-dominant balance', 'Higher adds via the "D" design'],
+    contraindications: [
+      'Meaningful corneal astigmatism — no multifocal-toric version is available',
+      'Dry eye, smoking, or hygiene concerns that make the extended-wear option unsafe (should default to daily wear only in these patients)',
+      'Patients requiring sharp uncorrected distance vision for critical tasks (night driving) who are not willing to trial simultaneous vision',
+      'Advanced presbyopia beyond +2.50 D of add',
+    ],
+    pros: [
+      'D/N paired design lets the fitter bias each eye toward distance or near independently, giving a customization option most single-design multifocals lack',
+      'Comfilcon A silicone hydrogel with high Dk/t (142) and monthly modality lowers ongoing cost versus daily disposables',
+      'Four discrete add powers (+1.00 to +2.50) give finer step resolution than banded (Low/Mid/High) competitors',
+      'FDA-approved for up to 6 nights of extended/continuous wear in appropriate candidates',
+    ],
+    cons: [
+      'Monthly replacement requires lens-care compliance and carries deposit/solution-sensitivity risk that dailies avoid',
+      'Extended wear raises the risk of infiltrates/microbial keratitis if the patient is not a good compliance candidate',
+      'Simultaneous vision still reduces contrast sensitivity and can cause night glare/halos versus glasses',
+      'No toric version for astigmatic presbyopes',
+    ],
     clinicalNotes: ['The D/N (distance/near-dominant) split lets a fitter bias a given eye toward distance or near without changing the base lens.'],
   },
   {
@@ -61,6 +97,24 @@ export const multifocalLenses: ContactLens[] = [
     handlingTint: true,
     multifocalOpticalDesign: 'Center-near aspheric, smooth power gradient (no discrete rings)',
     bestFor: ['Presbyopes wanting a high-Dk/t monthly multifocal', 'Extended-wear candidates'],
+    contraindications: [
+      'Advanced presbyopia beyond the High add band',
+      'Significant residual astigmatism — no multifocal-toric version in this line',
+      'Patients wanting extended/overnight wear but with dry eye, smoking history, or inconsistent compliance (should stay daily wear despite the 30-night approval)',
+      'Patients prioritizing crisp uncorrected distance vision for night driving over adapting to simultaneous-vision optics',
+    ],
+    pros: [
+      'HydraGlyde moisture matrix improves end-of-day comfort versus the earlier Air Optix Aqua Multifocal',
+      'Aspheric smooth power gradient (no discrete rings) can feel less "steppy" through the add transition for some patients',
+      'High Dk/t (138) and FDA approval for up to 30 nights of continuous wear give flexibility for appropriate candidates',
+      'Monthly replacement is lower ongoing cost than daily-disposable multifocals',
+    ],
+    cons: [
+      'Does not block UV — patients need separate UV-blocking eyewear, unlike some competing Alcon dailies',
+      'No toric version for astigmatic presbyopes',
+      'Add is still grouped into Low/Medium/High bands rather than exact diopter steps',
+      'Simultaneous-vision tradeoffs (reduced contrast, possible night glare/halos) persist as with any multifocal soft lens',
+    ],
     clinicalNotes: [
       'Aspheric center-near design with a smooth power gradient rather than discrete rings.',
       'Does NOT include a UV blocker, unlike some other Alcon daily lenses (e.g. Dailies Total1, Precision1).',
@@ -84,6 +138,24 @@ export const multifocalLenses: ContactLens[] = [
     handlingTint: true,
     multifocalOpticalDesign: 'Center-near aspheric',
     bestFor: ['Presbyopes with dryness/comfort issues on other daily multifocals'],
+    contraindications: [
+      'Advanced presbyopia beyond the High add band',
+      'Significant corneal astigmatism — no toric version of this multifocal exists',
+      'Patients needing consistently crisp uncorrected distance vision for critical tasks (e.g. night driving) who have not trialed simultaneous vision',
+      'Ocular surface disease severe enough that no daily lens (even a water-gradient one) is appropriate',
+    ],
+    pros: [
+      'Water-gradient surface (>80% at the surface) is a leading option for presbyopes with dryness/comfort complaints on other daily multifocals',
+      'Aspheric center-near optic paired with delefilcon A gives some of the highest Dk/t (156) available in a daily multifocal',
+      'Daily disposable modality removes lens-care compliance and deposit buildup as comfort variables',
+      'Premium comfort platform can salvage patients who have failed/dropped out of other daily multifocal brands',
+    ],
+    cons: [
+      'Premium pricing versus other daily multifocals',
+      'Add is grouped into Low/Medium/High bands rather than exact diopter steps',
+      'No toric version for astigmatic presbyopes',
+      'Simultaneous-vision tradeoffs (reduced contrast sensitivity, possible glare/halos) remain even with the superior surface comfort',
+    ],
     clinicalNotes: ['Combines the water-gradient material with an aspheric multifocal optic — useful for presbyopes who\'ve struggled with comfort in other daily multifocal brands.'],
   },
   {
@@ -106,6 +178,24 @@ export const multifocalLenses: ContactLens[] = [
     handlingTint: true,
     multifocalOpticalDesign: '3-Zone Progressive (distance, intermediate, and near zones rather than a simple center-near/center-distance split)',
     bestFor: ['High-water hydrogel preference in a daily presbyopic lens'],
+    contraindications: [
+      'Presbyopes needing finer add resolution than a two-band (Low/High) system provides, especially those straddling the boundary',
+      'Meaningful corneal astigmatism — no toric version exists',
+      'Higher oxygen demand situations (e.g. compromised cornea, contact-lens-related hypoxia history) given the comparatively low Dk/t (42) versus silicone hydrogel alternatives',
+      'Patients requiring crisp uncorrected distance vision for critical tasks like night driving',
+    ],
+    pros: [
+      'High water content (78%) hydrogel is a biomimetic option for patients who prefer or tolerate hydrogel better than silicone hydrogel',
+      '3-Zone Progressive design (distance/intermediate/near) rather than a simple two-zone split can smooth the add transition',
+      'Daily disposable convenience and hygiene',
+      'Simple two-tier (Low/High) fitting set can speed initial lens selection',
+    ],
+    cons: [
+      'Lower Dk/t (42) than the silicone hydrogel multifocals in this category, a consideration for extended wear or hypoxia-prone patients',
+      'Only two add bands versus the three-tier systems used by most competitors, giving coarser power steps',
+      'No UV blocking — patients need separate UV-blocking eyewear',
+      'No toric version for astigmatic presbyopes',
+    ],
     clinicalNotes: [
       'Only two add bands (Low/High) rather than three — simpler fitting set, but coarser add-power steps than competitors with a Low/Mid/High system.',
       'Like the rest of the Biotrue ONEday family, does NOT offer UV protection — counsel patients to wear sunglasses/UV-blocking eyewear outdoors.',
@@ -130,6 +220,24 @@ export const multifocalLenses: ContactLens[] = [
     bestFor: [
       'Presbyopia correction with a single universal add (no add-power selection needed)',
       'Myopia progression control in children — a large, published evidence base supports this use, though see the regulatory note below',
+    ],
+    contraindications: [
+      'Young children who cannot reliably comply with daily insertion/removal and hygiene, or lack caregiver supervision for a myopia-control fit',
+      'Active ocular surface disease, blepharitis, or other conditions that raise microbial keratitis risk with daily lens wear',
+      'Presbyopes needing a customizable/precise add power rather than one universal EDOF add',
+      'Families or patients who require an on-label FDA myopia-control indication specifically — this lens\' pediatric use is off-label (see regulatory note) and an on-label alternative (e.g. MiSight 1 day) may be preferred where that distinction matters',
+    ],
+    pros: [
+      'Single universal add design (effective to +3.00 D) removes add-power selection from the fitting process',
+      'Center-distance aspheric EDOF optics prioritize distance clarity, unlike the center-near designs used by most other lenses in this category',
+      'Class 2 UV blocking, unlike several other daily multifocals in this database that omit UV protection',
+      'Substantial published evidence base supporting efficacy for pediatric myopia control, alongside its presbyopia indication',
+    ],
+    cons: [
+      'Pediatric myopia-control use is off-label in the US, requiring informed consent discussion distinct from an on-label lens',
+      'Center-distance design is a less common optical philosophy — near add cannot be fine-tuned per patient the way discrete-add multifocals allow',
+      'Water content and Dk/t are not consistently published/confirmed, complicating direct comparison to competitors',
+      'As with any simultaneous-vision multifocal, some wearers experience reduced contrast sensitivity or night glare/halos',
     ],
     clinicalNotes: [
       'Uses a patented center-distance aspheric "extended depth of focus" design rather than discrete add-power rings — one lens design is intended to work across the presbyopic range.',

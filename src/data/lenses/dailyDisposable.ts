@@ -20,6 +20,23 @@ export const dailyDisposableLenses: ContactLens[] = [
     uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Dry eye / limited daily wear time', 'Allergy sufferers (fresh lens each day)', 'Occasional wear (sports, part-time)'],
+    contraindications: [
+      'Irregular astigmatism or keratoconus — this is a standard spherical design and cannot mask significant corneal irregularity; a specialty (RGP/scleral) lens is needed instead.',
+      'Known sensitivity/allergic reaction to senofilcon A or the lens packaging solution.',
+      'Ongoing corneal neovascularization or hypoxia-related signs despite a high-Dk/t material — re-evaluate wear modality and time, not just lens choice.',
+      'Meaningful astigmatism requiring correction — fit the toric version of this lens family instead of masking cylinder with a spherical daily.',
+    ],
+    pros: [
+      'HydraLuxe technology is designed to sustain lubricant moisture into the final hours of daily wear.',
+      'High Dk/t (121) for a daily disposable gives generous oxygen transmission and reduces hypoxia risk over a full wearing day.',
+      'Class 1 UV blocking.',
+      'Wide sphere range (+8.00 to -12.00) covers most refractive errors without a special order.',
+    ],
+    cons: [
+      'Priced above conventional hydrogel daily disposables.',
+      'Silicone hydrogel surface, though treated, can still feel drier late in the day than water-gradient designs for some patients.',
+      'Two base curves only — may not accommodate unusually flat or steep corneas.',
+    ],
     clinicalNotes: [
       'Same senofilcon A material as the 2-week Acuvue Oasys, just in a daily-disposable modality.',
       'HydraLuxe technology is marketed for comfort in the final hours of daily wear.',
@@ -45,6 +62,23 @@ export const dailyDisposableLenses: ContactLens[] = [
     uvBlockingClass: 'Class 2',
     handlingTint: true,
     bestFor: ['Sensitive eyes preferring a conventional hydrogel over silicone hydrogel', 'Lower myopes/hyperopes needing only a moderate power range'],
+    contraindications: [
+      'Any need for extended or overnight wear — the low Dk/t (25.5) makes daily wear only a firm restriction, not just a preference.',
+      'History of hypoxia-related corneal complications (neovascularization, corneal edema) — a higher-Dk/t silicone hydrogel is more appropriate.',
+      'Heavy protein/lipid depositors or patients with active blepharitis/MGD — the ionic Group IV hydrogel surface is more deposit-prone than nonionic materials.',
+      'Irregular astigmatism or keratoconus — a standard spherical hydrogel will not correct or mask significant corneal irregularity.',
+    ],
+    pros: [
+      'LACREON technology embeds a wetting agent throughout the lens for consistent day-long comfort.',
+      'Conventional hydrogel material is often better tolerated initially by sensitive or first-time wearers than silicone hydrogel.',
+      'Class 2 UV blocking.',
+      'Lower typical cost than silicone hydrogel daily disposables.',
+    ],
+    cons: [
+      'Markedly lower Dk/t than silicone hydrogel daily options, raising hypoxia risk with any overwear.',
+      'Ionic Group IV material is more prone to protein/lipid deposit buildup within a single day of wear in heavy depositors.',
+      'Narrower sphere power range (+6.00 to -9.00) than newer silicone hydrogel dailies.',
+    ],
     clinicalNotes: [
       'Conventional (non-silicone) hydrogel — lower Dk/t than the Oasys 1-Day, so daily-wear-only is a firmer restriction here.',
       'LACREON technology embeds a wetting agent for comfort.',
@@ -67,6 +101,24 @@ export const dailyDisposableLenses: ContactLens[] = [
     uvBlocking: false,
     handlingTint: true,
     bestFor: ['Contact lens discomfort / end-of-day dryness', 'Long wear-time days'],
+    contraindications: [
+      'Patients relying on the contact lens itself for UV protection — this lens carries no UV blocker; counsel on UV-blocking eyewear or choose an alternate lens instead.',
+      'Meaningful astigmatism — this spherical entry will not correct cylinder; use Dailies Total1 for Astigmatism instead.',
+      'History of surface deposit issues (e.g., mucin balls), which have been occasionally reported with water-gradient silicone hydrogel designs.',
+      'Corneal curvature outside the single available base curve (8.5) — no alternate BC to adjust the fit.',
+    ],
+    pros: [
+      'Water-gradient design pairs a low-water silicone hydrogel core (oxygen transmission) with a near-100%-water surface for reduced lid friction.',
+      'Highest Dk/t (156) among the daily disposables in this list, giving excellent oxygen delivery.',
+      'Well tolerated in patients with contact lens discomfort or end-of-day dryness.',
+      'Comfortable across long wear-time days.',
+    ],
+    cons: [
+      'No UV blocker, unlike several competing daily disposables.',
+      'Only one base curve offered, limiting fit flexibility for atypical corneas.',
+      'Premium pricing.',
+      'Occasional reports of surface deposits ("mucin balls") specific to the water-gradient design.',
+    ],
     clinicalNotes: [
       'Water-gradient design: a low-water silicone hydrogel core for oxygen transmission, surrounded by a near-100%-water surface gel intended to reduce friction against the lid and ocular surface.',
       'Does NOT include a UV blocker — notably, the toric sibling (Dailies Total1 for Astigmatism) DOES have Class 1 UV blocking, so don\'t assume UV status carries across a lens family\'s sphere/toric variants.',
@@ -89,6 +141,23 @@ export const dailyDisposableLenses: ContactLens[] = [
     uvBlocking: true,
     handlingTint: true,
     bestFor: ['High water content preference in a silicone hydrogel', 'Wide power range needs'],
+    contraindications: [
+      'Meaningful astigmatism — this is a spherical-only entry; fit the toric version for significant cylinder instead.',
+      'Corneal curvature outside the single available base curve (8.4).',
+      'Known sensitivity to silicone hydrogel materials generally.',
+      'Irregular astigmatism/keratoconus, which needs a specialty (RGP/scleral) design rather than a standard soft spherical lens.',
+    ],
+    pros: [
+      'Aquaform technology combines silicone hydrogel oxygen performance with a comparatively high 54% water content for hydrogel-like wettability.',
+      'High Dk/t (100) supports comfortable full-day oxygenation.',
+      'Confirmed UV blocking (~86% UVA / 97% UVB per CooperVision).',
+      'Wide sphere range, with extended range to -20.00 available in some markets for high myopes.',
+    ],
+    cons: [
+      'Only one base curve (8.4) offered, limiting fit flexibility.',
+      'No FDA UV-blocking class formally designated despite confirmed blocking percentages.',
+      'Priced at a premium versus conventional hydrogel daily disposables.',
+    ],
     clinicalNotes: [
       'Aquaform technology — a higher-water-content silicone hydrogel aimed at combining SiHy oxygen performance with hydrogel-like wettability.',
       'UV blocker confirmed (~86% UVA / 97% UVB blocked, per CooperVision).',
@@ -112,6 +181,24 @@ export const dailyDisposableLenses: ContactLens[] = [
     uvBlocking: false,
     handlingTint: true,
     bestFor: ['Very high water content preference', 'Intermittent dryness with conventional hydrogel comfort'],
+    contraindications: [
+      'Patients relying on the contact lens for UV protection — no UV blocking; counsel on UV-blocking eyewear instead.',
+      'Higher hypoxia risk profiles (e.g., history of corneal neovascularization) — the Dk/t (42) is well below silicone hydrogel daily options.',
+      'Aqueous-deficient dry eye in low-humidity/high-airflow environments — very-high-water hydrogels can progressively dehydrate through the day, worsening symptoms.',
+      'Irregular astigmatism/keratoconus — a standard spherical hydrogel will not correct or mask significant corneal irregularity.',
+    ],
+    pros: [
+      'Very high (78%) water content marketed to approximate the cornea\'s own water content.',
+      'Nonionic Group II hydrogel material, generally less deposit-prone than ionic Group IV materials.',
+      'Often comfortable on initial wear for patients new to conventional hydrogel lenses.',
+      'Extended sphere power range available by special order for higher refractive errors.',
+    ],
+    cons: [
+      'No UV blocking, per the manufacturer\'s own current guidance.',
+      'Lower Dk/t than silicone hydrogel daily disposables, a consideration for hypoxia risk with any overwear.',
+      'High-water hydrogels can be prone to progressive dehydration and increased end-of-day friction.',
+      'Only one base curve (8.6) offered, limiting fit flexibility.',
+    ],
     clinicalNotes: [
       'Marketed to match the ~78% water content of the cornea; a high-water conventional hydrogel rather than a silicone hydrogel.',
       'Correction: an earlier pass here had this marked as a weak UV blocker. Bausch + Lomb\'s own current consumer guidance states Biotrue ONEday does NOT offer UV protection and recommends sunglasses/UV-blocking eyewear outdoors — counsel patients accordingly rather than assuming any UV benefit from the lens itself.',
@@ -135,6 +222,23 @@ export const dailyDisposableLenses: ContactLens[] = [
     uvBlockingClass: 'Class 2',
     handlingTint: true,
     bestFor: ['Budget-friendly silicone hydrogel daily option', 'Wide available power range including high myopia/hyperopia'],
+    contraindications: [
+      'Meaningful astigmatism — this spherical entry will not correct cylinder; use the toric version for significant astigmatism.',
+      'Corneal curvature outside the single available base curve (8.6).',
+      'Patients requiring Class 1 (higher-tier) UV protection specifically — this lens is Class 2.',
+      'Known sensitivity to silicone hydrogel materials generally.',
+    ],
+    pros: [
+      'Budget-friendly entry into silicone hydrogel daily wear, improving access and compliance for cost-sensitive patients.',
+      'One of the widest standard sphere power ranges among daily silicone hydrogel lenses (to -20.00/+15.00 in some markets).',
+      'Class 2 UV blocking included.',
+      'Reasonable balance of Dk/t (86) and water content (56%) for comfort and oxygen delivery.',
+    ],
+    cons: [
+      'Only Class 2, not Class 1, UV blocking.',
+      'Single base curve limits fitting flexibility.',
+      'Dk/t is lower than premium daily silicone hydrogel options (e.g., Dailies Total1, Acuvue Oasys 1-Day).',
+    ],
     clinicalNotes: ['One of the widest standard power ranges among daily silicone hydrogel lenses, useful for higher refractive errors without a specialty order.'],
   },
   {
@@ -155,6 +259,23 @@ export const dailyDisposableLenses: ContactLens[] = [
     uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Two base curve options for a steeper or flatter fit', 'General daily silicone hydrogel wear'],
+    contraindications: [
+      'Meaningful astigmatism in this spherical entry — fit Precision1 for Astigmatism instead.',
+      'Corneal curvature outside the two offered base curves (8.3, 8.7).',
+      'Severe end-of-day dryness where a true water-gradient design (Dailies Total1) may perform better, despite similar underlying surface philosophy.',
+      'Known sensitivity to silicone hydrogel materials generally.',
+    ],
+    pros: [
+      'Two base curve options (8.3, 8.7) offer more fitting flexibility than many single-BC daily silicone hydrogel lenses.',
+      'Class 1 UV blocking.',
+      'Water-gradient-inspired surface technology at a lower price point than Dailies Total1.',
+      'Solid Dk/t (100) for full-day oxygen transmission.',
+    ],
+    cons: [
+      'Surface chemistry differs from true water-gradient Dailies Total1, so comfort in severe dry eye may not fully match.',
+      'Positioned as Alcon\'s value silicone hydrogel daily, with some performance trade-offs versus their flagship lens.',
+      'Priced above conventional hydrogel daily disposables.',
+    ],
     clinicalNotes: ['Shares Dailies Total1\'s water-gradient philosophy at a lower price point (Alcon\'s "value" SiHy daily), though the surface chemistry differs.'],
   },
   {
@@ -178,6 +299,25 @@ export const dailyDisposableLenses: ContactLens[] = [
     bestFor: [
       'Myopia progression control in children (FDA-approved indication)',
       'A myopic child whose eye is too small/steep for adult-sized daily lenses — this lens is specifically sized and curved for pediatric eyes',
+    ],
+    contraindications: [
+      'Adult patients or standard (non-myopia-control) vision correction — this is a pediatric myopia-management design, not a general-purpose spherical lens.',
+      'Hyperopic children or any need for plus power — the range is minus-only (-0.25 to -8.00 D).',
+      'Significant astigmatism, which this spherical ring-focus design does not correct.',
+      'Families unable to commit to a structured myopia-management monitoring protocol (regular follow-up, axial length tracking).',
+    ],
+    pros: [
+      'FDA-approved specifically for myopia progression control in children.',
+      'Sized and curved specifically for the pediatric eye (steeper 7.9mm BC, smaller 13.8mm diameter) rather than a relabeled adult lens.',
+      'Same well-established senofilcon A material as the adult Acuvue Oasys 1-Day, with a known comfort/oxygen profile.',
+      'Class 1 UV blocking.',
+      'Daily disposable modality simplifies hygiene and compliance for pediatric wearers and parents.',
+    ],
+    cons: [
+      'Narrow power range (-0.25 to -8.00 D) — not suitable for hyperopic or very high myopic children.',
+      'Newer to market than MiSight 1 day, so a smaller long-term real-world evidence base.',
+      'Requires dedicated myopia-management fitting and monitoring infrastructure, not just a standard soft lens fit.',
+      'Premium pricing typical of specialty pediatric myopia-control lenses.',
     ],
     clinicalNotes: [
       'Notably steeper base curve (7.9mm) and smaller diameter (13.8mm) than the adult Acuvue Oasys 1-Day (8.5/9.0mm, 14.3mm) despite sharing the same senofilcon A material — sized specifically for the pediatric eye, not just a relabeled adult lens.',
@@ -205,6 +345,24 @@ export const dailyDisposableLenses: ContactLens[] = [
     bestFor: [
       'Myopia progression control in children (FDA-approved indication)',
       'Myopic children ages 8-12 at the start of treatment (per the original clinical trial population)',
+    ],
+    contraindications: [
+      'Adult patients or standard (non-myopia-control) vision correction — this is a pediatric myopia-management design.',
+      'Hyperopic children or any need for plus power — the range is minus-only (-0.25 to -10.00 D).',
+      'Significant astigmatism, which this spherical dual-focus design does not correct.',
+      'Families unable to commit to a structured myopia-management monitoring protocol (axial length, cycloplegic refraction tracking).',
+    ],
+    pros: [
+      'First soft contact lens FDA-approved specifically for slowing pediatric myopia progression.',
+      'ActivControl dual-focus design backed by strong 3-year clinical trial data (59% average reduction in progression, 41% of eyes with no measurable progression).',
+      'Conventional hydrogel material is generally comfortable and well tolerated in first-time pediatric wearers.',
+      'Daily disposable modality simplifies hygiene and compliance for children and parents.',
+    ],
+    cons: [
+      'No Dk/t published for this lens — a conventional (non-silicone) hydrogel typically has lower oxygen transmissibility, worth considering for extended daily wear time.',
+      'No handling tint, which can make lens handling and inspection slightly harder for new pediatric wearers and parents.',
+      'Narrower power range than adult spherical daily disposables.',
+      'Requires a dedicated myopia-management fitting/monitoring protocol beyond a standard soft lens fit.',
     ],
     clinicalNotes: [
       'The first soft contact lens FDA-approved specifically for slowing myopia progression in children, using concentric ActivControl dual-focus optics (alternating correction and +2.00 D treatment zones) rather than a conventional single-vision or presbyopic multifocal design.',

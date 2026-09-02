@@ -19,6 +19,24 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Daily wear only',
     handlingTint: true,
     bestFor: ['Astigmats wanting daily-disposable convenience', 'Dry eye with astigmatism'],
+    contraindications: [
+      'Cylinder beyond -2.25 D, or -2.25 D cyl paired with a sphere outside 0.00 to -6.00 D — this combination is not manufactured',
+      'Axis needs falling outside the narrower axis set available at the highest sphere/cyl combinations (-6.50 D and beyond)',
+      'Irregular astigmatism or keratoconus — soft toric optics cannot mask corneal irregularity',
+      'Patients unlikely to sustain daily-disposable compliance, which forfeits the deposit-free rotation stability that is the main clinical reason to select this lens',
+    ],
+    pros: [
+      'Accelerated Stabilization Design (ASD) gives fast, predictable rotational recovery after blink without a thick prism-ballast zone',
+      'Daily disposable modality avoids deposit buildup on the stabilization zone that can destabilize rotation over a wear cycle',
+      'Senofilcon A silicone hydrogel Dk/t (121) supports comfortable full-day wear for dry-eye astigmats',
+      'No cleaning/case handling reduces the lens-surface changes that can shift rotational behavior lens-to-lens',
+    ],
+    cons: [
+      'Cylinder/axis availability narrows at higher sphere powers, complicating fits for higher myopes or hyperopes with astigmatism',
+      'More SKU combinations to verify than the spherical Oasys 1-Day, adding chair time to confirm fit and rotation',
+      'Higher per-lens cost than a spherical daily disposable',
+      'Transient rotation on waking or after a hard blink can still cause momentary blur, as with any soft toric',
+    ],
     clinicalNotes: ['Uses an Accelerated Stabilization Design (ASD) rather than prism ballast; check rotation with the lens mark at the 6 o\'clock position on dispensing.'],
     relatedCalculatorIds: ['tear-lens'],
   },
@@ -40,6 +58,23 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Extended wear (up to 6 nights)',
     handlingTint: true,
     bestFor: ['Established 2-week toric wearers', 'Moderate-to-higher astigmatism (up to -2.75 D cyl)'],
+    contraindications: [
+      'Cylinder correction needed beyond -2.75 D',
+      'Marginal tear film or dry eye in a patient being considered for the extended (up to 6 nights) overnight wear option',
+      'First-time toric wearers who would benefit from the faster problem-solving turnaround of a daily-disposable trial before committing to a 2-week lens',
+      'Irregular astigmatism or keratoconus',
+    ],
+    pros: [
+      'Widest standard cylinder range (to -2.75 D) among the commonly stocked 2-week torics, reducing special-order fits',
+      'Senofilcon A silicone hydrogel is FDA-approved for extended wear up to 6 nights',
+      '2-week replacement balances lens freshness against cost better than daily disposables for habitual wearers',
+      'Same Acuvue Oasys platform familiarity as the 1-day version eases patient transition between the two',
+    ],
+    cons: [
+      'Bi-weekly reuse allows more deposit buildup on the toric stabilization zone than a daily disposable, which can degrade rotational consistency if cleaning is inconsistent',
+      'Extended/overnight wear carries higher hypoxia and microbial keratitis risk than daily wear only',
+      'Does not reach the higher cylinder powers available through extended-range monthly toric lines (e.g. Biofinity XR toric)',
+    ],
     clinicalNotes: ['Widest standard cylinder range among the commonly stocked 2-week torics listed here.'],
   },
   {
@@ -60,6 +95,23 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Extended wear (up to 6 nights)',
     handlingTint: true,
     bestFor: ['Monthly toric wearers with cylinder up to -2.25 D'],
+    contraindications: [
+      'Cylinder beyond -2.25 D — requires ordering the separate Biofinity XR toric product, not an escalation of this SKU',
+      'Marginal tear film or dry eye if the patient is considering the extended (up to 6 nights) overnight wear option',
+      'Irregular astigmatism or keratoconus',
+      'Loose or unusual lower lid anatomy where a blink-actuated dynamic stabilization design may rotate more than a prism-ballast design would',
+    ],
+    pros: [
+      'Optimized Toric Lens Geometry gives dynamic, blink-actuated stabilization without a thick inferior prism-ballast zone, often more comfortable',
+      'Comfilcon A high-Dk/t (116) silicone hydrogel is approved for up to 6 nights of extended wear',
+      'Shares base curve and diameter with Biofinity XR toric, simplifying an upgrade if a patient\'s astigmatism progresses beyond -2.25 D',
+      'Monthly replacement is cost-effective for consistent long-term toric wear',
+    ],
+    cons: [
+      'Standard SKU is capped at -2.25 D cylinder; higher astigmats need the separate XR product',
+      'Monthly reuse allows more deposit-related rotation drift over the replacement cycle than a daily disposable',
+      'Extended/overnight wear raises infection risk if patient compliance with the replacement schedule is poor',
+    ],
     clinicalNotes: [
       'Uses Optimized Toric Lens Geometry, a dynamic stabilization approach rather than classic prism ballast.',
       'Higher astigmatism (cyl -2.75 to -5.75 D) is covered by Biofinity XR toric, a separate product name/SKU sharing the same base curve and diameter — not just an "extended option" ordered on the standard Biofinity Toric.',
@@ -83,6 +135,23 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Extended wear (up to 6 nights)',
     handlingTint: true,
     bestFor: ['Low-water, high-Dk/t material preference in a toric', 'Monthly astigmatic wearers'],
+    contraindications: [
+      'Cylinder correction needed beyond -2.25 D',
+      'Marginal tear film or dry eye — low water content (33%) can feel drier over the day, compounding any lid awareness from the prism-ballast zone',
+      'Poor compliance or marginal ocular surface health if extended (up to 6 nights) overnight wear is being considered',
+      'Irregular astigmatism or keratoconus',
+    ],
+    pros: [
+      'Prism-ballast stabilization is a well-established, predictable design, useful when dynamic-stabilization lenses have struggled to hold rotation',
+      'Lotrafilcon B high Dk/t (108) supports approved 6-night extended wear',
+      'Low water content resists dehydration-related parameter and rotation drift by end of day',
+      'Monthly replacement carries lower ongoing cost than a daily-disposable toric',
+    ],
+    cons: [
+      'Prism ballast adds inferior lens thickness that some patients feel as lid awareness or foreign-body sensation',
+      'Cylinder range tops out at -2.25 D with no extended-range option in this line',
+      'Low water content is less forgiving for borderline dry-eye patients than higher-water toric alternatives',
+    ],
     clinicalNotes: ['Uses a prism-ballast-based stabilization design.'],
   },
   {
@@ -105,6 +174,24 @@ export const toricLenses: ContactLens[] = [
     uvBlockingClass: 'Class 1',
     handlingTint: true,
     bestFor: ['Astigmats with dryness/end-of-day discomfort on other daily torics'],
+    contraindications: [
+      'Cylinder correction needed beyond -2.25 D',
+      'Any need for extended or overnight wear — this is daily wear only',
+      'Irregular astigmatism or keratoconus',
+      'Patients whose visual demands cannot tolerate any transient rotation-induced blur from a thinner, more flexible water-gradient lens design',
+    ],
+    pros: [
+      'Water-gradient surface (>80% at the surface) markedly reduces end-of-day dryness and discomfort compared with other daily torics',
+      'Daily disposable modality eliminates the deposit-related rotation instability seen with reused toric lenses',
+      'Shares its platform with the widely-tolerated spherical Dailies Total1, easing the transition for existing wearers',
+      'Class 1 UV blocking adds incidental ocular UV protection on top of the toric correction',
+    ],
+    cons: [
+      'Cylinder is capped at -2.25 D, unsuited to higher astigmatism',
+      'Daily wear only, with no extended or overnight option',
+      'Higher per-lens cost than most other daily toric options',
+      'Lower Dk/t at the toric reference power (127) than the spherical Dailies Total1 (156) at the same reference power',
+    ],
     clinicalNotes: ['Same water-gradient material as the spherical Dailies Total1, in a toric design.'],
   },
   {
@@ -125,6 +212,23 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Daily wear only',
     handlingTint: true,
     bestFor: ['Higher water content daily toric preference'],
+    contraindications: [
+      'Cylinder correction needed beyond -2.25 D',
+      'Dry eye patients prone to late-day dehydration-related discomfort — the higher water content (54%) can dehydrate and attract deposits more readily over a day than lower-water daily torics',
+      'Patients relying on the lens for UV protection, since UV-blocking status is unconfirmed for this toric variant',
+      'Irregular astigmatism or keratoconus',
+    ],
+    pros: [
+      'Optimized Toric Lens Geometry (shared with Biofinity Toric) gives dynamic, blink-actuated stabilization',
+      '54% water content suits patients who prefer a higher-water feel than the low-water daily toric options',
+      'Daily disposable modality avoids the deposit-related rotation drift seen with reused torics',
+      'Thin, soft-feeling design is well tolerated by first-time toric wearers',
+    ],
+    cons: [
+      'Lowest Dk/t (80) among the daily silicone hydrogel torics in this database at the cited reference power',
+      'Cylinder is capped at -2.25 D',
+      'UV-blocking status is unconfirmed for the toric version, so it cannot be relied on or counseled as UV protection',
+    ],
     clinicalNotes: [
       'Uses Optimized Toric Lens Geometry, the same dynamic stabilization family as Biofinity Toric.',
       'UV-blocking status not independently confirmed for this toric variant — the spherical MyDay is a confirmed UV blocker, but sphere and toric variants within the same lens family can differ (e.g. Dailies Total1 blocks UV only in its toric version, not its sphere), so this isn\'t assumed either way. Verify against the current package insert.',
@@ -149,6 +253,23 @@ export const toricLenses: ContactLens[] = [
     wearSchedule: 'Extended wear (up to 6 nights)',
     handlingTint: true,
     bestFor: ['Astigmatism up to -2.75 D cyl', 'Monthly toric wearers wanting a high-Dk/t material'],
+    contraindications: [
+      'Cylinder correction needed beyond -2.75 D',
+      'Marginal tear film or poor compliance if extended (up to 6 nights) overnight wear is being considered',
+      'Irregular astigmatism or keratoconus',
+      'Patients relying on the lens for UV protection, since UV-blocking status is unconfirmed for this toric variant',
+    ],
+    pros: [
+      'Widest standard cylinder range (to -2.75 D) among the monthly torics in this database, covering more moderate-to-high astigmats without a special order',
+      'Samfilcon A high Dk/t (114) supports approved 6-night extended wear',
+      'Fine 0.25 D sphere steps to -6.00 D allow more precise spherical correction alongside the toric power',
+      'Monthly modality is cost-effective for long-term consistent astigmatic wear',
+    ],
+    cons: [
+      'UV-blocking status is unconfirmed for this toric variant despite the spherical Ultra being a confirmed blocker',
+      'Monthly reuse carries more deposit-related rotation drift risk over the cycle than a daily-disposable toric',
+      'Extended wear raises hypoxia and infection risk if the patient overwears or has marginal ocular surface health',
+    ],
     clinicalNotes: [
       'Widest standard cylinder range (to -2.75 D) among the monthly torics in this database.',
       'UV-blocking status not independently confirmed for this toric variant — the spherical Ultra is a confirmed UV blocker, but sphere and toric variants within the same lens family can differ (e.g. Dailies Total1 blocks UV only in its toric version, not its sphere), so this isn\'t assumed either way. Verify against the current package insert.',
@@ -174,6 +295,24 @@ export const toricLenses: ContactLens[] = [
     uvBlocking: false,
     handlingTint: true,
     bestFor: ['High-water hydrogel preference in a daily toric'],
+    contraindications: [
+      'Sphere power needs outside +4.00 to -6.00 D — narrower than most silicone hydrogel daily torics',
+      'Cylinder correction needed beyond -2.25 D',
+      'Patients needing extended or overnight wear, or with any hypoxia risk factor — hydrogel Dk/t (32) is far lower than the silicone hydrogel torics in this database and this lens is daily wear only regardless',
+      'Irregular astigmatism or keratoconus',
+    ],
+    pros: [
+      'Very high water content (78%) hydrogel option for patients who prefer or tolerate hydrogel better than silicone hydrogel materials',
+      'Daily disposable modality minimizes deposit-related rotation instability',
+      'FDA Group II hydrogel material has a long track record of comfort for hydrogel-preferring wearers',
+      'Lower cost point than many silicone hydrogel daily torics',
+    ],
+    cons: [
+      'Lowest Dk/t (32) among the daily torics in this database, limiting suitability for higher oxygen-demand wearers',
+      'Narrowest sphere power range (+4.00 to -6.00) of the daily torics here, restricting which patients can be fit',
+      'Does not block UV, unlike several competitor daily torics (e.g. Dailies Total1)',
+      'Hydrogel material is more prone to dehydration-related discomfort by end of day than silicone hydrogel alternatives',
+    ],
     clinicalNotes: [
       'Narrower sphere power range than most silicone hydrogel dailies — check availability for higher refractive errors before committing a patient to this lens.',
       'Like the spherical Biotrue ONEday, this lens does NOT offer UV protection (Bausch + Lomb\'s own consumer guidance) — counsel patients to wear sunglasses/UV-blocking eyewear outdoors rather than assuming any UV benefit from the lens.',

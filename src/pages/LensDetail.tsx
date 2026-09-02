@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ChevronLeft, Disc, Star, Calculator as Calc } from 'lucide-react'
+import { ChevronLeft, Disc, Star, Calculator as Calc, CheckCircle2, XCircle } from 'lucide-react'
 import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
@@ -195,6 +195,41 @@ export function LensDetail() {
             ))}
           </ul>
         </Card>
+      </Section>
+
+      <Section title="Contraindications">
+        <Card>
+          <ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">
+            {lens.contraindications.map((c, i) => (
+              <li key={i}><Linkify text={c} excludeId={lens.id} /></li>
+            ))}
+          </ul>
+        </Card>
+      </Section>
+
+      <Section title="Pros & Cons">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Card className="bg-emerald-50 border-emerald-200">
+            <p className="text-xs font-semibold text-emerald-700 flex items-center gap-1.5 mb-2">
+              <CheckCircle2 size={14} /> Pros
+            </p>
+            <ul className="text-sm text-emerald-900 space-y-1.5 list-disc pl-4">
+              {lens.pros.map((p, i) => (
+                <li key={i}><Linkify text={p} excludeId={lens.id} /></li>
+              ))}
+            </ul>
+          </Card>
+          <Card className="bg-red-50 border-red-200">
+            <p className="text-xs font-semibold text-red-700 flex items-center gap-1.5 mb-2">
+              <XCircle size={14} /> Cons
+            </p>
+            <ul className="text-sm text-red-900 space-y-1.5 list-disc pl-4">
+              {lens.cons.map((c, i) => (
+                <li key={i}><Linkify text={c} excludeId={lens.id} /></li>
+              ))}
+            </ul>
+          </Card>
+        </div>
       </Section>
 
       <Section title="Clinical Notes">

@@ -35,6 +35,26 @@ export const orthokeratologyLenses: ContactLens[] = [
       'Pediatric/adolescent myopia control — one of the modalities with published evidence for slowing axial elongation',
       'Patients who want correction during sports/occupations incompatible with daytime glasses or contacts',
     ],
+    contraindications: [
+      'Active or recent history of microbial/infectious keratitis, or any active corneal infection',
+      'Significant dry eye disease or aqueous tear deficiency that compromises overnight lens tolerance and tear exchange',
+      'Active blepharitis, meibomian gland dysfunction, or other lid margin disease that raises infection risk during eye closure',
+      'Myopia beyond the FDA-cleared −6.00 D limit or astigmatism beyond 1.75 D — outside CRT\'s cleared correction range',
+      'Corneal irregularity (e.g. keratoconus) that a spherical treatment-zone design cannot fit predictably',
+      'Poor hygiene/compliance risk or inability to commit to the overnight wear schedule and required follow-up visits — critical given the microbial keratitis risk reported with overnight RGP wear, particularly in adolescents',
+    ],
+    pros: [
+      'Corrects myopia up to −6.00 D and astigmatism up to 1.75 D without any daytime glasses or contact lens wear',
+      'One of the modalities with published pediatric myopia control evidence for slowing axial elongation',
+      'High-Dk paflufocon D material (Dk ~100–101) supports corneal oxygenation during overnight eye closure',
+      'Fully reversible — effect regresses over 1–2 weeks if discontinued, unlike refractive surgery',
+    ],
+    cons: [
+      'Overnight wear carries a real, well-documented risk of microbial keratitis, higher than daytime soft lens wear',
+      'Requires meticulous nightly lens hygiene and consistent wear — the correction regresses within 1–2 weeks if wear lapses',
+      'Custom lab-manufactured fitting process requiring corneal topography and specific ortho-k certification — more complex and costly than a standard RGP or soft lens fit',
+      'Correction range limited to −6.00 D myopia / 1.75 D astigmatism — not suitable for higher refractive errors',
+    ],
     clinicalNotes: [
       'One of only three FDA-approved (PMA-cleared) ortho-k lens designs in the U.S., alongside Euclid Emerald and Bausch + Lomb VST — PMA number P870024.',
       'The correction is temporary and regresses over roughly 1–2 weeks of discontinued wear, unlike refractive surgery — patients must understand ongoing nightly (or maintenance-schedule) wear is required to sustain the effect.',
@@ -65,6 +85,26 @@ export const orthokeratologyLenses: ContactLens[] = [
       'Overnight myopia correction without daytime lens wear or refractive surgery',
       'Pediatric/adolescent myopia control',
     ],
+    contraindications: [
+      'Active or recurrent microbial/infectious keratitis or any active corneal infection',
+      'Significant dry eye disease or poor tear film quality that limits overnight lens tolerance',
+      'Active blepharitis or meibomian gland dysfunction increasing infection risk during eye closure',
+      'Myopia beyond the FDA-cleared −5.00 D limit, or astigmatism beyond 1.50 D with the standard spherical Emerald design (the 5-curve Emerald Toric extends coverage for select higher/irregular cases)',
+      'Corneal irregularity that a reverse-geometry design (or the conic-model Jade design) cannot fit predictably',
+      'Poor compliance risk or inability to attend the topography-based fitting and follow-up schedule required for safe overnight wear',
+    ],
+    pros: [
+      'Corrects myopia up to −5.00 D and, with the Emerald Toric variant, higher or irregular astigmatism beyond the standard 1.50 D limit',
+      'No daytime glasses or contact lens wear required',
+      'Uses Boston Equalens II (oprifocon A, Dk 85) — a well-established, proven daytime-RGP material for overnight safety',
+      'Fully reversible, unlike refractive surgery, and a candidate for pediatric/adolescent myopia control',
+    ],
+    cons: [
+      'Overnight wear carries real microbial keratitis risk, requiring meticulous lens hygiene and same-day access for any new pain, redness, or photophobia',
+      'Effect regresses over roughly 1–2 weeks if nightly wear is discontinued',
+      'Requires Euclid-specific fitting certification and corneal topography — a more involved fitting process than standard RGP',
+      'Standard spherical design correction range limited to −5.00 D myopia / 1.50 D astigmatism',
+    ],
     clinicalNotes: [
       'The first Euclid ortho-k design FDA-approved (2004, PMA P010062) — the original PMA covers the underlying oprifocon A material/lens, with the Emerald design as its commercialized fitting system.',
       'Uses the same Boston Equalens II (oprifocon A) material as the standard corneal RGP product of the same name — see the Boston Equalens II entry in the RGP materials section for its daytime-RGP use.',
@@ -94,6 +134,25 @@ export const orthokeratologyLenses: ContactLens[] = [
     bestFor: [
       'Overnight myopia correction and myopia control outside the two FDA-named designs above',
       'Fitters using a specific lab\'s proprietary topography-based design software',
+    ],
+    contraindications: [
+      'Active or recurrent microbial/infectious keratitis or any active corneal infection',
+      'Significant dry eye disease or poor tear exchange under a reverse-geometry lens',
+      'Active blepharitis, meibomian gland dysfunction, or other lid margin disease',
+      'Myopia or astigmatism beyond the chosen design\'s predictable correction range (most designs are most predictable up to about −4.00 to −6.00 D; higher myopia off-label carries reduced predictability), or corneal irregularity beyond that lab\'s design capability',
+      'Poor hygiene/compliance risk or inability to commit to overnight wear and the scheduled follow-up visits — the central safety consideration given microbial keratitis risk',
+    ],
+    pros: [
+      'Overnight myopia correction and myopia control without daytime lens wear, using a lab\'s proprietary topography-based reverse-geometry design',
+      'Toric reverse-geometry variants extend correction to astigmatism beyond what a spherical design can address',
+      'High-Dk fluorosilicone acrylate materials (Dk 100–141 depending on chosen material) support corneal safety during overnight eye closure',
+      'Flexibility to select from multiple labs, materials, and designs to match individual corneal topography',
+    ],
+    cons: [
+      'Overnight wear against a closed lid carries real microbial keratitis risk, requiring meticulous hygiene and rapid access for any new pain, redness, or photophobia',
+      'Predictability decreases for myopia beyond roughly −4.00 to −6.00 D even when attempted off-label',
+      'Fitting requires corneal topography and lab-specific ordering parameters (Return Zone Depth, Landing Zone Angle) — a more complex, costly process than standard RGP fitting',
+      'Effect regresses within about 1–2 weeks if nightly wear is discontinued',
     ],
     clinicalNotes: [
       'The order sheet for a reverse-geometry ortho-k lens specifies parameters that don\'t exist on a standard RGP order: Return Zone Depth (RZD, controls sagittal depth/centration), Landing Zone Angle (LZA, controls edge clearance and tear exchange), and often a target Jessen factor overcorrection.',
