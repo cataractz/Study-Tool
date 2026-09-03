@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Search, BookOpen, Pill, Calculator, Library, Disc, Stethoscope, ClipboardList, GitBranch, type LucideIcon } from 'lucide-react'
+import { Search, BookOpen, Pill, Calculator, Library, Disc, Stethoscope, ClipboardList, GitBranch, Siren, type LucideIcon } from 'lucide-react'
 import { globalSearch, type SearchResult } from '../../services/searchService'
 
 const typeIcon: Record<SearchResult['type'], LucideIcon> = {
@@ -12,6 +12,7 @@ const typeIcon: Record<SearchResult['type'], LucideIcon> = {
   'exam-technique': Stethoscope,
   'clinical-workup': ClipboardList,
   'decision-tree': GitBranch,
+  'emergency-protocol': Siren,
 }
 
 const typeIconClass: Record<SearchResult['type'], string> = {
@@ -23,6 +24,7 @@ const typeIconClass: Record<SearchResult['type'], string> = {
   'exam-technique': 'text-emerald-600',
   'clinical-workup': 'text-rose-600',
   'decision-tree': 'text-indigo-600',
+  'emergency-protocol': 'text-red-600',
 }
 
 export function GlobalSearch() {

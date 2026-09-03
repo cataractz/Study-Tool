@@ -4,6 +4,7 @@ import { getAllLenses } from './lensService'
 import { getAllExamTechniques } from './examTechniqueService'
 import { getAllClinicalWorkups } from './clinicalWorkupService'
 import { getAllDecisionTrees, decisionTreeCategoryLabels } from './decisionTreeService'
+import { getAllEmergencyProtocols } from './emergencyProtocolService'
 import { calculatorRegistry } from '../calculators/registry'
 import { referenceRegistry } from '../reference/registry'
 
@@ -16,6 +17,7 @@ export type SearchResultType =
   | 'exam-technique'
   | 'clinical-workup'
   | 'decision-tree'
+  | 'emergency-protocol'
 
 export interface SearchResult {
   type: SearchResultType
@@ -110,6 +112,17 @@ const searchClinicalWorkupsProvider: SearchProvider = (q) =>
       path: `/exam-workup/workup/${w.id}`,
     }))
 
+const searchEmergencyProtocolsProvider: SearchProvider = (q) =>
+  getAllEmergencyProtocols()
+    .filter((p) => matches([p.name, ...(p.aliases ?? []), p.category, p.overview].join(' '), q))
+    .map((p) => ({
+      type: 'emergency-protocol',
+      id: p.id,
+      title: p.name,
+      subtitle: `Emergency Protocol · ${p.category}`,
+      path: `/emergency-care/${p.id}`,
+    }))
+
 const searchDecisionTreesProvider: SearchProvider = (q) =>
   getAllDecisionTrees()
     .filter((t) => matches([t.name, ...(t.aliases ?? []), t.summary].join(' '), q))
@@ -135,6 +148,7 @@ const searchProviders: SearchProvider[] = [
   searchExamTechniquesProvider,
   searchClinicalWorkupsProvider,
   searchDecisionTreesProvider,
+  searchEmergencyProtocolsProvider,
 ]
 
 export function globalSearch(query: string, limit = 10): SearchResult[] {
