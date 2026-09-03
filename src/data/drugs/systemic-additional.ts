@@ -16,6 +16,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 1 mg once daily initially, titrated up to 4-8 mg once daily (immediate-release) depending on indication and response',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -54,6 +55,10 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Not typically indicated in the population for whom this drug is prescribed (BPH is a male-specific condition; use in hypertension during pregnancy would be individualized). Limited human data; use only if clearly needed and benefits outweigh risks.',
+    pediatricConsiderations: [
+      'Safety and efficacy have not been formally established in children/adolescents <18 years; when used off-label for pediatric hypertension, some experts recommend starting at 1 mg once daily, titrated to a maximum of 4 mg once daily.',
+    ],
+    relatedConditionIds: ['cataract'],
     monitoring: [
       'Preoperative surgical history intake should specifically ask about current AND past alpha-1 antagonist use (doxazosin, terazosin, tamsulosin, alfuzosin) before any planned cataract surgery',
       'Blood pressure/orthostatic symptoms',
@@ -89,6 +94,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 1 mg once daily at bedtime initially, titrated up to 5-10 mg once daily depending on indication and response',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -126,6 +132,10 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Not typically indicated in the population for whom this drug is prescribed (BPH is a male-specific condition); limited human data if used for hypertension in pregnancy - use only if clearly needed.',
+    pediatricConsiderations: [
+      'Safety and efficacy have not been established in patients younger than 21 years; when used off-label for pediatric hypertension refractory to preferred agents (ACE inhibitors, ARBs, long-acting calcium channel blockers, thiazides), some experts recommend starting at 1 mg once daily, titrated to a maximum of 20 mg once daily.',
+    ],
+    relatedConditionIds: ['cataract'],
     monitoring: [
       'Preoperative surgical history intake should specifically ask about current AND past alpha-1 antagonist use before any planned cataract surgery',
       'Blood pressure/orthostatic symptoms',
@@ -162,6 +172,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 1-2 mg twice daily (immediate-release) or 2-4 mg once daily (extended-release)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Extended-release capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [

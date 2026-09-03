@@ -786,6 +786,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring, particularly in combination TB regimens'],
     typicalDosing: 'Oral, 5 mg/kg/day (typically 300 mg/day) for active disease, often combined with pyridoxine (vitamin B6) supplementation to reduce neurotoxicity risk',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Oral solution', 'Injection (intramuscular)'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -823,6 +824,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered compatible with pregnancy as part of standard TB therapy; pyridoxine supplementation is recommended during pregnancy and breastfeeding to reduce maternal and infant neuropathy risk. Excreted in breast milk in small amounts; generally considered compatible with breastfeeding with pyridoxine supplementation.',
+    pediatricConsiderations: [
+      'Standard part of pediatric TB combination therapy and used as monotherapy for pediatric latent TB infection; dosed approximately 10-15 mg/kg/day for latent TB (higher than the typical adult 5 mg/kg/day) given more rapid pediatric drug clearance.',
+      'Pyridoxine (B6) co-supplementation is particularly important in breastfed infants, malnourished children, and adolescents, given the same peripheral/optic neuropathy risk mechanism as in adults.',
+    ],
+    relatedConditionIds: ['ocular-tuberculosis', 'optic-neuritis'],
     monitoring: [
       'Visual acuity and color vision monitoring, particularly important and often performed concurrently when isoniazid is combined with ethambutol in a standard TB regimen',
       'Liver function tests periodically during treatment',
@@ -861,6 +867,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for rare optic neuropathy/visual toxicity with prolonged high-dose use'],
     typicalDosing: 'Oral or IV, typically 500 mg two to three times daily; duration and total dose depend on indication',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Capsule', 'Oral suspension', 'Injection (intravenous)', 'Topical gel/cream'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -900,6 +907,10 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Generally avoided in the first trimester when possible; considered acceptable later in pregnancy when clearly indicated, as most data have not shown teratogenicity. Excreted in breast milk; brief interruption of breastfeeding is sometimes recommended with high single-dose regimens, though standard dosing is generally considered compatible.',
+    pediatricConsiderations: [
+      'Widely used in children for giardiasis (typically 15 mg/kg/day divided every 8 hours for 5-7 days), amebiasis, and anaerobic infections; considered generally safe in pediatric patients with a similar adverse-effect profile to adults.',
+      'Neonates and infants clear metronidazole more slowly than older children due to immature hepatic metabolism, so dosing intervals are adjusted by postnatal/postmenstrual age in this population.',
+    ],
     monitoring: [
       'Visual acuity and color vision if optic neuropathy is clinically suspected, particularly with prolonged or repeated high-dose courses',
       'Neurologic examination for peripheral neuropathy symptoms with extended therapy',
