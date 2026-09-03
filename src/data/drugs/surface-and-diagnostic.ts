@@ -27,6 +27,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       '1 drop of 2.5% instilled, may repeat once in 10-15 minutes if additional mydriasis is needed; 10% is reserved for adults (e.g., heavily pigmented irides, synechiae-breaking) and is generally avoided in infants and cardiac patients',
     concentrations: ['2.5%', '10%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -72,6 +73,11 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'No well-controlled human studies; topical ocular use produces minimal systemic absorption when punctal occlusion is used. Use in pregnancy/lactation only if clearly needed; the 10% concentration should be avoided given greater systemic absorption risk.',
+    pediatricConsiderations: [
+      'The 10% concentration is avoided in infants and generally in young children due to risk of significant hypertension/cardiovascular effects; 2.5% is the preferred concentration in pediatric patients.',
+      'Punctal occlusion after instillation is especially recommended in infants and children to reduce systemic absorption.',
+    ],
+    relatedConditionIds: ['episcleritis', 'scleritis', 'anterior-uveitis'],
     monitoring: [
       'Blood pressure and pulse in patients with cardiovascular disease, especially with 10% use',
       'Anterior chamber angle assessment before dilation in at-risk patients',
@@ -117,6 +123,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       '1 drop of 0.5-1%, may repeat once in 5 minutes; onset of mydriasis in 20-30 minutes; duration of action approximately 4-6 hours, shortest of the ophthalmic cycloplegics',
     concentrations: ['0.5%', '1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -148,6 +155,9 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; topical ocular anticholinergics have low systemic absorption when punctal occlusion is used. Use only if clearly needed in pregnancy/lactation.',
+    pediatricConsiderations: [
+      'Widely used in infants and children for routine dilated fundus examination; systemic anticholinergic effects (tachycardia, flushing, rare behavioral disturbance) are more likely with repeated dosing in young children, so use the minimum effective number of drops.',
+    ],
     monitoring: [
       'Anterior chamber angle evaluation prior to dilation in at-risk patients',
       'IOP if post-dilation angle-closure symptoms occur',
@@ -187,6 +197,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       '1 drop of 0.5-1% (pediatric) or 1-2% (adult), may repeat in 5-10 minutes; onset ~30-60 minutes with peak cycloplegia around 30-45 minutes; duration of cycloplegia 6-24 hours',
     concentrations: ['0.5%', '1%', '2%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -220,6 +231,11 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited data; use topical anticholinergics in pregnancy/lactation only when clearly needed, minimizing systemic absorption with punctal occlusion given the reported potential for CNS toxicity.',
+    pediatricConsiderations: [
+      'Use the lowest effective concentration (0.5%) in infants and young children, since cyclopentolate carries a comparatively higher risk of CNS anticholinergic toxicity (ataxia, disorientation, hallucinations, rare seizures) in this population than tropicamide.',
+      'GI effects (vomiting, abdominal distension) have been reported in infants; punctal occlusion is recommended to reduce systemic absorption.',
+    ],
+    relatedConditionIds: ['accommodative-esotropia', 'hyperopia'],
     monitoring: [
       'Angle assessment before dilation in at-risk eyes',
       'Observation of children after instillation for systemic anticholinergic signs',

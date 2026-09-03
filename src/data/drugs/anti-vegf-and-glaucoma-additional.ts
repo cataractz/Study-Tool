@@ -68,6 +68,12 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated/avoid in pregnancy - bevacizumab causes fetal harm (embryo-fetal toxicity, including malformations) in animal studies given its anti-angiogenic mechanism; effective contraception recommended during and for months after treatment. Unknown excretion in breast milk; not recommended during breastfeeding.',
+    pediatricConsiderations: [
+      'Off-label intravitreal use at reduced, weight-appropriate doses (commonly around 0.625 mg/0.025 mL, roughly half the adult dose) is well established for retinopathy of prematurity, though it is not FDA-approved for this or any ophthalmic indication',
+      'As a full-length antibody with a longer systemic half-life than ranibizumab, bevacizumab carries a theoretical concern for greater systemic VEGF suppression in infants, an especially sensitive population given ongoing vascular development',
+      'Long-term neurodevelopmental safety data in infants treated for ROP continue to be studied',
+    ],
+    relatedConditionIds: ['amd', 'diabetic-retinopathy', 'retinal-vein-occlusion', 'neovascular-glaucoma'],
     monitoring: ['IOP pre- and post-injection, especially with chronic repeated dosing', 'Signs/symptoms of endophthalmitis at each visit', 'OCT and clinical exam for treatment response and RPE tear', 'Blood pressure', 'Cardiovascular/thromboembolic history at baseline and during treatment'],
     clinicalPearls: [
       'The CATT trial (Comparison of AMD Treatments Trials) demonstrated non-inferiority of bevacizumab to ranibizumab for neovascular AMD, supporting its widespread off-label use given substantially lower cost',
@@ -107,6 +113,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     typicalDosing: 'Intravitreal injection of 0.5 mg (0.05 mL) monthly, may extend to treat-and-extend or quarterly dosing after initial loading phase in AMD/DME/RVO; 0.25 mg (0.025 mL) for ROP',
     concentrations: ['0.5 mg/0.05 mL', '0.3 mg/0.05 mL', '0.25 mg/0.025 mL (ROP dosing)'],
+    formulations: ['Injection'],
     route: 'Intravitreal injection',
     sideEffects: {
       ocular: [
@@ -147,6 +154,12 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Avoid in pregnancy - anti-angiogenic mechanism poses theoretical risk of embryo-fetal harm; effective contraception recommended during treatment. Unknown excretion in breast milk; use caution/avoid during breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved for retinopathy of prematurity, one of the few anti-VEGF agents with an on-label pediatric indication',
+      'Dosed at 0.25 mg (0.025 mL) for ROP, a fraction of the adult AMD/DME dose, reflecting the smaller pediatric eye and the goal of limiting systemic VEGF exposure in infants',
+      'Its smaller Fab-fragment size (versus full-length bevacizumab) is theorized to allow faster systemic clearance, a potentially relevant safety consideration in the neonatal population',
+    ],
+    relatedConditionIds: ['amd', 'diabetic-retinopathy', 'retinal-vein-occlusion', 'retinopathy-of-prematurity'],
     monitoring: ['IOP pre- and post-injection', 'Signs/symptoms of endophthalmitis at follow-up visits', 'OCT and visual acuity for treatment response', 'Blood pressure and cardiovascular status'],
     clinicalPearls: [
       'FDA-approved specifically for ophthalmic intravitreal use (unlike bevacizumab), derived from the same parent murine antibody as bevacizumab but engineered as a smaller Fab fragment for improved retinal tissue penetration',
@@ -186,6 +199,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     typicalDosing:
       'Eylea: intravitreal injection of 2 mg (0.05 mL) every 4 weeks for the first 3-5 doses, then every 8-16 weeks depending on indication/response; Eylea HD: 8 mg (0.07 mL) allowing extended dosing up to every 16 weeks after loading doses',
     concentrations: ['2 mg/0.05 mL (Eylea)', '8 mg/0.07 mL (Eylea HD)'],
+    formulations: ['Injection'],
     route: 'Intravitreal injection',
     sideEffects: {
       ocular: [
@@ -225,6 +239,11 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Avoid in pregnancy - anti-angiogenic mechanism poses theoretical embryo-fetal risk; effective contraception recommended during and for a period after treatment. Unknown excretion in breast milk; use caution during breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved for retinopathy of prematurity as of 2023, joining ranibizumab as an on-label anti-VEGF option for this pediatric indication',
+      'Dosed at a reduced pediatric volume distinct from adult AMD/DME dosing, reflecting infant eye size and the need to limit systemic exposure',
+    ],
+    relatedConditionIds: ['amd', 'diabetic-retinopathy', 'retinal-vein-occlusion', 'retinopathy-of-prematurity'],
     monitoring: ['IOP pre- and post-injection', 'Signs/symptoms of endophthalmitis', 'OCT and visual acuity for treatment response', 'Blood pressure and cardiovascular status'],
     clinicalPearls: [
       'Binds VEGF-A with higher affinity than the native VEGF receptors themselves, which along with its dual-domain "trap" design contributes to its longer duration of action and ability to support extended treatment intervals',

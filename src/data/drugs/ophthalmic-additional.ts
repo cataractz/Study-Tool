@@ -402,6 +402,9 @@ export const ophthalmicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical ophthalmic use; use when clearly indicated, weighing benefit versus theoretical risk, per prescriber judgment — limited human pregnancy data exist compared with cromolyn.',
+    pediatricConsiderations: [
+      'Not recommended below 2 years of age (safety/effectiveness not established); dosing for children over 2 years is identical to the adult regimen. Particularly relevant since vernal keratoconjunctivitis, its primary indication, is predominantly a pediatric/young-adult disease',
+    ],
     monitoring: [
       'Symptom severity and corneal findings (e.g., shield ulcer, limbal Horner-Trantas dots, giant papillae) typical of vernal keratoconjunctivitis over the treatment course',
       'Corneal epithelial integrity given a small reported risk of erosion',
@@ -493,6 +496,13 @@ export const ophthalmicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited specific data on intravitreal/periocular use in pregnancy; systemic absorption is expected to be low, but corticosteroids should be used only when clearly indicated and the injection deferred if possible until after pregnancy, per prescriber and obstetric judgment.',
+    pediatricConsiderations: [
+      'Not formally studied in FDA pediatric trials, but published case series (e.g., intracameral use after pediatric cataract surgery, and treatment of pediatric uveitic macular edema) report short-term safety comparable to adults; IOP and cataract-progression monitoring are especially important given developing eyes',
+    ],
+    offLabelUses: [
+      'Intravitreal use for diabetic macular edema and retinal-vein-occlusion-associated macular edema (Triesence is FDA-labeled for uveitis, sympathetic ophthalmia/temporal-arteritis-related inflammation, and intraoperative vitreous visualization — not primarily for macular edema from these other causes)',
+    ],
+    relatedConditionIds: ['diabetic-retinopathy', 'retinal-vein-occlusion', 'cystoid-macular-edema', 'intermediate-uveitis', 'sympathetic-ophthalmia'],
     monitoring: [
       'Intraocular pressure at regular intervals following injection (steroid-response glaucoma can develop over weeks)',
       'Lens exam for cataract progression with repeated injections',
@@ -581,6 +591,11 @@ export const ophthalmicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited specific data; used only when clearly indicated for acute, vision-threatening elevated IOP (e.g., acute angle-closure glaucoma), weighing benefit versus risk given the systemic osmotic and glycemic effects, per prescriber judgment.',
+    pediatricConsiderations: [
+      'Pediatric dosing is weight-based (the same 1-1.5 g/kg as adults) and must be determined by a physician; children may be more susceptible to dehydration and the osmotic/glycemic effects of glycerin, so cautious use and monitoring are warranted, particularly in young or diabetic children',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['primary-angle-closure-glaucoma'],
     monitoring: [
       'Intraocular pressure before and after dosing to confirm response',
       'Blood glucose in diabetic patients, given the risk of clinically significant hyperglycemia',
