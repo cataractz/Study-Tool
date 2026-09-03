@@ -23,6 +23,10 @@ import { NraPra, meta as nraPraMeta } from './accommodation/NraPra'
 import { AccommodativeLagLead, meta as accommodativeLagLeadMeta } from './accommodation/AccommodativeLagLead'
 import { AccommodativeReserve, meta as accommodativeReserveMeta } from './accommodation/AccommodativeReserve'
 import { AmplitudeOfAccommodationHofstetter, meta as amplitudeHofstetterMeta } from './accommodation/AmplitudeOfAccommodationHofstetter'
+import { VergenceDemand, meta as vergenceDemandMeta } from './binocular-vision/VergenceDemand'
+import { HirschbergKrimsky, meta as hirschbergKrimskyMeta } from './binocular-vision/HirschbergKrimsky'
+import { Anisometropia, meta as anisometropiaMeta } from './binocular-vision/Anisometropia'
+import { PrismNeutralization, meta as prismNeutralizationMeta } from './prism/PrismNeutralization'
 import { VisualAcuity, meta as visualAcuityMeta } from './visual-acuity/VisualAcuity'
 import { Keratometry, meta as keratometryMeta } from './keratometry/Keratometry'
 import { ConcentrationConverter, meta as concentrationMeta } from './pharmacology/ConcentrationConverter'
@@ -83,6 +87,10 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: accommodativeLagLeadMeta, Component: AccommodativeLagLead },
   { meta: accommodativeReserveMeta, Component: AccommodativeReserve },
   { meta: amplitudeHofstetterMeta, Component: AmplitudeOfAccommodationHofstetter },
+  { meta: vergenceDemandMeta, Component: VergenceDemand },
+  { meta: hirschbergKrimskyMeta, Component: HirschbergKrimsky },
+  { meta: anisometropiaMeta, Component: Anisometropia },
+  { meta: prismNeutralizationMeta, Component: PrismNeutralization },
   { meta: visualAcuityMeta, Component: VisualAcuity },
   { meta: keratometryMeta, Component: Keratometry },
   { meta: concentrationMeta, Component: ConcentrationConverter },
