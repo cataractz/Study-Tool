@@ -23,6 +23,9 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Core equation for ray tracing through any single refracting element.',
   supportsPractice: true,
   convention: 'Light travels left to right. Positive vergence = converging; negative = diverging. Distance (m) = 1 / vergence, same sign.',
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+  ],
 }
 
 const solveOptions = [

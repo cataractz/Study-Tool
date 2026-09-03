@@ -24,6 +24,10 @@ export const meta: CalculatorMeta = {
   supportsPractice: true,
   convention: 'Vertex distance in mm, positive. Each principal meridian (S and S+C) is converted independently, then sphere/cylinder are reconstituted — more accurate for astigmatic Rx than converting sphere alone.',
   limitations: ['Most clinically significant above about ±4.00 D; low-power differences are usually within measurement noise.'],
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+    'Bennett ES, Henry VA. Clinical Manual of Contact Lenses, 4th ed. Lippincott Williams & Wilkins.',
+  ],
 }
 
 function Calculate() {

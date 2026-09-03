@@ -29,6 +29,10 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Predicting unwanted prism from optical-center misalignment, or intentionally prescribing prism via decentration.',
   supportsPractice: true,
   convention: 'Plus lens: induced base is in the SAME direction the optical center is decentered. Minus lens: base is OPPOSITE the decentration direction.',
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+    'American Academy of Ophthalmology. Optics, Refraction, and Contact Lenses (BCSC Section 3).',
+  ],
 }
 
 const solveOptions = [

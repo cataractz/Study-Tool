@@ -26,6 +26,10 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Diagnosing and classifying accommodative esotropia/convergence excess or insufficiency.',
   supportsPractice: true,
   convention: 'Esophoria = positive, exophoria = negative, throughout.',
+  references: [
+    'Scheiman M, Wick B. Clinical Management of Binocular Vision, 4th ed. Lippincott Williams & Wilkins, 2013.',
+    'American Academy of Ophthalmology. Pediatric Ophthalmology and Strabismus (BCSC Section 6).',
+  ],
 }
 
 function Calculate() {

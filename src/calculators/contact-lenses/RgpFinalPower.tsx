@@ -25,6 +25,9 @@ export const meta: CalculatorMeta = {
   supportsPractice: true,
   convention: 'If ordering a base curve different from the trial lens used for the over-refraction, the SAM-FAP adjustment (steeper final BC → add minus; flatter → add plus) is added automatically.',
   limitations: ['Assumes the over-refraction power is low enough that vertex distance correction of the over-refraction itself is not needed — for a large over-refraction, vertex-correct it first.'],
+  references: [
+    'Bennett ES, Henry VA. Clinical Manual of Contact Lenses, 4th ed. Lippincott Williams & Wilkins.',
+  ],
 }
 
 function Calculate() {

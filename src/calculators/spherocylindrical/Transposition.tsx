@@ -25,6 +25,9 @@ export const meta: CalculatorMeta = {
   boardRelevance: 'High',
   clinicalRelevance: 'Converting between refraction/prescribing conventions and manufacturer lens-order formats.',
   supportsPractice: true,
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+  ],
 }
 
 function Calculate() {

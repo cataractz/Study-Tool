@@ -33,6 +33,10 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Estimating accommodative demand for a task, and assessing accommodative amplitude relative to age-expected norms.',
   supportsPractice: true,
   convention: 'Distances in cm unless noted. When the far point is left blank, it is assumed to be at optical infinity (0 D) — i.e. the eye is corrected for distance.',
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+    'Scheiman M, Wick B. Clinical Management of Binocular Vision, 4th ed. Lippincott Williams & Wilkins, 2013.',
+  ],
 }
 
 function WorkingDistanceTab() {

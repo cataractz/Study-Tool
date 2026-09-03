@@ -29,6 +29,10 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Interpreting the performance of a screening or diagnostic test (e.g. a glaucoma or diabetic retinopathy screening tool).',
   supportsPractice: false,
   convention: 'Rows = test result (positive/negative). Columns = true disease status (present/absent). PPV/NPV computed directly from the table reflect the prevalence implicit in that table.',
+  references: [
+    'Fletcher RH, Fletcher DW, Fletcher GS. Clinical Epidemiology: The Essentials, 5th ed. Lippincott Williams & Wilkins, 2014.',
+    'Sackett DL, Straus SE, Richardson WS, et al. Evidence-Based Medicine: How to Practice and Teach EBM, 2nd ed. Churchill Livingstone, 2000.',
+  ],
 }
 
 function CountsTab() {

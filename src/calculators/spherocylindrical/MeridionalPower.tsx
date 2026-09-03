@@ -24,6 +24,9 @@ export const meta: CalculatorMeta = {
   boardRelevance: 'High',
   clinicalRelevance: "Understanding a toric lens's power in an arbitrary meridian, e.g. for keratometry or topography correlation.",
   supportsPractice: true,
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+  ],
 }
 
 function Calculate() {

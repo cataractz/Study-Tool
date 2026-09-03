@@ -23,6 +23,9 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Determining the total prismatic effect when horizontal and vertical prism both act on the same eye.',
   supportsPractice: true,
   convention: 'Horizontal: positive = Base Out, negative = Base In. Vertical: positive = Base Up, negative = Base Down.',
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+  ],
 }
 
 function Calculate() {

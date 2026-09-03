@@ -24,6 +24,9 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Understanding how a GP base curve fit relative to K affects the power delivered to the eye.',
   supportsPractice: true,
   convention: `Both K and base curve converted to power via the standard keratometric index (default ${DEFAULT_KERATOMETRIC_INDEX}). Steeper base curve than K → minus tear lens (SAM). Flatter than K → plus tear lens (FAP).`,
+  references: [
+    'Bennett ES, Henry VA. Clinical Manual of Contact Lenses, 4th ed. Lippincott Williams & Wilkins.',
+  ],
 }
 
 function Calculate() {

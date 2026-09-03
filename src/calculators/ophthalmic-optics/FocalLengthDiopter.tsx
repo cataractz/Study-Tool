@@ -22,6 +22,9 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Foundational relationship underlying nearly every ophthalmic optics calculation.',
   supportsPractice: true,
   convention: 'Plus (converging) power has a positive, real focal length behind the lens; minus (diverging) power has a negative, virtual focal length in front of the lens.',
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+  ],
 }
 
 function Calculate() {

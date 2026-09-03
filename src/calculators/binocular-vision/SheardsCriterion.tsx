@@ -26,6 +26,9 @@ export const meta: CalculatorMeta = {
   limitations: [
     'Reserve should be the compensating fusional vergence (break or blur, per clinician preference, break more common) in the direction that relieves the entered phoria.',
   ],
+  references: [
+    'Scheiman M, Wick B. Clinical Management of Binocular Vision, 4th ed. Lippincott Williams & Wilkins, 2013.',
+  ],
 }
 
 function Calculate() {

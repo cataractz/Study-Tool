@@ -27,6 +27,10 @@ export const meta: CalculatorMeta = {
   limitations: [
     'Scoped to two lenses. Extending this shortcut formula to three or more separated lenses is not a simple algebraic extension — it requires sequential vergence tracing through each element and is not implemented here to avoid an inaccurate result.',
   ],
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+    'American Academy of Ophthalmology. Optics, Refraction, and Contact Lenses (BCSC Section 3).',
+  ],
 }
 
 function Calculate() {

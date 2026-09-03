@@ -24,6 +24,9 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Prescribing an oblique prism as separate horizontal and vertical prism, or interpreting a measured oblique prism.',
   supportsPractice: true,
   convention: 'θ measured from the horizontal (Base Out) axis, counterclockwise positive. Horizontal: + = Base Out. Vertical: + = Base Up.',
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+  ],
 }
 
 function Calculate() {

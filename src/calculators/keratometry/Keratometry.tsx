@@ -26,6 +26,10 @@ export const meta: CalculatorMeta = {
   limitations: [
     'With-the-Rule / Against-the-Rule / Oblique classification here uses a ±20° band around 90°/180° — some texts use ±30°; this is a labeling convention, not a hard clinical boundary.',
   ],
+  references: [
+    'Bennett ES, Henry VA. Clinical Manual of Contact Lenses, 4th ed. Lippincott Williams & Wilkins.',
+    'Elliott DB. Clinical Procedures in Primary Eye Care, 5th ed. Elsevier.',
+  ],
 }
 
 function RadiusPowerTab() {

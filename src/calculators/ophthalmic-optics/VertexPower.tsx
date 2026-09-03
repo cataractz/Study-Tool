@@ -23,6 +23,10 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Power for high-Rx spectacles fit at a different vertex distance than refracted, or moving power to a new reference plane.',
   supportsPractice: true,
   convention: 'd = distance (m) the new plane moves TOWARD the eye, positive. Moving away from the eye uses a negative d.',
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+    'American Academy of Ophthalmology. Optics, Refraction, and Contact Lenses (BCSC Section 3).',
+  ],
 }
 
 function Calculate() {

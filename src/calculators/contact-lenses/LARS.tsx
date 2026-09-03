@@ -26,6 +26,10 @@ export const meta: CalculatorMeta = {
   supportsPractice: true,
   convention: 'Direction of rotation is as observed by the EXAMINER looking at the patient\'s eye (not the patient\'s own left/right) — this is the standard clarification used to avoid the most common source of confusion with this rule.',
   limitations: ['Applies to a lens with a single rotation reference mark (e.g. at the 6 o\'clock position); confirm your lens\'s specific marking scheme.'],
+  references: [
+    'Bennett ES, Henry VA. Clinical Manual of Contact Lenses, 4th ed. Lippincott Williams & Wilkins.',
+    'Elliott DB. Clinical Procedures in Primary Eye Care, 5th ed. Elsevier.',
+  ],
 }
 
 function Calculate() {
