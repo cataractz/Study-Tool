@@ -66,3 +66,20 @@ export function urgencyTierTone(tier: string): BadgeTone {
       return 'info'
   }
 }
+
+/** Tone for DecisionTree outcome DecisionUrgency — distinct scale from both urgencyTone
+ * (WorkupUrgency) and urgencyTierTone (EmergencyUrgencyTier). */
+export function decisionUrgencyTone(urgency: string): BadgeTone {
+  switch (urgency) {
+    case 'Emergency (immediate)':
+      return 'danger'
+    case 'Same-day':
+      return 'warning'
+    case 'Urgent (24-48h)':
+      return 'info'
+    case 'Prompt':
+      return 'purple'
+    default:
+      return 'success'
+  }
+}

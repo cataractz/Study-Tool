@@ -20,6 +20,8 @@ import { DiagnosticTestingHub } from './pages/DiagnosticTestingHub'
 import { DiagnosticTestingDetail } from './pages/DiagnosticTestingDetail'
 import { EmergencyCareHub } from './pages/EmergencyCareHub'
 import { EmergencyProtocolDetail } from './pages/EmergencyProtocolDetail'
+import { DecisionTreesHub } from './pages/DecisionTreesHub'
+import { DecisionTreeDetail } from './pages/DecisionTreeDetail'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -46,6 +48,8 @@ function App() {
         <Route path="/diagnostic-testing/:techniqueId" element={<DiagnosticTestingDetail />} />
         <Route path="/emergency-care" element={<EmergencyCareHub />} />
         <Route path="/emergency-care/:protocolId" element={<EmergencyProtocolDetail />} />
+        <Route path="/decision-trees" element={<DecisionTreesHub />} />
+        <Route path="/decision-trees/:treeId" element={<DecisionTreeDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

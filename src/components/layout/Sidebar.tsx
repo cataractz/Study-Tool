@@ -22,6 +22,7 @@ import {
   Library,
   Disc,
   Siren,
+  GitBranch,
   type LucideIcon,
 } from 'lucide-react'
 import { primaryNav, futureToolsNav } from '../../config/navigation'
@@ -45,6 +46,7 @@ const iconMap: Record<string, LucideIcon> = {
   library: Library,
   disc: Disc,
   siren: Siren,
+  'git-branch': GitBranch,
 }
 
 export function Sidebar({

@@ -3,6 +3,7 @@ import { getAllDrugs } from './drugService'
 import { getAllLenses } from './lensService'
 import { getAllExamTechniques } from './examTechniqueService'
 import { getAllClinicalWorkups } from './clinicalWorkupService'
+import { getAllDecisionTrees, decisionTreeCategoryLabels } from './decisionTreeService'
 import { calculatorRegistry } from '../calculators/registry'
 import { referenceRegistry } from '../reference/registry'
 
@@ -14,6 +15,7 @@ export type SearchResultType =
   | 'lens'
   | 'exam-technique'
   | 'clinical-workup'
+  | 'decision-tree'
 
 export interface SearchResult {
   type: SearchResultType
@@ -108,6 +110,17 @@ const searchClinicalWorkupsProvider: SearchProvider = (q) =>
       path: `/exam-workup/workup/${w.id}`,
     }))
 
+const searchDecisionTreesProvider: SearchProvider = (q) =>
+  getAllDecisionTrees()
+    .filter((t) => matches([t.name, ...(t.aliases ?? []), t.summary].join(' '), q))
+    .map((t) => ({
+      type: 'decision-tree',
+      id: t.id,
+      title: t.name,
+      subtitle: `Decision Tree · ${decisionTreeCategoryLabels[t.categories[0]]}`,
+      path: `/decision-trees/${t.id}`,
+    }))
+
 /**
  * Every searchable content source on the site, in one place. Adding a future tool to search
  * (once it's built) means writing one provider function like the ones above and pushing it here —
@@ -121,6 +134,7 @@ const searchProviders: SearchProvider[] = [
   searchLensesProvider,
   searchExamTechniquesProvider,
   searchClinicalWorkupsProvider,
+  searchDecisionTreesProvider,
 ]
 
 export function globalSearch(query: string, limit = 10): SearchResult[] {

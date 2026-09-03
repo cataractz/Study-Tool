@@ -18,6 +18,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Clinical Exam & Workups', path: '/exam-workup', icon: 'clipboard-check' },
   { label: 'Diagnostic Testing & Imaging', path: '/diagnostic-testing', icon: 'scan-eye' },
   { label: 'Emergency & Urgent Eye Care', path: '/emergency-care', icon: 'siren' },
+  { label: 'Clinical Decision Trees', path: '/decision-trees', icon: 'git-branch' },
 ]
 
 export const futureToolsNav: NavItem[] = [
