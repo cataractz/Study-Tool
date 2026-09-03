@@ -1,3 +1,347 @@
 import type { EmergencyProtocol } from '../../types/emergencyProtocol'
 
-export const orbitalNeuroSystemicProtocols: EmergencyProtocol[] = []
+export const orbitalNeuroSystemicProtocols: EmergencyProtocol[] = [
+  // ============================================================
+  // ORBITAL
+  // ============================================================
+  {
+    id: 'orbital-cellulitis-protocol',
+    name: 'Orbital (Postseptal) Cellulitis',
+    aliases: ['Postseptal cellulitis', 'True orbital cellulitis vs. preseptal cellulitis'],
+    category: 'Orbital',
+    urgencyTier: 'Immediate (minutes)',
+    overview:
+      'Sinus-origin infection (most commonly ethmoid, given its separation from the orbit by only the thin lamina papyracea), or less often dental, dacryocystitis, or trauma-related infection, that has spread posterior to the orbital septum into the orbital soft tissues — as opposed to preseptal cellulitis, which stays anterior to the septum and involves only eyelid/periocular skin and subcutaneous tissue. Postseptal (true orbital) involvement is a sight- and life-threatening emergency: it can progress to subperiosteal or orbital abscess, optic nerve compression, and, if infection tracks posteriorly along the ophthalmic veins, cavernous sinus thrombosis, meningitis, or intracranial abscess. The single most important task at first presentation is separating orbital from preseptal disease on exam, because that distinction determines whether the patient goes home on oral antibiotics or is admitted for IV therapy and emergent imaging.',
+    redFlags: [
+      'Proptosis (axial globe displacement)',
+      'Restricted and/or painful extraocular motility (ophthalmoplegia)',
+      'Decreased visual acuity',
+      'Relative afferent pupillary defect (RAPD)',
+      'Chemosis and conjunctival injection out of proportion to eyelid swelling',
+      'Pain with eye movement',
+      'Fever or systemic toxicity',
+      'Bilateral orbital signs, rapid progression over hours, severe headache, new cranial neuropathies (III, IV, V1/V2, VI), or altered mental status — these suggest cavernous sinus thrombosis and demand immediate neuroimaging and neurology/neurosurgery involvement, not routine orbital cellulitis management alone',
+    ],
+    immediateActions: [
+      'Test and document visual acuity, pupils (specifically checking for an RAPD), color vision, and extraocular motility (range and pain) in any patient with lid swelling and erythema before anything else — these findings distinguish preseptal from orbital disease',
+      'If any red flag is present, treat as orbital (postseptal) cellulitis until proven otherwise; do not default to an outpatient trial of oral antibiotics',
+      'Obtain emergent contrast-enhanced CT of the orbits and paranasal sinuses (thin-cut, axial and coronal) to evaluate for postseptal soft-tissue infiltration, subperiosteal abscess, orbital abscess, and sinus opacification; if cavernous sinus thrombosis is suspected clinically (bilateral signs, cranial neuropathies, severe headache, altered mental status), add CT or MR venography and involve neurology/neurosurgery immediately rather than waiting on the orbital CT alone',
+      'Arrange same-visit hospital admission for IV antibiotics — postseptal orbital cellulitis is not managed as an outpatient with oral antibiotics',
+      'Co-manage from the outset with ophthalmology and ENT (otolaryngology), given the sinus origin of most cases; involve oral/maxillofacial surgery if a dental source is suspected',
+      'Ensure empiric broad-spectrum IV antibiotics are started by the admitting/ED service without waiting for culture results — typical regimens cover gram-positive, gram-negative, and (when intracranial extension is a concern) anaerobic organisms, with vancomycin added when MRSA, optic nerve compromise, or CNS extension is a concern',
+      'Repeat visual acuity, pupil, and motility checks at short, defined intervals while inpatient — any worsening should prompt urgent repeat imaging and consideration of surgical drainage',
+    ],
+    doNotDo: [
+      'Do not send a patient with any red flag (proptosis, restricted/painful motility, decreased vision, RAPD, or chemosis) home on oral antibiotics as if this were simple preseptal cellulitis',
+      'Do not wait for CT results before ensuring IV antibiotics are started if the clinical picture is clearly postseptal — imaging characterizes the disease, it does not gate initiation of empiric treatment',
+      'Do not attribute bilateral orbital signs, severe headache, or new cranial nerve palsies to "worsening orbital cellulitis" without urgently considering and imaging for cavernous sinus thrombosis',
+      'Do not rely on the degree of lid swelling alone to distinguish preseptal from orbital disease — severe preseptal edema can look dramatic while remaining anterior to the septum, and mild-appearing lid swelling can conceal significant postseptal disease, especially early in the course or in an uncooperative child',
+      'Do not delay ENT involvement — the sinus source often requires surgical drainage that ophthalmology alone does not provide',
+    ],
+    fullEvaluationSteps: [
+      'Complete ophthalmic exam: visual acuity, color vision, pupils/RAPD, IOP, extraocular motility with quantification of restriction, exophthalmometry to document and trend proptosis, and dilated fundus exam to assess the optic nerve for edema or pallor',
+      'Contrast-enhanced CT orbits/sinuses (or MRI with contrast if CT is equivocal or intracranial extension is suspected) to stage the disease (Chandler classification, see Clinical Pearls) and identify any drainable collection',
+      'CBC with differential, blood cultures (especially if febrile/toxic-appearing or pediatric), and inflammatory markers (ESR/CRP) to help track response',
+      'ENT evaluation of the sinuses, with nasal endoscopy where appropriate, since the ethmoid sinus is the most common source in both children and adults',
+      'Serial re-examination (vision, pupils, motility, proptosis) at short intervals while on IV antibiotics, with a low threshold for repeat imaging or surgical consultation if there is any clinical worsening',
+      'Culture-directed antibiotic narrowing once sensitivities return, with transition to oral antibiotics only after clear, sustained clinical improvement — IV therapy is typically continued roughly 1-2 weeks, followed by oral antibiotics to complete a total course of about 2-3 weeks',
+    ],
+    referralCriteria:
+      'Any patient meeting orbital (postseptal) criteria requires same-day emergency department referral or direct hospital admission for IV antibiotics, urgent contrast-enhanced CT, and combined ophthalmology/ENT management. Surgical (or interventional) drainage is indicated for a large or medially located subperiosteal abscess, any frank orbital abscess, optic nerve compromise (decreasing vision, worsening RAPD, or color vision loss), failure to improve — or frank worsening — after roughly 24-48 hours of appropriate IV antibiotics, or any sign of intracranial extension. Bilateral disease, severe headache, cranial neuropathies beyond isolated motility restriction, or altered mental status warrant immediate neuroimaging and neurosurgery/neurology consultation for possible cavernous sinus thrombosis.',
+    associatedConditionIds: ['orbital-cellulitis', 'preseptal-cellulitis'],
+    relatedWorkupIds: ['proptosis-workup'],
+    relatedTechniqueIds: ['extraocular-motility-testing', 'pupillary-examination', 'hertel-exophthalmometry'],
+    clinicalPearls: [
+      'The Chandler classification stages orbital complications of sinusitis: I - preseptal (inflammatory edema); II - orbital cellulitis; III - subperiosteal abscess; IV - orbital abscess; V - cavernous sinus thrombosis. Stage I is managed as outpatient preseptal disease; stages II-V require admission and IV therapy.',
+      'The ethmoid sinus is the most common source because it is separated from the orbit only by the thin lamina papyracea, so even mild ethmoiditis can spread directly into the orbit.',
+      'A relative afferent pupillary defect or decreasing color vision in orbital cellulitis signals optic nerve compromise and should prompt urgent re-imaging and surgical consultation, not just an antibiotic adjustment.',
+      'Children with orbital cellulitis are more likely than adults to respond to IV antibiotics alone without needing surgical drainage, particularly for small subperiosteal abscesses — but the threshold for imaging and admission is the same regardless of age.',
+    ],
+    commonPitfalls: [
+      'Treating orbital cellulitis as "bad preseptal cellulitis" and sending the patient home on oral antibiotics because eyelid swelling looked like the dominant finding',
+      'Anchoring on a grossly normal-appearing pupil exam and skipping a careful RAPD check — early optic nerve compromise can be subtle',
+      'Ordering a non-contrast CT, which markedly limits the ability to identify an abscess or differentiate cellulitis from a drainable collection',
+      'Failing to recognize that new bilateral signs, severe headache, or additional cranial neuropathies represent a different, more emergent process (cavernous sinus thrombosis) rather than simple progression of orbital cellulitis',
+      'Delaying antibiotics to wait for imaging or culture results in a clinically obvious postseptal presentation',
+    ],
+    references: [
+      'Chandler ET, Langenbrunner DJ, Stevens ER. "The pathogenesis of orbital complications in acute sinusitis." Laryngoscope. 1970 (original Chandler classification of orbital complications of sinusitis)',
+      'StatPearls — Orbital Cellulitis (NCBI Bookshelf)',
+      'American Academy of Ophthalmology — Preseptal and Orbital Cellulitis: Anatomic Considerations (Focal Points)',
+      'ENT UK — Orbital Cellulitis Management Guideline, adult and paediatric flowchart (2017, revised)',
+    ],
+  },
+
+  {
+    id: 'orbital-compartment-syndrome-protocol',
+    name: 'Orbital Compartment Syndrome (Retrobulbar Hemorrhage)',
+    aliases: ['Retrobulbar hemorrhage', 'Acute orbital compartment syndrome', 'Emergent lateral canthotomy and cantholysis'],
+    category: 'Orbital',
+    urgencyTier: 'Immediate (minutes)',
+    overview:
+      'Acute bleeding into the closed bony orbit — most often after blunt orbital trauma, or as a complication of orbital, oculoplastic, sinus, or eyelid surgery, or a retrobulbar/peribulbar anesthetic injection — rapidly raises orbital pressure. Because the orbit is a rigid, largely non-expansile compartment, rising pressure compresses the optic nerve, its vascular supply, and the central retinal artery, and can produce irreversible vision loss within roughly 90-120 minutes if not decompressed. This is one of the few true minutes-count emergencies in eye care, and the primary treatment — lateral canthotomy and cantholysis — is a bedside clinical decision and procedure, not something that should wait on imaging.',
+    redFlags: [
+      'Proptosis, often marked/severe',
+      'Tense, "rock-hard" orbit on palpation with resistance to retropulsion',
+      'Severe orbital/periocular pain',
+      'Rapidly decreasing vision',
+      'Relative afferent pupillary defect (RAPD)',
+      'Markedly elevated IOP — commonly cited threshold >40 mmHg, especially with an RAPD, as an indication for emergent decompression even in an obtunded or uncooperative patient in whom acuity cannot be reliably tested',
+      'A clear precipitating event: trauma, recent periocular/orbital/sinus surgery, or a retrobulbar/peribulbar block',
+    ],
+    timeWindow:
+      'Vision-threatening orbital compartment syndrome behaves like a minutes-to-under-two-hours emergency: canthotomy/cantholysis performed within roughly 60-90 minutes of onset is associated with the best chance of visual recovery, and outcomes decline the longer decompression is delayed. Do not wait for imaging or for ophthalmology to arrive if exam findings (proptosis, tense orbit, decreasing vision, RAPD, markedly elevated IOP) indicate compartment syndrome.',
+    immediateActions: [
+      'Recognize the syndrome clinically — proptosis, a tense/resistant globe on retropulsion, decreasing vision, RAPD, and/or IOP >40 mmHg after trauma, surgery, or a retrobulbar/peribulbar injection — and act immediately without waiting for CT imaging if vision is threatened',
+      'Perform emergent lateral canthotomy and inferior cantholysis at the bedside: infiltrate the lateral canthal area with roughly 1-2 mL of 1-2% lidocaine (with epinephrine if time and hemostasis allow); crush the lateral canthus for several seconds with a straight hemostat to reduce bleeding; incise the lateral canthal skin fold (canthotomy) with scissors down to the orbital rim, exposing the lateral canthal tendon',
+      'Grasp the lower lid margin at the lash line with toothed forceps and place the inferior crus of the lateral canthal tendon under tension; sweep the tissue between the orbital rim and the forceps with closed scissors until the taut tendon is felt ("twangs" like a guitar string), then cut it (inferior cantholysis) to fully mobilize the lower lid',
+      'Reassess immediately after cantholysis: vision, IOP, and proptosis. If pressure and proptosis are not adequately relieved, also cut the superior crus of the lateral canthal tendon (superior cantholysis) for more complete decompression',
+      'Give adjunctive IOP-lowering medical therapy in parallel, not as a substitute for canthotomy — e.g., topical timolol, oral or IV acetazolamide, and/or IV mannitol — to further reduce orbital/intraocular pressure while mechanical decompression is performed or arranged',
+      'Once decompression is achieved, obtain CT orbits (noncontrast is typically sufficient for acute hemorrhage; add contrast/CTA if an underlying vascular lesion or ongoing arterial bleeding is suspected) to characterize the hemorrhage and evaluate for an associated orbital fracture — imaging must not delay the canthotomy itself in a vision-threatened eye',
+      'Arrange emergent ophthalmology (oculoplastics) evaluation for possible further surgical exploration, hemostasis, or orbital decompression if bleeding continues or vision does not stabilize',
+    ],
+    doNotDo: [
+      'Do not wait for a CT scan before performing canthotomy/cantholysis if the clinical picture indicates compartment syndrome — imaging delay can cost irreversible vision',
+      'Do not treat this with IOP-lowering drops/medications alone — medical therapy is adjunctive only and does not substitute for mechanical decompression once compartment syndrome is present',
+      'Do not stop after the inferior cantholysis if proptosis and pressure remain markedly elevated — release of the inferior crus alone is sometimes insufficient, and the superior crus should also be cut',
+      'Do not delay the procedure to locate specialized instruments — canthotomy/cantholysis can be performed with a hemostat, scissors, and forceps found in nearly any clinical or emergency setting and does not require an operating room',
+      'Do not assume a sedated, intubated, or otherwise uncooperative patient cannot have compartment syndrome — a markedly elevated IOP (classically >40 mmHg) with an RAPD is itself an accepted indication to proceed even without a reliable visual acuity',
+    ],
+    fullEvaluationSteps: [
+      'Immediately post-procedure: visual acuity, pupil/RAPD check, IOP, and assessment of proptosis reduction, documented and trended',
+      'CT orbits (thin-cut, typically noncontrast for acute hemorrhage; add contrast/CTA if an underlying vascular malformation or ongoing arterial bleeding is suspected) to characterize the hematoma and evaluate for orbital fracture or foreign body',
+      'Ophthalmology (oculoplastics) evaluation for definitive surgical exploration/hemostasis, formal lateral canthal repair, and decision on further orbital decompression if pressure remains elevated',
+      'Ongoing serial vision, pupil, and IOP checks over the following hours, since re-accumulation of hemorrhage can cause recurrent compartment syndrome even after successful initial decompression',
+      'Formal canthal tendon repair is typically performed electively once the acute emergency has resolved, not at the time of the emergent canthotomy',
+    ],
+    referralCriteria:
+      'Emergent, same-encounter referral or transfer to a facility with ophthalmology (oculoplastics) coverage immediately after — not instead of — performing canthotomy/cantholysis, since definitive canthal repair and further decompression may be needed. Any patient with persistent vision loss, RAPD, or elevated IOP despite combined inferior and superior cantholysis needs emergent surgical orbital exploration/decompression.',
+    relatedWorkupIds: ['proptosis-workup'],
+    relatedTechniqueIds: ['hertel-exophthalmometry', 'pupillary-examination'],
+    relatedDrugIds: ['timolol', 'acetazolamide', 'mannitol'],
+    clinicalPearls: [
+      'Canthotomy/cantholysis is a clinical, bedside diagnosis-and-treatment decision — it does not require imaging confirmation, and the classic teaching is "when in doubt, cut," because the downside of an unnecessary canthotomy is minor compared with the downside of a delayed, missed decompression.',
+      'Inferior cantholysis alone is the standard first step, but if proptosis/pressure are not adequately relieved, cutting the superior crus of the lateral canthal tendon provides additional decompression — many current protocols favor proceeding to combined inferior + superior cantholysis rather than stopping at inferior alone.',
+      'An IOP >40 mmHg with an RAPD, even in an obtunded or uncooperative patient in whom formal acuity cannot be checked, is itself an accepted indication to proceed with canthotomy/cantholysis.',
+      'This is functionally the orbital analog of a CRAO in terms of urgency — retinal/optic nerve ischemic tolerance is measured in roughly 90-120 minutes, and visual outcome is time-dependent.',
+    ],
+    commonPitfalls: [
+      'Waiting for a CT scan or for ophthalmology to arrive before intervening, losing the narrow window in which decompression preserves vision',
+      'Performing only the skin canthotomy incision without completing the inferior cantholysis (releasing the tendon itself) — the skin incision alone does not adequately decompress the orbit',
+      'Treating markedly elevated IOP after trauma with topical/systemic IOP-lowering medication alone and never proceeding to mechanical decompression',
+      'Failing to reassess after inferior cantholysis and missing the need for superior cantholysis when pressure remains elevated',
+      'Underestimating urgency because the patient is not in severe pain — pain can be blunted in a sedated, post-anesthesia, or intoxicated patient even as vision is being lost',
+    ],
+    references: [
+      'StatPearls — Lateral Orbital Canthotomy (NCBI Bookshelf)',
+      'Vassallo S, Hartstein M, Howard D, Stetz J. "Traumatic retrobulbar hemorrhage: an emergent diagnosis." / Rowe NA, Bass SJ. "Lateral canthotomy and inferior cantholysis: an effective method of urgent orbital decompression for sight threatening acute retrobulbar haemorrhage." PMID 10707216',
+      'Medscape — Lateral Canthotomy and Cantholysis: Overview, Indications, Contraindications',
+      'EyeGuru — "How to Perform a Lateral Canthotomy"',
+    ],
+  },
+
+  // ============================================================
+  // NEURO-OPHTHALMIC
+  // ============================================================
+  {
+    id: 'third-nerve-palsy-pupil-involving-protocol',
+    name: 'Acute Pupil-Involving Third Nerve Palsy',
+    aliases: ['Pupil-involving CN III palsy', 'Compressive oculomotor nerve palsy', 'Third nerve palsy — aneurysm workup'],
+    category: 'Neuro-Ophthalmic',
+    urgencyTier: 'Immediate (minutes)',
+    overview:
+      'An acute, isolated third (oculomotor) nerve palsy with pupil involvement (anisocoria with the affected pupil sluggish, poorly reactive, or fixed and dilated) is presumed to be caused by a compressive lesion — classically a posterior communicating artery (PCoA) aneurysm — until proven otherwise. This is a "do not send home" neuro-ophthalmic emergency: a ruptured aneurysm carries roughly 50% mortality, so the patient needs same-day emergent neuroimaging and neurosurgical/neurological involvement, not a scheduled outpatient MRI.',
+    redFlags: [
+      'Anisocoria with the affected pupil sluggish, poorly reactive, or fixed and dilated',
+      'Any degree of pupil involvement, even in an otherwise partial/incomplete palsy',
+      'Worst headache of life, or a new, severe headache accompanying the palsy',
+      'Additional cranial neuropathies (e.g., V1 sensory loss, other ocular motor nerve involvement)',
+      'Sudden/hyperacute onset',
+      'Signs suggestive of subarachnoid hemorrhage (neck stiffness, altered consciousness, vomiting)',
+    ],
+    immediateActions: [
+      'On any acute isolated third nerve palsy, examine the pupil first and specifically compare the two pupils\' size and reactivity in light — pupil involvement (greater anisocoria in light, sluggish/fixed reactivity of the affected pupil) changes the entire management pathway',
+      'Treat any degree of pupil involvement — including partial involvement in an otherwise incomplete palsy — as presumed compressive/aneurysmal until proven otherwise; do not defer imaging to "see if it behaves like a vasculopathic palsy"',
+      'Obtain emergent same-day neuroimaging: CT angiography (CTA) of the head is favored by many centers as the fastest, widely available study with high sensitivity for aneurysm in the acute setting; MRI/MRA is an accepted alternative or adjunct, particularly when CTA is unavailable or when brainstem or other structural pathology is also being considered',
+      'Obtain emergent neurology and/or neurosurgery consultation in parallel with imaging — do not wait for imaging results before initiating the consult',
+      'If imaging identifies a posterior communicating artery (or other) aneurysm, arrange same-day hospital admission with neurosurgery for further management (e.g., catheter angiography, coiling, or clipping) rather than outpatient follow-up',
+      'If initial CTA/MRA is negative but clinical suspicion remains high (e.g., severe headache, an incomplete palsy with some pupil involvement), escalate to catheter (digital subtraction) angiography and/or lumbar puncture for subarachnoid hemorrhage per neurology/neurosurgery guidance, since a small aneurysm can occasionally be missed on noninvasive imaging',
+    ],
+    doNotDo: [
+      'Do not discharge a patient with an acute pupil-involving third nerve palsy for outpatient/scheduled MRI — this requires same-day emergent imaging and same-day neurology/neurosurgery involvement',
+      'Do not reassure yourself that a partial/incomplete palsy with only mild pupil involvement is "probably vasculopathic" — pupil involvement of any degree shifts the presumptive diagnosis toward a compressive lesion',
+      'Do not rely on pupil-sparing alone to fully exclude an aneurysm, especially if the palsy is incomplete — pupil-sparing lowers but does not eliminate aneurysm risk, and an incomplete, pupil-sparing palsy still warrants a lower threshold for imaging than a complete, longstanding, pupil-sparing palsy in a classic vasculopathic-risk-factor patient',
+      'Do not attribute the palsy to "probable diabetic/vasculopathic third nerve palsy" purely on age and vascular risk factors without first excluding an aneurysm when the pupil is involved',
+      'Do not delay imaging while waiting to confirm risk factors (diabetes, hypertension) — vasculopathic third nerve palsy is a diagnosis of exclusion in the acute setting, not a default assumption',
+    ],
+    fullEvaluationSteps: [
+      'Full neuro-ophthalmic exam: ductions/versions (documenting exactly which muscles innervated by CN III are involved), lid position (ptosis), pupil size/reactivity in light and near, and a search for aberrant regeneration (which suggests a longstanding or non-acute compressive/traumatic process rather than a truly acute presentation)',
+      'Full cranial nerve exam looking for additional deficits (trochlear, abducens, trigeminal V1 sensation) that would suggest a cavernous sinus or orbital apex process rather than an isolated PCoA aneurysm',
+      'Blood pressure and basic vascular risk factor screen (glucose/HbA1c, lipid panel) — relevant to the differential but should not delay or substitute for emergent imaging',
+      'CTA (or MRI/MRA) of the head as above; catheter angiography per neurosurgery if noninvasive imaging is negative and suspicion remains high',
+      'If a vasculopathic (microvascular ischemic) third nerve palsy is confirmed after excluding compressive causes, arrange follow-up to document expected improvement over roughly 3 months — failure to improve, or new findings during follow-up, should prompt repeat neuroimaging',
+    ],
+    referralCriteria:
+      'Same-day emergency department referral (or direct hospital admission) for any acute isolated third nerve palsy with pupil involvement, complete or partial, regardless of age or vascular risk factor profile — this is a same-day neurology/neurosurgery emergency, not a routine neuro-ophthalmology referral. A pupil-sparing, complete, isolated third nerve palsy in an older patient with vascular risk factors may be managed with expedited (though not necessarily emergent, same-hour) MRI/MRA and close interval follow-up per current neuro-ophthalmic practice, but any new pupil involvement, incomplete recovery, or new findings on follow-up should immediately escalate to the emergent pathway.',
+    associatedConditionIds: ['cn3-palsy'],
+    relatedWorkupIds: ['isolated-cranial-nerve-palsy-workup', 'anisocoria-workup', 'diplopia-workup'],
+    relatedTechniqueIds: ['pupillary-examination', 'extraocular-motility-testing'],
+    clinicalPearls: [
+      'Anatomically, the pupillomotor parasympathetic fibers travel superficially along the outer surface of CN III, making them especially vulnerable to compression from an adjacent aneurysm, while the somatic motor fibers to the extraocular muscles run more centrally within the nerve — the anatomic basis for why compressive lesions preferentially affect the pupil while microvascular ischemia (which affects the vasa nervorum supplying the nerve\'s core) tends to spare it.',
+      'Studies of confirmed PCoA aneurysm patients report abnormal/involved pupils in roughly 80% of cases, versus a much lower rate (roughly a third) of pupil abnormality in vasculopathic third nerve palsy without an aneurysm — a strong, but not absolute, discriminator.',
+      'CTA has become the favored first-line study at many centers for its speed and high sensitivity for aneurysm in the acute setting, though MRI/MRA remains an accepted alternative, particularly when additional intracranial/brainstem pathology needs simultaneous evaluation.',
+      'Pupil-sparing does not equal "safe to send home" when the palsy is incomplete — the degree of motility involvement matters alongside the pupil finding when estimating aneurysm risk.',
+    ],
+    commonPitfalls: [
+      'Assuming any older patient with diabetes/hypertension and an acute third nerve palsy has a vasculopathic cause without carefully checking the pupil',
+      'Missing a subtle degree of anisocoria or sluggish reactivity because the exam was done under bright ambient light or was rushed',
+      'Deferring imaging to the next available outpatient MRI slot instead of arranging same-day emergent imaging',
+      'Not recognizing that new headache or additional cranial neuropathies raise urgency further, even if the pupil appears spared',
+      'Forgetting that a normal noncontrast CT does not exclude an aneurysm — CTA (or MRA/MRI, or catheter angiography if needed) is required, not a plain noncontrast head CT',
+    ],
+    references: [
+      'American Academy of Ophthalmology EyeNet — "Diagnostic Considerations in an Acquired, Isolated Third Nerve Palsy"',
+      'Jacobson DM. "Relative pupil-sparing third nerve palsy: etiology and clinical variables predictive of a mass." Ophthalmology. 2001 (pupil-involvement risk data)',
+      'Journal of the Korean Neurosurgical Society / QJM — third nerve palsy and posterior communicating artery aneurysm case/management literature',
+      'LITFL — "Third Cranial Nerve Lesions"',
+    ],
+  },
+
+  // ============================================================
+  // SYSTEMIC
+  // ============================================================
+  {
+    id: 'anaphylaxis-in-office-protocol',
+    name: 'Anaphylaxis in the Eye Care Office',
+    aliases: ['Anaphylactic reaction to fluorescein/ICG dye', 'In-office anaphylaxis management'],
+    category: 'Systemic',
+    urgencyTier: 'Immediate (minutes)',
+    overview:
+      'A true life-threatening systemic emergency that can occur in an eye care setting, most notably after IV fluorescein or indocyanine green angiography dye injection, but also from a topical or systemic drug reaction, latex, or other trigger. Recognition and immediate IM epinephrine — not antihistamines or steroids — are what actually reverse the airway and cardiovascular compromise of anaphylaxis. Every practice that performs IV dye angiography or periocular/intraocular injections should have epinephrine and a written, rehearsed anaphylaxis protocol immediately available.',
+    redFlags: [
+      'Diffuse urticaria and/or angioedema (lips, tongue, periorbital, throat)',
+      'Bronchospasm/wheezing, stridor, or a sensation of throat or chest tightness',
+      'Hypotension, dizziness, or syncope',
+      'Rapid onset (typically seconds to minutes after IV dye or drug administration) of any combination of skin, respiratory, cardiovascular, or GI symptoms (nausea, vomiting, crampy abdominal pain)',
+      'A sense of impending doom reported by the patient',
+    ],
+    immediateActions: [
+      'Recognize anaphylaxis clinically — it is a clinical diagnosis, so do not wait for confirmatory testing — and call for help/activate emergency medical services (911) immediately',
+      'Administer IM epinephrine without delay: 0.3-0.5 mg of 1:1000 (1 mg/mL) solution IM in the anterolateral thigh, as the first-line, immediate treatment, before other measures',
+      'Position the patient supine with legs elevated to support blood pressure, unless respiratory distress makes this intolerable, in which case allow a position of comfort (e.g., semi-reclined) that does not compromise the airway',
+      'Repeat the IM epinephrine dose every 5-15 minutes if symptoms persist or recur, injecting at a different site each time; if more than 2-3 IM doses are needed, this signals the need for an IV epinephrine infusion and advanced airway/hemodynamic support, arranged by arriving EMS/ED personnel',
+      'Give adjunctive treatments in parallel — supplemental oxygen, IV fluids for hypotension, an antihistamine (e.g., diphenhydramine) for urticaria/itching, and a corticosteroid — but these are adjuncts only and must never substitute for, or delay, epinephrine administration',
+      'Continue continuous monitoring of vital signs (heart rate, blood pressure, oxygen saturation, respiratory status) until EMS arrives and takes over care',
+    ],
+    doNotDo: [
+      'Do not give an antihistamine (e.g., diphenhydramine) or a corticosteroid as the first or only treatment — this is a common, dangerous error; neither drug reverses airway edema, bronchospasm, or hypotension the way epinephrine does, and relying on them delays the one treatment that actually works',
+      'Do not delay epinephrine to "see if it resolves on its own" or to obtain vital signs first — administration at the first recognized sign of anaphylaxis improves outcomes',
+      'Do not withhold epinephrine because of a patient\'s cardiac history or age — there is no absolute contraindication to epinephrine in true anaphylaxis, and the risk of withholding treatment far exceeds the risk of giving it',
+      'Do not discharge the patient as soon as symptoms resolve — a period of observation is required given the risk of a biphasic reaction',
+      'Do not inject repeat doses into the same thigh site — vasoconstriction at the injection site can cause tissue injury, so rotate the site if repeat dosing is needed',
+    ],
+    fullEvaluationSteps: [
+      'Continuous monitoring of vital signs and mental status through resolution and during the post-treatment observation period',
+      'Observation period after apparent resolution — commonly cited as at least 4-6 hours for typical reactions and longer (up to 24 hours) for more severe reactions (hypotension, significant respiratory compromise), given the risk of a biphasic reaction occurring hours after initial improvement',
+      'Transport to an emergency department/hospital for any patient who received epinephrine, even if symptoms have resolved, for continued observation and workup',
+      'Documentation of the suspected trigger (e.g., IV fluorescein, ICG, a specific drug) in the chart, and communication to the patient about avoiding re-exposure',
+      'Allergy/immunology referral for confirmatory testing and future risk counseling before the patient undergoes any future angiography or injection with a related agent; ensure the patient is prescribed and educated on a take-home epinephrine auto-injector',
+    ],
+    referralCriteria:
+      'Immediate activation of emergency medical services (911) for any suspected anaphylaxis in the office, with transport to an emergency department regardless of apparent response to initial treatment. Any patient who received epinephrine should be evaluated and observed in an ED/monitored setting given the risk of a biphasic reaction, and should be referred to allergy/immunology afterward for confirmatory testing and long-term risk management.',
+    relatedTechniqueIds: ['fluorescein-angiography'],
+    relatedDrugIds: ['epinephrine', 'diphenhydramine', 'methylprednisolone'],
+    clinicalPearls: [
+      'Epinephrine is the only first-line treatment for anaphylaxis — antihistamines and corticosteroids are adjuncts that do not reverse the acute airway/cardiovascular compromise and must never substitute for, or delay, epinephrine.',
+      'Every eye care setting performing IV fluorescein or ICG angiography, or periocular/intraocular injections, should stock epinephrine and maintain a written, rehearsed anaphylaxis protocol, since these are recognized (if rare) anaphylaxis triggers in eye care.',
+      'IM injection into the anterolateral thigh is preferred over the deltoid/arm because it produces faster, more reliable absorption of epinephrine.',
+      'Patients on beta-blockers may respond poorly to epinephrine alone (unopposed alpha-mediated effects, blunted response) — glucagon is the recognized adjunct in that setting, arranged by EMS/ED once they arrive.',
+      'Biphasic anaphylactic reactions can occur hours after apparent resolution of the initial episode, which is why observation — not immediate discharge — is required even after symptoms resolve.',
+    ],
+    commonPitfalls: [
+      'Reaching for diphenhydramine first because it is more familiar or more readily at hand than an epinephrine auto-injector, losing critical time',
+      'Treating oral/IV corticosteroids as if they will produce immediate reversal of bronchospasm or hypotension — their onset is delayed by hours, not minutes',
+      'Discontinuing observation and letting the patient leave as soon as initial symptoms resolve, missing a later biphasic reaction',
+      'Not having epinephrine (or a working auto-injector) immediately accessible in a practice that performs IV angiography or injections',
+      'Hesitating on epinephrine dosing because of a patient\'s age or cardiac history, when there is no absolute contraindication in true anaphylaxis',
+    ],
+    references: [
+      'AAAAI/ACAAI Joint Task Force on Practice Parameters — Anaphylaxis Practice Parameter Update',
+      'Drugs.com — Epinephrine Dosage Guide (anaphylaxis dosing and repeat-dose interval)',
+      'CorePendium (EMRAP) — "Allergy, Hypersensitivity, and Anaphylaxis"',
+      'StatPearls — Diphenhydramine (NCBI Bookshelf); adjunctive-therapy role in anaphylaxis',
+    ],
+  },
+
+  {
+    id: 'giant-cell-arteritis-vision-loss-protocol',
+    name: 'Giant Cell Arteritis with Acute Vision Loss',
+    aliases: ['Arteritic anterior ischemic optic neuropathy (A-AION)', 'Temporal arteritis with vision loss'],
+    category: 'Systemic',
+    urgencyTier: 'Immediate (minutes)',
+    overview:
+      'Giant cell arteritis (GCA) causing acute vision loss — typically arteritic anterior ischemic optic neuropathy (A-AION), though it can also present as a central retinal artery occlusion or as diplopia/cranial nerve palsy from ocular motor nerve ischemia — occurs in patients typically over 50, often with jaw claudication, scalp tenderness, a tender or thickened non-pulsatile temporal artery, new headache, or polymyalgia rheumatica symptoms. This is a same-day emergency: high-dose systemic corticosteroids must be started immediately, in the eye clinic or ED, to protect any remaining vision and the fellow eye — treatment should never wait for temporal artery biopsy.',
+    redFlags: [
+      'Age typically over 50 (median age of onset roughly 70-80)',
+      'Jaw claudication',
+      'Scalp tenderness (e.g., pain combing hair or resting the head on a pillow)',
+      'Temporal artery tenderness, thickening, nodularity, or diminished/absent pulse on palpation',
+      'New-onset headache, often temporal',
+      'Polymyalgia rheumatica symptoms (proximal shoulder and hip girdle aching with morning stiffness)',
+      'Acute, often profound, unilateral vision loss with a pale, edematous ("chalky white") optic disc on exam',
+      'Amaurosis fugax preceding permanent vision loss',
+      'Constitutional symptoms: fever, unintentional weight loss, malaise, night sweats',
+      'Diplopia or other cranial nerve findings from ischemia of the vessels supplying the ocular motor nerves',
+    ],
+    immediateActions: [
+      'In any patient over roughly 50 with acute vision loss and any GCA symptom or sign (jaw claudication, scalp/temporal artery tenderness, new headache, PMR symptoms), treat as presumed GCA and begin high-dose systemic corticosteroids the same day, without waiting for biopsy and, if vision is threatened, without waiting for laboratory results',
+      'Order same-day (stat) ESR, CRP, and platelet count — an elevated ESR and CRP together (and often thrombocytosis) support the diagnosis, but a normal ESR does NOT exclude GCA (a meaningful minority of biopsy-proven cases have a normal ESR, particularly with concurrent CRP elevation), so do not use a normal ESR alone to defer treatment',
+      'Start corticosteroids immediately: for a patient with acute vision loss, IV pulse methylprednisolone (commonly cited as 1 g/day, sometimes given as 250 mg IV every 6 hours, for 3 days) is favored by many centers before transitioning to high-dose oral prednisone; high-dose oral prednisone alone (typically 1-1.5 mg/kg/day, commonly in the range of 60-100 mg/day) is an accepted alternative, particularly when IV access or admission is not immediately available — note that evidence that IV pulse dosing produces a better ultimate visual outcome than oral high-dose therapy alone is not conclusive, and published guidance and practice genuinely vary on this point rather than converging on one regimen',
+      'Refer urgently (same day to next available slot) for temporal artery biopsy, but do NOT delay corticosteroid initiation to arrange or await it — sources generally agree biopsy positivity remains reasonably preserved within the first 1-2 weeks of steroid therapy, with some literature reporting continued (if declining) diagnostic yield out to about 4 weeks, so the biopsy should still be arranged as soon as possible after starting steroids, not deferred for weeks',
+      'Warn the patient explicitly that the fellow eye is at high risk — commonly cited as up to 50% risk of fellow-eye involvement within days if untreated — and that this risk is the primary reason treatment cannot wait',
+      'Arrange same-day or next-day rheumatology involvement for co-management of the diagnosis, biopsy interpretation, and the often many-months-to-years-long steroid taper',
+    ],
+    doNotDo: [
+      'Do not wait for temporal artery biopsy results before starting corticosteroids — biopsy remains meaningfully positive for a period after steroids are started (commonly cited as roughly 1-2 weeks, with declining but still reported yield out to about 4 weeks depending on the source), so treatment should never be delayed for it',
+      'Do not use a normal ESR alone to rule out GCA — a relevant minority of biopsy-confirmed cases have a normal ESR, especially when CRP is checked concurrently and is elevated; interpret ESR, CRP, and platelets together, not ESR in isolation',
+      'Do not treat the fellow (asymptomatic) eye as low-risk and defer systemic treatment — fellow-eye vision loss can occur within days of the first eye if treatment is delayed',
+      'Do not substitute low-dose, topical, or periocular steroids for high-dose systemic therapy — GCA-related vision loss requires high-dose systemic corticosteroids, not local treatment',
+      'Do not discharge the patient home "awaiting rheumatology follow-up" without same-day steroid initiation — steroids should start the same day suspicion is raised, in the eye clinic or ED, not after a delayed subspecialty visit',
+    ],
+    fullEvaluationSteps: [
+      'Full history targeting GCA symptoms: jaw claudication, scalp tenderness, headache character/location, polymyalgia rheumatica symptoms, constitutional symptoms, and amaurosis fugax',
+      'Temporal artery palpation for tenderness, thickening, nodularity, and pulse quality',
+      'Dilated fundus exam documenting optic disc appearance (classically pale, chalky, edematous in arteritic AION, versus the hyperemic disc more typical of nonarteritic AION), and evaluation for a cherry-red spot/retinal whitening if a central retinal artery occlusion is present',
+      'Stat ESR, CRP, platelet count, and CBC; additional inflammatory workup as directed by rheumatology',
+      'Temporal artery biopsy, arranged as soon as possible after starting steroids (ideally within the first 1-2 weeks); a contralateral biopsy can be considered if the first is negative but suspicion remains high, since GCA can involve the arteries in a segmental/skip-lesion pattern',
+      'Fellow-eye baseline exam and close interval monitoring for early signs of involvement while steroids are up-titrated',
+      'Rheumatology co-management for confirming the diagnosis, adjusting the steroid regimen, planning the taper (often over one to two years), and considering steroid-sparing agents where appropriate for relapse or steroid-toxicity mitigation',
+    ],
+    referralCriteria:
+      'Same-day emergency/urgent referral (ED or direct admission) for IV or high-dose oral corticosteroid initiation in any patient with acute vision loss and clinical suspicion for GCA — treatment should not wait for a rheumatology or ophthalmology appointment. Urgent (same-day-to-next-day) temporal artery biopsy referral should be arranged in parallel, and rheumatology should be involved promptly for long-term steroid management and confirmation of the diagnosis.',
+    associatedConditionIds: ['giant-cell-arteritis'],
+    relatedWorkupIds: ['sudden-painless-vision-loss-workup', 'headache-ocular-relevance-workup'],
+    relatedTechniqueIds: ['giant-cell-arteritis-laboratory-workup'],
+    relatedDrugIds: ['methylprednisolone', 'prednisone', 'aspirin'],
+    clinicalPearls: [
+      'Sources disagree on whether IV pulse methylprednisolone provides a genuinely better visual outcome than high-dose oral prednisone alone in GCA-related vision loss — IV pulse dosing is widely used and may allow a faster subsequent oral taper, but robust evidence of superior visual recovery specifically is not settled, so both are considered acceptable acute regimens depending on center practice and admission feasibility.',
+      'Temporal artery biopsy positivity declines the longer a patient has been on corticosteroids — reported figures include roughly 65-78% positivity within the first 1-2 weeks of treatment versus roughly 40% beyond 4 weeks — which is why biopsy should be arranged promptly after starting steroids rather than treated as something that can wait weeks.',
+      'Up to half of untreated patients develop fellow-eye vision loss within days to weeks of the first affected eye — this is the central reason GCA-associated vision loss is treated as a same-day, not same-week, emergency.',
+      'Low-dose aspirin is sometimes used as an adjunct (based on retrospective evidence of reduced ischemic/visual complications) alongside — never instead of — urgent high-dose corticosteroids.',
+    ],
+    commonPitfalls: [
+      'Delaying steroid initiation to first obtain a rheumatology consult or to schedule the temporal artery biopsy',
+      'Excluding GCA because the ESR is normal, without checking CRP and platelets or weighing the overall clinical picture',
+      'Treating only the eye that lost vision and not recognizing the urgent risk to the asymptomatic fellow eye',
+      'Confusing arteritic AION (pale/chalky disc, elevated inflammatory markers, systemic symptoms) with the far more common nonarteritic AION (hyperemic disc, vascular risk factors, no systemic inflammatory symptoms) and consequently under-treating a true GCA case',
+      'Assuming a negative unilateral temporal artery biopsy excludes GCA — skip lesions can produce a false-negative biopsy, and clinical suspicion plus labs should still guide treatment',
+    ],
+    references: [
+      'American Academy of Ophthalmology EyeNet — "The Balancing Act of Managing Giant Cell Arteritis"',
+      'American Academy of Family Physicians (AAFP) — "Giant Cell Arteritis: Biopsy After Corticosteroid Initiation"',
+      'Govada P, et al. "Does a temporal artery biopsy performed after 2 weeks of systemic steroid treatment provide diagnostic value?" Annals of Eye Science',
+      'Ophthalmology Times — "Oral vs. IV steroids for giant cell arteritis"',
+      'PMC — "Corticosteroid Usage in Giant Cell Arteritis"',
+    ],
+  },
+]
