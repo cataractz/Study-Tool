@@ -23,6 +23,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     typicalDosing: 'Intravitreal injection of 1.25 mg/0.05 mL every 4-6 weeks, individualized based on treat-and-extend, PRN, or fixed regimens; office-based sterile procedure',
     concentrations: ['1.25 mg/0.05 mL (intravitreal, compounded/repackaged from oncology vial)'],
+    formulations: ['Injection'],
     route: 'Intravitreal injection',
     sideEffects: {
       ocular: [

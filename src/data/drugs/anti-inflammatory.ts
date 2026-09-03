@@ -27,6 +27,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       '1 drop 4 times daily, tapered gradually over 1-4 weeks depending on severity; severe uveitis may start every 1-2 hours while awake with slow taper to avoid rebound inflammation.',
     concentrations: ['1% suspension (Pred Forte)', '0.12% suspension (Pred Mild)', '1% (Omnipred)'],
+    formulations: ['Suspension'],
     route: 'Topical ophthalmic suspension',
     sideEffects: {
       ocular: [
@@ -71,6 +72,11 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ophthalmic corticosteroids are generally considered low systemic risk; use only if clearly needed and under practitioner guidance. Systemic corticosteroids carry more established risk data; topical ocular exposure is much lower.',
+    pediatricConsiderations: [
+      'Commonly used in children, including after pediatric cataract surgery; pediatric eyes may be more prone to steroid-induced IOP elevation, so closer IOP monitoring than in adults is warranted.',
+      'No pediatric-restricted FDA labeling beyond standard steroid precautions; dosing/frequency and taper should be individualized rather than weight-based for this topical ocular route.',
+    ],
+    relatedConditionIds: ['anterior-uveitis', 'episcleritis', 'scleritis', 'vernal-keratoconjunctivitis', 'atopic-keratoconjunctivitis'],
     monitoring: [
       'IOP at baseline, then at each follow-up (particularly 2-4 weeks after initiation)',
       'Anterior chamber cell/flare grading to assess treatment response',
@@ -116,6 +122,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       '1-2 drops 4-6 times daily for moderate disease, tapered as inflammation resolves; ointment applied 1-3 times daily as an alternative for nighttime coverage.',
     concentrations: ['0.1% suspension (Maxidex)', '0.05% ointment', '0.7 mg intravitreal implant (Ozurdex)'],
+    formulations: ['Suspension', 'Ointment', 'Intravitreal implant'],
     route: 'Topical ophthalmic suspension/ointment; intravitreal implant (specialty use)',
     sideEffects: {
       ocular: [
@@ -155,6 +162,11 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ocular dexamethasone has low systemic absorption; use only when clearly needed. Intravitreal implants have not been extensively studied in pregnancy — use caution and weigh benefit versus risk.',
+    pediatricConsiderations: [
+      'Topical dexamethasone is used in children for postoperative and uveitic inflammation despite no pediatric-specific FDA labeling; monitor IOP and lens status closely given the heightened steroid-response risk in pediatric eyes.',
+      'The Ozurdex intravitreal implant has not had safety/effectiveness established in pediatric patients.',
+    ],
+    relatedConditionIds: ['anterior-uveitis', 'cystoid-macular-edema', 'retinal-vein-occlusion', 'scleritis', 'episcleritis'],
     monitoring: [
       'IOP monitoring at each visit, especially after 2+ weeks of therapy',
       'Slit lamp exam for cell/flare and corneal integrity',
@@ -197,6 +209,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       '1 drop 4 times daily (0.5% for postop/uveitis) or 1 drop 2-4 times daily (0.2% for allergic conjunctivitis), tapered per clinical response.',
     concentrations: ['0.5% suspension/gel (Lotemax)', '0.2% suspension (Alrex)', '1% suspension (Inveltys, Eysuvis)'],
+    formulations: ['Suspension', 'Gel'],
     route: 'Topical ophthalmic suspension/gel',
     sideEffects: {
       ocular: [
@@ -229,6 +242,11 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Low systemic absorption; use only if clearly needed. Considered a reasonable option when a topical steroid is required and systemic exposure should be minimized.',
+    pediatricConsiderations: [
+      'Lotemax 0.5% gel is FDA-approved for pediatric use, supported by a trial in patients from birth to under 11 years (mean age 3) undergoing cataract surgery, showing safety/efficacy comparable to prednisolone acetate 1%.',
+      'Inveltys, Eysuvis, and Lotemax SM have not had age-related effects studied in the pediatric population and are not established as safe/effective in children.',
+    ],
+    relatedConditionIds: ['dry-eye-disease', 'anterior-uveitis'],
     monitoring: [
       'IOP checks at follow-up visits, especially with therapy beyond 2-4 weeks',
       'Slit lamp exam for anterior chamber inflammation response',
@@ -268,6 +286,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     typicalDosing: '1-2 drops 2-4 times daily, tapered based on response.',
     concentrations: ['0.1% suspension/ointment (FML)', '0.25% suspension (FML Forte)', '0.1% (Flarex)'],
+    formulations: ['Suspension', 'Ointment'],
     route: 'Topical ophthalmic suspension/ointment',
     sideEffects: {
       ocular: [
@@ -295,6 +314,11 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Low systemic absorption with topical use; use only if clearly indicated, at the lowest effective dose.',
+    pediatricConsiderations: [
+      'FML is approved for use in children 2 years of age and older; safety/effectiveness have not been established below age 2.',
+      'Even short reducing-dose courses in pediatric ocular surface disease have been reported to elevate IOP, so IOP monitoring is still warranted despite its lower-potency reputation.',
+    ],
+    relatedConditionIds: ['blepharitis', 'episcleritis', 'conjunctivitis'],
     monitoring: [
       'IOP monitoring with extended therapy',
       'Anterior segment exam to assess inflammatory response',
@@ -333,6 +357,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       '1 drop 2 times daily for postoperative inflammation (up to 4 times daily), or 1 drop 4 times daily for 2 weeks followed by taper for uveitis.',
     concentrations: ['0.05% emulsion'],
+    formulations: ['Emulsion'],
     route: 'Topical ophthalmic emulsion',
     sideEffects: {
       ocular: [
@@ -365,6 +390,12 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; use only if potential benefit outweighs risk given its high potency and systemic absorption potential relative to other topical steroids.',
+    pediatricConsiderations: [
+      'Studied in a dedicated FDA-requested trial of 79 children aged 0-3 years for post-cataract-surgery inflammation, showing a safety profile comparable to prednisolone acetate 1%.',
+      'As one of the most potent topical steroids, pediatric patients should still be monitored closely for IOP elevation given the known heightened susceptibility to steroid response in children.',
+    ],
+    offLabelUses: ['Cystoid macular edema (e.g., pseudophakic or uveitic CME), used off-label in select cases'],
+    relatedConditionIds: ['anterior-uveitis', 'cystoid-macular-edema'],
     monitoring: [
       'Frequent IOP checks given high potency, especially in the first few weeks',
       'Anterior chamber cell/flare grading',
@@ -402,6 +433,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       '1-2 drops up to 4 times daily for postoperative inflammation; up to hourly initially for anterior uveitis, then tapered.',
     concentrations: ['1% suspension'],
+    formulations: ['Suspension'],
     route: 'Topical ophthalmic suspension',
     sideEffects: {
       ocular: [
@@ -432,6 +464,10 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited specific human data; use only if clearly needed, at the lowest effective dose, similar to other topical steroids.',
+    pediatricConsiderations: [
+      'Pediatric data are limited; a postoperative strabismus surgery study found rimexolone 1% produced significantly higher mean IOP than fluorometholone 0.1% in the fellow eye, suggesting extra caution and IOP monitoring when used in children.',
+    ],
+    relatedConditionIds: ['anterior-uveitis'],
     monitoring: [
       'IOP checks at follow-up',
       'Anterior chamber inflammation grading',
@@ -475,6 +511,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     typicalDosing: '1 drop 4 times daily (0.4-0.5% formulations) or 1 drop twice daily (Acuvail preservative-free).',
     concentrations: ['0.4% (Acular LS)', '0.5% (Acular)', '0.45% (Acuvail, preservative-free unit dose)'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -511,6 +548,12 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ocular NSAIDs have limited systemic absorption; however, systemic NSAIDs are generally avoided in the third trimester due to risk of premature closure of the ductus arteriosus — use topical ocular NSAIDs cautiously and only if benefit outweighs risk, particularly late in pregnancy.',
+    pediatricConsiderations: [
+      'Acular (0.5%) and Acuvail (0.45%) are approved for postoperative cataract-surgery pain/inflammation in children 2 years and older; safety/effectiveness below age 2 has not been established.',
+      'Acular LS (0.4%) is approved for post-corneal-refractive-surgery pain in patients 3 years and older.',
+    ],
+    offLabelUses: ['Cystoid macular edema prevention/treatment (adjunct)', 'Ocular pain after corneal abrasion (short-term)'],
+    relatedConditionIds: ['cystoid-macular-edema', 'corneal-abrasion', 'conjunctivitis'],
     monitoring: [
       'Corneal epithelial integrity, especially with use beyond a few days to weeks',
       'Symptom resolution (itching, postoperative pain)',
@@ -551,6 +594,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       '1 drop 3 times daily beginning 1 day prior to surgery, continued through surgery day and for 2 weeks postoperatively (0.1%); once daily dosing available with 0.3% formulation (Ilevro).',
     concentrations: ['0.1% suspension (Nevanac)', '0.3% suspension (Ilevro)'],
+    formulations: ['Suspension'],
     route: 'Topical ophthalmic suspension',
     sideEffects: {
       ocular: [
@@ -581,6 +625,10 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ocular NSAIDs have limited systemic absorption; systemic NSAIDs should be avoided in the third trimester due to risk of premature ductus arteriosus closure — use with caution and only if benefit outweighs risk.',
+    pediatricConsiderations: [
+      'Nevanac (0.1%) and Ilevro (0.3%) are approved for post-cataract-surgery pain/inflammation in children 10 years and older; safety/effectiveness below age 10 has not been established.',
+    ],
+    relatedConditionIds: ['cystoid-macular-edema'],
     monitoring: [
       'Corneal epithelial status throughout the perioperative course',
       'Macular status (OCT) in patients at risk for CME, particularly diabetics',
@@ -616,6 +664,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     typicalDosing: '1 drop once daily, typically starting 1 day before surgery and continued for about 2 weeks postoperatively.',
     concentrations: ['0.09% (Bromday, Prolensa)', '0.075% (BromSite, with DuraSite delivery vehicle)'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -645,6 +694,9 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited systemic absorption with topical use; as with other NSAIDs, caution is advised in the third trimester due to theoretical risk of premature ductus arteriosus closure with systemic NSAID exposure.',
+    pediatricConsiderations: [
+      'Safety and effectiveness of Prolensa and Bromday have not been established in pediatric patients below 18 years of age.',
+    ],
     monitoring: [
       'Corneal epithelial integrity during the treatment course',
       'Postoperative inflammation response',
@@ -679,6 +731,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     typicalDosing: '1 drop 4 times daily, typically for up to 2 weeks postoperatively; short courses (1-3 days) for corneal trauma/PRK pain.',
     concentrations: ['0.1% solution'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -707,6 +760,14 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical ocular use; systemic NSAIDs generally avoided in the third trimester — use topical formulation cautiously and only when benefit outweighs risk.',
+    pediatricConsiderations: [
+      'Safety and effectiveness have not been established in pediatric patients; Canadian product labeling explicitly states safety and dosing are not established in children under 18 years of age.',
+    ],
+    offLabelUses: [
+      'Pain relief after photorefractive keratectomy (PRK), short-term',
+      'Pain relief after corneal foreign body removal or minor corneal trauma, short-term',
+    ],
+    relatedConditionIds: ['corneal-abrasion', 'corneal-conjunctival-foreign-body'],
     monitoring: [
       'Corneal epithelial healing status, especially after PRK or epithelial debridement',
       'Symptom control (pain, photophobia)',
@@ -746,6 +807,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     typicalDosing: '1-2 drops immediately prior to the procedure; repeat as needed for procedure duration, strictly in-office.',
     concentrations: ['0.5% solution'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -775,6 +837,10 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Used only as a single/limited in-office dose for diagnostic purposes; systemic absorption is negligible, making risk minimal for the brief clinical exposures typically used.',
+    pediatricConsiderations: [
+      'Widely and safely used in infants and children for brief in-office diagnostic anesthesia (e.g., tonometry, foreign body removal); no pediatric-specific dosing adjustment beyond standard single-drop dosing.',
+      'Strict avoidance of any take-home use is especially critical in pediatric patients, given the severe corneal toxicity risk with unsupervised chronic self-administration.',
+    ],
     monitoring: [
       'Corneal integrity after repeated in-office use during a single visit',
       'Watch for self-administered/abused use in patients presenting repeatedly with unexplained corneal findings (topical anesthetic abuse)',
@@ -811,6 +877,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     typicalDosing: '1-2 drops immediately before the procedure; may repeat as needed strictly within the office visit.',
     concentrations: ['0.5% solution'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -839,6 +906,9 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Used only for brief, single/limited in-office diagnostic dosing; negligible systemic absorption makes risk minimal at typical clinical use.',
+    pediatricConsiderations: [
+      'Used safely for brief in-office diagnostic/procedural anesthesia in children; the more pronounced stinging on instillation compared with proparacaine can make it less well tolerated in young or anxious pediatric patients.',
+    ],
     monitoring: [
       'Corneal surface integrity if used repeatedly within a visit',
       'Suspect topical anesthetic abuse in patients with recurrent, atypical non-healing keratitis and reduced corneal sensation',
@@ -875,6 +945,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       'Gel (3.5%): applied to the ocular surface and allowed to remain for 1-2 minutes prior to the procedure; solution formulations dosed as 1-2 drops immediately before the procedure, strictly in-office.',
     concentrations: ['3.5% gel (Akten)', 'compounded/preservative-free solutions in some settings'],
+    formulations: ['Gel', 'Solution'],
     route: 'Topical ophthalmic gel/solution',
     sideEffects: {
       ocular: [
@@ -903,6 +974,9 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Amide anesthetics like lidocaine have a favorable systemic safety profile in general use; topical ocular exposure is minimal and typically considered low risk for brief in-office diagnostic use.',
+    pediatricConsiderations: [
+      'Amide anesthetics such as lidocaine are generally well tolerated in children for in-office procedures; as with all topical anesthetics, strict in-office-only use applies and it should never be dispensed for home use in pediatric patients.',
+    ],
     monitoring: [
       'Corneal surface integrity, particularly with repeated in-office application',
       'Suspect topical anesthetic abuse in any patient with recurrent, non-healing, atypical keratitis with reduced corneal sensation',
@@ -941,6 +1015,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       '1 drop in each eye twice daily, approximately 12 hours apart; therapeutic effect (increased tear production) typically takes weeks to months to become apparent — not a fast-acting therapy.',
     concentrations: ['0.05% emulsion (Restasis)', '0.09% solution (Cequa)'],
+    formulations: ['Emulsion', 'Solution'],
     route: 'Topical ophthalmic emulsion/solution',
     sideEffects: {
       ocular: [
@@ -970,6 +1045,10 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Systemic absorption from topical ocular use is minimal; use only if clearly needed, with a preference for caution given limited specific ocular formulation data in pregnancy.',
+    pediatricConsiderations: [
+      'Safety and effectiveness of Restasis have not been established in pediatric patients below 16 years of age.',
+    ],
+    relatedConditionIds: ['dry-eye-disease'],
     monitoring: [
       'Tear production (Schirmer testing) and symptom improvement over months of therapy',
       'Ocular surface staining (corneal/conjunctival) to assess response',
@@ -1006,6 +1085,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     typicalDosing: '1 drop in each eye twice daily, approximately 12 hours apart.',
     concentrations: ['5% solution'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -1034,6 +1114,10 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; systemic absorption is low with topical use, but use only if clearly needed given limited pregnancy-specific safety data.',
+    pediatricConsiderations: [
+      'Safety and effectiveness of Xiidra have not been established in pediatric patients below 17 years of age.',
+    ],
+    relatedConditionIds: ['dry-eye-disease'],
     monitoring: [
       'Symptom improvement (dry eye symptom scores) and objective signs (corneal staining) over the treatment course',
       'Tolerability, particularly instillation-site burning and taste disturbance',
@@ -1071,6 +1155,7 @@ export const antiInflammatoryDrugs: Drug[] = [
     typicalDosing:
       'Compounded ophthalmic ointment/solution typically 0.02-0.03%, applied 1-2 times daily; dosing and formulation vary by compounding pharmacy since there is no FDA-approved ophthalmic tacrolimus product.',
     concentrations: ['0.02% compounded ophthalmic ointment/solution (variable by compounding pharmacy; not FDA-approved for ophthalmic use)'],
+    formulations: ['Ointment', 'Solution'],
     route: 'Topical ophthalmic ointment/solution (compounded, off-label)',
     sideEffects: {
       ocular: [
@@ -1102,6 +1187,14 @@ export const antiInflammatoryDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited specific ophthalmic safety data given off-label/compounded status; systemic tacrolimus carries known immunosuppressive considerations in pregnancy — use only if clearly needed and under close specialist guidance.',
+    pediatricConsiderations: [
+      'Multiple pediatric case series and prospective studies (children as young as 2-5 years) report good efficacy and long-term safety of topical tacrolimus 0.03%-0.1% for refractory VKC, supporting off-label pediatric use when conventional therapy fails.',
+    ],
+    offLabelUses: [
+      'Severe vernal keratoconjunctivitis (VKC) and atopic keratoconjunctivitis (AKC) refractory to standard therapy',
+      'Steroid-sparing therapy for chronic refractory ocular surface inflammatory disease',
+    ],
+    relatedConditionIds: ['vernal-keratoconjunctivitis', 'atopic-keratoconjunctivitis'],
     monitoring: [
       'Symptom and sign improvement in refractory VKC/AKC (papillae, limbal changes, corneal involvement)',
       'Watch for signs of secondary ocular surface infection',

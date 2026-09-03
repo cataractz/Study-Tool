@@ -21,6 +21,7 @@ export const ophthalmicAdditional: Drug[] = [
     typicalDosing:
       '1 drop in the affected eye(s) 3 times daily (4-12 hours apart) for 7 days.',
     concentrations: ['0.6%'],
+    formulations: ['Suspension'],
     route: 'Topical ophthalmic suspension (DuraSite vehicle)',
     sideEffects: {
       ocular: [
@@ -58,6 +59,10 @@ export const ophthalmicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ophthalmic fluoroquinolones have minimal systemic absorption; generally considered low risk in pregnancy and lactation, but use only when clearly needed and per prescriber judgment.',
+    pediatricConsiderations: [
+      'Approved for bacterial conjunctivitis in patients 1 year of age and older; safety and effectiveness in infants below 1 year have not been established',
+    ],
+    relatedConditionIds: ['conjunctivitis'],
     monitoring: [
       'Clinical resolution of conjunctival injection and discharge within the treatment course',
       'Reassess if no improvement, which may suggest a resistant organism or non-bacterial etiology',
@@ -104,6 +109,7 @@ export const ophthalmicAdditional: Drug[] = [
     typicalDosing:
       'Fortified topical: 1 drop every 30-60 minutes initially (including overnight for severe cases), tapering frequency as clinical improvement is seen, guided by culture results. Intravitreal (endophthalmitis, specialist administration): a single injected dose per institutional protocol.',
     concentrations: ['Fortified 25-50 mg/mL (compounded topical drop)', 'Intravitreal: typically 1 mg/0.1 mL (specialist-administered)'],
+    formulations: ['Solution', 'Injection'],
     route: 'Topical ophthalmic (compounded fortified drop) or intravitreal/intracameral injection for severe cases',
     sideEffects: {
       ocular: [
@@ -138,6 +144,13 @@ export const ophthalmicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited specific data on topical/compounded ophthalmic use; given minimal systemic absorption, generally considered lower risk than systemic IV vancomycin, but should be used only when clearly indicated for vision-threatening infection.',
+    pediatricConsiderations: [
+      'No dedicated pediatric labeling exists since this is a compounded (non-commercial) preparation; fortified vancomycin, often paired with fortified tobramycin, is a standard empiric choice for severe pediatric bacterial keratitis given the relatively high frequency of ocular surface bacterial infection in children',
+    ],
+    offLabelUses: [
+      'Compounded topical ophthalmic use of a systemic IV antibiotic — entirely off-label, as no FDA-approved ophthalmic vancomycin product exists',
+    ],
+    relatedConditionIds: ['bacterial-keratitis', 'endophthalmitis'],
     monitoring: [
       'Serial slit lamp exams to track infiltrate size, epithelial defect, and stromal depth',
       'Corneal culture and sensitivity results to confirm organism and guide de-escalation or agent switch',
@@ -183,6 +196,7 @@ export const ophthalmicAdditional: Drug[] = [
     typicalDosing:
       '1 drop every 30-60 minutes initially (including overnight for severe cases), tapering frequency with clinical improvement and once culture/sensitivity results allow narrowing of therapy.',
     concentrations: ['Fortified 33-50 mg/mL (compounded topical drop)'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic (compounded fortified drop)',
     sideEffects: {
       ocular: [
@@ -216,6 +230,13 @@ export const ophthalmicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited specific data on topical/compounded ophthalmic use; given minimal systemic absorption, generally considered lower risk than systemic cefazolin, but should be used only when clearly indicated for vision-threatening infection.',
+    pediatricConsiderations: [
+      'No dedicated pediatric labeling exists since this is a compounded (non-commercial) preparation; historically a standard empiric fortified antibiotic choice (paired with fortified tobramycin) for severe pediatric bacterial keratitis',
+    ],
+    offLabelUses: [
+      'Compounded topical ophthalmic use of a systemic IV antibiotic — entirely off-label, as no FDA-approved ophthalmic cefazolin product exists',
+    ],
+    relatedConditionIds: ['bacterial-keratitis'],
     monitoring: [
       'Serial slit lamp exams to track infiltrate size, epithelial defect, and stromal depth',
       'Corneal culture and sensitivity results to confirm organism and guide de-escalation or agent switch',
@@ -265,6 +286,7 @@ export const ophthalmicAdditional: Drug[] = [
     typicalDosing:
       '1-2 drops in each eye 4-6 times daily, started before anticipated allergen exposure (e.g., in advance of allergy season) and continued regularly throughout the exposure period.',
     concentrations: ['4%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -297,6 +319,10 @@ export const ophthalmicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical ophthalmic use; generally considered low risk in pregnancy and lactation given cromolyn\'s long history of use and favorable systemic safety profile (including in intranasal and inhaled formulations).',
+    pediatricConsiderations: [
+      'Not recommended for children below 4 years of age (safety/effectiveness not established); no different pediatric side-effect profile is expected in children 4 years of age and older',
+    ],
+    relatedConditionIds: ['atopic-keratoconjunctivitis'],
     monitoring: [
       'Symptom frequency/severity over the course of regular use (weeks), rather than immediate response',
       'Adherence to regular dosing schedule, as efficacy depends heavily on consistent prophylactic use',
@@ -342,6 +368,7 @@ export const ophthalmicAdditional: Drug[] = [
     typicalDosing:
       '1-2 drops in each affected eye 4 times daily, for up to 3 months per standard labeling, started proactively and continued regularly through the period of disease activity.',
     concentrations: ['0.1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -427,6 +454,7 @@ export const ophthalmicAdditional: Drug[] = [
     typicalDosing:
       'Intravitreal injection: typically 1-4 mg per injection, administered by a retina specialist, repeated as clinically indicated based on recurrence of edema/inflammation (effect often lasts approximately 3 months). Periocular (sub-Tenon) injection: typically 20-40 mg per injection, administered by the treating ophthalmologist. Intraoperative vitreous staining: a small amount of suspension is instilled into the vitreous cavity during vitrectomy and largely removed by the end of the case.',
     concentrations: ['40 mg/mL suspension (preservative-free formulation preferred for intraocular use)'],
+    formulations: ['Injection'],
     route: 'Intravitreal or periocular (sub-Tenon) injection',
     sideEffects: {
       ocular: [
@@ -517,6 +545,7 @@ export const ophthalmicAdditional: Drug[] = [
     typicalDosing:
       'Approximately 1-1.5 g/kg body weight given orally as a single dose, typically mixed with a flavored, chilled liquid to improve palatability and reduce nausea; onset of IOP-lowering effect within about 10-30 minutes, peak effect around 1 hour, duration approximately 4-5 hours.',
     concentrations: ['50% oral solution'],
+    formulations: ['Solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [

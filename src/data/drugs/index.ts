@@ -15,6 +15,7 @@ import { antiVegfAndGlaucomaAdditional } from './anti-vegf-and-glaucoma-addition
 import { ophthalmicAdditional } from './ophthalmic-additional'
 import { systemicDiseaseSpecific } from './systemic-disease-specific'
 import { systemicAdditional } from './systemic-additional'
+import { emergencyAdditionalDrugs } from './emergency-additional'
 
 export const allDrugs: Drug[] = [
   ...antiInfectiveDrugs,
@@ -33,4 +34,5 @@ export const allDrugs: Drug[] = [
   ...ophthalmicAdditional,
   ...systemicDiseaseSpecific,
   ...systemicAdditional,
+  ...emergencyAdditionalDrugs,
 ]

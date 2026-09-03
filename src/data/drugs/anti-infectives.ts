@@ -24,6 +24,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Conjunctivitis: 1 drop in affected eye(s) 3 times daily for 7 days. Corneal ulcer (off-label, more aggressive): loading dose every 15-30 minutes for the first hour, then hourly, tapering as clinical improvement occurs.',
     concentrations: ['0.5%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -59,6 +60,14 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ophthalmic fluoroquinolones have minimal systemic absorption; generally considered low risk in pregnancy and lactation, but use only when clearly needed and per prescriber judgment.',
+    pediatricConsiderations: [
+      'Approved for bacterial conjunctivitis in patients 1 year of age and older since 2003; a 2017 label expansion, supported by neonatal trial data, extended the indication to patients less than 1 year of age, including newborns',
+      'No pediatric dose adjustment needed given minimal systemic absorption from topical dosing',
+    ],
+    offLabelUses: [
+      'Diluted intracameral injection at the conclusion of cataract surgery as prophylaxis against postoperative endophthalmitis',
+    ],
+    relatedConditionIds: ['bacterial-keratitis', 'conjunctivitis'],
     monitoring: [
       'Clinical resolution of conjunctival injection and discharge',
       'For corneal ulcers: serial slit lamp exams, epithelial defect size, infiltrate size/depth',
@@ -104,6 +113,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Conjunctivitis: 1-2 drops every 2 hours while awake for 2 days, then every 4 hours for 5 more days. Corneal ulcer: intensive loading dose (drops every 15-30 minutes initially) tapering per clinical response; ointment applied 3 times daily is an alternative regimen.',
     concentrations: ['0.3% solution', '0.3% ointment'],
+    formulations: ['Solution', 'Ointment'],
     route: 'Topical ophthalmic solution or ointment',
     sideEffects: {
       ocular: [
@@ -137,6 +147,11 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ophthalmic use results in minimal systemic absorption; generally considered acceptable when clearly needed, though systemic fluoroquinolones carry caution in pregnancy due to arthropathy risk in animal studies - use clinical judgment.',
+    pediatricConsiderations: [
+      'Solution approved for patients 1 year of age and older; ointment safety/effectiveness not established below 2 years of age',
+      'Unlike oral fluoroquinolones, topical ocular administration in immature-animal studies did not produce arthropathy/weight-bearing joint effects',
+    ],
+    relatedConditionIds: ['bacterial-keratitis', 'conjunctivitis'],
     monitoring: [
       'Slit lamp evaluation for corneal precipitates, especially with intensive dosing',
       'Resolution of infiltrate, epithelial defect healing',
@@ -181,6 +196,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Conjunctivitis: 1-2 drops every 2-4 hours for the first 2 days, then 4 times daily for up to 5 more days. Corneal ulcer: more frequent loading dose initially (e.g., hourly), tapering with clinical improvement.',
     concentrations: ['0.3%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -212,6 +228,10 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical ophthalmic use; generally considered low risk when clearly indicated, per prescriber judgment.',
+    pediatricConsiderations: [
+      'Approved for patients 1 year of age and older; safety/effectiveness in infants below 1 year are not formally established on the label, though FDA-reviewed neonatal trial data supported the same 7-day regimen as safe given minimal systemic absorption',
+    ],
+    relatedConditionIds: ['bacterial-keratitis', 'conjunctivitis'],
     monitoring: [
       'Symptom resolution and slit lamp exam for corneal clarity/infiltrate size',
       'Culture and sensitivity when applicable',
@@ -255,6 +275,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Conjunctivitis: 1-2 drops every 4 hours (mild-moderate) or ointment applied 2-3 times daily. Severe corneal ulcer: fortified 14% (compounded) drops dosed as frequently as every 30-60 minutes initially, tapering with improvement.',
     concentrations: ['0.3% solution', '0.3% ointment', 'Fortified 14% (compounded, hospital/ulcer use)'],
+    formulations: ['Solution', 'Ointment'],
     route: 'Topical ophthalmic solution or ointment',
     sideEffects: {
       ocular: [
@@ -288,6 +309,10 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ophthalmic aminoglycosides have minimal systemic absorption and are generally considered low risk; systemic aminoglycosides carry known fetal ototoxicity risk, which is not directly applicable to topical ocular dosing but reinforces cautious use.',
+    pediatricConsiderations: [
+      'Safety and effectiveness below 2 months of age have not been formally established; well-established, safe clinical use in older infants and children',
+    ],
+    relatedConditionIds: ['bacterial-keratitis', 'conjunctivitis', 'blepharitis'],
     monitoring: [
       'Corneal epithelial integrity, especially with fortified formulations',
       'Clinical response of infiltrate/ulcer',
@@ -335,6 +360,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Conjunctivitis/blepharitis: small ribbon applied to affected eye(s) or lid margins 2-4 times daily, or once nightly for blepharitis maintenance. Neonatal prophylaxis: single application to each eye shortly after birth (standard newborn protocol).',
     concentrations: ['0.5% ointment'],
+    formulations: ['Ointment'],
     route: 'Topical ophthalmic ointment',
     sideEffects: {
       ocular: [
@@ -365,6 +391,13 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Considered safe in pregnancy and lactation; erythromycin ophthalmic ointment is the standard-of-care agent for newborn ocular prophylaxis, reflecting a strong safety profile.',
+    pediatricConsiderations: [
+      'Standard-of-care agent for universal newborn ocular prophylaxis applied within the first hour of life; USPSTF review found no serious adverse effects associated with 0.5% ophthalmic ointment in neonates',
+    ],
+    offLabelUses: [
+      'Once-nightly application to the lid margins as an adjunct treatment for chronic blepharitis / meibomian gland dysfunction',
+    ],
+    relatedConditionIds: ['conjunctivitis', 'blepharitis', 'gonococcal-conjunctivitis', 'chlamydial-conjunctivitis-trachoma'],
     monitoring: [
       'Clinical resolution of conjunctival injection/discharge',
       'Lid margin appearance in blepharitis treatment',
@@ -407,6 +440,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       '1 drop in affected eye(s) every 3 hours (maximum 6 doses/day) for 7-10 days, per standard labeling.',
     concentrations: ['Polymyxin B 10,000 units/mL + Trimethoprim 1 mg/mL'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -437,6 +471,10 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Considered acceptable in pregnancy and lactation given minimal systemic absorption from topical ocular dosing; widely used in pediatric populations, reflecting a favorable safety profile.',
+    pediatricConsiderations: [
+      'Not recommended below 2 months of age (safety/effectiveness not established); a popular first-line choice in children 2 months and older given its favorable safety profile',
+    ],
+    relatedConditionIds: ['conjunctivitis'],
     monitoring: [
       'Resolution of conjunctival injection and discharge within several days',
       'Reassess if no improvement (consider viral etiology or resistant organism)',
@@ -481,6 +519,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Conjunctivitis: 1 drop twice daily for 2 days, then once daily for 5 more days. Blepharitis (off-label): once daily to twice daily dosing for extended courses, often pulsed (e.g., several days per month).',
     concentrations: ['1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution (DuraSite gel-forming vehicle)',
     sideEffects: {
       ocular: [
@@ -512,6 +551,13 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical use; generally considered low risk when clinically indicated, per prescriber judgment.',
+    pediatricConsiderations: [
+      'Safety and effectiveness below 1 year of age have not been established; efficacy for bacterial conjunctivitis was demonstrated in controlled trials in patients 1 year of age and older',
+    ],
+    offLabelUses: [
+      'Off-label pulsed dosing for chronic blepharitis / meibomian gland dysfunction, leveraging anti-inflammatory and lipid-modulating effects beyond the antibacterial action',
+    ],
+    relatedConditionIds: ['conjunctivitis', 'blepharitis'],
     monitoring: [
       'Resolution of conjunctival signs/symptoms',
       'Lid margin and meibomian gland appearance when used for blepharitis',
@@ -555,6 +601,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Conjunctivitis: 1-2 drops every 4 hours (mild-moderate) or ointment 2-3 times daily. Severe corneal ulcer: fortified formulation (compounded, typically 1.3-1.5%) dosed as frequently as every 30-60 minutes initially, tapering with clinical response.',
     concentrations: ['0.3% solution', '0.3% ointment', 'Fortified (compounded, hospital/ulcer use)'],
+    formulations: ['Solution', 'Ointment'],
     route: 'Topical ophthalmic solution or ointment',
     sideEffects: {
       ocular: [
@@ -588,6 +635,11 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ophthalmic use results in minimal systemic absorption and is generally considered low risk; systemic aminoglycosides carry known fetal ototoxicity risk, which reinforces cautious use though not directly applicable to topical ocular dosing.',
+    pediatricConsiderations: [
+      'No established safety/efficacy data in neonates; gentamicin ophthalmic ointment appears on the AAP "Key Potentially Inappropriate Drugs in Pediatrics" (KIDs) list for neonates due to reports of severe periocular reactions and should NOT be used for ophthalmia neonatorum prophylaxis',
+      'Use in children 1 month of age and older is permitted per labeling',
+    ],
+    relatedConditionIds: ['bacterial-keratitis', 'conjunctivitis'],
     monitoring: [
       'Corneal epithelial status, especially with fortified formulations',
       'Clinical response of infection/infiltrate',
@@ -636,6 +688,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       '1 drop onto the cornea every 2 hours while awake (maximum 9 drops/day) until the epithelial defect re-epithelializes, then reduced to 1 drop every 4 hours for an additional 7 days; total duration generally not exceeding about 21 days due to toxicity.',
     concentrations: ['1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic solution',
     sideEffects: {
       ocular: [
@@ -668,6 +721,10 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited systemic absorption with topical ophthalmic use; use only if clearly needed, weighing benefits versus theoretical risks, per prescriber judgment.',
+    pediatricConsiderations: [
+      'Safety and effectiveness in pediatric patients below 6 years of age have not been established',
+    ],
+    relatedConditionIds: ['hsv-keratitis'],
     monitoring: [
       'Serial slit lamp exams to track epithelial healing and monitor for drug toxicity',
       'Corneal sensation testing (herpetic disease can cause hypoesthesia)',
@@ -711,6 +768,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       '1 drop (gel) 5 times daily until the corneal ulcer heals, then 3 times daily for an additional 7 days.',
     concentrations: ['0.15% gel'],
+    formulations: ['Gel'],
     route: 'Topical ophthalmic gel',
     sideEffects: {
       ocular: [
@@ -742,6 +800,10 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical ophthalmic use; use when clearly indicated, weighing benefit versus theoretical risk, per prescriber judgment.',
+    pediatricConsiderations: [
+      'FDA-approved for acute herpetic keratitis (dendritic ulcers) in pediatric patients 2 years of age and older; safety and effectiveness below age 2 have not been established',
+    ],
+    relatedConditionIds: ['hsv-keratitis'],
     monitoring: [
       'Serial slit lamp exams to confirm re-epithelialization',
       'Corneal sensation and signs of progression to stromal involvement',
@@ -786,6 +848,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'HSV epithelial keratitis (treatment): typically dosed multiple times daily (5 times/day) for about 7-10 days. Herpes zoster ophthalmicus: higher dose regimen, typically 5 times daily for 7-10 days, ideally started within 72 hours of rash onset. Prophylaxis/suppression: lower dose, twice daily, often for extended periods (e.g., a year or longer) in patients with recurrent herpetic eye disease.',
     concentrations: ['Oral tablets/capsules - various strengths per manufacturer labeling'],
+    formulations: ['Tablet', 'Capsule', 'Oral suspension'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -817,6 +880,13 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Acyclovir has an extensive safety record in pregnancy and is generally considered compatible; used when clearly indicated for significant herpetic disease. Excreted in breast milk in small amounts - generally considered compatible with breastfeeding per standard references.',
+    pediatricConsiderations: [
+      'Well-established weight-based pediatric dosing for varicella and HSV (typically 20 mg/kg/dose, up to a maximum of 800 mg/dose); efficacy/safety for treating chickenpox in children under 2 years of age has not been established',
+    ],
+    offLabelUses: [
+      'Adjunctive therapy (with an oral corticosteroid) for Bell palsy of suspected herpetic etiology',
+    ],
+    relatedConditionIds: ['hsv-keratitis', 'hzo'],
     monitoring: [
       'Renal function periodically with prolonged or high-dose therapy',
       'Clinical resolution of herpetic ocular findings',
@@ -863,6 +933,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'HSV epithelial keratitis (treatment): typically dosed 3 times daily for about 7-10 days. Herpes zoster ophthalmicus: higher dose, typically 3 times daily for 7-10 days, ideally initiated within 72 hours of rash onset. Prophylaxis/suppression: lower once- or twice-daily dosing for extended periods in patients with recurrent herpetic eye disease.',
     concentrations: ['Oral tablets - various strengths per manufacturer labeling'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -894,6 +965,10 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Valacyclovir (via its active metabolite acyclovir) has an extensive safety record in pregnancy and is generally considered compatible when clearly indicated; considered compatible with breastfeeding per standard references given acyclovir excretion data.',
+    pediatricConsiderations: [
+      'FDA-approved pediatric dosing exists for chickenpox in immunocompetent patients 2 to less than 18 years of age (20 mg/kg 3 times daily); not approved for cold sores in patients under 12 years, and efficacy for chickenpox in children under 2 has not been established',
+    ],
+    relatedConditionIds: ['hsv-keratitis', 'hzo'],
     monitoring: [
       'Renal function periodically with prolonged or high-dose therapy',
       'Clinical resolution of herpetic ocular findings and recurrence frequency on suppressive therapy',
@@ -941,6 +1016,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       '1 drop every 1-2 hours initially for the first 3-4 days, then tapering the frequency gradually (e.g., every 3-4 hours) as the infection improves; total treatment duration is often prolonged (many weeks) given slow fungal clearance.',
     concentrations: ['5% suspension'],
+    formulations: ['Suspension'],
     route: 'Topical ophthalmic suspension',
     sideEffects: {
       ocular: [
@@ -972,6 +1048,10 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical ophthalmic use; use when clearly indicated for vision- or eye-threatening fungal infection, per prescriber judgment.',
+    pediatricConsiderations: [
+      'Safety and effectiveness in pediatric patients have not been formally established through controlled trials; used off-label in children based on adult data and a generally favorable low-toxicity profile, given fungal keratitis is vision-threatening regardless of age',
+    ],
+    relatedConditionIds: ['fungal-keratitis'],
     monitoring: [
       'Serial slit lamp exams to track infiltrate size, epithelial defect, and depth of involvement',
       'Corneal scraping/culture results to confirm fungal organism and guide duration of therapy',
@@ -1017,6 +1097,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Topical (compounded): 1 drop applied frequently (e.g., every 1-2 hours initially), tapering as clinically indicated, similar intensive regimen to other topical antifungals. Intrastromal/intracameral injection: administered by a cornea specialist as a targeted procedure, dosing and frequency individualized.',
     concentrations: ['1% compounded topical solution (typical compounding concentration)'],
+    formulations: ['Solution', 'Injection'],
     route: 'Topical ophthalmic solution (compounded) or intrastromal/intracameral injection',
     sideEffects: {
       ocular: [
@@ -1050,6 +1131,13 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited data on topical/compounded ophthalmic use; given minimal systemic absorption, generally considered lower risk than systemic use, but should be used only when clearly indicated per prescriber judgment.',
+    pediatricConsiderations: [
+      'No formal pediatric safety/efficacy data exist for compounded topical, intrastromal, or intracameral ophthalmic use; systemic (oral/IV) voriconazole is FDA-approved down to age 2, which informs off-label pediatric ophthalmic dosing decisions',
+    ],
+    offLabelUses: [
+      'Ophthalmic use (topical, intrastromal, or intracameral) of a systemically formulated antifungal — entirely off-label, since no FDA-approved ophthalmic voriconazole product exists',
+    ],
+    relatedConditionIds: ['fungal-keratitis'],
     monitoring: [
       'Serial slit lamp exams to assess infiltrate/ulcer response',
       'Corneal culture and susceptibility results to guide antifungal selection',
@@ -1095,6 +1183,7 @@ export const antiInfectiveDrugs: Drug[] = [
     typicalDosing:
       'Topical (compounded): 1 drop applied frequently (e.g., every 1-2 hours initially), tapering with clinical improvement, similar to other intensive topical antimicrobial regimens for corneal infection.',
     concentrations: ['0.15%-0.3% compounded topical solution (typical compounding range)'],
+    formulations: ['Solution', 'Injection'],
     route: 'Topical ophthalmic solution (compounded); intracameral/intravitreal injection for deep disease',
     sideEffects: {
       ocular: [
@@ -1128,6 +1217,13 @@ export const antiInfectiveDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited specific data on topical/compounded ophthalmic use; given minimal systemic absorption, generally considered lower risk than systemic administration, but should be used only when clearly indicated per prescriber judgment.',
+    pediatricConsiderations: [
+      'No formal pediatric safety/efficacy data exist for compounded topical, intracameral, or intravitreal ophthalmic use; systemic amphotericin B has an established pediatric safety record that informs off-label ophthalmic dosing',
+    ],
+    offLabelUses: [
+      'Ophthalmic use (topical, intracameral, or intravitreal) of a systemically formulated antifungal — entirely off-label, since no FDA-approved ophthalmic amphotericin B product exists',
+    ],
+    relatedConditionIds: ['fungal-keratitis', 'candida-endophthalmitis'],
     monitoring: [
       'Serial slit lamp exams for infiltrate/ulcer response and corneal epithelial integrity',
       'Corneal culture and susceptibility results to confirm yeast organism',

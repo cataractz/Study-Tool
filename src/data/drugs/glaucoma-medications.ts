@@ -17,6 +17,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     typicalDosing: 'One drop in affected eye(s) once daily in the evening',
     concentrations: ['0.005%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -53,6 +54,13 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Category C (pre-2015 FDA labeling)/use with caution - animal studies show potential for embryotoxicity at high doses; use in pregnancy only if benefits outweigh risks. Unknown if excreted in breast milk; caution advised while nursing.',
+    pediatricConsiderations: [
+      'Used off-label in pediatric glaucoma, including infants as young as 12 weeks of age, with the standard adult 0.005% once-daily dose generally well tolerated',
+      'IOP-lowering efficacy tends to be lower in children than in adults',
+      'Systemic latanoprost acid exposure is proportionally higher in younger/smaller children (lower body weight and blood volume), but this has not been associated with increased adverse events in studies to date',
+      'FDA labeling states safety and effectiveness in pediatric patients have not been formally established; pediatric use is off-label',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP at follow-up visits', 'Iris and periocular pigmentation changes', 'Macular status in at-risk patients (aphakia/pseudophakia, uveitis)'],
     clinicalPearls: [
       'Most commonly prescribed first-line glaucoma medication due to once-daily dosing, excellent efficacy, and favorable systemic side-effect profile',
@@ -82,6 +90,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['First-line or alternative IOP-lowering therapy in open-angle glaucoma', 'Ocular hypertension'],
     typicalDosing: 'One drop in affected eye(s) once daily in the evening',
     concentrations: ['0.004%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -112,6 +121,11 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - not recommended unless clearly needed; animal studies suggest potential fetal risk. Caution during lactation.',
+    pediatricConsiderations: [
+      'Pediatric safety and efficacy have not been formally established by FDA labeling; used off-label in children',
+      'Pediatric experience is more limited than for latanoprost, but the shared FP-receptor/uveoscleral-outflow mechanism means similar tolerability and side-effect expectations (iris pigmentation, lash growth) apply',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Iris/periocular pigmentation', 'Conjunctival hyperemia', 'Macular status in at-risk eyes'],
     clinicalPearls: [
       'Tends to cause more conjunctival hyperemia than latanoprost, which can affect patient tolerability',
@@ -140,6 +154,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['IOP-lowering therapy in open-angle glaucoma and ocular hypertension', 'Eyelash growth enhancement (Latisse formulation)'],
     typicalDosing: 'One drop in affected eye(s) once daily in the evening',
     concentrations: ['0.01%', '0.03%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -171,6 +186,11 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution during pregnancy; not recommended unless clearly needed. Caution advised during breastfeeding due to unknown excretion in milk.',
+    pediatricConsiderations: [
+      'Pediatric safety and efficacy for the glaucoma indication have not been formally established by FDA labeling; used off-label in children',
+      'The Latisse (0.03%) cosmetic eyelash indication is approved for adults only, not children',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Iris/periocular pigmentation', 'Conjunctival hyperemia', 'Eyelash changes'],
     clinicalPearls: [
       'Bimatoprost 0.01% (Lumigan) was reformulated from the original 0.03% to reduce hyperemia while maintaining efficacy',
@@ -199,6 +219,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['IOP-lowering therapy, particularly useful in patients requiring preservative-free therapy (e.g., preservative/BAK sensitivity, ocular surface disease)'],
     typicalDosing: 'One drop in affected eye(s) once daily in the evening',
     concentrations: ['0.0015%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -228,6 +249,11 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution during pregnancy; not recommended unless clearly needed. Caution during lactation.',
+    pediatricConsiderations: [
+      'Pediatric safety and efficacy have not been formally established by FDA labeling; used off-label in children',
+      'The preservative-free, single-use formulation may be particularly advantageous in pediatric patients who need chronic BAK-free therapy, though pediatric-specific outcome data are limited compared with latanoprost',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Iris/periocular pigmentation', 'Ocular surface health'],
     clinicalPearls: [
       'First and only preservative-free prostaglandin analog available in the US, packaged in single-use unit-dose vials',
@@ -258,6 +284,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['First-line/adjunctive IOP-lowering therapy', 'Component of combination glaucoma drops (e.g., dorzolamide/timolol)'],
     typicalDosing: 'One drop twice daily (gel-forming formulation Timoptic-XE dosed once daily in the morning)',
     concentrations: ['0.25%', '0.5%'],
+    formulations: ['Solution', 'Gel-forming solution (Timoptic-XE)'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -307,6 +334,16 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy; systemic beta-blockade may affect fetus/neonate (e.g., bradycardia). Excreted in breast milk - caution advised, monitor nursing infant.',
+    pediatricConsiderations: [
+      'Used off-label in infants and children with congenital/pediatric glaucoma for decades and is FDA-approved for topical ophthalmic use in general, though pediatric-specific safety/efficacy has not been separately established',
+      'Neonates and young infants are at meaningfully higher risk than adults for serious systemic beta-blockade - apnea, bradycardia, hypotension, hypothermia, and hypoglycemia - including case reports of life-threatening apnea',
+      'Punctal occlusion or eyelid closure for 1-2 minutes after instillation is especially important in this population to reduce nasolacrimal systemic absorption',
+      'Betaxolol (beta-1 selective) is sometimes preferred over timolol in pediatric patients with pulmonary risk factors given a theoretically lower bronchospasm risk',
+    ],
+    offLabelUses: [
+      'Topical treatment of superficial infantile hemangiomas (off-label alternative/adjunct to oral propranolol)',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension', 'infantile-capillary-hemangioma'],
     monitoring: ['IOP', 'Heart rate and blood pressure, especially at initiation', 'Pulmonary status (asthma/COPD symptoms)', 'Signs of systemic beta-blockade'],
     clinicalPearls: [
       'Historically the first-line topical glaucoma agent before prostaglandin analogs became standard; still widely used, especially as combination therapy',
@@ -337,6 +374,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['IOP-lowering therapy, particularly preferred in patients with mild reactive airway disease where non-selective beta blockers are relatively contraindicated'],
     typicalDosing: 'One drop twice daily',
     concentrations: ['0.25% (suspension, Betoptic S)', '0.5% (solution)'],
+    formulations: ['Suspension', 'Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -375,6 +413,12 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy; limited human data. Caution during lactation - excretion in breast milk not well established.',
+    pediatricConsiderations: [
+      'Used off-label in pediatric glaucoma; its relative beta-1 selectivity has made it a preferred beta-blocker choice over non-selective agents (e.g., timolol) in some pediatric protocols to reduce pulmonary risk, and it has shown particular efficacy for primary congenital glaucoma in pediatric trials',
+      'Cardioselectivity is only relative, not absolute - systemic absorption precautions (punctal occlusion) and caution regarding bradycardia/bronchospasm still apply in infants and young children',
+      'Pediatric-specific dosing and long-term safety data remain more limited than for adults',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Heart rate/pulmonary status, especially in patients with respiratory disease', 'Ocular surface tolerance'],
     clinicalPearls: [
       'Preferred beta-blocker choice in patients with mild asthma/COPD when a topical beta blocker is still desired, due to relative beta-1 selectivity',
@@ -405,6 +449,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['Adjunctive or alternative IOP-lowering therapy', 'Component of combination products (e.g., dorzolamide/timolol)'],
     typicalDosing: 'One drop three times daily as monotherapy (twice daily when used adjunctively with a beta blocker)',
     concentrations: ['2%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -439,6 +484,12 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - limited data. Not recommended during breastfeeding unless clearly needed; unknown excretion in human milk.',
+    pediatricConsiderations: [
+      'Studied specifically in children under 6 years of age in prospective, randomized, controlled trials and found to be safe and well tolerated, supporting its off-label use in pediatric glaucoma',
+      'Often combined with a topical beta blocker (e.g., timolol) in pediatric regimens for additive IOP control',
+      'Sulfa-allergy caution and monitoring for corneal endothelial compromise apply in children as in adults',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Corneal endothelial status in at-risk patients', 'Signs of sulfonamide hypersensitivity reaction'],
     clinicalPearls: [
       'Topical CAI causes far fewer systemic side effects than oral acetazolamide because systemic absorption is much lower, but the sulfonamide moiety is retained, so caution with sulfa allergy remains clinically relevant',
@@ -468,6 +519,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['Adjunctive or alternative IOP-lowering therapy, particularly for patients who do not tolerate dorzolamide due to stinging'],
     typicalDosing: 'One drop three times daily (or twice daily when used adjunctively)',
     concentrations: ['1%'],
+    formulations: ['Suspension'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -498,6 +550,12 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - limited human data. Caution during breastfeeding; not recommended unless clearly needed.',
+    pediatricConsiderations: [
+      'Studied in pediatric patients under 6 years of age (in combination with levobetaxolol) and generally well tolerated with predominantly nonserious adverse events',
+      'Found to be more efficacious for glaucoma associated with systemic or ocular abnormalities than for primary congenital glaucoma specifically',
+      'Used off-label in pediatric glaucoma; pediatric-specific FDA labeling has not been established',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Corneal endothelial status in at-risk patients'],
     clinicalPearls: [
       'Better tolerated than dorzolamide with less stinging/burning on instillation because it is formulated at physiologic pH (dorzolamide is more acidic)',
@@ -537,6 +595,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     typicalDosing:
       'Oral: 250 mg tablets, one tablet 1-4 times daily (up to 1000 mg/day divided doses), or sustained-release 500 mg capsule twice daily; IV: 500 mg for acute emergency IOP reduction (e.g., acute angle closure)',
     concentrations: ['125 mg tablet', '250 mg tablet', '500 mg sustained-release capsule', '500 mg IV vial'],
+    formulations: ['Tablet', 'Sustained-release capsule', 'Injection'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: ['Transient myopia (rare, idiosyncratic)', 'No direct topical ocular surface effects since it is systemic'],
@@ -583,6 +642,13 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - teratogenic effects (limb defects) shown in animal studies at high doses; avoid unless clearly necessary, particularly in first trimester. Excreted in breast milk; caution during lactation.',
+    pediatricConsiderations: [
+      'Established weight-based pediatric dosing exists: approximately 10-30 mg/kg/day (max 1000 mg/day) in divided doses for glaucoma, and 25 mg/kg/day titrated up to a maximum of 100 mg/kg/day for idiopathic intracranial hypertension',
+      'Children are proportionally more susceptible to electrolyte disturbance (hypokalemia, metabolic acidosis) with weight-based systemic dosing, so serum electrolytes should be monitored closely',
+      'Renal ultrasonography is recommended if treatment continues beyond about 6 months, given the risk of renal calculi with prolonged use',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['primary-angle-closure-glaucoma', 'primary-open-angle-glaucoma', 'idiopathic-intracranial-hypertension', 'papilledema'],
     monitoring: [
       'Serum electrolytes (especially potassium), particularly with prolonged use',
       'Complete blood count with long-term use (risk of blood dyscrasias)',
@@ -622,6 +688,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['Adjunctive or alternative IOP-lowering therapy', 'Component of combination products (e.g., brimonidine/timolol)'],
     typicalDosing: 'One drop three times daily (every 8 hours)',
     concentrations: ['0.1%', '0.15%', '0.2%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -665,6 +732,12 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - limited human data. Not recommended during breastfeeding; excreted in breast milk with potential for CNS depression in the nursing infant.',
+    pediatricConsiderations: [
+      'Contraindicated in children younger than 2 years due to a well-documented risk of severe CNS/respiratory depression - apnea, bradycardia, hypotension, hypothermia, somnolence, and coma have been reported in infants, both from prescribed use and accidental ingestion',
+      'In children aged 2-7 years, somnolence/decreased alertness is very common (reported in roughly 50-83% of patients aged 2-6 years dosed 0.2% three times daily), with somnolence occurring less frequently (about 25%) in children 7 years and older/over 20 kg',
+      'Use in young children, when it occurs at all, requires close monitoring given markedly greater sensitivity to systemic alpha-2 agonist effects than adults',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Signs of allergic follicular conjunctivitis with chronic use', 'Blood pressure/cardiovascular status', 'Mental status/sedation'],
     clinicalPearls: [
       'Allergic follicular conjunctivitis develops in a substantial proportion of patients, often after months of therapy, and is a leading cause of drug discontinuation',
@@ -698,6 +771,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     typicalDosing: '0.5% one drop three times daily for short-term use; 1% one drop 1 hour before and immediately after anterior segment laser surgery',
     concentrations: ['0.5%', '1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -735,6 +809,14 @@ export const glaucomaMedicationDrugs: Drug[] = [
       'Report eye redness, itching, or swelling that develops over weeks of use',
     ],
     pregnancyLactation: 'Use with caution in pregnancy and breastfeeding - limited human data available.',
+    pediatricConsiderations: [
+      'Not established as safe for chronic pediatric glaucoma use; infants and young children are especially sensitive to its systemic alpha-agonist effects (as with other alpha-2 agonists in this class)',
+      'When used off-label for its diagnostic pupil-testing application in children, particularly those under 2 years of age, caution is warranted given greater susceptibility to systemic reactions even from small diagnostic doses',
+    ],
+    offLabelUses: [
+      'Pharmacologic diagnostic test for Horner syndrome (reverses anisocoria via denervation supersensitivity of the miotic pupil to alpha-1 stimulation) - an off-label alternative to cocaine testing',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma'],
     monitoring: ['IOP, particularly in the immediate postoperative period after laser surgery', 'Signs of allergic conjunctivitis with continued use'],
     clinicalPearls: [
       'Classic clinical use: instilled before and immediately after anterior segment laser procedures (e.g., SLT, ALT, YAG capsulotomy, YAG PI) to prevent post-laser IOP spikes',
@@ -765,6 +847,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['IOP-lowering therapy, particularly useful as it targets the diseased trabecular meshwork directly (the primary site of resistance in POAG)'],
     typicalDosing: 'One drop in affected eye(s) once daily in the evening',
     concentrations: ['0.02%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -790,6 +873,11 @@ export const glaucomaMedicationDrugs: Drug[] = [
       'Small red spots (petechiae) may appear at the white of the eye near the cornea - this is a known, generally benign effect',
     ],
     pregnancyLactation: 'Use with caution during pregnancy and lactation - limited human data available; use only if clearly needed.',
+    pediatricConsiderations: [
+      'Pediatric safety and efficacy have not been established by FDA labeling',
+      'As a newer drug class, pediatric-specific experience is limited compared with older, more extensively studied glaucoma medication classes (beta blockers, prostaglandins), so use in children remains off-label and uncommon',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Conjunctival hyperemia/tolerability', 'Corneal appearance (verticillata) on slit lamp exam'],
     clinicalPearls: [
       'First-in-class Rho kinase inhibitor approved for glaucoma, representing a novel mechanism directly targeting the trabecular meshwork (the primary site of outflow resistance in POAG)',
@@ -832,6 +920,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     typicalDosing: 'Open-angle glaucoma: one drop up to 4 times daily; Acute angle closure: one drop every 15 minutes for up to 2 doses, then reassess (concentration and regimen individualized)',
     concentrations: ['0.5%', '1%', '2%', '4%', '6%', '1.25% (Vuity, presbyopia)'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -874,6 +963,15 @@ export const glaucomaMedicationDrugs: Drug[] = [
       'Nearby/distance vision may blur due to induced accommodative spasm',
     ],
     pregnancyLactation: 'Use with caution in pregnancy and lactation; limited data, use only if clearly needed.',
+    pediatricConsiderations: [
+      'Children may be more prone to systemic cholinergic side effects and to the induced myopia/brow ache that limit tolerability, making pilocarpine a poor choice for chronic pediatric glaucoma management',
+      'Iris cysts are a recognized pediatric-specific side effect of chronic use, occurring more often in children than adults',
+      'Dilute pilocarpine diagnostic pupil testing in children should be performed cautiously given greater sensitivity to cholinergic effects',
+    ],
+    offLabelUses: [
+      'Dilute (0.1%) pilocarpine as a pharmacologic diagnostic test for tonic (Adie) pupil, exploiting denervation supersensitivity',
+    ],
+    relatedConditionIds: ['primary-angle-closure-glaucoma', 'primary-open-angle-glaucoma'],
     monitoring: ['IOP', 'Peripheral retinal examination (dilated fundus exam) given retinal detachment risk, especially in myopes', 'Symptoms of cholinergic toxicity with high doses', 'Lens status (cataract) with long-term use'],
     clinicalPearls: [
       'Historically among the earliest glaucoma medications (used since the 19th century) but now largely supplanted by prostaglandins, beta blockers, and other newer classes for chronic open-angle glaucoma due to poor tolerability (brow ache, blurred vision, multiple daily dosing)',
@@ -913,6 +1011,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     typicalDosing: 'IV infusion, typically 1-2 g/kg body weight of a 20% solution, infused over 30-60 minutes',
     concentrations: ['20% IV solution (commonly used); also available in other concentrations (5%, 10%, 15%, 25%)'],
+    formulations: ['Injection'],
     route: 'Intravenous',
     sideEffects: {
       ocular: ['Transient blurred vision', 'No direct topical ocular toxicity (systemic drug)'],
@@ -950,6 +1049,12 @@ export const glaucomaMedicationDrugs: Drug[] = [
       'Report chest pain, shortness of breath, or palpitations during infusion immediately',
     ],
     pregnancyLactation: 'Use only if clearly needed in pregnancy; generally reserved for emergency, short-term use given the acute clinical indication. Limited lactation data.',
+    pediatricConsiderations: [
+      'Used off-label in pediatric ocular emergencies (e.g., acute angle-closure or malignant glaucoma) with weight-based IV dosing, typically in the range of 0.5-2 g/kg',
+      'Children may be more sensitive than adults to fluid and electrolyte shifts from osmotic diuresis, so careful monitoring of hydration status, electrolytes, and cardiovascular status is essential during and after infusion',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['primary-angle-closure-glaucoma', 'malignant-glaucoma'],
     monitoring: [
       'Serum electrolytes (sodium, potassium) and renal function before, during, and after infusion',
       'Fluid balance/urine output',
@@ -988,6 +1093,7 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ocularUses: ['IOP-lowering therapy in patients insufficiently controlled on monotherapy, offered as a single combination bottle to improve adherence and reduce washout effect of separately timed drops'],
     typicalDosing: 'One drop in affected eye(s) twice daily',
     concentrations: ['2% dorzolamide / 0.5% timolol'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -1029,6 +1135,11 @@ export const glaucomaMedicationDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy and lactation, reflecting the combined precautions of both timolol and dorzolamide; use only if clearly needed.',
+    pediatricConsiderations: [
+      'Fixed-dose combination products, including this one, have not been extensively studied in the pediatric population',
+      'When used off-label in children, it carries the pediatric precautions of both components: the systemic beta-blockade risk (apnea, bradycardia, hypothermia in infants) associated with timolol, and the sulfonamide-related considerations associated with dorzolamide',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Heart rate/blood pressure/pulmonary status (timolol component)', 'Ocular surface tolerability', 'Signs of sulfonamide hypersensitivity'],
     clinicalPearls: [
       'A fixed-dose combination reduces the number of daily bottles and can improve adherence, but shares the additive side-effect and contraindication burden of BOTH component drugs',
