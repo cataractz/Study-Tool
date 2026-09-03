@@ -1,6 +1,8 @@
 import { type ReactNode, useState } from 'react'
-import { Copy, Check, RotateCcw } from 'lucide-react'
+import { Copy, Check, RotateCcw, AlertCircle } from 'lucide-react'
 import { Button } from '../../components/ui/Button'
+import { Card } from '../../components/ui/Card'
+import type { CalculationTrace } from '../../types/calculator'
 
 export function NumberField({
   label,
@@ -93,6 +95,28 @@ export function StepsList({ steps }: { steps: string[] }) {
         <li key={i}>{s}</li>
       ))}
     </ol>
+  )
+}
+
+/** Live step-by-step breakdown shown on the Calculate tab, built from the user's actual inputs. */
+export function CalculationStepsCard({ trace }: { trace: CalculationTrace }) {
+  return (
+    <Card className="bg-slate-50 border-slate-200">
+      <p className="text-xs font-medium text-slate-500 mb-2">Step-by-step</p>
+      <p className="font-mono text-xs text-slate-500 mb-1">{trace.formula}</p>
+      <p className="font-mono text-xs text-slate-600 mb-3">{trace.substitution}</p>
+      <StepsList steps={trace.steps} />
+      <p className="text-sm font-medium text-slate-800 mt-3 pt-3 border-t border-slate-200">{trace.finalAnswerText}</p>
+    </Card>
+  )
+}
+
+/** Inline validation/error message, for calculators that want a consistent look beyond NumberField's per-field error. */
+export function ErrorText({ message }: { message: string }) {
+  return (
+    <p className="flex items-center gap-1.5 text-sm text-red-600">
+      <AlertCircle size={14} className="shrink-0" /> {message}
+    </p>
   )
 }
 

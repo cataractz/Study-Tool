@@ -49,3 +49,12 @@ export function isValidNumber(n: unknown): n is number {
 export function withinTolerance(userValue: number, correctValue: number, tolerance: number): boolean {
   return Math.abs(userValue - correctValue) <= tolerance + 1e-9
 }
+
+/** Runs an engine function and turns a thrown Error into a message string instead of letting it propagate. */
+export function safeCompute<T>(fn: () => T): { result: T; error: null } | { result: null; error: string } {
+  try {
+    return { result: fn(), error: null }
+  } catch (e) {
+    return { result: null, error: e instanceof Error ? e.message : 'Calculation error' }
+  }
+}

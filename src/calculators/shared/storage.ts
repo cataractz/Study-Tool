@@ -1,4 +1,6 @@
 const FAVORITES_KEY = 'study-tool.calculators.favorites.v1'
+const RECENTS_KEY = 'study-tool.calculators.recents.v1'
+const RECENTS_LIMIT = 8
 
 function readList(key: string): string[] {
   try {
@@ -32,4 +34,20 @@ export function toggleFavorite(id: string): string[] {
   const next = current.includes(id) ? current.filter((x) => x !== id) : [...current, id]
   writeList(FAVORITES_KEY, next)
   return next
+}
+
+/** Recently-viewed calculator ids, most recent first. Stores ids only — no inputs, results, or patient data. */
+export function getRecents(): string[] {
+  return readList(RECENTS_KEY)
+}
+
+export function addRecent(id: string): string[] {
+  const current = getRecents().filter((x) => x !== id)
+  const next = [id, ...current].slice(0, RECENTS_LIMIT)
+  writeList(RECENTS_KEY, next)
+  return next
+}
+
+export function clearRecents(): void {
+  writeList(RECENTS_KEY, [])
 }

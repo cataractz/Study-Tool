@@ -19,6 +19,7 @@ import { PercivalsCriterion, meta as percivalsCriterionMeta } from './binocular-
 import { CACRatio, meta as cacRatioMeta } from './binocular-vision/CACRatio'
 import { FixationDisparity, meta as fixationDisparityMeta } from './binocular-vision/FixationDisparity'
 import { Accommodation, meta as accommodationMeta } from './accommodation/Accommodation'
+import { NraPra, meta as nraPraMeta } from './accommodation/NraPra'
 import { VisualAcuity, meta as visualAcuityMeta } from './visual-acuity/VisualAcuity'
 import { Keratometry, meta as keratometryMeta } from './keratometry/Keratometry'
 import { ConcentrationConverter, meta as concentrationMeta } from './pharmacology/ConcentrationConverter'
@@ -75,6 +76,7 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: cacRatioMeta, Component: CACRatio },
   { meta: fixationDisparityMeta, Component: FixationDisparity },
   { meta: accommodationMeta, Component: Accommodation },
+  { meta: nraPraMeta, Component: NraPra },
   { meta: visualAcuityMeta, Component: VisualAcuity },
   { meta: keratometryMeta, Component: Keratometry },
   { meta: concentrationMeta, Component: ConcentrationConverter },

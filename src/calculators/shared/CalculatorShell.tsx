@@ -6,6 +6,9 @@ import { Card } from '../../components/ui/Card'
 import { Badge, type BadgeTone } from '../../components/ui/Badge'
 import { isFavorite, toggleFavorite } from './storage'
 import { Linkify } from '../../components/shared/Linkify'
+import { calculatorRegistry } from '../registry'
+import { getDiseaseById } from '../../services/diseaseService'
+import { getExamTechniqueById } from '../../services/examTechniqueService'
 import type { CalculatorMeta } from '../../types/calculator'
 
 function boardTone(relevance: CalculatorMeta['boardRelevance']): BadgeTone {
@@ -137,6 +140,64 @@ export function CalculatorShell({
               <ul className="list-disc pl-5 space-y-0.5 mt-1">
                 {meta.limitations.map((l, i) => (
                   <li key={i}><Linkify text={l} /></li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {meta.relatedCalculatorIds && meta.relatedCalculatorIds.length > 0 && (
+            <div>
+              <p className="font-medium text-slate-700">Related calculators:</p>
+              <ul className="list-disc pl-5 space-y-0.5 mt-1">
+                {meta.relatedCalculatorIds.map((id) => {
+                  const related = calculatorRegistry.find((c) => c.meta.id === id)
+                  if (!related) return null
+                  return (
+                    <li key={id}>
+                      <Link to={`/calculators/${id}`} className="text-brand-600 hover:underline">
+                        {related.meta.name}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          )}
+          {((meta.relatedExamTechniqueIds && meta.relatedExamTechniqueIds.length > 0) ||
+            (meta.relatedDiseaseIds && meta.relatedDiseaseIds.length > 0)) && (
+            <div>
+              <p className="font-medium text-slate-700">Related to:</p>
+              <ul className="list-disc pl-5 space-y-0.5 mt-1">
+                {meta.relatedExamTechniqueIds?.map((id) => {
+                  const technique = getExamTechniqueById(id)
+                  if (!technique) return null
+                  return (
+                    <li key={id}>
+                      <Link to={`/exam-workup/technique/${id}`} className="text-brand-600 hover:underline">
+                        {technique.name}
+                      </Link>
+                    </li>
+                  )
+                })}
+                {meta.relatedDiseaseIds?.map((id) => {
+                  const disease = getDiseaseById(id)
+                  if (!disease) return null
+                  return (
+                    <li key={id}>
+                      <Link to={`/diseases/${id}`} className="text-brand-600 hover:underline">
+                        {disease.name}
+                      </Link>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          )}
+          {meta.references && meta.references.length > 0 && (
+            <div>
+              <p className="font-medium text-slate-700">References:</p>
+              <ul className="list-disc pl-5 space-y-0.5 mt-1">
+                {meta.references.map((r, i) => (
+                  <li key={i} className="text-xs text-slate-500">{r}</li>
                 ))}
               </ul>
             </div>

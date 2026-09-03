@@ -44,6 +44,14 @@ export interface CalculatorMeta {
   convention?: string
   /** Known limitations / caveats shown in the "About" panel */
   limitations?: string[]
+  /** Citation strings shown in the "About" panel, mirrors ExamTechnique.references */
+  references?: string[]
+  /** -> CalculatorMeta.id, curated (never auto-derived) */
+  relatedCalculatorIds?: string[]
+  /** -> Disease.id, only where a genuine clinical relationship exists */
+  relatedDiseaseIds?: string[]
+  /** -> ExamTechnique.id, only where a genuine relationship exists */
+  relatedExamTechniqueIds?: string[]
 }
 
 /** One answer field in a practice problem — supports multi-part answers (e.g. sphere + cyl + axis). */
@@ -68,3 +76,14 @@ export interface PracticeProblem {
 }
 
 export type PracticeGenerator = (difficulty: Difficulty) => PracticeProblem
+
+/**
+ * The Calculate-tab analog of PracticeProblem's formula/substitution/steps/finalAnswerText, but
+ * built from the user's actual current inputs rather than a randomly generated problem.
+ */
+export interface CalculationTrace {
+  formula: string
+  substitution: string
+  steps: string[]
+  finalAnswerText: string
+}

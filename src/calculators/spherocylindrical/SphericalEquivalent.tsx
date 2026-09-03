@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Card } from '../../components/ui/Card'
-import { NumberField, ResultStat, ResultActions } from '../shared/ui'
+import { NumberField, ResultStat, ResultActions, CalculationStepsCard } from '../shared/ui'
 import { CalculatorShell } from '../shared/CalculatorShell'
 import { PracticePanel } from '../shared/PracticePanel'
 import { parseNumeric, formatDiopter } from '../shared/format'
 import { sphericalEquivalent } from './sphericalEquivalent.engine'
-import type { CalculatorMeta, Difficulty, PracticeProblem } from '../../types/calculator'
+import type { CalculatorMeta, Difficulty, PracticeProblem, CalculationTrace } from '../../types/calculator'
 
 export const meta: CalculatorMeta = {
   id: 'spherical-equivalent',
@@ -23,6 +23,11 @@ export const meta: CalculatorMeta = {
   clinicalRelevance: 'Contact lens fitting, quick comparison of Rx magnitude, and refractive surgery planning.',
   supportsPractice: true,
   limitations: ['Gives the same value regardless of plus- or minus-cylinder notation, since transposition does not change SE.'],
+  references: [
+    'Benjamin WJ. Borish\'s Clinical Refraction, 2nd ed. Butterworth-Heinemann, 2006.',
+    'American Academy of Ophthalmology. Optics, Refraction, and Contact Lenses (BCSC Section 3).',
+  ],
+  relatedCalculatorIds: ['spherocylindrical-transposition', 'meridional-power'],
 }
 
 function Calculate() {
@@ -32,20 +37,24 @@ function Calculate() {
   const c = parseNumeric(cylinder)
   const result = s !== null && c !== null ? sphericalEquivalent(s, c) : null
 
+  const trace: CalculationTrace | null =
+    s !== null && c !== null && result !== null
+      ? {
+          formula: 'SE = Sphere + Cylinder / 2',
+          substitution: `SE = ${formatDiopter(s)} + (${formatDiopter(c)} / 2)`,
+          steps: [`SE = ${formatDiopter(s)} + ${formatDiopter(c / 2)}`],
+          finalAnswerText: `SE = ${formatDiopter(result)} D`,
+        }
+      : null
+
   return (
     <Card className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <NumberField label="Sphere" unit="D" value={sphere} onChange={setSphere} />
         <NumberField label="Cylinder" unit="D" value={cylinder} onChange={setCylinder} />
       </div>
-      {result !== null && (
-        <>
-          <ResultStat label="Spherical equivalent" value={`${formatDiopter(result)} D`} />
-          <p className="text-sm text-slate-600 font-mono">
-            SE = {formatDiopter(s!)} + ({formatDiopter(c!)} / 2) = {formatDiopter(result)} D
-          </p>
-        </>
-      )}
+      {result !== null && <ResultStat label="Spherical equivalent" value={`${formatDiopter(result)} D`} />}
+      {trace && <CalculationStepsCard trace={trace} />}
       <ResultActions
         copyText={result !== null ? `SE = ${formatDiopter(result)} D` : undefined}
         onReset={() => {
