@@ -13,6 +13,10 @@ import { CornealThicknessTable, meta as cornealThicknessTableMeta } from './Corn
 import { DiagnosticDropsTable, meta as diagnosticDropsTableMeta } from './DiagnosticDropsTable'
 import { NormalValuesGuide, meta as normalValuesGuideMeta } from './NormalValuesGuide'
 import { VisualFieldDefectLocalization, meta as visualFieldDefectLocalizationMeta } from './VisualFieldDefectLocalization'
+import { OctNormativeThicknessTable, meta as octNormativeThicknessTableMeta } from './OctNormativeThicknessTable'
+import { VisualFieldIndicesGuide, meta as visualFieldIndicesGuideMeta } from './VisualFieldIndicesGuide'
+import { ElectrophysiologyNormsTable, meta as electrophysiologyNormsTableMeta } from './ElectrophysiologyNormsTable'
+import { CorneaSpecularTopographyNormsTable, meta as corneaSpecularTopographyNormsTableMeta } from './CorneaSpecularTopographyNormsTable'
 
 export interface ReferenceEntry {
   meta: ReferenceMeta
@@ -32,6 +36,10 @@ export const referenceRegistry: ReferenceEntry[] = [
   { meta: diagnosticDropsTableMeta, Component: DiagnosticDropsTable },
   { meta: normalValuesGuideMeta, Component: NormalValuesGuide },
   { meta: visualFieldDefectLocalizationMeta, Component: VisualFieldDefectLocalization },
+  { meta: octNormativeThicknessTableMeta, Component: OctNormativeThicknessTable },
+  { meta: visualFieldIndicesGuideMeta, Component: VisualFieldIndicesGuide },
+  { meta: electrophysiologyNormsTableMeta, Component: ElectrophysiologyNormsTable },
+  { meta: corneaSpecularTopographyNormsTableMeta, Component: CorneaSpecularTopographyNormsTable },
 ]
 
 export function getReferenceById(id: string): ReferenceEntry | undefined {
