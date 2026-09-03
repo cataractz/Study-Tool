@@ -20,6 +20,9 @@ import { CACRatio, meta as cacRatioMeta } from './binocular-vision/CACRatio'
 import { FixationDisparity, meta as fixationDisparityMeta } from './binocular-vision/FixationDisparity'
 import { Accommodation, meta as accommodationMeta } from './accommodation/Accommodation'
 import { NraPra, meta as nraPraMeta } from './accommodation/NraPra'
+import { AccommodativeLagLead, meta as accommodativeLagLeadMeta } from './accommodation/AccommodativeLagLead'
+import { AccommodativeReserve, meta as accommodativeReserveMeta } from './accommodation/AccommodativeReserve'
+import { AmplitudeOfAccommodationHofstetter, meta as amplitudeHofstetterMeta } from './accommodation/AmplitudeOfAccommodationHofstetter'
 import { VisualAcuity, meta as visualAcuityMeta } from './visual-acuity/VisualAcuity'
 import { Keratometry, meta as keratometryMeta } from './keratometry/Keratometry'
 import { ConcentrationConverter, meta as concentrationMeta } from './pharmacology/ConcentrationConverter'
@@ -77,6 +80,9 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: fixationDisparityMeta, Component: FixationDisparity },
   { meta: accommodationMeta, Component: Accommodation },
   { meta: nraPraMeta, Component: NraPra },
+  { meta: accommodativeLagLeadMeta, Component: AccommodativeLagLead },
+  { meta: accommodativeReserveMeta, Component: AccommodativeReserve },
+  { meta: amplitudeHofstetterMeta, Component: AmplitudeOfAccommodationHofstetter },
   { meta: visualAcuityMeta, Component: VisualAcuity },
   { meta: keratometryMeta, Component: Keratometry },
   { meta: concentrationMeta, Component: ConcentrationConverter },

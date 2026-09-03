@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Card } from '../components/ui/Card'
 import { NumberField, ResultStat } from '../calculators/shared/ui'
 import { ReferenceShell } from './shared/ReferenceShell'
@@ -69,6 +70,14 @@ export function DondersTable() {
         <p className="text-xs text-slate-500">
           Hofstetter's formulas: Minimum = 15 − 0.25×age, Average = 18.5 − 0.30×age, Maximum = 25 − 0.40×age. Enter an
           age above to also highlight the nearest row in Donders' classic table below.
+        </p>
+        <p className="text-xs text-slate-500">
+          Need to compute Hofstetter's formula directly (with a live step-by-step breakdown and practice problems)?
+          Try the{' '}
+          <Link to="/calculators/amplitude-of-accommodation-hofstetter" className="text-brand-600 hover:underline font-medium">
+            Amplitude of Accommodation (Hofstetter's Formulas) calculator
+          </Link>
+          .
         </p>
       </Card>
 
