@@ -1319,4 +1319,122 @@ export const patientHistoryPreliminaryTechniques: ExamTechnique[] = [
       'Elliott DB, ed. Clinical Procedures in Primary Eye Care. 5th ed. Elsevier; 2021 — near addition determination chapter.',
     ],
   },
+  {
+    id: 'astigmatism-cylinder-classification',
+    name: 'Astigmatism and Cylinder Classification',
+    aliases: ['With-the-rule astigmatism', 'Against-the-rule astigmatism', 'Oblique astigmatism', 'Regular vs irregular astigmatism'],
+    category: 'Patient History & Preliminary Exam',
+    section: 'Refraction Concepts',
+    purpose:
+      'A conceptual/interpretive reference (not a hands-on procedure) for classifying astigmatism by axis orientation and by its relationship to the spherical component of the refractive error — the classification framework used to describe and communicate every cylindrical refractive finding on this site\'s retinoscopy, keratometry, topography, and subjective refraction entries.',
+    clinicalIndications: [
+      'Describing and documenting any measured astigmatism by axis orientation (with-the-rule, against-the-rule, oblique)',
+      'Classifying a refractive error that includes a cylindrical component by its relationship to the sphere (simple, compound, or mixed astigmatism)',
+      'Distinguishing regular astigmatism (correctable with a spectacle or soft toric lens) from irregular astigmatism (typically requiring a rigid gas-permeable or scleral lens for full correction)',
+      'Explaining an age-related axis shift (WTR in youth commonly drifting toward ATR with age) to a patient or in documentation',
+    ],
+    equipment: ['No equipment — this is an interpretive framework applied to retinoscopy, keratometry, topography, or subjective refraction findings'],
+    technique: [
+      'Identify the two principal meridians of the astigmatism (the steepest and flattest corneal or refractive meridians, 90° apart in regular astigmatism) from retinoscopy, keratometry, or topography',
+      'Classify by axis: with-the-rule (WTR) when the steepest meridian lies near 90° (vertical, ±20° in most conventions); against-the-rule (ATR) when the steepest meridian lies near 180° (horizontal, ±20°); oblique when the steepest meridian falls near 45° or 135°, outside either of the above ranges',
+      'Classify by relationship to the spherical component: simple myopic astigmatism (one meridian myopic, the other emmetropic), compound myopic astigmatism (both meridians myopic, differing amounts), simple hyperopic astigmatism (one meridian hyperopic, the other emmetropic), compound hyperopic astigmatism (both meridians hyperopic, differing amounts), and mixed astigmatism (one meridian myopic, the other hyperopic — the two focal lines straddle the retina)',
+      'Classify regularity: regular astigmatism has two principal meridians exactly 90° apart with a smooth, uniform power gradient between them (correctable with a spectacle or standard toric lens); irregular astigmatism has principal meridians that are not 90° apart, or a corneal surface too irregular for uniform cylindrical correction (e.g. keratoconus, corneal scarring, some post-surgical corneas) — see the Manual Keratometry, Corneal Topography, and RGP/Scleral Lens Fitting entries for how irregular astigmatism is assessed and managed',
+      'Use the existing Spherocylindrical Transposition, Spherical Equivalent, and Meridional Power & Principal Meridians calculators for the underlying arithmetic of any specific prescription rather than deriving it by hand',
+    ],
+    normalFindings: ['Low degrees of astigmatism (commonly cited as roughly ≤0.75 D) are extremely common in the general population and are not inherently pathological'],
+    abnormalFindings: [
+      'Larger amounts of regular astigmatism (particularly progressively increasing) becoming visually significant and requiring correction',
+      'Irregular astigmatism with a scissors reflex on retinoscopy or an irregular/asymmetric bowtie pattern on topography — raises concern for keratoconus or other corneal ectasia, especially if progressive or asymmetric between the two eyes',
+      'A significant, new axis shift or magnitude change in a previously stable astigmatic correction, which should prompt re-evaluation of the cornea (topography) rather than simply updating the spectacle prescription',
+    ],
+    interpretation:
+      'With-the-rule astigmatism is more common in children and young adults, and the population tendency is to drift toward against-the-rule with advancing age (attributed to gradual changes in lid tension/corneal shape) — this is a population trend, not a rule for any individual patient, and should not be used to assume a measurement is correct without actually verifying it. Against-the-rule astigmatism is generally less well tolerated (more symptomatic for a given magnitude) than an equivalent amount of with-the-rule astigmatism, because ATR blur more often affects horizontal contours important for reading and because uncorrected ATR is more visually degrading at distance for a given magnitude — sources vary somewhat on the exact mechanism and degree of this difference, so treat this as a clinically useful generalization rather than a precise rule. Irregular astigmatism found on topography in a young patient, especially with other red flags (progressive myopic shift, family history, eye rubbing, atopy), should prompt a corneal ectasia workup rather than simply refracting around it.',
+    associatedConditionIds: ['astigmatism', 'myopia', 'hyperopia', 'keratoconus'],
+    clinicalPearls: [
+      'Remember the axis convention by the compass points it\'s named for: with-the-rule astigmatism has its steep meridian near 90° (vertical, like the poles on a globe); against-the-rule has its steep meridian near 180° (horizontal, like the equator).',
+      'A scissors reflex on retinoscopy is a specific clue to irregular astigmatism (classically keratoconus) and should prompt corneal topography rather than simply attempting a standard cylindrical refraction.',
+      'The population-level WTR-to-ATR age drift is a helpful sanity check when reviewing an old prescription, but a genuinely new or accelerating axis shift is a finding to investigate, not just update.',
+      'Mixed astigmatism (one meridian myopic, one hyperopic) has the special property that its spherical equivalent can be near zero even though the patient has significant uncorrected astigmatic blur — spherical equivalent alone can be misleading for this specific refractive type.',
+    ],
+    commonErrors: [
+      'Treating "with-the-rule" and "against-the-rule" as referring to the axis of the correcting minus-cylinder lens rather than the steep corneal/refractive meridian itself — the two are related by a 90° relationship depending on cylinder notation and this is a common source of confusion',
+      'Assuming any degree of astigmatism found is pathological rather than recognizing that low amounts are a common, usually benign refractive variant',
+      'Failing to distinguish regular from irregular astigmatism early, leading to repeated frustrating attempts at a stable soft toric or spectacle correction when a rigid or scleral lens (or topography-driven workup) is what the case actually calls for',
+    ],
+    limitations: [
+      'The exact angular range used to define "with-the-rule," "against-the-rule," and "oblique" (e.g. ±15° vs ±20° from the cardinal meridians) varies somewhat between textbooks and is a convention rather than a fixed physiologic boundary',
+      'This classification describes refractive/corneal findings, not their cause — WTR/ATR/oblique astigmatism and regular/irregular astigmatism can each arise from corneal, lenticular, or (rarely) retinal contributions, and this framework alone does not localize the source',
+    ],
+    relatedTechniqueIds: ['static-retinoscopy', 'retinoscopy-reflex-interpretation-neutralization', 'jackson-cross-cylinder-refinement', 'astigmatic-dial-fan-and-block-test', 'manual-keratometry', 'corneal-topography'],
+    relatedCalculatorIds: ['spherocylindrical-transposition', 'spherical-equivalent', 'meridional-power'],
+    references: [
+      'American Academy of Ophthalmology. "What Is the Difference Between Against-the-Rule and With-the-Rule Astigmatism?" EyeSmart / Ask an Ophthalmologist.',
+      'American Academy of Ophthalmology. Basic and Clinical Science Course (BCSC), Section 3: Clinical Optics — astigmatism classification.',
+      'Elliott DB, ed. Clinical Procedures in Primary Eye Care. 5th ed. Elsevier; 2021 — astigmatism classification and axis-shift-with-age discussion.',
+    ],
+  },
+  {
+    id: 'low-vision-trial-frame-refraction',
+    name: 'Low Vision Trial-Frame Refraction',
+    aliases: ['Low vision over-refraction', 'Trial frame refraction for low vision'],
+    category: 'Patient History & Preliminary Exam',
+    section: 'Low Vision Refraction',
+    isSpecialTest: true,
+    purpose:
+      'A modified subjective refraction technique adapted for patients with significantly reduced vision, using a trial frame (rather than a phoropter) and larger, vision-appropriate lens steps and testing distances to identify the refractive correction that maximizes usable vision, as a foundation for subsequent low-vision device selection.',
+    clinicalIndications: [
+      'Any patient with reduced best-corrected visual acuity from macular disease, optic nerve disease, media opacity, or other cause where standard phoropter-based refraction technique is unreliable or the endpoints (e.g. duochrome, standard JCC steps) are not perceivable',
+      'Prior to low-vision device evaluation (magnifiers, telescopes, electronic magnification), to ensure the baseline correction is truly optimized before adding external magnification',
+      'A patient reporting their correction "isn\'t working" who has significant vision loss, where a phoropter-based refraction may have under- or over-corrected due to the patient\'s difficulty perceiving small blur differences',
+    ],
+    equipment: [
+      'Trial frame and full trial lens set (a phoropter\'s smaller aperture, fixed working distance, and reliance on subtle blur discrimination make it poorly suited to low vision testing)',
+      'Low-vision-specific acuity charts (e.g. a logMAR chart with a larger range of optotype sizes, or a continuous-text/near chart) rather than a standard Snellen chart, which may have no discernible lines for a severely reduced-vision patient',
+      'A retinoscope, for an objective starting point when subjective responses are unreliable',
+    ],
+    patientPreparation: [
+      'Seat the patient comfortably with adequate task lighting, since many low-vision patients (particularly with macular or media-opacity disease) need substantially more illumination than a standard exam room provides to perform reliably',
+      'Explain the process clearly, including that lens changes will be larger than the patient may be used to from prior refractions',
+    ],
+    technique: [
+      'Start from an objective finding (retinoscopy or the patient\'s current correction) rather than starting subjective refinement from plano, to save time and reduce patient fatigue',
+      'Use the trial frame rather than the phoropter, since its larger field of view, absence of a fixed vertex distance/aperture, and easier lens-swapping better accommodate a low-vision patient\'s viewing behavior (e.g. eccentric viewing with a preferred retinal locus in macular disease)',
+      'Use substantially larger lens-power increments than standard refraction, guided by the "just noticeable difference" concept — a commonly cited rule of thumb bases the step size on the patient\'s presenting acuity (coarser acuity warrants a larger lens step to produce a perceptible change), rather than routine 0.25 D steps which may be imperceptible to a low-vision patient and simply waste time',
+      'Use an appropriately sized/spaced low-vision acuity chart for endpoint judgment, moving the patient closer to the chart if needed (and calculating the equivalent distance acuity) when even the largest optotype is not seen at the standard testing distance',
+      'Perform a trial-frame-based cylinder refinement using large-increment loose cylinder lenses or the JCC (see the Jackson Cross Cylinder Refinement entry) if the patient can perceive a difference, but accept that many advanced low-vision patients cannot reliably distinguish subtle cylinder axis/power differences, and that sphere alone may be the practical endpoint',
+      'Once the working distance correction is finalized, proceed to low-vision device evaluation (magnification, telescopes) using the existing magnification calculators as needed',
+    ],
+    normalFindings: ['Not applicable in the usual sense — this is an adapted refraction technique for an already vision-impaired population rather than a test with its own normal/abnormal result'],
+    abnormalFindings: [
+      'A best-corrected acuity that remains markedly reduced despite a carefully performed low-vision refraction — expected in this population and the reason the low-vision workup proceeds to device evaluation rather than assuming refraction alone will restore functional vision',
+      'A patient unable to reliably distinguish even large lens-power steps, suggesting acuity is too reduced for subjective refinement to add meaningful value beyond the objective (retinoscopic) finding',
+    ],
+    interpretation:
+      'The goal of low-vision refraction is not necessarily the theoretically most precise correction, but the correction the patient can reliably confirm improves their functional vision — a large-step, patient-centered endpoint that a severely vision-impaired patient can actually perceive and endorse is more clinically useful than a mathematically precise but imperceptible-to-the-patient result obtained by routine small-step technique. The refined correction becomes the baseline over which low-vision devices (magnifiers, telescopes) are subsequently evaluated, so time invested here is not wasted even when the acuity improvement from refraction alone is modest.',
+    associatedConditionIds: ['amd', 'diabetic-retinopathy', 'cataract'],
+    clinicalPearls: [
+      'Always start from an objective (retinoscopic) finding in a low-vision patient — subjective refinement from an arbitrary starting point wastes time and increases patient fatigue when responses are already less reliable than in a normally-sighted patient.',
+      'Use the trial frame, not the phoropter — the phoropter\'s narrower aperture and fixed geometry actively work against many low-vision patients\' eccentric viewing strategies.',
+      'Match the lens-power step size to the patient\'s acuity level rather than defaulting to habitual 0.25 D steps — an imperceptibly small step is not just inefficient, it can make the patient doubt their own responses and degrade the reliability of the rest of the exam.',
+      'Ensure adequate lighting before concluding a refractive endpoint is "as good as it gets" — under-illumination is a common, easily corrected reason for apparently poor low-vision refraction responses.',
+    ],
+    commonErrors: [
+      'Using standard 0.25 D refinement steps that fall below the patient\'s discrimination threshold, producing an unreliable, frustrating endpoint',
+      'Refracting with a standard Snellen chart that has no optotypes large enough for the patient to see any line, providing no usable endpoint target',
+      'Skipping the trial-frame refraction step entirely and moving straight to device selection, missing refractive correction that could have improved baseline acuity before magnification is even considered',
+      'Testing under standard exam-room lighting without adjusting for the patient\'s specific illumination needs',
+    ],
+    limitations: [
+      'Time-intensive compared to standard refraction, and reliability still depends on residual acuity — in profound vision loss, the achievable precision of subjective refinement is inherently limited',
+      'The "just noticeable difference" step-size guidance is a widely taught clinical rule of thumb rather than a single standardized formula found identically across all textbooks',
+    ],
+    relatedTechniqueIds: ['subjective-refraction', 'jackson-cross-cylinder-refinement', 'brightness-acuity-testing', 'potential-acuity-meter'],
+    relatedCalculatorIds: ['low-vision-magnification', 'angular-magnification', 'telescope-magnification'],
+    references: [
+      'Healio / Primary Care Optometry News. "An Accurate Trial Frame Refraction Is the Key to Managing Low Vision Patients."',
+      'Healio / Primary Care Optometry News. "Retinoscopy, Trial Frame Exam Key to Low Vision Refraction."',
+      'American Academy of Ophthalmology. Basic and Clinical Science Course (BCSC), Section 3: Clinical Optics — low vision refraction principles.',
+      'Cybersight (Orbis International). "Trial Frame Refraction: More Than Just \'1 or 2?\'" educational lecture.',
+    ],
+  },
 ]
