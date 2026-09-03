@@ -27,6 +27,11 @@ import { VergenceDemand, meta as vergenceDemandMeta } from './binocular-vision/V
 import { HirschbergKrimsky, meta as hirschbergKrimskyMeta } from './binocular-vision/HirschbergKrimsky'
 import { Anisometropia, meta as anisometropiaMeta } from './binocular-vision/Anisometropia'
 import { PrismNeutralization, meta as prismNeutralizationMeta } from './prism/PrismNeutralization'
+import { EquivalentViewingPower, meta as equivalentViewingPowerMeta } from './low-vision/EquivalentViewingPower'
+import { RequiredMagnification, meta as requiredMagnificationMeta } from './low-vision/RequiredMagnification'
+import { VisualAngleMAR, meta as visualAngleMarMeta } from './visual-acuity/VisualAngleMAR'
+import { SpatialFrequencyCPD, meta as spatialFrequencyCPDMeta } from './visual-acuity/SpatialFrequencyCPD'
+import { CornealEccentricity, meta as cornealEccentricityMeta } from './keratometry/CornealEccentricity'
 import { VisualAcuity, meta as visualAcuityMeta } from './visual-acuity/VisualAcuity'
 import { Keratometry, meta as keratometryMeta } from './keratometry/Keratometry'
 import { ConcentrationConverter, meta as concentrationMeta } from './pharmacology/ConcentrationConverter'
@@ -91,6 +96,11 @@ export const calculatorRegistry: CalculatorEntry[] = [
   { meta: hirschbergKrimskyMeta, Component: HirschbergKrimsky },
   { meta: anisometropiaMeta, Component: Anisometropia },
   { meta: prismNeutralizationMeta, Component: PrismNeutralization },
+  { meta: equivalentViewingPowerMeta, Component: EquivalentViewingPower },
+  { meta: requiredMagnificationMeta, Component: RequiredMagnification },
+  { meta: visualAngleMarMeta, Component: VisualAngleMAR },
+  { meta: spatialFrequencyCPDMeta, Component: SpatialFrequencyCPD },
+  { meta: cornealEccentricityMeta, Component: CornealEccentricity },
   { meta: visualAcuityMeta, Component: VisualAcuity },
   { meta: keratometryMeta, Component: Keratometry },
   { meta: concentrationMeta, Component: ConcentrationConverter },
