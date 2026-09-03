@@ -24,6 +24,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     typicalDosing:
       'Subcutaneous injection, typically 40 mg every other week for rheumatologic indications (loading dose regimens vary by indication); for uveitis, an 80 mg loading dose followed by 40 mg every other week starting one week later is a common regimen',
     concentrations: ['Subcutaneous injection'],
+    formulations: ['Injection (prefilled syringe/pen)'],
     route: 'Subcutaneous injection',
     sideEffects: {
       ocular: [
@@ -67,6 +68,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Crosses the placenta, particularly in the third trimester; generally considered compatible with pregnancy when needed to control maternal disease activity, though live vaccines should be delayed in infants exposed in utero. Minimal transfer into breast milk; generally considered compatible with breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved to treat moderately-to-severely active polyarticular juvenile idiopathic arthritis in children 4 years and older, and moderate-to-severe pediatric Crohn disease in children 6 years and older; also increasingly used for pediatric noninfectious uveitis, including JIA-associated uveitis.',
+      'TB and hepatitis B screening prior to initiation applies equally to pediatric patients before starting therapy.',
+    ],
+    relatedConditionIds: ['intermediate-uveitis', 'anterior-uveitis', 'rheumatoid-arthritis-ocular', 'crohn-disease', 'psoriatic-arthritis'],
     monitoring: [
       'Baseline and periodic dilated fundus examination in patients being treated for uveitis to assess inflammatory control',
       'New-onset visual symptoms, color vision changes, or optic nerve findings suggestive of optic neuritis',
@@ -109,6 +115,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     typicalDosing:
       'Intravenous infusion, typically 3-5 mg/kg (higher doses often used for uveitis, e.g., 5-10 mg/kg) at weeks 0, 2, and 6, then every 4-8 weeks for maintenance',
     concentrations: ['Intravenous infusion'],
+    formulations: ['Injection (intravenous infusion)'],
     route: 'Intravenous infusion',
     sideEffects: {
       ocular: [
@@ -150,6 +157,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Crosses the placenta, especially in the third trimester; generally used when maternal disease benefit outweighs risk, with attention to live-vaccine timing in exposed infants. Minimal transfer into breast milk; generally considered compatible with breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved for moderately-to-severely active pediatric Crohn disease and ulcerative colitis in children 6 years and older; also used off-label for pediatric Behcet disease-associated uveitis/retinal vasculitis and other severe refractory pediatric uveitis when other agents fail.',
+      'Immunogenicity (anti-drug antibody formation) can be more clinically significant in pediatric patients, sometimes prompting co-administration with methotrexate or azathioprine to reduce antibody formation and preserve efficacy.',
+    ],
+    relatedConditionIds: ['crohn-disease', 'ulcerative-colitis', 'behcet-disease', 'retinal-vasculitis-eales-disease', 'intermediate-uveitis'],
     monitoring: [
       'Periodic dilated fundus/anterior chamber examination to assess uveitis activity in patients treated for ocular inflammatory disease',
       'Visual acuity and color vision if optic neuritis is suspected',
@@ -191,6 +203,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     typicalDosing: 'Subcutaneous injection, 50 mg once weekly (or 25 mg twice weekly) for adults; weight-based dosing in pediatric patients',
     concentrations: ['Subcutaneous injection'],
+    formulations: ['Injection (prefilled syringe/pen)'],
     route: 'Subcutaneous injection',
     sideEffects: {
       ocular: [
@@ -230,6 +243,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Crosses the placenta in later pregnancy; use only if maternal benefit outweighs risk. Low levels detected in breast milk; generally considered compatible with breastfeeding with clinical judgment.',
+    pediatricConsiderations: [
+      'FDA-approved for moderately-to-severely active polyarticular juvenile idiopathic arthritis in children 2 years and older, one of the first biologics approved for pediatric JIA (1999); NOT preferred for pediatric uveitis given its comparatively higher reported rate of paradoxical uveitis induction and lower efficacy for ocular inflammatory disease relative to monoclonal anti-TNF agents.',
+      'TB/hepatitis B screening and live-vaccine precautions apply the same as in adults.',
+    ],
+    relatedConditionIds: ['rheumatoid-arthritis-ocular', 'psoriatic-arthritis', 'ankylosing-spondylitis'],
     monitoring: [
       'Monitor for new or worsening ocular inflammation given the higher reported association with paradoxical uveitis in this drug relative to other anti-TNF agents',
       'Visual symptoms suggestive of optic neuritis',
@@ -266,6 +284,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral, typically 100-300 mg once daily initially, titrated up to 800 mg/day (in divided doses) as needed based on serum uric acid levels',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection (intravenous)'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -303,6 +322,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; use only if clearly needed during pregnancy. Excreted into breast milk in small amounts; generally used with caution during breastfeeding.',
+    pediatricConsiderations: [
+      'Used in pediatric oncology for prevention/treatment of tumor lysis syndrome and hyperuricemia during chemotherapy induction, typically 50-100 mg/m2 every 8 hours (or ~10 mg/kg/day, max 600 mg/day IV or 800 mg/day oral), started 24-48 hours before chemotherapy; an IV formulation is available for patients unable to take oral medication.',
+      'Rasburicase is now generally preferred over allopurinol for high-risk pediatric tumor lysis syndrome given its more rapid and complete uric-acid-lowering effect.',
+    ],
+    relatedConditionIds: ['gout-ocular'],
     monitoring: [
       'Periodic dilated eye examination for cataract formation with long-term use',
       'Serum uric acid levels to titrate therapy',
@@ -341,6 +365,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     typicalDosing:
       'Acute gout: 1.2 mg at onset, then 0.6 mg one hour later (maximum 1.8 mg over one hour); prophylaxis: 0.6 mg once or twice daily',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -377,6 +402,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered compatible with pregnancy when used for familial Mediterranean fever (well-studied in this population); use in gout during pregnancy only if clearly needed. Present in breast milk in small amounts; generally considered compatible with breastfeeding with monitoring.',
+    pediatricConsiderations: [
+      'FDA-approved for familial Mediterranean fever (FMF) in children 4 years and older, with age-based dosing (e.g., approximately 0.3-1.8 mg/day in children 4-6 years); real-world data suggest similar safety and efficacy in children younger than 4 despite the lack of formal FDA approval in that age group.',
+      'GI side effects remain the primary dose-limiting toxicity in pediatric FMF patients, similar to adults.',
+    ],
+    offLabelUses: ['Secondary prevention of major cardiovascular events (MI, stroke, coronary revascularization) at a low 0.5 mg once-daily dose — FDA-approved in 2023 under the brand Lodoco, a distinct cardiovascular anti-inflammatory indication from this drug\'s traditional gout/FMF uses'],
     monitoring: [
       'Renal and hepatic function periodically with chronic use',
       'CBC with chronic therapy (bone marrow suppression risk)',
@@ -417,6 +447,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     typicalDosing:
       'Highly variable by indication; anti-inflammatory/immunosuppressive dosing commonly starts at 1 mg/kg/day (up to 60-80 mg/day) for severe disease, then tapered; low-dose maintenance regimens (5-10 mg/day) also used for chronic conditions',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Delayed-release tablet', 'Oral solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -466,6 +497,13 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered the preferred systemic corticosteroid in pregnancy when needed, as placental 11-beta-hydroxysteroid dehydrogenase limits fetal exposure by converting it to inactive metabolites; used when maternal benefit outweighs risk. Low levels in breast milk; generally considered compatible with breastfeeding, particularly at lower doses.',
+    pediatricConsiderations: [
+      'Growth suppression is a major dose- and duration-dependent concern unique to pediatric use, particularly during puberty; alternate-day dosing regimens are often used in children with chronic conditions to minimize growth and HPA-axis suppression.',
+      'Children treated with supraphysiologic doses (greater than ~2.5 mg/m2/day prednisone-equivalent) for more than 4 weeks are at risk for secondary adrenal suppression, with risk rising substantially for courses beyond 6 months.',
+      'Also widely used in pediatrics for nephrotic syndrome, asthma exacerbations, and Kawasaki disease, in addition to the ocular/rheumatologic indications relevant here.',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['giant-cell-arteritis', 'optic-neuritis', 'anterior-uveitis', 'scleritis', 'thyroid-eye-disease'],
     monitoring: [
       'Dilated fundus examination and IOP monitoring with chronic systemic use to screen for steroid-response glaucoma and cataract',
       'Slit lamp examination for posterior subcapsular cataract formation',
@@ -509,6 +547,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     typicalDosing:
       'Ocular surface disease (MGD/blepharitis/rosacea): 20-50 mg once or twice daily (sub-antimicrobial/anti-inflammatory dosing); infectious indications: 100 mg once or twice daily',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Tablet', 'Oral suspension', 'Injection (intravenous)'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -550,6 +589,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy — crosses the placenta and can cause permanent tooth discoloration and inhibit bone growth in the fetus. Excreted in breast milk with theoretical risk of tooth staining in the infant; generally avoided during breastfeeding, particularly with prolonged courses.',
+    pediatricConsiderations: [
+      'Revised 2020 AAP/CDC guidance confirms that short courses (≤21 days, e.g., for Rocky Mountain spotted fever or other tick-borne illness) do NOT cause visible tooth staining or enamel hypoplasia in children of any age, reversing older blanket avoidance recommendations for children under 8 — this reflects doxycycline binding calcium less readily than older tetracyclines.',
+      'This revised safety data applies to short antimicrobial courses, not the longer-term low-dose regimens used for MGD/rosacea; prolonged or repeated courses in children under 8 still carry tooth-staining/enamel-hypoplasia risk, so chronic low-dose anti-inflammatory use is generally avoided in this age group.',
+    ],
+    relatedConditionIds: ['blepharitis', 'ocular-rosacea', 'recurrent-corneal-erosion'],
     monitoring: [
       'Fundus examination/optic nerve evaluation and symptom screening for papilledema if intracranial hypertension is suspected (especially with concurrent isotretinoin use)',
       'Clinical response of meibomian gland dysfunction/blepharitis/ocular rosacea to low-dose therapy',
@@ -582,6 +626,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral, 15-25 mg/kg once daily (dose and duration depend on regimen phase and renal function)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -622,6 +667,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered compatible with pregnancy when used as part of standard first-line TB therapy, as untreated maternal TB poses greater fetal/maternal risk; used with standard regimens. Excreted in breast milk in small amounts; generally considered compatible with breastfeeding.',
+    pediatricConsiderations: [
+      'Historically avoided in young children due to inability to reliably perform visual acuity and color vision testing, but revised WHO pediatric TB dosing (15-25 mg/kg/day rather than older lower doses) has been shown to have an excellent safety profile without an increased risk of optic toxicity.',
+      'In children too young for reliable color vision/visual field testing, alternative monitoring strategies (caregiver observation, deferring ethambutol when a resistant-organism regimen is not required) should be discussed with the treating physician.',
+    ],
+    relatedConditionIds: ['optic-neuritis', 'toxic-nutritional-optic-neuropathy', 'ocular-tuberculosis'],
     monitoring: [
       'BASELINE visual acuity, color vision testing, and visual field/Amsler grid before starting therapy',
       'MONTHLY visual acuity and color vision testing during treatment, especially for doses above 15 mg/kg/day or courses longer than 2 months, per most TB treatment guidelines',
@@ -662,6 +712,7 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for its distinctive, benign ocular/tear staining effect'],
     typicalDosing: 'Oral, 600 mg once daily (or 10 mg/kg/day) as part of combination TB therapy; dosing varies for other indications',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Injection (intravenous)', 'Oral suspension'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -698,6 +749,11 @@ export const systemicImmunosuppressant2AntiInfective: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered compatible with pregnancy as part of standard first-line TB therapy; used when treating active maternal TB given the greater risk of untreated disease. Small amounts excreted in breast milk; generally considered compatible with breastfeeding.',
+    pediatricConsiderations: [
+      'Standard component of pediatric TB combination therapy, dosed approximately 10-15 mg/kg/day; also used for meningococcal/Haemophilus influenzae type b prophylaxis in pediatric close contacts.',
+      'Orange-red discoloration of tears/secretions and soft contact lens staining apply identically in pediatric contact-lens wearers.',
+    ],
+    relatedConditionIds: ['ocular-tuberculosis'],
     monitoring: [
       'Counsel regarding contact lens wear and secretion discoloration at initiation of therapy (proactive counseling rather than reactive monitoring)',
       'Liver function tests periodically during treatment',

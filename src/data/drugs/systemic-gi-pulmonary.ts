@@ -19,6 +19,7 @@ export const systemicGiPulmonary: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: '20-40 mg orally once daily before a meal (typically before breakfast); some regimens use twice-daily dosing for refractory disease',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Tablet', 'Oral suspension'],
     route: 'Oral (delayed-release capsule/tablet)',
     sideEffects: {
       ocular: [
@@ -57,6 +58,11 @@ export const systemicGiPulmonary: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered low risk in pregnancy; used when clearly indicated (Category B/pre-2015 labeling). Excreted in breast milk in small amounts; generally considered compatible with breastfeeding when needed.',
+    pediatricConsiderations: [
+      'FDA-approved for erosive esophagitis and symptomatic GERD in children ≥1 month (oral suspension/capsule) and children 1-16 years, with weight-based dosing (e.g., 2.5-10 mg for infants weighing 3-20 kg).',
+      'Continuous IV infusion for critically ill children with GI bleeding is used off-label without a standardized pediatric dosing protocol.',
+    ],
+    offLabelUses: ['Stress ulcer/GI bleeding prophylaxis in critically ill pediatric and adult patients (continuous IV infusion)'],
     monitoring: [
       'No routine ophthalmic monitoring protocol required — ocular toxicity is rare and not a primary NBEO concern for this drug',
       'Ask about new blurred vision or dry eye symptoms in patients on long-term therapy, and manage dry eye symptomatically if present',
@@ -94,6 +100,7 @@ export const systemicGiPulmonary: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: '4-8 mg orally or intravenously, 1-2 times daily as needed; dosing varies by indication (e.g., higher single doses for chemotherapy prophylaxis)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Orally disintegrating tablet', 'Injection', 'Oral solution'],
     route: 'Oral, intravenous, or orally disintegrating tablet',
     sideEffects: {
       ocular: [
@@ -131,6 +138,11 @@ export const systemicGiPulmonary: Drug[] = [
     ],
     pregnancyLactation:
       'Commonly used off-label for hyperemesis gravidarum; generally considered relatively safe though some studies have raised a small possible association with cardiac septal defects with first-trimester use — use per obstetric guidance. Limited data on breastfeeding; generally considered low risk.',
+    pediatricConsiderations: [
+      'FDA-approved and extensively studied in children as young as 6 months (gastroenteritis-related vomiting) and 4 years (chemotherapy-induced nausea/vomiting), typically dosed 0.15 mg/kg/dose (maximum 16 mg/dose).',
+      'Single-dose oral ondansetron in pediatric acute gastroenteritis has NOT been shown to cause clinically significant QTc prolongation or arrhythmia, in contrast to higher-dose/rapid IV administration, which does carry dose-dependent QT risk.',
+    ],
+    offLabelUses: ['Nausea and vomiting of pregnancy (hyperemesis gravidarum)'],
     monitoring: [
       'No routine ophthalmic monitoring protocol required for this drug',
       'Ask about transient visual disturbance in patients receiving high-dose or IV ondansetron, particularly in the chemotherapy setting, though this is rare',
@@ -167,6 +179,7 @@ export const systemicGiPulmonary: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: '10 mg orally or intravenously up to four times daily, typically 30 minutes before meals and at bedtime; short-term use (generally under 12 weeks) recommended due to risk of tardive dyskinesia',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection', 'Oral solution'],
     route: 'Oral, intravenous, or intramuscular',
     sideEffects: {
       ocular: [
@@ -210,6 +223,11 @@ export const systemicGiPulmonary: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered relatively safe in pregnancy and commonly used for severe nausea/hyperemesis gravidarum. Excreted in breast milk and can increase prolactin/milk production; used with caution while nursing given infant CNS exposure risk.',
+    pediatricConsiderations: [
+      'Oral and intranasal metoclopramide are NOT recommended for use in pediatric patients given a markedly increased risk of tardive dyskinesia and other extrapyramidal reactions (including oculogyric crisis) compared with adults — dystonic reactions occur more frequently in children and adults under 30.',
+      'Additional pediatric-specific risk: methemoglobinemia has been reported in neonates given metoclopramide.',
+    ],
+    offLabelUses: ['Acute migraine (IV/IM administration in the emergency department, off-label)'],
     monitoring: [
       'Optometrist should recognize sudden, sustained upward eye deviation in a patient recently started on metoclopramide (or other dopamine antagonist) as an oculogyric crisis, not a neuro-ophthalmic emergency of central origin, and refer for prompt anticholinergic/antihistamine treatment',
       'Ask about recent medication changes in any patient presenting with acute abnormal eye movements or dystonia',
@@ -251,6 +269,7 @@ export const systemicGiPulmonary: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Metered-dose inhaler: 2 puffs (90 mcg/puff) every 4-6 hours as needed; nebulized solution: 2.5 mg in 3 mL saline every 4-8 hours as needed',
     concentrations: ['Inhaled formulation'],
+    formulations: ['Inhaler', 'Nebulizer solution', 'Tablet', 'Syrup'],
     route: 'Inhalation (metered-dose inhaler or nebulizer); oral tablet/syrup formulations also exist but are less commonly used',
     sideEffects: {
       ocular: [
@@ -289,6 +308,12 @@ export const systemicGiPulmonary: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered compatible with use in pregnancy when clinically indicated for asthma control, as poorly controlled maternal asthma poses greater fetal risk than the medication. Compatible with breastfeeding; minimal systemic absorption with inhaled use.',
+    pediatricConsiderations: [
+      'Weight-based nebulizer dosing for children ≤2 years (0.2-0.6 mg/kg/day divided every 4-6 hours) differs from the fixed 2.5 mg dosing typically used in children ≥2 years and adults.',
+      'Off-label nebulized/IV albuterol is used in neonates and infants for hyperkalemia (shifts potassium intracellularly), an important adjunctive use beyond its bronchodilator indication.',
+    ],
+    offLabelUses: ['Adjunctive treatment of hyperkalemia (nebulized or IV, to shift potassium intracellularly)'],
+    isEmergencyMedication: true,
     monitoring: [
       'No routine dilated ocular examination needed specifically for albuterol; ocular relevance is largely limited to noting mild transient mydriasis if a patient reports blur temporally associated with nebulizer mask use',
       'Consider medication history (nebulizer/mask use) in a patient presenting with unexplained transient mild pupil changes, particularly a bilateral or symmetric presentation given systemic administration',
@@ -324,6 +349,7 @@ export const systemicGiPulmonary: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Metered-dose inhaler: 2 puffs (17 mcg/puff) up to four times daily; nebulized solution: 500 mcg every 6-8 hours, often combined with albuterol in acute exacerbations',
     concentrations: ['Inhaled formulation'],
+    formulations: ['Inhaler', 'Nebulizer solution', 'Nasal spray'],
     route: 'Inhalation (metered-dose inhaler or nebulizer); intranasal spray formulation also available',
     sideEffects: {
       ocular: [
@@ -364,6 +390,11 @@ export const systemicGiPulmonary: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered low risk given minimal systemic absorption; used when clinically indicated for maternal respiratory disease. Minimal systemic absorption makes significant transfer into breast milk unlikely, though data are limited.',
+    pediatricConsiderations: [
+      'Nebulized ipratropium for acute moderate-to-severe asthma exacerbations is dosed by age (e.g., 0.25 mg every 20 minutes up to 3 doses in children ≤6 years; 0.25-0.5 mg every 20 minutes in children 6-12 years), added to (not substituted for) short-acting beta-agonist therapy.',
+      'Intranasal ipratropium is not FDA-approved for children ≤5 years.',
+    ],
+    isEmergencyMedication: true,
     monitoring: [
       'Optometrist should specifically ask about recent nebulizer treatments in any patient presenting with acute unilateral (or bilateral) mydriasis, especially if unexplained and accompanied by blurred near vision',
       'Assess anterior chamber angle depth in any patient with a history of narrow angles who reports symptoms after nebulizer use, to rule out precipitated angle closure',
@@ -403,6 +434,7 @@ export const systemicGiPulmonary: Drug[] = [
     typicalDosing:
       'Inhaled (Flovent): 88-880 mcg twice daily depending on disease severity and product strength; Intranasal (Flonase): 1-2 sprays (50 mcg/spray) per nostril once daily',
     concentrations: ['Inhaled formulation'],
+    formulations: ['Inhaler', 'Nasal spray'],
     route: 'Oral inhalation (metered-dose inhaler/dry powder inhaler) or intranasal spray',
     sideEffects: {
       ocular: [
@@ -439,6 +471,12 @@ export const systemicGiPulmonary: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered the preferred/relatively low-risk option for asthma/allergy control during pregnancy when treatment is needed, as inhaled/intranasal routes minimize systemic exposure compared to oral corticosteroids. Considered compatible with breastfeeding at typical doses given low systemic absorption.',
+    pediatricConsiderations: [
+      'Growth suppression is a recognized, dose-dependent risk with chronic pediatric use of inhaled/intranasal corticosteroids, including fluticasone — growth velocity should be periodically monitored in children on long-term therapy.',
+      'Swallowed fluticasone (off-label, age-adjusted puff strength) is used as maintenance therapy for pediatric eosinophilic esophagitis and has shown favorable growth outcomes in long-term studies, though adrenal suppression risk warrants monitoring.',
+    ],
+    offLabelUses: ['Eosinophilic esophagitis (swallowed/off-label use, in children and adults)'],
+    relatedConditionIds: ['steroid-induced-glaucoma'],
     monitoring: [
       'Baseline and periodic IOP measurement and lens examination (looking specifically for posterior subcapsular cataract) in patients on chronic, high-dose inhaled or intranasal corticosteroid therapy, especially those with glaucoma risk factors',
       'Identify "steroid responder" patients (IOP rise with steroid exposure) and monitor more closely, or discuss dose reduction with the prescribing physician if elevated IOP develops',
@@ -475,6 +513,7 @@ export const systemicGiPulmonary: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: '10 mg orally once daily in the evening (adults); lower weight-based doses (4-5 mg) for pediatric patients',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Chewable tablet', 'Oral granules'],
     route: 'Oral (tablet, chewable tablet, or oral granules)',
     sideEffects: {
       ocular: [
@@ -507,6 +546,10 @@ export const systemicGiPulmonary: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered compatible with use during pregnancy when clinically needed for asthma control, as uncontrolled maternal asthma poses a greater risk than the medication. Limited data on breastfeeding; generally considered low risk given the medication profile.',
+    pediatricConsiderations: [
+      'FDA-approved for asthma in children ≥1 year, exercise-induced bronchoconstriction ≥6 years, seasonal allergic rhinitis ≥2 years, and perennial allergic rhinitis ≥6 months — one of the more pediatric-friendly systemic asthma/allergy agents by approved age range.',
+      'The 2020 FDA boxed warning for neuropsychiatric events (agitation, aggression, nightmares, depression, suicidal ideation) specifically emphasized pediatric and adolescent patients as a population of particular concern.',
+    ],
     monitoring: [
       'No specific routine ophthalmic monitoring protocol required for this medication',
       'Consider medication history in a patient with unexplained diplopia when more common causes have been ruled out, though this remains a rare and low-yield association',
