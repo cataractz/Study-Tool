@@ -17,6 +17,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: '20 mg orally once daily (occasionally 20 mg twice daily), typically continued for 5-10 years in adjuvant breast cancer therapy',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Oral solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -61,6 +62,14 @@ export const systemicEndocrineOther: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy - fetal harm demonstrated in animal studies and case reports of fetal genital abnormalities; effective contraception required during and for months after therapy. Not recommended during breastfeeding.',
+    pediatricConsiderations: [
+      'Not indicated for pediatric breast cancer, which is exceedingly rare in this age group',
+      'Used off-label in pediatric endocrinology for McCune-Albright syndrome-associated precocious puberty and other gonadotropin-independent precocious puberty in girls, an application distinct from its oncologic use, with specialist-guided dosing',
+    ],
+    offLabelUses: [
+      'Male breast cancer',
+      'Gynecomastia treatment/prevention',
+    ],
     monitoring: [
       'Baseline dilated fundus exam prior to or shortly after initiating therapy, particularly in patients on higher cumulative doses',
       'Periodic dilated fundus exam and OCT of the macula to detect crystalline deposits or cystoid macular edema, especially with visual symptoms or long-term/high cumulative dose use',
@@ -96,6 +105,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry primarily through its role in glycemic control and diabetic eye disease risk reduction'],
     typicalDosing: '500 mg orally once or twice daily initially, titrated up to a typical maintenance dose of 1000 mg twice daily (maximum ~2550 mg/day); extended-release formulations dosed once daily',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Extended-release tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -134,6 +144,15 @@ export const systemicEndocrineOther: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered relatively safe in pregnancy for gestational diabetes management, though insulin remains preferred by many guidelines; compatible with breastfeeding based on available data.',
+    pediatricConsiderations: [
+      'FDA-approved for pediatric type 2 diabetes in patients 10 years of age and older (starting dose 500 mg orally twice daily); safety and effectiveness not established below age 10',
+      'Also studied off-label for pediatric obesity and adolescent polycystic ovary syndrome',
+    ],
+    offLabelUses: [
+      'Polycystic ovary syndrome (PCOS)',
+      'Prediabetes',
+    ],
+    relatedConditionIds: ['diabetes-mellitus-ocular-overview', 'diabetic-retinopathy'],
     monitoring: [
       'HbA1c and fasting glucose for glycemic control',
       'Renal function (eGFR) periodically',
@@ -169,6 +188,7 @@ export const systemicEndocrineOther: Drug[] = [
     typicalDosing:
       'Highly individualized based on weight, glycemic targets, and regimen; basal-bolus regimens commonly combine a long-acting basal insulin (once or twice daily) with rapid-acting insulin dosed with meals; insulin pumps deliver continuous subcutaneous basal rates with bolus dosing',
     concentrations: ['N/A — oral/systemic (subcutaneous injection)'],
+    formulations: ['Injection'],
     route: 'Subcutaneous injection (occasionally intravenous in acute inpatient settings)',
     sideEffects: {
       ocular: [
@@ -205,6 +225,15 @@ export const systemicEndocrineOther: Drug[] = [
     ],
     pregnancyLactation:
       'Insulin is the preferred and safest pharmacologic agent for glycemic control during pregnancy (including gestational diabetes) as it does not cross the placenta in physiologically significant amounts. Compatible with breastfeeding.',
+    pediatricConsiderations: [
+      'Insulin is the standard and essential therapy for pediatric type 1 diabetes from diagnosis onward, including infants, with intensive weight/age-based basal-bolus or pump-delivered dosing regimens',
+      'The same transient refractive shift and early-worsening-of-retinopathy phenomena described in adults apply to pediatric patients undergoing rapid glycemic changes, particularly adolescents starting intensive therapy',
+    ],
+    offLabelUses: [
+      'Treatment of severe hyperkalemia (given with concurrent glucose to drive an intracellular potassium shift)',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['diabetes-mellitus-ocular-overview', 'diabetic-retinopathy'],
     monitoring: [
       'Dilated fundus examination at diagnosis and at regular intervals per ADA/AAO guidelines, with increased frequency during periods of rapid glycemic change (e.g., insulin initiation/intensification, pregnancy)',
       'HbA1c and blood glucose logs for glycemic control',
@@ -239,6 +268,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; ocular relevance is chiefly through the thyroid disease context rather than direct drug toxicity'],
     typicalDosing: 'Typically 1.6 mcg/kg/day orally (starting lower, e.g., 25-50 mcg/day, in elderly or cardiac patients), titrated based on serial TSH levels every 6-8 weeks until stable',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection'],
     route: 'Oral (intravenous form available for myxedema coma)',
     sideEffects: {
       ocular: [
@@ -273,6 +303,12 @@ export const systemicEndocrineOther: Drug[] = [
     ],
     pregnancyLactation:
       'Safe and necessary in pregnancy - untreated maternal hypothyroidism poses fetal risk; dose requirements typically increase during pregnancy and require closer TSH monitoring. Compatible with breastfeeding.',
+    pediatricConsiderations: [
+      'Essential, standard therapy for congenital hypothyroidism, ideally started within the first 1-2 weeks of life to prevent irreversible neurodevelopmental impairment - a neonatal screening/treatment cornerstone',
+      'Pediatric dosing is weight-based and substantially higher per kilogram than adult dosing, with frequent TSH/free T4 monitoring during growth and dose reassessment at regular intervals as the child grows',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['hypothyroidism-ocular'],
     monitoring: [
       'Serial TSH (and free T4) levels to guide dose titration',
       'Cardiac status (heart rate, rhythm) especially in older patients or those with known cardiac disease',
@@ -305,6 +341,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; important optometric relevance is the dissociation between systemic thyroid control and thyroid eye disease activity'],
     typicalDosing: 'Initial dose typically 15-30 mg/day orally (divided or once daily), titrated down to a maintenance dose (often 5-15 mg/day) based on thyroid function tests',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -342,6 +379,11 @@ export const systemicEndocrineOther: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - methimazole has been associated with rare congenital malformations (aplasia cutis, choanal/esophageal atresia) especially with first-trimester exposure; propylthiouracil is often preferred in the first trimester, with a switch back to methimazole thereafter. Caution during breastfeeding at higher doses; low doses generally considered compatible with monitoring.',
+    pediatricConsiderations: [
+      'First-line antithyroid drug for pediatric Graves disease, generally preferred over propylthiouracil in children beyond the first trimester-equivalent risk window given PTU\'s higher risk of severe hepatotoxicity in children',
+      'Weight-based dosing is used, with the same agranulocytosis risk and the same dissociation between systemic thyroid control and thyroid eye disease activity as in adults',
+    ],
+    relatedConditionIds: ['thyroid-eye-disease'],
     monitoring: [
       'Thyroid function tests (TSH, free T4/T3) to guide dose titration',
       'Complete blood count if fever or signs of infection develop',
@@ -379,6 +421,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; critical optometric relevance is preoperative identification of use prior to cataract surgery'],
     typicalDosing: '0.4 mg orally once daily, taken approximately 30 minutes after the same meal each day; may be increased to 0.8 mg/day if inadequate response',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -411,6 +454,13 @@ export const systemicEndocrineOther: Drug[] = [
       'Rise slowly from sitting or lying positions to reduce dizziness from orthostatic hypotension, especially with the first few doses',
     ],
     pregnancyLactation: 'Not applicable - indicated only in male patients (BPH).',
+    pediatricConsiderations: [
+      'Not indicated for use in children, as BPH is an adult male condition',
+      'Occasionally used off-label in pediatric urology to facilitate spontaneous passage of distal ureteral stones, extrapolated from adult medical expulsive therapy data',
+    ],
+    offLabelUses: [
+      'Facilitation of distal ureteral stone passage ("medical expulsive therapy")',
+    ],
     monitoring: [
       'Blood pressure, particularly with first dose or dose increases',
       'Preoperative ophthalmic screening question specifically for alpha-1 antagonist use (current or past) prior to any cataract or anterior segment surgery',
@@ -444,6 +494,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for characteristic transient visual disturbances and rare optic nerve association'],
     typicalDosing: 'Erectile dysfunction: 50 mg orally as needed approximately 1 hour before sexual activity (range 25-100 mg), no more than once daily; pulmonary hypertension: 20 mg three times daily',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -487,6 +538,14 @@ export const systemicEndocrineOther: Drug[] = [
       'Seek emergency care for an erection lasting longer than 4 hours',
     ],
     pregnancyLactation: 'Not applicable - indicated in male patients for erectile dysfunction; pulmonary hypertension formulation (Revatio) used in select female patients requires individualized risk-benefit discussion.',
+    pediatricConsiderations: [
+      'FDA-approved (as Revatio) for pediatric pulmonary arterial hypertension in patients 1-17 years of age as of 2023, following an earlier (2012) FDA warning against pediatric use based on a mortality signal seen in a long-term dose-ranging trial',
+      'Not indicated for erectile dysfunction in minors',
+    ],
+    offLabelUses: [
+      'Raynaud phenomenon',
+      'Prevention of high-altitude pulmonary edema',
+    ],
     monitoring: [
       'Cardiovascular status and blood pressure, especially with concurrent antihypertensive/alpha-blocker use',
       'New visual symptoms, especially sudden unilateral vision loss (should prompt urgent optic nerve evaluation to rule out NAION)',
@@ -522,6 +581,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for meibomian gland dysfunction, dry eye, and rare intracranial hypertension risk'],
     typicalDosing: '0.5-1 mg/kg/day orally in divided doses for a typical 15-20 week course, with cumulative target dose of approximately 120-150 mg/kg over the treatment course',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -572,6 +632,11 @@ export const systemicEndocrineOther: Drug[] = [
     ],
     pregnancyLactation:
       'Absolute contraindication in pregnancy - one of the most potent human teratogens known, causing severe craniofacial, cardiac, thymic, and CNS malformations; requires iPLEDGE program enrollment with mandatory contraception and pregnancy testing. Contraindicated during breastfeeding.',
+    pediatricConsiderations: [
+      'Commonly used in adolescents for severe, treatment-resistant nodulocystic acne, though the FDA label notes that safety and efficacy have not been formally established in patients younger than 12 years',
+      'Growing adolescents on long-term/high cumulative dose therapy may be at particular risk for the rare skeletal hyperostosis reported with isotretinoin, in addition to the standard mucocutaneous and ocular surface effects seen in adults',
+      'The mandatory iPLEDGE pregnancy-prevention program applies to all patients of reproductive potential, including adolescent females, from treatment initiation',
+    ],
     monitoring: [
       'Baseline and periodic assessment of tear film, ocular surface, and meibomian gland status in symptomatic patients',
       'Dark adaptation/night vision symptoms',
@@ -609,6 +674,7 @@ export const systemicEndocrineOther: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for rare but recognized association with ocular inflammatory conditions'],
     typicalDosing: '70 mg orally once weekly, or 10 mg orally once daily, taken first thing in the morning on an empty stomach with a full glass of plain water, remaining upright for at least 30 minutes afterward',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -654,6 +720,10 @@ export const systemicEndocrineOther: Drug[] = [
     ],
     pregnancyLactation:
       'Not typically indicated in patients of reproductive age; limited data in pregnancy, generally avoided given prolonged skeletal retention of bisphosphonates and theoretical fetal risk. Not recommended during breastfeeding due to limited safety data.',
+    pediatricConsiderations: [
+      'Not FDA-approved for pediatric use; used off-label in pediatric osteogenesis imperfecta and other conditions of low bone density under specialist (pediatric endocrinology/orthopedics) supervision',
+      'A multicenter, placebo-controlled trial in children ages 4-19 with osteogenesis imperfecta supported efficacy for bone mineral density and fracture reduction, though long-term skeletal effects in growing bone remain an area of ongoing study',
+    ],
     monitoring: [
       'Serum calcium and vitamin D levels, particularly before initiating therapy',
       'Renal function periodically',

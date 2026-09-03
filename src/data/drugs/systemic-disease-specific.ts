@@ -15,6 +15,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral, 0.5 mg once daily (adult dosing); first-dose cardiac monitoring (bradycardia risk) is required in a monitored setting for the initial dose',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -59,6 +60,12 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy — associated with increased risk of congenital malformations; effective contraception required during therapy and for approximately 2 months after discontinuation given the drug\'s prolonged elimination half-life. Not recommended during breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved for relapsing MS in children and adolescents ≥10 years, based on the PARADIGMS trial (fingolimod significantly outperformed interferon beta-1a on annualized relapse rate) — the first MS disease-modifying therapy specifically approved for pediatric patients.',
+      'Pediatric dosing is weight-based rather than flat adult dosing: 0.25 mg once daily for patients ≤40 kg, 0.5 mg once daily for patients >40 kg.',
+      'Seizures were reported more frequently in pediatric trial patients (5.6%) than with interferon beta-1a (0.9%) — an important pediatric-specific safety signal to counsel on.',
+    ],
+    relatedConditionIds: ['multiple-sclerosis-ocular'],
     monitoring: [
       'BASELINE comprehensive dilated ophthalmic examination WITH OCT before or shortly after starting therapy',
       'FOLLOW-UP OCT at 3-4 MONTHS after initiation — the classic, high-yield board-tested screening interval, directly analogous in importance to hydroxychloroquine screening',
@@ -102,6 +109,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     typicalDosing: 'Intravenous infusion series: initial dose 10 mg/kg, followed by 20 mg/kg every 3 weeks for a total of 8 infusions',
     concentrations: ['N/A — IV infusion (lyophilized powder reconstituted for intravenous administration)'],
+    formulations: ['Injection'],
     route: 'Intravenous infusion',
     sideEffects: {
       ocular: [
@@ -139,6 +147,12 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated / not recommended in pregnancy based on animal reproductive data suggesting potential fetal harm; pregnancy testing required prior to each infusion in patients of reproductive potential, with effective contraception required during and for a period after the last dose. Use during breastfeeding has not been established; risk-benefit discussion with the prescriber is recommended.',
+    pediatricConsiderations: [
+      'Safety and efficacy have NOT been established in pediatric patients; not recommended for use in children.',
+      'Juvenile-animal toxicity studies raised specific concern for IGF-1R inhibition impairing growth, bone development, and thymic/splenic development, with younger/growing animals more sensitive — mechanistically relevant given IGF-1R\'s normal role in pediatric growth.',
+      'Hearing impairment, an established adult adverse effect, is an additional specific concern in school-age children given its potential impact on learning and development.',
+    ],
+    relatedConditionIds: ['thyroid-eye-disease'],
     monitoring: [
       'Baseline and periodic audiologic (hearing) assessment given risk of hearing impairment/tinnitus',
       'Blood glucose monitoring, particularly in diabetic or pre-diabetic patients',
@@ -183,6 +197,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     typicalDosing: 'Oral, typically 60 mg every 3-6 hours, titrated to symptom control and tolerability; extended-release formulations available for nighttime/early-morning symptom coverage',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Extended-release tablet', 'Syrup'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -220,6 +235,12 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered compatible with pregnancy when needed for symptom control, as myasthenia gravis itself and undertreatment carry real maternal risk; use should be coordinated with the treating neurologist/obstetrician. Present in breast milk in small amounts; generally considered compatible with breastfeeding under specialist guidance.',
+    pediatricConsiderations: [
+      'Used off-label in juvenile/pediatric myasthenia gravis with weight-based dosing individualized to symptom response, generally under pediatric neurology guidance, since no pediatric-specific labeling exists.',
+      'Increasingly used off-label in pediatric postural orthostatic tachycardia syndrome (POTS); formal pediatric dosing guidelines remain limited, but case reports describe divided daily dosing tapering through the day given the drug\'s short half-life.',
+    ],
+    offLabelUses: ['Postural orthostatic tachycardia syndrome (POTS), in both adult and pediatric patients'],
+    relatedConditionIds: ['ocular-myasthenia-gravis'],
     monitoring: [
       'Clinical symptom response (ptosis, diplopia, limb/bulbar/respiratory strength) rather than a laboratory or ocular-toxicity monitoring protocol',
       'Watch for signs of cholinergic excess (GI symptoms, excessive salivation/sweating, bradycardia) versus undertreatment (persistent or worsening weakness)',
@@ -265,6 +286,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     typicalDosing:
       'Highly variable by indication: oral daily dosing (e.g., approximately 1-2 mg/kg/day) or intravenous pulse dosing (e.g., every 2-4 weeks) for severe vasculitis/lupus nephritis induction, generally under close specialist (rheumatology/nephrology) supervision with dose adjustment for renal function and blood counts',
     concentrations: ['N/A — oral/systemic (also available as IV infusion)'],
+    formulations: ['Tablet', 'Injection'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -308,6 +330,13 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy — teratogenic and associated with fetal malformation and loss; effective contraception required during and for a period after therapy in patients of reproductive potential. Contraindicated during breastfeeding.',
+    pediatricConsiderations: [
+      'Used off-label in pediatric steroid-resistant/steroid-dependent nephrotic syndrome (minimal change disease), typically oral 2 mg/kg/day for 8-12 weeks (maximum cumulative dose approximately 168 mg/kg) or an IV pulse regimen.',
+      'Treatment courses beyond approximately 90 days meaningfully increase the risk of male infertility/gonadal toxicity in pediatric patients — an important counseling point distinct from typical adult course lengths.',
+      'Requires the same close hematologic (weekly CBC) and hemorrhagic cystitis precautions as in adults, with dosing individualized by weight/body surface area.',
+    ],
+    offLabelUses: ['Steroid-resistant/steroid-dependent nephrotic syndrome (minimal change disease), particularly in pediatric patients'],
+    relatedConditionIds: ['anca-vasculitis-ocular', 'scleritis', 'peripheral-ulcerative-keratitis-overview', 'lupus-ocular'],
     monitoring: [
       'Complete blood count (frequent, given myelosuppression risk) — often checked before each dose/cycle',
       'Urinalysis (monitoring for hematuria as an early sign of bladder toxicity)',
@@ -354,6 +383,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     typicalDosing: 'Subcutaneous injection, typically 162 mg once weekly for GCA (may also be given intravenously in some regimens), generally used in combination with a tapering course of glucocorticoids',
     concentrations: ['N/A — subcutaneous injection or IV infusion (not an ophthalmic formulation)'],
+    formulations: ['Injection'],
     route: 'Subcutaneous injection or intravenous infusion',
     sideEffects: {
       ocular: [
@@ -393,6 +423,15 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Limited data in human pregnancy; use only if the potential benefit justifies the potential risk to the fetus, generally under specialist guidance. Use during breastfeeding should be discussed with the prescriber given limited data.',
+    pediatricConsiderations: [
+      'FDA-approved for polyarticular and systemic juvenile idiopathic arthritis, with weight-based/weight-tiered dosing (approximately 8 mg/kg IV, or subcutaneous dosing tiered by body weight) distinct from the fixed adult GCA dose.',
+      'Used off-label for juvenile idiopathic arthritis-associated uveitis refractory to methotrexate and anti-TNF agents (e.g., adalimumab) — supported by the phase 2 APTITUDE trial in children.',
+    ],
+    offLabelUses: [
+      'Refractory juvenile idiopathic arthritis-associated uveitis (methotrexate/anti-TNF-refractory)',
+      'Non-infectious uveitis in adults refractory to conventional immunosuppression',
+    ],
+    relatedConditionIds: ['giant-cell-arteritis', 'rheumatoid-arthritis-ocular'],
     monitoring: [
       'Baseline and periodic complete blood count (neutropenia, thrombocytopenia)',
       'Liver function tests periodically',
@@ -439,6 +478,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     typicalDosing:
       'Oral, induction dosing typically 900 mg twice daily for 21 days (active CMV retinitis), followed by maintenance dosing of 900 mg once daily; dose adjustment required based on renal function',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Oral solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -477,6 +517,12 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Based on animal data, valganciclovir/ganciclovir is considered a potential teratogen and carcinogen; use in pregnancy only if the benefit clearly outweighs risk, under specialist guidance. Not recommended during breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved for prevention of CMV disease in pediatric kidney/heart transplant recipients at high risk, with weight/body-surface-area-based dosing distinct from adult flat dosing.',
+      'Widely used off-label (not yet a formal FDA indication) for symptomatic congenital CMV infection with CNS/hearing involvement in neonates, at a studied oral dose of 16 mg/kg twice daily; the American Academy of Pediatrics recommends 6 months of therapy for moderate-to-severe congenital CMV disease to improve hearing and neurodevelopmental outcomes.',
+    ],
+    offLabelUses: ['Symptomatic congenital CMV infection with CNS/hearing involvement in neonates'],
+    relatedConditionIds: ['cmv-retinitis'],
     monitoring: [
       'Complete blood count — frequent (e.g., 2-3 times weekly during induction) given significant neutropenia/myelosuppression risk',
       'Renal function — for dose adjustment given renal clearance',
@@ -518,6 +564,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     typicalDosing:
       'Intravenous, historically dosed intermittently (e.g., induction then every-other-week maintenance) with MANDATORY co-administration of intravenous saline hydration and oral PROBENECID to reduce nephrotoxicity; intravitreal administration has also been described historically for CMV retinitis but carries a high rate of ocular toxicity',
     concentrations: ['N/A — IV infusion (historically also intravitreal injection); not a topical ophthalmic formulation'],
+    formulations: ['Injection'],
     route: 'Intravenous infusion (historically also intravitreal injection)',
     sideEffects: {
       ocular: [
@@ -558,6 +605,15 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Considered a potential teratogen and carcinogen based on animal data; use in pregnancy only if benefit clearly outweighs risk, under close specialist supervision. Not recommended during breastfeeding.',
+    pediatricConsiderations: [
+      'Used off-label in pediatric immunocompromised patients (hematopoietic stem cell transplant, solid organ transplant) for life-threatening adenovirus and BK virus infections; modified low-dose regimens (e.g., 1 mg/kg three times weekly) are increasingly favored over conventional dosing (5 mg/kg weekly) to reduce nephrotoxicity risk, which appears lower with modified dosing (~4%) than conventional dosing (~15%).',
+      'Nephrotoxicity rates in immunocompetent children treated for adenovirus appear lower than in severely immunocompromised pediatric populations, though renal monitoring remains essential regardless of dosing strategy.',
+    ],
+    offLabelUses: [
+      'Severe/life-threatening adenovirus infection in immunocompromised patients (including pediatric HSCT recipients)',
+      'BK virus-associated nephropathy in transplant recipients',
+    ],
+    relatedConditionIds: ['cmv-retinitis'],
     monitoring: [
       'Renal function (serum creatinine, urine protein) BEFORE EACH dose — a strict requirement given significant nephrotoxicity risk',
       'Complete blood count (neutropenia)',
@@ -601,6 +657,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     typicalDosing: 'Oral, typically titrated up to approximately 1-1.5 g/day in divided doses for Wilson disease, taken on an empty stomach; pyridoxine (vitamin B6) supplementation is often co-prescribed',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -640,6 +697,12 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Generally used with caution in pregnancy; some experts recommend continuing at a reduced dose in Wilson disease given the risk of severe maternal hepatic decompensation if therapy is stopped, though it does carry teratogenic potential (connective tissue effects) — management should be individualized with a specialist. Use caution during breastfeeding; coordinate with the prescribing physician.',
+    pediatricConsiderations: [
+      'Off-label pediatric Wilson disease dosing is weight-based, approximately 20 mg/kg/day in 2-3 divided doses (maximum 1000 mg/day), typically started low (2.5-5 mg/kg/day) and up-titrated over 3-6 months.',
+      'Was historically used off-label for pediatric lead poisoning/chelation at doses of 25-30 mg/kg/day, though lower doses reduce adverse effects with similar efficacy; other chelators (e.g., succimer, sodium calcium edetate) are now generally preferred as more effective/better-tolerated first-line options in children.',
+    ],
+    offLabelUses: ['Chronic lead poisoning/chelation in children (largely superseded by other chelating agents)'],
+    relatedConditionIds: ['wilson-disease-ocular'],
     monitoring: [
       'Complete blood count and urinalysis (proteinuria) — regularly, particularly during dose titration, given bone marrow and renal toxicity risk',
       'Slit lamp examination to monitor Kayser-Fleischer ring status as a supportive (though not sole) indicator of treatment response — the ring may fade/regress with effective long-term chelation',
@@ -682,6 +745,7 @@ export const systemicDiseaseSpecific: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular monitoring given emerging associations with optic nerve and diabetic retinal findings'],
     typicalDosing: 'Subcutaneous injection, typically titrated weekly from a low starting dose (e.g., 0.25 mg/week) up to a maintenance dose (commonly 1-2.4 mg/week depending on indication/formulation); oral formulation (Rybelsus) dosed daily on an empty stomach',
     concentrations: ['N/A — subcutaneous injection (also available as an oral tablet, Rybelsus) — not an ophthalmic formulation'],
+    formulations: ['Injection', 'Tablet'],
     route: 'Subcutaneous injection (also oral tablet formulation)',
     sideEffects: {
       ocular: [
@@ -722,6 +786,12 @@ export const systemicDiseaseSpecific: Drug[] = [
     ],
     pregnancyLactation:
       'Not recommended in pregnancy — should generally be discontinued at least 2 months before a planned pregnancy given the long half-life; animal data suggest potential fetal risk. Not recommended during breastfeeding due to limited data.',
+    pediatricConsiderations: [
+      'Semaglutide (Wegovy formulation) is FDA-approved for chronic weight management in adolescents ≥12 years with obesity (BMI ≥95th percentile), using the same dose-escalation schedule as adults up to a 2.4 mg weekly maintenance dose.',
+      'Safety and efficacy for weight loss have not been established in children under 12 years of age.',
+      'Pediatric use for type 2 diabetes (Ozempic) is less well established than the approved adolescent weight-management indication; use should be individualized with pediatric endocrinology.',
+    ],
+    relatedConditionIds: ['diabetes-mellitus-ocular-overview', 'diabetic-retinopathy', 'naion'],
     monitoring: [
       'HbA1c and glycemic control trends',
       'Baseline and follow-up dilated fundus/retinal examination in patients with pre-existing diabetic retinopathy, particularly around initiation given the risk of early paradoxical worsening with rapid glycemic control',

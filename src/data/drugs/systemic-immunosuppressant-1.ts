@@ -20,6 +20,7 @@ export const systemicImmunosuppressant1: Drug[] = [
     typicalDosing:
       'Oral, generally not to exceed 5 mg/kg REAL (actual) body weight per day (revised 2016 AAO dosing guideline, replacing the older ideal-body-weight-based calculation); commonly dosed 200-400 mg/day total',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -67,6 +68,13 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     pregnancyLactation:
       'Considered relatively safe in pregnancy and is often continued in patients with SLE given the risk of disease flare with discontinuation; generally compatible with breastfeeding at recommended doses per rheumatology guidance, though the patient should be co-managed with her prescribing physician.',
+    pediatricConsiderations: [
+      'Used off-label in children for juvenile idiopathic arthritis (JIA) and childhood-onset SLE at a maximum dose of 5-7 mg/kg/day real body weight (should not exceed the adult dose); safety and efficacy for chronic pediatric use have not been formally established, and children are especially sensitive to 4-aminoquinoline compounds.',
+      'Tablets cannot be split, so hydroxychloroquine is generally not used in children weighing less than 31 kg who cannot be safely dosed with a whole tablet.',
+      'Retinal toxicity screening (10-2 visual field plus an objective structural test) should begin once a child can reliably perform the tests; serum concentration monitoring has been suggested as additionally useful in pediatric patients.',
+    ],
+    offLabelUses: ['Juvenile idiopathic arthritis (pediatric, off-label)'],
+    relatedConditionIds: ['lupus-ocular', 'rheumatoid-arthritis-ocular', 'sjogren-syndrome'],
     monitoring: [
       'Baseline comprehensive ophthalmic examination within the first year of starting therapy',
       'Annual screening beginning at 5 years of use in patients without major risk factors; annual screening from baseline (year one) in patients WITH major risk factors (high dose, renal disease, tamoxifen use, pre-existing maculopathy, long duration)',
@@ -109,6 +117,7 @@ export const systemicImmunosuppressant1: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral, generally not to exceed 2.3 mg/kg real body weight per day (lower threshold than hydroxychloroquine, reflecting its higher intrinsic toxicity)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -147,6 +156,11 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     pregnancyLactation:
       'Generally used with caution in pregnancy; hydroxychloroquine is typically preferred over chloroquine in patients requiring antimalarial/immunomodulatory therapy during pregnancy given its more favorable safety profile. Caution during breastfeeding; co-manage with prescribing physician.',
+    pediatricConsiderations: [
+      'Chloroquine is generally avoided in children when hydroxychloroquine is a viable alternative, given its higher inherent toxicity; pediatric (e.g., antimalarial) dosing is strictly weight-based.',
+      'Accidental childhood ingestion of chloroquine tablets is a well-documented cause of fatal poisoning even in small absolute overdoses, given the drug\'s narrow therapeutic margin in young children — a classic pediatric toxicology teaching point distinct from its chronic retinal toxicity.',
+    ],
+    relatedConditionIds: ['lupus-ocular', 'rheumatoid-arthritis-ocular'],
     monitoring: [
       'Same screening principles as hydroxychloroquine: baseline exam within the first year, then guideline-based follow-up screening intervals per AAO recommendations, potentially initiated earlier given the higher inherent toxicity risk of this drug',
       'Automated 10-2 visual field testing plus at least one objective structural test (SD-OCT, mfERG, or fundus autofluorescence)',
@@ -192,6 +206,7 @@ export const systemicImmunosuppressant1: Drug[] = [
     typicalDosing:
       'Rheumatologic/autoimmune: low-dose, once WEEKLY oral or subcutaneous dosing (typically 7.5-25 mg once per week, NOT daily - a critical dosing safety point); Oncologic: high-dose regimens dosed very differently under oncology protocols',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection (subcutaneous/intramuscular)', 'Oral solution'],
     route: 'Oral, subcutaneous, or intramuscular (weekly dosing for rheumatologic use); intravenous/intrathecal for high-dose oncologic regimens',
     sideEffects: {
       ocular: [
@@ -243,6 +258,12 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy - well-established teratogen causing methotrexate embryopathy (craniofacial, limb, and CNS anomalies); effective contraception required during and for a period after discontinuation in both men and women per prescriber guidance. Contraindicated during breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved for pediatric polyarticular juvenile idiopathic arthritis (typically 10-15 mg/m2 once weekly) and for pediatric acute lymphoblastic leukemia at high oncologic doses.',
+      'The same critical WEEKLY (not daily) dosing safety principle applies in children for autoimmune indications; accidental daily dosing is a dangerous, well-documented pediatric medication error.',
+      'Folic acid co-supplementation is standard practice in pediatric rheumatologic dosing to reduce gastrointestinal and hepatic side effects.',
+    ],
+    relatedConditionIds: ['rheumatoid-arthritis-ocular', 'psoriatic-arthritis', 'psoriasis-ocular', 'anterior-uveitis', 'scleritis'],
     monitoring: [
       'Liver function tests (periodic, given hepatotoxicity risk)',
       'Complete blood count (periodic, given myelosuppression risk)',
@@ -290,6 +311,7 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     typicalDosing: 'Oral, typically 1-2.5 mg/kg/day (rheumatologic/autoimmune dosing), adjusted based on thiopurine methyltransferase (TPMT) activity and clinical response/tolerability',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection (intravenous)'],
     route: 'Oral (also available intravenous for transplant settings)',
     sideEffects: {
       ocular: [
@@ -331,6 +353,11 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     pregnancyLactation:
       'Historically used cautiously in pregnancy (particularly in transplant recipients and inflammatory bowel disease) under specialist supervision when the benefit is judged to outweigh risk; some data suggest relatively lower fetal risk than other immunosuppressants, but use requires close multidisciplinary management. Caution during breastfeeding; typically avoided or closely monitored.',
+    pediatricConsiderations: [
+      'Used in pediatric transplant recipients and pediatric inflammatory bowel disease/autoimmune hepatitis at weight-based doses (typically 1.5-3 mg/kg/day) similar to adult regimens, though the FDA label states safety and effectiveness in children have not been formally established for all indications.',
+      'TPMT enzyme testing prior to initiation is equally important in children, since TPMT deficiency confers the same markedly elevated myelosuppression risk regardless of age.',
+    ],
+    relatedConditionIds: ['ulcerative-colitis', 'crohn-disease', 'rheumatoid-arthritis-ocular'],
     monitoring: [
       'Complete blood count (regularly, particularly at initiation and dose changes) to detect myelosuppression',
       'Liver function tests',
@@ -376,6 +403,7 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     typicalDosing: 'Oral, typically 1-1.5 g twice daily (2-3 g/day total) for autoimmune/ocular inflammatory indications, titrated to response and tolerability',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Capsule', 'Oral suspension', 'Injection (intravenous)'],
     route: 'Oral (also available intravenous)',
     sideEffects: {
       ocular: [
@@ -416,6 +444,11 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy - well-documented teratogen (mycophenolate embryopathy: external ear, facial, and other congenital anomalies) and increased first-trimester miscarriage risk; subject to an FDA REMS program requiring contraceptive counseling. Not recommended during breastfeeding.',
+    pediatricConsiderations: [
+      'FDA-approved for prophylaxis of organ rejection in pediatric kidney transplant recipients (3 months and older) and pediatric liver/heart transplant recipients, dosed by body surface area (typically ~600 mg/m2 twice daily); pediatric dosing for autoimmune/ocular inflammatory indications is generally extrapolated/off-label from adult data.',
+      'The teratogenicity/REMS counseling requirement becomes clinically relevant as pediatric patients reach reproductive age.',
+    ],
+    relatedConditionIds: ['anterior-uveitis', 'scleritis', 'mmp-pemphigus-vulgaris'],
     monitoring: [
       'Complete blood count (regularly, especially during early therapy)',
       'Renal and hepatic function',
@@ -459,6 +492,7 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     typicalDosing: 'Oral, typically 2.5-5 mg/kg/day divided into two doses, titrated to trough blood levels and clinical response/toxicity',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Oral solution', 'Injection (intravenous)'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -504,6 +538,11 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     pregnancyLactation:
       'Used with caution in pregnancy when clearly needed (e.g., transplant recipients), generally under close specialist supervision; not considered a major teratogen but requires risk-benefit assessment. Not recommended during breastfeeding due to excretion in breast milk.',
+    pediatricConsiderations: [
+      'FDA-approved for prophylaxis of organ rejection in pediatric transplant recipients (kidney, liver, heart), dosed per body surface area/weight with the same trough-level monitoring principles as adults; also used off-label for severe pediatric uveitis and nephrotic syndrome.',
+      'Postmarketing pediatric nephrotic syndrome safety data show elevated rates of nephrotoxicity, decreased urine output, and posterior reversible encephalopathy syndrome (PRES) with cyclosporine, reinforcing the need for close blood pressure and renal monitoring in children.',
+    ],
+    relatedConditionIds: ['anterior-uveitis', 'intermediate-uveitis'],
     monitoring: [
       'Cyclosporine trough blood levels',
       'Blood pressure (regularly, given high incidence of hypertension)',
@@ -545,6 +584,7 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     typicalDosing: 'Oral, typically 0.1-0.2 mg/kg/day divided into two doses (immediate-release) or once daily (extended-release, Astagraf XL), titrated to trough blood levels',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Extended-release capsule/tablet', 'Injection (intravenous)'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -588,6 +628,11 @@ export const systemicImmunosuppressant1: Drug[] = [
     ],
     pregnancyLactation:
       'Used with caution in pregnancy when clearly needed (commonly continued in transplant recipients) under close specialist supervision; risk-benefit assessment required. Not recommended during breastfeeding due to excretion in breast milk.',
+    pediatricConsiderations: [
+      'FDA-approved for prophylaxis of organ rejection in pediatric transplant recipients (kidney, liver, heart, lung); children often require higher weight-based doses than adults due to differences in metabolism, and CYP3A5 genotype significantly affects dose requirements in pediatric patients.',
+      'Postmarketing pediatric nephrotic syndrome safety data show tacrolimus is associated with increased risk of dystonia, kidney fibrosis, and diabetic ketoacidosis compared with cyclosporine.',
+    ],
+    relatedConditionIds: ['anterior-uveitis', 'scleritis'],
     monitoring: [
       'Tacrolimus trough blood levels',
       'Renal function',

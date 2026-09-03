@@ -16,6 +16,7 @@ export const systemicCardiovascular2: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 20-80 mg once or twice daily, titrated to effect (up to several hundred mg/day in refractory edema); IV: 20-40 mg for acute pulmonary edema/emergent diuresis',
     concentrations: ['N/A — oral/systemic (20 mg, 40 mg, 80 mg tablets; 10 mg/mL oral solution; 10 mg/mL injection)'],
+    formulations: ['Tablet', 'Oral solution', 'Injection'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -61,6 +62,12 @@ export const systemicCardiovascular2: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if clinically necessary; crosses the placenta and can cause fetal/neonatal electrolyte disturbance. Excreted in breast milk and may suppress lactation; use with caution while nursing.',
+    pediatricConsiderations: [
+      'Well-established pediatric and neonatal use for edema/fluid overload (e.g., congestive heart failure, bronchopulmonary dysplasia in premature infants) with weight-based dosing (approximately 1 mg/kg/dose IV, titrated upward)',
+      'Premature infants are at increased risk of ototoxicity and nephrocalcinosis with prolonged high-dose use, and dosing above 1 mg/kg/day is generally avoided in infants with a post-conceptual age under 31 weeks',
+      'The rare idiosyncratic sulfonamide-related angle-closure/myopic-shift reaction described in adults can theoretically occur in pediatric patients as well',
+    ],
+    isEmergencyMedication: true,
     monitoring: [
       'Ask about sudden eye pain, redness, halos, or blurred vision when initiating therapy, given the rare acute angle-closure/myopic-shift reaction',
       'Baseline and periodic IOP check in any patient reporting acute visual symptoms after starting a new diuretic',
@@ -93,6 +100,7 @@ export const systemicCardiovascular2: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 12.5-25 mg once daily (up to 50 mg/day), often combined with other antihypertensives in a single pill',
     concentrations: ['N/A — oral/systemic (12.5 mg, 25 mg, 50 mg capsules/tablets)'],
+    formulations: ['Tablet', 'Capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -137,6 +145,14 @@ export const systemicCardiovascular2: Drug[] = [
     ],
     pregnancyLactation:
       'Generally avoided in pregnancy except when clearly needed, as thiazides can cause fetal/neonatal thrombocytopenia and electrolyte disturbance and do not prevent (and may worsen) preeclampsia. Excreted in breast milk; may suppress lactation — use with caution while nursing.',
+    pediatricConsiderations: [
+      'Used in pediatric hypertension and edema with weight-based dosing (approximately 1-2 mg/kg/day), not exceeding 37.5 mg/day in infants under 2 years or 100 mg/day in children 2-12 years',
+      'The idiosyncratic sulfonamide-related acute angle-closure/myopic-shift reaction described in adults can theoretically occur in pediatric patients as well, though it is rarely reported in this age group',
+    ],
+    offLabelUses: [
+      'Nephrogenic diabetes insipidus (paradoxical antidiuretic effect used to reduce urine output)',
+    ],
+    relatedConditionIds: ['hypertensive-retinopathy'],
     monitoring: [
       'Ask specifically about sudden ocular pain, redness, halos, or vision change when a patient reports recently starting hydrochlorothiazide (or being switched to it) — hallmark of the idiosyncratic angle-closure/myopic-shift reaction',
       'Anterior chamber depth/gonioscopy and IOP check if any such symptoms are reported',
@@ -170,6 +186,7 @@ export const systemicCardiovascular2: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry primarily as a contrast case with minimal direct ocular toxicity'],
     typicalDosing: 'Oral: 25-100 mg once daily or in divided doses (up to 400 mg/day for hyperaldosteronism workup); low-dose 12.5-25 mg daily is typical in heart failure regimens',
     concentrations: ['N/A — oral/systemic (25 mg, 50 mg, 100 mg tablets)'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -208,6 +225,14 @@ export const systemicCardiovascular2: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy; antiandrogenic activity raises theoretical concern for feminization of a male fetus, generally avoided unless benefit outweighs risk. Excreted in breast milk in small amounts; use with caution while nursing.',
+    pediatricConsiderations: [
+      'Used off-label in pediatric heart failure and edema, and as an antiandrogen in congenital adrenal hyperplasia and pediatric/adolescent hirsutism or acne, with weight-based dosing',
+      'No characteristic pediatric ocular concern beyond the adult profile, which itself lacks an established ocular toxicity',
+    ],
+    offLabelUses: [
+      'Hirsutism and acne (antiandrogenic effect)',
+      'Feminizing hormone therapy in transgender women (antiandrogen)',
+    ],
     monitoring: [
       'No specific ophthalmic monitoring protocol is required for spironolactone, as it lacks a characteristic ocular toxicity profile',
       'Useful to ask about as part of a general medication history, but does not by itself warrant additional dilated exam frequency or targeted ocular testing',
@@ -240,6 +265,7 @@ export const systemicCardiovascular2: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Tartrate (immediate-release): 25-100 mg twice daily; Succinate (extended-release): 25-200 mg once daily',
     concentrations: ['N/A — oral/systemic (tartrate 25/50/100 mg tablets; succinate ER 25/50/100/200 mg tablets; IV formulation available)'],
+    formulations: ['Tablet', 'Extended-release tablet', 'Injection'],
     route: 'Oral (or intravenous in acute cardiac settings)',
     sideEffects: {
       ocular: [
@@ -286,6 +312,14 @@ export const systemicCardiovascular2: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy; associated with fetal growth restriction and neonatal bradycardia/hypoglycemia with third-trimester exposure. Excreted in breast milk in small amounts; generally considered compatible with breastfeeding with infant monitoring.',
+    pediatricConsiderations: [
+      'Used off-label for pediatric hypertension and arrhythmias with weight-based dosing; not FDA-approved specifically for pediatric use, and pediatric-specific outcome data are more limited than for propranolol',
+      'Young/fasting infants and children are at increased risk of hypoglycemia and its masked adrenergic warning signs on beta-blocker therapy',
+    ],
+    offLabelUses: [
+      'Migraine prophylaxis',
+    ],
+    relatedConditionIds: ['ocular-migraine', 'hypertensive-retinopathy'],
     monitoring: [
       'Ask about dry eye symptoms and consider tear film assessment/tear break-up time in patients on chronic beta-blocker therapy',
       'Check whether a patient on oral metoprolol is also using a topical beta blocker (e.g., timolol) for glaucoma — additive systemic beta-blockade is a reconciliation point relevant to primary care communication',
@@ -320,6 +354,7 @@ export const systemicCardiovascular2: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring and as a comparison/interaction point, not a primary ocular toxin'],
     typicalDosing: 'Immediate-release: 80-120 mg three times daily; extended-release: 120-480 mg once daily, titrated to effect',
     concentrations: ['N/A — oral/systemic (immediate-release and extended-release tablets/capsules, 40-480 mg depending on formulation; IV formulation for acute arrhythmia management)'],
+    formulations: ['Tablet', 'Extended-release capsule', 'Injection'],
     route: 'Oral (or intravenous in acute arrhythmia settings)',
     sideEffects: {
       ocular: [
@@ -363,6 +398,14 @@ export const systemicCardiovascular2: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy — crosses the placenta; use only if benefits outweigh risks. Excreted in breast milk in low concentrations; generally considered compatible with breastfeeding with monitoring.',
+    pediatricConsiderations: [
+      'IV verapamil is contraindicated in infants younger than 1 year of age because of reports of severe hypotension, bradycardia, and cardiac arrest with rapid IV administration, particularly in cardiovascularly compromised infants or those recently given other long-acting antiarrhythmics',
+      'Oral verapamil has been used with caution in older children for arrhythmias and migraine prophylaxis, but pediatric cardiologists generally favor other agents in infancy given the IV contraindication',
+    ],
+    offLabelUses: [
+      'Migraine and cluster headache prophylaxis',
+    ],
+    relatedConditionIds: ['ocular-migraine'],
     monitoring: [
       'No specific ophthalmic monitoring protocol or dilated exam schedule is driven by verapamil itself',
       'Relevant to ask about when a glaucoma patient is being considered for or is already using a topical beta blocker, given the additive bradycardia/AV block risk',
@@ -395,6 +438,7 @@ export const systemicCardiovascular2: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry primarily as a class-comparison/interaction point rather than a primary ocular toxin'],
     typicalDosing: 'Immediate-release: 30-90 mg three to four times daily; extended-release: 120-480 mg once daily, titrated to effect',
     concentrations: ['N/A — oral/systemic (immediate-release and extended-release tablets/capsules, 30-480 mg depending on formulation; IV formulation for acute arrhythmia management)'],
+    formulations: ['Tablet', 'Extended-release capsule', 'Injection'],
     route: 'Oral (or intravenous in acute arrhythmia settings)',
     sideEffects: {
       ocular: [
@@ -437,6 +481,10 @@ export const systemicCardiovascular2: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy — limited human data; use only if benefits outweigh risks. Excreted in breast milk; use caution while nursing.',
+    pediatricConsiderations: [
+      'Pediatric safety and efficacy data are limited; used off-label in older children for arrhythmias/hypertension with weight-based dosing',
+      'As with verapamil, non-dihydropyridine calcium channel blockers are used cautiously in young infants given similar (though less extensively documented) hemodynamic collapse concerns with IV administration',
+    ],
     monitoring: [
       'No specific ophthalmic monitoring protocol or dilated exam schedule is driven by diltiazem itself',
       'Relevant to review when a glaucoma patient is being considered for or is already using a topical beta blocker, given the additive bradycardia/AV block risk shared with verapamil',
@@ -469,6 +517,7 @@ export const systemicCardiovascular2: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring and for its role in reducing systemic vascular risk factors relevant to retinal vascular disease'],
     typicalDosing: 'Oral: 10-80 mg once daily (any time of day, with or without food)',
     concentrations: ['N/A — oral/systemic (10 mg, 20 mg, 40 mg, 80 mg tablets)'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -512,6 +561,11 @@ export const systemicCardiovascular2: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy — cholesterol and cholesterol-derived products are essential for fetal development, and statins may cause fetal harm; discontinue if pregnancy occurs or is planned. Not recommended during breastfeeding due to potential for serious adverse effects in the nursing infant.',
+    pediatricConsiderations: [
+      'FDA-approved for pediatric heterozygous and homozygous familial hypercholesterolemia beginning at age 10 (starting dose 10 mg/day, usual range 10-80 mg/day depending on indication); safety and efficacy not established below age 10',
+      'Adolescent females of reproductive potential require the same pregnancy avoidance counseling as adults given fetal cholesterol-synthesis dependence',
+    ],
+    relatedConditionIds: ['retinal-artery-occlusion', 'retinal-vein-occlusion'],
     monitoring: [
       'No specific dilated fundus exam or visual field monitoring schedule is required for atorvastatin, since it lacks an established characteristic retinal or corneal toxicity',
       'Reasonable to note cataract status at routine exams given the historically debated (though largely unsubstantiated) association, without requiring accelerated exam frequency',

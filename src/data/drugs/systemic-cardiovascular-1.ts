@@ -19,6 +19,7 @@ export const systemicCardiovascular1: Drug[] = [
     typicalDosing:
       'Oral loading dose 800-1600 mg/day in divided doses for 1-3 weeks, then taper to a maintenance dose of 100-400 mg/day; IV loading/maintenance protocols used in acute settings',
     concentrations: ['N/A — oral/IV systemic medication (100 mg, 200 mg, 400 mg tablets; IV solution)'],
+    formulations: ['Tablet', 'Injection'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -63,6 +64,15 @@ export const systemicCardiovascular1: Drug[] = [
     ],
     pregnancyLactation:
       'Generally avoided in pregnancy unless no safer alternative exists - associated with fetal and neonatal thyroid dysfunction due to iodine content; crosses the placenta. Contraindicated during breastfeeding due to high concentration in breast milk.',
+    pediatricConsiderations: [
+      'Not FDA-approved for general pediatric arrhythmia management, but used off-label (oral and IV) with weight-based dosing in pediatric ACLS/PALS protocols and postoperative pediatric cardiac arrhythmias, particularly at tertiary pediatric cardiac centers',
+      'Pediatric-specific ocular toxicity monitoring data are limited, but the same corneal verticillata and optic neuropathy risks apply with long-term use, and periodic ophthalmic monitoring is still warranted',
+      'Thyroid dysfunction risk (due to high iodine content) may be more consequential in growing children and warrants close endocrine monitoring',
+    ],
+    offLabelUses: [
+      'Atrial fibrillation rhythm control (widely used off-label despite not being specifically FDA-approved for this indication)',
+    ],
+    isEmergencyMedication: true,
     monitoring: [
       'Baseline dilated fundus and slit lamp exam before or shortly after starting therapy, with periodic follow-up (e.g., annually or with any visual symptoms)',
       'Slit lamp exam for corneal verticillata (expected finding, not itself an indication to stop the drug)',
@@ -101,6 +111,7 @@ export const systemicCardiovascular1: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral maintenance dose typically 0.125-0.25 mg once daily, adjusted based on renal function, age, and serum digoxin level (narrow therapeutic index, 0.5-2.0 ng/mL, with growing preference for lower target levels)',
     concentrations: ['N/A — oral/IV systemic medication (0.125 mg, 0.25 mg tablets; oral solution; IV formulation)'],
+    formulations: ['Tablet', 'Oral solution', 'Injection'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -142,6 +153,10 @@ export const systemicCardiovascular1: Drug[] = [
     ],
     pregnancyLactation:
       'Considered relatively low risk in pregnancy when clinically indicated for maternal cardiac conditions; crosses the placenta but has a long history of use in pregnant patients with cardiac disease. Excreted in breast milk in low amounts; generally considered compatible with breastfeeding under physician supervision.',
+    pediatricConsiderations: [
+      'Long history of use in pediatric heart failure and pediatric/fetal supraventricular arrhythmias (including transplacental treatment of fetal SVT via maternal dosing), with age- and weight-based dosing and age-specific target serum digoxin levels',
+      'Narrow therapeutic index and toxicity risk require careful monitoring; preverbal or young children may not reliably report color vision changes (xanthopsia), so systemic signs (feeding intolerance, vomiting, arrhythmia) are often the presenting toxicity signs instead',
+    ],
     monitoring: [
       'Ask about color vision changes (yellow vision), halos, and blurred vision at exams in patients on digoxin, especially if dose has recently changed',
       'Color vision testing (e.g., Ishihara, Farnsworth) if toxicity is suspected',
@@ -187,6 +202,7 @@ export const systemicCardiovascular1: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral 40-160 mg twice daily (immediate release) or 80-160 mg once daily (long-acting/Inderal LA), titrated to response',
     concentrations: ['N/A — oral systemic medication (10 mg, 20 mg, 40 mg, 60 mg, 80 mg tablets; 60/80/120/160 mg extended-release capsules)'],
+    formulations: ['Tablet', 'Extended-release capsule', 'Injection'],
     route: 'Oral (also available IV for acute settings)',
     sideEffects: {
       ocular: [
@@ -233,6 +249,14 @@ export const systemicCardiovascular1: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - associated with intrauterine growth restriction, neonatal bradycardia, and hypoglycemia when used near term; use only if benefits outweigh risks. Excreted in breast milk in low amounts; generally considered compatible with breastfeeding with infant monitoring.',
+    pediatricConsiderations: [
+      'FDA-approved (as the brand Hemangeol, a distinct oral solution) for treatment of proliferating infantile hemangioma requiring systemic therapy, initiated between 5 weeks and 5 months of age, with weight-based twice-daily dosing',
+      'Also used off-label for pediatric hypertension, arrhythmias, and migraine prophylaxis',
+      'Young/fasting infants and children are at particular risk of hypoglycemia on beta-blocker therapy since counter-regulatory adrenergic responses are blunted',
+    ],
+    offLabelUses: [
+      'Performance/situational anxiety ("stage fright")',
+    ],
     monitoring: [
       'Ask about dry eye symptoms and tear film status on slit lamp exam in patients on chronic oral beta-blocker therapy',
       'Be aware that oral beta-blockers can lower IOP, which may affect glaucoma diagnosis/monitoring interpretation',
@@ -270,6 +294,7 @@ export const systemicCardiovascular1: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral 10-40 mg once daily, titrated based on blood pressure response and renal function',
     concentrations: ['N/A — oral/systemic medication (2.5 mg, 5 mg, 10 mg, 20 mg, 30 mg, 40 mg tablets)'],
+    formulations: ['Tablet', 'Oral solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -311,6 +336,11 @@ export const systemicCardiovascular1: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in all trimesters of pregnancy - associated with fetal renal dysgenesis, oligohydramnios, growth restriction, and neonatal death (fetotoxicity). Not recommended during breastfeeding; alternative agents generally preferred, particularly in nursing infants who are premature or have renal impairment.',
+    pediatricConsiderations: [
+      'FDA-approved for pediatric hypertension in children 6 years of age and older (including a dedicated oral solution formulation), with weight-based dosing starting around 0.07 mg/kg once daily; safety and efficacy not established below age 6',
+      'Adolescent females of reproductive potential require the same contraception counseling as adults given fetotoxicity risk',
+    ],
+    relatedConditionIds: ['hypertensive-retinopathy'],
     monitoring: [
       'Dilated fundus exam to assess for hypertensive retinopathy findings, particularly if blood pressure has been poorly controlled or the patient is newly diagnosed with hypertension',
       'Ask about any history of facial or eyelid swelling (angioedema) when taking a medication history',
@@ -345,6 +375,7 @@ export const systemicCardiovascular1: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral 25-100 mg once or twice daily, titrated based on blood pressure response',
     concentrations: ['N/A — oral/systemic medication (25 mg, 50 mg, 100 mg tablets)'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -384,6 +415,14 @@ export const systemicCardiovascular1: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in all trimesters of pregnancy - associated with fetal renal dysgenesis, oligohydramnios, and neonatal complications, similar to ACE inhibitors. Use during breastfeeding is generally not recommended due to limited safety data; alternative agents typically preferred.',
+    pediatricConsiderations: [
+      'Used off-label for pediatric hypertension with weight-based dosing, though ACE inhibitors are generally more extensively studied and more often used first-line in children',
+      'Notably studied (in randomized pediatric and adolescent trials) for slowing progression of aortic root dilation in Marfan syndrome, an evidence-based off-label pediatric use distinct from its antihypertensive indication',
+    ],
+    offLabelUses: [
+      'Slowing progression of aortic root dilation in Marfan syndrome (with or without concurrent beta-blocker therapy)',
+    ],
+    relatedConditionIds: ['hypertensive-retinopathy', 'marfan-syndrome'],
     monitoring: [
       'Dilated fundus exam for hypertensive retinopathy findings, particularly in patients with a history of poorly controlled blood pressure',
       'Ask about eyelid/facial swelling history when taking a medication history, though angioedema is rare with ARBs',
@@ -418,6 +457,7 @@ export const systemicCardiovascular1: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity/hemorrhage risk monitoring'],
     typicalDosing: 'Oral, individualized dosing (typically starting 2-5 mg once daily) titrated to a target INR (commonly 2.0-3.0, or 2.5-3.5 for mechanical mitral valves), with regular INR monitoring',
     concentrations: ['N/A — oral systemic medication (1 mg, 2 mg, 2.5 mg, 3 mg, 4 mg, 5 mg, 6 mg, 7.5 mg, 10 mg tablets)'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -463,6 +503,10 @@ export const systemicCardiovascular1: Drug[] = [
     ],
     pregnancyLactation:
       'Contraindicated in pregnancy - crosses the placenta and causes warfarin embryopathy (nasal hypoplasia, skeletal abnormalities) with first-trimester exposure, and risk of fetal/neonatal hemorrhage later in pregnancy; heparin-class agents are used instead when anticoagulation is needed. Considered compatible with breastfeeding - minimal transfer into breast milk.',
+    pediatricConsiderations: [
+      'Used off-label in pediatric anticoagulation (e.g., after mechanical heart valve replacement, Fontan palliation, or other thromboembolic risk), with weight-based initial dosing (approximately 0.2 mg/kg loading dose) and the same target INR ranges as adults (2.0-3.0, or 2.5-3.5 for mechanical valves)',
+      'Dosing is complicated by rapidly changing growth, diet, and vitamin K intake in children, requiring frequent INR monitoring, often more often than in stable adult patients',
+    ],
     monitoring: [
       'Ask about anticoagulant use as part of routine ocular history, particularly before any surgical or laser procedure or intraocular/periocular injection',
       'Slit lamp and fundus exam to identify subconjunctival, vitreous, or retinal hemorrhage, particularly in patients presenting with acute red eye or vision change while on warfarin',
@@ -504,6 +548,7 @@ export const systemicCardiovascular1: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular bleeding risk monitoring'],
     typicalDosing: 'Oral 75 mg once daily maintenance dose; loading dose of 300-600 mg may be used in acute coronary syndrome/post-stenting settings',
     concentrations: ['N/A — oral systemic medication (75 mg, 300 mg tablets)'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -544,6 +589,11 @@ export const systemicCardiovascular1: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data in pregnancy; use only if the potential benefit justifies the potential risk to the fetus. Unknown whether excreted in breast milk; caution advised, and a decision to discontinue nursing or the drug should weigh the importance of the drug to the mother.',
+    pediatricConsiderations: [
+      'Safety and effectiveness have not been established in pediatric patients; the randomized, placebo-controlled CLARINET trial did not demonstrate a clinical benefit of clopidogrel in neonates and infants with cyanotic congenital heart disease palliated with a systemic-to-pulmonary arterial shunt',
+      'Occasional off-label use in pediatric cardiology continues despite the lack of trial-demonstrated benefit; dosing extrapolated from adult data is not well validated',
+    ],
+    relatedConditionIds: ['amaurosis-fugax', 'ocular-ischemic-syndrome'],
     monitoring: [
       'Ask about antiplatelet medication use as part of routine ocular history, particularly before any surgical, laser, or injection-based ophthalmic procedure',
       'Examine for subconjunctival hemorrhage, hyphema, or other bleeding signs, especially after trauma or in the perioperative period',
