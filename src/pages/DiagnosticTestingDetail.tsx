@@ -4,7 +4,7 @@ import { ExamTechniqueDetailView } from '../components/shared/ExamTechniqueDetai
 import { getExamTechniqueById } from '../services/examTechniqueService'
 import { isExamWorkupFavorite, toggleExamWorkupFavorite } from '../services/examTechniqueFavorites'
 
-export function ExamTechniqueDetail() {
+export function DiagnosticTestingDetail() {
   const { techniqueId } = useParams<{ techniqueId: string }>()
   const technique = techniqueId ? getExamTechniqueById(techniqueId) : undefined
   const [fav, setFav] = useState(false)
@@ -17,9 +17,9 @@ export function ExamTechniqueDetail() {
   return (
     <ExamTechniqueDetailView
       technique={technique}
-      backTo="/exam-workup"
-      backLabel="Clinical Examination & Workup"
-      techniqueLinkPrefix="/exam-workup/technique"
+      backTo="/diagnostic-testing"
+      backLabel="Diagnostic Testing & Imaging"
+      techniqueLinkPrefix="/diagnostic-testing"
       fav={fav}
       onToggleFavorite={() =>
         technique && setFav(toggleExamWorkupFavorite(technique.id).includes(technique.id))

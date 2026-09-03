@@ -16,6 +16,8 @@ import { LensDetail } from './pages/LensDetail'
 import { ExamWorkupHub } from './pages/ExamWorkupHub'
 import { ExamTechniqueDetail } from './pages/ExamTechniqueDetail'
 import { ClinicalWorkupDetail } from './pages/ClinicalWorkupDetail'
+import { DiagnosticTestingHub } from './pages/DiagnosticTestingHub'
+import { DiagnosticTestingDetail } from './pages/DiagnosticTestingDetail'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
         <Route path="/exam-workup" element={<ExamWorkupHub />} />
         <Route path="/exam-workup/technique/:techniqueId" element={<ExamTechniqueDetail />} />
         <Route path="/exam-workup/workup/:workupId" element={<ClinicalWorkupDetail />} />
+        <Route path="/diagnostic-testing" element={<DiagnosticTestingHub />} />
+        <Route path="/diagnostic-testing/:techniqueId" element={<DiagnosticTestingDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

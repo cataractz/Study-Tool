@@ -1040,4 +1040,76 @@ export const neuroOphthalmologyTechniques: ExamTechnique[] = [
       'Von Noorden GK, Campos EC. Binocular Vision and Ocular Motility: Theory and Management of Strabismus. 6th ed. — compensatory head posture in cyclovertical and nystagmus-related disease.',
     ],
   },
+  {
+    id: 'electro-oculogram',
+    name: 'Electro-Oculogram (EOG)',
+    aliases: ['EOG', 'electrooculography', 'Arden ratio testing', 'standing potential test'],
+    category: 'Neuro-Ophthalmology',
+    section: 'Electrodiagnostics',
+    isSpecialTest: true,
+    purpose:
+      "An electrophysiologic recording of the eye's resting corneo-retinal standing potential — generated primarily by the retinal pigment epithelium (RPE) and its interaction with the photoreceptors — as it changes with dark and light adaptation, used to objectively assess RPE/photoreceptor-complex function. Unlike the electroretinogram (ERG), which reflects the retina's response to a light stimulus, EOG reflects a slow baseline electrical potential and is most clinically valuable as the confirmatory test for Best vitelliform macular dystrophy, where it is classically severely abnormal even when the full-field ERG is entirely normal.",
+    clinicalIndications: [
+      'Suspected Best vitelliform macular dystrophy (Best disease) or other bestrophinopathy, to confirm the diagnosis when clinical/fundus/OCT findings and family history are suggestive',
+      'Differentiating Best disease from other causes of macular vitelliform lesions or macular dystrophy that spare EOG (e.g., adult-onset foveomacular vitelliform dystrophy, which typically shows a normal or only mildly reduced Arden ratio)',
+      'Carrier/asymptomatic-relative screening in a family with known Best disease, since the EOG light rise is characteristically abnormal even in mutation carriers with a normal-appearing fundus',
+      'Suspected diffuse RPE dysfunction in other inherited or acquired chorioretinal disease, as an adjunct to ERG when the differential includes a primarily RPE-level process',
+    ],
+    equipment: [
+      'ISCEV-compliant EOG recording system with skin (periocular) electrodes and eye-position calibration capability',
+      'A Ganzfeld or diffuse illumination source capable of standardized dark and light adaptation phases',
+      'Mydriatic drops for pupil dilation',
+    ],
+    patientPreparation: [
+      'Dilate both pupils fully, since the standard light-adaptation phase uses a strong, standardized full-field light stimulus',
+      'Clean the skin at the medial and lateral canthus of each eye and apply electrodes there (not corneal electrodes, distinguishing EOG from ERG electrode placement)',
+      'Explain that the patient will be asked to make repeated, standardized horizontal saccades (looking rhythmically between two fixation points) throughout both a dark and a light phase of testing, each typically lasting at least 12-15 minutes',
+    ],
+    technique: [
+      'Place skin electrodes at the medial and lateral canthi of each eye (plus a ground electrode), which record the changing potential difference generated as the eye rotates and the corneo-positive/retina-negative dipole moves relative to the fixed electrodes',
+      'Have the patient perform standardized, rhythmic horizontal saccades between two fixed points (typically alternating every 1-2 seconds) throughout the recording, since the saccadic eye movement itself is what generates the measurable deflection — a steady stare produces no usable signal',
+      'Record this saccadic potential continuously through an initial dark-adaptation phase (ISCEV standard: at least 20 minutes, historically often described as approximately 15 minutes in older protocols) during which the potential falls to a minimum, the "dark trough"',
+      'Then switch to a standardized, sustained bright full-field light and continue recording as the potential rises to a maximum, the "light peak," which is typically reached within roughly 7-12 minutes of light onset',
+      'Calculate the Arden ratio (light peak amplitude divided by dark trough amplitude, expressed as a ratio or percentage) for each eye, and compare against the testing laboratory\'s own normative cutoff',
+    ],
+    normalFindings: [
+      'A clear dark trough followed by a light peak of substantially greater amplitude, yielding an Arden (light peak:dark trough) ratio generally accepted as normal at approximately 1.8-2.0 or greater; published cutoffs vary somewhat by laboratory and source, with some citing ≥1.85 and others ≥1.8 as the lower limit of normal, and values roughly 1.65-1.8 sometimes classified as borderline/subnormal',
+      'Symmetric light-peak amplitude and Arden ratio between the two eyes',
+    ],
+    abnormalFindings: [
+      'A markedly reduced or absent light peak producing a severely subnormal Arden ratio (commonly cited as roughly 1.5 or less, and often in the range of 1.1-1.5) in the setting of a normal full-field ERG — the classic, virtually pathognomonic pattern of Best vitelliform macular dystrophy, present at all clinical stages of disease and even in genetically confirmed carriers with a normal-appearing fundus',
+      'A mildly to moderately reduced Arden ratio, seen nonspecifically in a range of diffuse RPE/outer retinal disorders (not specific to any one diagnosis, so must be correlated with the clinical and ERG picture)',
+      'Occasionally a normal or near-normal EOG in a patient with molecularly confirmed Best disease — an important and well-documented exception to the classic teaching that should prevent over-reliance on EOG alone to exclude the diagnosis',
+    ],
+    interpretation:
+      "The key diagnostic principle is the dissociation between EOG and ERG in Best disease: because Best disease is fundamentally a disorder of the RPE/photoreceptor interface (caused by BEST1 mutations affecting the bestrophin-1 chloride channel) rather than of phototransduction itself, the full-field ERG — which reflects photoreceptor and post-receptoral retinal function — is typically normal or near-normal, while the EOG light rise, which specifically depends on RPE function, is severely and characteristically reduced. This ERG-normal/EOG-abnormal dissociation is the classic confirmatory finding used to diagnose Best disease and to identify asymptomatic carriers within an affected family, even before vitelliform lesions are visible on the fundus. Because the abnormality is so consistently present across disease stages and in carriers, a severely subnormal Arden ratio in the setting of a normal ERG and a fundus or family history consistent with Best disease is highly supportive of the diagnosis; conversely, because EOG abnormalities are nonspecific to RPE dysfunction in general (not specific to Best disease alone), and because rare genetically confirmed cases with a normal EOG have been reported, EOG results should always be interpreted together with the fundus exam, OCT, family history, and — increasingly, as the definitive confirmatory step — direct BEST1 genetic testing rather than in isolation.",
+    associatedConditionIds: ['best-disease'],
+    clinicalPearls: [
+      'The single most useful teaching point is the dissociation pattern: a normal ERG with a severely abnormal EOG (low Arden ratio) is the classic signature of Best vitelliform macular dystrophy, reflecting that ERG tests photoreceptor function while EOG tests RPE function.',
+      'The Arden ratio is abnormal in Best disease at every clinical stage — previtelliform, vitelliform, pseudohypopyon, and atrophic/scarred — and even in asymptomatic carriers with a normal fundus, which makes EOG useful for family screening, not just for confirming disease in a symptomatic patient.',
+      'A rhythmic saccade (not steady fixation) is required throughout EOG recording to generate a usable signal — a common source of a technically inadequate or artifactually low recording is a patient who stares instead of alternating fixation.',
+      'A normal EOG does not fully exclude Best disease, since rare genetically confirmed cases with a preserved light rise have been reported — genetic testing for BEST1 is the more definitive confirmatory step when available.',
+    ],
+    commonErrors: [
+      'Ordering EOG without a paired full-field ERG, losing the dissociation pattern that gives EOG most of its diagnostic value in suspected Best disease',
+      'Allowing the patient to fixate steadily rather than perform the required rhythmic saccades, producing a poor-quality or falsely low-amplitude recording',
+      'Cutting the dark- or light-adaptation phase short, which can produce a falsely low dark trough or an incompletely developed light peak and an inaccurate Arden ratio',
+      'Treating a mildly reduced Arden ratio as specific for Best disease, when mild-to-moderate EOG reduction is a nonspecific finding across a range of diffuse RPE disorders',
+      'Assuming a normal EOG excludes Best disease, when rare molecularly confirmed cases with normal electrooculography have been reported',
+    ],
+    limitations: [
+      'Testing is lengthy (typically 30-45+ minutes total for both dark and light phases) and requires sustained patient cooperation with a specific saccadic task, which can be difficult in young children or uncooperative patients',
+      'The Arden ratio is a nonspecific marker of RPE dysfunction in general, not specific to any single diagnosis, and must be interpreted alongside ERG, fundus/OCT findings, and family history',
+      'Normative cutoff values vary somewhat between laboratories and published sources, so results should be compared against the testing laboratory\'s own reference range',
+      'Has been substantially supplanted for definitive diagnosis by direct BEST1 (and related bestrophinopathy gene) molecular genetic testing where available, though EOG remains useful as an accessible functional screening and confirmatory test',
+    ],
+    relatedTechniqueIds: ['electroretinogram', 'genetic-testing-inherited-retinal-disease'],
+    references: [
+      'Constable PA, Bach M, Frishman LJ, Jacobs PM, Robson AG. ISCEV standard for clinical electro-oculography (2017 update). Doc Ophthalmol. 2017;134(1):1-9.',
+      'Marmor MF, Zrenner E. Standard for clinical electro-oculography. International Society for Clinical Electrophysiology of Vision. Arch Ophthalmol. 1993;111(5):601-4.',
+      'Boon CJ, Klevering BJ, Leroy BP, Hoyng CB, Keunen JE, den Hollander AI. The spectrum of ocular phenotypes caused by mutations in the BEST1 gene. Prog Retin Eye Res. 2009;28(3):187-205.',
+      'Krill AE, Morse PA, Potts AM, Klien BA. Hereditary vitelliform macular degeneration: clinical, psychophysical, and electrophysiologic findings. Am J Ophthalmol. 1966;61(6):1405-15 (original description of the EOG light-rise abnormality and Arden ratio in Best disease).',
+      'American Academy of Ophthalmology, Basic and Clinical Science Course, Section 12: Retina and Vitreous — electro-oculography and Best disease.',
+    ],
+  },
 ]
