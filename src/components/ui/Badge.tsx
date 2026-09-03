@@ -54,3 +54,15 @@ export function urgencyTone(urgency: string): BadgeTone {
       return 'success'
   }
 }
+
+/** Tone for EmergencyProtocol.urgencyTier — distinct scale from urgencyTone (WorkupUrgency). */
+export function urgencyTierTone(tier: string): BadgeTone {
+  switch (tier) {
+    case 'Immediate (minutes)':
+      return 'danger'
+    case 'Emergent (same-visit / hours)':
+      return 'warning'
+    default:
+      return 'info'
+  }
+}

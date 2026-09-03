@@ -21,6 +21,7 @@ import {
   Calculator,
   Library,
   Disc,
+  Siren,
   type LucideIcon,
 } from 'lucide-react'
 import { primaryNav, futureToolsNav } from '../../config/navigation'
@@ -43,6 +44,7 @@ const iconMap: Record<string, LucideIcon> = {
   calculator: Calculator,
   library: Library,
   disc: Disc,
+  siren: Siren,
 }
 
 export function Sidebar({

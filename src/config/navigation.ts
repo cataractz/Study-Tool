@@ -17,6 +17,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Contact Lens Database', path: '/lenses', icon: 'disc' },
   { label: 'Clinical Exam & Workups', path: '/exam-workup', icon: 'clipboard-check' },
   { label: 'Diagnostic Testing & Imaging', path: '/diagnostic-testing', icon: 'scan-eye' },
+  { label: 'Emergency & Urgent Eye Care', path: '/emergency-care', icon: 'siren' },
 ]
 
 export const futureToolsNav: NavItem[] = [

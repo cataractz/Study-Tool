@@ -18,6 +18,8 @@ import { ExamTechniqueDetail } from './pages/ExamTechniqueDetail'
 import { ClinicalWorkupDetail } from './pages/ClinicalWorkupDetail'
 import { DiagnosticTestingHub } from './pages/DiagnosticTestingHub'
 import { DiagnosticTestingDetail } from './pages/DiagnosticTestingDetail'
+import { EmergencyCareHub } from './pages/EmergencyCareHub'
+import { EmergencyProtocolDetail } from './pages/EmergencyProtocolDetail'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -42,6 +44,8 @@ function App() {
         <Route path="/exam-workup/workup/:workupId" element={<ClinicalWorkupDetail />} />
         <Route path="/diagnostic-testing" element={<DiagnosticTestingHub />} />
         <Route path="/diagnostic-testing/:techniqueId" element={<DiagnosticTestingDetail />} />
+        <Route path="/emergency-care" element={<EmergencyCareHub />} />
+        <Route path="/emergency-care/:protocolId" element={<EmergencyProtocolDetail />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
