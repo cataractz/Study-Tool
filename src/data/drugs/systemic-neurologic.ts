@@ -17,6 +17,7 @@ export const systemicNeurologic: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral, titrated: typically 25-50 mg at bedtime initially, increased gradually to a maintenance dose of 100-400 mg/day in divided doses depending on indication',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Capsule (sprinkle)', 'Extended-release capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -64,6 +65,13 @@ export const systemicNeurologic: Drug[] = [
     ],
     pregnancyLactation:
       'Increased risk of major congenital malformations, particularly oral clefts, with first-trimester exposure; also associated with small-for-gestational-age infants. Excreted into breast milk; use during breastfeeding requires weighing benefits versus infant risk in consultation with the prescriber.',
+    pediatricConsiderations: [
+      'FDA-approved as adjunctive therapy for partial-onset seizures, primary generalized tonic-clonic seizures, and Lennox-Gastaut syndrome in children 2 years and older, and as monotherapy for new/recently diagnosed seizures down to age 2.',
+      'FDA-approved for migraine prophylaxis in adolescents 12-17 years — the only migraine preventive medication with pediatric FDA approval — but NOT approved for migraine prevention in children under 12.',
+      'Oligohidrosis and hyperthermia are a particular pediatric safety concern, especially in hot weather or with strenuous activity, given children\'s relatively larger body-surface-to-mass ratio and reliance on sweating for thermoregulation.',
+      'The acute angle-closure/myopic-shift ocular toxicity syndrome can occur in pediatric patients just as in adults and should be considered in any child on topiramate presenting with acute eye pain or vision change.',
+    ],
+    relatedConditionIds: ['primary-angle-closure-glaucoma', 'ocular-migraine'],
     monitoring: [
       'Any patient starting topiramate (or increasing its dose) who presents with acute bilateral blurred vision, ocular pain, redness, or headache should be urgently evaluated for angle closure and elevated IOP',
       'IOP measurement and gonioscopy/anterior chamber depth assessment (may show shallow chamber with open angle peripherally, distinguishing from pupillary-block closure)',
@@ -104,6 +112,7 @@ export const systemicNeurologic: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: maintenance typically 300-400 mg/day (divided or once daily with extended-release); IV loading dose for status epilepticus is weight-based and given under monitoring; therapeutic serum level 10-20 mcg/mL',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Capsule (extended-release)', 'Oral suspension', 'Injection (intravenous)'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -148,6 +157,13 @@ export const systemicNeurologic: Drug[] = [
     ],
     pregnancyLactation:
       'Associated with fetal hydantoin syndrome (craniofacial anomalies, nail/digit hypoplasia, growth deficiency, developmental delay) with first-trimester exposure; folic acid supplementation recommended. Excreted in breast milk in small amounts; generally considered compatible with breastfeeding with monitoring, per prescriber guidance.',
+    pediatricConsiderations: [
+      'IV phenytoin loading dose for pediatric status epilepticus is 15-20 mg/kg (with an additional 10 mg/kg if seizures continue), infused no faster than 1-3 mg/kg/min given risk of cardiac arrhythmia/hypotension with rapid administration; continuous cardiac monitoring is required during infusion.',
+      'Gingival hyperplasia can be especially pronounced in children/adolescents during active dental development, making meticulous oral hygiene counseling important.',
+      'Fosphenytoin (a water-soluble prodrug) is often preferred over phenytoin in pediatric emergency settings given a lower risk of infusion-site reactions and cardiovascular complications.',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['nystagmus'],
     monitoring: [
       'Serum phenytoin levels (therapeutic range 10-20 mcg/mL) correlated with clinical signs of toxicity',
       'Assess for nystagmus on extraocular motility testing as an early clinical sign of elevated levels',
@@ -185,6 +201,7 @@ export const systemicNeurologic: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: initial 10-15 mg/kg/day, titrated to a typical maintenance range of 1000-2500 mg/day in divided doses (or once daily with extended-release); therapeutic serum level approximately 50-100 mcg/mL',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Delayed-release tablet', 'Capsule (sprinkle)', 'Oral solution', 'Injection (intravenous)'],
     route: 'Oral or intravenous',
     sideEffects: {
       ocular: [
@@ -233,6 +250,12 @@ export const systemicNeurologic: Drug[] = [
     ],
     pregnancyLactation:
       'Highly teratogenic — associated with neural tube defects (spina bifida), craniofacial anomalies, cardiovascular defects, and long-term neurodevelopmental/cognitive impairment; contraindicated for migraine prophylaxis in pregnancy and avoided when possible for other indications in women of childbearing potential. Excreted in breast milk in low concentrations; generally considered compatible with breastfeeding with infant monitoring per prescriber guidance.',
+    pediatricConsiderations: [
+      'BLACK BOX WARNING: children under 2 years of age are at markedly increased risk of fatal hepatotoxicity, especially those on multiple anticonvulsants, with congenital metabolic disorders, severe seizure disorders with intellectual disability, or organic brain disease — valproic acid should be used with extreme caution and, when possible, as monotherapy in this age group.',
+      'Contraindicated in children under 2 years clinically suspected of having a mitochondrial disorder, and absolutely contraindicated at any age in patients with confirmed POLG-related mitochondrial disease (e.g., Alpers-Huttenlocher syndrome) given the risk of fulminant hepatic failure.',
+      'Baseline and frequent liver function testing, especially during the first 6 months of therapy, is critical in pediatric patients given this pronounced age-related hepatotoxicity risk.',
+    ],
+    relatedConditionIds: ['ocular-migraine'],
     monitoring: [
       'Serum valproic acid levels (therapeutic range approximately 50-100 mcg/mL)',
       'Liver function tests, particularly early in treatment',
@@ -270,6 +293,7 @@ export const systemicNeurologic: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: initial 100-200 mg once or twice daily, titrated to a typical maintenance dose of 400-1200 mg/day in divided doses; therapeutic serum level 4-12 mcg/mL',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Extended-release tablet/capsule', 'Chewable tablet', 'Oral suspension'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -316,6 +340,11 @@ export const systemicNeurologic: Drug[] = [
     ],
     pregnancyLactation:
       'Associated with neural tube defects and craniofacial/fingernail anomalies (fetal carbamazepine syndrome) with first-trimester exposure; folic acid supplementation recommended. Excreted in breast milk; generally considered relatively compatible with breastfeeding with infant monitoring, per prescriber guidance.',
+    pediatricConsiderations: [
+      'FDA-labeled for use in children with partial seizures, generalized tonic-clonic seizures, and mixed seizure patterns, with no pediatric-specific safety concerns beyond standard weight-based dosing.',
+      'HLA-B*1502 screening before initiation is particularly relevant in pediatric patients of Asian ancestry, given the same elevated Stevens-Johnson syndrome/TEN risk as in adults.',
+    ],
+    offLabelUses: ['Neuropathic pain (off-label, e.g., diabetic neuropathy) — historically used before newer agents such as gabapentin became preferred'],
     monitoring: [
       'Serum carbamazepine levels (therapeutic range 4-12 mcg/mL)',
       'CBC (baseline and periodic) given blood dyscrasia risk',
@@ -354,6 +383,7 @@ export const systemicNeurologic: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: initial 300 mg once daily or divided, titrated up to typical maintenance range of 900-3600 mg/day in 3 divided doses depending on indication and renal function',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Tablet', 'Oral solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -393,6 +423,10 @@ export const systemicNeurologic: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; use during pregnancy only if benefit outweighs potential risk. Excreted into breast milk; caution advised, monitor nursing infant for sedation.',
+    pediatricConsiderations: [
+      'FDA-approved as adjunctive therapy for partial-onset seizures in children 3 years and older; behavioral side effects (aggression, emotional lability, hyperactivity, thought disorder) are more common and more prominent in pediatric patients than in adults, an important pediatric-specific counseling point.',
+      'Not established as safe/effective for neuropathic pain or other off-label uses in children — pediatric use outside epilepsy is largely extrapolated from adult data.',
+    ],
     monitoring: [
       'Ask about blurred vision, diplopia, or unsteady gait at eye exams in patients on gabapentin, particularly after dose increases',
       'Renal function periodically, since dosing is renally adjusted',
@@ -433,6 +467,7 @@ export const systemicNeurologic: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 2-10 mg two to four times daily depending on indication; IV/IM for acute seizures or procedural sedation, dosed per protocol; wide dose variability by indication and route',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Oral solution', 'Injection (intravenous/intramuscular)', 'Rectal gel'],
     route: 'Oral, intravenous, intramuscular, or rectal',
     sideEffects: {
       ocular: [
@@ -479,6 +514,13 @@ export const systemicNeurologic: Drug[] = [
     ],
     pregnancyLactation:
       'Associated with potential risk of oral cleft with first-trimester exposure and neonatal withdrawal/floppy infant syndrome with third-trimester exposure; use in pregnancy only if clearly needed. Excreted into breast milk with potential for infant sedation and accumulation; generally avoided or used cautiously during breastfeeding.',
+    pediatricConsiderations: [
+      'Rectal diazepam gel (Diastat) is FDA-approved and widely used for pediatric acute repetitive/breakthrough seizure clusters, administered by caregivers outside the hospital setting.',
+      'IV diazepam (or rectal gel when IV access is unavailable) is a first-line benzodiazepine for pediatric status epilepticus.',
+      'Paradoxical agitation/excitation is more common in pediatric (and elderly) patients than in other adults.',
+    ],
+    controlledSubstanceSchedule: 'Schedule IV (federal)',
+    isEmergencyMedication: true,
     monitoring: [
       'Ask about blurred vision, diplopia, or unsteadiness in patients on chronic diazepam therapy at eye exams',
       'Assess for excessive sedation, especially in elderly patients or those on concurrent opioids/CNS depressants',

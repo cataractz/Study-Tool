@@ -215,6 +215,11 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; use only if clearly needed. Unknown whether excreted in breast milk in significant amounts; caution advised during lactation.',
+    pediatricConsiderations: [
+      'Not FDA-approved for pediatric use (unlike oxybutynin, which IS approved down to age 5) — tolterodine is used off-label in children with neurogenic or overactive bladder, with reported pediatric dosing regimens (e.g., oral solution 0.2-2 mg twice daily in young children, extended-release 2-6 mg once daily in adolescents) drawn from clinical studies rather than an approved label.',
+    ],
+    offLabelUses: ['Pediatric neurogenic/overactive bladder (off-label; not FDA-approved for children)'],
+    relatedConditionIds: ['primary-angle-closure-glaucoma'],
     monitoring: [
       'Anterior chamber angle assessment (van Herick or gonioscopy) in patients with known narrow angles or significant hyperopia before/during therapy',
       'Ask about new eye pain, redness, or halos suggestive of angle-closure',
@@ -251,6 +256,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 5 mg two to three times daily (immediate-release) or 5-30 mg once daily (extended-release); transdermal patch and topical gel formulations also available',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Extended-release tablet', 'Syrup', 'Transdermal patch', 'Topical gel'],
     route: 'Oral, transdermal patch, or topical gel',
     sideEffects: {
       ocular: [
@@ -294,6 +300,12 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; use only if clearly needed. Excreted in breast milk in small amounts; caution advised during lactation.',
+    pediatricConsiderations: [
+      'Immediate-release oxybutynin (tablet/syrup) is FDA-approved for children ≥5 years and extended-release tablets for children ≥6 years — the only antimuscarinic formally approved for pediatric overactive/neurogenic bladder use in North America, with weight-based dosing around 0.15-0.4 mg/kg/day.',
+      'A topical 3% gel formulation has been studied specifically in pediatric neurogenic bladder as an alternative to oral dosing.',
+    ],
+    offLabelUses: ['Primary focal hyperhidrosis (oral, off-label; topical gel formulations also studied, including in adolescents)'],
+    relatedConditionIds: ['primary-angle-closure-glaucoma'],
     monitoring: [
       'Anterior chamber angle assessment (van Herick or gonioscopy) in patients with known narrow angles, significant hyperopia, or age-related lens thickening before/during therapy',
       'Ask about new eye pain, redness, or halos suggestive of angle-closure',
@@ -333,6 +345,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 5-10 mg three to four times daily for nausea/vomiting; also available IM, IV, and rectal suppository formulations for acute antiemetic use',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection', 'Suppository'],
     route: 'Oral, intramuscular, intravenous, or rectal',
     sideEffects: {
       ocular: [
@@ -376,6 +389,11 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if clearly needed; risk of extrapyramidal/withdrawal symptoms in neonates exposed near term. Limited data on breast milk excretion; caution advised during lactation.',
+    pediatricConsiderations: [
+      'Not recommended in children younger than 2 years or weighing less than 9 kg (20 lb); pediatric patients are more prone to extrapyramidal reactions (including oculogyric crisis) even at moderate doses, so the lowest effective dose should be used.',
+      'Weight-tiered pediatric dosing for nausea/vomiting: approximately 2.5 mg once or twice daily for 9-13 kg, up to 2.5 mg three times daily or 5 mg twice daily for 18-39 kg, with defined daily maximums by age group.',
+    ],
+    offLabelUses: ['Acute migraine (IV/IM, including in pediatric emergency department use — a non-FDA-approved indication)'],
     monitoring: [
       'Screen for oculogyric crisis / abnormal sustained eye deviation, particularly early in treatment, in the emergency/urgent care setting where this drug is frequently given for nausea or headache',
       'Slit lamp exam for corneal/lens pigmentary deposits ONLY relevant with chronic, long-term, high-dose therapy (uncommon for typical antiemetic use)',
@@ -412,6 +430,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Subcutaneous injection: 0.25 mg (8 million IU) every other day, after a gradual dose titration over the first several weeks',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Injection'],
     route: 'Subcutaneous injection',
     sideEffects: {
       ocular: [
@@ -453,6 +472,12 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; use during pregnancy generally avoided unless clearly needed, per current guidelines individualized with the prescribing neurologist. Unknown extent of excretion in breast milk; caution advised.',
+    pediatricConsiderations: [
+      'Not formally FDA-approved for pediatric multiple sclerosis (as with nearly all MS disease-modifying therapies, fingolimod being the notable exception) but is used off-label at the SAME full adult dose (250 mcg subcutaneously every other day) regardless of age, following the standard titration schedule.',
+      'The BETAPAEDIC study and other pediatric cohorts found a similar safety/tolerability profile to adults (flu-like symptoms, transaminase elevation, injection site reactions), with no unexpected serious adverse events, though long-term effects on maturing organ systems have not been fully characterized.',
+    ],
+    offLabelUses: ['Relapsing-remitting multiple sclerosis in pediatric patients (off-label; not formally FDA-approved for children)'],
+    relatedConditionIds: ['multiple-sclerosis-ocular'],
     monitoring: [
       'Baseline and periodic dilated fundus exam is not specifically mandated for interferon beta-1b itself (unlike fingolimod\'s required baseline/follow-up OCT for macular edema), but any new visual symptom warrants prompt eye exam to distinguish an MS relapse (optic neuritis) from a rare interferon-associated retinal finding',
       'Screen for cotton-wool spots/retinal hemorrhages if visual symptoms or fundus findings are unexplained',
@@ -494,6 +519,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'IV pulse: 1 g intravenously daily for 3 days (classic ONTT/GCA protocol), often followed by an oral prednisone taper; oral: 4-48 mg/day in divided doses depending on indication and severity',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection'],
     route: 'Oral, intravenous, or intramuscular',
     sideEffects: {
       ocular: [
@@ -538,6 +564,12 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Generally used when clearly needed given the acuity of indications (e.g., vision-threatening optic neuritis, GCA); low-to-moderate doses considered relatively low risk, high doses used cautiously with monitoring for neonatal adrenal suppression. Excreted in breast milk in small amounts; monitor infant with maternal high-dose use.',
+    pediatricConsiderations: [
+      'Pediatric optic neuritis is treated with IV methylprednisolone 20-30 mg/kg/day (maximum 1 g/day) for 3-5 days, followed by an oral taper starting at 1 mg/kg over 4-6 weeks — proportionally higher weight-based dosing than typical adult regimens.',
+      'Prolonged or repeated courses in children carry a specific risk of growth retardation in addition to the class-wide risks of adrenal suppression, hypertension, and central obesity, making duration-limited tapering especially important in pediatric patients.',
+    ],
+    isEmergencyMedication: true,
+    relatedConditionIds: ['optic-neuritis', 'giant-cell-arteritis', 'multiple-sclerosis-ocular', 'rheumatoid-arthritis-ocular', 'lupus-ocular'],
     monitoring: [
       'IOP measurement during and after high-dose pulse courses, particularly in known or suspected steroid responders',
       'Dilated fundus/OCT evaluation if new central visual distortion is reported (screen for CSCR)',
@@ -578,6 +610,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 4-48 mg/day depending on indication and severity, tapered as clinically appropriate; intramuscular depot injection: 40 mg (2 mL of 20 mg/mL suspension) or per formulation, repeated no more often than every 1-2 weeks',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Injection'],
     route: 'Oral or intramuscular (systemic depot) injection - NOT the intravitreal/periocular formulation',
     sideEffects: {
       ocular: [
@@ -622,6 +655,11 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if clearly needed and benefits outweigh risks; chronic high-dose use associated with growth restriction and neonatal adrenal suppression risk. Excreted in breast milk in small amounts; monitor infant with maternal high-dose or repeated use.',
+    pediatricConsiderations: [
+      'Weight-based oral dosing in children is approximately 0.01-0.3 mg/kg/day; intramuscular dosing has been extrapolated from pediatric asthma studies at approximately 1 mg/kg (maximum 40 mg).',
+      'Growth suppression and HPA-axis suppression are particular concerns with prolonged or repeated systemic dosing in children, paralleling the risks described for other chronic corticosteroid routes (e.g., intranasal) in the pediatric literature.',
+    ],
+    relatedConditionIds: ['rheumatoid-arthritis-ocular', 'lupus-ocular'],
     monitoring: [
       'IOP measurement with chronic or repeated systemic dosing, particularly in known or suspected steroid responders',
       'Periodic lens exam for posterior subcapsular cataract with prolonged or repeated systemic use',
@@ -662,6 +700,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 500 mg once or twice daily initially, titrated up to 2-3 g/day in divided doses (enteric-coated formulation commonly used to reduce GI upset)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Enteric-coated tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -707,6 +746,12 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Generally considered relatively low risk among DMARDs and often continued in pregnancy when needed for disease control, with folic acid supplementation; caution near term given theoretical kernicterus risk in the newborn. Excreted in breast milk in low levels; generally considered compatible with breastfeeding in full-term, healthy infants per most guidelines, with pediatrician awareness.',
+    pediatricConsiderations: [
+      'FDA-established for polyarticular juvenile idiopathic arthritis in children ≥6 years at 30-50 mg/kg/day in 2 divided doses (maximum 2 g/day), started at 1/4 to 1/3 of the target maintenance dose and titrated weekly over about 4 weeks to reduce GI intolerance.',
+      'Not recommended for children with SYSTEMIC-course juvenile idiopathic arthritis given a higher frequency of adverse effects in this subgroup.',
+      'Contraindicated in infants under 2 months of age given a risk of kernicterus from sulfapyridine displacing bilirubin from albumin.',
+    ],
+    relatedConditionIds: ['ankylosing-spondylitis', 'ulcerative-colitis', 'crohn-disease', 'hla-b27-uveitis'],
     monitoring: [
       'Ask about new or recurrent eye redness, pain, photophobia, consistent with anterior uveitis flare - relevant given the HLA-B27-associated systemic disease this drug is often used to treat',
       'Screen for soft contact lens discoloration and discuss lens modality/replacement schedule if relevant',
@@ -746,6 +791,7 @@ export const systemicAdditional: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 30 mg three times daily',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -789,6 +835,11 @@ export const systemicAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; use only if clearly needed. Unknown whether excreted in breast milk; caution advised during lactation.',
+    pediatricConsiderations: [
+      'Safety and efficacy have not been established in pediatric patients (<18 years); appropriate studies establishing a pediatric dose have not been performed, so use in children is not recommended.',
+    ],
+    offLabelUses: ['Xerostomia following head and neck radiation therapy'],
+    relatedConditionIds: ['sjogren-syndrome', 'dry-eye-disease'],
     monitoring: [
       'Tear film assessment (e.g., Schirmer testing, tear breakup time) can help gauge objective response in Sjögren-associated dry eye, alongside topical dry eye therapies',
       'Ask about blurred vision or visual disturbance at follow-up',

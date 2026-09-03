@@ -19,6 +19,7 @@ export const systemicPsychiatric: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 20 mg once daily initially, titrated up to 20-80 mg/day depending on indication',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Capsule', 'Delayed-release capsule (weekly)', 'Tablet', 'Oral solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -65,6 +66,11 @@ export const systemicPsychiatric: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if benefit outweighs risk; associated with neonatal adaptation syndrome and a possible small increased risk of persistent pulmonary hypertension of the newborn when used in late pregnancy. Excreted in breast milk; monitor nursing infants for irritability/poor feeding.',
+    pediatricConsiderations: [
+      'FDA-approved for major depressive disorder in children 8 years and older and for obsessive-compulsive disorder in children 7 years and older — one of the few SSRIs with pediatric MDD approval.',
+      'Boxed warning for increased suicidal thinking/behavior applies specifically to children, adolescents, and young adults up to age 24; close monitoring is required, especially during the first several weeks of treatment and after dose changes.',
+    ],
+    relatedConditionIds: ['primary-angle-closure-glaucoma'],
     monitoring: [
       'Anterior chamber angle assessment (van Herick or gonioscopy) in patients with known narrow angles or hyperopia before/during therapy',
       'Ask about new eye pain, redness, or halos suggestive of angle-closure',
@@ -105,6 +111,7 @@ export const systemicPsychiatric: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 50 mg once daily initially, titrated up to 50-200 mg/day depending on indication',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Oral solution (concentrate)'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -150,6 +157,11 @@ export const systemicPsychiatric: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if benefits outweigh risks; associated with neonatal adaptation syndrome when used in late pregnancy. Excreted in breast milk in low levels; generally considered one of the preferred SSRIs during lactation, but monitor infant.',
+    pediatricConsiderations: [
+      'FDA-approved for pediatric obsessive-compulsive disorder in children 6 years and older (not approved for pediatric major depressive disorder, unlike fluoxetine); considered one of the preferred SSRIs during lactation given low levels detected in breast milk.',
+      'The same class-wide boxed warning for increased suicidality risk in children, adolescents, and young adults applies.',
+    ],
+    relatedConditionIds: ['primary-angle-closure-glaucoma'],
     monitoring: [
       'Anterior chamber angle assessment in patients with known narrow angles or significant hyperopia',
       'Screen for new-onset eye pain, redness, or halos',
@@ -191,6 +203,7 @@ export const systemicPsychiatric: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 25-50 mg at bedtime initially, titrated up to 100-300 mg/day for depression (lower doses for neuropathic pain)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -237,6 +250,11 @@ export const systemicPsychiatric: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if clearly needed; limited data suggest possible risk with third-trimester use (neonatal withdrawal/anticholinergic symptoms). Excreted in breast milk; caution advised, monitor infant for sedation.',
+    pediatricConsiderations: [
+      'Not FDA-approved for depression in children under 12 years; when used (typically off-label for migraine prophylaxis, chronic pain, or enuresis) in adolescents 12 and older, the same boxed warning for increased suicidality in children/adolescents/young adults applies.',
+      'TCA overdose is especially dangerous in children given a narrow therapeutic-to-toxic margin and cardiotoxicity — accidental pediatric ingestion of even a few tablets can be life-threatening.',
+    ],
+    relatedConditionIds: ['primary-angle-closure-glaucoma', 'ocular-migraine'],
     monitoring: [
       'Anterior chamber angle depth/gonioscopy before initiating in at-risk patients (hyperopes, shallow chambers, older patients)',
       'IOP measurement if angle-closure symptoms develop',
@@ -278,6 +296,7 @@ export const systemicPsychiatric: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 150 mg once daily initially (sustained/extended-release formulations), titrated up to 300-450 mg/day for depression; 150 mg twice daily for smoking cessation',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Sustained-release tablet', 'Extended-release tablet'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -323,6 +342,12 @@ export const systemicPsychiatric: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if benefits outweigh risks; data are limited but no strong evidence of major teratogenicity. Excreted in breast milk; caution advised during lactation, monitor infant for irritability.',
+    pediatricConsiderations: [
+      'Not FDA-approved for any indication in pediatric patients; safety and effectiveness in children have not been established, so pediatric use (e.g., for depression, ADHD, or smoking cessation) is off-label.',
+      'The same boxed warning for increased suicidality in children, adolescents, and young adults applies to any off-label pediatric use.',
+      'Children and adolescents with eating disorders (anorexia/bulimia) are at particularly elevated seizure risk, and bupropion is contraindicated in this population — especially relevant given the higher prevalence of eating disorders in adolescent patients.',
+    ],
+    offLabelUses: ['ADHD (attention-deficit/hyperactivity disorder), off-label, particularly when comorbid depression is present'],
     monitoring: [
       'Ask about new visual symptoms (blurred vision, eye pain) at routine exams',
       'Assess anterior chamber angle in patients with known narrow angles, particularly if other mydriatic-risk medications are also used',
@@ -361,6 +386,7 @@ export const systemicPsychiatric: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 300 mg two to three times daily initially, titrated based on serum lithium levels (target therapeutic range typically 0.6-1.2 mEq/L)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Extended-release tablet', 'Capsule', 'Oral solution'],
     route: 'Oral',
     sideEffects: {
       ocular: [
@@ -408,6 +434,12 @@ export const systemicPsychiatric: Drug[] = [
     ],
     pregnancyLactation:
       'Associated with increased risk of cardiac malformations (notably Ebstein anomaly) with first-trimester exposure; use only if clearly necessary with close monitoring. Contraindicated during breastfeeding due to significant excretion in breast milk and infant toxicity risk.',
+    pediatricConsiderations: [
+      'FDA-approved for bipolar I disorder (acute manic/mixed episodes and maintenance) in children and adolescents 7 years and older per the current label, though many clinicians still primarily use it in adolescents given historically limited pediatric outcome data.',
+      'Renal, thyroid, and cardiac monitoring requirements are the same as in adults but carry added importance given the potential for growth/developmental impact from chronic hypothyroidism or nephrogenic diabetes insipidus.',
+      'Nystagmus and other ocular motor toxicity signs should be evaluated the same way as in adults if a pediatric patient develops visual symptoms.',
+    ],
+    relatedConditionIds: ['nystagmus', 'idiopathic-intracranial-hypertension', 'papilledema'],
     monitoring: [
       'Ocular motility exam for nystagmus, particularly downbeat nystagmus, as a sign of neurotoxicity',
       'Fundus exam/optic nerve assessment for papilledema if patient reports headache or visual disturbance (screen for lithium-associated intracranial hypertension)',
@@ -448,6 +480,7 @@ export const systemicPsychiatric: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 0.5-5 mg two to three times daily depending on indication and severity; also available IM/IV for acute agitation',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Oral solution (concentrate)', 'Injection (intramuscular/intravenous)', 'Long-acting injectable (decanoate)'],
     route: 'Oral, intramuscular, or intravenous',
     sideEffects: {
       ocular: [
@@ -492,6 +525,11 @@ export const systemicPsychiatric: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if clearly needed; risk of extrapyramidal/withdrawal symptoms in neonates exposed in the third trimester. Excreted in breast milk; caution advised, monitor infant for sedation/extrapyramidal signs.',
+    pediatricConsiderations: [
+      'FDA-approved for children 3 years and older for Tourette syndrome tic suppression and severe behavioral problems; pediatric patients may be more susceptible to extrapyramidal side effects (including oculogyric crisis) than adults, so lower starting doses and close monitoring are used.',
+      'Long-term high-dose use is less common in children than adults, making pigmentary keratopathy/cataract a rarer pediatric finding, but the extrapyramidal/oculogyric crisis risk is, if anything, more pronounced in this population.',
+    ],
+    relatedConditionIds: ['cataract'],
     monitoring: [
       'Slit lamp exam for corneal and lens pigmentary deposits with chronic, long-term, high-dose therapy',
       'Visual acuity assessment given cataract risk with prolonged use',
@@ -531,6 +569,7 @@ export const systemicPsychiatric: Drug[] = [
     ocularUses: ['None — systemic medication; relevant to optometry for ocular toxicity monitoring'],
     typicalDosing: 'Oral: 0.25-2 mg once or twice daily initially, titrated up to 2-8 mg/day depending on indication (long-acting injectable formulation also available)',
     concentrations: ['N/A — oral/systemic'],
+    formulations: ['Tablet', 'Orally disintegrating tablet', 'Oral solution', 'Long-acting injectable (microspheres)'],
     route: 'Oral or long-acting intramuscular injection',
     sideEffects: {
       ocular: [
@@ -573,6 +612,12 @@ export const systemicPsychiatric: Drug[] = [
     ],
     pregnancyLactation:
       'Use only if clearly needed; risk of extrapyramidal/withdrawal symptoms in neonates exposed in the third trimester. Excreted in breast milk; caution advised, monitor infant for sedation.',
+    pediatricConsiderations: [
+      'FDA-approved for irritability associated with autistic disorder in children 5-16 years old, for bipolar I disorder (manic/mixed episodes) in children 10 years and older, and for schizophrenia in adolescents 13 years and older — one of only two FDA-approved medications (with aripiprazole) for autism-associated irritability.',
+      'Metabolic side effects (weight gain, dyslipidemia, hyperglycemia) and hyperprolactinemia tend to be more pronounced in pediatric patients than adults and require baseline and periodic metabolic monitoring.',
+      'IFIS risk from alpha-1 blockade applies to pediatric patients on risperidone undergoing any future cataract/intraocular surgery just as in adults — medication history should include any past pediatric risperidone use.',
+    ],
+    relatedConditionIds: ['cataract'],
     monitoring: [
       'Preoperative surgical history intake should specifically ask about current AND past risperidone (and other alpha-1 antagonist) use before any planned cataract surgery, so the surgeon can anticipate and prepare for IFIS (e.g., iris hooks, pupil expansion devices, modified technique)',
       'Blood pressure/orthostatic symptoms',
