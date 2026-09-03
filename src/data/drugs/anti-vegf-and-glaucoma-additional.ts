@@ -281,6 +281,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     typicalDosing:
       'Intravitreal injection of 6 mg (0.05 mL) every 4 weeks for the first 4 doses (AMD/DME), then individualized treat-and-extend regimen extending up to every 16 weeks based on anatomic and visual response',
     concentrations: ['6 mg/0.05 mL'],
+    formulations: ['Injection'],
     route: 'Intravitreal injection',
     sideEffects: {
       ocular: [
@@ -321,6 +322,11 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Avoid in pregnancy - anti-angiogenic mechanism poses theoretical embryo-fetal risk; effective contraception recommended during and for a period after treatment. Unknown excretion in breast milk; use caution during breastfeeding.',
+    pediatricConsiderations: [
+      'Safety and efficacy in pediatric patients have not been established; faricimab has not been studied for or approved in retinopathy of prematurity, unlike ranibizumab, aflibercept, and (off-label) bevacizumab',
+      'As the newest agent in the anti-VEGF class, pediatric experience is essentially nonexistent compared with the older agents',
+    ],
+    relatedConditionIds: ['amd', 'diabetic-retinopathy', 'retinal-vein-occlusion'],
     monitoring: ['IOP pre- and post-injection', 'Signs/symptoms of endophthalmitis and intraocular inflammation', 'OCT and visual acuity for treatment response', 'Blood pressure and cardiovascular status'],
     clinicalPearls: [
       'First FDA-approved bispecific antibody in ophthalmology, approved in 2022, representing the newest mechanistic generation of anti-VEGF therapy',
@@ -353,6 +359,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ocularUses: ['First-line/adjunctive IOP-lowering therapy in open-angle glaucoma and ocular hypertension'],
     typicalDosing: 'One drop once or twice daily depending on concentration/formulation',
     concentrations: ['0.25%', '0.5%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -399,6 +406,12 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy; systemic beta-blockade may affect fetus/neonate (e.g., bradycardia). Excreted in breast milk - caution advised, monitor nursing infant.',
+    pediatricConsiderations: [
+      'As a non-selective beta blocker essentially interchangeable with timolol, it carries the same pediatric risk profile when used off-label in pediatric glaucoma - apnea, bradycardia, hypothermia, and hypoglycemia are of particular concern in infants and neonates',
+      'Has been less extensively studied in children than timolol, so pediatric-specific safety experience is more limited',
+      'Punctal occlusion/eyelid closure after instillation is recommended to reduce systemic absorption, as with other topical beta blockers used in children',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Heart rate and blood pressure, especially at initiation', 'Pulmonary status (asthma/COPD symptoms)', 'Signs of systemic beta-blockade'],
     clinicalPearls: [
       'Clinically and pharmacologically essentially interchangeable with timolol - same non-selective beta-blockade mechanism, same efficacy range, same systemic risk profile',
@@ -428,6 +441,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ocularUses: ['IOP-lowering therapy, particularly favored in patients with borderline cardiac or pulmonary status among the beta-blocker options'],
     typicalDosing: 'One drop twice daily',
     concentrations: ['1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -470,6 +484,11 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy; systemic beta-blockade may affect fetus/neonate. Excreted in breast milk - caution advised while nursing.',
+    pediatricConsiderations: [
+      'Limited pediatric-specific safety and dosing data exist for carteolol compared with timolol or betaxolol',
+      'If used off-label in children, the same systemic beta-blockade precautions relevant to non-selective beta blockers (bradycardia, bronchospasm, apnea risk in infants) still apply despite its intrinsic sympathomimetic activity, which only partially mitigates - not eliminates - these risks',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Heart rate and blood pressure, especially at initiation', 'Pulmonary status', 'Lipid profile in patients where beta-blocker lipid effects are a clinical concern'],
     clinicalPearls: [
       'The defining feature of carteolol among the beta-blocker glaucoma agents is its intrinsic sympathomimetic activity (ISA), a partial agonist property not shared by timolol, levobunolol, or betaxolol',
@@ -506,6 +525,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     typicalDosing:
       'Topical: one drop up to 3 times daily; Intracameral (Miostat): 0.5 mL of 0.01% solution instilled into the anterior chamber before or after securing sutures during surgery',
     concentrations: ['0.75%', '1.5%', '2.25%', '3% (topical)', '0.01% (intracameral, Miostat)'],
+    formulations: ['Solution', 'Injection'],
     route: 'Topical ophthalmic (glaucoma); intracameral injection (surgical miosis)',
     sideEffects: {
       ocular: [
@@ -545,6 +565,11 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
       'For intracameral surgical use, patients are counseled preoperatively that pupil constriction is an expected, intended part of the procedure',
     ],
     pregnancyLactation: 'Use with caution in pregnancy and lactation; limited human data, use only if clearly needed.',
+    pediatricConsiderations: [
+      'Pediatric-specific dosing and safety data are limited for chronic topical use, and the same cholinergic-toxicity and retinal-detachment-risk cautions relevant to pilocarpine apply if used topically in children',
+      'Intracameral carbachol (Miostat) is a well-established, routinely used tool to achieve intraoperative miosis during pediatric cataract and glaucoma surgery',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma'],
     monitoring: ['IOP', 'Peripheral retinal examination given retinal detachment risk, especially in myopes', 'Symptoms of cholinergic toxicity with high topical doses', 'Anterior chamber reaction/corneal clarity postoperatively with intracameral use'],
     clinicalPearls: [
       'Carbachol has both muscarinic AND nicotinic cholinergic activity, distinguishing it from pilocarpine (muscarinic-selective), and is also resistant to acetylcholinesterase breakdown, giving it a longer duration of action',
@@ -575,6 +600,7 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ocularUses: ['IOP-lowering therapy in open-angle glaucoma and ocular hypertension, particularly when maximizing outflow through both pathways is desired'],
     typicalDosing: 'One drop in affected eye(s) once daily in the evening',
     concentrations: ['0.024%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -608,6 +634,11 @@ export const antiVegfAndGlaucomaAdditional: Drug[] = [
     ],
     pregnancyLactation:
       'Use with caution in pregnancy - not recommended unless clearly needed; prostaglandin analogs carry theoretical uterotonic/fetal risk. Caution during lactation; unknown excretion in breast milk.',
+    pediatricConsiderations: [
+      'Pediatric safety and efficacy have not been established by FDA labeling',
+      'As the newest agent in the prostaglandin/nitric-oxide class, pediatric experience is limited compared with latanoprost; off-label pediatric use would be expected to share the pigmentation/lash-growth considerations of other prostaglandin analogs',
+    ],
+    relatedConditionIds: ['primary-open-angle-glaucoma', 'ocular-hypertension'],
     monitoring: ['IOP', 'Iris and periocular pigmentation changes', 'Macular status in at-risk patients (aphakia/pseudophakia, uveitis)'],
     clinicalPearls: [
       'The only glaucoma medication that increases BOTH uveoscleral outflow (via its latanoprost acid component) AND trabecular/conventional outflow (via its nitric oxide component) through a single molecule - a genuinely novel dual-pathway mechanism in glaucoma pharmacology',

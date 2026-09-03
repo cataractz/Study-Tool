@@ -277,6 +277,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       'Uveitis: 1 drop of 1% two to three times daily depending on severity; cycloplegic refraction: 1 drop of 0.5-1% once or twice daily for 1-3 days prior to exam given its slow onset; amblyopia penalization: 1 drop of 1% once daily to the sound eye',
     concentrations: ['0.5%', '1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -314,6 +315,15 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Crosses the placenta; use topical atropine in pregnancy only if benefit outweighs risk, minimizing systemic absorption with punctal occlusion. Caution during lactation given limited data on excretion in breast milk.',
+    pediatricConsiderations: [
+      'Standard-concentration (0.5-1%) atropine carries the highest systemic anticholinergic toxicity risk of the ophthalmic cycloplegics in children and has historically been a cause of accidental pediatric poisoning; use the lowest effective concentration and counsel caregivers on secure storage.',
+      'Low-dose atropine (0.01%) for myopia control is typically used in children roughly 6-12 years old with documented myopic progression and has shown a favorable safety profile in trials (ATOM1/ATOM2 and subsequent studies), with photophobia the most common adverse effect.',
+      'Increased mydriatic sensitivity has been reported in children with Down syndrome.',
+    ],
+    offLabelUses: [
+      'Low-dose atropine (0.01%-0.02%) for slowing myopia progression in children — not yet FDA-approved for this indication as of 2026, but supported by ATOM1/ATOM2 and subsequent randomized trials',
+    ],
+    relatedConditionIds: ['anterior-uveitis', 'amblyopia', 'myopia', 'accommodative-esotropia'],
     monitoring: [
       'Angle assessment before use in at-risk patients',
       'Monitoring for systemic anticholinergic signs, especially in children',
@@ -353,6 +363,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     typicalDosing: '1 drop of 2-5% one to three times daily depending on indication; duration of cycloplegia approximately 1-3 days',
     concentrations: ['2%', '5%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -379,6 +390,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited data; use only if clearly needed, minimizing systemic absorption with punctal occlusion.',
+    pediatricConsiderations: [
+      'Use with caution in infants given anticholinergic sensitivity; systemic anticholinergic effects and CNS disturbance are less common than with atropine but can still occur with excessive dosing, so punctal occlusion is recommended.',
+    ],
+    relatedConditionIds: ['anterior-uveitis'],
     monitoring: ['Angle assessment before dilation', 'Follow-up for synechiae and IOP control in uveitis'],
     clinicalPearls: [
       'Intermediate-duration cycloplegic (~1-3 days), a middle ground between cyclopentolate and atropine',
@@ -414,6 +429,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       '0.1%: 1 drop twice daily; 0.2%: 1 drop once daily; 0.7% (Pazeo): 1 drop once daily',
     concentrations: ['0.1%', '0.2%', '0.7%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -437,6 +453,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Minimal systemic absorption with topical use; use during pregnancy/lactation only if clearly needed per prescriber judgment.',
+    pediatricConsiderations: [
+      'Pataday 0.2% and 0.7% are approved for children 2 years and older; the 0.1% formulation (Patanol) is approved for children 3 years and older. Safety/effectiveness below these respective ages has not been established.',
+    ],
+    relatedConditionIds: ['conjunctivitis'],
     monitoring: ['Symptom response (itching/redness) at follow-up'],
     clinicalPearls: [
       'Dual-acting mechanism (antihistamine plus mast cell stabilizer) gives both rapid symptom relief and preventive benefit, making it a first-line topical agent for allergic conjunctivitis',
@@ -464,6 +484,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ocularUses: ['Over-the-counter relief of allergic conjunctivitis itching and redness'],
     typicalDosing: '1 drop in the affected eye(s) every 8-12 hours, not more than twice daily; available over-the-counter',
     concentrations: ['0.025%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: ['Burning/stinging', 'Transient conjunctival hyperemia', 'Dry eye', 'Blurred vision'],
@@ -481,6 +502,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
       'See an eye care provider if symptoms persist beyond several days or worsen',
     ],
     pregnancyLactation: 'Minimal systemic absorption; use in pregnancy/lactation only if clearly needed.',
+    pediatricConsiderations: [
+      'OTC labeling supports use in adults and children 3 years of age and older; for children younger than 3, a doctor should determine use and dosing.',
+    ],
+    relatedConditionIds: ['conjunctivitis'],
     monitoring: ['Symptom improvement; refer for exam if no improvement or symptoms suggest another etiology'],
     clinicalPearls: [
       'Widely available over-the-counter and commonly recommended as first-line self-care for mild seasonal allergic conjunctivitis',
@@ -506,6 +531,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ocularUses: ['Relief of allergic conjunctivitis-related itching'],
     typicalDosing: '1 drop in the affected eye(s) twice daily',
     concentrations: ['0.05%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: ['Transient stinging/burning (common)', 'Eye pain', 'Blurred vision', 'Conjunctivitis'],
@@ -520,6 +546,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
       'Remove contacts before instillation',
     ],
     pregnancyLactation: 'Minimal systemic absorption; use in pregnancy/lactation only if clearly indicated.',
+    pediatricConsiderations: [
+      'Approved for use in patients 3 years of age and older; safety and effectiveness have not been established in children younger than 3.',
+    ],
+    relatedConditionIds: ['conjunctivitis'],
     monitoring: ['Symptom response at follow-up'],
     clinicalPearls: [
       'Second-generation topical antihistamine/mast cell stabilizer similar in class to olopatadine, but with a notably higher incidence of stinging on instillation',
@@ -556,6 +586,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       '1-2 drops in the affected eye(s) as needed, up to every 1-2 hours depending on severity; preservative-free single-use vials are preferred for frequent use (more than about 4 times daily)',
     concentrations: ['0.25%', '0.5%', '1%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: [
@@ -579,6 +610,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
       'Temporary blur immediately after instillation is normal',
     ],
     pregnancyLactation: 'Considered safe in pregnancy and lactation given negligible systemic absorption.',
+    pediatricConsiderations: [
+      'No pediatric-specific dosing restrictions; artificial tears are generally considered safe at any age, though preservative-free formulations are preferable for frequent use in children as in adults.',
+    ],
+    relatedConditionIds: ['dry-eye-disease'],
     monitoring: ['Symptom response and ocular surface staining (fluorescein/lissamine green) at follow-up'],
     clinicalPearls: [
       'Foundation of dry eye management (TFOS DEWS II step 1 therapy) regardless of dry eye subtype',
@@ -612,6 +647,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     typicalDosing: '1-2 drops in the affected eye(s) as needed, typically 3-4 times daily or more',
     concentrations: ['0.1%', '0.15%', '0.18%', '0.4%'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: ['Mild transient blur', 'Uncommon stinging (generally well tolerated)'],
@@ -626,6 +662,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
       'Generally causes less blurring than thicker gel tears, making it suitable for daytime use',
     ],
     pregnancyLactation: 'Considered safe given negligible systemic absorption.',
+    pediatricConsiderations: [
+      'No pediatric-specific dosing restrictions or established safety concerns; used across all age groups for ocular surface lubrication.',
+    ],
+    relatedConditionIds: ['dry-eye-disease'],
     monitoring: ['Symptom response and corneal/conjunctival staining at follow-up'],
     clinicalPearls: [
       'Favored for biocompatibility (hyaluronic acid occurs naturally in the extracellular matrix and vitreous) and strong water retention/lubrication with relatively less blur than carbomer (gel-based) tears',
@@ -651,6 +691,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ocularUses: ['First FDA-approved prescription treatment that directly targets tear evaporation in evaporative dry eye/MGD'],
     typicalDosing: '1 drop in each affected eye 4 times daily',
     concentrations: ['100% (single-ingredient, preservative-free)'],
+    formulations: ['Solution'],
     route: 'Topical ophthalmic',
     sideEffects: {
       ocular: ['Transient blurred vision', 'Eye redness', 'Foreign body sensation/stinging on instillation'],
@@ -668,6 +709,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Limited human data; not expected to have significant systemic absorption. Use during pregnancy/lactation per clinical judgment when benefit outweighs risk.',
+    pediatricConsiderations: [
+      'Safety and effectiveness of Miebo have not been established in pediatric patients below 18 years of age.',
+    ],
+    relatedConditionIds: ['dry-eye-disease'],
     monitoring: ['Symptom response (e.g., OSDI/SPEED scores), tear break-up time, and meibomian gland assessment at follow-up'],
     clinicalPearls: [
       'First and only FDA-approved drug that directly targets tear evaporation, rather than aqueous supplementation, by forming a monolayer over the tear film lipid layer',
@@ -713,6 +758,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       'Sterile strip moistened with saline and touched to the bulbar conjunctiva or inferior fornix, or 1 drop of a 2% solution; examine under cobalt blue light immediately after instillation',
     concentrations: ['1%', '2%', '0.6% (combination with proparacaine)', 'Impregnated paper strips'],
+    formulations: ['Solution', 'Strip'],
     route: 'Topical ophthalmic (strip or solution)',
     sideEffects: {
       ocular: [
@@ -741,6 +787,9 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     ],
     pregnancyLactation:
       'Topical ophthalmic fluorescein has negligible systemic absorption and is considered safe in pregnancy/lactation; intravenous fluorescein angiography is a different route with separate systemic considerations.',
+    pediatricConsiderations: [
+      'Widely and routinely used in infants and children for corneal staining, Seidel testing, and tonometry; no pediatric-specific dosing restriction, though single-use strips/preservative-free unit doses are preferred over multi-dose bottles in all ages to reduce contamination risk.',
+    ],
     monitoring: ['Visual inspection of the staining pattern at the time of use'],
     clinicalPearls: [
       'Fluorescein stains areas of epithelial cell loss/basement membrane exposure, not intact epithelium, because the dye pools in the hydrophilic stroma once the hydrophobic epithelial barrier is disrupted',
@@ -778,6 +827,7 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
     typicalDosing:
       'Sterile strip moistened with saline applied to the bulbar conjunctiva; examine under white or red-free light within a few minutes of instillation',
     concentrations: ['Impregnated paper strips (typical clinical form)', '1% solution (less commonly used than strips)'],
+    formulations: ['Strip', 'Solution'],
     route: 'Topical ophthalmic (strip)',
     sideEffects: {
       ocular: ['Mild transient stinging (less than rose bengal)', 'Temporary green discoloration of the tear film'],
@@ -794,6 +844,10 @@ export const surfaceAndDiagnosticDrugs: Drug[] = [
       'Mild stinging may occur but is generally well tolerated',
     ],
     pregnancyLactation: 'Negligible systemic absorption; considered safe for topical diagnostic use in pregnancy/lactation.',
+    pediatricConsiderations: [
+      'No pediatric-specific dosing restriction; used safely across all ages for ocular surface staining, and is generally better tolerated (less stinging) than rose bengal in cooperative pediatric patients.',
+    ],
+    relatedConditionIds: ['dry-eye-disease'],
     monitoring: ['Visual grading of the staining pattern at the time of use'],
     clinicalPearls: [
       'Preferred over rose bengal for ocular surface staining because it does not sting damaged/healthy tissue as severely, since rose bengal is directly toxic to healthy cells',
