@@ -1,11 +1,12 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ChevronLeft, Pill, GraduationCap, BookMarked, Sparkles } from 'lucide-react'
+import { ChevronLeft, Pill, GraduationCap, BookMarked, Sparkles, ArrowRight } from 'lucide-react'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
 import { getDrugById } from '../services/drugService'
+import { getDiseaseById } from '../services/diseaseService'
 import { buildDrugContext } from '../services/ai/contextService'
 import { Linkify, LinkifyLine } from '../components/shared/Linkify'
 
@@ -33,7 +34,11 @@ export function DrugDetail() {
         </Link>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
-            <Badge tone="purple">{drug.drugClass}</Badge>
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <Badge tone="purple">{drug.drugClass}</Badge>
+              {drug.isEmergencyMedication && <Badge tone="danger">Emergency Medication</Badge>}
+              {drug.controlledSubstanceSchedule && <Badge tone="warning">{drug.controlledSubstanceSchedule}</Badge>}
+            </div>
             <h1 className="text-2xl lg:text-3xl font-semibold text-slate-900 tracking-tight mt-2">
               {drug.genericName}
             </h1>
@@ -68,9 +73,10 @@ export function DrugDetail() {
       </div>
 
       <Section title="Dosing">
-        <Card className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+        <Card className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
           <div><p className="text-xs text-slate-400">Typical dosing</p><p className="text-slate-800 mt-0.5">{drug.typicalDosing}</p></div>
           <div><p className="text-xs text-slate-400">Concentrations</p><p className="text-slate-800 mt-0.5">{drug.concentrations.join(', ') || '—'}</p></div>
+          <div><p className="text-xs text-slate-400">Formulations</p><p className="text-slate-800 mt-0.5">{drug.formulations?.join(', ') || '—'}</p></div>
           <div><p className="text-xs text-slate-400">Route</p><p className="text-slate-800 mt-0.5">{drug.route}</p></div>
         </Card>
       </Section>
@@ -113,6 +119,39 @@ export function DrugDetail() {
           <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.monitoring.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
         </Section>
       </div>
+
+      {drug.pediatricConsiderations && drug.pediatricConsiderations.length > 0 && (
+        <Section title="Pediatric Considerations">
+          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.pediatricConsiderations.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
+        </Section>
+      )}
+
+      {drug.offLabelUses && drug.offLabelUses.length > 0 && (
+        <Section title="Off-Label Uses">
+          <Card><ul className="text-sm text-slate-700 space-y-1 list-disc pl-4">{drug.offLabelUses.map((i, k) => <li key={k}><Linkify text={i} excludeId={drug.id} /></li>)}</ul></Card>
+        </Section>
+      )}
+
+      {drug.relatedConditionIds && drug.relatedConditionIds.length > 0 && (() => {
+        const relatedConditions = drug.relatedConditionIds
+          .map((id) => getDiseaseById(id))
+          .filter((d): d is NonNullable<typeof d> => Boolean(d))
+        if (relatedConditions.length === 0) return null
+        return (
+          <Section title="Related Conditions">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {relatedConditions.map((condition) => (
+                <Link key={condition.id} to={`/diseases/${condition.id}`}>
+                  <Card className="h-full hover:shadow-md hover:border-slate-300 transition-all flex items-center justify-between gap-2">
+                    <span className="text-sm font-medium text-slate-800">{condition.name}</span>
+                    <ArrowRight size={15} className="shrink-0 text-slate-300" />
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </Section>
+        )
+      })()}
 
       <Section title="Clinical Pearls">
         <Card className="bg-amber-50 border-amber-200">

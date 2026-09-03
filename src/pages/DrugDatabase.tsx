@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Pill, ChevronRight, GitCompare, ShieldAlert } from 'lucide-react'
+import { Pill, ChevronRight, GitCompare, ShieldAlert, AlertTriangle } from 'lucide-react'
 import { SearchInput } from '../components/ui/SearchInput'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
@@ -15,11 +15,15 @@ import { InteractionChecker } from '../components/drug/InteractionChecker'
 export function DrugDatabase() {
   const [query, setQuery] = useState('')
   const [activeClasses, setActiveClasses] = useState<DrugClass[]>([])
+  const [emergencyOnly, setEmergencyOnly] = useState(false)
   const [compareIds, setCompareIds] = useState<string[]>([])
   const [compareOpen, setCompareOpen] = useState(false)
 
   const classes = getDrugClasses()
-  const results = useMemo(() => searchDrugs(query, activeClasses), [query, activeClasses])
+  const results = useMemo(() => {
+    const matches = searchDrugs(query, activeClasses)
+    return emergencyOnly ? matches.filter((d) => d.isEmergencyMedication) : matches
+  }, [query, activeClasses, emergencyOnly])
 
   function toggleClass(cls: DrugClass) {
     setActiveClasses((prev) => (prev.includes(cls) ? prev.filter((c) => c !== cls) : [...prev, cls]))
@@ -65,6 +69,16 @@ export function DrugDatabase() {
                 />
 
                 <div className="flex gap-1.5 flex-wrap">
+                  <button
+                    onClick={() => setEmergencyOnly((prev) => !prev)}
+                    className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium border transition-colors cursor-pointer ${
+                      emergencyOnly
+                        ? 'bg-red-600 text-white border-red-600'
+                        : 'bg-white text-red-600 border-red-300 hover:bg-red-50'
+                    }`}
+                  >
+                    <AlertTriangle size={13} /> Emergency Medications
+                  </button>
                   {classes.map((cls) => (
                     <button
                       key={cls}
@@ -87,7 +101,10 @@ export function DrugDatabase() {
                     {results.map((drug) => (
                       <Card key={drug.id} className="flex flex-col gap-2">
                         <div className="flex items-start justify-between gap-2">
-                          <Badge tone="purple">{drug.drugClass}</Badge>
+                          <div className="flex items-center gap-1 flex-wrap">
+                            <Badge tone="purple">{drug.drugClass}</Badge>
+                            {drug.isEmergencyMedication && <Badge tone="danger">Emergency</Badge>}
+                          </div>
                           <label className="flex items-center gap-1.5 text-xs text-slate-400 cursor-pointer select-none">
                             <input
                               type="checkbox"
