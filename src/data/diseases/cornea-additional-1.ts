@@ -75,6 +75,47 @@ export const corneaAdditional1: Disease[] = [
       { category: 'Referral', detail: 'Refer to ophthalmology for any sign of ocular involvement (keratitis, uveitis, scleritis, elevated IOP, or Hutchinson sign), and urgently for suspected optic neuritis, acute retinal necrosis, or cranial nerve palsy' },
       { category: 'Emergency management', detail: 'Acute retinal necrosis (rare but vision- and eye-threatening) requires immediate referral for IV/oral antiviral therapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Full dilated exam and IOP check in any patient with Hutchinson sign, even if the eye is asymptomatic, since intraocular involvement can be delayed',
+        'Corneal sensation testing to assess neurotrophic risk',
+        'Slit lamp exam for pseudodendrites, stromal keratitis, or anterior chamber reaction to stage ocular involvement',
+        'IOP measurement to screen for trabeculitis-related elevation',
+      ],
+      initialTreatment:
+        'Oral antiviral therapy (valacyclovir or acyclovir) started as early as possible, ideally within 72 hours of rash onset, to reduce acute severity, ocular complications, and post-herpetic neuralgia. Ocular involvement (stromal keratitis, uveitis, scleritis) is treated with a topical corticosteroid plus cycloplegia under specialist guidance once diagnosed.',
+      followUpSchedule:
+        'Within days of diagnosis if any ocular involvement is present, then weekly to biweekly while active, with IOP checks at each visit; monitoring continues for weeks to months given the tendency for recurrent or chronic keratouveitis, and corneal sensation should be reassessed periodically even after the rash resolves.',
+      escalationCriteria: [
+        'New or worsening stromal keratitis, uveitis, or scleritis after initial improvement',
+        'IOP rise from trabeculitis or steroid response not controlled with initial therapy',
+        'Development of neurotrophic epithelial breakdown not healing with lubrication alone',
+      ],
+      referralCriteria: [
+        'Any ocular involvement (keratitis, uveitis, scleritis, elevated IOP) or Hutchinson sign -> ophthalmology',
+        'Suspected optic neuritis, acute retinal necrosis, or cranial nerve palsy -> urgent/emergent ophthalmology referral',
+        'Post-herpetic neuralgia refractory to initial therapy -> pain specialist',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate) is used for stromal keratitis, uveitis, or scleritis under specialist guidance, generally maintained with concurrent oral antiviral coverage and tapered slowly given the tendency for recurrence; check IOP at each visit for both trabeculitis and steroid-response elevation.',
+      cycloplegicConsiderations:
+        'A cycloplegic (e.g., cyclopentolate or homatropine) relieves ciliary spasm and photophobia in zoster-associated anterior uveitis.',
+      complications: [
+        'Corneal scarring from stromal keratitis',
+        'Neurotrophic keratopathy with risk of epithelial breakdown, melt, or perforation',
+        'Secondary glaucoma from trabeculitis or chronic steroid use',
+        'Post-herpetic neuralgia',
+        'Rare: optic neuritis or acute retinal necrosis',
+      ],
+      monitoringParameters: [
+        'Corneal epithelial integrity and sensation',
+        'Stromal clarity and anterior chamber reaction',
+        'IOP',
+        'Pain/neuralgia severity',
+      ],
+      relatedDrugIds: ['valacyclovir-oral', 'acyclovir-oral', 'prednisolone-acetate', 'cyclopentolate', 'gabapentin'],
+      relatedExamTechniqueIds: ['corneal-sensation-testing', 'goldmann-applanation-tonometry', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Within days of diagnosis if ocular involvement present; monitor for weeks to months given the tendency for recurrent or chronic stromal/uveitic disease',
       monitor: 'Corneal epithelial integrity and sensation, stromal clarity, anterior chamber reaction, IOP',
@@ -165,6 +206,42 @@ export const corneaAdditional1: Disease[] = [
       { category: 'Advanced treatment', detail: 'Epithelial debridement with or without diamond burr polishing of Bowman layer for refractory cases; anterior stromal puncture for focal, non-visually significant recurrent erosions; phototherapeutic keratectomy (PTK) for diffuse or visually significant EBMD-related erosions' },
       { category: 'Referral', detail: 'Refer to cornea specialist for erosions refractory to conservative therapy or when considering PTK or diamond burr polishing' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with fluorescein during an active episode to document the epithelial defect size and location',
+        'Retroillumination exam between episodes to detect underlying map-dot-fingerprint (EBMD) changes',
+        'Corneal topography if chronic irregular astigmatism from basement membrane irregularity is suspected',
+      ],
+      initialTreatment:
+        'Acute episodes are managed with lubrication (preservative-free artificial tears during the day, lubricating/hypertonic ointment at bedtime) and, for larger or more symptomatic defects, a bandage soft contact lens to protect the healing epithelium from lid shear; a cycloplegic may be added for comfort in a significantly painful acute episode.',
+      followUpSchedule:
+        'Days after an acute episode to confirm epithelial healing and remove a bandage lens if used, then periodic follow-up spaced by recurrence frequency; patients on prophylactic hypertonic saline/oral doxycycline are typically rechecked at 4-6 weeks to assess symptom reduction.',
+      escalationCriteria: [
+        'Continued recurrences despite consistent lubrication and hypertonic saline prophylaxis',
+        'Recurrences continuing despite a trial of bandage contact lens with or without oral doxycycline/topical steroid',
+        'Erosion involving or approaching the visual axis with impact on vision',
+      ],
+      referralCriteria: [
+        'Erosions refractory to lubrication/bandage lens/doxycycline therapy -> cornea specialist for debridement, diamond burr polishing, or anterior stromal puncture',
+        'Diffuse EBMD or visually significant recurrent erosions -> cornea specialist for phototherapeutic keratectomy (PTK) consideration',
+      ],
+      steroidConsiderations:
+        'A short course of a topical corticosteroid (e.g., loteprednol etabonate) is sometimes combined with oral doxycycline to reduce corneal inflammation/matrix metalloproteinase activity and support basement membrane remodeling; IOP should be checked if repeated or extended courses are used.',
+      cycloplegicConsiderations:
+        'A cycloplegic (e.g., cyclopentolate) can relieve ciliary spasm-related pain during an acute, significantly symptomatic erosion.',
+      complications: [
+        'Corneal scarring or irregular astigmatism with chronic, central, or frequently recurring erosions',
+        'Secondary microbial keratitis during an open epithelial defect',
+        'Chronic pain and disrupted sleep/quality of life from frequent nocturnal/waking episodes',
+      ],
+      monitoringParameters: [
+        'Epithelial integrity on fluorescein staining',
+        'Frequency and severity of recurrent episodes',
+        'Presence/extent of underlying basement membrane dystrophy changes',
+      ],
+      relatedDrugIds: ['doxycycline', 'loteprednol-etabonate', 'cyclopentolate', 'carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining', 'corneal-topography', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Days after an acute episode to confirm epithelial healing, then periodic monitoring based on recurrence frequency',
       monitor: 'Epithelial integrity, symptom frequency, presence of underlying basement membrane changes',
@@ -255,6 +332,43 @@ export const corneaAdditional1: Disease[] = [
       { category: 'Referral', detail: 'Refer promptly to a cornea specialist given the prolonged, often refractory treatment course and risk of vision loss' },
       { category: 'Emergency management', detail: 'Impending or actual corneal perforation requires urgent surgical intervention' },
     ],
+    managementProtocol: {
+      workup: [
+        'Corneal scraping for smear (KOH/Gram/Giemsa) and culture on Sabouraud dextrose agar before starting antifungal therapy',
+        'In vivo confocal microscopy where available for rapid organism visualization if culture will be delayed',
+        'Slit lamp measurement/photo-documentation of infiltrate size, depth, and margin characteristics for baseline treatment-response tracking',
+        'History of organic/vegetable trauma, contact lens wear, or chronic steroid use to guide suspicion for filamentous vs. yeast organisms',
+      ],
+      initialTreatment:
+        'Topical natamycin 5% (preferred first-line for filamentous fungal keratitis, particularly Fusarium, per the MUTT I trial) dosed hourly initially; topical voriconazole or amphotericin B is used for yeast (Candida) keratitis. Severe filamentous keratitis (visual acuity 20/400 or worse) may benefit from adjunctive oral voriconazole, particularly for Fusarium.',
+      followUpSchedule:
+        'Frequent follow-up every 1-3 days initially given the typically slow, indolent treatment response, continuing for a prolonged course (often 6-12 weeks or longer) with gradual tapering of dosing frequency only as the infiltrate demonstrably improves.',
+      escalationCriteria: [
+        'Enlarging infiltrate size/depth, new or worsening hypopyon, or increasing pain despite appropriate antifungal therapy',
+        'No measurable improvement after approximately 1-2 weeks of topical monotherapy, prompting consideration of oral adjunctive antifungal therapy',
+        'Evidence of deep stromal or scleral extension',
+      ],
+      referralCriteria: [
+        'Any suspected or confirmed fungal keratitis -> prompt cornea specialist referral given the prolonged, often refractory course',
+        'Progressive infection despite topical/oral antifungal therapy or impending/actual perforation -> urgent surgical referral for therapeutic keratoplasty',
+      ],
+      cycloplegicConsiderations:
+        'A cycloplegic (e.g., cyclopentolate) provides adjunctive comfort for ciliary spasm and photophobia; it has no antifungal effect. Topical corticosteroids are contraindicated and must be avoided, as they can dramatically worsen fungal keratitis.',
+      complications: [
+        'Corneal scarring and progressive stromal thinning',
+        'Corneal perforation, more likely than with bacterial keratitis, especially with delayed diagnosis',
+        'Endophthalmitis from intraocular extension',
+        'Need for therapeutic keratoplasty, with risk of recurrence in the graft',
+      ],
+      monitoringParameters: [
+        'Infiltrate size, depth, and margin character at each visit',
+        'Epithelial defect size',
+        'Anterior chamber reaction/hypopyon',
+        'Response to antifungal therapy over the prolonged treatment course',
+      ],
+      relatedDrugIds: ['natamycin', 'voriconazole-topical', 'amphotericin-b-topical', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['corneal-culture-and-scraping', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Frequent follow-up (every 1-3 days initially) given the slow, often refractory treatment response typical of fungal infections',
       monitor: 'Infiltrate size and depth, epithelial defect, anterior chamber reaction, response to antifungal therapy',
@@ -345,6 +459,43 @@ export const corneaAdditional1: Disease[] = [
       { category: 'Referral', detail: 'Refer promptly to a cornea specialist given the difficulty of diagnosis and the prolonged, intensive treatment required' },
       { category: 'Emergency management', detail: 'Impending or actual corneal perforation requires urgent surgical referral' },
     ],
+    managementProtocol: {
+      workup: [
+        'Corneal culture on non-nutrient agar with E. coli overlay before starting antiamoebic therapy',
+        'In vivo confocal microscopy where available for rapid, non-invasive detection of cysts',
+        'Detailed contact lens hygiene and water-exposure history (swimming, showering, tap water rinsing) to confirm risk factors',
+        'Contact lens case culture to identify an environmental source and reinforce hygiene counseling',
+      ],
+      initialTreatment:
+        'Intensive topical antiamoebic dual therapy — a biguanide (PHMB and/or chlorhexidine, typically 0.02%) combined with a diamidine (propamidine or hexamidine) — applied hourly around the clock for the initial days, then tapered in frequency according to clinical response; epithelial debridement may be added early to reduce organism load and improve drug penetration.',
+      followUpSchedule:
+        'Very frequent follow-up initially (every few days) given the difficulty of the treatment course, continuing for many months (disease limited to the epithelium may resolve in 2-4 weeks; stromal disease requires substantially longer therapy), with slow tapering of antiamoebic dosing only as clinical improvement is sustained.',
+      escalationCriteria: [
+        'Persistent or worsening pain, enlarging infiltrate, or scleral extension despite compliant intensive antiamoebic therapy',
+        'No improvement after an adequate trial (typically several weeks) of dual topical therapy, prompting regimen adjustment or addition of debridement',
+        'Development of scleritis, which portends a poorer prognosis and warrants urgent escalation',
+      ],
+      referralCriteria: [
+        'Any suspected Acanthamoeba keratitis -> prompt cornea specialist referral given diagnostic difficulty and the prolonged, intensive treatment required',
+        'Medically refractory disease or corneal perforation -> urgent surgical referral for therapeutic keratoplasty (with counseling on risk of recurrence in the graft)',
+      ],
+      cycloplegicConsiderations:
+        'A cycloplegic (e.g., cyclopentolate) is used for pain and photophobia, which are characteristically severe and out of proportion to exam findings in this disease.',
+      complications: [
+        'Corneal scarring and stromal melt/perforation',
+        'Scleritis, which is associated with a worse visual outcome',
+        'Secondary glaucoma',
+        'Need for keratoplasty with meaningful risk of disease recurrence in the graft',
+      ],
+      monitoringParameters: [
+        'Pain severity',
+        'Infiltrate size and depth',
+        'Epithelial status',
+        'Response to antiamoebic therapy over the prolonged treatment course',
+      ],
+      relatedDrugIds: ['cyclopentolate', 'gabapentin'],
+      relatedExamTechniqueIds: ['corneal-culture-and-scraping', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Very frequent follow-up initially (every few days) given the prolonged and often difficult treatment course, which can last many months',
       monitor: 'Pain level, infiltrate size/depth, epithelial status, response to antiamoebic therapy',
@@ -438,6 +589,45 @@ export const corneaAdditional1: Disease[] = [
       { category: 'Advanced treatment', detail: 'Surgical excision (typically with conjunctival autograft, and often adjunctive mitomycin C in select cases) for pterygium threatening the visual axis, inducing significant astigmatism, causing chronic irritation unresponsive to medical therapy, or for cosmetic concerns' },
       { category: 'Referral', detail: 'Refer to an anterior segment/cornea specialist for surgical planning when a pterygium is progressing toward the visual axis, inducing significant astigmatism, or recurrent after prior excision' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam to characterize lesion morphology and confirm whether the growth crosses the limbus (pterygium) or remains confined to conjunctiva (pinguecula)',
+        'Corneal topography when a pterygium approaches the visual axis, to quantify induced astigmatism and help time surgical referral',
+        'Serial photo documentation to objectively track growth rate over time',
+        'Biopsy consideration for atypical, rapidly growing, or unusually located lesions to exclude ocular surface squamous neoplasia',
+      ],
+      initialTreatment:
+        'Asymptomatic, stable lesions not threatening the visual axis are observed with routine monitoring. Symptomatic lesions are treated with artificial tears, UV-protective sunglasses, and a short course of a topical mast cell stabilizer/antihistamine or mild topical corticosteroid for inflamed pinguecula (pingueculitis) or inflamed pterygium.',
+      followUpSchedule:
+        'Annually for stable, asymptomatic lesions with photo documentation; every 3-6 months if intermittently inflamed or showing signs of growth, with corneal topography repeated as the lesion approaches the visual axis.',
+      escalationCriteria: [
+        'Documented growth toward the limbus/visual axis on serial photographs',
+        'Increasing induced astigmatism on serial topography',
+        'Recurrent symptomatic inflammation not controlled with intermittent topical therapy',
+        'Atypical growth pattern, rapid enlargement, or unusual appearance raising concern for neoplasia',
+      ],
+      referralCriteria: [
+        'Pterygium threatening the visual axis, inducing significant astigmatism, or causing chronic symptoms refractory to medical therapy -> anterior segment/cornea specialist for surgical excision planning',
+        'Atypical, rapidly growing, or unusually located lesion -> referral for biopsy to exclude ocular surface squamous neoplasia',
+        'Recurrent pterygium after prior excision -> cornea specialist',
+      ],
+      steroidConsiderations:
+        'A short course of a mild-to-moderate potency topical corticosteroid (e.g., fluorometholone or loteprednol etabonate) is used for symptomatic flares of pingueculitis or inflamed pterygium; IOP should be checked with repeated or extended courses given chronic steroid-response risk.',
+      complications: [
+        'Induced corneal astigmatism and visual axis involvement (pterygium)',
+        'Chronic irritation and dellen formation adjacent to a prominent lesion',
+        'Postoperative recurrence, which can be more aggressive and vascularized than the primary lesion',
+        'Restricted ocular motility in rare, large, fibrotic pterygia',
+      ],
+      monitoringParameters: [
+        'Lesion size/extent on serial photographs',
+        'Degree of induced astigmatism on topography',
+        'Proximity to the visual axis',
+        'Symptom frequency and severity',
+      ],
+      relatedDrugIds: ['fluorometholone', 'loteprednol-etabonate', 'olopatadine'],
+      relatedExamTechniqueIds: ['corneal-topography', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Annually for stable, asymptomatic lesions; every 3-6 months if intermittently inflamed or showing signs of growth',
       monitor: 'Lesion size/extent (photo-documented), degree of induced astigmatism, symptoms of irritation, proximity to the visual axis',

@@ -67,6 +67,47 @@ export const corneaDiseases: Disease[] = [
       { category: 'Referral', detail: 'Refer to corneal specialist for CXL candidacy, ICRS, or if considering keratoplasty' },
       { category: 'Emergency management', detail: 'Acute hydrops: cycloplegia, hypertonic saline, bandage contact lens, and urgent corneal specialist referral' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline corneal topography/tomography (Scheimpflug) to document severity and establish a comparison point for future progression',
+        'Pachymetry to confirm adequate stromal thickness (minimum ~400 microns) if crosslinking is being considered',
+        'Manifest refraction and best corrected visual acuity to quantify functional impact',
+        'Slit lamp exam for Vogt striae, Fleischer ring, and scarring to stage disease severity (Amsler-Krumeich)',
+      ],
+      initialTreatment:
+        'Non-progressive mild-to-moderate cases are corrected with glasses or soft/RGP/scleral contact lenses; documented progression is treated with corneal collagen cross-linking (CXL) to halt further ectasia, which does not itself improve vision.',
+      followUpSchedule:
+        'Serial topography every 6-12 months while stable; every 3-6 months in younger patients or those with recent progression. After CXL, recheck at 1 week, 1 month, 3 months, and 6 months to monitor epithelial healing, haze, and stabilization of keratometry.',
+      escalationCriteria: [
+        'Increase in Kmax of ≥1.00 D over a 12-month period on serial topography/tomography',
+        '≥1.00 D increase in manifest cylinder or ≥0.75 D increase in mean K (Kmean) over the same interval',
+        'Progressive thinning (e.g., ≥2% decrease in central corneal thickness) on serial pachymetry',
+        'Contact lens intolerance or inability to achieve functional vision with rigid/scleral lenses despite proper fitting',
+      ],
+      referralCriteria: [
+        'Documented progression meeting CXL criteria -> corneal specialist for crosslinking',
+        'Corneal scarring or vision not correctable with contact lenses -> corneal specialist for possible ICRS or keratoplasty candidacy',
+        'Acute hydrops (sudden pain and stromal edema from Descemet rupture) -> urgent same-day corneal specialist referral',
+      ],
+      cycloplegicConsiderations:
+        'In acute hydrops, a cycloplegic agent (e.g., cyclopentolate or atropine) is used for comfort from ciliary spasm while hypertonic saline and bandage lens therapy allow the Descemet break to reseal.',
+      complications: [
+        'Acute hydrops (Descemet membrane rupture with acute stromal edema)',
+        'Central/paracentral corneal scarring reducing best corrected vision',
+        'Progressive irregular astigmatism limiting contact lens tolerance',
+        'CXL-related: transient haze, delayed epithelial healing, rare infectious keratitis',
+        'Need for keratoplasty (PK or DALK) in advanced, scarred, or CXL-refractory disease',
+      ],
+      monitoringParameters: [
+        'Maximum keratometry (Kmax) and mean K on serial topography/tomography',
+        'Central/paracentral pachymetry',
+        'Manifest refraction and best corrected visual acuity',
+        'Corneal clarity/scarring on slit lamp exam',
+      ],
+      relatedDrugIds: ['cyclopentolate'],
+      relatedCalculatorIds: ['keratometry'],
+      relatedExamTechniqueIds: ['corneal-topography', 'corneal-pachymetry'],
+    },
     followUp: {
       typical: 'Every 6-12 months with topography while stable; more frequently (every 3-6 months) if progressing or young',
       monitor: 'Keratometry, topography/tomography, pachymetry, and best corrected visual acuity',
@@ -152,6 +193,45 @@ export const corneaDiseases: Disease[] = [
       { category: 'Referral', detail: 'Refer to cornea specialist for central, large, or vision-threatening ulcers, or those not responding to therapy' },
       { category: 'Emergency management', detail: 'Impending or actual perforation requires urgent surgical referral (tissue adhesive, bandage lens, or emergency keratoplasty)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp measurement and photo-documentation of infiltrate size, depth, and epithelial defect dimensions to establish a treatment-response baseline',
+        'Corneal culture and Gram stain before starting antibiotics for infiltrates >1-2mm, central, or with significant AC reaction',
+        'Anterior chamber grading for cell/flare and hypopyon',
+        'Contact lens and case culture if lens-related',
+      ],
+      initialTreatment:
+        'Empiric broad-spectrum topical fluoroquinolone monotherapy (e.g., moxifloxacin) for small, peripheral, non-severe ulcers; fortified antibiotics (e.g., fortified vancomycin plus a fortified aminoglycoside or fortified ceftazidime) dosed hourly around the clock for large, central, or vision-threatening ulcers, narrowed once culture and sensitivity results return.',
+      followUpSchedule:
+        'Daily in-person follow-up until the infiltrate and epithelial defect are clearly improving, then spaced to every 2-3 days, then weekly as healing continues; therapy is tapered in frequency (not stopped abruptly) as the eye quiets.',
+      escalationCriteria: [
+        'Enlarging infiltrate size or depth, or new/worsening hypopyon, after 24-48 hours of appropriate therapy',
+        'No improvement or worsening pain/AC reaction despite compliant fortified antibiotic dosing',
+        'Progressive stromal thinning or impending perforation on slit lamp exam',
+      ],
+      referralCriteria: [
+        'Central, large (>1-2mm), or vision-threatening ulcer -> cornea specialist',
+        'No response to appropriate empiric or culture-directed therapy -> cornea specialist',
+        'Impending or actual corneal perforation -> urgent/emergent surgical referral',
+      ],
+      cycloplegicConsiderations:
+        'A cycloplegic (e.g., cyclopentolate) is used adjunctively for ciliary spasm-related pain and photophobia; it does not treat the infection itself.',
+      complications: [
+        'Corneal scarring and irregular astigmatism',
+        'Progressive stromal melt and perforation, particularly with Pseudomonas',
+        'Endophthalmitis if perforation or intraocular spread occurs',
+        'Need for therapeutic or optical keratoplasty',
+      ],
+      monitoringParameters: [
+        'Infiltrate and epithelial defect size (measured and photo-documented at each visit)',
+        'Anterior chamber cell/flare and hypopyon',
+        'Corneal thickness/depth of involvement for perforation risk',
+        'Pain level and symptom trajectory',
+      ],
+      relatedDrugIds: ['moxifloxacin', 'vancomycin-ophthalmic-fortified', 'cefazolin-ophthalmic-fortified', 'cyclopentolate'],
+      relatedCalculatorIds: ['dilution-calculator'],
+      relatedExamTechniqueIds: ['corneal-culture-and-scraping', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Daily follow-up initially until improvement is clearly demonstrated, then spaced out',
       monitor: 'Infiltrate size, epithelial defect size, anterior chamber reaction, pain level',
@@ -235,6 +315,45 @@ export const corneaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Long-term oral antiviral prophylaxis for patients with frequent recurrences' },
       { category: 'Referral', detail: 'Refer to cornea specialist for stromal or endothelial involvement, or recurrent/refractory disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Corneal sensation testing to confirm characteristic hypoesthesia and support the clinical diagnosis',
+        'Fluorescein staining to characterize the dendritic pattern and rule out a geographic ulcer',
+        'Baseline IOP before starting any topical steroid for stromal disease',
+        'History of recurrence frequency to guide candidacy for long-term prophylaxis',
+      ],
+      initialTreatment:
+        'Epithelial (dendritic) disease is treated with a topical antiviral (e.g., ganciclovir gel) or oral antiviral (acyclovir/valacyclovir) without topical steroids. Stromal keratitis is treated with a topical corticosteroid combined with oral antiviral prophylaxis, initiated and tapered under specialist guidance.',
+      followUpSchedule:
+        'Epithelial disease: recheck within 3-7 days to confirm healing. Stromal disease on steroids: recheck every 1-2 weeks initially, with IOP checks at each visit during the steroid taper, which is extended over weeks to months.',
+      escalationCriteria: [
+        'Epithelial defect not improving or enlarging after several days of appropriate antiviral therapy',
+        'Worsening stromal haze, edema, or new AC reaction while on treatment',
+        'IOP rise >10 mmHg from baseline during steroid taper, suggesting steroid response',
+      ],
+      referralCriteria: [
+        'Any stromal or endothelial (disciform) involvement -> cornea specialist',
+        'Recurrent (≥2 episodes) or refractory disease -> cornea specialist for consideration of long-term oral prophylaxis',
+        'Diagnostic uncertainty or poor response to first-line antivirals -> cornea specialist',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate) is used only for stromal or endothelial disease, always paired with oral antiviral coverage, and tapered slowly over weeks; check IOP at every visit given steroid-response risk. Never use a topical steroid alone on active epithelial (dendritic) disease.',
+      complications: [
+        'Stromal scarring and irregular astigmatism',
+        'Neurotrophic keratopathy from chronic corneal hypoesthesia',
+        'Steroid-induced glaucoma and cataract with prolonged stromal-disease treatment',
+        'Secondary bacterial infection of an epithelial defect',
+        'Corneal blindness with repeated recurrences',
+      ],
+      monitoringParameters: [
+        'Epithelial healing / corneal clarity',
+        'Corneal sensation',
+        'IOP at each visit when on topical steroid',
+        'Recurrence frequency over time',
+      ],
+      relatedDrugIds: ['ganciclovir-gel', 'trifluridine', 'acyclovir-oral', 'valacyclovir-oral', 'prednisolone-acetate', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['corneal-sensation-testing', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Within 1 week for epithelial disease to confirm resolution; closer monitoring for stromal disease on steroids',
       monitor: 'Epithelial healing, corneal clarity, IOP if on steroids, signs of secondary bacterial infection',
@@ -312,6 +431,45 @@ export const corneaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Endothelial keratoplasty (DMEK or DSAEK) for symptomatic corneal edema affecting vision' },
       { category: 'Referral', detail: 'Refer to cornea specialist when vision-limiting edema develops or before cataract surgery in patients with significant guttae' },
     ],
+    managementProtocol: {
+      workup: [
+        'Specular microscopy to quantify endothelial cell density, pleomorphism, and polymegathism',
+        'Pachymetry to establish baseline central corneal thickness and detect subclinical edema',
+        'Best corrected visual acuity, including assessment of diurnal variation (morning vs. afternoon)',
+        'Pre-cataract-surgery endothelial assessment in any patient with visible guttae, since Fuchs disease raises the risk of postoperative decompensation',
+      ],
+      initialTreatment:
+        'Early disease with guttae but no clinically significant edema is observed. Once morning blur/edema develops, hypertonic saline drops (daytime) and ointment (bedtime) plus a hair dryer (held at arm\'s length, directed at closed lids) are used to osmotically reduce edema. Vision-limiting edema unresponsive to these measures is treated surgically with endothelial keratoplasty (DMEK or DSAEK).',
+      followUpSchedule:
+        'Annually with pachymetry and specular microscopy while guttae are present without significant edema; every 3-6 months once edema or symptomatic diurnal blur develops; postoperative endothelial keratoplasty patients are followed on a standard graft-monitoring schedule (day 1, week 1, then monthly) with long-term periodic specular microscopy to track graft cell loss.',
+      escalationCriteria: [
+        'Increasing central corneal thickness on serial pachymetry',
+        'Persistent blur that no longer clears through the day, or decreasing best corrected visual acuity',
+        'Development of epithelial/subepithelial bullae (bullous keratopathy) with pain from bullae rupture',
+      ],
+      referralCriteria: [
+        'Vision-limiting edema not controlled with hypertonic saline -> cornea specialist for endothelial keratoplasty evaluation',
+        'Significant guttae identified before planned cataract surgery -> cornea specialist for combined or staged surgical planning',
+        'Painful bullous keratopathy -> cornea specialist',
+      ],
+      steroidConsiderations:
+        'After endothelial keratoplasty, a topical corticosteroid (e.g., loteprednol etabonate or prednisolone acetate) is used long-term at a low maintenance dose to prevent endothelial graft rejection; IOP is checked at each postoperative visit given the risk of steroid-response glaucoma with chronic use.',
+      complications: [
+        'Bullous keratopathy with recurrent painful epithelial bullae',
+        'Recurrent epithelial erosions and secondary microbial keratitis',
+        'Accelerated decompensation after intraocular surgery (e.g., cataract surgery)',
+        'Endothelial keratoplasty-related graft rejection or failure',
+        'Steroid-response IOP elevation with long-term post-keratoplasty steroid use',
+      ],
+      monitoringParameters: [
+        'Endothelial cell density and morphology on specular microscopy',
+        'Central corneal thickness on pachymetry',
+        'Best corrected visual acuity and diurnal symptom pattern',
+        'IOP in patients on chronic post-keratoplasty topical steroid',
+      ],
+      relatedDrugIds: ['loteprednol-etabonate'],
+      relatedExamTechniqueIds: ['corneal-endothelial-specular-microscopy', 'corneal-pachymetry'],
+    },
     followUp: {
       typical: 'Annually while mild; more frequently as edema progresses',
       monitor: 'Visual acuity, corneal thickness, endothelial cell count',
@@ -400,6 +558,44 @@ export const corneaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Autologous serum tears, scleral lenses, in-office meibomian gland treatments (thermal pulsation, IPL)' },
       { category: 'Referral', detail: 'Refer for suspected underlying autoimmune disease (e.g., Sjögren syndrome) or refractory cases' },
     ],
+    managementProtocol: {
+      workup: [
+        'Symptom questionnaire (e.g., OSDI or SPEED) to quantify baseline symptom severity',
+        'Tear breakup time and/or tear osmolarity to establish a homeostasis-marker baseline (per TFOS DEWS II criteria)',
+        'Corneal/conjunctival staining (fluorescein and lissamine green) to grade baseline ocular surface damage',
+        'Meibomian gland evaluation (expressibility, meibography if available) to determine aqueous-deficient vs. evaporative subtype and guide treatment selection',
+      ],
+      initialTreatment:
+        'First-line therapy is preservative-free artificial tears plus lid hygiene/warm compresses for meibomian gland dysfunction and environmental modification. Chronic inflammatory disease not controlled with tears alone progresses to a topical anti-inflammatory agent (cyclosporine or lifitegrast), often bridged with a short pulse of topical corticosteroid to control symptoms while the anti-inflammatory reaches full effect over 6-12 weeks.',
+      followUpSchedule:
+        'Recheck 6-8 weeks after starting a topical anti-inflammatory agent to assess tolerability and early response, then every 3-6 months once stable; flares or new therapy escalation warrant closer interim visits.',
+      escalationCriteria: [
+        'Worsening corneal staining or new filamentary keratitis despite first-line therapy',
+        'No symptomatic or objective improvement after an adequate (approximately 3-month) trial of a topical anti-inflammatory',
+        'Development of a persistent epithelial defect or corneal thinning suggesting a complicated/severe course',
+      ],
+      referralCriteria: [
+        'Severe aqueous-deficient dry eye with dry mouth or joint symptoms -> rheumatology for Sjögren syndrome workup',
+        'Refractory disease despite escalating topical therapy -> cornea/ocular surface specialist for scleral lens or autologous serum tear consideration',
+        'Corneal ulceration or vision-threatening surface disease -> urgent cornea specialist referral',
+      ],
+      steroidConsiderations:
+        'A short pulse (typically 2-4 weeks) of a low-penetration topical corticosteroid (e.g., loteprednol etabonate) is used to control flares or to bridge the delayed onset of cyclosporine/lifitegrast; IOP is checked before and during the pulse given steroid-response risk with repeated courses.',
+      complications: [
+        'Filamentary keratitis',
+        'Corneal ulceration or secondary infection in severe, untreated cases (rare)',
+        'Reduced contact lens tolerance and fluctuating vision affecting quality of life',
+        'Steroid-response IOP elevation with repeated corticosteroid pulses',
+      ],
+      monitoringParameters: [
+        'Symptom severity (questionnaire score) over time',
+        'Corneal/conjunctival staining grade',
+        'Tear breakup time',
+        'IOP when using pulsed topical corticosteroid',
+      ],
+      relatedDrugIds: ['cyclosporine-ophthalmic-emulsion', 'lifitegrast', 'loteprednol-etabonate', 'carboxymethylcellulose-sodium', 'perfluorohexyloctane'],
+      relatedExamTechniqueIds: ['tear-break-up-time', 'schirmer-test', 'tear-film-osmolarity-testing', 'meibomian-gland-evaluation', 'lissamine-green-rose-bengal-staining'],
+    },
     followUp: {
       typical: 'Every 3-6 months depending on severity and treatment response',
       monitor: 'Symptom severity, corneal staining, TBUT',
