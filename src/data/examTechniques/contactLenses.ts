@@ -62,7 +62,7 @@ export const contactLensExamTechniques: ExamTechnique[] = [
       'Mires cannot be reliably read over a significantly irregular, scarred, or very dry corneal surface',
       'Corneal topography/tomography is required when ectasia is suspected or when a more complete corneal shape map is needed for specialty lens fitting',
     ],
-    relatedTechniqueIds: ['rgp-fluorescein-fit-pattern', 'contact-lens-over-refraction'],
+    relatedTechniqueIds: ['rgp-fluorescein-fit-pattern', 'contact-lens-over-refraction', 'orthokeratology-fitting-assessment'],
     relatedCalculatorIds: ['keratometry', 'tear-lens'],
     references: [
       'Bennett ES, Henry VA (eds). Clinical Manual of Contact Lenses, 4th ed. Wolters Kluwer — keratometry technique and use in base curve selection.',
@@ -117,7 +117,7 @@ export const contactLensExamTechniques: ExamTechnique[] = [
     ],
     interpretation:
       "The fluorescein pattern is the definitive dynamic assessment of how the back surface of an RGP lens actually relates to the cornea on-eye — keratometry only predicts a starting point, but the pattern shows the real fit. A well-distributed pattern with light central touch, mid-peripheral alignment, and a modest, even edge lift is the fitting goal for a standard spherical alignment design, since it balances adequate tear exchange (needed to prevent hypoxia and flush debris) against lens stability and centration. Central pooling (steep) risks corneal molding and bubble entrapment; central bearing (flat) risks epithelial compromise from mechanical touch. Edge lift must be individually balanced: too little risks binding/adherence and peripheral desiccation staining, too much risks lens awareness, edge fluting, and lid-related peripheral staining.",
-    associatedConditionIds: ['infiltrative-keratitis-contact-lens'],
+    associatedConditionIds: ['infiltrative-keratitis-contact-lens', 'keratoconus'],
     clinicalPearls: [
       'Judge the pattern dynamically, across several blinks, not as one frozen image — a lens can look acceptable in a static view yet show problematic bearing or pooling once the eyelid has redistributed the tear film.',
       'A pattern that looks steep centrally but shows good mid-peripheral alignment and edge lift may still perform well clinically; correlate the fluorescein picture with over-refraction, comfort, and vision rather than chasing a textbook-perfect pattern in isolation.',
@@ -135,7 +135,7 @@ export const contactLensExamTechniques: ExamTechnique[] = [
       'Cannot be reliably performed or interpreted on a badly scratched, deposit-laden, or heavily tinted trial lens',
       'Represents the fit at one moment/visit; does not by itself predict long-term corneal response (warpage, edema) without serial follow-up',
     ],
-    relatedTechniqueIds: ['manual-keratometry', 'contact-lens-over-refraction', 'push-up-test', 'seidel-test'],
+    relatedTechniqueIds: ['manual-keratometry', 'contact-lens-over-refraction', 'push-up-test', 'seidel-test', 'orthokeratology-fitting-assessment', 'hybrid-lens-fitting-evaluation'],
     relatedCalculatorIds: ['tear-lens', 'sagittal-depth'],
     relatedDrugIds: ['fluorescein-sodium'],
     references: [
@@ -195,7 +195,7 @@ export const contactLensExamTechniques: ExamTechnique[] = [
       'Attributing all residual cylinder to "needs a toric lens" without ruling out RGP lens flexure on a toric cornea',
       'Not confirming the fit is acceptable first — over-refracting a poorly centered or excessively mobile lens can give inconsistent, unreliable results',
     ],
-    relatedTechniqueIds: ['manual-keratometry', 'rgp-fluorescein-fit-pattern'],
+    relatedTechniqueIds: ['manual-keratometry', 'rgp-fluorescein-fit-pattern', 'soft-toric-lens-rotation-assessment'],
     relatedCalculatorIds: ['rgp-final-power', 'tear-lens'],
     references: [
       'Bennett ES, Henry VA (eds). Clinical Manual of Contact Lenses, 4th ed. Wolters Kluwer — over-refraction technique and final RGP power calculation (including SAM-FAP and vertex correction).',
@@ -312,7 +312,7 @@ export const contactLensExamTechniques: ExamTechnique[] = [
       'Reported "normal" movement and centration values vary across textbooks, studies, and lens materials, so findings must be interpreted with that variability in mind rather than against one fixed number',
       'A single-visit assessment may not detect delayed tightening that only develops after several hours of wear',
     ],
-    relatedTechniqueIds: ['push-up-test', 'contact-lens-staining-grading', 'contact-lens-over-refraction'],
+    relatedTechniqueIds: ['push-up-test', 'contact-lens-staining-grading', 'contact-lens-over-refraction', 'soft-toric-lens-rotation-assessment', 'prosthetic-cosmetic-lens-fitting-evaluation', 'hybrid-lens-fitting-evaluation'],
     relatedCalculatorIds: ['cl-diameter-rule-of-thumb', 'sagittal-depth'],
     relatedDrugIds: ['fluorescein-sodium'],
     references: [

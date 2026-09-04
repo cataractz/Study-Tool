@@ -6,6 +6,7 @@ import { binocularVisionAccommodationTechniques } from './binocularVisionAccommo
 import { neuroOphthalmologyTechniques } from './neuroOphthalmology'
 import { pediatricsTechniques } from './pediatrics'
 import { contactLensExamTechniques } from './contactLenses'
+import { contactLensFittingTechniques } from './contactLensFitting'
 import { diagnosticImagingTechniques } from './diagnosticImaging'
 import { orbitTechniques } from './orbit'
 
@@ -17,6 +18,7 @@ export const allExamTechniques: ExamTechnique[] = [
   ...neuroOphthalmologyTechniques,
   ...pediatricsTechniques,
   ...contactLensExamTechniques,
+  ...contactLensFittingTechniques,
   ...diagnosticImagingTechniques,
   ...orbitTechniques,
 ]
