@@ -67,6 +67,32 @@ export const systemicGeneticDisease10: Disease[] = [
       { category: 'Second-line treatment', detail: 'Oral corticosteroids or steroid-sparing immunosuppression for moderate-to-severe or necrotizing scleritis, coordinated with rheumatology' },
       { category: 'Observation', detail: 'Asymptomatic conjunctival/scleral urate deposits without inflammation typically require no direct ocular treatment beyond monitoring' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp grading of conjunctival/episcleral/scleral involvement, classifying as simple episcleritis versus scleritis',
+        'Serum uric acid level if not already obtained by the referring physician',
+        'Corneal exam for interpalpebral band keratopathy in longstanding tophaceous disease',
+        'B-scan ultrasonography or anterior segment OCT if scleritis is suspected, to assess scleral thickening and rule out posterior scleritis',
+      ],
+      initialTreatment:
+        'Distinguish episcleritis (topical lubrication and, if needed, a mild topical NSAID or corticosteroid — typically self-limited) from scleritis (oral NSAID first-line for mild-to-moderate disease) while coordinating with rheumatology/primary care on urate-lowering therapy, which is the definitive treatment for the underlying driver.',
+      followUpSchedule:
+        'Recheck episcleritis/scleritis in 1-2 weeks to confirm response to anti-inflammatory therapy; asymptomatic urate deposits without inflammation can be reassessed at routine comprehensive exams, more often during periods of poorly controlled hyperuricemia.',
+      escalationCriteria: [
+        'Necrotizing appearance (avascular patches, violaceous hue) rather than typical diffuse/nodular scleritis',
+        'Pain out of proportion to exam findings or not responding to oral NSAID within 1-2 weeks',
+        'Progressive scleral thinning on serial exams',
+        'New anterior chamber cell/flare suggesting secondary uveitis',
+      ],
+      referralCriteria: [
+        'Recurrent, necrotizing, or NSAID-refractory scleritis -> rheumatology for oral corticosteroid or steroid-sparing therapy',
+        'Poorly controlled or newly identified hyperuricemia -> primary care/rheumatology to initiate or optimize urate-lowering therapy',
+        'Vision-threatening scleral thinning or suspected necrotizing scleritis -> cornea/sclera specialist',
+      ],
+      complications: ['Necrotizing scleritis (rare)', 'Band keratopathy in chronic tophaceous disease', 'Secondary anterior uveitis', 'Scleral thinning with recurrent inflammation'],
+      monitoringParameters: ['Extent and location of conjunctival/scleral urate deposits', 'Presence and severity of episcleritis/scleritis', 'Corneal status for band keratopathy', 'Serum urate trend when available from the managing physician'],
+      relatedDrugIds: ['allopurinol', 'colchicine'],
+    },
     followUp: {
       typical: 'Periodic monitoring of ocular surface and sclera in patients with known chronic tophaceous gout, particularly during periods of poorly controlled hyperuricemia',
       monitor: 'Extent of conjunctival/scleral deposits, presence and severity of episcleritis or scleritis, corneal status for band keratopathy',
@@ -158,6 +184,37 @@ export const systemicGeneticDisease10: Disease[] = [
       { category: 'Advanced treatment', detail: 'Systemic corticosteroids combined with additional immunosuppressive/cytotoxic therapy for severe or organ- and vision-threatening disease, directed by rheumatology; antiviral therapy is incorporated when hepatitis B-associated' },
       { category: 'First-line treatment', detail: 'Topical lubrication and cycloplegia for comfort; topical/oral anti-inflammatory therapy for milder scleritis, always in conjunction with systemic treatment rather than as monotherapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp assessment of scleral/episcleral inflammation with documentation of thinning depth and extent',
+        'Fluorescein staining and careful assessment of peripheral corneal thinning/epithelial defect if PUK is suspected',
+        'Fluorescein angiography and dilated fundus exam to characterize retinal vasculitis and choroidal ischemic changes',
+        'Coordinate with rheumatology on ANCA status, hepatitis B serology, and Five Factor Score to confirm PAN and stratify systemic treatment intensity',
+      ],
+      initialTreatment:
+        'Ocular disease is managed in parallel with emergent systemic immunosuppression rather than as a standalone process: topical lubrication and cycloplegia for comfort, with bandage contact lens or tissue adhesive for a thinning/threatened cornea, while rheumatology initiates systemic corticosteroids (often an IV pulse followed by oral taper) plus cyclophosphamide for organ- or vision-threatening disease.',
+      followUpSchedule:
+        'Weekly to every-few-days ophthalmic monitoring while systemic immunosuppression is being established, given the risk of rapid scleral/corneal destruction; space out as inflammation quiets and systemic disease control is confirmed with rheumatology.',
+      escalationCriteria: [
+        'Progressive corneal thinning or new epithelial defect over the area of scleritis',
+        'Any sign of impending or actual perforation (positive Seidel sign)',
+        'New or worsening retinal vaso-occlusive changes or choroidal ischemia on exam',
+        'Scleral inflammation not improving despite systemic immunosuppression, suggesting undertreated disease',
+      ],
+      referralCriteria: [
+        'Any suspected necrotizing scleritis or peripheral ulcerative keratitis -> same-day cornea specialist plus urgent rheumatology',
+        'New retinal vasculitis, vaso-occlusive disease, or choroidal ischemia -> retina specialist',
+        'Any patient without an established systemic diagnosis presenting with these findings -> urgent rheumatology/internal medicine for vasculitis workup, since ocular disease can be the presenting sign of life-threatening PAN',
+      ],
+      steroidConsiderations:
+        'Systemic corticosteroids (often IV methylprednisolone pulse followed by oral prednisone taper) are foundational to controlling both the ocular and systemic vasculitis; topical steroids alone do not address the underlying medium-vessel disease driving scleral/corneal destruction.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent is used for comfort in active scleritis/PUK, not as disease-modifying therapy.',
+      complications: ['Corneal or scleral perforation', 'Permanent vision loss from retinal vaso-occlusive disease or choroidal ischemia', 'Cataract, glaucoma, or infection risk from prolonged systemic corticosteroid/cyclophosphamide therapy', 'Hemorrhagic cystitis or infertility risk from cyclophosphamide (systemic, monitored by rheumatology)'],
+      monitoringParameters: ['Scleral inflammation/thinning depth', 'Corneal integrity (epithelial defect, thinning, Seidel testing)', 'Retinal vascular status and visual acuity', 'IOP if on corticosteroid therapy'],
+      relatedDrugIds: ['prednisone', 'methylprednisolone', 'cyclophosphamide', 'azathioprine'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'seidel-test'],
+    },
     followUp: {
       typical: 'Close, coordinated follow-up with rheumatology during active systemic treatment; ophthalmic monitoring frequency depends on ocular disease severity, often weekly to monthly initially',
       monitor: 'Scleral inflammation/thinning, corneal integrity (peripheral ulcerative keratitis), retinal vascular status, and visual acuity',
@@ -251,6 +308,33 @@ export const systemicGeneticDisease10: Disease[] = [
       { category: 'Advanced treatment', detail: 'Scleral or bandage contact lenses for severe ocular surface disease unresponsive to standard measures; consider lid surgery consultation if severe lagophthalmos threatens the cornea' },
       { category: 'Referral', detail: 'Refer to rheumatology for systemic diagnosis and monitoring; urgent internal medicine/nephrology referral if signs or symptoms suggest scleroderma renal crisis; refer for hypertensive retinopathy evaluation if severe hypertension is identified' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline Schirmer test and tear breakup time to quantify the aqueous-deficient and evaporative components of sicca',
+        'Slit lamp assessment of lid excursion, blink amplitude, and any lagophthalmos',
+        'Corneal fluorescein staining to grade punctate epitheliopathy/exposure changes',
+        'Blood pressure check if new visual symptoms raise concern for scleroderma renal crisis',
+      ],
+      initialTreatment:
+        'Preservative-free artificial tears and lubricating ointment at bedtime for the combined aqueous-deficient/exposure dry eye pattern; escalate to topical cyclosporine or lifitegrast for moderate-to-severe secondary keratoconjunctivitis sicca, and add lid taping or moisture chamber goggles at night if lagophthalmos from skin tightening is present.',
+      followUpSchedule:
+        'Every 3-6 months to reassess ocular surface disease and lid function, shortened to every few weeks if exposure keratopathy or unstable staining is present.',
+      escalationCriteria: [
+        'New or worsening corneal staining pattern despite consistent lubrication',
+        'Progressive lagophthalmos increasing exposure risk',
+        'Persistent epithelial defect or filamentary keratitis unresponsive to standard measures',
+        'Any new visual symptom (headache, blurred vision) in a patient with known systemic sclerosis, given the risk of scleroderma renal crisis',
+      ],
+      referralCriteria: [
+        'Severe refractory sicca -> rheumatology to evaluate for overlapping Sjögren syndrome',
+        'Severe lagophthalmos threatening the cornea -> oculoplastics for surgical consultation',
+        'New visual symptoms with suspected severe hypertension -> urgent internal medicine/nephrology same-day for scleroderma renal crisis',
+      ],
+      complications: ['Exposure keratopathy and recurrent corneal erosions', 'Rare corneal ulceration in severe unmanaged exposure/dryness', 'Hypertensive retinopathy or papilledema with scleroderma renal crisis'],
+      monitoringParameters: ['Corneal fluorescein staining pattern', 'Tear breakup time', 'Lid excursion and closure', 'Blood pressure-related fundus changes when relevant'],
+      relatedDrugIds: ['cyclosporine-ophthalmic-emulsion', 'lifitegrast', 'carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['schirmer-test', 'tear-break-up-time'],
+    },
     followUp: {
       typical: 'Every 3-6 months to monitor ocular surface disease and lid function, more frequently if unstable or if exposure keratopathy is present',
       monitor: 'Corneal staining, tear breakup time, lid excursion/closure, and blood pressure-related fundus changes if relevant',
@@ -342,6 +426,33 @@ export const systemicGeneticDisease10: Disease[] = [
       { category: 'Referral', detail: 'Coordinate with neurology regarding overall Parkinson disease management, as optimizing dopaminergic therapy can improve blink rate and some ocular motor findings; refer for botulinum toxin evaluation if blepharospasm is significant and refractory' },
       { category: 'Observation', detail: 'Monitor contrast sensitivity and saccadic function over time as part of overall functional/quality-of-life assessment, particularly relevant to driving safety counseling' },
     ],
+    managementProtocol: {
+      workup: [
+        'Direct observation of spontaneous blink rate during the exam',
+        'Near point of convergence and fusional vergence testing',
+        'Tear breakup time and corneal fluorescein staining',
+        'Contrast sensitivity testing and saccadic eye movement assessment to document functional deficits',
+      ],
+      initialTreatment:
+        'Frequent preservative-free artificial tears with lubricating ointment at bedtime to counter blink-related evaporative dry eye, paired with patient/caregiver education on conscious blinking; add base-in prism or vergence/convergence exercises for symptomatic convergence insufficiency affecting near work.',
+      followUpSchedule:
+        'Every 6-12 months, shortened to every few months if dry eye or near-vision symptoms are significant, to reassess ocular surface status and functional near vision.',
+      escalationCriteria: [
+        'Worsening corneal staining or new punctate epitheliopathy despite consistent lubrication',
+        'Progressive convergence insufficiency symptoms not improving with base-in prism or vergence therapy',
+        'Declining contrast sensitivity with functional impact on driving/mobility',
+        'New or worsening blepharospasm or apraxia of eyelid opening affecting function',
+      ],
+      referralCriteria: [
+        'Coordinate with neurology regarding dopaminergic therapy optimization, which can improve blink rate and some ocular motor findings',
+        'Refractory, functionally significant blepharospasm -> neurology/oculoplastics for botulinum toxin evaluation',
+        'Meaningful functional visual impairment (reading, mobility) -> low vision rehabilitation',
+      ],
+      complications: ['Exposure keratopathy and recurrent corneal erosions from chronic reduced blink', 'Functional visual impairment (reading difficulty) from convergence insufficiency', 'Reduced contrast sensitivity affecting driving safety and fall risk'],
+      monitoringParameters: ['Blink rate', 'Corneal staining/tear breakup time', 'Near point of convergence', 'Contrast sensitivity', 'New eyelid apraxia or blepharospasm'],
+      relatedDrugIds: ['carboxymethylcellulose-sodium', 'hyaluronic-acid-ophthalmic'],
+      relatedExamTechniqueIds: ['near-point-of-convergence', 'contrast-sensitivity-testing', 'saccadic-eye-movement-assessment', 'tear-break-up-time'],
+    },
     followUp: {
       typical: 'Every 6-12 months, or more frequently if dry eye or near-vision symptoms are significant, to reassess ocular surface status and functional vision',
       monitor: 'Blink rate, corneal staining/tear breakup time, near point of convergence, contrast sensitivity, and any new eyelid apraxia/blepharospasm',

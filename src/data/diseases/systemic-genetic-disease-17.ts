@@ -67,6 +67,36 @@ export const systemicGeneticDisease17: Disease[] = [
       { category: 'Referral', detail: 'Refer to primary care/infectious disease for systemic evaluation and monitoring (including counseling on contact sports avoidance given splenomegaly risk); refer to neuro-ophthalmology promptly for suspected optic neuritis or other neurologic involvement; refer to cornea specialist for persistent or vision-threatening keratitis' },
       { category: 'Emergency management', detail: 'Acute vision loss, pain with eye movement, or an afferent pupillary defect suggesting optic neuritis warrants urgent neuro-ophthalmic evaluation and neuroimaging' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam characterizing the conjunctival follicular reaction, any corneal infiltrates, and anterior chamber reaction',
+        'Confirm heterophile antibody (Monospot) and/or EBV-specific serology has been obtained, coordinating with primary care if not',
+        'Pupil testing and dilated disc exam for any visual complaint, to screen for early optic neuritis',
+        'MRI brain/orbits with contrast if neuro-ophthalmic signs are present',
+      ],
+      initialTreatment:
+        'Supportive care — cool compresses and lubrication for follicular conjunctivitis/dacryoadenitis — is sufficient for most cases, paralleling resolution of the systemic mononucleosis; topical corticosteroids are added cautiously and under close monitoring for visually significant stromal keratitis or anterior uveitis.',
+      followUpSchedule:
+        'Recheck in 1-2 weeks for mild conjunctivitis/dacryoadenitis to confirm resolution alongside systemic recovery; sooner (days) if keratitis, uveitis, or neuro-ophthalmic findings are present.',
+      escalationCriteria: [
+        'New or worsening visual symptoms during what was presumed to be self-limited disease',
+        'New afferent pupillary defect or optic disc edema',
+        'Stromal keratitis or uveitis not improving on supportive or topical therapy',
+        'Purulent discharge or worsening pain suggesting bacterial superinfection rather than EBV alone',
+      ],
+      referralCriteria: [
+        'Suspected optic neuritis (vision loss, pain with eye movement, APD) -> urgent neuro-ophthalmology evaluation and neuroimaging',
+        'Persistent or vision-threatening keratitis -> cornea specialist',
+        'Significant anterior uveitis -> coordinate topical or systemic corticosteroid therapy with the treating physician',
+        'Confirmed or suspected mononucleosis -> primary care/infectious disease for systemic evaluation and counseling on contact-sport avoidance given splenomegaly risk',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids are reserved for visually significant stromal keratitis or anterior uveitis and used cautiously with close follow-up, since most EBV ocular disease is mild and self-limited and resolves alongside the systemic illness without targeted treatment.',
+      complications: ['Persistent or recurrent stromal keratitis', 'Chronic dry eye if lacrimal gland function is affected by dacryoadenitis', 'Residual visual deficit from optic neuritis'],
+      monitoringParameters: ['Conjunctival injection/follicles', 'Lid swelling (dacryoadenitis)', 'Corneal infiltrates', 'Anterior chamber reaction', 'Visual acuity and optic nerve function'],
+      relatedDrugIds: ['prednisolone-acetate'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'pupillary-examination', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Follow-up in 1-2 weeks for mild conjunctivitis/dacryoadenitis to confirm resolution alongside systemic recovery; sooner if keratitis, uveitis, or neuro-ophthalmic findings are present',
       monitor: 'Resolution of conjunctival injection/follicles, lid swelling, corneal infiltrates, anterior chamber reaction, and visual acuity/optic nerve function as applicable',
@@ -156,6 +186,34 @@ export const systemicGeneticDisease17: Disease[] = [
       { category: 'Advanced treatment', detail: 'Epilation or lash correction procedures for symptomatic trichiasis; oculoplastic surgical repair for cicatricial ectropion causing exposure or ocular surface compromise' },
       { category: 'Referral', detail: 'Refer to dermatology for management of underlying psoriasis severity and systemic/biologic therapy decisions; refer to oculoplastics for cicatricial lid malposition (ectropion, trichiasis) not responsive to conservative measures' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp evaluation of the lid margin, meibomian gland orifices, and lash position/integrity',
+        'Tear breakup time and ocular surface staining to quantify associated dry eye severity',
+        'Screen for lid malposition (ectropion, trichiasis) at each visit',
+        'Screen for joint symptoms suggestive of psoriatic arthritis, which carries a separate, joint-disease-associated uveitis risk',
+      ],
+      initialTreatment:
+        'Gentle lid hygiene (warm compresses, lid margin cleansing) with preservative-free artificial tears addresses the associated blepharitis and dry eye, while the underlying psoriasis is managed in coordination with dermatology; a brief, cautious course of low-potency periocular topical corticosteroid may be used for active plaques or significant lid margin inflammation.',
+      followUpSchedule:
+        'Every 3-6 months, or sooner with flares, to monitor lid margin disease activity, dry eye severity, and any evolving lid malposition, coordinated with dermatologic management of systemic flares.',
+      escalationCriteria: [
+        'New or worsening lid malposition (ectropion, trichiasis)',
+        'Corneal exposure or new punctate staining from lash or lid margin irregularity',
+        'Lid margin plaques unresponsive to conservative lid hygiene and dermatologic therapy',
+        'New eye pain, photophobia, or redness suggesting intraocular inflammation rather than surface disease alone',
+      ],
+      referralCriteria: [
+        'Cicatricial lid malposition not responsive to conservative measures -> oculoplastics',
+        'Underlying psoriasis severity or systemic/biologic therapy decisions -> dermatology',
+        'New signs of intraocular inflammation -> screen for underlying psoriatic arthritis and manage as HLA-B27-associated uveitis rather than attributing it to the skin disease itself',
+      ],
+      steroidConsiderations:
+        'Low-potency topical corticosteroid used briefly and cautiously on periocular skin for active plaques or lid margin inflammation, given the thin periocular skin\'s susceptibility to atrophy, telangiectasia, and other steroid-related complications; topical calcineurin inhibitors are a steroid-sparing alternative used by dermatology in this sensitive area.',
+      complications: ['Chronic meibomian gland dysfunction and evaporative dry eye', 'Madarosis', 'Cicatricial ectropion or trichiasis with corneal exposure/irritation in severe cases'],
+      monitoringParameters: ['Lid margin plaque activity', 'Meibomian gland function', 'Tear film stability (TBUT)', 'Lash position', 'Corneal surface integrity'],
+      relatedExamTechniqueIds: ['lid-margin-blepharitis-assessment', 'tear-break-up-time', 'meibomian-gland-evaluation', 'lid-eversion'],
+    },
     followUp: {
       typical: 'Periodic follow-up (every 3-6 months or with flares) to monitor lid margin disease activity, dry eye severity, and any evolving lid malposition, coordinated with dermatologic management of systemic flares',
       monitor: 'Lid margin plaque activity, meibomian gland function, tear film stability, lash position, and corneal surface integrity',
@@ -249,6 +307,43 @@ export const systemicGeneticDisease17: Disease[] = [
       { category: 'Advanced treatment', detail: 'Coordinate closely with hematology before any planned ocular surgery or intraocular procedure to assess and, if needed, correct the platelet count perioperatively (e.g., platelet transfusion) to reduce intraoperative/postoperative bleeding risk' },
       { category: 'Emergency management', detail: 'Extensive vitreous hemorrhage causing significant acute vision loss warrants urgent retina specialist evaluation; severe thrombocytopenia with active or extensive hemorrhage warrants urgent hematologic evaluation for possible platelet transfusion' },
     ],
+    managementProtocol: {
+      workup: [
+        'Confirm a CBC with platelet count and peripheral smear has been obtained if not already available',
+        'Dilated fundus examination to assess for retinal, preretinal, or vitreous hemorrhage and macular involvement',
+        'Coagulation panel (INR/PT, PTT) if concurrent hepatic disease or anticoagulant/antiplatelet use is suspected',
+        'Coordinate perioperative platelet count assessment with hematology before any planned ocular surgery or intraocular procedure',
+      ],
+      initialTreatment:
+        'Isolated, non-visually-significant subconjunctival hemorrhage requires no direct ocular treatment and resolves spontaneously over one to two weeks as blood reabsorbs; artificial tears are added for comfort if irritation is present, while the underlying thrombocytopenia is addressed by hematology (e.g., immunosuppressive therapy for ITP, treatment of the underlying malignancy, or adjustment of a causative medication).',
+      followUpSchedule:
+        'A single confirmatory visit is usually sufficient for mild subconjunctival hemorrhage; retinal or vitreous hemorrhage requires closer monitoring over days to weeks until resolution or stabilization, coordinated with the patient\'s hematologic treatment course.',
+      escalationCriteria: [
+        'New or expanding retinal, preretinal, or vitreous hemorrhage',
+        'Vision loss from macular or vitreous hemorrhage involvement',
+        'Falling platelet count on hematology follow-up',
+        'Recurrent subconjunctival hemorrhage without a clear inciting trauma',
+      ],
+      referralCriteria: [
+        'Unexplained or recurrent subconjunctival/retinal hemorrhage -> hematology for CBC with platelet count and etiologic workup',
+        'Visually significant preretinal or vitreous hemorrhage -> retina specialist',
+        'Extensive vitreous hemorrhage with acute vision loss -> urgent retina specialist evaluation',
+        'Planned ocular surgery in a patient with known or suspected thrombocytopenia -> hematology for perioperative platelet optimization',
+      ],
+      complications: [
+        'Prolonged visual disturbance from extensive vitreous hemorrhage',
+        'Vitreous membrane formation with longstanding, unresolved hemorrhage',
+        'Intraoperative or postoperative bleeding during any ocular procedure performed without adequate platelet correction',
+      ],
+      monitoringParameters: [
+        'Extent/resolution of subconjunctival hemorrhage',
+        'Retinal hemorrhage burden on dilated fundus exam',
+        'Vitreous clarity',
+        'Visual acuity',
+        'Platelet count trends, coordinated with hematology',
+      ],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Follow-up interval depends on severity: mild subconjunctival hemorrhage may need only a single confirmatory visit, while retinal or vitreous hemorrhage requires closer monitoring (days to weeks) until resolution or stabilization, coordinated with the patient\'s hematologic treatment course',
       monitor: 'Extent/resolution of subconjunctival hemorrhage, retinal hemorrhage burden on dilated fundus exam, vitreous clarity, and visual acuity; platelet count trends in coordination with hematology',

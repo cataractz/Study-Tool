@@ -72,6 +72,30 @@ export const systemicGeneticDisease11: Disease[] = [
       { category: 'Second-line treatment', detail: 'Low vision rehabilitation strategies adapted for cortical visual dysfunction (environmental decluttering, high-contrast markers, consistent object placement) may benefit patients with posterior cortical atrophy more than conventional low vision aids designed for ocular disease' },
       { category: 'Referral', detail: 'Refer to neurology for any patient with visual complaints, a normal eye examination, and objective visuospatial/visual processing deficits, particularly when memory is relatively preserved (raising concern for posterior cortical atrophy); coordinate with the patient\'s primary care physician and neurology for systemic disease management and safety counseling (driving, fall risk)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Comprehensive eye exam (acuity, pupils, dilated fundus) to exclude a primary ocular cause of the visual complaint',
+        'Contrast sensitivity testing to objectively document any visual processing deficit',
+        'Bedside visuospatial/neuro-visual screening (figure copying, simultanagnosia and extinction testing) when visual symptoms predominate over memory complaints',
+        'Confirm coordination with neurology/neuropsychology regarding cognitive testing and neuroimaging status',
+      ],
+      initialTreatment:
+        'No ocular-specific pharmacologic treatment exists; updated spectacle correction, magnification, large-print materials, and enhanced lighting/contrast meaningfully improve function for patients with reduced contrast sensitivity or visuospatial difficulty, and low vision strategies adapted for cortical dysfunction (decluttering, high-contrast markers, consistent object placement) can help more than conventional low vision aids.',
+      followUpSchedule:
+        'Periodic comprehensive eye exams to identify and manage coexisting age-related ocular disease (cataract, glaucoma, macular degeneration), since these common comorbidities compound functional visual difficulty in this population; interval guided by coexisting ocular disease status.',
+      escalationCriteria: [
+        'New or rapidly progressive visual symptoms with an essentially normal eye exam in an undiagnosed patient',
+        'Worsening visuospatial function or new visual complaints that have not yet been communicated to the managing neurologist',
+        'Visual findings raising safety concerns (driving, falls) that warrant prompt counseling',
+      ],
+      referralCriteria: [
+        'Visual complaints, a normal eye exam, and objective visuospatial/visual processing deficits (especially with relatively preserved memory) -> urgent neurology for possible posterior cortical atrophy',
+        'New cognitive concerns identified incidentally during an eye exam -> primary care/neurology for cognitive evaluation',
+      ],
+      complications: ['Progressive functional dependence and safety risk (falls, driving, medication errors) compounded by visual processing deficits', 'Under-recognition of coexisting treatable ocular disease if visual complaints are attributed solely to the ocular exam or to normal aging'],
+      monitoringParameters: ['Visual acuity', 'Contrast sensitivity', 'Functional visual complaints relative to cognitive status', 'Status of coexisting ocular disease (cataract, glaucoma, AMD)'],
+      relatedExamTechniqueIds: ['contrast-sensitivity-testing', 'confrontation-visual-fields'],
+    },
     followUp: {
       typical: 'Periodic comprehensive eye exams to rule out and manage coexisting age-related ocular disease (cataract, glaucoma, macular degeneration), since these are common comorbidities that compound functional visual difficulty in this population',
       monitor: 'Visual acuity, contrast sensitivity, and functional visual complaints relative to cognitive status; coordinate findings with the managing neurologist',
@@ -163,6 +187,34 @@ export const systemicGeneticDisease11: Disease[] = [
       { category: 'Second-line treatment', detail: 'Systemic corticosteroids are sometimes considered adjunctively for severe optic nerve inflammation/vision loss in coordination with infectious disease/neuro-ophthalmology, though use is individualized' },
       { category: 'Referral', detail: 'Refer to neuro-ophthalmology or retina specialist for any suspected neuroretinitis for confirmation and co-management; refer to infectious disease/primary care for systemic antibiotic management and to assess for other systemic manifestations' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam to characterize disc edema and any developing macular star',
+        'Fluorescein angiography to confirm diffuse disc leakage rather than primary macular vascular leakage',
+        'Bartonella henselae serology if not already sent, with awareness that early titers can be falsely negative',
+        'Detailed cat/kitten exposure history (scratch, bite, flea contact)',
+      ],
+      initialTreatment:
+        'Mild oculoglandular disease in an immunocompetent patient is often observed given its self-limited course; neuroretinitis with significant vision loss is commonly treated with a 4-6 week course of oral doxycycline plus rifampin coordinated with infectious disease/neuro-ophthalmology, though evidence for antibiotics altering the natural history of neuroretinitis is mixed.',
+      followUpSchedule:
+        'Recheck visual acuity, optic disc appearance, and macular star every few weeks until resolution; the star can continue to develop for one to two weeks even as disc edema begins to improve and may take months to fully resolve.',
+      escalationCriteria: [
+        'Progressive or new vision loss on treatment',
+        'Bilateral involvement',
+        'Signs of disseminated Bartonella disease (more likely in immunocompromised patients)',
+        'No stabilization of disc edema after several weeks of antibiotic therapy',
+      ],
+      referralCriteria: [
+        'Any suspected neuroretinitis (disc edema with or without an evolving macular star) -> neuro-ophthalmology or retina specialist',
+        'Confirmed or strongly suspected Bartonella infection -> infectious disease/primary care for systemic antibiotic management and to screen for other manifestations',
+      ],
+      steroidConsiderations:
+        'Adjunctive systemic corticosteroids are sometimes added for severe optic nerve inflammation/vision loss, individualized with infectious disease/neuro-ophthalmology; note that rifampin accelerates hepatic metabolism of both prednisone and doxycycline, reducing their plasma levels, which should be considered when these are combined.',
+      complications: ['Optic atrophy or residual visual field defect with significant optic nerve involvement', 'Rarely, more severe systemic Bartonella disease (bacillary angiomatosis, endocarditis) in immunocompromised patients'],
+      monitoringParameters: ['Visual acuity', 'Optic disc edema', 'Macular star progression/resolution', 'Relative afferent pupillary defect'],
+      relatedDrugIds: ['doxycycline', 'rifampin'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Follow visual acuity, optic disc appearance, and macular star evolution every few weeks until resolution',
       monitor: 'Visual acuity, optic disc edema, and progression/resolution of the macular star',
@@ -253,6 +305,33 @@ export const systemicGeneticDisease11: Disease[] = [
       { category: 'Second-line treatment', detail: 'Topical corticosteroids may be used adjunctively to control anterior segment inflammation (punctate keratitis, anterior uveitis) under specialist guidance' },
       { category: 'Referral', detail: 'Refer to ophthalmology for evaluation of corneal, anterior chamber, and posterior segment involvement, and to infectious disease/public health programs for community-based ivermectin distribution and vector control in endemic areas' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam staging corneal involvement as punctate/snowflake keratitis versus established sclerosing keratitis',
+        'Anterior chamber exam for cell/flare and, when present, direct visualization of motile microfilariae',
+        'Dilated fundus exam to assess chorioretinal status and optic nerve for atrophy',
+        'Confirm skin snip biopsy/serology status and endemic exposure history with the referring/treating physician',
+      ],
+      initialTreatment:
+        'Ivermectin remains the systemic mainstay, killing microfilariae and reducing the ocular/dermatologic inflammatory burden, though it does not kill adult worms and requires repeat dosing over years; a 6-week course of doxycycline, targeting the Wolbachia endosymbionts that adult Onchocerca worms depend on, has documented macrofilaricidal and sterilizing activity and is used as an adjunct in some treatment programs. Topical corticosteroids are used adjunctively for active punctate keratitis or anterior uveitis.',
+      followUpSchedule:
+        'Periodic reassessment coordinated with mass drug administration/ivermectin treatment program intervals typical of endemic-area public health efforts, with closer ophthalmic follow-up while anterior segment inflammation is active.',
+      escalationCriteria: [
+        'Progressive corneal scarring on serial exams',
+        'Worsening chorioretinal changes or new optic atrophy',
+        'Active anterior segment inflammation not controlled with topical therapy',
+      ],
+      referralCriteria: [
+        'Corneal, anterior chamber, or posterior segment involvement -> ophthalmology for staging and topical therapy',
+        'Confirmed or suspected onchocerciasis -> infectious disease/public health program for ivermectin distribution, dosing schedule, and vector control coordination',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids may be used under specialist guidance to control punctate keratitis or anterior uveitis from the inflammatory response to dying microfilariae, alongside systemic antiparasitic treatment rather than in place of it.',
+      complications: ['Sclerosing keratitis with corneal opacification', 'Chorioretinal atrophy', 'Optic atrophy', 'Irreversible blindness with longstanding untreated disease'],
+      monitoringParameters: ['Corneal clarity/scarring progression', 'Anterior chamber inflammation', 'Posterior segment and optic nerve status'],
+      relatedDrugIds: ['doxycycline'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Periodic reassessment in coordination with mass drug administration/ivermectin treatment programs typical of endemic-area public health efforts',
       monitor: 'Corneal clarity/scarring progression, anterior chamber inflammation, and posterior segment/optic nerve status',

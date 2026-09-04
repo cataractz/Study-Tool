@@ -76,6 +76,37 @@ export const systemicGeneticDisease18: Disease[] = [
       { category: 'First-line treatment', detail: 'For anterior uveitis attacks: aggressive cycloplegic/mydriatic therapy and frequent topical corticosteroids, following the same protocol used for HLA-B27-associated uveitis generally' },
       { category: 'Emergency management', detail: 'Prompt, same-day treatment of severe uveitis attacks with hypopyon, fibrin, or marked IOP elevation to prevent posterior synechiae and secondary glaucoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with AC cell/flare grading and IOP measurement for any new red or painful eye in a patient with known or suspected AS',
+        'Baseline dilated fundus exam to rule out posterior involvement (panuveitis)',
+        'Gonioscopy if IOP is elevated or synechiae are suspected',
+        'Confirm sacroiliac imaging and HLA-B27 status have been obtained if the axial diagnosis is not yet established, coordinating with rheumatology',
+      ],
+      initialTreatment:
+        'Acute anterior uveitis attacks are treated with aggressive cycloplegic/mydriatic therapy paired with frequent topical corticosteroids dosed to severity, following the same protocol used for HLA-B27-associated uveitis generally; axial disease is managed separately by rheumatology with regular NSAID dosing, structured physical therapy, and biologic therapy for inadequate responders.',
+      followUpSchedule:
+        'Uveitis attacks are rechecked within days to a week of starting treatment to grade AC cell/flare response and check IOP, tapering the steroid slowly as inflammation quiets; monitor the fellow eye given the classic alternating pattern, while rheumatology follows axial disease activity on an ongoing basis.',
+      escalationCriteria: [
+        'No improvement in AC cell/flare grade after about a week of appropriately dosed topical steroid',
+        'New or worsening hypopyon or fibrin',
+        'IOP rise suggesting a steroid responder',
+        'Development of posterior synechiae despite cycloplegia',
+      ],
+      referralCriteria: [
+        'New or recurrent acute anterior uveitis -> prompt ophthalmology treatment; severe attacks (hypopyon, fibrin, marked IOP elevation) -> same-day evaluation',
+        'New inflammatory back pain/morning stiffness pattern in a uveitis patient without an established AS diagnosis -> rheumatology for axial spondyloarthropathy workup',
+        'Recurrent or steroid-dependent uveitis attacks -> rheumatology for consideration of systemic biologic therapy',
+      ],
+      steroidConsiderations:
+        'Prednisolone acetate 1%, dosed up to hourly while awake in severe attacks with a slow taper over several weeks, mirrors the standard HLA-B27-associated anterior uveitis protocol; check IOP at every visit given the steroid-response risk, and never stop abruptly.',
+      cycloplegicConsiderations:
+        'Cyclopentolate or homatropine relieves ciliary spasm and pain and keeps the pupil mobile to reduce posterior synechiae formation during acute attacks.',
+      complications: ['Posterior synechiae', 'Secondary glaucoma', 'Cataract from recurrent inflammation or chronic steroid use', 'Progressive spinal fusion and kyphosis (systemic)'],
+      monitoringParameters: ['AC cell/flare grade', 'IOP', 'Pupil shape/mobility for synechiae', 'Fellow eye for new attacks', 'Spinal mobility and inflammatory markers, coordinated with rheumatology'],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'homatropine', 'adalimumab', 'etanercept', 'infliximab'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'gonioscopy'],
+    },
     followUp: {
       typical: 'Rheumatology follows axial disease activity on an ongoing basis; acute uveitis attacks are rechecked within days to a week of starting treatment to confirm response',
       monitor: 'Spinal mobility and posture, inflammatory markers, and, for the eye, anterior chamber cell/flare, IOP, and synechiae during uveitis flares; monitor the fellow eye for new attacks given the classic alternating pattern',
@@ -176,6 +207,37 @@ export const systemicGeneticDisease18: Disease[] = [
       { category: 'First-line treatment', detail: 'For anterior uveitis attacks: aggressive cycloplegic/mydriatic therapy and frequent topical corticosteroids, following the same protocol used for HLA-B27-associated uveitis generally' },
       { category: 'Emergency management', detail: 'Prompt, same-day treatment of severe uveitis attacks with hypopyon, fibrin, or marked IOP elevation to prevent posterior synechiae and secondary glaucoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with AC cell/flare grading and IOP measurement for any red or painful eye, particularly in the axial/HLA-B27-positive subset',
+        'Baseline dilated fundus exam to rule out posterior involvement during a uveitis attack',
+        'Gonioscopy if IOP is elevated or synechiae are suspected',
+        'Screen nail and skin findings and joint pattern to support the CASPAR criteria, in coordination with rheumatology/dermatology, for new presentations',
+      ],
+      initialTreatment:
+        'Acute anterior uveitis attacks are treated with aggressive cycloplegic/mydriatic therapy paired with frequent topical corticosteroids dosed to severity, following the same protocol used for HLA-B27-associated uveitis generally; peripheral and axial joint disease is managed separately by rheumatology with NSAIDs, DMARDs, or biologic therapy, several of which also treat the skin disease concurrently in coordination with dermatology.',
+      followUpSchedule:
+        'Uveitis attacks are rechecked within days to a week of starting treatment to grade AC cell/flare response and check IOP, tapering the steroid slowly as inflammation quiets, while rheumatology and dermatology follow joint and skin disease activity on an ongoing basis.',
+      escalationCriteria: [
+        'No improvement in AC cell/flare grade after about a week of appropriately dosed topical steroid',
+        'New or worsening hypopyon or fibrin',
+        'IOP rise suggesting a steroid responder',
+        'Development of posterior synechiae despite cycloplegia',
+      ],
+      referralCriteria: [
+        'New or recurrent acute anterior uveitis -> prompt ophthalmology treatment; severe attacks (hypopyon, fibrin, marked IOP elevation) -> same-day evaluation',
+        'Uveitis in a psoriasis patient without an established joint diagnosis -> rheumatology to screen for underlying psoriatic arthritis rather than attributing it to the skin disease alone',
+        'Coordinate ongoing skin disease control with dermatology, since direct periocular skin/eyelid psoriasis is a separate manifestation managed independently (see Psoriasis: Ocular Manifestations)',
+      ],
+      steroidConsiderations:
+        'Prednisolone acetate 1%, dosed up to hourly while awake in severe attacks with a slow taper over several weeks, mirrors the standard HLA-B27-associated anterior uveitis protocol; check IOP at every visit given the steroid-response risk.',
+      cycloplegicConsiderations:
+        'Cyclopentolate or homatropine relieves ciliary spasm and pain and keeps the pupil mobile to reduce posterior synechiae formation during acute attacks.',
+      complications: ['Posterior synechiae', 'Secondary glaucoma', 'Cataract from recurrent inflammation or chronic steroid use', 'Joint erosion and deformity (systemic)'],
+      monitoringParameters: ['AC cell/flare grade', 'IOP', 'Pupil shape/mobility for synechiae', 'Joint pain/swelling pattern and nail changes, coordinated with rheumatology/dermatology'],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'homatropine', 'adalimumab', 'etanercept', 'infliximab', 'methotrexate'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'gonioscopy'],
+    },
     followUp: {
       typical: 'Rheumatology and dermatology follow joint and skin disease activity on an ongoing basis; acute uveitis attacks are rechecked within days to a week of starting treatment to confirm response',
       monitor: 'Joint pain/swelling pattern, nail changes, and, for the eye, anterior chamber cell/flare, IOP, and synechiae during uveitis flares',

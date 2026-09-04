@@ -86,6 +86,47 @@ export const systemicGeneticDisease13: Disease[] = [
       { category: 'Advanced treatment', detail: 'Primary vitreoretinal lymphoma is managed by neuro-oncology/hematology-oncology, often with intravitreal chemotherapy (e.g., methotrexate) and/or systemic high-dose methotrexate-based regimens, with or without ocular or whole-brain radiotherapy, particularly when CNS involvement is present or develops' },
       { category: 'Observation', detail: 'Following treatment, periodic dilated exam and vitreous surveillance are used to detect recurrence, since relapse (ocular or CNS) is common even after apparent remission' },
     ],
+    managementProtocol: {
+      workup: [
+        'Confirm tissue diagnosis (orbital/adnexal biopsy or vitrectomy cytology) and systemic/CNS staging results are in hand before finalizing the ocular treatment plan',
+        'Baseline visual acuity, IOP, and OCT macula (vitreoretinal disease) before starting any intravitreal therapy',
+        'Baseline fundus photography and, when the view is hazy from dense vitritis, B-scan ultrasonography to document the extent of vitreous involvement',
+        'Coordinate directly with hematology-oncology/neuro-oncology so ophthalmic surveillance intervals align with the systemic treatment and CNS monitoring schedule',
+      ],
+      initialTreatment:
+        'The optometrist does not administer definitive lymphoma therapy: orbital/adnexal MALT lymphoma is directed by radiation/hematology-oncology (external beam radiotherapy first-line), and primary vitreoretinal lymphoma is directed by neuro-oncology/hematology-oncology (intravitreal methotrexate, often with systemic high-dose methotrexate and/or radiotherapy). The eye-care role is pretreatment baseline documentation, monitoring for treatment response and toxicity, and vigilance for recurrence.',
+      followUpSchedule:
+        'Ophthalmic surveillance approximately every 3 months during and after treatment given high recurrence rates; more frequent visits (e.g., aligned with each intravitreal methotrexate injection) are needed during active intravitreal induction to monitor for corneal and lenticular toxicity and treatment response.',
+      escalationCriteria: [
+        'New or worsening vitreous haze, new subretinal infiltrate, or falling vision despite ongoing intravitreal/systemic therapy',
+        'New floaters, decreased vision, or new neurologic symptoms after apparent remission, raising concern for ocular or CNS relapse',
+        'Progressive corneal epitheliopathy or marked IOP rise after repeated intravitreal methotrexate injections',
+        'New orbital signs (proptosis, motility restriction) after treated adnexal disease, suggesting recurrence',
+      ],
+      referralCriteria: [
+        'Any new suspected orbital/adnexal mass -> oculoplastics/orbital surgery for biopsy and hematology-oncology for staging',
+        'Atypical, bilateral, steroid-resistant, or elderly-onset vitritis/posterior uveitis -> vitreoretinal specialist for diagnostic vitrectomy',
+        'Confirmed vitreoretinal lymphoma -> neuro-oncology for brain MRI and, when indicated, CSF analysis, given the strong CNS association',
+        'New neurologic symptoms at any point in the disease course -> urgent neuro-oncology evaluation',
+      ],
+      steroidConsiderations:
+        'Corticosteroids should generally be withheld once vitreoretinal lymphoma is suspected and before diagnostic vitrectomy — steroids have a lympholytic effect that can transiently suppress vitritis and reduce the yield of vitreous cytology, delaying or obscuring the diagnosis.',
+      complications: [
+        'Corneal epitheliopathy or punctate keratopathy from repeated intravitreal methotrexate injections',
+        'Cataract and IOP elevation from repeated intravitreal injections or periocular/systemic corticosteroid exposure',
+        'Vision loss from vitreous opacification, retinal/RPE damage, or optic nerve infiltration',
+        'CNS relapse, which carries the dominant mortality risk in primary vitreoretinal lymphoma',
+      ],
+      monitoringParameters: [
+        'Vitreous clarity/haze grade on serial exam',
+        'OCT macula for subretinal infiltrate and retinal architecture',
+        'Visual acuity and IOP at each visit, particularly during intravitreal methotrexate induction',
+        'Corneal epithelial status if receiving intravitreal methotrexate',
+        'Orbital exam (motility, proptosis) for adnexal disease recurrence',
+      ],
+      relatedDrugIds: ['methotrexate'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'oct-macula', 'b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Coordinated follow-up with oncology/neuro-oncology; ophthalmic surveillance typically every 3 months during and after treatment, longer-term thereafter, given high recurrence rates',
       monitor: 'Vitreous clarity, retinal infiltrate appearance, visual acuity, and interval neurologic symptoms; systemic and CNS imaging per oncology protocol',
@@ -180,6 +221,45 @@ export const systemicGeneticDisease13: Disease[] = [
       { category: 'Advanced treatment', detail: 'Urgent plasmapheresis may be indicated for severe symptomatic hyperviscosity from paraproteinemia; anti-VEGF therapy or macular laser for macular edema, and panretinal photocoagulation for neovascularization, if vein occlusion-type complications develop' },
       { category: 'Observation', detail: 'Mild, asymptomatic retinal findings without vision-threatening complications may be monitored while systemic treatment is optimized' },
     ],
+    managementProtocol: {
+      workup: [
+        'Grade venous dilation/segmentation, hemorrhage, and cotton wool spot burden on dilated exam and fundus photography to document a treatment-response baseline',
+        'OCT macula to establish a baseline central subfield thickness before macular edema can develop',
+        'Fluorescein angiography if ischemia or early neovascularization is suspected, to guide the threshold for anti-VEGF or panretinal photocoagulation',
+        'IOP measurement and gonioscopy if any sign of anterior segment neovascularization is present',
+        'Prompt communication with hematology-oncology of exam findings, since severe symptomatic hyperviscosity may need urgent plasmapheresis',
+      ],
+      initialTreatment:
+        'Ocular management is directed at the underlying hematologic disorder (phlebotomy/cytoreductive therapy, chemoimmunotherapy, or anticoagulation, per hematology) rather than at the eye directly — retinal findings typically improve as systemic hyperviscosity or hypercoagulability is corrected. If vein-occlusion-type complications (macular edema, neovascularization) develop, anti-VEGF injection and/or panretinal photocoagulation are added per standard retinal vascular disease protocols.',
+      followUpSchedule:
+        'Every 1-3 months while hyperviscosity is active or retinal findings are evolving, coordinated with hematology visits; extend to every 6-12 months once the systemic disorder is controlled and the retina has stabilized.',
+      escalationCriteria: [
+        'New or worsening macular edema on OCT',
+        'New retinal or anterior segment neovascularization on exam or angiography',
+        'Vitreous hemorrhage or acute vision loss',
+        'Patient-reported systemic hyperviscosity symptoms (headache, mucosal bleeding, confusion) warranting same-day communication with hematology',
+      ],
+      referralCriteria: [
+        'New diagnosis or suspicion of polycythemia vera, myeloma, or Waldenstrom macroglobulinemia -> hematology-oncology',
+        'Retinal vein occlusion in a patient under 50 without typical vascular risk factors -> hematology for a hypercoagulable/thrombophilia workup',
+        'Vision-threatening macular edema or neovascular complications -> retina specialist for anti-VEGF therapy or panretinal photocoagulation',
+      ],
+      complications: [
+        'Macular edema',
+        'Vitreous/retinal hemorrhage',
+        'Retinal or iris neovascularization progressing to neovascular glaucoma in ischemic disease',
+        'Recurrent thrombotic events at other sites in confirmed hypercoagulable states',
+      ],
+      monitoringParameters: [
+        'Retinal vein caliber and segmentation pattern',
+        'Hemorrhage and cotton wool spot count',
+        'OCT central subfield thickness',
+        'Development of retinal or anterior segment neovascularization',
+        'IOP',
+      ],
+      relatedDrugIds: ['bevacizumab'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'oct-macula'],
+    },
     followUp: {
       typical: 'Coordinated with hematology; ophthalmic follow-up every 1-3 months while hyperviscosity is active or retinal findings are evolving, less frequent once systemic disease is controlled',
       monitor: 'Retinal vein caliber/segmentation, hemorrhage and cotton wool spot burden, macular edema (OCT), and development of neovascularization',
@@ -273,6 +353,43 @@ export const systemicGeneticDisease13: Disease[] = [
       { category: 'Referral', detail: 'Refer to nephrology for coordinated systemic management of CKD-mineral bone disorder; refer to cornea specialist for visually significant band keratopathy requiring chelation; refer to retina specialist for management of concurrent diabetic or hypertensive retinopathy, which often requires closer monitoring in CKD patients' },
       { category: 'Emergency management', detail: 'Severe, painful red eye with corneal thinning or suspected uremic optic neuropathy with acute vision loss warrants urgent ophthalmologic evaluation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp documentation (ideally photographic) of the extent and density of the corneal calcific plaque relative to the visual axis to decide whether chelation is indicated',
+        'Ocular surface staining and symptom assessment to grade the severity of the "red eye of renal failure" before starting therapy',
+        'Dilated fundus exam to establish a baseline for any coexisting diabetic or hypertensive retinopathy, which is often the dominant driver of visual morbidity in this population',
+        'Review of the patient\'s most recent calcium, phosphate, and PTH values with the nephrology team to gauge how well the mineral/bone disorder is controlled',
+      ],
+      initialTreatment:
+        'Coordinate with nephrology to optimize systemic phosphate and secondary hyperparathyroidism control, which can slow or partially reverse ocular calcific deposition; add preservative-free lubrication for mild surface irritation. Visually significant or symptomatic band keratopathy is treated with topical EDTA chelation and mechanical debridement by a cornea specialist rather than in routine primary eye care.',
+      followUpSchedule:
+        'Every 6-12 months for stable mild band keratopathy/conjunctival calcification, timed with the patient\'s nephrology visits for mineral/bone disease control; shorten to every 3-6 months, or align with retinal specialty care, if concurrent diabetic or hypertensive retinopathy is present.',
+      escalationCriteria: [
+        'Band keratopathy visibly encroaching on the visual axis or causing a measurable acuity drop',
+        'Recurrent or worsening painful red eye despite lubrication',
+        'New or accelerating diabetic/hypertensive retinopathy findings on dilated exam',
+        'Any acute, severe eye pain with corneal thinning or sudden vision loss',
+      ],
+      referralCriteria: [
+        'Elevated or rising calcium-phosphate product, or poorly controlled secondary hyperparathyroidism -> nephrology for systemic mineral/bone disease management',
+        'Visually significant band keratopathy -> cornea specialist for EDTA chelation',
+        'Any diabetic or hypertensive retinopathy identified on exam -> retina specialist, since it typically requires closer monitoring in CKD patients',
+        'Acute severe red eye, corneal thinning, or suspected uremic optic neuropathy -> urgent same-day ophthalmologic evaluation',
+      ],
+      complications: [
+        'Visually significant band keratopathy if untreated',
+        'Recurrent calcific deposition and surface irritation after chelation if the calcium-phosphate product remains elevated',
+        'Corneal surface irregularity following debridement',
+        'Progression of concurrent diabetic/hypertensive retinopathy, which usually carries greater visual risk than the calcific findings themselves',
+      ],
+      monitoringParameters: [
+        'Extent and density of corneal calcific plaque relative to the visual axis',
+        'Ocular surface comfort and staining',
+        'Diabetic/hypertensive retinopathy status when present',
+        'Reported trend in serum calcium, phosphate, and PTH from the nephrology team',
+      ],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Every 6-12 months for stable mild band keratopathy/conjunctival calcification, coordinated with the patient\'s nephrology follow-up schedule for systemic mineral/bone disease control; more frequent dilated retinal exams if concurrent diabetic or hypertensive retinopathy is present',
       monitor: 'Corneal calcific plaque extent/density, ocular surface comfort and integrity, and (separately) diabetic/hypertensive retinopathy status per those entries\' monitoring guidance',
@@ -367,6 +484,45 @@ export const systemicGeneticDisease13: Disease[] = [
       { category: 'Advanced treatment', detail: 'Lens extraction with intraocular lens implantation is indicated when anterior lenticonus progresses to significantly impair vision or when spontaneous anterior capsule rupture/cataract formation occurs; special surgical care is needed given capsule fragility' },
       { category: 'Referral', detail: 'Refer to nephrology for renal function evaluation and management, and to genetics for confirmatory testing and family/genetic counseling given inheritance implications, in any patient with anterior lenticonus even before overt renal disease is apparent; refer to audiology for hearing evaluation; refer to cataract/anterior segment specialist if lens extraction becomes indicated' },
     ],
+    managementProtocol: {
+      workup: [
+        'Retroillumination and retinoscopy to characterize the oil-droplet reflex and quantify the degree of lenticular myopia/irregular astigmatism',
+        'Cycloplegic refraction to obtain an accurate manifest refraction unaffected by accommodative fluctuation, since the lenticonus itself alters the eye\'s effective power',
+        'Dilated fundus exam to document the extent of dot-and-fleck retinopathy for future comparison',
+        'Serial photographic documentation of the anterior lens protrusion to track progression over time',
+      ],
+      initialTreatment:
+        'Refractive correction (spectacles or contact lenses) of the lenticular myopia and irregular astigmatism to optimize vision; dot-and-fleck retinopathy is observed only, since it does not itself threaten central vision. Lens extraction with intraocular lens implantation is reserved for lenticonus that has progressed to significantly impair vision or for spontaneous anterior capsule rupture, and requires surgical planning around the fragile capsule.',
+      followUpSchedule:
+        'Comprehensive eye exam roughly annually, or every 6-12 months if refractive error or lenticonus appears to be progressing, coordinated with the patient\'s nephrology follow-up schedule; shorten the interval if myopia is shifting rapidly or a child is at risk for anisometropic amblyopia.',
+      escalationCriteria: [
+        'Rapid myopic or astigmatic shift on serial refraction',
+        'New lens opacity or sudden decrease in vision, raising concern for spontaneous anterior capsule rupture',
+        'Irregular astigmatism no longer correctable with spectacles',
+        'Anisometropia in a young child at risk for amblyopia',
+      ],
+      referralCriteria: [
+        'Anterior lenticonus identified in any patient, even without a known renal diagnosis -> nephrology (renal function/urinalysis) and genetics (COL4A3/4/5 testing, family counseling)',
+        'Any patient with confirmed or suspected Alport syndrome -> audiology for hearing evaluation',
+        'Progressive lenticonus significantly impairing vision, or lens capsule rupture -> cataract/anterior segment specialist for surgical planning',
+      ],
+      cycloplegicConsiderations:
+        'Cycloplegic refraction is used to obtain a stable, accommodation-free measurement of the lenticonus-induced myopic shift, particularly important in children where accommodative spasm can otherwise mask the true refractive error.',
+      complications: [
+        'Progressive myopic and irregular astigmatism',
+        'Secondary cataract',
+        'Spontaneous anterior lens capsule rupture (rare but capsule fragility raises surgical risk)',
+        'Amblyopia if significant anisometropia goes uncorrected in a young child',
+      ],
+      monitoringParameters: [
+        'Manifest/cycloplegic refraction trend',
+        'Retinoscopic reflex/oil-droplet appearance',
+        'Lens clarity',
+        'Extent of dot-and-fleck retinopathy',
+        'Best-corrected visual acuity',
+      ],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'slit-lamp-illumination-techniques', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Periodic comprehensive eye examinations to monitor progression of anterior lenticonus, refractive error, and dot-and-fleck retinopathy, coordinated with the patient\'s nephrology follow-up',
       monitor: 'Degree of anterior lenticonus/lens protrusion, refractive error changes, lens clarity (risk of secondary cataract), and extent of dot-and-fleck retinopathy',

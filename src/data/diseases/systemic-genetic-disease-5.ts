@@ -72,6 +72,44 @@ export const systemicGeneticDisease5: Disease[] = [
       { category: 'Advanced treatment', detail: 'Glaucoma drainage device (tube shunt) or cyclodestructive procedures for refractory neovascular glaucoma; carotid endarterectomy or carotid artery stenting performed by vascular surgery to address the underlying stenosis and reduce stroke risk (does not typically reverse established ocular ischemic damage)' },
       { category: 'Referral', detail: 'Immediate referral to vascular surgery/neurology for carotid evaluation and stroke risk reduction is the most critical management step; co-management with retina/glaucoma specialists for ocular neovascular complications' },
     ],
+    managementProtocol: {
+      workup: [
+        'Carotid duplex ultrasound (or CTA/MRA of the neck) urgently upon clinical suspicion',
+        'Gonioscopy to detect angle neovascularization, which can precede visible rubeosis',
+        'Intraocular pressure measurement, interpreted cautiously given OIS characteristically produces normal or low IOP despite neovascularization',
+        'Fluorescein angiography to assess delayed retinal/choroidal filling',
+        'Coordinate with vascular surgery/cardiology on systemic atherosclerotic risk stratification (lipid panel, HbA1c, blood pressure)',
+      ],
+      initialTreatment:
+        'Urgent referral for carotid imaging and vascular surgery/neurology evaluation is the priority given the high associated risk of stroke and death. Ocular treatment (panretinal photocoagulation, with anti-VEGF injection as an adjunct to rapidly regress rubeosis) targets anterior segment or retinal neovascularization to reduce the risk of neovascular glaucoma while the systemic workup proceeds.',
+      followUpSchedule:
+        'Close-interval follow-up (weeks) after diagnosis to monitor for development or progression of anterior segment neovascularization and neovascular glaucoma, coordinated with the patient\'s vascular surgery/neurology treatment timeline; more frequent once any neovascularization is identified.',
+      escalationCriteria: [
+        'New or worsening rubeosis',
+        'Rising intraocular pressure',
+        'New angle neovascularization on serial gonioscopy',
+        'Any vitreous hemorrhage or unexplained drop in visual acuity',
+      ],
+      referralCriteria: [
+        'Any suspected OIS -> immediate vascular surgery/neurology referral for carotid evaluation, the single most critical management step',
+        'Anterior segment or retinal neovascularization -> retina/glaucoma specialist for panretinal photocoagulation +/- anti-VEGF',
+        'Refractory neovascular glaucoma -> glaucoma specialist for drainage device or cyclodestructive procedure consideration',
+      ],
+      complications: [
+        'Neovascular glaucoma',
+        'Painful blind eye in advanced/refractory cases',
+        'Significantly elevated risk of stroke and cardiovascular death from the underlying systemic atherosclerotic disease',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Intraocular pressure',
+        'Gonioscopic angle status and iris neovascularization',
+        'Retinal findings (hemorrhages, arteriolar caliber)',
+      ],
+      relatedDrugIds: ['bevacizumab', 'timolol', 'acetazolamide'],
+      relatedCalculatorIds: ['ocular-perfusion-pressure'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'fluorescein-angiography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Close interval follow-up (weeks) after diagnosis to monitor for development or progression of anterior segment neovascularization and neovascular glaucoma, coordinated with the patient\'s vascular surgery/neurology treatment timeline',
       monitor: 'Visual acuity, intraocular pressure, gonioscopic angle status, iris neovascularization, and retinal findings',
@@ -163,6 +201,43 @@ export const systemicGeneticDisease5: Disease[] = [
       { category: 'Advanced treatment', detail: 'Pars plana vitrectomy for non-clearing vitreous hemorrhage or tractional retinal detachment; anti-VEGF may be used cautiously as an adjunct but carries a theoretical risk of accelerating fibrosis/traction if not paired with prompt surgical planning' },
       { category: 'Referral', detail: 'Co-management with hematology for systemic sickle cell disease management; retina specialist referral for any proliferative changes, vitreous hemorrhage, or retinal detachment' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated peripheral fundus exam with scleral depression to stage disease per the Goldberg classification',
+        'Fluorescein angiography when sea fan neovascularization is suspected, to map its extent and guide laser planning',
+        'Macular OCT to detect subclinical macular thinning even in patients without overt proliferative disease',
+        'Confirm genotype with hematology (SC and S-thalassemia carry the highest proliferative retinopathy risk) and coordinate screening frequency accordingly',
+        'Intraocular pressure measurement, with heightened attention after any hyphema given the risk of disproportionate elevation from anterior chamber sickling',
+      ],
+      initialTreatment:
+        'Sea fan neovascularization without vitreous hemorrhage, especially if small and stable, may be observed given the meaningful rate of spontaneous autoinfarction. Peripheral scatter (sectoral) laser photocoagulation is reserved for high-risk or progressive proliferative changes to reduce vitreous hemorrhage risk.',
+      followUpSchedule:
+        'Dilated peripheral retinal exam with scleral depression annually for patients with the higher-risk SC/S-thalassemia genotype, or as clinically indicated for SS/trait patients; more frequent if proliferative changes are present.',
+      escalationCriteria: [
+        'New or enlarging sea fan neovascularization',
+        'Any vitreous hemorrhage',
+        'Evidence of vitreoretinal traction on exam or OCT',
+        'Disproportionate IOP elevation following even a small hyphema',
+      ],
+      referralCriteria: [
+        'Proliferative changes (Goldberg Stage III or higher) -> retina specialist',
+        'Vitreous hemorrhage or tractional retinal detachment -> urgent retina specialist for possible pars plana vitrectomy',
+        'Hyphema with elevated IOP in a sickle cell patient -> same-day management, avoiding carbonic anhydrase inhibitors',
+      ],
+      complications: [
+        'Vitreous hemorrhage',
+        'Tractional retinal detachment',
+        'Disproportionate IOP elevation from anterior chamber sickling after even a small hyphema',
+      ],
+      monitoringParameters: [
+        'Goldberg stage progression',
+        'Extent and activity of sea fan neovascularization',
+        'Vitreous clarity',
+        'Macular OCT status',
+      ],
+      relatedDrugIds: ['acetazolamide'],
+      relatedExamTechniqueIds: ['scleral-depression', 'fluorescein-angiography', 'oct-macula', 'goldmann-applanation-tonometry'],
+    },
     followUp: {
       typical: 'Dilated peripheral retinal examination with scleral depression annually for patients with SC/S-thal genotype and known risk, or as clinically indicated for SS/trait patients; more frequent if proliferative changes are present',
       monitor: 'Progression of Goldberg stage, presence/extent of sea fan neovascularization, vitreous clarity, and macular status',

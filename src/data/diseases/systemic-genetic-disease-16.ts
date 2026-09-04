@@ -65,6 +65,47 @@ export const systemicGeneticDisease16: Disease[] = [
       { category: 'Observation', detail: 'Small, asymptomatic, non-vision-threatening lesions in a patient already under active systemic oncologic care may be observed with serial imaging' },
       { category: 'Emergency management', detail: 'Rapidly progressive vision loss, orbital compressive optic neuropathy, or new orbital signs in a cancer patient warrant urgent ophthalmologic and oncologic evaluation' },
     ],
+    managementProtocol: {
+      workup: [
+        'B-scan ultrasonography to document baseline lesion thickness, shape, and internal reflectivity for serial comparison',
+        'OCT of the lesion and macula to quantify subretinal fluid and establish a baseline for treatment response',
+        'Baseline visual acuity and IOP; formal visual field if the optic nerve or macula is threatened',
+        'Fundus photography for serial documentation',
+        'Coordinate with oncology to confirm systemic staging and treatment plan before finalizing ocular treatment timing',
+      ],
+      initialTreatment:
+        'Definitive treatment targets the systemic malignancy: external beam radiotherapy (plaque or whole-eye/orbital) for vision-threatening or symptomatic lesions, alongside systemic chemotherapy, hormonal therapy, or targeted therapy directed by oncology, which can independently control ocular lesions; intravitreal anti-VEGF or focal laser/photodynamic therapy is used adjunctively for persistent macular subretinal fluid in select cases.',
+      followUpSchedule:
+        'Close interval follow-up (weeks) during active radiotherapy or systemic treatment to track tumor response and subretinal fluid resolution on B-scan/OCT, transitioning to longer-interval surveillance once stable, coordinated throughout with the oncology team.',
+      escalationCriteria: [
+        'Increasing lesion thickness on serial B-scan despite treatment',
+        'Expanding subretinal fluid or new macular involvement on OCT',
+        'New vision loss or rising IOP suggesting secondary neovascular glaucoma',
+        'New orbital signs (proptosis, enophthalmos, restricted motility) suggesting orbital extension or a separate orbital metastasis',
+      ],
+      referralCriteria: [
+        'Any new choroidal or orbital mass, with or without a known cancer history -> urgent oncology/primary care referral for systemic malignancy workup and staging',
+        'Vision-threatening or symptomatic lesion -> ocular oncology/retina specialist for radiotherapy planning',
+        'Rapidly progressive vision loss or signs of compressive optic neuropathy -> emergent oncology and neuro-ophthalmology evaluation',
+        'Suspected orbital metastasis -> radiation oncology and orbital surgery for biopsy and radiotherapy planning',
+      ],
+      complications: [
+        'Exudative retinal detachment',
+        'Secondary (neovascular or angle-related) glaucoma',
+        'Radiation retinopathy or papillopathy following external beam or plaque radiotherapy',
+        'Vision loss from macular involvement or extensive subretinal fluid',
+        'Orbital compressive optic neuropathy with orbital metastasis',
+      ],
+      monitoringParameters: [
+        'Lesion thickness/dimensions on serial B-scan',
+        'Subretinal fluid extent on OCT',
+        'Visual acuity and IOP',
+        'Visual field if the optic nerve is threatened',
+        'Coordination with oncology on systemic disease status',
+      ],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'oct-macula', 'fluorescein-angiography'],
+    },
     followUp: {
       typical: 'Close interval follow-up (weeks) during active treatment to monitor tumor response and subretinal fluid resolution, transitioning to longer-interval surveillance once stable, coordinated with the oncology team',
       monitor: 'Lesion size/thickness on B-scan, subretinal fluid on OCT, visual acuity, and visual field',
@@ -154,6 +195,47 @@ export const systemicGeneticDisease16: Disease[] = [
       { category: 'Second-line treatment', detail: 'Immunosuppressive therapy (systemic corticosteroids, IVIG, plasmapheresis, or other immunomodulatory agents) directed by neurology/rheumatology for the autoimmune component of CAR, MAR, or LEMS' },
       { category: 'Observation', detail: 'Serial visual field, ERG, and acuity monitoring to track retinal function over time in CAR/MAR' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline full-field ERG to quantify rod/cone dysfunction severity in suspected CAR/MAR',
+        'Formal visual field testing (Humphrey or Goldmann) to document scotoma pattern and extent',
+        'Serum antiretinal antibody panel (including anti-recoverin) or anti-voltage-gated calcium channel antibody testing as directed by the suspected phenotype',
+        'Confirm chest CT/systemic malignancy workup has been obtained or is in progress with oncology/pulmonology',
+        'Coordinate repetitive nerve stimulation/EMG referral with neurology for suspected LEMS',
+      ],
+      initialTreatment:
+        'Treatment of the underlying malignancy is the primary intervention and may stabilize or improve the paraneoplastic syndrome; immunosuppressive therapy (systemic corticosteroids, IVIG, or plasmapheresis) is added by neurology/oncology for the autoimmune component of CAR, MAR, or LEMS, while the eye-care role centers on baseline documentation and serial functional monitoring.',
+      followUpSchedule:
+        'Every few weeks to months depending on severity and treatment phase, coordinated with oncology and neurology while the malignancy and autoimmune syndrome are actively managed, with ERG/visual field surveillance in CAR/MAR.',
+      escalationCriteria: [
+        'Rapidly progressive vision loss or worsening ERG amplitudes despite treatment of the underlying malignancy',
+        'New or expanding scotomas on serial visual field testing',
+        'New or worsening ptosis/diplopia in LEMS, particularly with bulbar or respiratory symptoms',
+        'No malignancy identified on initial systemic workup despite high clinical suspicion, warranting repeat imaging',
+      ],
+      referralCriteria: [
+        'Suspected CAR or LEMS -> urgent oncology/pulmonology referral for small-cell lung cancer workup',
+        'Suspected MAR -> urgent oncology/dermatology referral for melanoma workup',
+        'Suspected LEMS -> neurology for repetitive nerve stimulation/EMG and anti-VGCC antibody testing',
+        'Confirmed paraneoplastic retinopathy -> retina/electrophysiology specialist for serial ERG monitoring',
+        'Negative initial cancer screen with persistent high suspicion -> periodic re-screening, since the ocular/neurologic syndrome can precede radiographic tumor detection by months',
+      ],
+      complications: [
+        'Severe, often bilateral, irreversible vision loss in CAR',
+        'Persistent nyctalopia in MAR',
+        'Respiratory or bulbar weakness in severe LEMS',
+        'Morbidity and mortality of the underlying malignancy, which usually dominates overall prognosis',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'ERG amplitudes (CAR/MAR)',
+        'Visual field extent',
+        'Ptosis and ocular motility (LEMS)',
+        'Systemic oncologic and neurologic status in coordination with the treating teams',
+      ],
+      relatedDrugIds: ['methylprednisolone'],
+      relatedExamTechniqueIds: ['electroretinogram', 'humphrey-visual-field', 'goldmann-kinetic-perimetry'],
+    },
     followUp: {
       typical: 'Close monitoring (every few weeks to months depending on severity and treatment phase) in coordination with oncology and neurology while the malignancy and autoimmune syndrome are being actively managed',
       monitor: 'Visual acuity, visual field, ERG amplitudes for CAR/MAR; ptosis and ocular motility for LEMS, alongside systemic neurologic and oncologic status',
@@ -236,6 +318,34 @@ export const systemicGeneticDisease16: Disease[] = [
       { category: 'Second-line treatment', detail: 'Strabismus surgery for significant, cosmetically or functionally impairing misalignment (particularly esotropia in Turner syndrome) after conservative optical management has been optimized' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology for significant strabismus or ptosis requiring surgical evaluation; coordinate with the patient\'s pediatrician/geneticist/endocrinologist as part of comprehensive syndromic care' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction and comprehensive strabismus/motility evaluation at diagnosis and periodically through childhood',
+        'Ishihara or similar color vision screening in Turner syndrome, given the elevated red-green deficiency prevalence',
+        'Lid position and ptosis assessment',
+        'Coordinate exam timing with pediatrics/genetics/endocrinology as part of the broader syndromic evaluation schedule',
+      ],
+      initialTreatment:
+        'Full cycloplegic refractive correction supports normal visual development; amblyopia therapy (patching or atropine penalization) is added if strabismus or anisometropia has already produced amblyopia, and ptosis or strabismus significant enough to be cosmetically or functionally impairing is referred for surgical evaluation after optical management is optimized.',
+      followUpSchedule:
+        'Annual comprehensive eye examinations beginning in early childhood as part of routine syndromic multidisciplinary care, with closer interval follow-up during the amblyopia risk window if strabismus or significant refractive error is identified.',
+      escalationCriteria: [
+        'New or worsening strabismus in a young child',
+        'Reduced acuity not fully correctable with refraction, suggesting developing amblyopia',
+        'Progressive or functionally significant ptosis encroaching on the visual axis',
+      ],
+      referralCriteria: [
+        'Significant strabismus or ptosis -> pediatric ophthalmology for surgical evaluation',
+        'Amblyopia or reduced acuity despite correction -> prompt initiation of patching/atropine penalization therapy',
+        'Color vision deficiency identified in Turner syndrome -> educational/vocational counseling (no ocular treatment needed)',
+      ],
+      complications: [
+        'Amblyopia if strabismus or significant refractive error is uncorrected during the critical visual development period',
+        'Functional impact of red-green color vision deficiency on certain educational/vocational tasks in Turner syndrome',
+      ],
+      monitoringParameters: ['Ocular alignment', 'Refractive error', 'Lid position', 'Visual acuity', 'Color vision status (Turner syndrome)'],
+      relatedExamTechniqueIds: ['cover-test', 'hirschberg-krimsky-test', 'ishihara-color-vision-screening', 'cycloplegic-retinoscopy'],
+    },
     followUp: {
       typical: 'Annual comprehensive eye examinations as part of routine syndromic multidisciplinary care, beginning in early childhood',
       monitor: 'Ocular alignment, refractive error, lid position, and color vision status over time',
@@ -327,6 +437,42 @@ export const systemicGeneticDisease16: Disease[] = [
       { category: 'Referral', detail: 'Refer to genetics for syndromic diagnosis and family counseling; refer to retina specialist for baseline and periodic dilated peripheral retinal evaluation given the markedly elevated detachment risk; refer to audiology and craniofacial/ENT teams as part of coordinated multidisciplinary care' },
       { category: 'Emergency management', detail: 'New flashes, floaters, or visual field loss in a known or suspected Stickler patient warrants urgent dilated retinal evaluation to rule out retinal detachment' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline dilated peripheral retinal examination with scleral depression to identify lattice degeneration, retinal breaks, or the characteristic membranous vitreous veils',
+        'Cycloplegic refraction to quantify and document the degree of myopia',
+        'Genetics referral for confirmatory molecular testing and family counseling if not already completed',
+        'Coordinate audiology and craniofacial/ENT screening as part of the initial syndromic workup',
+      ],
+      initialTreatment:
+        'Full spectacle or contact lens correction of the high myopic refractive error supports normal visual development; prophylactic laser retinopexy or cryotherapy is applied to identified retinal breaks or high-risk lattice degeneration to reduce detachment risk, and scleral buckle, vitrectomy, or combined repair is used if a rhegmatogenous retinal detachment occurs.',
+      followUpSchedule:
+        'Regular dilated peripheral retinal examinations, at least annually or more frequently based on retinal findings, continued for life given the persistently elevated detachment risk at any age.',
+      escalationCriteria: [
+        'New flashes or floaters suggesting posterior vitreous detachment or a retinal break',
+        'New or enlarging retinal breaks or lattice degeneration on exam',
+        'Any visual field defect or curtain suggesting retinal detachment',
+        'A first-degree relative with a recent Stickler-associated retinal detachment (heightens surveillance urgency)',
+      ],
+      referralCriteria: [
+        'New retinal break or high-risk lattice degeneration -> retina specialist for prophylactic laser or cryotherapy',
+        'Suspected or confirmed retinal detachment -> urgent/emergent retina specialist referral',
+        'New diagnosis -> genetics for confirmatory testing/counseling, audiology, and craniofacial/ENT evaluation',
+      ],
+      complications: [
+        'Rhegmatogenous retinal detachment, potentially recurrent or bilateral',
+        'Amblyopia if high myopia is uncorrected in early childhood',
+        'Hearing impairment',
+        'Early-onset degenerative joint disease',
+      ],
+      monitoringParameters: [
+        'Peripheral retina for new breaks or progressive lattice degeneration',
+        'Refractive stability',
+        'Visual acuity',
+        'Symptoms of posterior vitreous detachment',
+      ],
+      relatedExamTechniqueIds: ['scleral-depression', 'dilated-fundus-examination-systematic-approach', 'cycloplegic-retinoscopy'],
+    },
     followUp: {
       typical: 'Regular dilated peripheral retinal examinations, often at least annually or more frequently based on retinal findings, given the lifelong elevated detachment risk',
       monitor: 'Peripheral retina for new breaks/lattice degeneration, refractive stability, and visual acuity',
@@ -418,6 +564,40 @@ export const systemicGeneticDisease16: Disease[] = [
       { category: 'Second-line treatment', detail: 'Management of cystoid macular edema if present (topical or oral carbonic anhydrase inhibitors as directed by retina specialist); hearing rehabilitation (hearing aids, cochlear implantation) coordinated by audiology/ENT for Usher syndrome' },
       { category: 'Observation', detail: 'Serial visual field and ERG monitoring to track disease progression and inform low vision/mobility planning' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline full-field ERG and Goldmann or automated visual field to establish severity and track progression',
+        'OCT to screen for cystoid macular edema',
+        'Coordinate audiometry/vestibular testing with audiology for Usher syndrome subtyping',
+        'Genetic testing referral (Usher gene panel or BBS gene panel) for molecular confirmation if not already completed',
+        'Low vision needs assessment',
+      ],
+      initialTreatment:
+        'Low vision evaluation and rehabilitation, appropriate refractive correction, and UV/blue-light protective eyewear are the mainstay of ocular management; cystoid macular edema, when present, is treated with topical or oral carbonic anhydrase inhibitors as directed by a retina specialist, and hearing rehabilitation (hearing aids, cochlear implantation) is coordinated by audiology/ENT for Usher syndrome.',
+      followUpSchedule:
+        'Regular ophthalmologic follow-up, typically annually or as guided by a retina specialist, to track visual field, acuity, and macular status, coordinated with the broader multidisciplinary care team.',
+      escalationCriteria: [
+        'Visual field constriction accelerating beyond the expected rate for the individual\'s subtype',
+        'New or worsening cystoid macular edema on OCT',
+        'Vision loss significant enough to impact independent function (education, mobility), prompting intensified low vision rehabilitation',
+      ],
+      referralCriteria: [
+        'Syndromic-appearing retinitis pigmentosa -> genetics for testing and counseling',
+        'Congenital or early sensorineural hearing loss -> audiology for Usher subtyping (vestibular testing)',
+        'Suspected Bardet-Biedl features (obesity, polydactyly, developmental delay) -> nephrology/endocrinology/genetics for systemic workup',
+        'Cystoid macular edema -> retina specialist',
+        'Significant visual impairment -> low vision rehabilitation services',
+      ],
+      complications: [
+        'Progressive peripheral then central visual field loss',
+        'Cystoid macular edema',
+        'Combined deaf-blindness in Usher syndrome, with major communication and mobility implications',
+        'Systemic complications of Bardet-Biedl syndrome (renal failure, obesity-related morbidity, hypogonadism-related issues)',
+      ],
+      monitoringParameters: ['Visual field extent', 'Visual acuity', 'Presence of cystoid macular edema', 'ERG amplitudes over time'],
+      relatedDrugIds: ['acetazolamide', 'dorzolamide'],
+      relatedExamTechniqueIds: ['electroretinogram', 'goldmann-kinetic-perimetry', 'humphrey-visual-field', 'oct-macula'],
+    },
     followUp: {
       typical: 'Regular ophthalmologic follow-up (typically annually or as guided by a retina specialist) to monitor visual field, acuity, and macular status, coordinated with the broader multidisciplinary care team',
       monitor: 'Visual field extent, visual acuity, presence of cystoid macular edema, and ERG amplitudes over time',

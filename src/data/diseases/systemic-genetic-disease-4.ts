@@ -74,6 +74,47 @@ export const systemicGeneticDisease4: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to rheumatology for any new scleritis or PUK, since these findings indicate active systemic vasculitis requiring systemic immunosuppression, not merely local ocular therapy; co-manage with cornea specialist for PUK' },
       { category: 'Emergency management', detail: 'Impending or actual scleral/corneal perforation requires same-day cornea specialist evaluation for tissue adhesive, bandage contact lens, conjunctival flap, or patch graft, alongside emergent initiation/escalation of systemic immunosuppression; avoid topical steroids as monotherapy in active PUK given melt risk' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with Schirmer test and tear breakup time to grade dry eye severity',
+        'Phenylephrine blanching test whenever a new red eye is found, to distinguish episcleritis from scleritis',
+        'Anterior segment photography or AS-OCT to document any scleral/peripheral corneal thinning as an objective baseline',
+        'If hydroxychloroquine is prescribed: baseline dilated exam plus 10-2 automated visual field and macular OCT at or before initiation',
+        'Coordinate with rheumatology on RF/anti-CCP status and current systemic disease activity (ESR/CRP) whenever new scleritis or PUK is identified',
+      ],
+      initialTreatment:
+        'Sicca is managed with preservative-free artificial tears and lubricating ointment; non-necrotizing scleritis adds oral NSAIDs to topical support. Necrotizing scleritis or PUK requires systemic corticosteroid plus a systemic immunosuppressive/biologic agent coordinated with rheumatology — topical corticosteroid alone is not adequate therapy for these findings and can worsen stromal melting.',
+      followUpSchedule:
+        'Dry eye or episcleritis: every 6-12 months if stable. Active scleritis or PUK: days to 1-2 weeks initially until stabilized, then monthly through the immunosuppressive taper. Hydroxychloroquine screening: baseline at initiation, then annually once the patient passes 5 years of use.',
+      escalationCriteria: [
+        'New or expanding area of peripheral corneal thinning (PUK) on serial exam',
+        'New non-blanching, tender scleral injection (new scleritis)',
+        'Any sign of impending perforation (marked focal thinning on AS-OCT, descemetocele)',
+        'New paracentral visual field defect or ellipsoid zone/RPE change on OCT concerning for hydroxychloroquine toxicity',
+      ],
+      referralCriteria: [
+        'New scleritis or PUK -> urgent rheumatology referral, since these findings indicate active systemic vasculitis, not an isolated local process',
+        'PUK -> co-manage with a cornea specialist',
+        'Any threat of scleral or corneal perforation -> same-day cornea specialist evaluation',
+        'Visual field or OCT changes concerning for hydroxychloroquine toxicity -> communicate with the prescribing rheumatologist regarding dose adjustment or discontinuation',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids alone are not appropriate therapy for necrotizing scleritis or PUK — they can worsen stromal melting by further inhibiting healing without controlling the underlying vasculitis. A short course of topical steroid is reasonable as an adjunct only for milder non-necrotizing scleritis alongside oral NSAIDs and monitored IOP.',
+      complications: [
+        'Corneal or scleral perforation',
+        'Secondary cataract or glaucoma from chronic inflammation or steroid use',
+        'Filamentary keratitis and corneal scarring from chronic dry eye',
+        'Hydroxychloroquine retinal toxicity if screening is neglected',
+      ],
+      monitoringParameters: [
+        'Scleral/corneal thinning progression (anterior segment photography or AS-OCT)',
+        'Visual acuity and intraocular pressure (steroid response)',
+        'Dry eye severity (Schirmer test, tear breakup time)',
+        '10-2 visual fields and macular OCT for patients on hydroxychloroquine',
+      ],
+      relatedDrugIds: ['hydroxychloroquine', 'cyclosporine-ophthalmic-emulsion', 'lifitegrast', 'prednisolone-acetate', 'methotrexate'],
+      relatedExamTechniqueIds: ['schirmer-test', 'tear-break-up-time', 'anterior-segment-oct', 'oct-macula', 'humphrey-visual-field', 'goldmann-applanation-tonometry'],
+    },
     followUp: {
       typical: 'Dry eye/episcleritis: every 6-12 months if stable; active scleritis or PUK: days to 1-2 weeks initially until stabilized, then monthly during immunosuppressive taper; hydroxychloroquine screening annually after 5 years of use (baseline exam at initiation)',
       monitor: 'Corneal/scleral thinning progression, visual acuity, IOP (steroid response), and for patients on hydroxychloroquine, visual fields and macular OCT',
@@ -173,6 +214,44 @@ export const systemicGeneticDisease4: Disease[] = [
       { category: 'Referral', detail: 'Refer to rheumatology for any new or worsening cotton wool spots, retinal hemorrhages, or scleritis, as these suggest active systemic disease requiring treatment escalation; refer for hydroxychloroquine toxicity screening per standard protocol' },
       { category: 'Emergency management', detail: 'Acute vision loss from occlusive retinal vasculopathy or retinal vein/artery occlusion in a lupus patient warrants urgent retina referral and systemic workup for antiphospholipid syndrome' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam with retinal photography to document cotton wool spots, hemorrhages, and any vascular sheathing',
+        'Fluorescein angiography when occlusive disease is suspected, to map capillary nonperfusion and guide need for panretinal photocoagulation',
+        'If hydroxychloroquine is prescribed: baseline dilated exam plus 10-2 automated visual field and macular OCT at or before initiation',
+        'Coordinate with rheumatology on anti-dsDNA titer and complement (C3/C4) levels, which correlate with retinopathy risk',
+        'Review antiphospholipid antibody status with rheumatology whenever an occlusive retinal vascular finding is present',
+      ],
+      initialTreatment:
+        'Sicca and mild episcleritis are managed with lubrication and, if needed, a short course of topical NSAID or steroid. Active or occlusive lupus retinopathy and scleritis require escalation of systemic immunosuppression directed by rheumatology; panretinal photocoagulation is reserved for retinal ischemia with neovascularization.',
+      followUpSchedule:
+        'Sicca or mild findings: every 6-12 months. Active retinopathy or scleritis: weekly-to-biweekly until stable, then per rheumatology-guided systemic control. Hydroxychloroquine screening: baseline at initiation, then annually once the patient passes 5 years of use.',
+      escalationCriteria: [
+        'New or increasing cotton wool spots or retinal hemorrhages',
+        'Any new retinal vascular occlusion or neovascularization',
+        'Acute, unexplained vision loss',
+        'New paracentral visual field defect or ellipsoid zone/RPE change on OCT concerning for hydroxychloroquine toxicity',
+      ],
+      referralCriteria: [
+        'New or worsening cotton wool spots, hemorrhages, or scleritis -> rheumatology, as these suggest active systemic disease requiring treatment escalation',
+        'Retinal vascular occlusion -> urgent retina referral plus antiphospholipid antibody workup',
+        'Retinal ischemia with neovascularization -> retina specialist for panretinal photocoagulation',
+        'Visual field or OCT changes concerning for hydroxychloroquine toxicity -> communicate with the prescribing rheumatologist regarding dose adjustment or discontinuation',
+      ],
+      complications: [
+        'Retinal ischemia with neovascularization and vitreous hemorrhage',
+        'Retinal vein or artery occlusion, particularly with concurrent antiphospholipid syndrome',
+        'Corneal scarring from chronic sicca',
+        'Irreversible bull\'s-eye maculopathy if hydroxychloroquine toxicity is not detected early',
+      ],
+      monitoringParameters: [
+        'Fundus findings (cotton wool spots, hemorrhages, vascular changes) on serial dilated exam',
+        'Visual acuity and ocular surface status',
+        '10-2 visual fields and macular OCT for patients on hydroxychloroquine',
+      ],
+      relatedDrugIds: ['hydroxychloroquine', 'cyclosporine-ophthalmic-emulsion', 'lifitegrast'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'fluorescein-angiography', 'oct-macula', 'humphrey-visual-field', 'retinal-vascular-examination'],
+    },
     followUp: {
       typical: 'Sicca/mild findings: every 6-12 months; active retinopathy or scleritis: closer interval (weeks) until stable, then per rheumatology-guided systemic control; hydroxychloroquine screening annually after 5 years of therapy (baseline exam at initiation)',
       monitor: 'Fundus findings (cotton wool spots, hemorrhages, vascular changes), visual acuity, ocular surface status, and for patients on hydroxychloroquine, visual fields and macular OCT',
@@ -267,6 +346,44 @@ export const systemicGeneticDisease4: Disease[] = [
       { category: 'Referral', detail: 'Urgent, same-week (or sooner) referral to rheumatology for any new necrotizing scleritis, PUK, or orbital inflammatory mass concerning for GPA, given the risk of rapid vision loss and life-threatening systemic (renal/pulmonary) involvement; co-manage with cornea/orbital specialist' },
       { category: 'Emergency management', detail: 'Impending scleral/corneal perforation or compressive optic neuropathy from orbital apex involvement requires same-day ophthalmic evaluation and emergent escalation of systemic immunosuppression; surgical intervention (tectonic graft, orbital decompression) may be needed alongside medical therapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Urgent slit lamp and external exam to characterize the extent of scleral/corneal involvement and any orbital signs (proptosis, restricted motility)',
+        'Hertel exophthalmometry to document and serially track proptosis when orbital involvement is present',
+        'Orbital CT or MRI when proptosis or restricted motility is present',
+        'Pupil, color vision, and visual field assessment when orbital apex involvement is suspected, to screen for compressive optic neuropathy',
+        'Coordinate with rheumatology for c-ANCA/PR3 serology and systemic organ workup (renal, pulmonary) once ocular vasculitis is identified',
+      ],
+      initialTreatment:
+        'Ocular lubrication and comfort measures are adjunctive only. Definitive treatment is systemic corticosteroid combined with a systemic immunosuppressive or biologic agent directed by rheumatology — topical or local therapy alone is inadequate for necrotizing scleritis, PUK, or orbital involvement.',
+      followUpSchedule:
+        'Very frequent (days to weekly) during active disease and immunosuppressive induction, spacing to monthly once stable, coordinated closely with rheumatology.',
+      escalationCriteria: [
+        'New or expanding area of scleral or corneal thinning',
+        'Worsening proptosis or increasingly restricted motility',
+        'Decreased visual acuity or color vision suggesting optic nerve compromise',
+        'Any sign of impending scleral or corneal perforation',
+      ],
+      referralCriteria: [
+        'New necrotizing scleritis, PUK, or an orbital inflammatory mass concerning for GPA -> urgent (same-week or sooner) rheumatology referral',
+        'Optic nerve compromise from orbital apex involvement -> emergent neuro-ophthalmology/orbital evaluation',
+        'Impending scleral or corneal perforation -> same-day cornea specialist',
+      ],
+      complications: [
+        'Scleral or corneal perforation',
+        'Compressive optic neuropathy and permanent vision loss from orbital disease',
+        'Globe destruction in severe untreated cases',
+        'Systemic complications of undertreated vasculitis: renal failure, pulmonary hemorrhage',
+      ],
+      monitoringParameters: [
+        'Scleral/corneal thinning on serial exam',
+        'Visual acuity and color vision',
+        'Proptosis and motility (Hertel exophthalmometry) if orbital involvement present',
+        'Optic nerve function (pupils, visual field) and intraocular pressure',
+      ],
+      relatedDrugIds: ['cyclophosphamide', 'prednisone'],
+      relatedExamTechniqueIds: ['hertel-exophthalmometry', 'pupillary-examination', 'humphrey-visual-field', 'farnsworth-munsell-d15', 'anterior-segment-oct'],
+    },
     followUp: {
       typical: 'Very frequent (days to weekly) during active disease and immunosuppressive induction; spacing to monthly once stable, coordinated closely with rheumatology',
       monitor: 'Scleral/corneal thinning, visual acuity, proptosis/motility if orbital involvement present, optic nerve function, and IOP',
@@ -362,6 +479,46 @@ export const systemicGeneticDisease4: Disease[] = [
       { category: 'Referral', detail: 'Coordinate with gastroenterology regarding bowel disease control, particularly for recurrent episcleritis correlating with flares; refer new/undiagnosed patients with recurrent uveitis and GI symptoms for gastroenterology evaluation' },
       { category: 'Emergency management', detail: 'Severe anterior uveitis with hypopyon or marked IOP elevation requires prompt ophthalmology evaluation; toxic megacolon is a GI emergency requiring urgent gastroenterology/surgical involvement' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with the phenylephrine blanching test to distinguish episcleritis from scleritis when a red eye is present',
+        'Anterior chamber cell/flare grading (SUN criteria) when anterior uveitis is suspected',
+        'Intraocular pressure measurement',
+        'Coordinate with gastroenterology on bowel disease activity (fecal calprotectin, ESR/CRP) when episcleritis flares are recurrent',
+        'HLA-B27 testing if the anterior uveitis pattern is recurrent, unilateral-alternating, or atypical',
+      ],
+      initialTreatment:
+        'Mild episcleritis is often observed or treated with a short course of topical NSAID/steroid; anterior uveitis is treated with a topical corticosteroid, tapered by severity, plus a cycloplegic agent for comfort and to reduce posterior synechiae risk. Systemic bowel disease control, directed by gastroenterology, is foundational since episcleritis activity tends to track with GI flares.',
+      followUpSchedule:
+        'Episcleritis: as needed for symptomatic episodes, typically resolving within days to a couple of weeks. Anterior uveitis: recheck within 1-2 weeks of starting treatment to confirm improvement and guide the steroid taper.',
+      escalationCriteria: [
+        'AC cell/flare not improving after 1 week of appropriately dosed topical steroid',
+        'New hypopyon or posterior synechiae',
+        'IOP rise suggesting a steroid responder',
+        'New non-blanching, tender scleral injection suggesting scleritis',
+      ],
+      referralCriteria: [
+        'Recurrent uveitis with GI symptoms in a patient without an established IBD diagnosis -> gastroenterology referral',
+        'Episcleritis recurring in parallel with bowel disease flares -> coordinate with gastroenterology regarding systemic control rather than treating in isolation',
+        'Severe anterior uveitis with hypopyon or marked IOP elevation -> prompt ophthalmology evaluation',
+        'Suspected scleritis (non-blanching, tender injection) -> cornea/uveitis specialist',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate 1%) dosed by severity for anterior uveitis, with a slow taper guided by AC cell/flare response; check IOP at each visit given steroid-response risk. A short course of a mild topical steroid or NSAID may be used for symptomatic episcleritis.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent (e.g., cyclopentolate) is added for anterior uveitis to relieve ciliary spasm/pain and reduce posterior synechiae risk, as in idiopathic anterior uveitis; not needed for isolated episcleritis.',
+      complications: [
+        'Posterior synechiae, secondary cataract, or secondary glaucoma with recurrent or undertreated uveitis',
+        'Scleral thinning in the uncommon setting of scleritis',
+      ],
+      monitoringParameters: [
+        'Anterior chamber cell/flare grade and IOP',
+        'Presence of posterior synechiae',
+        'Episcleral injection pattern and its correlation with reported bowel disease activity',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'sulfasalazine'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'goldmann-applanation-tonometry', 'gonioscopy'],
+    },
     followUp: {
       typical: 'Episcleritis: as needed for symptomatic episodes, typically resolving within days to a couple weeks; anterior uveitis: within 1-2 weeks of starting treatment to confirm improvement and taper appropriately',
       monitor: 'Anterior chamber cell/flare, IOP, presence of synechiae, and episcleral injection pattern; gastroenterology monitors bowel disease activity and, in longstanding pancolitis, periodic surveillance colonoscopy for dysplasia',
@@ -458,6 +615,46 @@ export const systemicGeneticDisease4: Disease[] = [
       { category: 'Referral', detail: 'Coordinate with gastroenterology regarding bowel disease control, particularly for recurrent episcleritis correlating with flares; refer new/undiagnosed patients with recurrent uveitis and GI symptoms for gastroenterology evaluation' },
       { category: 'Emergency management', detail: 'Severe anterior uveitis with hypopyon or marked IOP elevation requires prompt ophthalmology evaluation; bowel obstruction, perforation, or abscess are GI emergencies requiring urgent surgical/gastroenterology involvement' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with the phenylephrine blanching test to distinguish episcleritis from scleritis when a red eye is present',
+        'Anterior chamber cell/flare grading (SUN criteria) when anterior uveitis is suspected',
+        'Intraocular pressure measurement',
+        'Coordinate with gastroenterology on bowel disease activity when episcleritis flares are recurrent',
+        'HLA-B27 testing if the anterior uveitis pattern is recurrent, unilateral-alternating, or atypical',
+      ],
+      initialTreatment:
+        'Mild episcleritis is often observed or treated with a short course of topical NSAID/steroid; anterior uveitis is treated with a topical corticosteroid, tapered by severity, plus a cycloplegic agent for comfort and to reduce posterior synechiae risk. Systemic bowel disease control, directed by gastroenterology, is foundational since episcleritis activity tends to track with GI flares.',
+      followUpSchedule:
+        'Episcleritis: as needed for symptomatic episodes, typically resolving within days to a couple of weeks. Anterior uveitis: recheck within 1-2 weeks of starting treatment to confirm improvement and guide the steroid taper.',
+      escalationCriteria: [
+        'AC cell/flare not improving after 1 week of appropriately dosed topical steroid',
+        'New hypopyon or posterior synechiae',
+        'IOP rise suggesting a steroid responder',
+        'New non-blanching, tender scleral injection suggesting scleritis',
+      ],
+      referralCriteria: [
+        'Recurrent uveitis with GI symptoms in a patient without an established IBD diagnosis -> gastroenterology referral',
+        'Episcleritis recurring in parallel with bowel disease flares -> coordinate with gastroenterology regarding systemic control rather than treating in isolation',
+        'Severe anterior uveitis with hypopyon or marked IOP elevation -> prompt ophthalmology evaluation',
+        'Suspected scleritis (non-blanching, tender injection) -> cornea/uveitis specialist',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate 1%) dosed by severity for anterior uveitis, with a slow taper guided by AC cell/flare response; check IOP at each visit given steroid-response risk. A short course of a mild topical steroid or NSAID may be used for symptomatic episcleritis.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent (e.g., cyclopentolate) is added for anterior uveitis to relieve ciliary spasm/pain and reduce posterior synechiae risk, as in idiopathic anterior uveitis; not needed for isolated episcleritis.',
+      complications: [
+        'Posterior synechiae, secondary cataract, or secondary glaucoma with recurrent or undertreated uveitis',
+        'Scleral thinning in the uncommon setting of scleritis',
+      ],
+      monitoringParameters: [
+        'Anterior chamber cell/flare grade and IOP',
+        'Presence of posterior synechiae',
+        'Episcleral injection pattern and its correlation with reported bowel disease activity',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'infliximab', 'azathioprine'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'goldmann-applanation-tonometry', 'gonioscopy'],
+    },
     followUp: {
       typical: 'Episcleritis: as needed for symptomatic episodes, typically resolving within days to a couple weeks; anterior uveitis: within 1-2 weeks of starting treatment to confirm improvement and taper appropriately',
       monitor: 'Anterior chamber cell/flare, IOP, presence of synechiae, and episcleral injection pattern; gastroenterology monitors for stricture, fistula, and abscess development',

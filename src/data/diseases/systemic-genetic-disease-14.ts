@@ -64,6 +64,39 @@ export const systemicGeneticDisease14: Disease[] = [
       { category: 'Referral', detail: 'Refer any patient with new, unexplained scleral icterus to primary care/hepatology/gastroenterology for bilirubin and liver function workup; refer for hematology/hepatology co-management if recurrent conjunctival or retinal hemorrhage suggests significant coagulopathy' },
       { category: 'First-line treatment', detail: 'No topical ocular therapy is indicated for icterus; xanthelasma may be observed or referred to oculoplastics/dermatology for elective removal if cosmetically bothersome, alongside systemic lipid management' },
     ],
+    managementProtocol: {
+      workup: [
+        'External/slit lamp exam in natural daylight to confirm true diffuse scleral icterus and exclude localized mimics (pinguecula, pseudopterygium, carotenemia)',
+        'Targeted exam for subconjunctival or retinal hemorrhage if the patient is known to have advanced coagulopathy or thrombocytopenia',
+        'Specific slit lamp search for a Kayser-Fleischer ring when Wilson disease is a clinical consideration, rather than attributing all yellow-brown discoloration to icterus alone',
+        'Review of the most recent bilirubin, liver function, and coagulation panel results with the referring physician when available',
+      ],
+      initialTreatment:
+        'No topical ocular therapy is indicated for scleral icterus itself — it resolves as the underlying hyperbilirubinemia is treated systemically. Xanthelasma is observed or referred for elective removal if cosmetically bothersome, alongside systemic lipid management; any hemorrhagic ocular finding is managed by addressing the underlying coagulopathy through hepatology.',
+      followUpSchedule:
+        'No dedicated ocular follow-up interval is required for icterus alone; ophthalmic monitoring is coordinated with the patient\'s hepatology/gastroenterology follow-up, with exams as clinically indicated if conjunctival or retinal hemorrhage has occurred.',
+      escalationCriteria: [
+        'New or worsening conjunctival or retinal hemorrhage in a patient with known coagulopathy',
+        'New visual symptoms accompanying known liver disease',
+        'Icterus that persists or worsens despite reported systemic treatment',
+        'A slit lamp finding suggesting a specific alternative diagnosis (e.g., a Kayser-Fleischer ring) rather than generic icterus',
+      ],
+      referralCriteria: [
+        'New, unexplained scleral icterus -> primary care/hepatology/gastroenterology for bilirubin and liver function workup',
+        'Recurrent conjunctival or retinal hemorrhage suggesting significant coagulopathy -> hematology/hepatology co-management',
+        'Cosmetically bothersome xanthelasma -> oculoplastics/dermatology for elective removal, with systemic lipid management',
+      ],
+      complications: [
+        'Recurrent subconjunctival or retinal hemorrhage in advanced hepatic synthetic dysfunction',
+        'Xanthelasma recurrence after removal if the underlying lipid abnormality persists',
+      ],
+      monitoringParameters: [
+        'Degree of scleral yellow discoloration relative to known bilirubin trend',
+        'Any new conjunctival or retinal hemorrhage in patients with known coagulopathy',
+        'Xanthelasma appearance if present',
+      ],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'No dedicated ocular follow-up interval is required for icterus alone; monitoring is coordinated with the patient\'s systemic/hepatology care team',
       monitor: 'Resolution of scleral yellow discoloration as bilirubin normalizes; any new conjunctival or retinal hemorrhage in patients with known coagulopathy',
@@ -161,6 +194,41 @@ export const systemicGeneticDisease14: Disease[] = [
       { category: 'First-line treatment', detail: 'Oral or parenteral vitamin E repletion (dosed and monitored by the treating physician) for vitamin E deficiency retinopathy; oral zinc supplementation, generally combined with vitamin A, for zinc-deficiency-related night blindness so both the vitamin A transport defect and any coexisting vitamin A deficiency are addressed' },
       { category: 'Observation', detail: 'Serial ocular exams (fundus appearance, dark adaptation, visual fields) to document stabilization or improvement of vitamin E or zinc-related retinal findings once systemic repletion is underway' },
     ],
+    managementProtocol: {
+      workup: [
+        'Wernicke encephalopathy: no ocular workup should delay treatment — document ocular motility, nystagmus type, and pupil findings only as part of the emergency evaluation',
+        'Vitamin E/zinc deficiency: baseline ERG and, where available, Goldmann or automated visual field testing to document the severity of rod-mediated dysfunction before repletion',
+        'Fundus photography for serial comparison of pigmentary changes in vitamin E deficiency',
+        'Confirm the malabsorptive or nutritional risk factor (alcohol use, bariatric surgery, cystic fibrosis, other malabsorption) with the patient\'s history to target the correct deficiency workup',
+      ],
+      initialTreatment:
+        'Wernicke encephalopathy is an emergency managed by the treating hospital team with immediate parenteral thiamine, given before or with any glucose administration — this is not an outpatient ocular management issue. Vitamin E deficiency retinopathy is treated with physician-dosed oral or parenteral vitamin E repletion; zinc-deficiency night blindness is treated with oral zinc supplementation generally combined with vitamin A, since correcting zinc alone addresses the retinol-binding protein defect while vitamin A repletes any coexisting deficiency.',
+      followUpSchedule:
+        'After Wernicke encephalopathy: outpatient ophthalmic follow-up for any residual ophthalmoplegia/nystagmus following hospital discharge. Vitamin E/zinc deficiency: every 6-12 months to monitor retinal status, visual fields, and night vision while systemic repletion continues.',
+      escalationCriteria: [
+        'Any new confusion, ataxia, or ophthalmoplegia/nystagmus in an at-risk patient -> same-day emergency evaluation, not routine follow-up',
+        'Persistent ophthalmoplegia beyond the expected days-to-weeks recovery window after thiamine repletion',
+        'Progressive visual field constriction or worsening ERG amplitude despite vitamin E repletion',
+        'Night blindness that fails to improve despite adequate vitamin A supplementation, suggesting undiagnosed or undertreated zinc deficiency',
+      ],
+      referralCriteria: [
+        'Suspected Wernicke encephalopathy -> immediate emergency department/hospital referral',
+        'Confirmed vitamin E or zinc deficiency -> gastroenterology/primary care to identify and manage the underlying malabsorptive or nutritional cause',
+        'Pigmentary retinopathy of uncertain etiology -> retina specialist for ERG and consideration of inherited retinal dystrophy in the differential',
+      ],
+      complications: [
+        'Korsakoff amnestic syndrome from delayed or inadequate thiamine repletion',
+        'Progressive, potentially only partially reversible photoreceptor damage from prolonged vitamin E deficiency',
+        'Persistent functional night blindness if zinc deficiency is not corrected alongside vitamin A',
+      ],
+      monitoringParameters: [
+        'Resolution of ophthalmoplegia/nystagmus after thiamine repletion',
+        'ERG amplitude and visual field extent (vitamin E)',
+        'Dark adaptation/night vision symptoms (vitamin E, zinc)',
+        'Fundus pigmentary appearance on serial photography',
+      ],
+      relatedExamTechniqueIds: ['extraocular-motility-testing', 'nystagmus-characterization-assessment', 'electroretinogram'],
+    },
     followUp: {
       typical: 'Wernicke encephalopathy: managed acutely in the hospital setting, with outpatient ophthalmic follow-up for any residual ophthalmoplegia/nystagmus after discharge; Vitamin E/zinc deficiency: periodic exams (every 6-12 months) to monitor retinal status and night vision as systemic repletion continues',
       monitor: 'Resolution of ophthalmoplegia/nystagmus (thiamine); fundus appearance, visual fields, and dark adaptation (vitamin E, zinc)',
@@ -254,6 +322,43 @@ export const systemicGeneticDisease14: Disease[] = [
       { category: 'Referral', detail: 'Refer to dermatology for confirmation and management of cutaneous rosacea and for systemic tetracycline-class therapy coordination; refer to cornea specialist for rosacea keratitis with significant corneal infiltration, vascularization, or thinning' },
       { category: 'Emergency management', detail: 'Rapidly progressive corneal thinning or impending perforation from severe rosacea keratitis requires urgent cornea specialist evaluation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp grading of lid margin telangiectasias, meibomian gland dropout, and meibum quality to establish a baseline before starting therapy',
+        'Tear breakup time and ocular surface staining to quantify evaporative dry eye severity',
+        'Careful peripheral corneal exam specifically for infiltrates, vascularization, or thinning, since this determines whether systemic anti-inflammatory therapy is needed',
+        'External/facial exam for supporting cutaneous findings, understanding that their absence does not exclude the diagnosis',
+      ],
+      initialTreatment:
+        'Warm compresses and lid margin hygiene plus preservative-free artificial tears are first-line for blepharitis/MGD and associated evaporative dry eye. Moderate-to-severe MGD/blepharitis, or any corneal involvement, adds low-dose doxycycline for its anti-inflammatory (not antimicrobial) effect, with topical azithromycin or topical cyclosporine as adjuncts for meibomian gland inflammation.',
+      followUpSchedule:
+        'Every 3-6 months to reassess lid margin/meibomian gland status and ocular surface disease severity; shorten to weeks rather than months whenever corneal involvement is present or systemic therapy is being escalated.',
+      escalationCriteria: [
+        'New peripheral corneal infiltrate, vascularization, or thinning on exam',
+        'Symptoms or signs that do not improve after an adequate trial (roughly 6-8 weeks) of lid hygiene plus low-dose doxycycline',
+        'Recurrent chalazia unresponsive to conservative management',
+        'New pain or photophobia suggesting evolving rosacea keratitis',
+      ],
+      referralCriteria: [
+        'Facial findings present or diagnostic uncertainty -> dermatology for confirmation and coordination of systemic tetracycline-class therapy',
+        'Corneal infiltration, vascularization, or thinning -> cornea specialist',
+        'Rapidly progressive corneal thinning or impending perforation -> urgent cornea specialist evaluation',
+      ],
+      complications: [
+        'Recurrent chalazia',
+        'Chronic evaporative dry eye/ocular surface disease',
+        'Corneal vascularization and scarring from rosacea keratitis',
+        'Rarely, corneal thinning progressing toward perforation in undertreated severe disease',
+      ],
+      monitoringParameters: [
+        'Lid margin and meibomian gland appearance',
+        'Tear breakup time and ocular surface staining',
+        'Corneal status for infiltrates, vascularization, or thinning',
+        'Frequency/recurrence of chalazia',
+      ],
+      relatedDrugIds: ['doxycycline', 'azithromycin-ophthalmic', 'cyclosporine-ophthalmic-emulsion'],
+      relatedExamTechniqueIds: ['meibomian-gland-evaluation', 'tear-break-up-time', 'lid-margin-blepharitis-assessment'],
+    },
     followUp: {
       typical: 'Every 3-6 months to monitor lid margin/meibomian gland status and ocular surface disease severity; more frequent if corneal involvement is present or treatment is being escalated',
       monitor: 'Lid margin and meibomian gland appearance, tear film stability, conjunctival hyperemia, and corneal status (infiltrates, vascularization, thinning)',

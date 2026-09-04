@@ -83,6 +83,47 @@ export const systemicGeneticDisease7: Disease[] = [
       { category: 'Second-line treatment', detail: 'Intermediate uveitis (pars planitis) associated with MS is managed with topical and/or regional corticosteroids for anterior segment/cystoid macular edema components, coordinated with the treating uveitis specialist' },
       { category: 'Observation', detail: 'Serial visual acuity, color vision, and OCT RNFL/GCL monitoring following an optic neuritis attack to document recovery and detect subclinical progression' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline visual acuity, color vision (Ishihara/HRR), and formal automated visual field testing at the time of suspected optic neuritis, before neurology workup is complete',
+        'OCT of the retinal nerve fiber layer (RNFL) and ganglion cell-inner plexiform layer (GCL-IPL) in both eyes to establish a baseline for future comparison',
+        'Pupillary exam documenting a relative afferent pupillary defect (RAPD) when present',
+        'Ocular motility assessment for internuclear ophthalmoplegia (adduction deficit with contralateral abducting nystagmus) and other gaze abnormalities',
+        'Dilated peripheral retinal exam for pars planitis (vitreous cell, snowbanking) when floaters or vitreous cell are reported',
+      ],
+      initialTreatment:
+        "The optometrist does not initiate systemic treatment for acute optic neuritis or MS relapses — this is directed by neurology (typically high-dose IV corticosteroids to hasten recovery). The eye-care role is confirming the ocular diagnosis, ruling out an alternative cause of vision loss, and coordinating urgent neurology referral; once a relapse is treated, symptomatic support (e.g., prism or occlusion for symptomatic diplopia from INO) is provided as needed.",
+      followUpSchedule:
+        'After an acute optic neuritis episode, recheck visual acuity, color vision, and OCT RNFL/GCL at approximately 1, 3, and 6 months to document the expected recovery trajectory and detect any early axonal thinning; patients on disease-modifying therapy are seen at routine comprehensive-exam intervals (annually, or per neurology\'s request) for baseline and interval OCT.',
+      escalationCriteria: [
+        'Vision continuing to worsen beyond 2 weeks from onset rather than beginning to improve (atypical for MS optic neuritis, warrants reconsidering NMOSD/MOG-antibody disease)',
+        'New RAPD or disc pallor developing in the fellow eye',
+        'Progressive RNFL/GCL thinning on serial OCT out of proportion to the clinical history',
+        'New vitreous inflammation or cystoid macular edema in a patient with known pars planitis',
+      ],
+      referralCriteria: [
+        'Any new unexplained unilateral optic neuritis, especially with pain on eye movement -> urgent neurology/neuro-ophthalmology for MRI brain/orbits',
+        'Bilateral internuclear ophthalmoplegia in a young adult -> neurology, even without a preceding optic neuritis event',
+        'Suspected NMOSD or MOG-antibody disease (severe, bilateral, or recurrent optic neuritis) -> neuro-ophthalmology for AQP4/MOG antibody testing before assuming typical MS',
+        'New or worsening pars planitis with macular edema -> uveitis specialist',
+      ],
+      complications: [
+        'Residual optic atrophy and permanent RNFL/GCL thinning after recurrent attacks',
+        'Chronic diplopia or oscillopsia from persistent INO or nystagmus',
+        'Cystoid macular edema from associated intermediate uveitis',
+        'Steroid-related complications (elevated IOP, cataract) with recurrent oral/IV corticosteroid courses',
+      ],
+      monitoringParameters: [
+        'Visual acuity and color vision (Ishihara/HRR)',
+        'OCT RNFL and GCL-IPL thickness trend',
+        'Pupillary reactions/RAPD',
+        'Optic disc appearance (pallor)',
+        'Ocular motility and presence/severity of INO',
+        'Vitreous cell and macular status if pars planitis is present',
+      ],
+      relatedDrugIds: ['methylprednisolone', 'interferon-beta-1b', 'fingolimod'],
+      relatedExamTechniqueIds: ['visual-evoked-potential', 'oct-optic-nerve-rnfl', 'pupillary-examination'],
+    },
     followUp: {
       typical: 'Following an acute event, visual acuity and color vision are monitored at intervals over the first several months as recovery typically occurs; long-term follow-up is coordinated with neurology and continues indefinitely given the chronic relapsing nature of MS',
       monitor: 'Visual acuity, color vision, visual fields, RAPD, optic disc appearance/pallor, OCT RNFL and GCL thickness, and any new ocular motility complaints',
@@ -175,6 +216,39 @@ export const systemicGeneticDisease7: Disease[] = [
       { category: 'Referral', detail: 'Refer to primary care or hematology for CBC confirmation and workup of the underlying cause when conjunctival pallor or anemic retinopathy is identified on a routine eye exam, particularly if previously undiagnosed' },
       { category: 'Emergency management', detail: 'Extensive macular hemorrhage, significant vision loss, or new disc edema in the setting of severe anemia warrants urgent correlation with hemoglobin level and coordination with the treating medical team, as it may reflect severe/acute decompensation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam of the palpebral and bulbar conjunctiva for pallor',
+        'Dilated fundus exam to grade hemorrhage burden (flame vs. dot-blot), cotton wool spot count, and check for Roth spots',
+        'Macula-focused exam/OCT if hemorrhage appears to threaten or involve the fovea',
+        'Optic disc assessment for edema in severe or prolonged cases',
+      ],
+      initialTreatment:
+        "There is no direct ocular treatment for anemic retinopathy — management is medical correction of the underlying anemia, coordinated with primary care or hematology. The optometrist's role is confirming the retinal findings, correlating them with an urgent CBC, and ensuring the finding (often previously undiagnosed) reaches the appropriate treating clinician.",
+      followUpSchedule:
+        'Recheck the fundus in 4-6 weeks once hemoglobin correction has begun, then extend intervals as hemorrhages and cotton wool spots resolve, typically over 1-3 months; no ongoing ocular follow-up is needed once findings have fully resolved and the anemia is controlled.',
+      escalationCriteria: [
+        'New or worsening macular hemorrhage with decreased visual acuity',
+        'New disc edema',
+        'Hemorrhage burden increasing despite reported treatment of the anemia (suggests inadequately controlled hematologic disease)',
+      ],
+      referralCriteria: [
+        'Any newly identified conjunctival pallor or retinal hemorrhage/cotton wool spot pattern without a known anemia diagnosis -> primary care or hematology for urgent CBC',
+        'Severe anemic retinopathy with macular involvement or disc edema -> urgent correlation with the treating medical team',
+        'Roth spots -> ensure endocarditis and leukemia are considered, not anemia alone',
+      ],
+      complications: [
+        'Permanent visual loss from extensive macular hemorrhage in severe/prolonged anemia (uncommon)',
+        'Missed diagnosis of a more serious underlying hematologic condition (e.g., leukemia) if Roth spots are attributed to anemia alone without further workup',
+      ],
+      monitoringParameters: [
+        'Visual acuity if the macula is involved',
+        'Resolution of flame/dot-blot hemorrhages and cotton wool spots on serial fundus exam',
+        'Optic disc appearance if edema was present',
+        'Hemoglobin/hematocrit trend (obtained from the treating medical team)',
+      ],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Retinal findings are followed until resolution with correction of the underlying anemia, typically over weeks to a few months once hemoglobin normalizes',
       monitor: 'Resolution of retinal hemorrhages/cotton wool spots, visual acuity if macula involved, and disc appearance if edema was present',
@@ -267,6 +341,42 @@ export const systemicGeneticDisease7: Disease[] = [
       { category: 'Emergency management', detail: 'Optic nerve infiltration is an ophthalmic emergency requiring urgent treatment (typically emergent local radiation therapy and/or intensified systemic/intrathecal chemotherapy coordinated with oncology) to prevent permanent vision loss' },
       { category: 'First-line treatment', detail: 'Systemic chemotherapy directed at the underlying leukemia is the primary treatment for both direct infiltrative and indirect hyperviscosity-related ocular findings; no independent topical ocular therapy addresses the underlying retinopathy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline dilated fundus exam at diagnosis (and at relapse) to document hemorrhage, cotton wool spot, and infiltrate burden',
+        'Pupillary exam for RAPD and formal visual field/OCT if optic nerve infiltration is suspected',
+        'Orbital exam (proptosis, globe displacement, motility) if a granulocytic sarcoma is suspected',
+        'Correlation of fundus findings with the current CBC/differential and blast count',
+      ],
+      initialTreatment:
+        "Indirect leukemic retinopathy has no independent ocular treatment and is expected to improve as systemic chemotherapy controls the leukemia and normalizes blood counts. Direct infiltrative disease — particularly optic nerve infiltration — is a true ophthalmic emergency requiring immediate coordination with oncology for emergent local radiation and/or intensified systemic or intrathecal chemotherapy; the optometrist's role is urgent recognition and same-day escalation, not independent treatment.",
+      followUpSchedule:
+        'Baseline dilated exam at diagnosis, then periodic exams throughout induction and maintenance chemotherapy (frequency set jointly with oncology, more often during periods of high blast count, relapse, or symptomatic complaints), continuing until hematologic remission is achieved and retinopathy has resolved.',
+      escalationCriteria: [
+        'New RAPD, disc swelling/pallor, or acute vision loss — treat as optic nerve infiltration until proven otherwise',
+        'New proptosis, globe displacement, or a palpable orbital mass',
+        'New or worsening vitreous hemorrhage',
+        'Rapidly increasing hemorrhage/cotton wool spot burden correlating with a rising blast count',
+      ],
+      referralCriteria: [
+        'Any suspected optic nerve infiltration -> same-day oncology/neuro-ophthalmology evaluation and imaging, given the risk of rapid irreversible vision loss',
+        'New proptosis or orbital mass, especially in AML -> urgent orbital/brain MRI and oncology evaluation for granulocytic sarcoma',
+        'Progressive retinopathy despite treatment -> communicate with the treating oncology team',
+      ],
+      complications: [
+        'Permanent vision loss from delayed treatment of optic nerve infiltration',
+        'Vitreous hemorrhage and tractional sequelae',
+        'Retinal ischemia from hyperviscosity-related vascular occlusion',
+        'Orbital complications (compressive optic neuropathy, globe displacement) from granulocytic sarcoma',
+      ],
+      monitoringParameters: [
+        'Visual acuity and pupillary light reactions (RAPD)',
+        'Optic disc appearance',
+        'Retinal hemorrhage/infiltrate burden correlated with CBC/blast count trends',
+        'Orbital signs (proptosis, motility) if granulocytic sarcoma has been diagnosed',
+      ],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'pupillary-examination'],
+    },
     followUp: {
       typical: 'Baseline dilated eye examination at diagnosis, with periodic dilated exams throughout leukemia treatment to monitor for new or progressive ocular involvement, particularly during periods of high blast count or relapse',
       monitor: 'Visual acuity, pupillary light reactions (RAPD), optic disc appearance, and retinal hemorrhage/infiltrate burden correlated with CBC trends',
@@ -361,6 +471,44 @@ export const systemicGeneticDisease7: Disease[] = [
       { category: 'Referral', detail: 'Refer to uveitis specialist for posterior or intermediate uveitis requiring periocular or systemic anti-inflammatory therapy in coordination with antibiotic treatment' },
       { category: 'Emergency management', detail: 'Significant exposure keratopathy with corneal breakdown from unresolved lagophthalmos requires prompt intervention (lubrication, taping/patching, or surgical eyelid procedures) to prevent corneal ulceration' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam grading anterior chamber cell/flare if uveitis is suspected',
+        'Dilated exam of the vitreous and periphery for intermediate or posterior involvement in disseminated disease',
+        "Assessment of lagophthalmos, Bell's phenomenon, and corneal exposure findings (fluorescein staining) in any patient with facial nerve palsy",
+        'Corneal exam for stromal haze/infiltrate in suspected late-stage keratitis',
+      ],
+      initialTreatment:
+        "Ocular management runs alongside systemic antibiotic therapy prescribed by the treating physician for the underlying infection. Exposure keratopathy from facial nerve palsy-related lagophthalmos is managed with aggressive lubrication (drops during the day, ointment at bedtime), taping, or a moisture chamber; anterior uveitis is treated with a topical corticosteroid and cycloplegic once the infectious workup/antibiotic treatment is underway, coordinated with the prescribing physician.",
+      followUpSchedule:
+        'Recheck lagophthalmos and corneal exposure findings every 1-2 weeks until facial nerve function begins to recover (typically weeks); uveitis is followed per standard anterior chamber grading intervals (3-7 days initially, then extending as inflammation quiets) during and after the antibiotic course.',
+      escalationCriteria: [
+        'Worsening corneal exposure findings (increasing punctate staining, epithelial defect) despite lubrication/taping',
+        'Anterior chamber inflammation not improving after 1 week of appropriate topical therapy alongside systemic antibiotics',
+        'New posterior or intermediate segment findings suggesting more extensive disseminated disease',
+        'Facial weakness/lagophthalmos not improving within the expected recovery window',
+      ],
+      referralCriteria: [
+        "Facial nerve palsy with a compatible tick/endemic-region exposure history, or bilateral facial palsy -> primary care/infectious disease for Lyme serology before assuming idiopathic Bell's palsy",
+        'Any uveitis (anterior, intermediate, or posterior) in a patient with relevant exposure history -> infectious disease for antibiotic treatment, uveitis specialist for posterior/intermediate involvement',
+        'Significant exposure keratopathy with corneal breakdown -> urgent oculoplastics evaluation for eyelid procedures (e.g., temporary tarsorrhaphy) if lubrication/taping is insufficient',
+      ],
+      complications: [
+        'Exposure keratopathy progressing to corneal ulceration if lagophthalmos is left unprotected',
+        'Chronic or recurrent uveitis with posterior synechiae, cataract, or secondary glaucoma',
+        'Corneal scarring from untreated stromal keratitis in late disease',
+      ],
+      monitoringParameters: [
+        'Degree of lagophthalmos and corneal staining',
+        'Facial nerve function/recovery',
+        'Anterior chamber cell/flare grade if uveitis is present',
+        'Corneal clarity in late-stage disease',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids for Lyme-associated uveitis are appropriate only once systemic antibiotic treatment of the underlying infection has been initiated or is concurrently arranged, using standard anterior uveitis dosing with a taper; monitor IOP given the same steroid-response risk as any topical steroid course.',
+      relatedDrugIds: ['doxycycline', 'prednisolone-acetate', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'fluorescein-corneal-staining', 'uveitis-laboratory-workup'],
+    },
     followUp: {
       typical: 'Facial nerve palsy is followed for resolution of weakness and lagophthalmos over weeks to a few months; uveitis is followed per standard inflammatory monitoring intervals during and after antibiotic treatment',
       monitor: 'Degree of lagophthalmos and corneal exposure findings, facial nerve function recovery, and anterior chamber/vitreous inflammation if uveitis is present',
