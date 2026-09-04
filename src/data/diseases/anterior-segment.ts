@@ -72,6 +72,39 @@ export const anteriorSegmentDiseases: Disease[] = [
       { category: 'Referral', detail: 'Refer to rheumatology/internal medicine for positive HLA-B27 or suspected systemic association; refer to pediatric ophthalmology/rheumatology for JIA-associated uveitis (requires periodic screening exams even when asymptomatic); refer to uveitis specialist for recurrent, chronic, or granulomatous disease' },
       { category: 'Emergency management', detail: 'Urgent same-day management for hypopyon, markedly elevated IOP, or suspected infectious etiology (e.g., herpetic) requiring different treatment approach' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline IOP measurement before starting cycloplegic/steroid therapy',
+        'Slit lamp grading of AC cell/flare per SUN criteria to establish baseline severity',
+        'Dilated fundus exam to rule out posterior/intermediate involvement (panuveitis)',
+        'HLA-B27 testing and targeted systemic review of systems if recurrent, bilateral, or granulomatous',
+        'Gonioscopy to assess for peripheral anterior synechiae or angle inflammatory debris',
+      ],
+      initialTreatment:
+        'Cycloplegic agent (cyclopentolate or homatropine) paired with a topical corticosteroid (prednisolone acetate 1%) dosed by severity, ranging from every 1-2 hours in severe disease to four times daily in mild cases — cycloplegia relieves ciliary spasm/pain and reduces posterior synechiae risk while the steroid controls the underlying inflammation.',
+      followUpSchedule:
+        'Recheck in 3-7 days after starting treatment to grade AC cell/flare response and check IOP; extend the interval as inflammation quiets, tapering the steroid slowly over 4-6 weeks rather than stopping abruptly to avoid rebound iritis.',
+      escalationCriteria: [
+        'No improvement in AC cell/flare grade after 1 week of appropriately dosed topical steroid',
+        'New or worsening hypopyon on treatment',
+        'IOP rise >10 mmHg from baseline suggesting a steroid responder',
+        'Development of posterior synechiae despite cycloplegia',
+      ],
+      referralCriteria: [
+        'Positive HLA-B27 or symptoms/signs suggesting an associated spondyloarthropathy/IBD -> rheumatology or internal medicine',
+        'Granulomatous KPs, iris nodules, or bilateral disease -> uveitis specialist for expanded systemic workup',
+        'Recurrent (3+ episodes) or chronic (>3 months) disease -> uveitis specialist',
+        'Suspected infectious (herpetic) etiology -> same-day evaluation, since management differs from the standard steroid/cycloplegic approach',
+      ],
+      steroidConsiderations:
+        'Prednisolone acetate 1% is first-line, dosed up to hourly while awake in severe cases with a slow taper over 4-6 weeks; check IOP at every visit given the risk of steroid-response glaucoma, and never stop abruptly.',
+      cycloplegicConsiderations:
+        'Cyclopentolate (faster onset, shorter duration) or homatropine (longer duration, useful for more severe or recurrent disease) relieves ciliary spasm and keeps the pupil mobile to reduce posterior synechiae formation.',
+      complications: ['Posterior synechiae', 'Steroid-induced ocular hypertension/glaucoma', 'Cataract (from inflammation and chronic steroid use)', 'Cystoid macular edema', 'Band keratopathy in chronic disease'],
+      monitoringParameters: ['IOP at each visit (steroid response)', 'AC cell/flare grade (SUN criteria)', 'Pupil shape/mobility for synechiae', 'Lens exam for posterior subcapsular cataract'],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'homatropine'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'gonioscopy', 'uveitis-laboratory-workup'],
+    },
     followUp: {
       typical: 'Recheck in 3-7 days after starting treatment to assess response, then taper follow-up interval as inflammation resolves',
       monitor: 'Anterior chamber cell/flare grade, IOP (risk of steroid response), presence of synechiae, symptom resolution',

@@ -68,6 +68,45 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'In-office thermal pulsation or intense pulsed light (IPL) therapy for refractory MGD; short-course topical corticosteroid for significant inflammation or marginal keratitis' },
       { category: 'Referral', detail: 'Refer for dermatology co-management if significant rosacea or seborrheic dermatitis; refer for biopsy if unilateral, asymmetric, or non-resolving despite treatment (rule out masquerade syndrome)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp grading of anterior vs. posterior lid margin involvement (collarettes, capping, meibum quality)',
+        'Meibomian gland expression to grade meibum quality and expressibility',
+        'Lash epilation with microscopy if collarettes suggest Demodex infestation',
+        'Tear breakup time and ocular surface staining to document secondary evaporative dry eye',
+      ],
+      initialTreatment:
+        'Lid hygiene is first-line for all forms — warm compresses (approximately 10 minutes) to soften debris/meibum followed by lid margin scrubs (diluted baby shampoo, commercial lid wipes, or hypochlorous acid spray) plus omega-3 supplementation; topical antibiotic ointment (erythromycin) is added for anterior staphylococcal disease, and topical azithromycin or low-dose oral doxycycline is added for moderate-severe posterior/MGD-related disease.',
+      followUpSchedule:
+        'Recheck 4-6 weeks after starting a new therapy to assess response; every 3-6 months once controlled, since blepharitis is managed chronically rather than cured.',
+      escalationCriteria: [
+        'Persistent lid margin inflammation, marginal infiltrates, or corneal staining despite 4-6 weeks of consistent lid hygiene and first-line therapy',
+        'New marginal (catarrhal) infiltrates or phlyctenules from staphylococcal hypersensitivity',
+        'Recurrent chalazia despite optimized lid hygiene',
+      ],
+      referralCriteria: [
+        'Significant rosacea or seborrheic dermatitis -> dermatology for co-management',
+        'Unilateral, asymmetric, or non-resolving despite treatment -> biopsy to rule out sebaceous gland carcinoma (masquerade syndrome)',
+        'Refractory MGD despite standard therapy -> in-office thermal pulsation or intense pulsed light (IPL) therapy',
+      ],
+      steroidConsiderations:
+        'A short course of a lower-potency topical corticosteroid (e.g., loteprednol etabonate) may be used for significant lid margin inflammation or marginal keratitis, limited to brief courses given the chronic nature of the disease and the IOP/cataract risk of prolonged steroid use.',
+      complications: [
+        'Recurrent chalazia',
+        'Marginal corneal infiltrates and phlyctenulosis',
+        'Secondary evaporative dry eye',
+        'Trichiasis/madarosis in chronic cases',
+        'GI upset or photosensitivity from oral tetracycline-class agents',
+      ],
+      monitoringParameters: [
+        'Symptom severity',
+        'Lid margin appearance (collarettes, capping, telangiectasia)',
+        'Meibomian gland expressibility',
+        'Corneal staining and tear breakup time',
+      ],
+      relatedDrugIds: ['erythromycin-ophthalmic', 'azithromycin-ophthalmic', 'doxycycline', 'loteprednol-etabonate'],
+      relatedExamTechniqueIds: ['lid-margin-blepharitis-assessment', 'meibomian-gland-evaluation', 'lid-eversion', 'tear-break-up-time'],
+    },
     followUp: {
       typical: 'Every 3-6 months once controlled; sooner (4-6 weeks) after initiating new therapy to assess response',
       monitor: 'Symptom severity, lid margin appearance, meibomian gland expressibility, corneal staining',

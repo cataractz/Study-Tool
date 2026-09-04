@@ -76,6 +76,38 @@ export const anteriorSegmentAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to a uveitis specialist/retina specialist for aggressive systemic corticosteroid initiation; audiology referral for hearing complaints; dermatology referral for management of vitiligo/alopecia' },
       { category: 'Emergency management', detail: 'Prompt recognition and same-day/urgent treatment initiation in the acute uveitic phase is critical, as delayed or inadequate treatment increases the risk of progression to chronic recurrent disease with poorer visual outcomes' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline visual acuity and IOP prior to starting high-dose corticosteroids',
+        'OCT to document extent of subretinal fluid before treatment initiation',
+        'Detailed trauma/surgical history to exclude sympathetic ophthalmia',
+        'Audiometry and lumbar puncture if neurologic/auditory findings support systemic workup',
+        'Dilated fundus exam of both eyes to stage acute vs. convalescent findings',
+      ],
+      initialTreatment:
+        'High-dose systemic corticosteroid therapy (oral prednisone or IV methylprednisolone pulse for severe presentations) initiated as early as possible in the acute uveitic phase, combined with topical corticosteroid and cycloplegic for any anterior segment involvement.',
+      followUpSchedule:
+        'Weekly to every-2-week visits during the initial high-dose phase and early taper to confirm resolution of subretinal fluid and anterior chamber inflammation; oral corticosteroid must be maintained and tapered slowly over a minimum of 6 months, since a taper duration shorter than 6 months is the single strongest predictor of recurrence and progression to chronic disease.',
+      escalationCriteria: [
+        'New or persistent subretinal fluid on OCT despite corticosteroid therapy',
+        'Recurrent granulomatous anterior uveitis during or after taper',
+        'Inability to taper corticosteroids without flare',
+        'Development of secondary angle-closure glaucoma from choroidal effusion',
+      ],
+      referralCriteria: [
+        'Urgent same-day referral to a uveitis/retina specialist for any newly suspected acute VKH given the narrow window to prevent chronic disease',
+        'Audiology referral for tinnitus/hearing loss',
+        'Dermatology referral for vitiligo, poliosis, or alopecia',
+        'Rheumatology/uveitis specialist co-management for steroid-sparing immunosuppression in chronic-recurrent disease',
+      ],
+      steroidConsiderations:
+        'High-dose oral corticosteroid (or IV methylprednisolone pulse in severe cases) is the cornerstone of treatment; a taper shorter than 6 months total duration is the strongest identified risk factor for recurrence, so the taper must remain slow and prolonged even after clinical quiescence.',
+      cycloplegicConsiderations: 'Cyclopentolate or homatropine for anterior segment granulomatous inflammation to relieve ciliary spasm and reduce posterior synechiae risk.',
+      complications: ['Secondary angle-closure glaucoma', 'Cataract (disease- and steroid-related)', 'Choroidal neovascularization', 'Subretinal fibrosis', 'Optic atrophy', 'Sunset glow fundus (chronic depigmentation)'],
+      monitoringParameters: ['Visual acuity', 'IOP', 'AC/vitreous cell grade', 'Subretinal fluid on OCT', 'Development of extraocular findings (skin, hearing)'],
+      relatedDrugIds: ['prednisone', 'methylprednisolone', 'cyclopentolate', 'mycophenolate'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'oct-macula', 'b-scan-ultrasonography', 'anterior-chamber-cell-flare-grading'],
+    },
     followUp: {
       typical: 'Frequent visits (weekly to every few weeks) during acute treatment and steroid taper to monitor inflammation and taper response; longer-term periodic follow-up given the risk of chronic recurrence',
       monitor: 'Anterior chamber/vitreous inflammation, resolution of subretinal fluid on OCT, visual acuity, IOP, and development of sunset glow fundus or extraocular findings',
@@ -171,6 +203,36 @@ export const anteriorSegmentAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to a uveitis specialist/vitreoretinal surgeon upon any new inflammatory signs in a previously uninjured fellow eye with a history of trauma/surgery to the other eye; ophthalmology referral for all penetrating globe injuries to optimize primary repair and risk counseling' },
       { category: 'Emergency management', detail: 'Historically, enucleation of a blind, severely injured, and non-visually salvageable exciting eye within approximately 2 weeks of injury was used to prevent sympathetic ophthalmia; modern management increasingly favors aggressive immunosuppression of the injured eye rather than enucleation when any visual potential remains, given that enucleation does not eliminate risk once sensitization has occurred and does not treat established sympathetic ophthalmia' },
     ],
+    managementProtocol: {
+      workup: [
+        'Detailed history of remote or recent penetrating trauma/intraocular surgery to the fellow eye',
+        'Baseline visual acuity and IOP in both eyes',
+        'OCT of the sympathizing eye to assess for subretinal fluid',
+        'Assessment of visual potential in the exciting eye before deciding on enucleation vs. globe-sparing management',
+      ],
+      initialTreatment:
+        'High-dose systemic corticosteroid therapy (oral or IV pulse) initiated promptly at the first sign of inflammation in the sympathizing eye, combined with topical corticosteroid and cycloplegic for anterior segment involvement.',
+      followUpSchedule:
+        'Frequent visits (weekly) during acute treatment; because the disease is chronic and relapsing once established, long-term follow-up over months to years is required even after apparent quiescence to monitor for recurrence during immunosuppression taper.',
+      escalationCriteria: [
+        'Inadequate response to corticosteroid monotherapy within 1-2 weeks',
+        'Recurrent granulomatous panuveitis on steroid taper',
+        'New subretinal fluid or worsening vitritis',
+        'Secondary glaucoma from angle involvement',
+      ],
+      referralCriteria: [
+        'Any new inflammatory sign in a previously uninjured eye with a remote history of penetrating trauma/surgery to the fellow eye warrants urgent uveitis specialist referral',
+        'All penetrating globe injuries should be referred to ophthalmology for optimal primary repair and counseling on the (small) lifetime risk of sympathetic ophthalmia',
+        'Long-term co-management with a uveitis specialist/rheumatology for chronic immunosuppression',
+      ],
+      steroidConsiderations:
+        'High-dose systemic corticosteroids control the acute bilateral panuveitis; because the disease is chronic and relapsing, most patients require long-term steroid-sparing immunosuppression rather than indefinite corticosteroid monotherapy.',
+      cycloplegicConsiderations: 'Cyclopentolate or homatropine for anterior segment inflammation to relieve pain and reduce posterior synechiae risk.',
+      complications: ['Cataract', 'Secondary glaucoma', 'Cystoid macular edema', 'Subretinal fibrosis', 'Optic atrophy', 'Bilateral severe vision loss if inadequately treated'],
+      monitoringParameters: ['Visual acuity in both eyes', 'IOP', 'AC/vitreous cell grade', 'Subretinal fluid on OCT', 'Long-term surveillance for recurrence during immunosuppression taper'],
+      relatedDrugIds: ['prednisone', 'methylprednisolone', 'cyclopentolate', 'azathioprine'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'b-scan-ultrasonography', 'anterior-chamber-cell-flare-grading'],
+    },
     followUp: {
       typical: 'Any patient with a history of penetrating ocular trauma or intraocular surgery should be counseled to seek prompt evaluation for any new visual symptoms in the fellow eye, given the years-to-decades window of risk',
       monitor: 'Anterior chamber/vitreous inflammation, visual acuity, IOP, subretinal fluid on OCT, and development of new symptoms in the fellow eye long after the inciting injury',
@@ -264,6 +326,37 @@ export const anteriorSegmentAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to a uveitis specialist and rheumatology for coordinated systemic immunosuppression given the aggressive, recurrent, vision-threatening nature of ocular Behçet disease' },
       { category: 'Emergency management', detail: 'Acute explosive attacks with hypopyon, marked vitritis, or active retinal vasculitis warrant urgent same-day evaluation and prompt treatment escalation to prevent irreversible ischemic damage' },
     ],
+    managementProtocol: {
+      workup: [
+        'Application of recognized diagnostic criteria (ICBD/ISG) rather than a single confirmatory lab test',
+        'HLA-B51 testing and pathergy skin test as supportive studies',
+        'Fluorescein angiography to characterize occlusive retinal vasculitis and ischemic burden',
+        'OCT for macular edema',
+        'Coordination with rheumatology for systemic disease activity assessment',
+      ],
+      initialTreatment:
+        'High-dose systemic corticosteroids to control acute explosive attacks, with early addition of a steroid-sparing systemic immunosuppressive or biologic agent given the high recurrence risk and cumulative ischemic damage seen with corticosteroid monotherapy alone.',
+      followUpSchedule:
+        'Close follow-up (every 1-2 weeks) during active attacks and immunosuppression initiation; once quiescent, regular interval monitoring (roughly every 1-3 months) given the relapsing-remitting course and risk of silent ischemic progression.',
+      escalationCriteria: [
+        'New or worsening retinal vasculitis or capillary non-perfusion on angiography',
+        'Recurrent hypopyon or vitritis despite corticosteroids',
+        'New macular edema on OCT',
+        'Evidence of retinal/disc neovascularization from ischemia',
+      ],
+      referralCriteria: [
+        'Urgent same-day referral to a uveitis specialist for any explosive attack with hypopyon or active retinal vasculitis',
+        'Rheumatology referral for coordinated systemic immunosuppression and monitoring of extraocular disease activity',
+        'Refer for panretinal photocoagulation if ischemic retinal neovascularization develops',
+      ],
+      steroidConsiderations:
+        'High-dose systemic corticosteroids control acute attacks but are not sufficient as monotherapy given the high recurrence risk; early steroid-sparing immunosuppression (e.g., azathioprine, cyclosporine) or biologic anti-TNF therapy is generally initiated in parallel.',
+      cycloplegicConsiderations: 'Cycloplegic agents for anterior segment involvement during acute attacks to relieve ciliary spasm and reduce synechiae risk.',
+      complications: ['Retinal ischemia and neovascularization', 'Vitreous hemorrhage', 'Cystoid macular edema', 'Optic atrophy', 'Secondary glaucoma', 'Cataract'],
+      monitoringParameters: ['Visual acuity', 'Retinal vasculitis activity on exam/angiography', 'Macular edema on OCT', 'Systemic disease activity (oral/genital ulcers, skin, joints) in coordination with rheumatology'],
+      relatedDrugIds: ['prednisone', 'azathioprine', 'adalimumab', 'colchicine'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'anterior-chamber-cell-flare-grading', 'uveitis-laboratory-workup'],
+    },
     followUp: {
       typical: 'Close interval follow-up (weeks) during active attacks and immunosuppression initiation; longer-term regular monitoring given the relapsing-remitting course',
       monitor: 'Anterior chamber/vitreous inflammation, retinal vasculitis activity on exam and angiography, visual acuity, macular edema on OCT, and systemic disease activity in coordination with rheumatology',

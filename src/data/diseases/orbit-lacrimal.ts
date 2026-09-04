@@ -70,6 +70,43 @@ export const orbitLacrimalDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Surgical drainage of orbital or subperiosteal abscess and/or functional endoscopic sinus surgery if abscess is present, vision is threatened, or there is no improvement within 24-48 hours of IV antibiotics' },
       { category: 'Observation', detail: 'Serial visual acuity, color vision, pupil, and motility checks (often every few hours initially) to detect early optic nerve compromise' },
     ],
+    managementProtocol: {
+      workup: [
+        'Contrast-enhanced CT of orbits and sinuses to confirm postseptal involvement, identify the sinus source, and detect subperiosteal/orbital abscess',
+        'CBC with differential and blood cultures obtained before starting empiric antibiotics',
+        'Baseline visual acuity, color vision, pupillary exam (RAPD), extraocular motility, and Hertel exophthalmometry for serial comparison',
+        'ENT evaluation of the sinus source, with nasal endoscopy if surgical sinus drainage is being considered',
+      ],
+      initialTreatment: 'Immediate hospital admission with empiric broad-spectrum IV antibiotics covering Staphylococcus aureus (including MRSA), Streptococcus species, and anaerobes, continued until the patient is afebrile and clearly improving; surgical drainage is added for a significant abscess, vision compromise, or lack of improvement.',
+      followUpSchedule: 'Inpatient reassessment every 4-6 hours initially. IV antibiotics are typically continued for roughly 1-2 weeks (or until afebrile with clear improvement, most often assessed at 48-72 hours), then transitioned to oral antibiotics to complete a total course of approximately 2-3 weeks; outpatient recheck within days of discharge.',
+      escalationCriteria: [
+        'No clinical improvement (persistent fever, worsening proptosis or motility restriction) after 24-48 hours of appropriate IV antibiotics',
+        'New or worsening RAPD, decreased visual acuity/color vision, or optic disc edema signaling compressive optic neuropathy',
+        'CT evidence of a subperiosteal or orbital abscess, particularly if vision is threatened or the collection is enlarging',
+        'Signs of intracranial extension (severe headache, altered mental status, cranial neuropathies) or cavernous sinus thrombosis (bilateral findings, rapidly progressive proptosis)',
+      ],
+      referralCriteria: [
+        'Any suspected postseptal (orbital) cellulitis warrants same-day emergency department referral for admission, CT imaging, and IV antibiotics',
+        'Emergent co-management with ENT for the sinus source and otolaryngologic surgical drainage if indicated',
+        'Neurosurgery and infectious disease referral if intracranial extension or cavernous sinus thrombosis is suspected',
+      ],
+      complications: [
+        'Permanent vision loss from compressive optic neuropathy or central retinal artery occlusion',
+        'Cavernous sinus thrombosis',
+        'Meningitis or intracranial (epidural/subdural/brain) abscess',
+        'Sepsis',
+        'Exposure keratopathy from severe proptosis',
+      ],
+      monitoringParameters: [
+        'Visual acuity and color vision (most sensitive bedside markers of optic nerve compromise)',
+        'Pupillary exam for RAPD',
+        'Extraocular motility and degree of pain with eye movement',
+        'Proptosis (Hertel exophthalmometry) for serial comparison',
+        'Temperature and white blood cell count trend',
+        'Optic disc appearance',
+      ],
+      relatedExamTechniqueIds: ['hertel-exophthalmometry', 'orbital-palpation-retropulsion'],
+    },
     followUp: {
       typical: 'Inpatient monitoring with exams every 4-6 hours initially; transition to oral antibiotics and outpatient follow-up only after clear clinical improvement on IV therapy',
       monitor: 'Visual acuity, color vision, pupillary reaction (RAPD), proptosis, extraocular motility, and systemic signs (fever, white count)',
