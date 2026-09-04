@@ -69,6 +69,36 @@ export const anteriorSegmentAdditional: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to rheumatology/internal medicine for systemic workup in all scleritis cases given the high rate of associated systemic disease, and emergent referral if GPA or another ANCA-associated vasculitis is suspected given mortality risk if untreated' },
       { category: 'Emergency management', detail: 'Necrotizing scleritis with impending or actual scleral perforation requires urgent ophthalmology co-management, possible surgical reinforcement (scleral patch graft), and immediate initiation of systemic immunosuppression' },
     ],
+    managementProtocol: {
+      workup: [
+        'Phenylephrine 2.5-10% blanching test to confirm non-blanching deep scleral vessels',
+        'Slit lamp examination with red-free/cobalt light to classify subtype (diffuse, nodular, necrotizing) and assess corneal/AC involvement',
+        'B-scan ultrasonography ("T-sign") when posterior scleritis is suspected',
+        'Baseline laboratory workup: ESR, CRP, RF, anti-CCP, ANCA (c-ANCA/PR3), ANA, uric acid, syphilis/TB testing',
+        'Chest imaging and renal function testing when GPA or another systemic vasculitis is suspected',
+      ],
+      initialTreatment:
+        'Oral NSAIDs (e.g., ibuprofen or indomethacin) are first-line for mild, non-necrotizing diffuse or nodular scleritis without evidence of systemic vasculitis. Oral corticosteroids are used for NSAID-refractory or moderate-to-severe disease. Necrotizing or vasculitis-associated scleritis requires systemic immunosuppression from the outset — NSAIDs alone are inadequate.',
+      followUpSchedule:
+        'Close follow-up every 1-2 weeks initially to assess treatment response and monitor for progression to necrosis, extending the interval once inflammation is controlled and systemic immunosuppression (if needed) is stable.',
+      escalationCriteria: [
+        'No improvement after 1-2 weeks of oral NSAID therapy',
+        'New avascular (ischemic) patches or progressive scleral thinning on exam',
+        'Any necrotizing features or scleral thinning with exposed uvea',
+        'Evidence of systemic vasculitis (renal, pulmonary, or otherwise) suggesting GPA or another ANCA-associated process',
+      ],
+      referralCriteria: [
+        'All scleritis cases -> urgent rheumatology/internal medicine referral for systemic workup, given the high rate of associated systemic disease',
+        'Suspected GPA or another ANCA-associated vasculitis -> emergent referral given mortality risk if untreated',
+        'Necrotizing scleritis with thinning or impending perforation -> urgent ophthalmology co-management, possible surgical scleral patch graft',
+      ],
+      steroidConsiderations:
+        'Oral corticosteroids (not topical, given the depth of scleral inflammation) are used for NSAID-refractory or moderate-to-severe disease; necrotizing or vasculitis-associated scleritis requires steroid-sparing systemic immunosuppression (methotrexate, mycophenolate, cyclophosphamide, or a biologic agent) rather than steroid monotherapy, managed jointly with rheumatology.',
+      complications: ['Scleral thinning/staphyloma', 'Peripheral ulcerative keratitis', 'Secondary glaucoma', 'Cataract', 'Induced astigmatism from scleral distortion', 'Globe perforation in severe necrotizing disease'],
+      monitoringParameters: ['Pain level', 'Scleral injection/edema pattern and presence of avascular patches', 'Visual acuity', 'Systemic symptoms and labs while on immunosuppressive therapy'],
+      relatedDrugIds: ['prednisone', 'methotrexate', 'mycophenolate', 'cyclophosphamide'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Close follow-up every 1-2 weeks initially to assess response to therapy and monitor for progression to necrosis',
       monitor: 'Pain level, scleral injection/edema pattern, development of avascular or thinned areas, visual acuity, and systemic symptoms/labs while on immunosuppressive therapy',
@@ -166,6 +196,36 @@ export const anteriorSegmentAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Systemic immunomodulatory therapy (methotrexate, mycophenolate, or biologic agents) for chronic, steroid-dependent, or bilateral vision-threatening disease, typically managed with a uveitis specialist; pars plana vitrectomy considered for dense vitreous debris, vitreous hemorrhage, or tractional complications' },
       { category: 'Referral', detail: 'Refer to uveitis specialist for management; refer to neurology for MRI/further workup when demyelinating disease is suspected, especially with bilateral involvement' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination with scleral depression to identify snowballs and snowbanking',
+        'OCT of the macula to detect and quantify cystoid macular edema',
+        'MRI of the brain and orbits with contrast when demyelinating disease is suspected, particularly with bilateral involvement',
+        'Serologic and systemic workup (ACE/lysozyme, chest imaging, Lyme serology, syphilis testing) to exclude an identifiable cause before labeling disease idiopathic (pars planitis)',
+        'Fluorescein angiography to characterize CME and peripheral vascular/neovascular leakage',
+      ],
+      initialTreatment:
+        'Mild, unilateral disease without CME or significant vision loss may be observed. For unilateral or asymmetric disease with visually significant inflammation or CME, a periocular (sub-Tenon or orbital floor) corticosteroid injection is first-line, minimizing systemic steroid exposure compared to oral therapy.',
+      followUpSchedule:
+        'Recheck every 1-3 months depending on severity and treatment response, with OCT monitoring for CME at each visit while active.',
+      escalationCriteria: [
+        'New or worsening cystoid macular edema on OCT',
+        'Increasing vitreous haze/cell grade despite regional steroid therapy',
+        'Development of peripheral retinal neovascularization or vitreous hemorrhage',
+        'Bilateral or steroid-dependent disease requiring escalation beyond regional therapy',
+      ],
+      referralCriteria: [
+        'All cases -> uveitis specialist for ongoing management',
+        'Suspected demyelinating disease (especially bilateral involvement in a young adult) -> neurology for MRI and further workup',
+        'Dense vitreous debris, vitreous hemorrhage, or tractional complications -> retina specialist for consideration of pars plana vitrectomy',
+      ],
+      steroidConsiderations:
+        'Periocular (sub-Tenon) or intravitreal corticosteroid is preferred over systemic therapy for unilateral or asymmetric disease to limit systemic steroid exposure; oral corticosteroids are reserved for bilateral, severe, or treatment-resistant disease, with steroid-sparing immunomodulatory therapy for chronic or steroid-dependent cases.',
+      complications: ['Cystoid macular edema (most common and most vision-threatening)', 'Cataract (from inflammation and steroid use)', 'Peripheral retinal neovascularization', 'Vitreous hemorrhage', 'Epiretinal membrane', 'Tractional or rhegmatogenous retinal detachment (rare)'],
+      monitoringParameters: ['Vitreous haze/cell grade', 'Macular OCT for CME', 'Visual acuity', 'Peripheral retina for neovascularization'],
+      relatedDrugIds: ['triamcinolone-intravitreal', 'methotrexate', 'mycophenolate'],
+      relatedExamTechniqueIds: ['scleral-depression', 'oct-macula', 'fluorescein-angiography'],
+    },
     followUp: {
       typical: 'Recheck every 1-3 months depending on severity and treatment response, with OCT monitoring for CME',
       monitor: 'Vitreous haze/cell grade, macular OCT for CME, visual acuity, peripheral retina for neovascularization',
@@ -262,6 +322,37 @@ export const anteriorSegmentAdditional: Disease[] = [
       { category: 'Referral', detail: 'Refer to a retina/uveitis specialist for vision-threatening or atypical lesions, and to infectious disease for immunocompromised patients or those requiring prolonged/complex antimicrobial therapy' },
       { category: 'Emergency management', detail: 'Urgent treatment initiation for lesions threatening the macula, optic nerve, or major retinal vessels, and for severe disease in immunocompromised hosts, given the risk of rapid, sight-threatening progression' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination to characterize the lesion and adjacent scarring',
+        'Serum Toxoplasma IgG/IgM serology to confirm prior or recent exposure',
+        'B-scan ultrasonography when dense vitritis precludes an adequate fundus view',
+        'Aqueous or vitreous PCR for T. gondii DNA in atypical, immunocompromised, or diagnostically uncertain presentations',
+        'HIV testing in atypical, severe, bilateral, or multifocal presentations',
+      ],
+      initialTreatment:
+        'Small, peripheral lesions with mild inflammation in an immunocompetent host may be observed without systemic antimicrobial therapy. Vision-threatening (macular, juxtapapillary, or severe vitritis) lesions are treated with combination antiparasitic therapy — classically pyrimethamine plus sulfadiazine with folinic acid, or trimethoprim-sulfamethoxazole — with a systemic corticosteroid added only after antiparasitic coverage is established.',
+      followUpSchedule:
+        'Weekly to biweekly follow-up during active treatment to monitor lesion size, vitritis, and treatment response, spacing out visits as the lesion scars over 4-8 weeks.',
+      escalationCriteria: [
+        'Enlarging lesion or worsening vitritis despite appropriate antiparasitic therapy',
+        'New satellite lesions adjacent to the treated area',
+        'Threatened extension toward the macula, optic nerve, or a major retinal vessel',
+        'Poor response in an immunocompromised host, raising concern for inadequate control',
+      ],
+      referralCriteria: [
+        'Vision-threatening (macular, juxtapapillary) or atypical lesions -> retina/uveitis specialist',
+        'Immunocompromised patients or those requiring prolonged/complex antimicrobial therapy -> infectious disease',
+      ],
+      steroidConsiderations:
+        'A systemic corticosteroid is added only after antiparasitic coverage is established, reserved for vision-threatening lesions (macular, juxtapapillary, or with severe vitritis) — steroid should never be given without concurrent antiparasitic treatment, as steroid alone can worsen active infection.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent (e.g., cyclopentolate) is used when a significant associated anterior chamber reaction accompanies the posterior lesion, to relieve ciliary spasm/pain and reduce synechiae risk.',
+      complications: ['Permanent scotoma corresponding to the scar', 'Macular scarring with central vision loss if the lesion involves the fovea', 'Retinal detachment', 'Chorioretinal neovascularization', 'Optic atrophy with juxtapapillary lesions'],
+      monitoringParameters: ['Size and activity of the retinal lesion', 'Degree of vitritis', 'Visual acuity', 'Intraocular pressure (steroid response or uveitis-related elevation)'],
+      relatedDrugIds: ['prednisone', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Weekly to biweekly follow-up during active treatment to monitor lesion size, vitritis, and treatment response, then spaced out as the lesion scars',
       monitor: 'Size and activity of the retinal lesion, degree of vitritis, visual acuity, and intraocular pressure (steroid response, or elevated IOP from associated uveitis)',
@@ -351,6 +442,32 @@ export const anteriorSegmentAdditional: Disease[] = [
       { category: 'Second-line treatment', detail: 'Short course of a low-potency topical corticosteroid for more severe or refractory symptoms; enzymatic or intensive cleaning of lenses, or a switch to daily disposable lenses to eliminate deposit accumulation entirely' },
       { category: 'Referral', detail: 'Refer to a contact lens specialist for refitting with an alternative lens material/modality, or refer for removal/exchange of an offending suture or prosthesis if that is the inciting stimulus' },
     ],
+    managementProtocol: {
+      workup: [
+        'Lid eversion with slit lamp examination of the superior tarsal conjunctiva to grade papillary size and distribution',
+        'Contact lens fit and deposit assessment to identify a mechanical or lens-material trigger',
+        'Review of lens wear schedule and hygiene/replacement compliance',
+      ],
+      initialTreatment:
+        'Remove or reduce exposure to the inciting mechanical stimulus: temporarily discontinue lens wear, switch to a silicone hydrogel or daily disposable modality, and increase replacement frequency; a topical mast cell stabilizer or dual-action antihistamine/mast cell stabilizer (e.g., olopatadine, ketotifen) is added for symptomatic relief.',
+      followUpSchedule:
+        'Recheck in 2-4 weeks after modifying lens wear/material to assess symptom and papillary improvement; papillary regression lags behind symptomatic improvement and may take months to fully resolve.',
+      escalationCriteria: [
+        'Persistent or worsening giant papillae despite lens modification',
+        'Development of superior punctate keratopathy from ongoing mechanical irritation',
+        'Symptoms significantly affecting successful lens tolerance despite first-line changes',
+      ],
+      referralCriteria: [
+        'Persistent papillary hypertrophy or lens intolerance -> contact lens specialist for refitting with an alternative material/modality',
+        'Suture-, prosthesis-, or bleb-related GPC -> ophthalmology/oculoplastics for removal or exchange of the offending surface',
+      ],
+      steroidConsiderations:
+        'A short course of a low-potency topical corticosteroid (e.g., loteprednol or fluorometholone) is reserved for more severe or refractory symptoms not responding to lens modification and mast cell stabilizers/antihistamines.',
+      complications: ['Chronic contact lens intolerance', 'Mechanical ptosis in longstanding severe cases', 'Superior punctate keratopathy from persistent mechanical irritation'],
+      monitoringParameters: ['Papillary size and distribution on lid eversion', 'Symptom resolution (itching, discharge)', 'Successful resumption of comfortable lens wear if desired'],
+      relatedDrugIds: ['olopatadine', 'ketotifen', 'loteprednol-etabonate', 'fluorometholone'],
+      relatedExamTechniqueIds: ['lid-eversion', 'soft-lens-fit-evaluation'],
+    },
     followUp: {
       typical: 'Recheck in 2-4 weeks after modifying lens wear/material to assess symptom and papillary improvement',
       monitor: 'Papillary size and distribution on lid eversion, symptom resolution (itching, discharge), successful resumption of comfortable lens wear if desired',
@@ -438,6 +555,29 @@ export const anteriorSegmentAdditional: Disease[] = [
       { category: 'Observation', detail: 'The mainstay of management for essentially all cases: reassurance that the condition is benign and will self-resolve without treatment; artificial tears may be used for mild associated irritation' },
       { category: 'Referral', detail: 'Refer to primary care for blood pressure evaluation and management if hypertension is found or suspected, or to the prescribing physician for review of anticoagulant/antiplatelet dosing in recurrent cases; refer for hematologic workup if recurrent hemorrhages occur without an identifiable precipitant' },
     ],
+    managementProtocol: {
+      workup: [
+        'External and slit lamp examination to confirm the diagnosis and exclude other causes of red eye or associated ocular injury, especially after trauma',
+        'Blood pressure measurement, particularly with recurrent or spontaneous hemorrhages',
+        'Coagulation studies (INR/PT, PTT, CBC with platelets) if recurrent or associated with other bleeding',
+      ],
+      initialTreatment:
+        'Reassurance that the condition is benign and self-resolving is the mainstay of management for essentially all cases; artificial tears may be used for mild associated irritation. No active ocular treatment is required.',
+      followUpSchedule:
+        'Routine follow-up is generally unnecessary for a single uncomplicated episode; recheck only if the hemorrhage is not resolving within the expected 1-2 week timeframe or if new symptoms develop.',
+      escalationCriteria: [
+        'Lack of resolution within 2-3 weeks',
+        'Development of pain, photophobia, or vision change (suggests an alternative or additional diagnosis)',
+        'Recurrent episodes without an identifiable precipitant',
+      ],
+      referralCriteria: [
+        'Hypertension found or suspected -> primary care for blood pressure evaluation and management',
+        'Hemorrhage associated with anticoagulant/antiplatelet use, especially if recurrent -> prescribing physician for dosing review',
+        'Recurrent hemorrhages without an identifiable precipitant -> hematology for bleeding disorder workup',
+      ],
+      complications: ['None from the hemorrhage itself', 'Recurrent or unexplained episodes may signal an underlying systemic bleeding tendency or vascular fragility requiring investigation'],
+      monitoringParameters: ['Gradual resorption and color change of the hemorrhage over 1-2 weeks', 'Development of pain, vision change, or recurrence', 'Blood pressure and anticoagulation status if recurrent'],
+    },
     followUp: {
       typical: 'Routine follow-up is generally unnecessary for a single uncomplicated episode; recheck only if not resolving within the expected 1-2 week timeframe or if new symptoms develop',
       monitor: 'Gradual resorption and color change of the hemorrhage over 1-2 weeks; development of pain, vision change, or recurrence',
@@ -531,6 +671,38 @@ export const anteriorSegmentAdditional: Disease[] = [
       { category: 'Referral', detail: 'Refer urgently to ophthalmology for all but the mildest microhyphemas, particularly for grading, IOP management, and close monitoring for rebleeding and complications; refer immediately for suspected globe rupture or associated orbital/intraocular injury' },
       { category: 'Advanced treatment', detail: 'Surgical anterior chamber washout (paracentesis/irrigation) indicated for very high, medically uncontrolled IOP, early corneal blood staining, or a large, non-clearing total hyphema, particularly when sustained elevated IOP threatens the optic nerve' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination to grade the hyphema and assess for associated iris/angle trauma, after excluding ruptured globe',
+        'Intraocular pressure measurement to assess for trabecular meshwork obstruction from red cells/clot',
+        'Sickle cell testing (Sickledex or hemoglobin electrophoresis) in at-risk populations before any IOP-lowering therapy is chosen',
+        'CT orbit/brain (thin-cut, non-contrast) when the mechanism suggests orbital fracture, globe rupture, or intraocular/orbital foreign body',
+        'Dilated fundus examination once the anterior chamber view allows and globe integrity is confirmed',
+      ],
+      initialTreatment:
+        'Immediate rigid (not pressure) shield over the affected eye, limited activity/modified bed rest with head of bed elevated 30-45 degrees, a cycloplegic agent for comfort and to reduce synechiae risk, and a topical corticosteroid to reduce inflammation and rebleed risk; NSAIDs and aspirin-containing products are strictly avoided due to increased bleeding risk.',
+      followUpSchedule:
+        'Daily follow-up visits for the first 5 days (the classic rebleed window) with IOP checks at each visit, then spaced out as the hyphema clears and IOP stabilizes.',
+      escalationCriteria: [
+        'A rebleed, classically occurring days 2-5 post-injury, often larger than the initial hemorrhage',
+        'Sustained markedly elevated IOP not controlled with medical therapy',
+        'Early corneal blood staining',
+        'Large (Grade III-IV/"8-ball") hyphema not clearing on conservative management',
+      ],
+      referralCriteria: [
+        'All but the mildest microhyphemas -> urgent ophthalmology referral for grading, IOP management, and rebleed monitoring',
+        'Suspected globe rupture or associated orbital/intraocular injury -> immediate ophthalmology referral',
+        'Sickle cell trait/disease with any IOP elevation -> urgent ophthalmology given markedly elevated risk of optic nerve damage',
+      ],
+      steroidConsiderations:
+        'A topical corticosteroid is used to reduce intraocular inflammation and lower rebleed risk during the acute healing period.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent (e.g., cyclopentolate or atropine) is used for comfort from ciliary spasm and to reduce the risk of posterior synechiae; it also facilitates the deferred dilated fundus exam once globe integrity is confirmed.',
+      complications: ['Elevated intraocular pressure (acute and chronic)', 'Corneal blood staining (especially with prolonged high IOP and large hyphema)', 'Synechiae formation', 'Secondary glaucoma', 'Optic atrophy from sustained elevated IOP', 'Amblyopia risk in young children from prolonged visual axis obstruction'],
+      monitoringParameters: ['Hyphema size/resolution', 'Intraocular pressure at essentially every visit', 'Corneal clarity (blood staining)', 'Signs of rebleeding (new or increased blood)'],
+      relatedDrugIds: ['cyclopentolate', 'atropine', 'prednisolone-acetate', 'timolol'],
+      relatedExamTechniqueIds: ['goldmann-applanation-tonometry', 'gonioscopy'],
+    },
     followUp: {
       typical: 'Daily follow-up visits for the first 5 days (the classic rebleed window) with IOP checks, then spaced out as the hyphema clears and IOP stabilizes',
       monitor: 'Hyphema size/resolution, intraocular pressure (checked at essentially every visit), corneal clarity (blood staining), and signs of rebleeding (new or increased blood)',

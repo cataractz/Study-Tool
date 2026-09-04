@@ -68,6 +68,43 @@ export const orbitLacrimalAdditional: Disease[] = [
       { category: 'Referral', detail: 'Referral to oculoplastics/orbital specialist for further workup and biopsy if the diagnosis is atypical, response to steroids is poor, or presentation raises concern for malignancy' },
       { category: 'Emergency management', detail: 'Urgent treatment and close monitoring for apical disease threatening the optic nerve, given the risk of compressive optic neuropathy' },
     ],
+    managementProtocol: {
+      workup: [
+        'CT or MRI orbits with contrast to characterize the anatomic pattern (myositic, lacrimal/dacryoadenitis, anterior, apical, or diffuse) and help exclude a sinus source or discrete mass',
+        'Thyroid function tests (TSH, free T4, TSI/TRAb) to exclude thyroid eye disease before attributing findings to idiopathic orbital inflammation',
+        'Baseline visual acuity, color vision, pupillary exam, and optic disc assessment before starting steroids, to detect apical/optic nerve involvement',
+        'Orbital biopsy reserved for atypical presentations or poor/absent response to an adequate corticosteroid trial, to exclude malignancy (especially lymphoma)',
+      ],
+      initialTreatment: 'High-dose systemic corticosteroids (prednisone approximately 1-1.5 mg/kg/day, commonly 50-100 mg/day) for roughly 1-2 weeks, which produce a rapid and often dramatic reduction in pain, proptosis, and motility restriction — typically evident within 24-48 hours in the majority of patients — followed by a gradual taper.',
+      followUpSchedule: 'Close follow-up within days of starting corticosteroids to confirm the expected dramatic clinical response; steroids are then tapered slowly over roughly 5-8 weeks (longer, up to 2-3 months, for more severe or apical disease), since a short taper is strongly associated with relapse.',
+      escalationCriteria: [
+        'Poor or absent response to an adequate corticosteroid trial — should prompt reconsideration of the diagnosis and biopsy to exclude malignancy rather than simply increasing the steroid dose',
+        'Any decline in vision or color vision, new RAPD, or optic disc edema suggesting apical disease with compressive optic neuropathy',
+        'Relapse of pain, proptosis, or motility restriction during or after the corticosteroid taper',
+        'Systemic or ocular side effects of high-dose corticosteroids requiring dose adjustment or steroid-sparing therapy',
+      ],
+      referralCriteria: [
+        'Referral to oculoplastics/orbital specialist for biopsy when the diagnosis is atypical, the steroid response is poor, or the presentation raises concern for malignancy',
+        'Referral for steroid-sparing immunosuppressive or biologic therapy in recurrent, chronic, or steroid-dependent/refractory disease',
+        'Urgent referral for apical disease threatening the optic nerve',
+      ],
+      steroidConsiderations: 'Systemic corticosteroids are first-line and typically produce dramatic improvement within 24-48 hours in the majority of patients; an extended taper (roughly 5-8 weeks, longer for severe or apical disease) is important since a short taper is strongly associated with relapse, and patients should be monitored for steroid-related side effects (hyperglycemia, gastritis, insomnia, weight gain, mood changes, bone density with prolonged courses).',
+      complications: [
+        'Persistent diplopia',
+        'Chronic proptosis',
+        'Optic neuropathy from apical disease',
+        'Orbital fibrosis with chronic sclerosing variants',
+        'Steroid-related adverse effects (hyperglycemia, osteoporosis, mood changes, adrenal suppression) with prolonged or repeated courses',
+      ],
+      monitoringParameters: [
+        'Pain and degree of proptosis',
+        'Extraocular motility and diplopia',
+        'Visual acuity, color vision, and optic disc appearance, particularly with apical involvement',
+        'Response trajectory during the corticosteroid taper (recurrence signals relapse)',
+      ],
+      relatedDrugIds: ['prednisone', 'methylprednisolone'],
+      relatedExamTechniqueIds: ['hertel-exophthalmometry', 'extraocular-motility-testing'],
+    },
     followUp: {
       typical: 'Close follow-up within days of starting corticosteroids to confirm the expected dramatic clinical response; steroids are then tapered gradually while monitoring for recurrence',
       monitor: 'Pain, proptosis, extraocular motility, visual acuity, color vision, and optic nerve appearance, particularly with apical involvement',
@@ -159,6 +196,35 @@ export const orbitLacrimalAdditional: Disease[] = [
       { category: 'Referral', detail: 'Prompt referral to oculoplastic/orbital surgery and, for suspected malignancy, multidisciplinary oncology co-management (radiation oncology, head and neck surgery) for staging and treatment planning' },
       { category: 'Observation', detail: 'Not appropriate as primary management once a lacrimal gland mass is identified — timely imaging and surgical evaluation are indicated given the risk of malignancy and the risk of recurrence/malignant transformation with delayed or incomplete excision of pleomorphic adenoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'CT orbits with contrast as the first step to characterize bony margins (smooth remodeling versus erosion) and overall mass configuration',
+        'MRI orbits with contrast to further evaluate soft-tissue extent and, in particular, perineural spread when adenoid cystic carcinoma is suspected',
+        'Complete excisional biopsy with the capsule intact, and no prior incisional biopsy, when imaging/clinical features are classic for pleomorphic adenoma',
+        'Incisional biopsy plus systemic staging workup when imaging suggests malignancy, performed before definitive surgery is planned',
+      ],
+      initialTreatment: 'Pleomorphic adenoma is treated with complete surgical excision with the tumor capsule intact and without prior incisional biopsy, which is curative in the great majority of cases. Adenoid cystic carcinoma requires radical surgical excision (often including orbital exenteration for advanced disease) combined with adjuvant radiotherapy given its propensity for perineural invasion and local recurrence.',
+      followUpSchedule: 'Pleomorphic adenoma: periodic postoperative monitoring to detect rare recurrence. Adenoid cystic carcinoma: long-term, often lifelong, oncologic surveillance with clinical exam plus periodic imaging, coordinated with oncology, given the risk of late local/perineural recurrence and distant metastasis (most often to the lungs).',
+      escalationCriteria: [
+        'New pain, growth, or sensory symptoms after treatment of a presumed pleomorphic adenoma, raising concern for recurrence or malignant transformation (carcinoma ex pleomorphic adenoma)',
+        'Any postoperative new pain, numbness, or mass recurrence after treatment of adenoid cystic carcinoma',
+        'Imaging or clinical features suggesting malignancy (rapid painful growth, bony erosion, new sensory loss) in a mass initially thought benign',
+      ],
+      referralCriteria: [
+        'Prompt referral to oculoplastic/orbital surgery for any newly identified lacrimal gland mass',
+        'Multidisciplinary oncology referral (radiation oncology, head and neck surgery) for confirmed or suspected adenoid cystic carcinoma or other malignant lacrimal gland tumor',
+      ],
+      complications: [
+        'Pleomorphic adenoma: recurrence, and rarely malignant transformation if incompletely excised or biopsied through the capsule',
+        'Adenoid cystic carcinoma: perineural spread with cranial nerve dysfunction, orbital/intracranial invasion, distant metastasis (notably to lung), and disfigurement from radical surgery (exenteration)',
+      ],
+      monitoringParameters: [
+        'Signs of recurrent orbital mass on exam',
+        'New pain or new sensory changes (suggesting perineural recurrence)',
+        'Surveillance imaging per oncologic protocol for malignant disease',
+      ],
+      relatedExamTechniqueIds: ['hertel-exophthalmometry', 'orbital-palpation-retropulsion'],
+    },
     followUp: {
       typical: 'Postoperative monitoring for pleomorphic adenoma to detect rare recurrence; long-term, often lifelong, surveillance for adenoid cystic carcinoma given its propensity for late local and perineural recurrence and distant metastasis (commonly to lung)',
       monitor: 'Signs of recurrent orbital mass, new pain, new sensory changes (perineural recurrence), and surveillance imaging per oncologic protocol for malignant disease',

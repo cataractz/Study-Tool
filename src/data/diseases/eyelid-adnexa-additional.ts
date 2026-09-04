@@ -65,6 +65,33 @@ export const eyelidAdnexaAdditional: Disease[] = [
       { category: 'Second-line treatment', detail: 'In-office destructive/excisional options for cosmetic removal: surgical excision, chemical cauterization (e.g., trichloroacetic acid), laser ablation, or cryotherapy, chosen based on lesion size and location' },
       { category: 'Referral', detail: 'Refer to oculoplastic surgery for larger or recurrent lesions requiring surgical excision, particularly when lid margin proximity raises concern for postoperative lid contour or closure issues' },
     ],
+    managementProtocol: {
+      workup: [
+        'Clinical examination to confirm the characteristic soft, flat, symmetric yellow plaque at the medial eyelid',
+        'Fasting lipid panel (total cholesterol, LDL, HDL, triglycerides), particularly in patients under 40 or with extensive/bilateral lesions',
+        'Biopsy reserved for lesions with atypical features (induration, ulceration, rapid growth, unilateral asymmetry) to exclude a malignant masquerade',
+      ],
+      initialTreatment:
+        'Observation is appropriate for small, asymptomatic, cosmetically acceptable lesions, since xanthelasma is entirely benign. A fasting lipid panel is obtained, particularly in younger patients or those with extensive/bilateral lesions, with referral to primary care for management of any identified dyslipidemia. When removal is desired for cosmesis, in-office destructive/excisional options include surgical excision, chemical cauterization (e.g., trichloroacetic acid), laser ablation, or cryotherapy.',
+      followUpSchedule:
+        'Routine follow-up at standard comprehensive exam intervals if observed; postoperative follow-up per the treating surgeon if removed.',
+      escalationCriteria: [
+        'Rapid growth, ulceration, or induration developing in a previously typical lesion, raising concern for an alternative or coexisting diagnosis',
+        'Extensive or strongly bilateral lesions, or a lesion in a patient under 40, without a documented lipid panel',
+      ],
+      referralCriteria: [
+        'Confirmed or suspected dyslipidemia on lipid screening -> primary care for systemic lipid management and cardiovascular risk reduction',
+        'Larger or recurrent lesions, or lid-margin proximity raising concern for postoperative contour/closure issues -> oculoplastic surgery for surgical excision',
+        'Atypical features (induration, ulceration, rapid growth, unilateral asymmetry) -> biopsy to exclude a malignant process',
+      ],
+      complications: [
+        'Cosmetic concern is the primary issue',
+        'Recurrence after treatment, particularly if underlying dyslipidemia remains uncontrolled',
+        'Skin pigment change or scarring after chemical cauterization/laser/surgical removal',
+      ],
+      monitoringParameters: ['Lesion size/extent', 'Recurrence after removal', 'Coexisting signs of hyperlipidemia (e.g., corneal arcus)', 'Lipid panel results if screened'],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Routine follow-up at standard comprehensive exam intervals if observed; postoperative follow-up per treating surgeon if removed',
       monitor: 'Lesion size/extent, recurrence after removal, coexisting signs of hyperlipidemia (corneal arcus)',
@@ -153,6 +180,33 @@ export const eyelidAdnexaAdditional: Disease[] = [
       { category: 'Second-line treatment', detail: 'Supportive lubrication for associated conjunctival irritation while the causative lesion is being addressed' },
       { category: 'Referral', detail: 'Refer for HIV testing/infectious disease or dermatology evaluation if lesions are extensive, atypical, giant, or recurrent, raising concern for underlying immunosuppression' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination of the lid margin to identify the causative umbilicated papule, especially in a patient with otherwise unexplained chronic unilateral follicular conjunctivitis',
+        'Expression of the lesion core to confirm the characteristic cheesy, virus-laden material when the diagnosis is uncertain',
+        'Biopsy/histopathology for atypical, giant, or treatment-resistant lesions, particularly in immunocompromised patients',
+        'HIV testing when lesions are extensive, atypical, or treatment-resistant, since these features can be a presenting sign of underlying immunosuppression',
+      ],
+      initialTreatment:
+        'Isolated, asymptomatic lesions away from the lid margin without associated conjunctivitis may be observed in immunocompetent patients, as lesions are typically self-limited. When a lid-margin lesion is driving a chronic follicular conjunctivitis, excision, curettage, or cryotherapy of the causative lesion is definitive and typically resolves the conjunctivitis; supportive lubrication addresses associated conjunctival irritation while the lesion is being treated.',
+      followUpSchedule:
+        'Reassess a few weeks after lesion removal to confirm resolution of the associated follicular conjunctivitis.',
+      escalationCriteria: [
+        'Persistent follicular conjunctivitis despite removal of the identified lesion, warranting reexamination for a missed or additional lesion',
+        'Numerous, enlarging, or atypical lesions, particularly in a patient with unknown or at-risk HIV status',
+      ],
+      referralCriteria: [
+        'Extensive, atypical, giant, or recurrent lesions -> HIV testing/infectious disease or dermatology evaluation for underlying immunosuppression',
+        'Lesions requiring removal to resolve associated conjunctivitis -> in-office excision, curettage, or cryotherapy',
+      ],
+      complications: [
+        'Chronic follicular conjunctivitis while the causative lesion remains untreated',
+        'Mild superficial punctate keratopathy, rarely progressing to corneal pannus/scarring with prolonged untreated inflammation',
+        'Autoinoculation to other skin sites with scratching',
+      ],
+      monitoringParameters: ['Resolution of follicular conjunctivitis after lesion treatment', 'Recurrence or new lesion development', 'Number/extent of lesions over time'],
+      relatedExamTechniqueIds: ['lid-eversion', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Reassess a few weeks after lesion removal to confirm resolution of the associated conjunctivitis',
       monitor: 'Resolution of the follicular conjunctivitis after treatment of the lid lesion; recurrence or new lesions',
@@ -245,6 +299,38 @@ export const eyelidAdnexaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Adjuvant radiotherapy or topical chemotherapy (e.g., mitomycin C) for extensive pagetoid conjunctival spread not amenable to complete surgical excision' },
       { category: 'Referral', detail: 'Multidisciplinary oncology co-management (including evaluation for regional lymph node involvement and, in appropriate cases, genetic counseling for Muir-Torre/Lynch syndrome) given metastatic potential' },
     ],
+    managementProtocol: {
+      workup: [
+        'Full-thickness eyelid biopsy for any atypical, recurrent, or treatment-resistant chalazion-like lesion, particularly in an older patient',
+        'Conjunctival map biopsy to assess the extent of pagetoid intraepithelial spread once carcinoma is confirmed or strongly suspected',
+        'Oil red O staining on fresh/frozen tissue when sebaceous differentiation is in question, particularly for poorly differentiated tumors',
+        'Regional lymph node examination/imaging (preauricular, submandibular, cervical) to assess for metastatic spread',
+      ],
+      initialTreatment:
+        "Urgent referral to oculoplastic surgery/ocular oncology for biopsy and definitive management. Wide surgical excision with margin control (frozen section or Mohs micrographic surgery) is primary treatment, using wider margins than for typical eyelid malignancies given the tumor's multicentric origin and pagetoid spread.",
+      followUpSchedule:
+        'Close postoperative surveillance every 3-6 months for the first several years given the substantial risk of local recurrence.',
+      escalationCriteria: [
+        'Any new lid or conjunctival lesion at or near the prior surgical site',
+        'Palpable regional lymphadenopathy',
+        'Evidence of orbital invasion (proptosis, motility restriction)',
+      ],
+      referralCriteria: [
+        'Any recurrent, atypical, or treatment-resistant chalazion-like lesion, especially in an older patient -> urgent oculoplastic surgery/ocular oncology referral for biopsy',
+        'Confirmed diagnosis -> multidisciplinary oncology co-management, including evaluation for regional lymph node involvement',
+        'Extensive local invasion or orbital involvement -> consideration of orbital exenteration',
+        'Extensive pagetoid conjunctival spread not amenable to complete surgical excision -> adjuvant radiotherapy or topical chemotherapy (e.g., mitomycin C)',
+        'Sebaceous neoplasm in a patient with a suggestive personal/family history -> genetic counseling for Muir-Torre/Lynch syndrome',
+      ],
+      complications: [
+        'Local recurrence, particularly given multicentric origin and pagetoid spread',
+        'Regional lymph node metastasis',
+        'Orbital invasion potentially requiring exenteration',
+        'Distant metastasis and mortality higher than other common eyelid malignancies',
+      ],
+      monitoringParameters: ['Local recurrence at the surgical site', 'Regional lymphadenopathy', 'New conjunctival pagetoid spread on periodic exam'],
+      relatedExamTechniqueIds: ['lid-eversion', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Close postoperative surveillance (every 3-6 months for the first several years) given the substantial risk of local recurrence',
       monitor: 'Local recurrence at the surgical site, regional lymphadenopathy, new conjunctival pagetoid spread',
@@ -341,6 +427,46 @@ export const eyelidAdnexaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Surgical debulking or laser therapy reserved for lesions refractory to medical therapy or with significant residual disfigurement after involution' },
       { category: 'Emergency management', detail: 'Prompt (urgent) treatment initiation is warranted for lesions occluding the visual axis or inducing significant astigmatism in an infant, given the narrow and time-sensitive window for preventing irreversible deprivation amblyopia' },
     ],
+    managementProtocol: {
+      workup: [
+        'Clinical examination documenting growth pattern (absent/minimal at birth, appearance and rapid growth in early infancy) to establish the diagnosis',
+        'Cycloplegic refraction to assess for lesion-induced astigmatism or anisometropia',
+        'Orbital ultrasound, MRI, or CT for deep/orbital lesions to characterize extent and evaluate for proptosis/globe compression',
+        'Visual acuity/fixation assessment and monitoring for strabismus to directly assess amblyopia risk',
+      ],
+      initialTreatment:
+        'Small lesions not threatening the visual axis, not inducing significant astigmatism, and not causing strabismus may be observed through the natural proliferation-then-involution course with close monitoring of visual development. For vision-threatening or rapidly proliferating lesions, oral propranolol has become first-line systemic therapy, producing rapid reduction in lesion size and color; topical timolol is an option for smaller, superficial, non-orbital lesions.',
+      followUpSchedule:
+        'Frequent monitoring (every few weeks to monthly) during the proliferative phase, particularly for vision-threatening lesions; less frequent once involution begins and vision is stable.',
+      escalationCriteria: [
+        'Any sign of visual axis occlusion, poor fixation, or new strabismus in an infant',
+        'Continued rapid growth or new/worsening astigmatism on cycloplegic refraction',
+        'Failure to respond to beta blocker therapy',
+      ],
+      referralCriteria: [
+        'Any lesion occluding or threatening the visual axis, inducing significant astigmatism/anisometropia, causing strabismus, or growing rapidly -> urgent pediatric ophthalmology referral given the time-sensitive risk of deprivation amblyopia',
+        'Beta blocker therapy contraindicated or insufficient -> consideration of intralesional or systemic corticosteroid therapy',
+        'Residual disfigurement after involution or lesions refractory to medical therapy -> surgical debulking or laser therapy',
+      ],
+      steroidConsiderations:
+        'Intralesional or systemic corticosteroid therapy is reserved as second-line treatment when beta blocker therapy is contraindicated (e.g., a comorbid cardiac or respiratory condition) or insufficient, since oral propranolol has largely replaced corticosteroids as first-line systemic therapy given its more favorable efficacy and safety profile.',
+      complications: [
+        'Deprivation amblyopia from visual axis occlusion',
+        'Astigmatic/anisometropic amblyopia',
+        'Strabismus',
+        'Residual skin changes (telangiectasia, fibrofatty tissue, atrophic scarring) after involution',
+        'Bradycardia, hypotension, hypoglycemia, or bronchospasm with oral propranolol, requiring monitored initiation',
+      ],
+      monitoringParameters: [
+        'Lesion size and visual axis involvement',
+        'Cycloplegic refraction for induced astigmatism/anisometropia',
+        'Fixation behavior and evidence of amblyopia',
+        'Strabismus',
+        'Cardiorespiratory status with systemic beta blocker therapy',
+      ],
+      relatedDrugIds: ['propranolol', 'timolol'],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'fixation-preference-occlusion-testing'],
+    },
     followUp: {
       typical: 'Frequent monitoring (every few weeks to monthly) during the proliferative phase, particularly for vision-threatening lesions; less frequent once involution begins and vision is stable',
       monitor: 'Lesion size, visual axis involvement, cycloplegic refraction for induced astigmatism/anisometropia, fixation behavior and evidence of amblyopia, strabismus',

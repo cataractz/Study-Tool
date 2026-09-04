@@ -68,6 +68,33 @@ export const orbitLacrimalAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Canaliculotomy (surgical incision/slitting of the canaliculus with thorough curettage of all concretions) for refractory or recurrent cases not resolved by conservative expression and curettage' },
       { category: 'Referral', detail: 'Refer to oculoplastics for canalicular curettage or canaliculotomy when concretions cannot be adequately expressed in the office or when disease recurs after initial treatment' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with digital compression of the canaliculus to elicit the pouting punctum and expressible concretions',
+        'Gram stain and culture of expressed concretions, particularly to identify Actinomyces israelii',
+        'Nasolacrimal irrigation/probing to confirm patency of the remainder of the drainage system and exclude concurrent nasolacrimal duct obstruction or dacryocystitis',
+        'Canalicular curettage of expressed concretions for histopathologic confirmation when the diagnosis remains uncertain',
+      ],
+      initialTreatment: 'Mechanical expression and curettage of canalicular concretions is essential, combined with topical (and, for more significant inflammation, systemic oral) antibiotics with activity against the causative organism, most classically Actinomyces israelii; antibiotics alone rarely clear the infection because the concretions sequester organisms from antimicrobial penetration.',
+      followUpSchedule: 'Recheck within 1-2 weeks after expression/curettage and initiation of antibiotics to confirm resolution of discharge, erythema, and the pouting punctum; recurrence of symptoms or concretions warrants repeat curettage or canaliculotomy.',
+      escalationCriteria: [
+        'Persistent discharge or a pouting punctum despite expression/curettage and antibiotics, suggesting retained concretions',
+        'Recurrent symptoms after apparent resolution',
+        'Inability to adequately express concretions in the office',
+      ],
+      referralCriteria: [
+        'Refer to oculoplastics for canalicular curettage or canaliculotomy when concretions cannot be adequately expressed in the office or disease recurs after initial treatment',
+      ],
+      complications: [
+        'Canalicular scarring or stenosis with chronic untreated inflammation',
+        'Chronic recurrent conjunctivitis-like symptoms if unrecognized',
+        'Rarely, secondary dacryocystitis',
+      ],
+      monitoringParameters: [
+        'Resolution of punctal pouting, discharge, and periocular erythema/tenderness',
+        'Recurrence of expressible concretions on canalicular massage',
+      ],
+    },
     followUp: {
       typical: 'Recheck within 1-2 weeks after expression/curettage and initiation of antibiotics to confirm resolution of discharge and erythema',
       monitor: 'Resolution of punctal pouting, discharge, and periocular erythema/tenderness; recurrence of expressible concretions',
@@ -161,6 +188,41 @@ export const orbitLacrimalAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Refer to oculoplastics/ocular oncology for biopsy when chronic, progressive, or atypical lacrimal gland enlargement cannot be confidently distinguished from a lacrimal gland tumor or orbital lymphoma; refer to rheumatology for systemic workup and management once a systemic inflammatory cause is identified or suspected' },
       { category: 'Advanced treatment', detail: 'Treatment of the identified underlying systemic disease (e.g., systemic immunosuppression for sarcoidosis or IgG4-related disease, systemic management of Sjögren syndrome) in coordination with rheumatology/internal medicine' },
     ],
+    managementProtocol: {
+      workup: [
+        'CT or MRI orbit with contrast to characterize the pattern of gland enlargement and help exclude a lacrimal gland tumor or lymphoma',
+        'Viral serology (EBV heterophile/Monospot, EBV-specific IgM; mumps IgM) when an acute viral cause is suspected in the setting of concurrent systemic illness',
+        'Serum ACE and chest imaging when sarcoidosis is suspected; serum IgG4 level and SSA/SSB autoantibody testing when chronic, particularly bilateral, dacryoadenitis raises concern for IgG4-related disease or Sjögren syndrome',
+        'Incisional or excisional biopsy when imaging is atypical or malignancy/lymphoma cannot be confidently excluded clinically or radiographically',
+      ],
+      initialTreatment: 'Acute viral dacryoadenitis (EBV, mumps) is managed supportively with cool compresses, lubrication, and treatment of the underlying viral illness, as it is typically self-limited; acute bacterial dacryoadenitis requires systemic antibiotics covering Staphylococcus and Streptococcus, with incision and drainage if a discrete abscess forms. Chronic dacryoadenitis is treated with systemic corticosteroids and, for refractory or relapsing disease, steroid-sparing immunosuppressive therapy once the underlying systemic disease is identified, coordinated with rheumatology.',
+      followUpSchedule: 'Acute viral dacryoadenitis: recheck in 1-2 weeks to confirm resolution alongside the systemic illness. Chronic dacryoadenitis: periodic monitoring, often every few months, in coordination with rheumatology while managing the underlying systemic disease.',
+      escalationCriteria: [
+        'Failure of acute swelling to improve with supportive care (viral) or antibiotics (bacterial) within the expected 1-2 week window',
+        'Progressive or asymmetric enlargement in chronic disease, raising concern for a lacrimal gland tumor or lymphoma rather than inflammatory dacryoadenitis',
+        'Rapidly progressive, painful, or markedly asymmetric enlargement suggesting malignancy or a developing abscess',
+        'Diplopia or optic nerve compromise from marked gland enlargement',
+      ],
+      referralCriteria: [
+        'Refer to oculoplastics/ocular oncology for biopsy when chronic, progressive, or atypical lacrimal gland enlargement cannot be confidently distinguished from a lacrimal gland tumor or orbital lymphoma',
+        'Refer to rheumatology for systemic workup and management once sarcoidosis, IgG4-related disease, or Sjögren syndrome is identified or suspected',
+      ],
+      steroidConsiderations: 'Systemic corticosteroids are first-line for chronic inflammatory dacryoadenitis due to sarcoidosis, IgG4-related disease, or Sjögren syndrome; steroid-sparing immunosuppressive therapy is added for refractory, relapsing, or steroid-dependent disease, generally coordinated with rheumatology. Steroids are not indicated for acute viral dacryoadenitis, which is self-limited.',
+      complications: [
+        'Dry eye from glandular dysfunction',
+        'Mechanical ptosis while the gland is swollen',
+        'Rarely, abscess formation with bacterial dacryoadenitis',
+        'Systemic complications of the underlying disease (sarcoidosis, IgG4-related disease, Sjögren syndrome) when chronic',
+      ],
+      monitoringParameters: [
+        'Size and tenderness of the lacrimal gland',
+        'Lid contour/degree of S-shaped ptosis',
+        'Extraocular motility',
+        'Systemic disease activity markers relevant to the identified underlying cause',
+      ],
+      relatedDrugIds: ['prednisone'],
+      relatedExamTechniqueIds: ['marginal-reflex-distance'],
+    },
     followUp: {
       typical: 'Acute viral dacryoadenitis: recheck in 1-2 weeks to confirm resolution alongside the systemic illness. Chronic dacryoadenitis: periodic monitoring (often every few months) in coordination with rheumatology while managing the underlying systemic disease.',
       monitor: 'Size and tenderness of the lacrimal gland, lid contour/ptosis, extraocular motility, and systemic disease activity markers relevant to the identified underlying cause',

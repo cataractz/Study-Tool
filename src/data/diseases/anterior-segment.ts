@@ -193,6 +193,33 @@ export const anteriorSegmentDiseases: Disease[] = [
       { category: 'Second-line treatment', detail: 'Oral NSAIDs for recurrent or persistent cases not responding to topical therapy' },
       { category: 'Referral', detail: 'Refer for systemic workup if recurrent, bilateral, or associated with symptoms suggestive of underlying autoimmune disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Phenylephrine 2.5-10% blanching test to confirm superficial episcleral (not scleral) vessel involvement',
+        'Slit lamp examination to assess vessel pattern/mobility and confirm a quiet anterior chamber',
+        'Targeted systemic workup (ESR, CRP, RF, ANA, uric acid) only if recurrent or bilateral',
+      ],
+      initialTreatment:
+        'Most cases are mild and self-limited, managed with artificial tears and reassurance alone; a topical NSAID or a mild topical corticosteroid (loteprednol or fluorometholone) is added for more symptomatic or nodular presentations.',
+      followUpSchedule:
+        'Recheck in 1-2 weeks if treated, or sooner if symptoms worsen; most cases do not require a scheduled recheck if resolving as expected within 1-3 weeks.',
+      escalationCriteria: [
+        'Development of true deep, boring, or nocturnal pain (suggests evolution toward or misdiagnosis of scleritis)',
+        'Episcleral vessels failing to blanch with phenylephrine on repeat testing',
+        'Lack of improvement after 3 weeks of observation/topical therapy',
+        'Recurrent (multiple episodes) or bilateral presentation',
+      ],
+      referralCriteria: [
+        'Recurrent or bilateral episodes, or symptoms suggesting underlying autoimmune disease -> primary care/rheumatology for systemic workup',
+        'Non-blanching vessels or true boring pain -> re-evaluate as scleritis and manage accordingly',
+      ],
+      steroidConsiderations:
+        'A short course of a mild topical corticosteroid (loteprednol etabonate or fluorometholone) can be used for symptomatic or nodular episcleritis not responding to lubrication alone; given the benign, self-limited course, prolonged steroid use is unnecessary and best avoided.',
+      complications: ['Rare; episcleritis does not cause scleral thinning or vision loss', 'Recurrence, sometimes alternating eyes'],
+      monitoringParameters: ['Resolution of redness and irritation', 'Pain character at each visit (watch for evolution toward scleritis)', 'Recurrence frequency and laterality'],
+      relatedDrugIds: ['loteprednol-etabonate', 'fluorometholone', 'ketorolac'],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Recheck in 1-2 weeks if treated, or sooner if symptoms worsen or fail to improve as expected',
       monitor: 'Resolution of redness and irritation, development of pain (which would suggest evolution toward or misdiagnosis of scleritis)',
@@ -286,6 +313,41 @@ export const anteriorSegmentDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Phacoemulsification with intraocular lens (IOL) implantation is the definitive treatment once the cataract significantly impacts visual function, daily activities, or driving safety' },
       { category: 'Referral', detail: 'Refer to ophthalmology/cataract surgeon when visual impairment interferes with daily activities, occupational needs, or safety (e.g., driving), or when cataract precludes adequate monitoring/treatment of coexisting posterior segment disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Best corrected visual acuity and manifest refraction to quantify functional impact',
+        'Slit lamp biomicroscopy with dilated pupil to classify lens opacity (nuclear, cortical, posterior subcapsular)',
+        'Glare/brightness acuity testing when subjective glare complaints exceed what standard acuity would predict',
+        'Potential acuity meter or retinal function testing when a dense cataract limits fundus view, to estimate post-surgical visual potential',
+        'Optical biometry (axial length, keratometry) once surgery is being planned, for IOL power calculation',
+      ],
+      initialTreatment:
+        'No medical therapy reverses or halts cataract progression; early management is an updated spectacle prescription, brighter lighting, and anti-glare tints. Once the cataract significantly impacts visual function, daily activities, or driving safety, phacoemulsification with intraocular lens implantation is the definitive treatment.',
+      followUpSchedule:
+        'Annually for mild, non-visually-significant cataracts, shortening to every 6-12 months as density increases; post-operatively, follow the surgeon-directed schedule (typically day 1, week 1, and 1 month) to assess healing, refractive outcome, and IOP.',
+      escalationCriteria: [
+        'Progressive decline in best-corrected acuity or worsening glare affecting reading, driving, or occupational tasks',
+        'Rapid progression (diabetic, steroid-induced, or traumatic cataract) outpacing routine monitoring intervals',
+        'Cataract density precluding adequate monitoring or treatment of comorbid retinal/optic nerve disease',
+        'Signs of a hypermature/intumescent lens (phacomorphic angle-closure risk) or leaking lens proteins (phacolytic glaucoma)',
+      ],
+      referralCriteria: [
+        'Visual impairment interfering with daily activities, occupational needs, or driving safety -> cataract surgeon',
+        'Cataract obscuring monitoring/treatment of coexisting posterior segment or optic nerve disease -> ophthalmology',
+        'Phacomorphic or phacolytic secondary glaucoma -> urgent ophthalmology referral',
+      ],
+      steroidConsiderations:
+        'A topical corticosteroid (e.g., prednisolone acetate) combined with a topical antibiotic (e.g., moxifloxacin) is standard post-operative anti-inflammatory/infection prophylaxis following phacoemulsification, tapered over several weeks per the surgeon\'s protocol.',
+      complications: [
+        'Posterior capsule opacification (most common long-term complication after surgery)',
+        'Endophthalmitis (rare but sight-threatening post-operative complication)',
+        'Cystoid macular edema (Irvine-Gass syndrome) post-operatively',
+        'Phacomorphic glaucoma (lens intumescence causing angle closure) or phacolytic glaucoma (leaking lens proteins) if a dense cataract is left untreated',
+      ],
+      monitoringParameters: ['Best corrected visual acuity', 'Glare/contrast sensitivity symptoms', 'Cataract density and morphology on slit lamp', 'Functional impact on daily activities and driving'],
+      relatedDrugIds: ['prednisolone-acetate', 'moxifloxacin'],
+      relatedExamTechniqueIds: ['potential-acuity-meter', 'brightness-acuity-testing', 'optical-biometry'],
+    },
     followUp: {
       typical: 'Annually for mild, non-visually-significant cataracts; every 6-12 months as density increases and impact on function grows',
       monitor: 'Best corrected visual acuity, glare symptoms, impact on daily function/driving, cataract density and morphology on slit lamp',
@@ -378,6 +440,42 @@ export const anteriorSegmentDiseases: Disease[] = [
       { category: 'Emergency management', detail: 'Hyperacute bacterial conjunctivitis with copious purulent discharge (suspected N. gonorrhoeae) requires urgent systemic antibiotic therapy and same-day evaluation due to risk of rapid corneal perforation; neonatal conjunctivitis requires urgent evaluation for gonococcal or chlamydial infection' },
       { category: 'Referral', detail: 'Refer for suspected hyperacute gonococcal conjunctivitis, corneal involvement (infiltrate, ulceration, significant subepithelial infiltrates), or vernal/atopic keratoconjunctivitis with corneal shield ulcer' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination to characterize conjunctival reaction pattern (follicular vs. papillary), discharge, and corneal involvement',
+        'Preauricular lymph node palpation to help distinguish viral from bacterial etiology',
+        'Corneal fluorescein staining to exclude a concurrent epithelial defect or infiltrate',
+        'Conjunctival culture/Gram stain reserved for severe, recurrent, hyperacute (suspected gonococcal), neonatal, or treatment-resistant bacterial cases',
+        'Adenovirus point-of-care immunoassay when viral diagnosis is uncertain and confirmation would change counseling/antibiotic use',
+      ],
+      initialTreatment:
+        'Viral: supportive care with cool compresses, artificial tears, and strict hygiene/contagion precautions; no antiviral typically needed for adenoviral disease. Bacterial: topical broad-spectrum antibiotic (e.g., trimethoprim-polymyxin B or a fluoroquinolone) to shorten duration and reduce transmission. Allergic: topical dual-action antihistamine/mast cell stabilizer (e.g., olopatadine) plus cool compresses, with oral antihistamines for systemic allergy symptoms.',
+      followUpSchedule:
+        'Bacterial: recheck in 3-5 days if not improving on antibiotics. Viral: recheck in 1-2 weeks, or sooner if vision decreases or pain develops (suggesting subepithelial infiltrates). Allergic: as needed based on symptom control, more frequent during peak allergy season.',
+      escalationCriteria: [
+        'Significant pain, photophobia, or decreased vision at any point (atypical for simple conjunctivitis)',
+        'Corneal infiltrate or epithelial defect on fluorescein staining',
+        'Copious, rapidly progressive purulent discharge (concern for hyperacute gonococcal conjunctivitis)',
+        'Lack of improvement after an appropriate course of topical antibiotic (bacterial) or worsening symptoms (viral/allergic)',
+        'Any corneal involvement in a contact lens wearer',
+      ],
+      referralCriteria: [
+        'Suspected hyperacute gonococcal conjunctivitis -> urgent same-day evaluation and systemic antibiotic therapy',
+        'Corneal infiltrate, ulceration, or significant visually-limiting subepithelial infiltrates -> ophthalmology',
+        'Vernal/atopic keratoconjunctivitis with corneal shield ulcer -> ophthalmology',
+        'Suspected neonatal gonococcal or chlamydial conjunctivitis -> urgent pediatric/ophthalmology evaluation',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids are not first-line and should be specialist-guided: a short course may be used for visually significant adenoviral subepithelial infiltrates or for severe allergic/vernal flares, but routine use in uncomplicated viral or bacterial conjunctivitis risks prolonging viral shedding or masking an underlying keratitis.',
+      complications: [
+        'Viral: subepithelial infiltrates causing persistent glare/blur, pseudomembrane formation',
+        'Bacterial: rare corneal involvement if severe or untreated; risk of rapid corneal perforation with hyperacute gonococcal disease',
+        'Allergic: corneal shield ulcer and scarring in severe untreated vernal keratoconjunctivitis',
+      ],
+      monitoringParameters: ['Resolution of discharge and injection', 'Development of corneal involvement (infiltrates, staining)', 'Visual acuity', 'Contagion precautions/school-work exclusion status (viral)'],
+      relatedDrugIds: ['polymyxin-b-trimethoprim', 'moxifloxacin', 'olopatadine', 'ketotifen', 'loteprednol-etabonate'],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Bacterial: recheck in 3-5 days if not improving on antibiotics. Viral: recheck in 1-2 weeks or sooner if vision decreases or pain develops (subepithelial infiltrates). Allergic: as needed based on symptom control, more frequent during peak allergy season',
       monitor: 'Resolution of discharge and injection, development of corneal involvement (infiltrates, staining), vision changes',

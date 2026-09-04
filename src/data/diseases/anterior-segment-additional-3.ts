@@ -69,6 +69,38 @@ export const anteriorSegmentAdditional3: Disease[] = [
       { category: 'Referral', detail: 'Refer to pulmonology/internal medicine or rheumatology for systemic workup and management once ocular sarcoidosis is suspected or confirmed; refer to a uveitis specialist for posterior segment involvement, vasculitis, or recalcitrant disease' },
       { category: 'Emergency management', detail: 'Urgent evaluation for retinal neovascularization, vitreous hemorrhage, or markedly elevated IOP from granulomatous trabeculitis/synechial angle closure' },
     ],
+    managementProtocol: {
+      workup: [
+        'Chest X-ray or CT chest to evaluate for hilar/mediastinal adenopathy and pulmonary infiltrates',
+        'Serum ACE and lysozyme as supportive (not definitive) markers of granulomatous burden',
+        'Tissue biopsy of an accessible site (conjunctival nodule, lacrimal gland, or lymph node) for definitive histopathologic confirmation when feasible',
+        'PPD/IGRA and treponemal serology to exclude tuberculosis and syphilis before initiating immunosuppression',
+        'Serum calcium and 24-hour urine calcium to screen for hypercalcemia/hypercalciuria',
+      ],
+      initialTreatment:
+        'Topical corticosteroid (e.g., prednisolone acetate) with cycloplegia for isolated anterior involvement, with frequency and taper guided by cell/flare severity and KP burden. Periocular or intravitreal corticosteroid is used for intermediate/posterior involvement or macular edema, and oral corticosteroids for panuveitis or bilateral/vision-threatening disease.',
+      followUpSchedule:
+        'Recheck in 1-2 weeks after initiating treatment for active anterior involvement, then extend intervals as inflammation quiets; patients with systemic disease require ongoing multidisciplinary monitoring alongside pulmonology/rheumatology.',
+      escalationCriteria: [
+        'New or worsening vitritis or vitreous haze',
+        'Active or progressive retinal vasculitis (periphlebitis) on dilated exam or angiography',
+        'Development of cystoid macular edema',
+        'Retinal neovascularization or vitreous hemorrhage',
+      ],
+      referralCriteria: [
+        'Suspected or confirmed ocular sarcoidosis -> pulmonology/internal medicine or rheumatology for systemic workup and management',
+        'Posterior segment involvement, active vasculitis, or recalcitrant disease -> uveitis specialist',
+        'Retinal neovascularization or vitreous hemorrhage -> urgent retina evaluation',
+      ],
+      steroidConsiderations:
+        'Topical prednisolone acetate is first-line for isolated anterior disease; periocular/intravitreal or oral corticosteroid is used for intermediate/posterior/panuveitis. Steroid-sparing systemic immunomodulatory therapy (methotrexate, mycophenolate, azathioprine, or anti-TNF biologics such as infliximab/adalimumab) is added for chronic, steroid-dependent, or sight-threatening disease.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent is paired with topical corticosteroid for anterior involvement to relieve ciliary spasm and reduce the risk of posterior synechiae, which are common given the granulomatous inflammatory burden.',
+      complications: ['Posterior synechiae', 'Secondary glaucoma (open-angle from trabecular granulomas or angle-closure from synechiae)', 'Cataract', 'Cystoid macular edema', 'Band keratopathy (especially with hypercalcemia)', 'Retinal neovascularization and vitreous hemorrhage from ischemic vasculitis', 'Optic nerve granuloma'],
+      monitoringParameters: ['Anterior chamber cell/flare', 'Intraocular pressure', 'Vitreous haze/cell grade', 'Retinal vasculitis activity on dilated exam or fluorescein angiography', 'Development of cystoid macular edema'],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'methotrexate', 'mycophenolate', 'infliximab', 'adalimumab', 'triamcinolone-intravitreal'],
+      relatedExamTechniqueIds: ['uveitis-laboratory-workup', 'anterior-chamber-cell-flare-grading'],
+    },
     followUp: {
       typical: 'Recheck in 1-2 weeks after initiating treatment for active anterior involvement, then extend intervals as inflammation quiets; patients with systemic disease require ongoing multidisciplinary monitoring',
       monitor: 'Anterior chamber cell/flare, IOP, vitreous haze/cells, retinal vasculitis activity on dilated exam or fluorescein angiography, development of cystoid macular edema',
@@ -161,6 +193,34 @@ export const anteriorSegmentAdditional3: Disease[] = [
       { category: 'Advanced treatment', detail: 'Cataract extraction when visually significant cataract develops; generally well tolerated with good outcomes, though the fragile angle/iris vessels carry a higher risk of intraoperative or postoperative hyphema, and eyes are prone to reduced endothelial cell reserve' },
       { category: 'Referral', detail: 'Refer to cataract surgeon when lens opacity becomes visually significant; refer to glaucoma specialist if secondary open-angle glaucoma is uncontrolled on topical therapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination to identify the diffuse fine stellate KP pattern and confirm absence of synechiae',
+        'Iris transillumination to assess degree of iris stromal/pigment epithelial atrophy',
+        'Gonioscopy to confirm an open, non-synechial angle and identify fragile angle vessels',
+        'Intraocular pressure measurement and optic nerve evaluation to screen for secondary open-angle glaucoma',
+        'Aqueous humor rubella antibody testing (Goldmann-Witmer coefficient) in atypical or referral settings, though not routinely required for clinical diagnosis',
+      ],
+      initialTreatment:
+        'The uveitis itself is classically NOT treated with chronic topical corticosteroids, since the inflammation is low-grade and largely steroid-unresponsive; observation is the mainstay of management for the inflammation. A brief, cautious steroid trial may be considered only for a rare symptomatic acute flare.',
+      followUpSchedule:
+        'Routine monitoring every 6-12 months given the chronic, low-grade, largely stable nature of the inflammation, with more frequent visits if cataract or IOP elevation is progressing.',
+      escalationCriteria: [
+        'Rising intraocular pressure or glaucomatous optic nerve changes on serial exam',
+        'Rapidly progressive or visually significant cataract',
+        'A rare acute symptomatic flare with a marked increase in inflammation',
+      ],
+      referralCriteria: [
+        'Visually significant cataract -> cataract surgeon (counsel regarding elevated hyphema risk from fragile angle/iris vessels)',
+        'Secondary open-angle glaucoma uncontrolled on topical therapy -> glaucoma specialist',
+      ],
+      steroidConsiderations:
+        'Chronic topical corticosteroid use should be AVOIDED for the uveitis itself, since the inflammation is largely steroid-unresponsive and unnecessary steroid exposure only adds glaucoma risk without altering the disease course; reserve a brief, cautious trial for the rare acute symptomatic flare.',
+      complications: ['Cataract (most common, often posterior subcapsular)', 'Secondary open-angle glaucoma', 'Vitreous opacities/floaters', 'Spontaneous or surgery-related hyphema (Amsler sign) from fragile angle/iris vessels'],
+      monitoringParameters: ['Intraocular pressure and optic nerve status', 'Cataract progression', 'Vitreous cell/floater symptoms'],
+      relatedDrugIds: ['timolol', 'latanoprost'],
+      relatedExamTechniqueIds: ['iris-transillumination-testing', 'gonioscopy'],
+    },
     followUp: {
       typical: 'Routine monitoring every 6-12 months given the chronic, low-grade, largely stable nature of the inflammation, with more frequent visits if cataract or IOP elevation is progressing',
       monitor: 'IOP and optic nerve status (glaucoma surveillance), cataract progression, vitreous cell/floater symptoms',
@@ -254,6 +314,38 @@ export const anteriorSegmentAdditional3: Disease[] = [
       { category: 'Referral', detail: 'Refer to infectious disease for coordinated systemic treatment, staging, and follow-up serology; offer and coordinate HIV testing given the strong epidemiologic association; report to public health authorities per local requirements and initiate partner notification' },
       { category: 'Emergency management', detail: 'Vision-threatening presentations (placoid chorioretinitis involving the macula, severe panuveitis, optic neuritis) warrant urgent same-day/inpatient initiation of systemic penicillin therapy in coordination with infectious disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Non-treponemal serology (RPR or VDRL) for initial screening and as a quantitative marker of disease activity',
+        'Treponemal serology (FTA-ABS, TPPA, or treponemal EIA/CIA) for confirmatory diagnosis',
+        'HIV testing, given the strong epidemiologic association with ocular syphilis',
+        'Lumbar puncture with CSF analysis (VDRL, cell count, protein), since ocular involvement is considered a form of neurosyphilis',
+        'Fluorescein angiography and OCT to characterize the placoid chorioretinal lesion and monitor treatment response',
+      ],
+      initialTreatment:
+        'Systemic penicillin therapy using the neurosyphilis treatment regimen (high-dose intravenous aqueous crystalline penicillin G) is indicated regardless of whether CSF confirms neurosyphilis, since ocular involvement is treated as a neurosyphilis-equivalent presentation. A topical corticosteroid and cycloplegic agent may be used adjunctively for anterior chamber inflammation, but systemic antimicrobial therapy is the essential treatment and must not be delayed or substituted.',
+      followUpSchedule:
+        'Close monitoring during systemic treatment, with ophthalmic follow-up to assess resolution of intraocular inflammation and serial non-treponemal titers (RPR/VDRL) at defined intervals to confirm adequate treatment response.',
+      escalationCriteria: [
+        'Failure of RPR/VDRL titers to decline appropriately after treatment',
+        'Persistent or worsening intraocular inflammation despite systemic therapy',
+        'New neurologic symptoms suggesting inadequately treated neurosyphilis',
+      ],
+      referralCriteria: [
+        'All confirmed or strongly suspected cases -> infectious disease for coordinated systemic treatment, staging, and follow-up serology',
+        'HIV testing should always be offered and coordinated given the strong epidemiologic overlap',
+        'Vision-threatening presentations (macular placoid lesion, severe panuveitis, optic neuritis) -> urgent same-day/inpatient referral',
+        'Report to public health authorities per local requirements and initiate partner notification',
+      ],
+      steroidConsiderations:
+        'A topical corticosteroid may be used adjunctively for anterior chamber inflammation, but systemic penicillin therapy is the essential treatment and must never be delayed or substituted with steroid alone.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent is used adjunctively for anterior involvement to relieve ciliary spasm/pain and photophobia.',
+      complications: ['Macular scarring and chorioretinal atrophy following placoid chorioretinitis', 'Optic atrophy', 'Cataract', 'Secondary glaucoma', 'Permanent Argyll Robertson pupillary changes and other neurologic sequelae in neurosyphilis'],
+      monitoringParameters: ['Anterior chamber and vitreous inflammation', 'Visual acuity', 'Resolution of the placoid chorioretinal lesion on exam/OCT', 'Quantitative non-treponemal (RPR/VDRL) titer trend'],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'oct-macula', 'pupillary-examination', 'uveitis-laboratory-workup'],
+    },
     followUp: {
       typical: 'Close monitoring during systemic treatment, with ophthalmic follow-up to assess resolution of intraocular inflammation and serial non-treponemal titers (RPR/VDRL) at defined intervals to confirm adequate treatment response',
       monitor: 'Anterior chamber and vitreous inflammation, visual acuity, resolution of the placoid chorioretinal lesion on exam/OCT, quantitative non-treponemal titer trend',

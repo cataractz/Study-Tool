@@ -198,6 +198,41 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Incision and curettage (chalazion) or incision and drainage (hordeolum) for lesions not responding to conservative and medical therapy, typically after 3-4 weeks of failed conservative management for chalazion' },
       { category: 'Referral', detail: 'Refer for biopsy if recurrent at the same location, atypical in appearance, or unresponsive to standard treatment, to rule out sebaceous gland carcinoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination with lid eversion to localize the lesion relative to the tarsal plate and meibomian gland',
+        'Palpation to assess consistency, mobility, and tenderness (firm/mobile/non-tender favors chalazion; tender/warm/fluctuant favors hordeolum)',
+        'Assessment for underlying blepharitis/MGD as a contributing and recurrence-driving factor',
+        'Biopsy for any lesion that is atypical, recurs at the same site, or fails to resolve after 3-4 weeks of conservative therapy, to exclude sebaceous gland carcinoma',
+      ],
+      initialTreatment:
+        'Warm compresses (10-15 minutes, several times daily) with gentle massage are first-line and often curative for both chalazion and hordeolum; lid hygiene addresses underlying blepharitis/MGD. Topical antibiotic ointment is added for hordeolum with associated blepharitis or suspected secondary infection, and oral antibiotics if evolving toward preseptal cellulitis.',
+      followUpSchedule:
+        'Reassess in 2-4 weeks after initiating warm compresses to judge response; sooner (days) for an acutely worsening hordeolum concerning for spreading infection.',
+      escalationCriteria: [
+        'Chalazion persists beyond 3-4 weeks of consistent warm compresses and lid hygiene',
+        'Hordeolum not improving or worsening (increasing erythema/swelling) after several days of warm compresses',
+        'Signs of spreading infection (diffuse lid erythema/warmth beyond the focal lesion, fever) suggesting evolution to preseptal cellulitis',
+        'Recurrence at the same site after treatment',
+      ],
+      referralCriteria: [
+        'Persistent chalazion after 3-4 weeks of conservative therapy -> intralesional corticosteroid injection or incision and curettage',
+        'Recurrent lesion at the same site, atypical appearance, or unresponsive to standard treatment -> biopsy to exclude sebaceous gland carcinoma',
+        'Evolving preseptal or orbital cellulitis -> urgent escalation of antibiotic therapy/same-day evaluation',
+      ],
+      steroidConsiderations:
+        'Intralesional triamcinolone acetonide injection is an effective second-line option for a persistent chalazion not resolving with warm compresses, often tried before incision and curettage; risks include local skin depigmentation/fat atrophy and, rarely, retinal artery occlusion with inadvertent intravascular injection, so injection technique is used to avoid vascular placement.',
+      complications: [
+        'Induced astigmatism from large chalazia pressing on the globe',
+        'Recurrence, particularly with unaddressed underlying blepharitis/MGD',
+        'Progression to preseptal cellulitis (rare, more with hordeolum)',
+        'Scarring or lid contour irregularity after incision/drainage',
+        'Skin depigmentation or fat atrophy at an intralesional steroid injection site',
+      ],
+      monitoringParameters: ['Lesion size and resolution', 'Tenderness/inflammatory signs', 'Recurrence at the same site', 'Underlying blepharitis/MGD control'],
+      relatedDrugIds: ['erythromycin-ophthalmic', 'triamcinolone-intravitreal'],
+      relatedExamTechniqueIds: ['lid-eversion', 'meibomian-gland-evaluation', 'lid-margin-blepharitis-assessment'],
+    },
     followUp: {
       typical: 'Reassess in 2-4 weeks after initiating warm compresses; sooner if worsening acute hordeolum',
       monitor: 'Size, tenderness, resolution, recurrence at the same site',
@@ -286,6 +321,37 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Definitive surgical repair (e.g., horizontal lid tightening with lateral tarsal strip procedure for involutional entropion; posterior lamellar grafting for cicatricial entropion) is curative and the treatment of choice' },
       { category: 'Referral', detail: 'Refer to oculoplastic surgery for surgical correction, especially with corneal involvement or cicatricial etiology requiring specialized reconstruction' },
     ],
+    managementProtocol: {
+      workup: [
+        'Lid distraction and snap-back testing to quantify horizontal lid laxity and support involutional etiology',
+        'Forced lid closure/eyelid squeeze test to elicit intermittent or early entropion not apparent at rest',
+        'Slit lamp examination with fluorescein staining to document corneal involvement and urgency of correction',
+        'Eyelid eversion and conjunctival exam to identify cicatricial features (symblepharon, fornix foreshortening) suggesting an underlying scarring process',
+      ],
+      initialTreatment:
+        'Lubrication (artificial tears by day, ointment at night) protects the ocular surface while awaiting definitive repair; temporary lower lid taping or botulinum toxin injection into the pretarsal orbicularis can provide short-term relief, particularly for spastic or early intermittent entropion. Surgical repair, not conservative measures, is the definitive treatment.',
+      followUpSchedule:
+        'Every few weeks while managed conservatively pending surgery; postoperative follow-up per the operating surgeon protocol.',
+      escalationCriteria: [
+        'Worsening corneal staining or a new epithelial defect on conservative therapy',
+        'Constant (no longer intermittent) inward lid rotation',
+        'Recurrent abrasion despite lubrication and temporary measures',
+      ],
+      referralCriteria: [
+        'Any confirmed entropion with corneal involvement -> oculoplastic surgery for definitive surgical repair (e.g., lateral tarsal strip for involutional entropion)',
+        'Cicatricial entropion or underlying cicatrizing conjunctival disease -> oculoplastic surgery for posterior lamellar grafting and specialized reconstruction',
+        'Corneal ulceration or significant epithelial defect -> expedited/urgent referral',
+      ],
+      complications: [
+        'Corneal abrasion and punctate keratopathy from chronic lash/lid margin contact',
+        'Corneal scarring and vascularization with long-standing untreated disease',
+        'Secondary microbial keratitis/ulceration',
+        'Recurrence after surgical repair, particularly in cicatricial disease',
+      ],
+      monitoringParameters: ['Corneal integrity/staining', 'Symptom severity', 'Lid margin position (constant vs. intermittent)', 'Lid laxity on distraction/snap-back testing'],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['lid-eversion', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Every few weeks while managing conservatively pending surgery; postoperative follow-up per surgeon protocol',
       monitor: 'Corneal integrity, symptom severity, lid position',
@@ -373,6 +439,37 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Definitive surgical repair (horizontal lid tightening, e.g., lateral tarsal strip procedure, for involutional ectropion; skin grafting for cicatricial ectropion; gold weight or tarsorrhaphy considerations for paralytic lagophthalmos) is curative' },
       { category: 'Referral', detail: 'Refer to oculoplastic surgery for definitive repair, especially with corneal exposure, cicatricial etiology, or paralytic cases with poor Bell phenomenon' },
     ],
+    managementProtocol: {
+      workup: [
+        'Lid distraction and snap-back testing to quantify horizontal lid laxity and support involutional etiology',
+        'Facial nerve (CN VII) assessment when orbicularis weakness/lagophthalmos is suspected, to identify paralytic ectropion',
+        'Slit lamp examination with fluorescein staining to assess for exposure keratopathy',
+        'Search for an underlying mechanical cause (mass/tumor) when ectropion is focal or asymmetric',
+      ],
+      initialTreatment:
+        'Ocular lubrication (artificial tears by day, lubricating ointment at night) protects the exposed ocular surface while awaiting definitive repair; taping of the lower lid or a moisture chamber provides temporary support, particularly in paralytic cases awaiting facial nerve recovery. Any identified mechanical cause (e.g., an eyelid mass) is treated directly. Surgical repair is definitive.',
+      followUpSchedule:
+        'Every few weeks while managed conservatively pending surgery or nerve recovery; postoperative follow-up per the operating surgeon protocol.',
+      escalationCriteria: [
+        'Worsening exposure keratopathy or a new corneal epithelial defect',
+        'Lagophthalmos with poor Bell phenomenon',
+        'Persistent epiphora and ocular surface irritation despite lubrication',
+      ],
+      referralCriteria: [
+        'Any confirmed ectropion with corneal exposure -> oculoplastic surgery for definitive surgical repair (e.g., lateral tarsal strip for involutional ectropion)',
+        'Paralytic ectropion, especially with poor Bell phenomenon -> oculoplastic surgery for consideration of gold weight/tarsorrhaphy and coordinated facial nerve workup',
+        'Cicatricial etiology (anterior lamellar shortage) -> oculoplastic surgery for skin grafting',
+      ],
+      complications: [
+        'Exposure keratopathy, progressing to corneal ulceration in severe untreated lagophthalmos',
+        'Epiphora from punctal malposition and impaired lacrimal pump function',
+        'Chronic conjunctivitis/keratinization of the exposed palpebral conjunctiva',
+        'Recurrence after surgical repair',
+      ],
+      monitoringParameters: ['Corneal integrity/exposure', 'Degree of lid eversion and epiphora severity', 'Facial nerve function in paralytic cases', 'Lid laxity on distraction/snap-back testing'],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['lid-eversion', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Every few weeks while managing conservatively pending surgery or nerve recovery; postoperative follow-up per surgeon protocol',
       monitor: 'Corneal integrity, degree of exposure, epiphora severity, lid position',
@@ -464,6 +561,37 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Systemic workup and treatment (e.g., acetylcholinesterase inhibitors, immunosuppression) for confirmed myasthenia gravis, coordinated with neurology' },
       { category: 'Emergency management', detail: 'Acute painful ptosis with a dilated, poorly reactive pupil and motility deficit is a neurologic emergency requiring immediate neuroimaging to rule out a compressive aneurysm' },
     ],
+    managementProtocol: {
+      workup: [
+        'MRD1 measurement to objectively quantify ptosis severity and guide surgical planning',
+        'Levator function (excursion) measurement to distinguish aponeurotic (preserved function) from congenital/myogenic (reduced function) causes',
+        'Pupil examination and extraocular motility assessment to exclude CN III palsy before attributing ptosis to a benign cause',
+        'Ice pack test or sustained upgaze fatigue testing when myasthenia gravis is suspected',
+      ],
+      initialTreatment:
+        'Mild, stable, non-amblyogenic ptosis without visual field compromise may simply be observed. Definitive treatment for visually or cosmetically significant ptosis is surgical: levator resection/advancement when levator function is good (e.g., aponeurotic ptosis), or frontalis sling when levator function is poor (e.g., congenital ptosis). Ptosis from an identified systemic cause (myasthenia gravis, CN III palsy, Horner syndrome) is managed by working up and treating that underlying condition alongside, or ahead of, any eyelid surgery.',
+      followUpSchedule:
+        'Annual monitoring if stable and non-visually significant; pediatric congenital ptosis requires closer, more frequent monitoring for amblyopia during visual development. Postoperative follow-up per oculoplastic surgeon protocol.',
+      escalationCriteria: [
+        'New or worsening pupil-involving anisocoria, diplopia, or other neurologic findings',
+        'Ptosis worsening enough to affect the visual field or, in a child, threatening development of amblyopia',
+        'Positive fatigue testing or Cogan lid twitch suggesting myasthenia gravis',
+      ],
+      referralCriteria: [
+        'Any ptosis causing visual field compromise or, in a child, amblyopia risk -> oculoplastic surgery for surgical correction',
+        'New-onset ptosis with pupil involvement, pain, or diplopia -> urgent/same-day neurology or neuro-ophthalmology referral to rule out compressive CN III palsy (posterior communicating artery aneurysm)',
+        'Suspected myasthenia gravis (fatigable/variable ptosis, positive ice-pack or fatigue testing) -> neurology for systemic workup and treatment',
+      ],
+      complications: [
+        'Amblyopia in children with visual axis occlusion during the critical period',
+        'Chronic compensatory brow elevation with brow ache',
+        'Superior visual field loss',
+        'Under- or over-correction, lagophthalmos, or lid contour asymmetry after surgical repair',
+      ],
+      monitoringParameters: ['MRD1', 'Superior visual field impact', 'Levator function', 'Amblyopia risk/visual development in children', 'Pupil and motility exam if any neurogenic feature was ever present'],
+      relatedDrugIds: ['pyridostigmine'],
+      relatedExamTechniqueIds: ['marginal-reflex-distance', 'pupillary-examination', 'extraocular-motility-testing', 'confrontation-visual-fields'],
+    },
     followUp: {
       typical: 'Annually if stable and non-visually significant; pediatric congenital ptosis requires close monitoring for amblyopia',
       monitor: 'MRD1, visual field impact (superior field), levator function, amblyopia risk in children',
@@ -553,6 +681,35 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Argon laser ablation of lash follicles or surgical excision/lid margin resection for extensive, diffuse, or recurrent trichiasis unresponsive to less invasive measures' },
       { category: 'Referral', detail: 'Refer to oculoplastic surgery for extensive or recurrent disease, or to address underlying cicatricial conjunctival disease requiring specialized management' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination of the lid margin to identify misdirected lashes and confirm a normal lid margin position (distinguishing from entropion)',
+        'Fluorescein staining of the cornea to assess for lash-related surface damage',
+        'Eyelid eversion and conjunctival exam to screen for underlying cicatricial disease (trachoma, ocular cicatricial pemphigoid, Stevens-Johnson syndrome) when trichiasis is recurrent or extensive',
+        'Assessment for and treatment of underlying blepharitis, a common contributing and recurrence-driving factor',
+      ],
+      initialTreatment:
+        'Manual epilation of misdirected lashes with fine forceps is first-line and provides prompt relief, though lashes typically regrow within 4-6 weeks; concurrent lid hygiene treats underlying blepharitis when it is the causative factor.',
+      followUpSchedule:
+        'Every 4-6 weeks as needed for recurrent epilation; longer intervals once definitive follicle-destructive treatment has been performed.',
+      escalationCriteria: [
+        'Frequent recurrence of misdirected lashes despite repeated epilation',
+        'Numerous or diffuse (rather than focal) misdirected lashes',
+        'New corneal epithelial defect or signs of secondary infection',
+      ],
+      referralCriteria: [
+        'Frequent recurrence despite epilation -> oculoplastic surgery for electrolysis, cryotherapy, or laser ablation of the causative follicles',
+        'Extensive, diffuse, or recurrent trichiasis unresponsive to less invasive measures -> oculoplastic surgery for surgical excision/lid margin resection',
+        'Signs of underlying cicatricial conjunctival disease (symblepharon, fornix foreshortening) -> evaluation and management of the systemic/cicatricial process driving trichiasis',
+      ],
+      complications: [
+        'Corneal punctate keratopathy and abrasion from chronic lash contact',
+        'Corneal scarring and vascularization with long-standing untreated disease',
+        'Secondary microbial keratitis in severe untreated cases',
+      ],
+      monitoringParameters: ['Recurrence of misdirected lashes', 'Corneal staining/integrity', 'Underlying cicatricial disease activity'],
+      relatedExamTechniqueIds: ['lid-eversion', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Every 4-6 weeks as needed for recurrent epilation; longer intervals after definitive follicle-destructive treatment',
       monitor: 'Recurrence of misdirected lashes, corneal staining/integrity, underlying cicatricial disease activity',
@@ -643,6 +800,35 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Second-line treatment', detail: 'Radiotherapy may be considered for patients who are poor surgical candidates or decline surgery' },
       { category: 'Referral', detail: 'Refer any suspicious eyelid lesion for biopsy and, once confirmed, to oculoplastic surgery (often in coordination with Mohs dermatologic surgery) for definitive management' },
     ],
+    managementProtocol: {
+      workup: [
+        'Incisional or excisional biopsy for definitive histopathologic diagnosis and subtyping (nodular, superficial, or morpheaform/sclerosing) of any suspicious lesion',
+        'Slit lamp examination with lid eversion and clinical photography to characterize lesion morphology/borders and document baseline size',
+        'Orbital imaging (CT/MRI) for large, recurrent, or morpheaform lesions to assess for orbital invasion',
+      ],
+      initialTreatment:
+        'Mohs micrographic surgery is the treatment of choice, providing complete margin control while maximizing preservation of normal eyelid tissue; wide surgical excision with frozen-section margin control is an alternative when Mohs is unavailable, typically followed by eyelid reconstruction. Radiotherapy is considered for patients who are poor surgical candidates or decline surgery.',
+      followUpSchedule:
+        'Every 6-12 months long-term after treatment given the risk of local recurrence and of new primary lesions elsewhere on sun-exposed periocular skin.',
+      escalationCriteria: [
+        'Any new growth, ulceration, or change at the treated site',
+        'Incomplete excision margins on histopathology',
+        'Suspected orbital invasion (proptosis, motility restriction, or imaging findings)',
+      ],
+      referralCriteria: [
+        'Any suspicious eyelid lesion -> biopsy, then to oculoplastic surgery (often in coordination with Mohs dermatologic surgery) for definitive management',
+        'Morpheaform/sclerosing subtype or incomplete margins -> closer surveillance and consideration of re-excision given higher recurrence risk',
+        'Suspected orbital or bony invasion -> orbital imaging and oculoplastic/orbital surgery co-management',
+      ],
+      complications: [
+        'Local tissue destruction with invasion into orbital structures, cartilage, or bone if neglected',
+        'Eyelid malposition or dysfunction after resection and reconstruction',
+        'Local recurrence, particularly with the morpheaform/sclerosing subtype',
+        'Rare regional or distant metastasis',
+      ],
+      monitoringParameters: ['Surgical site for recurrence', 'New suspicious lesions elsewhere on periocular skin', 'Lid function and position after reconstruction'],
+      relatedExamTechniqueIds: ['lid-eversion', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Every 6-12 months long-term after treatment given risk of recurrence and risk of new primary lesions',
       monitor: 'Surgical site for recurrence, development of new suspicious lesions elsewhere on the periocular skin, lid function/position after reconstruction',
@@ -733,6 +919,34 @@ export const eyelidAdnexaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Surgical horizontal upper eyelid tightening for severe or refractory cases not adequately controlled with conservative nighttime protection' },
       { category: 'Referral', detail: 'Refer for polysomnography/sleep medicine evaluation given the strong association with obstructive sleep apnea, which carries significant cardiovascular and systemic health implications beyond the ocular findings' },
     ],
+    managementProtocol: {
+      workup: [
+        'Eyelid traction/eversion test to confirm characteristic tarsal plate laxity',
+        'Slit lamp examination with lid eversion to assess the superior tarsal conjunctiva and cornea for papillary conjunctivitis and mechanical keratopathy',
+        'Polysomnography (sleep study) referral to screen for obstructive sleep apnea given the strong bidirectional association',
+      ],
+      initialTreatment:
+        'Nighttime protective measures (eye shields, taping the eyelids closed, or a sleep mask) to prevent spontaneous nocturnal eversion and pillow contact, combined with lubricating ointment at bedtime, are first-line and directly address the underlying mechanical cause; concurrent papillary conjunctivitis and any coexisting blepharitis/dry eye are treated with standard measures.',
+      followUpSchedule:
+        'Every 3-6 months to monitor ocular surface status, corneal staining, and compliance with nighttime protective measures.',
+      escalationCriteria: [
+        'Persistent or worsening papillary conjunctivitis or corneal staining despite consistent nighttime protection',
+        'Poor compliance with nighttime shielding/taping',
+        'Significant corneal involvement (more than mild punctate staining)',
+      ],
+      referralCriteria: [
+        'Severe or refractory disease not adequately controlled with conservative nighttime protection -> oculoplastic surgery for surgical horizontal upper eyelid tightening',
+        'Any diagnosis of floppy eyelid syndrome -> polysomnography/sleep medicine referral given the strong association with obstructive sleep apnea and its cardiovascular/systemic implications',
+      ],
+      complications: [
+        'Chronic papillary conjunctivitis',
+        'Superior punctate keratopathy and, in chronic cases, changes resembling superior limbic keratoconjunctivitis',
+        'Undiagnosed/untreated obstructive sleep apnea and its systemic cardiovascular morbidity if not identified and addressed',
+      ],
+      monitoringParameters: ['Papillary conjunctivitis severity', 'Corneal staining', 'Compliance with nighttime protective measures', 'Status of obstructive sleep apnea workup/treatment'],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['lid-eversion', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Every 3-6 months to monitor ocular surface status and treatment compliance/effectiveness',
       monitor: 'Papillary conjunctivitis severity, corneal staining, compliance with nighttime protective measures, OSA workup status',
