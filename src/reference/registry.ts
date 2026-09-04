@@ -17,6 +17,7 @@ import { OctNormativeThicknessTable, meta as octNormativeThicknessTableMeta } fr
 import { VisualFieldIndicesGuide, meta as visualFieldIndicesGuideMeta } from './VisualFieldIndicesGuide'
 import { ElectrophysiologyNormsTable, meta as electrophysiologyNormsTableMeta } from './ElectrophysiologyNormsTable'
 import { CorneaSpecularTopographyNormsTable, meta as corneaSpecularTopographyNormsTableMeta } from './CorneaSpecularTopographyNormsTable'
+import { ContactLensCareSolutions, meta as contactLensCareSolutionsMeta } from './ContactLensCareSolutions'
 
 export interface ReferenceEntry {
   meta: ReferenceMeta
@@ -40,6 +41,7 @@ export const referenceRegistry: ReferenceEntry[] = [
   { meta: visualFieldIndicesGuideMeta, Component: VisualFieldIndicesGuide },
   { meta: electrophysiologyNormsTableMeta, Component: ElectrophysiologyNormsTable },
   { meta: corneaSpecularTopographyNormsTableMeta, Component: CorneaSpecularTopographyNormsTable },
+  { meta: contactLensCareSolutionsMeta, Component: ContactLensCareSolutions },
 ]
 
 export function getReferenceById(id: string): ReferenceEntry | undefined {

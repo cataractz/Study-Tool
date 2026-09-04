@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Disc, ChevronRight, GitCompare, Star, Info, Droplets } from 'lucide-react'
+import { Disc, ChevronRight, GitCompare, Star, Info, Droplets, Stethoscope } from 'lucide-react'
 import { SearchInput } from '../components/ui/SearchInput'
 import { Card } from '../components/ui/Card'
 import { Badge } from '../components/ui/Badge'
@@ -12,6 +12,7 @@ import { getLensFavorites, isLensFavorite, toggleLensFavorite } from '../service
 import type { LensDesign } from '../types/lens'
 import { LensCompareDrawer } from '../components/lens/LensCompareDrawer'
 import { CareSolutions } from '../components/lens/CareSolutions'
+import { FittingGuideTab } from '../components/lens/FittingGuideTab'
 
 export function LensDatabase() {
   const [query, setQuery] = useState('')
@@ -197,6 +198,12 @@ export function LensDatabase() {
             label: 'Care Solutions',
             badge: <Droplets size={14} />,
             content: <CareSolutions />,
+          },
+          {
+            id: 'fitting-guide',
+            label: 'Fitting & Evaluation',
+            badge: <Stethoscope size={14} />,
+            content: <FittingGuideTab />,
           },
         ]}
       />

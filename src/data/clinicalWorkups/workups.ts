@@ -545,6 +545,45 @@ export const clinicalWorkups: ClinicalWorkup[] = [
     ],
   },
   {
+    id: 'myopia-control-candidate-evaluation',
+    name: 'Myopia Control Candidate Evaluation',
+    chiefComplaint: 'A child or young patient presents with myopia that is progressing (increasing minus power and/or axial length on serial visits), and the family is evaluating options to slow that progression.',
+    keyHistory: [
+      'Age at myopia onset — earlier onset is associated with faster progression and a higher lifetime risk of high myopia',
+      'Rate of progression on prior refractions — diopters of myopic shift and/or axial length change per year, if serial data is available',
+      'Parental myopia — one or both myopic parents meaningfully raises a child\'s own risk of both developing and progressing in myopia',
+      'Time spent on near work versus outdoor/daylight time — more outdoor time is associated with a lower risk of myopia onset and, to a lesser extent, slower progression',
+      'Prior contact lens wear experience and the child\'s (and family\'s) ability to handle daily lens insertion/removal or overnight orthokeratology wear and hygiene',
+      'Ocular health history that would affect candidacy — dry eye, current or recurrent corneal infiltrative disease, allergic conjunctivitis affecting lens tolerance',
+      'Family goals and preferences — daytime contact lens wear versus overnight orthokeratology versus a pharmacologic (drop-based) approach versus spectacles alone',
+    ],
+    redFlags: [
+      'Rapid, disproportionate axial elongation or myopic shift out of keeping with age-expected progression, which can suggest a secondary or syndromic cause rather than typical school-age myopia and warrants a broader workup before treating as routine progressive myopia',
+      'Signs of pathologic/high myopia on fundus exam (posterior staphyloma, lacquer cracks, significant peripapillary atrophy) — these patients carry meaningfully higher lifetime risk of myopic maculopathy and retinal detachment and management urgency increases accordingly',
+      'Active or recurrent corneal infiltrative disease, significant dry eye, or poor hygiene/compliance potential — relative contraindications to contact lens-based approaches (soft multifocal or orthokeratology) that should redirect the discussion toward a pharmacologic or spectacle-based option instead',
+    ],
+    initialExamSteps: [
+      'Cycloplegic refraction to establish an accurate baseline manifest refraction',
+      'Manual keratometry and, where available, corneal topography for baseline corneal shape (essential before considering orthokeratology, and useful for any specialty contact lens option)',
+      'Axial length measurement (optical biometry) where available, since axial length is a more sensitive and less refraction-technique-dependent way to track true progression than spherical equivalent alone',
+      'Comprehensive ocular health exam including dilated fundus exam, particularly to assess for any early pathologic myopia changes',
+      'Assessment of ocular surface health and tear film, since this affects candidacy and comfort for a daily-wear or overnight lens-based option',
+      'Discussion of family history, lifestyle (near work, outdoor time), and preferences to help narrow the realistic set of options before presenting them in detail',
+    ],
+    ancillaryTestingIds: ['manual-keratometry', 'corneal-topography', 'orthokeratology-fitting-assessment'],
+    mostLikelyDiagnoses:
+      'This is a management-modality selection workup rather than a differential-diagnosis workup — the diagnosis (progressive myopia) is typically already established by serial refraction; the clinical task is choosing among, or combining, the evidence-based myopia control options below rather than distinguishing between competing diagnoses.',
+    urgency: 'Routine',
+    managementConsiderations:
+      "Three evidence-based modalities are in common use, and none is uniformly superior for every patient. Orthokeratology (Ortho-K) uses an overnight reverse-geometry rigid lens — such as Paragon CRT or Euclid Emerald — to reshape the central cornea, and has shown consistent axial-elongation-slowing effects in multiple trials, though it requires comfort with overnight wear, meticulous case hygiene, and regular follow-up given rare but serious infectious keratitis risk with any overnight lens wear. Soft multifocal/dual-focus contact lenses — MiSight 1 day (the first FDA-approved myopia control lens, using a concentric ActivControl dual-focus optical design) and NaturalVue Multifocal 1 Day among them — are worn during the day like a standard soft lens, avoiding overnight-wear risk, and have their own strong efficacy evidence, making them a reasonable first option for a child not ready for overnight lens wear. Low-concentration atropine eye drops (commonly 0.01% to 0.05%) are a pharmacologic option requiring no lens wear at all, with efficacy that is dose-dependent — higher concentrations slow progression more but carry more photophobia and near-blur side effects from pupillary dilation and reduced accommodation, and higher-concentration regimens show more rebound progression after stopping than very low concentrations. Combining modalities is an active area of investigation: sequentially adding atropine to an existing orthokeratology fit has shown an additional, dose-dependent reduction in axial elongation beyond orthokeratology alone in randomized trials, while adding low-dose atropine to soft multifocal lenses has not shown a consistent additional benefit over the multifocal lens alone in trial data (the BAM study). In practice, modality choice should weigh the child's willingness and ability to handle the lens/drop regimen, ocular health/candidacy factors above, family preference, and the practice's access to orthokeratology fitting expertise, and should include an honest discussion that all current options slow rather than fully stop progression, with treatment typically continued through the peak pediatric progression years and reassessed periodically with axial length and refraction.",
+    references: [
+      'Efficacy and safety of orthokeratology sequentially combined with escalating atropine concentrations for myopia control in children. Sci Rep. 2025 — dose-dependent additional reduction in axial elongation when atropine is added to orthokeratology.',
+      'Bifocal & Atropine in Myopia (BAM) Study — addition of 0.01% atropine to soft multifocal contact lenses did not show superior myopia control versus the multifocal lens alone.',
+      'Chamberlain P, et al. A 3-year Randomized Clinical Trial of MiSight Lenses for Myopia Control. Optom Vis Sci. 2019 — pivotal MiSight dual-focus soft lens efficacy trial supporting its FDA approval.',
+      'American Academy of Ophthalmology. Clinical Statement: Pediatric Myopia — Screening and Treatment Recommendations.',
+    ],
+  },
+  {
     id: 'ocular-pain-workup',
     name: 'Ocular Pain',
     chiefComplaint: 'Patient reports deep, boring, or aching ocular pain, often without obvious external redness or an obvious explanatory finding on cursory inspection.',

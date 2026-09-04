@@ -7,6 +7,9 @@ import {
   getSpecialTests,
   searchExamTechniques,
 } from '../examTechniqueService'
+import { getAllDiseases } from '../diseaseService'
+import { getAllDrugs } from '../drugService'
+import { calculatorRegistry } from '../../calculators/registry'
 
 describe('exam technique data integrity', () => {
   it('has no duplicate technique ids', () => {
@@ -38,6 +41,45 @@ describe('exam technique data integrity', () => {
 
   it('has a representative-sized data set', () => {
     expect(getAllExamTechniques().length).toBeGreaterThanOrEqual(60)
+  })
+})
+
+describe('exam technique cross-link integrity', () => {
+  it('every relatedTechniqueIds value resolves to a real technique, and never to itself', () => {
+    const validIds = new Set(getAllExamTechniques().map((t) => t.id))
+    for (const t of getAllExamTechniques()) {
+      for (const id of t.relatedTechniqueIds ?? []) {
+        expect(validIds.has(id), `${t.id}: relatedTechniqueIds "${id}"`).toBe(true)
+        expect(id, `${t.id}: relatedTechniqueIds should not self-reference`).not.toBe(t.id)
+      }
+    }
+  })
+
+  it('every relatedCalculatorIds value resolves to a real calculator', () => {
+    const validIds = new Set(calculatorRegistry.map((c) => c.meta.id))
+    for (const t of getAllExamTechniques()) {
+      for (const id of t.relatedCalculatorIds ?? []) {
+        expect(validIds.has(id), `${t.id}: relatedCalculatorIds "${id}"`).toBe(true)
+      }
+    }
+  })
+
+  it('every relatedDrugIds value resolves to a real Drug', () => {
+    const validIds = new Set(getAllDrugs().map((d) => d.id))
+    for (const t of getAllExamTechniques()) {
+      for (const id of t.relatedDrugIds ?? []) {
+        expect(validIds.has(id), `${t.id}: relatedDrugIds "${id}"`).toBe(true)
+      }
+    }
+  })
+
+  it('every associatedConditionIds value resolves to a real Disease', () => {
+    const validIds = new Set(getAllDiseases().map((d) => d.id))
+    for (const t of getAllExamTechniques()) {
+      for (const id of t.associatedConditionIds ?? []) {
+        expect(validIds.has(id), `${t.id}: associatedConditionIds "${id}"`).toBe(true)
+      }
+    }
   })
 })
 
