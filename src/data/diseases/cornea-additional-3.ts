@@ -65,6 +65,32 @@ export const corneaAdditional3: Disease[] = [
       { category: 'Advanced treatment', detail: 'Phototherapeutic keratectomy (PTK) for diffuse or refractory recurrent erosions, or when irregular astigmatism significantly limits vision' },
       { category: 'Referral', detail: 'Refer to cornea specialist for recurrent erosions unresponsive to conservative therapy or when considering PTK/stromal puncture' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with broad and retroillumination to characterize the map/dot/fingerprint pattern and document baseline visual acuity',
+        'Corneal topography when vision-affecting, to correlate irregular astigmatism with the areas of basement membrane change',
+        'Fluorescein staining to determine whether the presentation is quiescent EBMD or an active erosion episode',
+      ],
+      initialTreatment:
+        'Asymptomatic, incidentally found EBMD requires no treatment beyond education about erosion warning signs. An acute erosion is managed with a bandage contact lens, prophylactic topical antibiotic, cycloplegia for comfort, and lubrication, followed by hypertonic saline drops/ointment between episodes to reduce recurrence.',
+      followUpSchedule:
+        'Routine exams for asymptomatic patients; closer follow-up (days to weeks) during and after an acute erosion episode until the epithelium is stable and re-adherent.',
+      escalationCriteria: [
+        'Recurrent erosion episodes despite consistent hypertonic saline prophylaxis',
+        'Non-healing epithelial defect beyond the expected several-day course after an erosion',
+        'Worsening visual acuity or irregular astigmatism from progressive surface irregularity',
+      ],
+      referralCriteria: [
+        'Cornea specialist for recurrent erosions unresponsive to conservative therapy',
+        'Cornea specialist when anterior stromal puncture, diamond burr polishing, or PTK is being considered',
+      ],
+      cycloplegicConsiderations:
+        'A short-acting cycloplegic (e.g., cyclopentolate) is used during acute erosion episodes to relieve ciliary spasm and improve photophobia-related discomfort.',
+      complications: ['Recurrent corneal erosion', 'Irregular astigmatism', 'Rarely, subepithelial scarring after repeated erosions'],
+      monitoringParameters: ['Epithelial integrity and erosion frequency', 'Visual acuity', 'Topographic regularity when vision-affecting'],
+      relatedDrugIds: ['cyclopentolate'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining', 'corneal-topography'],
+    },
     followUp: {
       typical: 'Routine exams for asymptomatic patients; closer follow-up (days to weeks) during and after an acute erosion episode',
       monitor: 'Epithelial integrity, erosion frequency, visual acuity, and topographic regularity if vision-affecting',
@@ -154,6 +180,41 @@ export const corneaAdditional3: Disease[] = [
       { category: 'Advanced treatment', detail: 'Phototherapeutic keratectomy (PTK) for superficial deposits affecting vision or causing recurrent erosion; lamellar (DALK) or penetrating keratoplasty for deep stromal involvement with significant visual loss' },
       { category: 'Referral', detail: 'Refer to cornea specialist for surgical planning and to genetics/neurology for suspected lattice type II with systemic amyloidosis' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with direct and retroillumination to characterize deposit pattern and distribution per suspected subtype',
+        'Corneal pachymetry, particularly to assess the reduced corneal thickness characteristic of macular dystrophy',
+        'Genetic testing (TGFBI, CHST6) to confirm the subtype when diagnosis is atypical or for family counseling',
+        'Corneal sensation testing over lattice lesions, since reduced subepithelial nerve density contributes to erosion risk',
+        'Systemic amyloidosis workup when lattice type II/Meretoja syndrome is suspected (cranial neuropathy, lax skin)',
+      ],
+      initialTreatment:
+        'Mild, early disease with preserved vision is monitored with serial slit lamp exams and visual acuity checks. Lubrication and hypertonic saline (with a bandage contact lens during acute episodes) manage recurrent erosion, most relevant in lattice dystrophy; phototherapeutic keratectomy addresses superficial vision-limiting deposits, and lamellar (DALK) or penetrating keratoplasty is reserved for deep stromal involvement with significant visual loss.',
+      followUpSchedule:
+        'Every 6-12 months to monitor best-corrected visual acuity and deposit progression; more frequent visits during active erosion episodes or the perioperative period after PTK or keratoplasty.',
+      escalationCriteria: [
+        'Progressive central deposit density or extension with declining best-corrected visual acuity',
+        'Recurrent erosions unresponsive to conservative therapy',
+        'Best-corrected visual acuity declining enough to limit function, prompting consideration of PTK or keratoplasty',
+      ],
+      referralCriteria: [
+        'Cornea specialist for surgical planning (PTK, DALK, or penetrating keratoplasty)',
+        'Genetics/neurology for suspected lattice type II with systemic amyloidosis',
+      ],
+      complications: [
+        'Recurrent corneal erosion, especially in lattice dystrophy',
+        'Irregular astigmatism',
+        'Recurrence of deposits within a corneal graft after keratoplasty (documented for lattice and granular dystrophy)',
+        'Systemic amyloidosis/neuropathy in lattice type II',
+      ],
+      monitoringParameters: [
+        'Best-corrected visual acuity',
+        'Corneal clarity/deposit extent',
+        'Erosion frequency',
+        'Corneal thickness (pachymetry), especially in macular dystrophy',
+      ],
+      relatedExamTechniqueIds: ['corneal-pachymetry', 'corneal-sensation-testing'],
+    },
     followUp: {
       typical: 'Every 6-12 months to monitor visual acuity and deposit progression; more frequent during active erosion episodes',
       monitor: 'Best-corrected visual acuity, corneal clarity/deposit extent, erosion frequency, corneal thickness',
@@ -245,6 +306,38 @@ export const corneaAdditional3: Disease[] = [
       { category: 'Referral', detail: 'Refer to cornea/external disease specialist for shield ulcer, refractory disease, or need for surgical debridement/superficial keratectomy' },
       { category: 'Emergency management', detail: 'Vision-threatening shield ulcer: aggressive topical steroid, therapeutic contact lens, and possible surgical debridement of the plaque with urgent specialist involvement' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam of the upper tarsal conjunctiva (with lid eversion) and limbus to identify giant papillae and Horner-Trantas dots',
+        'Fluorescein staining to assess for corneal punctate keratitis or a shield ulcer and grade severity',
+        'Conjunctival scraping/cytology for eosinophils in atypical or severe presentations',
+        'Baseline IOP before starting corticosteroid therapy, given the likelihood of repeated steroid courses in this young population',
+      ],
+      initialTreatment:
+        'Topical dual-action antihistamine/mast cell stabilizer (e.g., olopatadine) with cold compresses, allergen avoidance, and preservative-free artificial tears as first-line therapy; a mast cell stabilizer (e.g., lodoxamide) is added for maintenance/prophylaxis before allergy season, and a short pulse of topical corticosteroid is used for moderate-to-severe flares.',
+      followUpSchedule:
+        'Every few weeks during active flares; every few months when quiescent, with closer monitoring at the start of allergy season and whenever topical corticosteroids are initiated or escalated.',
+      escalationCriteria: [
+        'Development of a shield ulcer, which requires urgent aggressive topical steroid, a therapeutic contact lens, and possible surgical debridement',
+        'Worsening corneal staining or micropannus despite first- and second-line therapy',
+        'IOP rise on topical corticosteroid',
+        'Frequent or prolonged steroid need, prompting addition of a steroid-sparing topical calcineurin inhibitor',
+      ],
+      referralCriteria: [
+        'Cornea/external disease specialist for a shield ulcer, refractory disease, or need for surgical debridement/superficial keratectomy',
+      ],
+      steroidConsiderations:
+        'A short pulse of topical corticosteroid (e.g., loteprednol etabonate) is used for moderate-to-severe flares; a vision-threatening shield ulcer warrants more aggressive topical steroid dosing. IOP is checked at each visit given the young patient population and the elevated risk of a steroid response, and courses are tapered as soon as inflammation is controlled to limit cumulative exposure.',
+      complications: [
+        'Shield ulcer with associated corneal scarring',
+        'Corneal vascularization/pannus',
+        'Ptosis',
+        'Steroid-related cataract/glaucoma with prolonged corticosteroid use',
+      ],
+      monitoringParameters: ['Symptom severity', 'Papillary size', 'Corneal staining/shield ulcer status', 'IOP if on chronic topical steroids'],
+      relatedDrugIds: ['olopatadine', 'lodoxamide', 'loteprednol-etabonate', 'cyclosporine-ophthalmic-emulsion'],
+      relatedExamTechniqueIds: ['lid-eversion', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Every few weeks during active flares; every few months when quiescent, with closer monitoring at the start of allergy season',
       monitor: 'Symptom severity, papillary size, corneal staining/shield ulcer status, IOP if on chronic topical steroids',
@@ -334,6 +427,45 @@ export const corneaAdditional3: Disease[] = [
       { category: 'Advanced treatment', detail: 'Topical calcineurin inhibitors (cyclosporine/tacrolimus) for chronic steroid-sparing control given long disease duration' },
       { category: 'Referral', detail: 'Refer to cornea/external disease specialist for corneal scarring, neovascularization, or keratoconus; refer to dermatology for optimization of atopic dermatitis control' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam of the inferior/lower tarsal conjunctiva and cornea, with lid eversion, to characterize the papillary pattern and any scarring',
+        'Lens exam for anterior subcapsular cataract, both a classic atopic-dermatitis-associated finding and a risk of chronic steroid use',
+        'Corneal topography to screen for coexisting keratoconus given chronic eye rubbing',
+        'Coordinated dermatology assessment of atopic dermatitis severity and control',
+      ],
+      initialTreatment:
+        'Topical dual-action antihistamine/mast cell stabilizer with aggressive ocular and periocular lubrication, cool compresses, and allergen/irritant avoidance; lid hygiene and treatment of secondary staphylococcal blepharitis are added, and a topical corticosteroid pulse is used for flares with close IOP monitoring.',
+      followUpSchedule:
+        'Every 1-3 months during active disease given the chronic, perennial course; longer intervals once well controlled, with periodic topography for keratoconus screening and lens exam for cataract.',
+      escalationCriteria: [
+        'New or worsening corneal scarring or neovascularization',
+        'Cataract progression or new topographic evidence of keratoconus',
+        'Poor control or IOP rise on first- and second-line therapy, prompting addition of a topical calcineurin inhibitor',
+      ],
+      referralCriteria: [
+        'Cornea/external disease specialist for corneal scarring, neovascularization, or keratoconus',
+        'Dermatology for optimization of atopic dermatitis control',
+      ],
+      steroidConsiderations:
+        'A topical corticosteroid pulse (e.g., loteprednol etabonate) is used for flares, with close IOP monitoring given the chronic, recurring need for treatment and the known risk of anterior subcapsular cataract in this population from both the disease itself and cumulative steroid exposure; the lowest effective potency/duration is used, transitioning to a topical calcineurin inhibitor for long-term control.',
+      complications: [
+        'Corneal scarring and neovascularization',
+        'Keratoconus',
+        'Anterior subcapsular cataract',
+        'Symblepharon in severe chronic cases',
+        'Increased susceptibility to HSV keratitis and staphylococcal blepharitis',
+      ],
+      monitoringParameters: [
+        'Symptom control',
+        'Corneal clarity/staining',
+        'Lens status (cataract)',
+        'IOP if on chronic topical steroids',
+        'Keratoconus screening with topography',
+      ],
+      relatedDrugIds: ['olopatadine', 'loteprednol-etabonate', 'tacrolimus-ophthalmic', 'cyclosporine-ophthalmic-emulsion'],
+      relatedExamTechniqueIds: ['lid-eversion', 'corneal-topography'],
+    },
     followUp: {
       typical: 'Every 1-3 months during active disease given chronic perennial course; longer intervals once well controlled',
       monitor: 'Symptom control, corneal clarity/staining, lens status (cataract), IOP if on chronic topical steroids, keratoconus screening with topography',
@@ -423,6 +555,38 @@ export const corneaAdditional3: Disease[] = [
       { category: 'Advanced treatment', detail: 'Surgical resection of redundant superior bulbar conjunctiva (conjunctival recession or excision), thermal cautery, or amniotic membrane transplantation for refractory cases; supratarsal steroid injection has also been used' },
       { category: 'Referral', detail: 'Refer to cornea/external disease specialist for refractory disease requiring surgical management, and to endocrinology if thyroid disease is newly suspected or poorly controlled' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with deliberate elevation of the upper lid to examine the superior bulbar conjunctiva and limbus, a step easily skipped on routine exam',
+        'Rose bengal or lissamine green staining to characterize the extent of superior conjunctival and corneal involvement',
+        'Thyroid function testing (TSH, free T4, thyroid antibodies) given the strong clinical association',
+        'Tear break-up time/dry eye assessment, since tear film instability contributes to the mechanical irritation',
+      ],
+      initialTreatment:
+        'Lubrication with preservative-free artificial tears, addressing any underlying dry eye, combined with treatment/optimization of underlying thyroid disease in coordination with the patient\'s physician.',
+      followUpSchedule:
+        'Every 1-3 months during active symptomatic periods; longer intervals once controlled, with reassessment of superior conjunctival redundancy/staining and thyroid status at each visit.',
+      escalationCriteria: [
+        'Development of filamentary keratitis',
+        'Worsening staining despite lubrication, prompting a topical mast cell stabilizer, a short steroid pulse, or a protective bandage/scleral lens',
+        'Persistent, medically refractory disease over months, prompting consideration of surgical resection',
+      ],
+      referralCriteria: [
+        'Cornea/external disease specialist for refractory disease requiring surgical management (conjunctival resection, thermal cautery, or amniotic membrane transplantation)',
+        'Endocrinology if thyroid disease is newly suspected or poorly controlled',
+      ],
+      steroidConsiderations:
+        'A mild topical corticosteroid pulse may be used short-term for inflammatory flares that do not respond to lubrication alone; IOP is checked given the steroid-response risk even with brief courses, and chronic control is favored through non-steroid measures (lubrication, a protective bandage/scleral lens, or surgical resection) rather than prolonged steroid use.',
+      complications: ['Filamentary keratitis', 'Chronic discomfort', 'Mild superior corneal pannus with prolonged disease'],
+      monitoringParameters: [
+        'Superior conjunctival injection/redundancy',
+        'Staining pattern',
+        'Presence of filaments',
+        'Thyroid status',
+      ],
+      relatedDrugIds: ['carboxymethylcellulose-sodium', 'loteprednol-etabonate'],
+      relatedExamTechniqueIds: ['lissamine-green-rose-bengal-staining', 'thyroid-eye-disease-laboratory-testing', 'tear-break-up-time'],
+    },
     followUp: {
       typical: 'Every 1-3 months during active symptomatic periods; longer intervals once controlled',
       monitor: 'Superior conjunctival injection/redundancy, staining pattern, presence of filaments, thyroid status',
@@ -516,6 +680,42 @@ export const corneaAdditional3: Disease[] = [
       { category: 'Referral', detail: 'Refer to cornea specialist for both conditions when progressive; refer to rheumatology for systemic workup and management, particularly for suspected or confirmed Mooren ulcer' },
       { category: 'Emergency management', detail: 'Impending or actual corneal perforation in either condition requires urgent surgical intervention (tissue adhesive, bandage lens, or emergency patch graft/keratoplasty)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam to characterize the pattern, location, and depth of peripheral thinning or ulceration and distinguish Terrien from Mooren',
+        'Corneal topography to quantify induced astigmatism, particularly relevant in Terrien marginal degeneration',
+        'Systemic autoimmune/vasculitis workup (ANA, RF, ANCA, ESR/CRP, and targeted serologies) mandatory before labeling a peripheral ulcerative keratitis as idiopathic Mooren ulcer',
+        'Corneal pachymetry to assess depth of thinning and perforation risk',
+      ],
+      initialTreatment:
+        'Terrien: spectacle or contact lens correction of the induced astigmatism, with observation for mild, stable thinning. Mooren: aggressive topical corticosteroid (e.g., prednisolone acetate 1%, dosed frequently) and lubrication as initial anti-inflammatory therapy, with topical cyclosporine (roughly 1-2%) added early in recalcitrant cases as a steroid-sparing adjunct.',
+      followUpSchedule:
+        'Terrien: every 6-12 months while stable, reassessing thinning extent and astigmatism. Mooren: frequent follow-up (days to weeks) during active disease given the risk of rapid progression, tightened further after any escalation of therapy.',
+      escalationCriteria: [
+        'Mooren: continued ulcer progression or enlargement despite topical steroid plus cyclosporine, prompting systemic immunosuppression and/or conjunctival resection',
+        'Terrien: increasing thinning, extent, or astigmatism affecting best-corrected visual acuity, prompting consideration of lamellar patch grafting',
+        'Either condition: any sign of impending perforation (progressive thinning, descemetocele) requiring urgent surgical intervention',
+      ],
+      referralCriteria: [
+        'Cornea specialist for both conditions when progressive',
+        'Rheumatology for systemic workup and management, particularly for suspected or confirmed Mooren ulcer',
+      ],
+      steroidConsiderations:
+        'Mooren ulcer is treated with aggressive topical corticosteroid (e.g., prednisolone acetate 1%) dosed frequently and tapered as inflammation is controlled, often alongside topical cyclosporine as a steroid-sparing adjunct (topical cyclosporine regimens have achieved high healing rates in case series of recalcitrant disease); Terrien marginal degeneration is non-inflammatory and does not use corticosteroids. IOP is checked at each visit in Mooren patients on chronic topical steroid.',
+      complications: [
+        'Terrien: irregular/high astigmatism, rare perforation after minor trauma',
+        'Mooren: corneal perforation, severe visual loss, recurrent disease after surgical intervention',
+      ],
+      monitoringParameters: [
+        'Degree and extent of thinning',
+        'Induced astigmatism (Terrien)',
+        'Ulcer size/depth and epithelial status (Mooren)',
+        'Anterior chamber reaction',
+        'IOP if on chronic topical steroids',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclosporine-ophthalmic-emulsion', 'cyclosporine-systemic'],
+      relatedExamTechniqueIds: ['corneal-topography', 'corneal-pachymetry'],
+    },
     followUp: {
       typical: 'Terrien: every 6-12 months while stable; Mooren: frequent follow-up (days to weeks) during active disease given the risk of rapid progression',
       monitor: 'Degree and extent of thinning, induced astigmatism (Terrien), ulcer size/depth and epithelial status (Mooren), anterior chamber reaction, IOP if on chronic topical steroids',

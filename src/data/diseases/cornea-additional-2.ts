@@ -68,6 +68,43 @@ export const corneaAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Refer to oculoplastics for eyelid weight placement, tarsorrhaphy, or surgical correction of lid malposition; refer to cornea specialist if persistent epithelial defect or ulceration develops' },
       { category: 'Emergency management', detail: 'Urgent evaluation and aggressive lubrication/protection for impending or actual corneal thinning, melt, or perforation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Quantify lagophthalmos (measured gap on gentle and forced lid closure) and assess Bell phenomenon',
+        'Fluorescein staining pattern and grading of the inferior/interpalpebral punctate epitheliopathy to establish baseline severity',
+        'Corneal sensation testing to exclude a concurrent trigeminal deficit (mixed exposure/neurotrophic picture)',
+        'Identify the underlying cause: CN7 function, thyroid eye disease evaluation, lid position, or review of sedation/ICU status with taping adequacy',
+      ],
+      initialTreatment:
+        'Frequent preservative-free artificial tears during the day plus lubricating ointment at bedtime, combined with lid taping or a moisture chamber/shield overnight; the underlying cause (CN7 palsy, thyroid eye disease, lid malposition) is addressed concurrently when possible.',
+      followUpSchedule:
+        'Days to weeks while establishing an effective lubrication/protection regimen, reassessing lagophthalmos, Bell phenomenon, and staining extent at each visit; intervals lengthen once the surface is stable, but stay short for patients with poor Bell phenomenon or in ICU/sedated settings.',
+      escalationCriteria: [
+        'New or enlarging epithelial defect despite adequate lubrication and nighttime lid protection',
+        'Development of a corneal infiltrate concerning for secondary microbial keratitis',
+        'Any new corneal thinning or sign of impending melt',
+        'Poor or absent Bell phenomenon with inadequate nighttime protection despite taping/moisture chamber',
+      ],
+      referralCriteria: [
+        'Oculoplastics for eyelid weight placement, tarsorrhaphy, or surgical correction of lid malposition',
+        'Cornea specialist for any persistent epithelial defect, corneal infiltrate, or ulceration',
+      ],
+      complications: [
+        'Persistent epithelial defect',
+        'Secondary microbial keratitis',
+        'Sterile stromal thinning/melt',
+        'Corneal scarring',
+        'Perforation in severe neglected cases',
+      ],
+      monitoringParameters: [
+        'Degree of lagophthalmos and Bell phenomenon',
+        'Fluorescein staining extent and location',
+        'Epithelial integrity',
+        'Visual acuity',
+      ],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['corneal-sensation-testing', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Days to weeks depending on severity while establishing an effective lubrication/protection regimen; longer intervals once stable',
       monitor: 'Degree of lagophthalmos, corneal staining extent and location, epithelial integrity, visual acuity',
@@ -162,6 +199,43 @@ export const corneaAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Refer to cornea specialist for any persistent epithelial defect (Mackie stage 2 or higher), stromal thinning, or ulceration' },
       { category: 'Emergency management', detail: 'Urgent management for impending or actual perforation, including tissue adhesive, bandage lens, or emergency surgical intervention' },
     ],
+    managementProtocol: {
+      workup: [
+        'Corneal esthesiometry (Cochet-Bonnet) to quantify and stage sensory loss, compared to the fellow eye',
+        'Fluorescein staining and slit lamp exam to stage disease per the Mackie classification',
+        'History and targeted workup to identify the underlying cause (prior HSV/HZV, diabetes, prior CN5-affecting surgery or intracranial tumor)',
+        'Review of current topical medications and discontinuation of toxic/heavily preserved drops or anesthetic abuse contributing to epithelial toxicity',
+      ],
+      initialTreatment:
+        'Aggressive preservative-free lubrication with discontinuation of toxic/preserved topical medications; a bandage contact lens is added for a persistent epithelial defect, and topical cenegermin (recombinant human nerve growth factor), dosed one drop 6 times daily for 8 weeks, is used for confirmed moderate-to-severe neurotrophic keratitis.',
+      followUpSchedule:
+        'Close follow-up (days to 1-2 weeks) while the epithelial defect is active, given the blunted symptomatic warning system that otherwise delays presentation; longer intervals once the epithelium is stable, with esthesiometry and staining repeated at each visit to track stage.',
+      escalationCriteria: [
+        'Enlarging or non-healing epithelial defect (Mackie stage 2) despite 1-2 weeks of conservative therapy',
+        'New stromal thinning or infiltrate suggesting progression to Mackie stage 3',
+        'No meaningful healing at completion of an 8-week cenegermin course',
+        'Any sign of secondary infection (new infiltrate, increasing discharge)',
+      ],
+      referralCriteria: [
+        'Cornea specialist for any persistent epithelial defect (Mackie stage 2 or higher), stromal thinning, or ulceration',
+        'Neurology/neurosurgery when a new or undiagnosed trigeminal nerve lesion (e.g., tumor) is suspected as the cause',
+      ],
+      complications: [
+        'Persistent epithelial defect',
+        'Sterile stromal melt',
+        'Secondary microbial infection',
+        'Corneal perforation',
+        'Scarring',
+      ],
+      monitoringParameters: [
+        'Corneal sensation on serial esthesiometry',
+        'Epithelial defect size and border character',
+        'Corneal thickness/stromal involvement',
+        'Signs of secondary infection',
+      ],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['corneal-sensation-testing', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Close follow-up (days to 1-2 weeks) given the blunted symptomatic warning system; longer intervals once epithelium is stable',
       monitor: 'Epithelial defect size and border character, corneal thickness/stromal involvement, secondary infection signs',
@@ -251,6 +325,36 @@ export const corneaAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Bandage/therapeutic soft contact lens has been used in refractory or steroid-dependent cases to improve comfort and epithelial regularity' },
       { category: 'Referral', detail: 'Refer to cornea specialist for atypical presentations, diagnostic uncertainty, or steroid-dependent disease requiring long-term IOP monitoring' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with retroillumination to characterize lesion count, distribution, and pattern, and to confirm the absence of significant conjunctival injection or anterior chamber reaction',
+        'Corneal sensation testing to help exclude HSV epithelial keratitis as a mimic',
+        'Trial of low-dose topical corticosteroid to assess the characteristically dramatic treatment response, which itself supports the diagnosis',
+      ],
+      initialTreatment:
+        'Mild, minimally symptomatic disease may be observed or managed with lubrication alone; symptomatic flares are treated with a low-dose topical corticosteroid (e.g., loteprednol etabonate or fluorometholone), which typically produces a dramatic and rapid resolution of lesions.',
+      followUpSchedule:
+        'Every few weeks during active flares to titrate and taper steroid therapy; longer intervals during quiescent periods, with IOP and lens exam checked at visits given the chronic, recurrent need for topical steroids.',
+      escalationCriteria: [
+        'Frequent or prolonged steroid requirement to control flares, warranting a steroid-sparing agent',
+        'IOP rise on topical steroid suggesting a steroid responder',
+        'Cataract changes noted on chronic steroid exposure',
+      ],
+      referralCriteria: [
+        'Cornea specialist for atypical presentation or diagnostic uncertainty',
+        'Cornea specialist for steroid-dependent disease requiring a long-term steroid-sparing plan and IOP/cataract monitoring',
+      ],
+      steroidConsiderations:
+        'Low-dose topical corticosteroid (e.g., loteprednol etabonate or fluorometholone) produces a dramatic, rapid resolution of lesions during flares; taper to the lowest frequency and potency that controls symptoms, and check IOP at each visit given the recurrent, sometimes years-long, need for treatment.',
+      complications: [
+        'Steroid-induced elevated IOP from long-term corticosteroid use',
+        'Cataract from long-term corticosteroid use',
+        'Recurrence after steroid taper (expected and characteristic, not itself a complication of the disease)',
+      ],
+      monitoringParameters: ['Lesion count/activity', 'Symptom severity', 'IOP with chronic steroid use', 'Lens clarity with long-term steroid exposure'],
+      relatedDrugIds: ['loteprednol-etabonate', 'fluorometholone', 'cyclosporine-ophthalmic-emulsion'],
+      relatedExamTechniqueIds: ['corneal-sensation-testing', 'goldmann-applanation-tonometry'],
+    },
     followUp: {
       typical: 'Every few weeks during active flares to titrate steroid therapy; longer intervals during quiescent periods',
       monitor: 'Lesion count/activity, symptom severity, IOP with chronic steroid use, lens clarity with long-term steroid exposure',
@@ -341,6 +445,41 @@ export const corneaAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Bandage contact lens after chelation/keratectomy to support epithelial healing; amniotic membrane may be used for large epithelial defects post-procedure' },
       { category: 'Referral', detail: 'Refer to cornea specialist for chelation/PTK when the visual axis is involved; refer to rheumatology/pediatrics for underlying JIA-associated uveitis; refer to internal medicine/endocrinology for systemic hypercalcemia workup' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam to characterize band location, extent, and the perforated "Swiss cheese" pattern, and to document baseline visual acuity',
+        'Serum calcium, phosphate, and parathyroid hormone levels when the band is bilateral or lacks an obvious local ocular cause',
+        'Review of ocular/uveitis history, including JIA screening in children, to identify a local inflammatory cause',
+        'Corneal pachymetry/topography when phototherapeutic keratectomy or chelation is being considered, to assess depth and plan the procedure',
+      ],
+      initialTreatment:
+        'Peripheral or mild band keratopathy not affecting the visual axis or causing symptoms is observed. Visually significant or symptomatic bands are treated with EDTA (ethylenediaminetetraacetic acid) chelation: mechanical epithelial debridement followed by chelation of the calcium deposits from Bowman layer, with a bandage contact lens placed afterward.',
+      followUpSchedule:
+        'After chelation, the bandage contact lens is removed at about 5-7 days, with further rechecks at 1 month and 3 months to confirm epithelial healing and assess visual improvement; stable, non-visually significant cases are followed every 3-6 months.',
+      escalationCriteria: [
+        'Recurrent visually significant calcium deposition after chelation (reported in roughly a quarter of eyes at long-term follow-up) warranting repeat chelation or PTK',
+        'Band advancing toward or encroaching on the visual axis',
+        'New epithelial defect or erosion developing over the calcific plaque',
+      ],
+      referralCriteria: [
+        'Cornea specialist for chelation or phototherapeutic keratectomy when the visual axis is involved or deposits recur',
+        'Rheumatology/pediatrics for underlying JIA-associated uveitis',
+        'Internal medicine/endocrinology for systemic hypercalcemia or hyperparathyroidism workup',
+      ],
+      complications: [
+        'Recurrent calcium deposition after chelation (roughly one-quarter of eyes at long-term follow-up, though few require repeat chelation)',
+        'Epithelial defect after chelation/PTK',
+        'Corneal scarring',
+        'Reduced vision from central visual axis involvement',
+      ],
+      monitoringParameters: [
+        'Band width/density and visual axis encroachment',
+        'Visual acuity',
+        'Serum calcium/PTH when a systemic cause is present',
+        'Activity of the underlying uveitis',
+      ],
+      relatedExamTechniqueIds: ['corneal-pachymetry', 'corneal-topography'],
+    },
     followUp: {
       typical: 'Every 3-6 months in stable, non-visually significant cases; more frequent monitoring if the underlying uveitis or systemic disease is active',
       monitor: 'Band width/density and encroachment on the visual axis, visual acuity, activity of the underlying uveitis or systemic calcium disorder',
