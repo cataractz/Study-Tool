@@ -65,6 +65,34 @@ export const eyelidAdnexaAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Refer to oculoplastic surgery for evaluation and upper (and, if indicated, lower) blepharoplasty when the skin excess is visually significant, as documented by taped versus untaped visual field testing' },
       { category: 'Advanced treatment', detail: 'Upper eyelid blepharoplasty (excision of redundant skin, orbicularis, and, if present, herniated fat) is the definitive treatment when visually significant; concurrent ptosis repair (e.g., levator advancement) must be performed at the same time if true coexisting ptosis is identified on exam, since blepharoplasty alone will not correct a genuinely reduced lid margin position' },
     ],
+    managementProtocol: {
+      workup: [
+        'External examination with manual skin elevation and MRD1 remeasurement to distinguish isolated skin excess from coexisting ptosis',
+        'Formal visual field testing (e.g., Humphrey or Goldmann perimetry) performed untaped and again with the redundant skin taped superiorly, to objectively document functional impairment',
+        'External photography (pre- and post-taping) to document baseline appearance and support surgical/insurance documentation',
+        'Levator function measurement to confirm normal function and exclude a significant aponeurotic ptosis component',
+      ],
+      initialTreatment:
+        'Mild dermatochalasis without visual field compromise can be observed and managed as a cosmetic concern if the patient does not desire surgery. When skin excess is visually significant, as documented by taped versus untaped visual field testing, upper eyelid blepharoplasty (excision of redundant skin, orbicularis, and any herniated fat) is the definitive treatment; concurrent ptosis repair (e.g., levator advancement) must be performed at the same time if true coexisting ptosis is identified on exam.',
+      followUpSchedule:
+        'Periodic reassessment (e.g., every 1-2 years or as symptoms progress) if managed conservatively; standard postoperative follow-up per oculoplastic surgeon protocol after blepharoplasty.',
+      escalationCriteria: [
+        'Progressive visual field obstruction or increasing functional impairment (difficulty reading, driving, brow ache)',
+        'Interval development of a coexisting ptosis component on reassessment',
+        'Rapid or asymmetric onset of eyelid swelling/skin change, which should prompt evaluation for an alternative cause rather than assumed age-related dermatochalasis',
+      ],
+      referralCriteria: [
+        'Visually significant skin excess documented on taped visual field testing -> oculoplastic surgery for upper (and, if indicated, lower) blepharoplasty',
+        'Coexisting true ptosis identified on exam -> concurrent ptosis repair at the time of blepharoplasty',
+      ],
+      complications: [
+        'Untreated severe dermatochalasis can cause functional visual field loss significant enough to affect driving and reading',
+        'Lagophthalmos or dry eye exacerbation after blepharoplasty',
+        'Persistent lid droop after blepharoplasty alone if a coexisting ptosis was not recognized and addressed',
+      ],
+      monitoringParameters: ['Degree of skin redundancy', 'Visual field impact (taped vs. untaped)', 'MRD1 and levator function (reassessment for interval ptosis)'],
+      relatedExamTechniqueIds: ['marginal-reflex-distance', 'humphrey-visual-field', 'confrontation-visual-fields'],
+    },
     followUp: {
       typical: 'Periodic reassessment (e.g., every 1-2 years or as symptoms progress) if observed conservatively; standard postoperative follow-up per oculoplastic surgeon protocol after blepharoplasty',
       monitor: 'Degree of skin redundancy, visual field impact, and, importantly, reassessment for interval development of coexisting ptosis',
@@ -154,6 +182,33 @@ export const eyelidAdnexaAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Cryotherapy or electrolysis targeted at the aberrant follicles, or surgical excision (e.g., lamellar lid-splitting procedures) to permanently destroy or remove the abnormal follicles, for symptomatic or recurrent cases requiring definitive treatment' },
       { category: 'Referral', detail: 'Refer to oculoplastic surgery for cryotherapy, electrolysis, or surgical management of symptomatic distichiasis; refer for genetics/vascular medicine evaluation when lymphedema-distichiasis syndrome is suspected' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination with eyelid margin eversion to directly visualize the accessory lash row at the meibomian gland orifices and distinguish it from trichiasis',
+        'Corneal fluorescein staining to assess for keratopathy from chronic lash-corneal contact',
+        'Lower extremity examination and referral for lymphedema evaluation/genetic counseling when congenital (particularly bilateral) distichiasis is identified, to screen for lymphedema-distichiasis syndrome',
+      ],
+      initialTreatment:
+        'Asymptomatic distichiasis with fine lashes not contacting or irritating the cornea may be observed. Ocular lubrication addresses mild associated punctate keratopathy while definitive lash management is planned. Manual epilation provides temporary relief but is not curative, as lashes typically regrow from the same follicle within several weeks.',
+      followUpSchedule:
+        'Periodic reassessment for lash regrowth after epilation; longer-interval follow-up after definitive cryotherapy or surgical treatment to monitor for recurrence.',
+      escalationCriteria: [
+        'Recurrent lash regrowth with persistent corneal irritation after epilation',
+        'Development of a corneal epithelial defect or signs of secondary infectious keratitis',
+      ],
+      referralCriteria: [
+        'Symptomatic or recurrent distichiasis requiring definitive treatment -> oculoplastic surgery for cryotherapy, electrolysis, or surgical excision (e.g., lamellar lid-splitting) of the aberrant follicles',
+        'Suspected lymphedema-distichiasis syndrome (bilateral congenital distichiasis with lower extremity swelling, typically around puberty) -> genetics/vascular medicine referral',
+        'Acquired distichiasis with underlying cicatrizing conjunctival disease -> evaluation and management of the systemic/cicatricial process',
+      ],
+      complications: [
+        'Corneal punctate keratopathy and, with chronic untreated contact, scarring and vascularization',
+        'Risk of secondary infectious keratitis',
+        'Recurrence of aberrant lashes after epilation (expected without follicle-destructive treatment)',
+      ],
+      monitoringParameters: ['Corneal integrity/staining', 'Symptom severity', 'Regrowth of aberrant lashes after treatment'],
+      relatedExamTechniqueIds: ['lid-eversion', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Periodic reassessment for lash regrowth after epilation; longer-interval follow-up after definitive cryotherapy or surgical treatment to monitor for recurrence',
       monitor: 'Corneal integrity/staining, symptom severity, and regrowth of aberrant lashes after treatment',
@@ -251,6 +306,36 @@ export const eyelidAdnexaAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to oculoplastic surgery/ocular oncology for biopsy of any suspicious scaly, ulcerated, or atypical pigmented eyelid lesion; multidisciplinary co-management with dermatology and medical oncology for confirmed SCC with high-risk features or any confirmed melanoma' },
       { category: 'Referral', detail: 'Referral to medical oncology for systemic staging and, when indicated, systemic therapy (including immune checkpoint inhibitor or targeted molecular therapy, as applicable) for melanoma with regional or distant metastatic spread' },
     ],
+    managementProtocol: {
+      workup: [
+        'Incisional or excisional biopsy of any suspicious scaly/ulcerated lesion (concerning for SCC) or any new, changing, or atypical pigmented lesion (concerning for melanoma)',
+        'Dermoscopy as a non-invasive adjunct when assessing a clinically equivocal pigmented lesion',
+        'Assessment for perineural invasion (clinical sensory testing, and MRI when numbness or pain is present) for SCC',
+        'Regional lymph node examination and imaging, with sentinel lymph node biopsy when indicated, for melanoma of sufficient Breslow depth or high-risk SCC',
+      ],
+      initialTreatment:
+        'Mohs micrographic surgery is the preferred treatment for periocular SCC given its tissue-sparing margin control. Wide local excision with clear histopathologic margins, guided by Breslow thickness, is the primary treatment for cutaneous eyelid melanoma, with sentinel lymph node biopsy considered for melanomas of sufficient depth per current staging guidelines.',
+      followUpSchedule:
+        'Close periodic skin and eyelid examinations after treatment of either SCC or melanoma, with frequency individualized to risk, given ongoing risk of local recurrence and new primary lesions from the same field of chronic UV damage.',
+      escalationCriteria: [
+        'Any new induration, ulceration, or pigmented change at or near a prior treatment site',
+        'New regional lymphadenopathy',
+        'High-risk features at diagnosis (perineural invasion or nodal involvement for SCC; greater Breslow thickness or nodal involvement for melanoma)',
+      ],
+      referralCriteria: [
+        'Any suspicious scaly, ulcerated, or atypical pigmented eyelid lesion -> urgent oculoplastic surgery/ocular oncology referral for biopsy',
+        'Confirmed SCC with high-risk features or any confirmed melanoma -> multidisciplinary co-management with dermatology and medical oncology',
+        'Melanoma with regional or distant metastatic spread -> medical oncology for systemic staging and, when indicated, systemic therapy (immune checkpoint inhibitor or targeted molecular therapy)',
+        'SCC with perineural invasion, incomplete surgical margins, or when surgery is not feasible -> consideration of adjuvant radiotherapy',
+      ],
+      complications: [
+        'SCC: local tissue destruction, perineural spread with potential intracranial extension, regional and rarely distant metastasis',
+        'Melanoma: local recurrence, regional lymph node metastasis, and distant metastasis (the principal driver of mortality)',
+        'Extensive local disease from either tumor can threaten the eyelid, ocular surface, and orbit if neglected',
+      ],
+      monitoringParameters: ['Local recurrence at the surgical site', 'New suspicious skin lesions elsewhere (shared UV-related risk)', 'Regional lymphadenopathy', 'Sensory changes suggesting perineural spread (SCC)'],
+      relatedExamTechniqueIds: ['lid-eversion', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Close periodic skin and eyelid examinations (frequency individualized to risk) after treatment of either SCC or melanoma, given ongoing risk of local recurrence and new primary lesions from the same field of chronic UV damage',
       monitor: 'Local recurrence at the surgical site, new suspicious skin lesions elsewhere (given shared UV-related risk), and regional lymphadenopathy',
