@@ -74,6 +74,41 @@ export const corneaAdditional4: Disease[] = [
       { category: 'Advanced treatment', detail: 'Phototherapeutic keratectomy (PTK) with the excimer laser as an alternative or adjunct to manual superficial keratectomy for smoothing the corneal surface and removing nodular tissue, particularly for more diffuse or recurrent nodules' },
       { category: 'Referral', detail: 'Refer to a corneal specialist for surgical removal (superficial keratectomy or PTK) when nodules are visually significant, cause recurrent erosion-like symptoms, or interfere with contact lens fitting or cataract surgery biometry' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp documentation of nodule number, size, and location relative to the visual axis',
+        'Corneal topography to quantify induced irregular astigmatism and establish a baseline for surgical planning',
+        'Anterior segment OCT to assess nodule depth and epithelial thinning before keratectomy/PTK',
+        'Evaluation of ocular surface disease severity (tear break-up time, lid margin exam, meibomian gland assessment) to identify the driving chronic inflammatory process',
+      ],
+      initialTreatment:
+        'Asymptomatic or mildly symptomatic nodules that do not threaten the visual axis are observed while any underlying chronic blepharitis/meibomian gland dysfunction or dry eye disease is treated aggressively with lid hygiene, warm compresses, and preservative-free artificial tears to reduce the ongoing inflammatory stimulus that drives nodule formation and recurrence.',
+      followUpSchedule:
+        'Stable, asymptomatic nodules are reassessed every 6-12 months; nodules that are enlarging, becoming symptomatic, or approaching the visual axis are seen every few months with repeat topography to track irregular astigmatism.',
+      escalationCriteria: [
+        'Nodule encroaching on or distorting the visual axis with a measurable decrease in best-corrected visual acuity',
+        'Recurrent erosion-like episodes of epithelial breakdown over a nodule',
+        'Progressive irregular astigmatism precluding accurate keratometry/biometry before planned cataract or refractive surgery',
+      ],
+      referralCriteria: [
+        'Refer to a corneal specialist for superficial keratectomy or PTK when nodules are visually significant, symptomatic, or interfere with contact lens fitting',
+        'Refer before cataract surgery in an affected eye so nodules can be addressed (or accounted for) before IOL power calculation',
+      ],
+      complications: [
+        'Recurrence after superficial keratectomy or PTK, particularly with unaddressed ocular surface inflammation',
+        'Induced irregular astigmatism affecting biometry accuracy for cataract surgery',
+        'Rare erosion-like epithelial breakdown over a nodule',
+        'Corneal haze after phototherapeutic keratectomy',
+      ],
+      monitoringParameters: [
+        'Nodule number, size, and location',
+        'Best-corrected visual acuity and manifest refraction',
+        'Corneal topography for irregular astigmatism',
+        'Ocular surface disease control (lid margin exam, tear break-up time)',
+      ],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['corneal-topography', 'anterior-segment-oct', 'tear-break-up-time', 'meibomian-gland-evaluation'],
+    },
     followUp: {
       typical: 'Annual to biannual monitoring for stable, asymptomatic nodules; closer follow-up (every few months) if nodules are enlarging or symptomatic',
       monitor: 'Nodule size, number, and location; visual acuity and refraction; corneal topography if progressive irregular astigmatism is a concern; ocular surface disease control',

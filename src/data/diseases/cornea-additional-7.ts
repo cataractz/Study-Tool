@@ -93,6 +93,34 @@ export const corneaAdditional7: Disease[] = [
       { category: 'First-line treatment', detail: 'A short course of a topical corticosteroid or NSAID may be used for more significant inflammation/discomfort, at clinician discretion' },
       { category: 'Referral', detail: 'Escalate promptly if an epithelial defect, dense infiltrate, or mucopurulent discharge develops — those findings suggest microbial keratitis and change management entirely' },
     ],
+    managementProtocol: {
+      workup: [
+        'Fluorescein staining to confirm absence of an epithelial defect over the infiltrates',
+        'Detailed contact lens wear history (overnight/extended wear, lens fit, hygiene) to confirm the classic precipitating scenario',
+        'Slit lamp assessment of anterior chamber reaction and lens deposits/fit',
+      ],
+      initialTreatment:
+        'Discontinue contact lens wear until complete resolution of signs and symptoms; preservative-free lubricating drops are used for comfort, and a short course of a topical corticosteroid or NSAID may be added at clinician discretion for more significant inflammation.',
+      followUpSchedule: 'Recheck in 3-7 days to confirm resolution before considering a lens refit; any worsening prompts reassessment within 24 hours.',
+      escalationCriteria: [
+        'Development of an epithelial defect or fluorescein staining over the infiltrates',
+        'Mucopurulent discharge',
+        'Worsening pain or lack of improvement off the lens within the expected timeframe',
+      ],
+      referralCriteria: [
+        'Epithelial defect, dense infiltrate, or discharge developing at any point -> urgent reassessment for presumed microbial keratitis',
+        'Diagnostic uncertainty or severe presentation -> corneal culture and cornea specialist evaluation',
+      ],
+      steroidConsiderations:
+        'A brief course of a mild topical corticosteroid may be used for more significant inflammation/discomfort, but is not routinely required since CLARE typically resolves rapidly with lens discontinuation alone; the short duration used in practice makes routine IOP surveillance less critical than in chronic steroid use, but IOP should still be checked if used beyond a few days.',
+      complications: [
+        'Residual faint subepithelial infiltrates/scarring in rare or recurrent cases',
+        'Risk of mistaking early infectious keratitis for CLARE if the epithelium is not carefully checked for staining',
+      ],
+      monitoringParameters: ['Resolution of infiltrates and conjunctival injection', 'Development of any new epithelial staining', 'Lens wear modality/hygiene at refit'],
+      relatedDrugIds: ['loteprednol-etabonate'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Recheck in 3–7 days to confirm resolution before considering a lens refit',
       monitor: 'Resolution of infiltrates and injection; development of any epithelial staining suggesting a different/infectious process',
@@ -202,6 +230,33 @@ export const corneaAdditional7: Disease[] = [
       { category: 'First-line treatment', detail: 'Treat any underlying blepharitis/lid margin disease (lid hygiene, warm compresses), since it is often the reservoir for the causative organism' },
       { category: 'Referral', detail: 'Escalate to aggressive antibiotic therapy and closer monitoring if the lesion enlarges, becomes more painful, or discharge develops within the first 24–48 hours' },
     ],
+    managementProtocol: {
+      workup: [
+        'Fluorescein staining to size and characterize the epithelial defect overlying the infiltrate',
+        'Lid margin examination for coexisting blepharitis, the classic reservoir for the causative Staphylococcus',
+        'Contact lens wear/hygiene history review',
+      ],
+      initialTreatment:
+        'Discontinue lens wear; a prophylactic topical antibiotic is commonly used empirically until an infectious ulcer can be confidently excluded, given the clinical overlap with early microbial keratitis, and any underlying blepharitis/lid margin disease is treated with lid hygiene and warm compresses.',
+      followUpSchedule:
+        'Recheck within 24-48 hours — the short-interval trajectory (stable/improving versus enlarging) is often more diagnostic than the initial exam — then again at about 1 week to confirm resolution.',
+      escalationCriteria: [
+        'Lesion enlarging or becoming more painful within the first 24-48 hours',
+        'New or increasing discharge',
+        'Failure to improve on empiric topical antibiotic therapy',
+      ],
+      referralCriteria: [
+        'Large, central, or worsening lesion -> corneal culture and urgent reassessment for presumed microbial keratitis',
+        'Any lesion not clearly improving by 48 hours -> cornea specialist evaluation',
+      ],
+      complications: [
+        'Rare small residual subepithelial scar at the lesion site',
+        'Risk of under-treating an evolving microbial keratitis if misclassified as CLPU in the first 24-48 hours',
+      ],
+      monitoringParameters: ['Lesion size on serial fluorescein staining', 'Pain level', 'Development of discharge', 'Resolution of coexisting blepharitis'],
+      relatedDrugIds: ['moxifloxacin'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining', 'lid-margin-blepharitis-assessment', 'corneal-culture-and-scraping'],
+    },
     followUp: {
       typical: 'Recheck within 24–48 hours to confirm improvement',
       monitor: 'Lesion size, pain level, and development of discharge',
@@ -303,6 +358,28 @@ export const corneaAdditional7: Disease[] = [
       { category: 'First-line treatment', detail: 'Modify contributing factors — switch to daily disposable wear, discontinue extended/overnight wear, or switch from multipurpose solution to a peroxide-based system — to reduce recurrence' },
       { category: 'First-line treatment', detail: 'Lubricating drops for comfort if mildly symptomatic' },
     ],
+    managementProtocol: {
+      workup: [
+        'Fluorescein staining to confirm absence of an epithelial defect over the infiltrates',
+        'Contact lens wear modality and care-system history review (extended wear, reusable lens, multipurpose solution use) to identify modifiable risk factors',
+      ],
+      initialTreatment:
+        'Many cases require no active treatment beyond temporary lens discontinuation and observation; modifying contributing factors — switching to daily disposable wear, discontinuing extended/overnight wear, or changing from multipurpose solution to a peroxide-based system — reduces recurrence, and lubricating drops are added if mildly symptomatic.',
+      followUpSchedule: 'Recheck in 1-2 weeks, or at the next scheduled visit, to confirm resolution before resuming lens wear.',
+      escalationCriteria: [
+        'New epithelial staining developing over a previously non-staining infiltrate',
+        'New pain or discharge',
+        'Enlarging or increasingly numerous infiltrates',
+      ],
+      referralCriteria: [
+        'Evolution toward staining, pain, or discharge -> reassess for CLPU or microbial keratitis rather than continued observation',
+        'Frequent recurrence despite modifying lens modality/care system -> contact lens specialist for a modality change (e.g., daily disposable)',
+      ],
+      complications: ['Essentially none in isolated cases', 'Trace subclinical scarring with frequent recurrence over time'],
+      monitoringParameters: ['Resolution of infiltrates', 'Any new epithelial staining or symptoms', 'Adherence to modified lens wear schedule/care system'],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Recheck in 1–2 weeks or at the next scheduled visit to confirm resolution before resuming lens wear',
       monitor: 'Resolution of infiltrates; any evolution toward staining or pain that would suggest a different process',

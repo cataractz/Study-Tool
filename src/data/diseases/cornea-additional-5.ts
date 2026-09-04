@@ -63,6 +63,33 @@ export const corneaAdditional5: Disease[] = [
       { category: 'Referral', detail: 'Refer any patient with arcus juvenilis (onset before approximately age 40-45) to primary care for a fasting lipid panel and cardiovascular risk assessment, and educate the patient on the significance of the finding' },
       { category: 'First-line treatment', detail: 'No treatment is directed at the eye; systemic management (dietary modification, lipid-lowering therapy) is directed by primary care or cardiology if dyslipidemia is confirmed on workup' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination to characterize ring completeness and density and to confirm the clear zone separating it from the limbus',
+        'Patient age assessment to determine whether systemic lipid screening is indicated (onset before approximately age 40-45)',
+        'Fasting lipid panel (total cholesterol, LDL, HDL, triglycerides) for any patient with arcus juvenilis',
+      ],
+      initialTreatment:
+        'No ocular treatment is directed at the arcus itself in any age group; management consists entirely of age-based triage — documenting the finding in patients with typical arcus senilis, versus referring any patient under approximately age 40-45 for a fasting lipid panel and cardiovascular risk assessment.',
+      followUpSchedule:
+        'No dedicated ocular follow-up is required for the arcus itself; document presence and extent at routine comprehensive exams, and confirm at the next visit that a referred patient completed their fasting lipid panel.',
+      escalationCriteria: [
+        'Onset before approximately age 40-45 (arcus juvenilis) — always escalates from simple documentation to systemic referral',
+        'Rapidly progressive, dense, or markedly asymmetric arcus in a young patient, raising suspicion for familial hypercholesterolemia',
+      ],
+      referralCriteria: [
+        'Arcus juvenilis (onset before approximately age 40-45) -> primary care/internal medicine for a fasting lipid panel and cardiovascular risk assessment',
+        'Confirmed dyslipidemia in a young patient -> cardiology for further cardiovascular risk stratification and consideration of lipid-lowering therapy',
+      ],
+      complications: [
+        'None directly ocular — arcus never affects vision or corneal structural integrity',
+        'Delayed diagnosis of underlying familial hypercholesterolemia if arcus juvenilis is not recognized and referred',
+      ],
+      monitoringParameters: [
+        'Presence, extent, and completeness of the ring at routine exams',
+        'Confirmation that a fasting lipid panel was obtained for patients under approximately age 40-45',
+      ],
+    },
     followUp: {
       typical: 'No dedicated ocular follow-up is required for the arcus itself; simply document its presence and extent at routine comprehensive eye examinations',
       monitor: 'Presence and extent of the arcus at routine visits, and confirmation that the systemic referral for a fasting lipid panel was completed for any patient under approximately 40-45 years old',

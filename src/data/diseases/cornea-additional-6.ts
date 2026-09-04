@@ -66,6 +66,44 @@ export const corneaAdditional6: Disease[] = [
       { category: 'Second-line treatment', detail: 'Bandage contact lens may be considered for large, non-contact-lens-related abrasions for comfort; pressure patching is avoided in contact lens-related or contaminated injuries' },
       { category: 'Referral', detail: 'Refer promptly if a retained foreign body, stromal infiltrate, or Seidel-positive wound is identified' },
     ],
+    managementProtocol: {
+      workup: [
+        'Fluorescein staining with cobalt blue light to size and document the epithelial defect',
+        'Upper eyelid eversion to rule out a retained subtarsal foreign body',
+        'Seidel test with any high-velocity, penetrating, or projectile mechanism to exclude occult globe perforation',
+        'Slit lamp assessment of the stroma and anterior chamber to exclude an infiltrate or reaction suggesting early infection',
+      ],
+      initialTreatment:
+        'Topical antibiotic prophylaxis (broader antipseudomonal coverage such as a fluoroquinolone for contact lens-related abrasions) is applied until the epithelium resurfaces, with a cycloplegic agent added for comfort in larger or more symptomatic abrasions; pressure patching and bandage contact lenses are avoided in contact lens-related or contaminated injuries.',
+      followUpSchedule:
+        'Recheck in 24-48 hours to confirm re-epithelialization, sooner if pain worsens or discharge/vision loss develops; contact lens wearers and larger or organic-matter abrasions are seen at the shorter end of that interval given higher infection risk.',
+      escalationCriteria: [
+        'New stromal infiltrate or increasing anterior chamber reaction suggesting secondary microbial keratitis',
+        'Worsening pain, new discharge, or a defect that fails to shrink by 24-48 hours',
+        'Positive Seidel test at any point, indicating perforation',
+      ],
+      referralCriteria: [
+        'Retained corneal or subtarsal foreign body identified on lid eversion',
+        'Stromal infiltrate or anterior chamber reaction concerning for infectious keratitis',
+        'Seidel-positive wound or suspected open globe -> urgent same-day referral',
+      ],
+      cycloplegicConsiderations:
+        'A cycloplegic such as cyclopentolate relieves ciliary spasm and improves comfort in larger, more symptomatic abrasions; not routinely required for small, minimally symptomatic defects.',
+      complications: [
+        'Secondary microbial keratitis, particularly in contact lens wearers',
+        'Recurrent corneal erosion, especially after fingernail or organic/vegetable matter injury',
+        'Rare subepithelial scarring with deeper injuries',
+        'Corneal epithelial toxicity from repeated home use of topical anesthetic (never dispensed for outpatient use)',
+      ],
+      monitoringParameters: [
+        'Epithelial defect size on serial fluorescein staining',
+        'Pain level and symptom trajectory',
+        'Development of a stromal infiltrate or discharge',
+        'Confirmed re-epithelialization by 24-72 hours',
+      ],
+      relatedDrugIds: ['moxifloxacin', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining', 'seidel-test', 'lid-eversion'],
+    },
     followUp: {
       typical: 'Recheck in 24-48 hours to confirm re-epithelialization, sooner if pain worsens or discharge/vision loss develops',
       monitor: 'Epithelial defect size, presence of an infiltrate, pain level; closer monitoring in contact lens wearers',
@@ -153,6 +191,41 @@ export const corneaAdditional6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Keratoplasty (often crescentic or eccentric penetrating keratoplasty, or lamellar techniques) reserved for advanced or scarred cases; the peripheral inferior location makes standard central penetrating keratoplasty more technically challenging than for central keratoconus' },
       { category: 'Referral', detail: 'Refer to a cornea specialist for contact lens fitting difficulty, consideration of cross-linking, or surgical planning' },
     ],
+    managementProtocol: {
+      workup: [
+        'Corneal topography/tomography (Scheimpflug/Pentacam) with pachymetry mapping to confirm the classic crab-claw pattern and localize the thinnest point',
+        'Manifest refraction and best-corrected visual acuity to quantify the functional impact of the irregular astigmatism',
+        'Slit lamp exam to exclude Vogt striae/Fleischer ring and assess for scarring before contact lens fitting',
+      ],
+      initialTreatment:
+        'Mild irregular astigmatism is corrected with glasses; moderate to severe cases require rigid gas permeable or scleral contact lenses, since the peripheral ectatic band is poorly correctable with spectacles alone.',
+      followUpSchedule:
+        'Every 6-12 months with repeat topography while stable; more frequently if serial topography shows progressive steepening or the patient reports rapidly changing refraction.',
+      escalationCriteria: [
+        'Documented topographic progression (increasing steepening/thinning) on serial exams',
+        'Progressive astigmatism no longer correctable with rigid gas permeable/scleral lenses',
+        'Best-corrected visual acuity declining despite optimized contact lens correction',
+        'Sudden pain and vision loss suggesting acute hydrops',
+      ],
+      referralCriteria: [
+        'Contact lens fitting difficulty despite an RGP/scleral lens trial -> cornea specialist',
+        'Documented progression -> consideration of corneal collagen cross-linking',
+        'Advanced or scarred disease, or failed contact lens correction -> keratoplasty evaluation',
+      ],
+      complications: [
+        'Rare acute hydrops from Descemet membrane rupture',
+        'Corneal perforation with even minor trauma given the thinness of the band',
+        'Scarring in advanced disease',
+        'Greater technical difficulty and less predictable outcomes with keratoplasty given the peripheral location of pathology',
+      ],
+      monitoringParameters: [
+        'Keratometry/corneal topography',
+        'Manifest refraction and best-corrected visual acuity',
+        'Pachymetry at the thinned band',
+        'Contact lens fit and tolerance',
+      ],
+      relatedExamTechniqueIds: ['corneal-topography', 'corneal-pachymetry'],
+    },
     followUp: {
       typical: 'Every 6-12 months with topography while stable',
       monitor: 'Keratometry/topography, refraction, best corrected visual acuity, pachymetry',
@@ -243,6 +316,40 @@ export const corneaAdditional6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Penetrating keratoplasty reserved for cases with significant stromal scarring or when endothelial keratoplasty alone is insufficient' },
       { category: 'Referral', detail: 'Refer to a cornea specialist for surgical planning, particularly when an IOL-related cause needs to be addressed concurrently' },
     ],
+    managementProtocol: {
+      workup: [
+        'Specular microscopy to quantify endothelial cell density and morphology',
+        'Pachymetry to establish baseline corneal thickness and objectively track edema',
+        'Slit lamp assessment of IOL position/stability and evaluation for vitreous touch as a potentially correctable contributing cause',
+      ],
+      initialTreatment:
+        'Hypertonic saline (5% sodium chloride drops or ointment) and a bandage contact lens are used for symptomatic relief and to protect ruptured bullae while any correctable contributing cause (e.g., a malpositioned or chronically chafing IOL) is addressed; definitive treatment for visually significant, symptomatic disease is endothelial keratoplasty (DSAEK or DMEK).',
+      followUpSchedule:
+        'Every few months while managed conservatively; standard postoperative endothelial keratoplasty follow-up (postoperative day 1, week 1, month 1, then periodically through the first year) once surgery is performed, to monitor graft attachment and clarity.',
+      escalationCriteria: [
+        'Increasing pain or recurrent bullae rupture despite hypertonic saline and bandage contact lens',
+        'Worsening visual acuity affecting function',
+        'Signs of secondary infectious keratitis at a ruptured bulla site',
+      ],
+      referralCriteria: [
+        'Any visually significant or symptomatic bullous keratopathy -> cornea specialist for endothelial keratoplasty evaluation',
+        'Malpositioned or chafing IOL contributing to ongoing endothelial trauma -> IOL exchange/repositioning',
+        'Significant stromal scarring precluding endothelial keratoplasty alone -> penetrating keratoplasty evaluation',
+      ],
+      complications: [
+        'Secondary infectious keratitis from ruptured bullae',
+        'Corneal scarring and vascularization in chronic disease',
+        'Chronic pain',
+        'Graft rejection or failure after endothelial or penetrating keratoplasty',
+      ],
+      monitoringParameters: [
+        'Endothelial cell density on specular microscopy',
+        'Central corneal thickness (pachymetry)',
+        'Pain level and bullae frequency',
+        'Graft clarity and attachment after keratoplasty',
+      ],
+      relatedExamTechniqueIds: ['corneal-endothelial-specular-microscopy', 'corneal-pachymetry'],
+    },
     followUp: {
       typical: 'Every few months while managed conservatively; more frequent postoperative follow-up after endothelial keratoplasty',
       monitor: 'Pain level, visual acuity, corneal thickness, bullae frequency, graft clarity after keratoplasty',
@@ -334,6 +441,43 @@ export const corneaAdditional6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Limbal stem cell transplantation (conjunctival-limbal autograft from the fellow eye if unilateral, or living-related/cadaveric allograft with systemic immunosuppression if bilateral) for severe, vision-limiting disease' },
       { category: 'Referral', detail: 'Refer to a cornea specialist experienced in ocular surface reconstruction for any significant or bilateral limbal stem cell deficiency' },
     ],
+    managementProtocol: {
+      workup: [
+        'Impression cytology to confirm goblet cells on the corneal surface and establish the diagnosis',
+        'Slit lamp exam with fluorescein and lissamine green staining to characterize the epithelial pattern, staining behavior, and extent of conjunctivalization',
+        'Anterior segment OCT to assess epithelial thickness/regularity and limbal architecture as a baseline before treatment',
+        'Assessment of extent (partial vs. total) and laterality to determine whether an autologous or allogeneic stem cell source would be needed if transplantation becomes necessary',
+      ],
+      initialTreatment:
+        'Aggressive lubrication with preservative-free artificial tears/ointment combined with treatment of the underlying cause (discontinuing an offending contact lens, controlling active SJS/mucous membrane pemphigoid inflammation) is first-line; a bandage or scleral lens and autologous serum tears are added for more severe surface disease.',
+      followUpSchedule:
+        'Every 1-3 months depending on severity and activity of the underlying disease; more frequently during a flare of the causative systemic condition or an acute epithelial defect.',
+      escalationCriteria: [
+        'Enlarging or non-healing persistent epithelial defect despite lubrication and bandage/scleral lens',
+        'Worsening conjunctivalization or new corneal neovascularization on serial exams',
+        'Progressive vision loss from surface irregularity or scarring',
+      ],
+      referralCriteria: [
+        'Any significant or bilateral limbal stem cell deficiency -> cornea specialist experienced in ocular surface reconstruction',
+        'Persistent epithelial defect not responding to medical therapy -> consideration of amniotic membrane transplantation',
+        'Severe, vision-limiting disease -> evaluation for limbal stem cell transplantation (conjunctival-limbal autograft or allograft with systemic immunosuppression)',
+      ],
+      complications: [
+        'Persistent epithelial defects',
+        'Corneal scarring and vascularization',
+        'Secondary microbial keratitis',
+        'Standard keratoplasty failure if performed without addressing the underlying stem cell deficiency',
+        'Vision loss',
+      ],
+      monitoringParameters: [
+        'Corneal clarity and epithelial defect status',
+        'Degree of conjunctivalization/neovascularization',
+        'Visual acuity',
+        'Symblepharon/forniceal status when an underlying cicatrizing disease is present',
+      ],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['anterior-segment-oct', 'lissamine-green-rose-bengal-staining', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Every 1-3 months depending on severity and activity of the underlying disease',
       monitor: 'Corneal clarity, epithelial defect status, degree of conjunctivalization/neovascularization, vision',
@@ -421,6 +565,34 @@ export const corneaAdditional6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Endothelial keratoplasty (DSAEK/DMEK) reserved for the uncommon cases with visually significant corneal edema' },
       { category: 'Referral', detail: 'Refer to a glaucoma specialist if peripheral anterior synechiae/secondary angle-closure glaucoma develops; refer to a cornea specialist if significant edema emerges' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with retroillumination to characterize the vesicular/band lesion pattern and establish a baseline',
+        'Specular microscopy to document endothelial morphology and distinguish epithelial-like cells from guttae',
+        'Gonioscopy to assess for peripheral anterior synechiae in more extensive disease',
+        'Pachymetry to confirm preserved endothelial pump function and establish a baseline for monitoring',
+      ],
+      initialTreatment:
+        'Most patients require no treatment beyond periodic observation, since endothelial pump function and vision are typically preserved; topical IOP-lowering therapy is added only if secondary angle-closure glaucoma develops from angle involvement.',
+      followUpSchedule:
+        'Periodic monitoring, roughly every 1-2 years, given the generally stable, non-progressive course in most patients; closer monitoring if gonioscopy shows angle involvement or the patient becomes symptomatic.',
+      escalationCriteria: [
+        'New or progressive corneal edema on exam or pachymetry',
+        'Rising intraocular pressure or new peripheral anterior synechiae on gonioscopy',
+        'Development of visually significant edema',
+      ],
+      referralCriteria: [
+        'Peripheral anterior synechiae or secondary angle-closure glaucoma on gonioscopy -> glaucoma specialist',
+        'Visually significant corneal edema -> cornea specialist for endothelial keratoplasty evaluation',
+        'Affected family members -> screening exam given autosomal dominant inheritance',
+      ],
+      complications: [
+        'Secondary angle-closure glaucoma from peripheral anterior synechiae in severe cases',
+        'Uncommonly, corneal edema requiring endothelial keratoplasty',
+      ],
+      monitoringParameters: ['Visual acuity', 'Corneal clarity and pachymetry', 'Intraocular pressure', 'Gonioscopy when angle involvement is suspected'],
+      relatedExamTechniqueIds: ['corneal-endothelial-specular-microscopy', 'gonioscopy', 'corneal-pachymetry'],
+    },
     followUp: {
       typical: 'Periodic monitoring (e.g., every 1-2 years) given the generally stable, non-progressive course in most patients',
       monitor: 'Visual acuity, corneal clarity/pachymetry, intraocular pressure, gonioscopy if angle involvement is suspected',
@@ -514,6 +686,44 @@ export const corneaAdditional6: Disease[] = [
       { category: 'Second-line treatment', detail: 'Topical corticosteroids and/or topical cyclosporine may be used adjunctively for ocular surface inflammation under specialist guidance, generally in combination with systemic therapy rather than alone' },
       { category: 'Referral', detail: 'Immediate referral to both a cornea specialist and rheumatology for any patient with PUK, regardless of presumed etiology, given the risk of missed systemic disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Systemic autoimmune serologic workup (RF, anti-CCP, ANCA/PR3/MPO, ANA, complement levels, hepatitis B serology as indicated) in every patient before any idiopathic/Mooren label is applied',
+        'Corneal culture/scraping to exclude an infectious etiology, particularly with an atypical history or appearance',
+        'Slit lamp exam with fluorescein staining and careful measurement of the extent and depth of stromal thinning',
+        'Urgent rheumatology referral with systemic organ evaluation (renal function/urinalysis, chest imaging as indicated) to assess for other active end-organ vasculitic involvement',
+      ],
+      initialTreatment:
+        'Systemic immunosuppression (corticosteroids plus a steroid-sparing agent such as methotrexate, or a biologic, coordinated with rheumatology) is the cornerstone of treatment for immune-mediated PUK, since topical treatment alone is inadequate whenever active systemic vasculitis is present; aggressive ocular lubrication reduces mechanical stress on the thinned area, and a topical corticosteroid or cyclosporine may be added adjunctively for ocular surface inflammation under specialist guidance.',
+      followUpSchedule:
+        'Daily to every-few-days follow-up during active/progressive disease, especially before systemic immunosuppression has taken effect; the interval lengthens only once thinning and the epithelial defect have stabilized.',
+      escalationCriteria: [
+        'Progressive stromal thinning or an enlarging epithelial defect despite treatment',
+        'New descemetocele formation, signaling impending perforation',
+        'Any new evidence of active systemic vasculitis (new organ involvement, rising inflammatory markers)',
+      ],
+      referralCriteria: [
+        'Every patient with PUK, regardless of presumed etiology -> immediate referral to both a cornea specialist and rheumatology',
+        'Impending or actual corneal perforation -> urgent surgical evaluation (tissue adhesive, bandage contact lens, or patch/lamellar graft)',
+        'Positive ANCA, RF/anti-CCP, or other serologic marker -> rheumatology co-management for systemic immunosuppression',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids may be used adjunctively for ocular surface inflammation, generally combined with systemic therapy rather than used alone, since topical steroid monotherapy can accelerate stromal melting via unchecked collagenase activity if the underlying systemic vasculitis is not concurrently controlled; monitor IOP with any sustained use.',
+      complications: [
+        'Corneal perforation',
+        'Endophthalmitis',
+        'Severe astigmatism/scarring',
+        'Reported 10-year mortality of approximately 40-50% (chiefly from myocardial infarction) in patients with systemic rheumatic disease-associated PUK managed without systemic immunosuppression, versus approximately 8% with systemic cytotoxic/immunosuppressive therapy',
+      ],
+      monitoringParameters: [
+        'Degree of stromal thinning and epithelial defect size',
+        'Anterior chamber reaction and adjacent scleritis',
+        'Systemic disease activity markers (inflammatory markers, ANCA titers, renal function) in coordination with rheumatology',
+        'Signs of impending perforation (descemetocele)',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclosporine-ophthalmic-emulsion', 'methotrexate'],
+      relatedExamTechniqueIds: ['corneal-culture-and-scraping', 'anterior-chamber-cell-flare-grading'],
+    },
     followUp: {
       typical: 'Very frequent (daily to every few days) during active/progressive disease, especially before systemic immunosuppression takes effect',
       monitor: 'Degree of stromal thinning, epithelial defect size, anterior chamber reaction, adjacent scleritis, systemic disease activity markers',
