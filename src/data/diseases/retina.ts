@@ -71,6 +71,35 @@ export const retinaDiseases: Disease[] = [
       { category: 'Referral', detail: 'Refer to retina specialist for severe NPDR, any PDR, or center-involving diabetic macular edema' },
       { category: 'Emergency management', detail: 'Urgent referral for vitreous hemorrhage obscuring vision, tractional retinal detachment threatening the macula, or neovascular glaucoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam with staging per the International Clinical Diabetic Retinopathy Disease Severity Scale before selecting treatment',
+        'OCT macula to detect and quantify diabetic macular edema (central subfield thickness) once vision-threatening disease is suspected',
+        'Fluorescein angiography to map capillary nonperfusion and confirm neovascularization when PRP is being planned or diagnosis of PDR is equivocal',
+        'Coordination with primary care/endocrinology to document HbA1c, blood pressure, and lipid control before and during treatment',
+      ],
+      initialTreatment:
+        'Center-involving diabetic macular edema is treated first-line with intravitreal anti-VEGF injection (per DRCR.net Protocol T, monthly dosing initially); proliferative DR is treated with panretinal photocoagulation, intravitreal anti-VEGF, or both, with vitrectomy reserved for non-clearing vitreous hemorrhage or tractional retinal detachment.',
+      followUpSchedule:
+        'Anti-VEGF for DME: monthly injections for the first ~4-6 doses per Protocol T, reassessing visual acuity and OCT central subfield thickness at each visit, then extending the interval once vision and OCT are stable; PRP for PDR is typically delivered over 1-4 sessions with reassessment for regression of neovascularization at 4-6 weeks and then every 2-3 months until regression is confirmed.',
+      escalationCriteria: [
+        'Progression from NPDR to any proliferative disease (new NVD/NVE) on exam',
+        'Persistent or worsening center-involving DME after 3-4 monthly anti-VEGF injections despite good adherence -> consider switching agent or adding focal/grid laser',
+        'New vitreous hemorrhage or tractional retinal detachment -> urgent vitrectomy evaluation',
+        'New rubeosis iridis or rising IOP suggesting evolving neovascular glaucoma -> urgent PRP/anti-VEGF',
+      ],
+      referralCriteria: [
+        'Severe NPDR or any PDR -> retina specialist',
+        'Center-involving diabetic macular edema -> retina specialist for anti-VEGF therapy',
+        'Vitreous hemorrhage obscuring the view or tractional retinal detachment threatening the macula -> same-day/urgent retina referral',
+      ],
+      steroidConsiderations:
+        'Intravitreal corticosteroid (e.g., dexamethasone implant or triamcinolone) is a second-line option for center-involving DME not responding to anti-VEGF, particularly in pseudophakic patients; monitor IOP and lens status closely given the elevated steroid-response glaucoma and cataract risk with intravitreal steroid relative to topical use.',
+      complications: ['Diabetic macular edema', 'Vitreous hemorrhage', 'Tractional retinal detachment', 'Neovascular glaucoma', 'Endophthalmitis (injection-related)', 'Cataract/IOP elevation with intravitreal steroid use'],
+      monitoringParameters: ['Visual acuity', 'OCT central subfield thickness', 'Dilated exam for new/regressing neovascularization', 'IOP (especially with intravitreal steroid)', 'HbA1c and blood pressure control (coordinated with PCP)'],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept', 'faricimab', 'dexamethasone', 'triamcinolone-intravitreal'],
+      relatedExamTechniqueIds: ['oct-macula', 'fluorescein-angiography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'No DR: annual exam; mild NPDR: annual; moderate NPDR: 6-12 months; severe NPDR: 3-4 months; PDR: per retina specialist, often monthly during active treatment',
       monitor: 'Visual acuity, dilated fundus exam findings, OCT central subfield thickness, presence/extent of neovascularization',
@@ -165,6 +194,31 @@ export const retinaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Wet AMD: intravitreal anti-VEGF injections (e.g., agents targeting VEGF-A) as first-line therapy, typically requiring an initial loading phase followed by maintenance dosing' },
       { category: 'Referral', detail: 'Urgent referral to retina specialist for any new metamorphopsia, subretinal fluid, or hemorrhage suggesting conversion to wet AMD' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT macula to characterize drusen/atrophy in dry AMD or detect subretinal/intraretinal fluid in suspected wet AMD',
+        'Fluorescein angiography and/or OCT angiography to confirm and classify choroidal neovascularization once wet AMD is suspected',
+        'Fundus autofluorescence to delineate the extent of geographic atrophy in advanced dry AMD',
+        'Amsler grid testing to establish a baseline for home self-monitoring',
+      ],
+      initialTreatment:
+        'Intermediate/advanced dry AMD is managed with AREDS2-formula supplementation (vitamin C, vitamin E, lutein, zeaxanthin, zinc, copper) to reduce progression risk; wet AMD is treated first-line with intravitreal anti-VEGF injection, typically starting with a loading phase of monthly injections before transitioning to a treat-and-extend or fixed-interval maintenance regimen.',
+      followUpSchedule:
+        "Wet AMD: 3 monthly loading injections, then OCT-guided treat-and-extend (interval adjusted based on fluid on OCT and vision, generally within a q4-16-week range depending on agent) or fixed dosing per the treating agent's labeled regimen; dry AMD: every 6-12 months with home Amsler monitoring in between, sooner for any new symptoms.",
+      escalationCriteria: [
+        'New or persistent subretinal/intraretinal fluid on OCT despite anti-VEGF therapy -> shorten treatment interval or switch agent',
+        'New hemorrhage, rapid vision loss, or new metamorphopsia in a dry AMD patient -> urgent OCT to rule out conversion to wet AMD',
+        'Progressive geographic atrophy encroaching on fixation -> low vision referral and closer monitoring',
+      ],
+      referralCriteria: [
+        'Any new metamorphopsia, subretinal fluid, or hemorrhage suggesting conversion to wet AMD -> urgent same-week retina specialist referral',
+        'Advanced dry AMD or bilateral vision loss affecting function -> low vision rehabilitation services',
+      ],
+      complications: ['Choroidal neovascularization', 'Subretinal/disciform scarring', 'Geographic atrophy', 'Injection-related endophthalmitis or retinal detachment (rare)', 'Severe irreversible central vision loss'],
+      monitoringParameters: ['Visual acuity', 'Amsler grid (home monitoring)', 'OCT central subfield/fluid status', 'Dilated fundus exam for new hemorrhage or drusen change'],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept', 'faricimab'],
+      relatedExamTechniqueIds: ['oct-macula', 'fluorescein-angiography', 'oct-angiography', 'fundus-autofluorescence', 'amsler-grid-testing'],
+    },
     followUp: {
       typical: 'Early AMD: annually; intermediate AMD: every 6-12 months with home Amsler monitoring; wet AMD under active anti-VEGF treatment: per retina specialist, often monthly initially',
       monitor: 'Visual acuity, Amsler grid, dilated fundus exam, OCT central subfield/fluid status',
@@ -254,6 +308,29 @@ export const retinaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Established rhegmatogenous RD: pneumatic retinopexy, scleral buckle, pars plana vitrectomy, or a combination, selected based on break location/number and detachment configuration' },
       { category: 'Referral', detail: 'All patients with symptomatic acute PVD (flashes/floaters) warrant a dilated exam with scleral depression to rule out an associated retinal break' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam with scleral depression to identify all retinal breaks and determine macula-on vs. macula-off status',
+        'B-scan ultrasonography when media opacity (vitreous hemorrhage, dense cataract) precludes direct visualization',
+        'OCT macula to confirm subfoveal fluid when macular status is borderline on exam',
+      ],
+      initialTreatment:
+        'Macula-on (or recent macula-off) rhegmatogenous retinal detachment is a same-day surgical emergency requiring urgent referral to a retina specialist; repair technique (pneumatic retinopexy, scleral buckle, pars plana vitrectomy, or combination) is selected based on break location/number and detachment configuration. Isolated retinal tears without detachment are treated with laser photocoagulation or cryopexy to wall off the break.',
+      followUpSchedule:
+        'Acute symptomatic PVD without an identified break: re-examine with scleral depression in 4-6 weeks or sooner with new symptoms (delayed breaks can occur); postoperative follow-up per the operating retina specialist, typically within the first week and periodically thereafter to confirm reattachment and monitor for proliferative vitreoretinopathy.',
+      escalationCriteria: [
+        'Any new visual field defect or shadow progressing toward central vision -> same-day evaluation for extending detachment',
+        'New flashes/floaters after an initial PVD evaluation without a break found -> repeat dilated exam with scleral depression for a delayed break',
+        'Postoperative redetachment or new proliferative vitreoretinopathy -> urgent re-repair',
+      ],
+      referralCriteria: [
+        'Any suspected acute retinal detachment -> same-day/urgent retina specialist referral, particularly if macula-on or recently macula-off',
+        'Symptomatic acute PVD (flashes/floaters) -> dilated exam with scleral depression to rule out an associated break',
+      ],
+      complications: ['Permanent central vision loss if macula-off', 'Proliferative vitreoretinopathy causing redetachment', 'Chronic hypotony', 'Phthisis bulbi (untreated/recurrent cases)', 'Cataract progression after vitrectomy'],
+      monitoringParameters: ['Visual acuity', 'Peripheral visual field symptoms', 'Dilated exam for new/recurrent breaks', 'Retinal attachment status postoperatively'],
+      relatedExamTechniqueIds: ['scleral-depression', 'b-scan-ultrasonography', 'oct-macula', 'binocular-indirect-ophthalmoscopy'],
+    },
     followUp: {
       typical: 'Acute symptomatic PVD without a break: re-examine in 4-6 weeks or sooner if new symptoms develop (delayed breaks can occur); post-repair follow-up per retina specialist protocol',
       monitor: 'Visual acuity, peripheral visual field symptoms, dilated exam for new breaks or progression',
@@ -347,6 +424,35 @@ export const retinaDiseases: Disease[] = [
       { category: 'Referral', detail: 'Refer to retina specialist for any RVO with macular edema, significant vision loss, or ischemic features; systemic workup/referral to primary care or internal medicine for vascular risk factor management' },
       { category: 'Emergency management', detail: 'Urgent referral for rubeosis iridis or elevated IOP suggesting evolving neovascular glaucoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT macula to detect and quantify macular edema, the primary treatable cause of vision loss in RVO',
+        'Fluorescein angiography to classify ischemic (non-perfused) versus non-ischemic occlusion and guide the intensity of neovascularization surveillance',
+        'Gonioscopy/iris exam to assess for early rubeosis before starting treatment, particularly in CRVO',
+        'Blood pressure measurement and basic systemic workup (glucose, lipid panel); hypercoagulable workup if age under 50',
+      ],
+      initialTreatment:
+        'Vision-threatening macular edema is treated first-line with intravitreal anti-VEGF injection (per BRAVO/CRUISE-style regimens: monthly loading injections, typically for the first 6 months, then individualized OCT-guided treat-and-extend or PRN dosing); an intravitreal corticosteroid implant is an alternative, particularly in pseudophakic patients or when anti-VEGF is contraindicated/ineffective.',
+      followUpSchedule:
+        'Initial follow-up within 1-2 weeks to assess macular edema and screen for early neovascularization; ischemic CRVO requires monthly monitoring for iris/angle neovascularization for the first 6-9 months given the risk of neovascular glaucoma classically arising around 90 days; non-ischemic BRVO/CRVO can be followed at longer intervals once edema and neovascular risk are controlled.',
+      escalationCriteria: [
+        'New iris or angle neovascularization on any visit -> urgent panretinal photocoagulation',
+        'Rising IOP with a quiet angle exam -> closer gonioscopic surveillance for evolving neovascular glaucoma',
+        'Persistent macular edema after appropriate anti-VEGF loading -> switch agent or add intravitreal steroid',
+        'Conversion from non-ischemic to ischemic occlusion on repeat FA -> intensify neovascularization surveillance',
+      ],
+      referralCriteria: [
+        'Any RVO with macular edema, significant vision loss, or ischemic features -> retina specialist',
+        'Rubeosis iridis or elevated IOP suggesting evolving neovascular glaucoma -> urgent retina/glaucoma referral',
+        'New RVO diagnosis -> primary care/internal medicine referral for vascular risk factor workup',
+      ],
+      steroidConsiderations:
+        'Intravitreal dexamethasone implant is an approved alternative to anti-VEGF for RVO-associated macular edema, particularly favored in pseudophakic patients; effect typically lasts several months per implant, and IOP must be checked at each visit given the meaningfully higher steroid-response glaucoma risk with intravitreal steroid than topical use, along with monitoring for cataract progression in phakic patients.',
+      complications: ['Chronic macular edema', 'Macular ischemia', 'Vitreous hemorrhage from neovascularization', 'Neovascular glaucoma (especially after ischemic CRVO)', 'Steroid-related IOP elevation/cataract with implant use'],
+      monitoringParameters: ['Visual acuity', 'IOP', 'Gonioscopy/iris exam for rubeosis', 'OCT central subfield thickness', 'Dilated exam for neovascularization'],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept', 'faricimab', 'dexamethasone'],
+      relatedExamTechniqueIds: ['oct-macula', 'fluorescein-angiography', 'retinal-vascular-examination'],
+    },
     followUp: {
       typical: 'Initial follow-up within 1-2 weeks to assess for macular edema and early neovascularization, particularly in ischemic CRVO; ischemic CRVO requires monthly monitoring for neovascularization during the first 6-9 months',
       monitor: 'Visual acuity, IOP, gonioscopy/iris exam for rubeosis, OCT central subfield thickness, dilated exam for neovascularization',

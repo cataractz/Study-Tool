@@ -73,6 +73,32 @@ export const retinaAdditional1: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral for carotid imaging and cardiovascular workup (carotid duplex, echocardiography, ECG/telemetry) to identify and treat the embolic source and reduce risk of subsequent stroke or fellow-eye involvement' },
       { category: 'Observation', detail: 'After the acute emergency workup, longitudinal monitoring for neovascular complications (ocular ischemia can drive iris/angle neovascularization) and for optic atrophy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Immediate dilated fundus exam to confirm retinal whitening, cherry-red spot, and box-carring, and to distinguish CRAO from BRAO',
+        'STAT ESR, CRP, and platelet count in any patient over 50-55 to emergently screen for giant cell arteritis',
+        'Carotid duplex ultrasound and echocardiography/ECG telemetry to identify an embolic source',
+        'Emergent stroke/neurology evaluation including brain MRI/MRA, since CRAO carries the same short-term stroke risk as a cerebral TIA',
+      ],
+      initialTreatment:
+        'CRAO is managed as an ocular stroke: immediate same-day referral to the emergency department/stroke center for urgent stroke workup within the narrow reperfusion window (widely cited as roughly 90-100 minutes for irreversible retinal ganglion cell injury, though some benefit may persist for several hours); in patients over 50-55, begin high-dose systemic corticosteroids immediately for suspected giant cell arteritis without waiting for biopsy results if ESR/CRP are elevated or clinical suspicion is high. Historically attempted measures (ocular massage, anterior chamber paracentesis, topical/systemic IOP-lowering agents such as acetazolamide, carbogen/high-flow oxygen) have limited and inconsistent evidence but may be attempted very early in presentation.',
+      followUpSchedule:
+        'Immediate same-day emergency evaluation at presentation; ophthalmic follow-up at 2-4 weeks and then periodically over the following several weeks to months to monitor for anterior segment/retinal neovascular complications.',
+      escalationCriteria: [
+        'Elevated ESR/CRP or high clinical suspicion for GCA -> immediate high-dose systemic corticosteroids and urgent temporal artery biopsy',
+        'New rubeosis iridis, elevated IOP, or angle neovascularization on follow-up -> urgent panretinal photocoagulation',
+        'Any concurrent neurologic symptoms -> immediate stroke pathway activation',
+      ],
+      referralCriteria: [
+        'Any suspected acute CRAO/BRAO -> immediate emergency department/stroke center referral, same day',
+        'Positive or suspected GCA -> emergent rheumatology and ophthalmology co-management with temporal artery biopsy',
+        'Identified carotid or cardioembolic source -> vascular surgery/cardiology referral for endarterectomy, stenting, or anticoagulation',
+      ],
+      complications: ['Permanent visual field/acuity loss', 'Optic atrophy', 'Ocular ischemia leading to iris/angle neovascularization and neovascular glaucoma', 'Cerebral stroke', 'Fellow-eye involvement/systemic complications if arteritic CRAO is untreated'],
+      monitoringParameters: ['Visual acuity', 'IOP', 'Gonioscopy/iris exam for neovascularization', 'Optic nerve appearance for developing atrophy', 'ESR/CRP trend if GCA is being treated'],
+      relatedDrugIds: ['acetazolamide'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'giant-cell-arteritis-laboratory-workup', 'fluorescein-angiography'],
+    },
     followUp: {
       typical: 'Immediate same-day emergency evaluation at presentation; ophthalmic follow-up at 2-4 weeks and then periodically to monitor for neovascular complications, particularly over the following several weeks to months',
       monitor: 'Visual acuity, intraocular pressure, gonioscopy/iris exam for neovascularization, optic nerve appearance',
@@ -168,6 +194,33 @@ export const retinaAdditional1: Disease[] = [
       { category: 'Advanced treatment', detail: 'Gene-specific therapy (e.g., voretigene neparvovec for confirmed biallelic RPE65-mediated retinal dystrophy) is available for a specific molecularly confirmed subset of patients; retinal prosthetic devices and low vision assistive technology for advanced disease' },
       { category: 'Referral', detail: 'Referral to a retina specialist and genetic counselor/ocular genetics service for molecular diagnosis; referral for audiology evaluation and to low vision services as disease progresses' },
     ],
+    managementProtocol: {
+      workup: [
+        'Electroretinography to confirm rod-predominant photoreceptor dysfunction and establish a functional baseline',
+        'Goldmann or automated visual field testing to document baseline peripheral field extent',
+        'OCT macula to assess ellipsoid zone integrity and screen for cystoid macular edema',
+        'Genetic testing to identify the causative gene/mutation and determine eligibility for gene-specific therapy',
+      ],
+      initialTreatment:
+        'No treatment halts the underlying photoreceptor degeneration for most genetic subtypes; management centers on genetic counseling, low vision rehabilitation, and treating treatable comorbidities (cystoid macular edema, posterior subcapsular cataract). Vitamin A palmitate supplementation may modestly slow ERG decline in select adult non-syndromic RP patients but requires specialist guidance given toxicity risk and lack of universal benefit; biallelic RPE65-mediated disease is eligible for subretinal gene therapy (voretigene neparvovec).',
+      followUpSchedule:
+        'Annual to biennial comprehensive exam with visual field and OCT to track structural/functional progression; more frequent (every 3-6 months) if cystoid macular edema is present or being treated, and closer interval when evaluating eligibility for gene-specific therapy.',
+      escalationCriteria: [
+        'New central vision complaints or OCT evidence of cystoid macular edema -> initiate topical/oral carbonic anhydrase inhibitor therapy',
+        'Progressive ellipsoid zone loss or visual field constriction on serial testing -> reassess genetic diagnosis and gene-therapy eligibility',
+        'New hearing complaints -> audiology referral to evaluate for Usher syndrome',
+      ],
+      referralCriteria: [
+        'All patients -> ocular genetics/genetic counseling service for molecular diagnosis and family counseling',
+        'Confirmed biallelic RPE65 mutation -> retina specialist experienced in gene therapy for voretigene neparvovec evaluation',
+        'Progressive peripheral field loss affecting independence -> low vision rehabilitation and orientation/mobility training',
+        'Suspected syndromic disease (e.g., hearing loss) -> audiology and medical genetics referral',
+      ],
+      complications: ['Posterior subcapsular cataract', 'Cystoid macular edema', 'Legal blindness from peripheral field constriction despite preserved central acuity'],
+      monitoringParameters: ['Visual field extent (Goldmann or automated)', 'OCT ellipsoid zone integrity and macular edema', 'ERG amplitude periodically to document functional decline', 'Visual acuity'],
+      relatedDrugIds: ['acetazolamide'],
+      relatedExamTechniqueIds: ['genetic-testing-inherited-retinal-disease', 'oct-macula'],
+    },
     followUp: {
       typical: 'Annual to biennial comprehensive eye examination with visual field and OCT to track progression, more frequent if cystoid macular edema or rapid change is present',
       monitor: 'Visual acuity, visual field extent, OCT for ellipsoid zone integrity and macular edema, ERG periodically to document functional decline',
@@ -263,6 +316,31 @@ export const retinaAdditional1: Disease[] = [
       { category: 'Advanced treatment', detail: 'Chronic/refractory CSR may be treated with photodynamic therapy or, in select cases, oral mineralocorticoid receptor antagonists (e.g., eplerenone) under retina specialist guidance; anti-VEGF therapy is reserved for cases with secondary choroidal neovascularization, not for uncomplicated CSR' },
       { category: 'Referral', detail: 'Refer to retina specialist for chronic, recurrent, or atypical CSR, or when secondary choroidal neovascularization is suspected' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT macula to confirm and quantify subretinal fluid and monitor resolution',
+        'Fluorescein angiography to localize the focal RPE leak ("smokestack" or "inkblot" pattern) when the diagnosis is atypical or chronic',
+        'Indocyanine green angiography to map choroidal hyperpermeability in chronic/recurrent cases being considered for targeted photodynamic therapy',
+        'Thorough corticosteroid exposure history (systemic, topical, inhaled, intra-articular, intranasal) before initiating any treatment plan',
+      ],
+      initialTreatment:
+        'Acute CSR is observed for 1-3 months, as most cases resolve spontaneously with subretinal fluid resorption; the essential first step is identifying and discontinuing/minimizing any corticosteroid exposure in consultation with the prescribing physician and addressing contributing stress. Persistent fluid beyond 3-4 months or recurrent episodes are treated with focal laser photocoagulation (extrafoveal leaks) or photodynamic therapy targeting choroidal hyperpermeability.',
+      followUpSchedule:
+        'Re-evaluate with OCT at 4-6 week intervals during observation to confirm spontaneous resolution; more frequent monitoring if fluid persists beyond 3 months or after treatment for chronic disease.',
+      escalationCriteria: [
+        'Subretinal fluid persisting beyond 3-4 months of observation -> escalate to focal laser (extrafoveal leak) or photodynamic therapy',
+        'Recurrent episodes or diffuse RPE decompensation on exam -> chronic CSR management pathway with ICG-guided PDT',
+        'New subretinal hemorrhage, lipid exudate, or a vascular network on OCT-A/FA -> evaluate for secondary choroidal neovascularization',
+      ],
+      referralCriteria: [
+        'Chronic, recurrent, or atypical CSR -> retina specialist',
+        'Suspected secondary choroidal neovascularization -> urgent retina specialist referral',
+        'Unavoidable ongoing corticosteroid exposure (e.g., needed for another medical condition) -> co-management with the prescribing physician',
+      ],
+      complications: ['Chronic RPE atrophy/gravitational tracks', 'Persistent metamorphopsia or reduced contrast sensitivity after fluid resolves', 'Secondary choroidal neovascularization (uncommon, more likely in chronic disease)'],
+      monitoringParameters: ['Visual acuity', 'Amsler grid', 'OCT for subretinal fluid resolution/persistence'],
+      relatedExamTechniqueIds: ['oct-macula', 'fluorescein-angiography', 'amsler-grid-testing'],
+    },
     followUp: {
       typical: 'Re-evaluate with OCT at 4-6 week intervals for acute CSR to confirm spontaneous resolution; more frequent monitoring if fluid persists beyond 3 months',
       monitor: 'Visual acuity, Amsler grid, OCT for subretinal fluid resolution/persistence',
@@ -353,6 +431,29 @@ export const retinaAdditional1: Disease[] = [
       { category: 'Second-line treatment', detail: 'Pharmacologic vitreolysis (intravitreal ocriplasmin) has been used in select cases of vitreomacular traction with a small full-thickness hole to enzymatically induce posterior vitreous separation, though surgery remains the mainstay for most full-thickness holes' },
       { category: 'Referral', detail: 'Prompt referral to a retina specialist upon diagnosis of any full-thickness macular hole, given that earlier surgical intervention is generally associated with better anatomic and visual outcomes' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT macula to stage the hole (Gass 1-4), measure minimum linear diameter, and confirm full-thickness versus lamellar/pseudohole',
+        'Watzke-Allen test as a bedside adjunct supporting a full-thickness defect',
+        'Amsler grid to document baseline metamorphopsia and monitor the fellow eye',
+      ],
+      initialTreatment:
+        'Stage 1 (impending) holes may be observed, since a meaningful proportion resolve spontaneously as vitreofoveal traction releases. Full-thickness holes (stage 2-4) are treated with pars plana vitrectomy, internal limiting membrane peeling, and gas tamponade, followed by face-down/non-supine positioning to promote closure; earlier surgery is generally associated with better anatomic and visual outcomes.',
+      followUpSchedule:
+        'Stage 1 holes: re-examine with OCT in 4-6 weeks to monitor for progression or spontaneous resolution; postoperative follow-up typically within the first week after vitrectomy and periodically thereafter to confirm anatomic closure and monitor for complications.',
+      escalationCriteria: [
+        'Progression from stage 1 to a full-thickness defect on serial OCT -> proceed to surgical planning',
+        'Enlarging hole diameter or worsening visual acuity -> expedite vitrectomy referral',
+        'New symptoms in the fellow eye -> OCT to assess for early vitreofoveal traction',
+      ],
+      referralCriteria: [
+        'Any full-thickness macular hole (stage 2-4) -> prompt retina specialist referral, given better outcomes with earlier surgery',
+        'Fellow eye with new traction or metamorphopsia -> retina specialist evaluation',
+      ],
+      complications: ['Persistent or reopened hole after surgery', 'Cataract progression (very common after vitrectomy in phakic patients)', 'Retinal detachment (uncommon surgical risk)', 'Fellow-eye macular hole in a meaningful minority of patients over time'],
+      monitoringParameters: ['Visual acuity', 'Amsler grid', 'OCT for hole stage/size preoperatively and anatomic closure postoperatively'],
+      relatedExamTechniqueIds: ['oct-macula', 'amsler-grid-testing'],
+    },
     followUp: {
       typical: 'Stage 1 holes: re-examine with OCT in 4-6 weeks to monitor for progression or spontaneous resolution; postoperative follow-up per retina specialist protocol, typically within the first week and periodically thereafter to confirm hole closure and monitor for complications',
       monitor: 'Visual acuity, Amsler grid, OCT for hole stage/size or, postoperatively, for anatomic closure',
@@ -441,6 +542,28 @@ export const retinaAdditional1: Disease[] = [
       { category: 'Advanced treatment', detail: 'Pars plana vitrectomy with membrane peeling (often combined with internal limiting membrane peeling) for ERM causing significant, vision-limiting metamorphopsia or progressive visual acuity decline' },
       { category: 'Referral', detail: 'Referral to a retina specialist when symptoms (metamorphopsia, acuity loss) are significant enough to affect the patient\'s quality of life and functional vision, or when OCT shows progressive thickening/traction' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT macula to confirm the membrane, quantify central macular thickness, and distinguish a true macular hole from an ERM-associated pseudohole',
+        'Amsler grid to assess and monitor baseline metamorphopsia',
+        'Fundus photography to document the cellophane sheen, striae, or vascular distortion for interval comparison',
+      ],
+      initialTreatment:
+        'Mild, asymptomatic, or minimally symptomatic ERM is observed with periodic monitoring, as most cases remain stable. Vision-limiting metamorphopsia or progressive acuity decline is treated with pars plana vitrectomy and membrane peeling, often combined with internal limiting membrane peeling.',
+      followUpSchedule:
+        'Annual to biennial monitoring for stable, mildly symptomatic or asymptomatic ERM; every 6-12 months if progressive symptoms or OCT changes are present; postoperative follow-up per the operating retina specialist after membrane peel surgery.',
+      escalationCriteria: [
+        'Worsening metamorphopsia or decreasing visual acuity meaningfully affecting function -> refer for surgical evaluation',
+        'Increasing central macular thickness or traction on serial OCT -> shorten follow-up interval',
+      ],
+      referralCriteria: [
+        'Significant, vision-limiting metamorphopsia or progressive acuity loss -> retina specialist for membrane peel evaluation',
+        'OCT evidence of progressive thickening/traction -> retina specialist referral even if symptoms are mild',
+      ],
+      complications: ['Progressive metamorphopsia and acuity loss', 'Cystoid macular edema in advanced cases', 'Pseudohole formation', 'Cataract progression after vitrectomy (very common in phakic patients)', 'Recurrent membrane formation', 'Retinal detachment (uncommon postoperative risk)'],
+      monitoringParameters: ['Visual acuity', 'Amsler grid', 'OCT central macular thickness and membrane characteristics'],
+      relatedExamTechniqueIds: ['oct-macula', 'amsler-grid-testing', 'fundus-photography'],
+    },
     followUp: {
       typical: 'Annual to biennial monitoring for stable, mildly symptomatic or asymptomatic ERM; more frequent (every 6-12 months) if progressive symptoms or OCT changes are present',
       monitor: 'Visual acuity, Amsler grid, OCT central macular thickness and membrane characteristics',

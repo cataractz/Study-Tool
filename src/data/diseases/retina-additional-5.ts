@@ -68,6 +68,32 @@ export const retinaAdditional5: Disease[] = [
       { category: 'Advanced treatment', detail: 'Intravitreal anti-VEGF therapy or carbonic anhydrase inhibitors may be considered for refractory cases, particularly when CME is secondary to diabetic retinopathy or RVO; vitrectomy considered for cases with vitreomacular traction or vitreous incarceration in the surgical wound contributing to chronic CME' },
       { category: 'Referral', detail: 'Refer to a retina specialist for CME not responding to first-line topical therapy within several weeks, or when an underlying uveitic, vascular, or tractional etiology requires specialized management' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT macula to confirm intraretinal cystic spaces, quantify central subfield thickness, and establish a treatment-response baseline',
+        'Fluorescein angiography for the classic petaloid leakage pattern and late disc staining in atypical or chronic cases',
+        'Dilated fundus exam to identify an underlying secondary cause (diabetic retinopathy, uveitis, vein occlusion, epiretinal membrane) when CME is not clearly post-surgical',
+      ],
+      initialTreatment:
+        'Post-cataract (Irvine-Gass) CME is treated first-line with topical NSAID drops, often combined with a topical corticosteroid; prophylactic perioperative topical NSAIDs are commonly used in higher-risk cataract patients (diabetics, uveitics) to reduce incidence. Cases not responding to topical therapy, or with more severe/chronic edema, are escalated to periocular or intravitreal corticosteroid injection.',
+      followUpSchedule:
+        'Re-examine with repeat OCT approximately 4-6 weeks after initiating topical therapy to assess response; more frequent monitoring if vision is significantly affected or an underlying uveitic/vascular etiology is being co-managed.',
+      escalationCriteria: [
+        'Persistent or worsening cystic changes on OCT after an adequate trial (several weeks) of topical NSAID/steroid therapy -> periocular or intravitreal corticosteroid injection',
+        'CME secondary to diabetic retinopathy or RVO refractory to topical/steroid therapy -> intravitreal anti-VEGF',
+        'Development of a lamellar or full-thickness macular hole in chronic, longstanding cases -> retina specialist for surgical evaluation',
+      ],
+      referralCriteria: [
+        'CME not responding to first-line topical therapy within several weeks -> retina specialist',
+        'Underlying uveitic, vascular, or tractional etiology requiring specialized management -> retina specialist',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate 1% or difluprednate) is combined with a topical NSAID as first-line therapy for post-surgical CME; periocular or intravitreal corticosteroid (e.g., triamcinolone or a dexamethasone implant) is reserved for cases refractory to topical therapy or with more severe/chronic edema, with IOP checked at each visit given steroid-response glaucoma risk.',
+      complications: ['Chronic cystoid changes progressing to lamellar or full-thickness macular hole', 'Permanent photoreceptor damage in longstanding unresolved cases', 'Steroid-response IOP elevation and cataract progression with corticosteroid treatment'],
+      monitoringParameters: ['Visual acuity', 'OCT central subfield thickness/resolution of cystic spaces', 'IOP if corticosteroid is used'],
+      relatedDrugIds: ['prednisolone-acetate', 'difluprednate', 'dexamethasone', 'triamcinolone-intravitreal', 'bevacizumab'],
+      relatedExamTechniqueIds: ['oct-macula', 'fluorescein-angiography'],
+    },
     followUp: {
       typical: 'Re-examine with repeat OCT approximately 4-6 weeks after initiating topical therapy to assess response; more frequent monitoring if vision is significantly affected',
       monitor: 'Visual acuity and OCT central subfield thickness/resolution of cystic spaces',
@@ -162,6 +188,31 @@ export const retinaAdditional5: Disease[] = [
       { category: 'Referral', detail: 'Prompt referral to a retina specialist for any significant vitreous hemorrhage to obtain B-scan ultrasound (if not already performed), determine underlying etiology, and establish a treatment/monitoring plan' },
       { category: 'Emergency management', detail: 'Urgent same-day evaluation for vitreous hemorrhage with B-scan evidence of retinal detachment, or when a fellow eye history or exam raises high suspicion for an occult retinal break, given the time-sensitive nature of detachment repair' },
     ],
+    managementProtocol: {
+      workup: [
+        'B-scan ultrasonography whenever the fundus view is too poor for direct visualization, to rule out an underlying retinal detachment or mass',
+        'Dilated fundus exam with indirect ophthalmoscopy to identify the hemorrhage source (neovascularization, retinal tear, detachment) once the view allows',
+        'IOP measurement and anterior segment exam to screen for early neovascular glaucoma',
+        'Fluorescein angiography once media clarity allows, to map retinal ischemia/nonperfusion and guide panretinal photocoagulation planning',
+      ],
+      initialTreatment:
+        'Mild-to-moderate hemorrhage without B-scan evidence of retinal detachment is managed with observation, upright/head-elevated positioning to allow blood to settle inferiorly, and activity modification while the underlying cause (most often proliferative diabetic retinopathy) is identified and treated with panretinal photocoagulation and/or anti-VEGF once visualization or ultrasound guidance allows. Pars plana vitrectomy is reserved for non-clearing hemorrhage or when the underlying detachment/ischemic retina requires direct surgical access.',
+      followUpSchedule:
+        'Re-examine within 1-4 weeks initially to monitor clearing and reassess the underlying cause as the view improves, with interval B-scan if the view remains obscured; frequency individualized to hemorrhage density and suspected etiology.',
+      escalationCriteria: [
+        'B-scan evidence of retinal detachment at any point -> urgent same-day surgical referral',
+        'Non-clearing or recurrent hemorrhage over several weeks to months -> pars plana vitrectomy evaluation',
+        'New rubeosis iridis or rapidly rising IOP -> urgent evaluation for evolving neovascular glaucoma',
+      ],
+      referralCriteria: [
+        'Any significant vitreous hemorrhage -> prompt retina specialist referral for B-scan (if not already obtained), etiology workup, and treatment planning',
+        'B-scan evidence of retinal detachment, or high suspicion for an occult break -> same-day urgent referral',
+      ],
+      complications: ['Non-clearing hemorrhage precluding assessment/treatment of the underlying retina', 'Missed or delayed retinal detachment repair', 'Ghost cell glaucoma', 'Proliferative vitreoretinopathy after vitrectomy', 'Recurrent hemorrhage'],
+      monitoringParameters: ['Visual acuity', 'Red reflex/view clarity', 'Serial B-scan ultrasound if the view remains poor', 'IOP and anterior segment exam for neovascularization'],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'binocular-indirect-ophthalmoscopy', 'fluorescein-angiography'],
+    },
     followUp: {
       typical: 'Re-examine within 1-4 weeks initially to monitor for clearing and reassess for an underlying cause as the view improves, with interval B-scan if the view remains obscured; frequency individualized to density and suspected etiology',
       monitor: 'Visual acuity, red reflex/view clarity, serial B-scan ultrasound if the view remains poor, IOP, and anterior segment exam for neovascularization',
