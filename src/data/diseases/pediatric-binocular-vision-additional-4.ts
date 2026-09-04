@@ -61,6 +61,40 @@ export const pediatricBinocularVisionAdditional4: Disease[] = [
       { category: 'Second-line treatment', detail: 'Office-based vision therapy/orthoptics targeting negative fusional vergence, with home reinforcement' },
       { category: 'Referral', detail: 'Refer for comprehensive binocular vision evaluation and vision therapy (optometry specializing in vision therapy) for confirmed, symptomatic convergence excess not adequately resolved with refractive correction alone' },
     ],
+    managementProtocol: {
+      workup: [
+        'Near and distance phoria measurement to establish the near-greater-than-distance esodeviation pattern',
+        'AC/A ratio testing (gradient method) to confirm the high-AC/A mechanism',
+        'Negative fusional vergence (NFV) testing at near, checked against Sheard\'s criterion',
+        'Cycloplegic refraction to identify and quantify any contributing uncorrected hyperopia',
+      ],
+      initialTreatment:
+        'Full correction of any significant hyperopia is applied first, since this alone may substantially reduce the near esodeviation; a plus (near-add) lens prescription is then used to reduce the accommodative demand and the accompanying AC/A-driven convergence at near, with office-based vision therapy targeting negative fusional vergence added for cases not adequately resolved by optical management alone.',
+      followUpSchedule:
+        'Reassessment every 4-8 weeks after initiating a plus add or vision therapy to track near-distance phoria magnitude, AC/A effect, and symptom resolution; extend the interval once near comfort and control are stable.',
+      escalationCriteria: [
+        'Persistent or worsening near esodeviation despite an adequate trial of full hyperopic correction and a plus add',
+        'Progression from an intermittent/phoric deviation toward a more constant, manifest near esotropia (evolving toward accommodative esotropia)',
+        'Symptoms not resolving with vision therapy after an adequate trial',
+      ],
+      referralCriteria: [
+        'Symptomatic convergence excess not adequately resolved with refractive correction and a plus add alone -> optometry/orthoptics specializing in vision therapy',
+        'Evolution toward a fully manifest, constant near tropia -> pediatric ophthalmology to evaluate for accommodative esotropia management (bifocal, possible surgery)',
+      ],
+      complications: [
+        'Chronic near-work avoidance',
+        'Reading difficulty misattributed to attention or learning disorders',
+        'Progression to manifest accommodative esotropia if uncorrected',
+      ],
+      monitoringParameters: [
+        'Near versus distance phoria',
+        'AC/A ratio response to correction',
+        'Negative fusional vergence at near',
+        'Symptom resolution with near work',
+      ],
+      relatedCalculatorIds: ['aca-ratio'],
+      relatedExamTechniqueIds: ['cover-test', 'cycloplegic-retinoscopy'],
+    },
     followUp: {
       typical: 'Reassessment at regular intervals (e.g., every 4-8 weeks) after initiating a plus add or vision therapy to track phoria magnitude, AC/A ratio effect, and symptom resolution',
       monitor: 'Near versus distance phoria, negative fusional vergence at near, and symptom resolution with near work',
@@ -146,6 +180,43 @@ export const pediatricBinocularVisionAdditional4: Disease[] = [
       { category: 'Second-line treatment', detail: 'Office-based vision therapy/orthoptics to improve fusional convergence control, particularly for milder or well-controlled cases' },
       { category: 'Referral', detail: 'Refer for strabismus surgical evaluation for poor control or a large, cosmetically or functionally significant deviation — surgical planning must first distinguish true from pseudo-divergence excess (via patch or +3.00 D lens testing), since basing surgery on the untreated near angle in pseudo-divergence excess risks postoperative overcorrection/consecutive esotropia' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cover-uncover and alternate cover testing at distance and near to establish and quantify the distance-greater exodeviation',
+        'Prolonged monocular occlusion (patch) test, 30-60 minutes, to distinguish true from pseudo-divergence excess',
+        '+3.00 D lens test at near as a faster alternative means of unmasking pseudo-divergence excess',
+        'AC/A ratio testing (gradient method) to characterize the accommodative-convergence relationship',
+        'Assessment of control and stereoacuity at both distance and near',
+      ],
+      initialTreatment:
+        'Good control with infrequent, brief manifest distance episodes and normal stereopsis is managed with observation; correction of significant refractive error (particularly myopia) is applied when present, with part-time occlusion or office-based vision therapy considered for milder/well-controlled cases; before any surgical planning, true divergence excess must be distinguished from pseudo-divergence excess using prolonged monocular occlusion or the +3.00 D lens test, since basing surgery on the untreated (falsely small) near angle in pseudo-divergence excess risks postoperative consecutive esotropia.',
+      followUpSchedule:
+        'Periodic reassessment of distance and near angle, control, and stereoacuity every several months, similar to other intermittent exotropia patterns, re-testing the true near angle (patch or +3.00 D lens test) if surgery is being planned or if near control appears to be declining.',
+      escalationCriteria: [
+        'Worsening distance control or increasing angle on serial exams',
+        'Declining stereoacuity',
+        'Evidence that near control is also declining, suggesting evolution from pseudo- toward a more true divergence-excess pattern',
+        'Poor cosmesis or functional impact prompting consideration of surgery',
+      ],
+      referralCriteria: [
+        'Poor or worsening control, or a large cosmetically/functionally significant deviation -> pediatric ophthalmology for surgical evaluation',
+        'Prior to any surgical planning, confirmation of true versus pseudo-divergence excess status -> pediatric ophthalmology/strabismus specialist',
+        'New or worsening amblyopia -> pediatric ophthalmology',
+      ],
+      complications: [
+        'Reduced stereopsis with poor control',
+        'Postoperative consecutive esotropia if pseudo-divergence excess is not identified before surgery',
+        'Amblyopia (lower risk than constant strabismus but possible with poor control)',
+      ],
+      monitoringParameters: [
+        'Distance and near deviation angle, including the post-occlusion/plus-lens near angle when relevant',
+        'Quality of control',
+        'Stereoacuity',
+        'Visual acuity in each eye',
+      ],
+      relatedCalculatorIds: ['aca-ratio'],
+      relatedExamTechniqueIds: ['cover-test', 'prism-cover-test', 'stereoacuity-testing'],
+    },
     followUp: {
       typical: 'Periodic reassessment of distance and near angle, control, and stereopsis every several months, similar to other intermittent exotropia patterns',
       monitor: 'Distance and near deviation angle, quality of control, and stereoacuity',

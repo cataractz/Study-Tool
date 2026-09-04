@@ -63,6 +63,41 @@ export const pediatricBinocularVisionAdditional2: Disease[] = [
       { category: 'Second-line treatment', detail: 'Strabismus surgery (e.g., bilateral medial rectus recession) for persistent, significant, or prism-intolerant symptomatic esotropia' },
       { category: 'Referral', detail: 'Urgent neurology/neuro-ophthalmology referral and neuroimaging for acute-onset presentations, younger patients, associated neurologic symptoms or signs, or papilledema — presumed benign, age-related divergence insufficiency is a diagnosis that requires exclusion of neurologic disease first, especially when the presentation is atypical' },
     ],
+    managementProtocol: {
+      workup: [
+        'Alternate cover test at distance and near, quantifying the esodeviation in prism diopters at each fixation distance to document the distance-greater-than-near pattern',
+        'Full ductions and versions testing (monocular and binocular) to confirm complete, unrestricted abduction bilaterally before proceeding with a presumed-benign management plan',
+        'Targeted neurologic review of systems and, when indicated, dilated optic nerve evaluation for papilledema',
+        'MRI brain with attention to the posterior fossa/brainstem before committing to long-term prism or surgical planning in any atypical presentation (acute onset, younger patient, neurologic symptoms/signs, or papilledema)',
+      ],
+      initialTreatment:
+        'Base-out prism incorporated into the spectacle correction to neutralize the distance esodeviation and relieve symptomatic diplopia once a presumed-benign etiology is established; mild, minimally symptomatic or intermittent cases in an older adult with a reassuring history and exam may instead be observed.',
+      followUpSchedule:
+        'Recheck several weeks after dispensing prism to confirm diplopia relief and angle stability, then extend to every 3-6 months once the patient is stable on prism or has been observed as benign; any new neurologic symptom warrants same-week re-evaluation regardless of interval.',
+      escalationCriteria: [
+        'Increasing esodeviation or prism intolerance despite an appropriately dispensed base-out prism trial',
+        'Any new limitation of abduction on ductions or versions at a follow-up visit — this reclassifies the presumed diagnosis and mandates a bilateral CN VI palsy workup',
+        'New papilledema, headache, gait disturbance, or other neurologic symptom/sign during the observation or prism-management period',
+        'Rapidly increasing angle inconsistent with a stable, benign course',
+      ],
+      referralCriteria: [
+        'Acute or rapidly progressive onset, a younger patient, associated neurologic symptoms/signs, or papilledema at any point -> urgent neurology/neuro-ophthalmology referral and neuroimaging',
+        'Persistent, significant, or prism-intolerant symptomatic esotropia despite adequate prism trial -> strabismus surgery evaluation (e.g., bilateral medial rectus recession)',
+      ],
+      complications: [
+        'Persistent symptomatic distance diplopia if untreated',
+        'Prism intolerance or cosmetic dissatisfaction with thick prism lenses at higher amounts',
+        'Missed underlying neurologic disease (posterior fossa mass, Chiari malformation, elevated intracranial pressure, demyelinating disease) if red flags are not screened for at diagnosis and follow-up',
+        'Surgical over- or under-correction when medial rectus recession is pursued',
+      ],
+      monitoringParameters: [
+        'Angle of esodeviation at distance and near (cover test/prism cover test)',
+        'Ductions and versions for any new abduction limitation at every visit',
+        'Diplopia symptom control and prism tolerance',
+        'New neurologic symptoms or signs, and optic nerve appearance for papilledema',
+      ],
+      relatedExamTechniqueIds: ['cover-test', 'prism-cover-test'],
+    },
     followUp: {
       typical: 'Periodic reassessment of the angle of deviation and symptom control every several months once a benign presumed etiology is established and the patient is stable or successfully managed with prism',
       monitor: 'Angle of esodeviation at distance and near, ductions/versions for any new abduction limitation, and development of any new neurologic symptoms or signs',
@@ -151,6 +186,43 @@ export const pediatricBinocularVisionAdditional2: Disease[] = [
       { category: 'Second-line treatment', detail: 'Vision therapy (accommodative facility exercises using lens flippers, monocular and binocular accommodative rock) for accommodative infacility and for accommodative insufficiency not adequately resolved with reading correction alone' },
       { category: 'Referral', detail: 'Referral for evaluation of an underlying systemic illness, medication effect, or recent head trauma when accommodative insufficiency has an acute or atypical onset, particularly in a previously asymptomatic patient' },
     ],
+    managementProtocol: {
+      workup: [
+        'Amplitude of accommodation (push-up or minus-lens-to-blur) compared against Hofstetter\'s formula for the patient\'s age to confirm and quantify accommodative insufficiency',
+        'Monocular accommodative facility testing with plus/minus lens flippers to characterize infacility and identify whether plus- or minus-lens clearing is more affected',
+        'Cycloplegic refraction to distinguish true refractive error from accommodative excess/spasm and establish the correction baseline before treating any subtype',
+        'Near point of convergence and fusional vergence testing to screen for coexisting convergence insufficiency, which should be assessed and, if present, treated alongside the accommodative findings',
+      ],
+      initialTreatment:
+        'Prescribe accurate correction based on cycloplegic (not manifest) refraction to avoid overminus prescribing in accommodative excess/pseudomyopia; add reading glasses or a bifocal for symptomatic accommodative insufficiency to reduce near accommodative demand; begin office-based accommodative facility vision therapy (plus/minus lens rock, monocular then binocular) for infacility or for insufficiency not adequately resolved by correction alone.',
+      followUpSchedule:
+        'Reassess amplitude, facility (cycles per minute), and symptoms every 4-6 weeks during an active in-office vision therapy course (typically a 12-week program of weekly sessions with home reinforcement); recheck refractive stability and symptom resolution at 2-3 months once optical correction alone is the primary intervention.',
+      escalationCriteria: [
+        'Facility remains below age-normal cycles per minute after an adequate (approximately 12-week) in-office vision therapy trial',
+        'Persistent near-work symptoms despite accurate cycloplegic-based correction and an adequate therapy trial',
+        'New or worsening near point of convergence findings suggesting an evolving combined accommodative-vergence disorder',
+      ],
+      referralCriteria: [
+        'Acute or atypical-onset accommodative insufficiency in a previously asymptomatic patient -> evaluate for underlying systemic illness, medication effect, or recent head trauma/concussion',
+        'Persistent symptoms despite correction and an adequate vision therapy trial, or confirmed coexisting convergence insufficiency -> referral to a developmental/binocular vision optometry service for a structured, comprehensive vision therapy program if not already being provided',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate 1% cycloplegic refraction is essential before diagnosing new or rapidly progressive myopia in a child or young adult with near-work symptoms — it distinguishes true refractive error from accommodative excess/spasm (pseudomyopia), which resolves or substantially reduces under cycloplegia; skipping this step is the classic pitfall that leads to overminus prescribing and worsened symptoms.',
+      complications: [
+        'Overminus prescribing based on a spuriously myopic manifest refraction, which further stimulates accommodative effort and worsens rather than relieves symptoms',
+        'Impaired reading efficiency and academic/occupational near-work performance if left untreated',
+        'Symptoms mistaken for a behavioral or attention problem in school-age children, delaying diagnosis',
+      ],
+      monitoringParameters: [
+        'Amplitude of accommodation relative to age-normal (Hofstetter) expectations',
+        'Accommodative facility (cycles per minute) on lens flipper testing',
+        'Stability of cycloplegic versus manifest refraction findings',
+        'Near-work symptom resolution and, when relevant, near point of convergence/fusional vergence status',
+      ],
+      relatedDrugIds: ['cyclopentolate'],
+      relatedCalculatorIds: ['amplitude-of-accommodation-hofstetter'],
+      relatedExamTechniqueIds: ['amplitude-of-accommodation-push-up', 'accommodative-facility-testing', 'cycloplegic-retinoscopy', 'near-point-of-convergence'],
+    },
     followUp: {
       typical: 'Reassessment of accommodative amplitude, facility, and symptom resolution at intervals of several weeks to months during active management or vision therapy',
       monitor: 'Amplitude of accommodation, accommodative facility (cycles per minute), stability of cycloplegic vs. manifest refraction findings, and symptom resolution',
@@ -239,6 +311,38 @@ export const pediatricBinocularVisionAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Presbyopia-correcting or monovision approaches incorporated into refractive surgery or cataract surgery (e.g., multifocal/extended depth of focus intraocular lens selection, monovision LASIK) for appropriately selected candidates' },
       { category: 'Referral', detail: 'Refer for further evaluation if presbyopic symptoms develop unusually early (e.g., in a patient in their 20s-30s) to assess for an underlying systemic condition or medication effect accelerating accommodative loss, rather than assuming routine presbyopia' },
     ],
+    managementProtocol: {
+      workup: [
+        'Amplitude of accommodation testing (push-up or minus-lens-to-blur) to confirm the reduction is consistent with age-expected norms',
+        'Trial-lens near add determination over best distance correction at the patient\'s habitual working distance',
+        'Comprehensive distance refraction to establish the baseline over which the add is applied',
+        'Dilated fundus and slit lamp exam to exclude a coexisting cause (e.g., early cataract) before attributing near symptoms solely to presbyopia',
+      ],
+      initialTreatment:
+        'Prescribe the minimum plus add that gives clear, comfortable near acuity at the patient\'s habitual working distance — single-vision reading glasses if distance vision is otherwise uncorrected, or a bifocal/trifocal/progressive addition lens if distance (and/or intermediate) correction is also needed.',
+      followUpSchedule:
+        'Routine comprehensive eye exam every 1-2 years with the near add reassessed and increased as needed to match progressive accommodative decline; shorten the interval if symptoms develop unusually early or progress faster than expected for age.',
+      escalationCriteria: [
+        'Near add no longer sufficient for functional tasks despite an updated, appropriately determined add',
+        'Add requirement increasing unusually quickly relative to expected age-related decline',
+        'Persistent near symptoms despite correction, raising concern for an undiagnosed ocular health cause (e.g., cataract) rather than presbyopia alone',
+      ],
+      referralCriteria: [
+        'Presbyopic symptoms developing unusually early (20s-30s) -> evaluate for an underlying systemic condition or medication effect accelerating accommodative loss rather than assuming routine early presbyopia',
+        'Patient desiring spectacle/contact lens independence and an appropriate candidate -> refractive or cataract surgical consultation for presbyopia-correcting or monovision approaches (e.g., multifocal/extended depth-of-focus IOL selection, monovision LASIK)',
+      ],
+      complications: [
+        'Untreated presbyopia causes eye strain and functional near-vision impairment but carries no risk of ocular health complications or permanent visual loss',
+        'Overcorrection with excess near add power can blur intermediate/distance vision through the reading segment',
+        'Monovision intolerance (reduced stereopsis/depth perception) in patients selected for that correction approach',
+      ],
+      monitoringParameters: [
+        'Near add requirement over time',
+        'Comfort and clarity at habitual working distance',
+        'General ocular health given the overlapping age range with other age-related conditions (cataract, glaucoma, macular degeneration)',
+      ],
+      relatedExamTechniqueIds: ['amplitude-of-accommodation-push-up'],
+    },
     followUp: {
       typical: 'Routine comprehensive eye exams approximately every 1-2 years, with near add adjusted as needed to match progressive accommodative decline',
       monitor: 'Near add requirement, comfort and clarity at habitual working distances, and overall ocular health given the overlapping age range with other age-related ocular conditions (e.g., cataract, glaucoma, macular degeneration)',
@@ -330,6 +434,41 @@ export const pediatricBinocularVisionAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Orientation and mobility training for patients with significant peripheral field loss or acuity loss affecting safe independent travel' },
       { category: 'Referral', detail: 'Coordination with occupational therapy and comprehensive vision rehabilitation services/specialists to address activities of daily living, home safety, and vocational needs; continued management of the underlying causative ocular disease (e.g., AMD, diabetic retinopathy, glaucoma, retinitis pigmentosa, optic neuropathy) with the relevant specialist' },
     ],
+    managementProtocol: {
+      workup: [
+        'Best-corrected visual acuity with low vision-specific charts (e.g., ETDRS) to confirm and quantify the acuity criterion',
+        'Formal visual field testing (kinetic perimetry is often preferred over standard static automated perimetry when acuity or fixation is poor) to quantify field loss and its functional implications',
+        'Contrast sensitivity testing, which frequently correlates better with real-world task difficulty than acuity alone',
+        'Functional/low vision evaluation — magnifier trial, reading assessment, and task-specific goal assessment — to identify the individualized rehabilitation plan',
+        'Confirmation that the underlying causative disease has been optimally treated (medically/surgically) before finalizing the rehabilitation plan',
+      ],
+      initialTreatment:
+        'Build an individualized rehabilitation plan around the patient\'s specific functional goals: optical devices (handheld/stand magnifiers, high-plus reading spectacles, telescopic systems) trialed and selected in the exam, combined with non-optical adaptations (task-appropriate lighting, contrast enhancement, large-print materials).',
+      followUpSchedule:
+        'Follow-up interval is driven jointly by the underlying causative disease\'s own monitoring needs and periodic reassessment of functional goals and device effectiveness, typically every 6-12 months or sooner if function or the underlying disease changes.',
+      escalationCriteria: [
+        'Continued functional decline (reading speed/endurance, task performance) despite an appropriately fitted optical device trial',
+        'New mobility or safety concerns, particularly with progressive peripheral field loss',
+        'Emergence of new functional difficulties not addressed by the current device set',
+      ],
+      referralCriteria: [
+        'Significant peripheral field loss or acuity loss affecting safe independent travel -> orientation and mobility training',
+        'Needs beyond optical devices alone (activities of daily living, home safety, vocational needs) -> occupational therapy and comprehensive vision rehabilitation services',
+        'Ongoing management of the underlying causative disease (AMD, diabetic retinopathy, glaucoma, retinitis pigmentosa, optic neuropathy) -> continued care with the relevant specialist alongside rehabilitation',
+      ],
+      complications: [
+        'Reduced independence and increased fall/mobility risk, particularly with field loss',
+        'Difficulty with medication management and other daily tasks',
+        'Psychosocial impact, including risk of depression and social isolation',
+      ],
+      monitoringParameters: [
+        'Functional task performance (reading speed/endurance, mobility safety, task-specific goal achievement)',
+        'Device use and effectiveness over time',
+        'Status and treatment response of the underlying causative ocular disease',
+      ],
+      relatedCalculatorIds: ['equivalent-viewing-power', 'required-magnification-print-size', 'low-vision-magnification', 'telescope-magnification'],
+      relatedExamTechniqueIds: ['goldmann-kinetic-perimetry', 'contrast-sensitivity-testing'],
+    },
     followUp: {
       typical: 'Follow-up scheduled around both the underlying causative disease\'s monitoring needs and periodic reassessment of functional goals and device effectiveness as needs or vision change',
       monitor: 'Functional task performance (reading speed/endurance, mobility safety, task-specific goal achievement), device use and effectiveness, and status of the underlying causative ocular disease',

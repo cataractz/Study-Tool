@@ -65,6 +65,41 @@ export const ocularTraumaAdditional: Disease[] = [
       { category: 'Referral', detail: 'Referral to a retina specialist for baseline documentation of the rupture and establishment of long-term monitoring, given the lifelong risk of secondary choroidal neovascularization' },
       { category: 'Advanced treatment', detail: 'Anti-VEGF intravitreal injection is the standard treatment if secondary choroidal neovascularization develops from the rupture site, at any point from months to years after the original injury' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination, repeated over days to weeks as overlying hemorrhage clears, to fully characterize the rupture',
+        'Optical coherence tomography of the macula to directly visualize the RPE-Bruch membrane-choroid discontinuity and screen for subclinical subretinal fluid',
+        'Fundus autofluorescence to document the rupture site for future comparison',
+        'B-scan ultrasound if dense hemorrhage precludes a direct view, to exclude an associated retinal detachment',
+        'Baseline Amsler grid so the patient has a personal reference for later self-monitoring',
+      ],
+      initialTreatment:
+        'On initial presentation, first exclude more urgent traumatic pathology (open globe, retinal detachment); the rupture itself has no acute treatment — management is observation while hemorrhage clears and the lesion becomes fully visible, with baseline documentation for long-term comparison.',
+      followUpSchedule:
+        'Recheck in 1-2 weeks initially as hemorrhage clears and the rupture becomes fully visible, then periodic monitoring (e.g., every few months in the first year, then annually) indefinitely given the lifelong secondary CNV risk.',
+      escalationCriteria: [
+        'New metamorphopsia or decreased vision at any point after the original injury',
+        'OCT evidence of new subretinal fluid at the rupture edge',
+        'Hemorrhage extent or vision loss beyond what is expected for the documented rupture',
+      ],
+      referralCriteria: [
+        'All confirmed choroidal ruptures -> retina specialist for baseline documentation and long-term monitoring',
+        'Any suspicion of secondary choroidal neovascularization (new subretinal fluid, hemorrhage, or metamorphopsia) -> urgent retina evaluation for anti-VEGF therapy',
+        'Dense hemorrhage precluding an adequate fundus view -> retina specialist for B-scan-guided evaluation',
+      ],
+      complications: [
+        'Choroidal neovascularization arising from the rupture edge, months to years after the injury',
+        'Subretinal fibrosis and macular scarring if the rupture or a resultant CNV involves the fovea',
+        'Vitreous hemorrhage in the acute period with more severe injury',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Amsler grid response (patient self-monitoring)',
+        'OCT for subretinal fluid or new hemorrhage suggestive of CNV',
+        'Fundus photography/autofluorescence for lesion evolution',
+      ],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'fundus-autofluorescence', 'fluorescein-angiography', 'amsler-grid-testing', 'b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Follow-up within 1-2 weeks initially to reassess as hemorrhage clears and the rupture becomes fully visible, then periodic monitoring',
       monitor: 'Visual acuity, Amsler grid response, OCT for subretinal fluid or new hemorrhage suggestive of CNV, and clearance of the initial hemorrhage',
@@ -158,6 +193,39 @@ export const ocularTraumaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Pars plana vitrectomy for cases with more extensive detachment, associated vitreous hemorrhage, or proliferative vitreoretinopathy' },
       { category: 'Referral', detail: 'Any young patient with a history of significant blunt ocular trauma should receive a dilated peripheral examination with scleral depression even if currently asymptomatic, given the well-documented risk of delayed presentation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination with scleral depression — the definitive exam, essential even in an asymptomatic young trauma patient given the classic delayed presentation',
+        'B-scan ultrasound when the view is limited by vitreous hemorrhage or cataract, to characterize the extent of any associated detachment',
+        'Widefield fundus photography to document the disinsertion and any pigmented demarcation lines for surgical planning and to establish chronicity',
+        'Baseline peripheral exam of the fellow eye',
+      ],
+      initialTreatment:
+        'Laser demarcation/retinopexy around the dialysis when there is no or only minimal associated subretinal fluid, to wall off progression; a scleral buckle is used when a retinal detachment has already developed, given the effectiveness of buckling for this peripheral, anterior pathology; pars plana vitrectomy is reserved for more extensive detachment, associated vitreous hemorrhage, or proliferative vitreoretinopathy.',
+      followUpSchedule:
+        'Prompt examination as soon as possible after trauma; if a dialysis without detachment is treated with laser, close-interval follow-up (weeks) to confirm adequate chorioretinal adhesion; standard postoperative retinal detachment follow-up (day 1, week 1, month 1, then tapering) if surgically repaired.',
+      escalationCriteria: [
+        'Any new flashes, floaters, or visual field defect',
+        'Documented progression of subretinal fluid despite laser demarcation',
+        'Extension of subretinal fluid toward the macula',
+      ],
+      referralCriteria: [
+        'Any documented or suspected retinal dialysis -> prompt referral to a retina specialist, even without a frank detachment present',
+        'An active, progressing retinal detachment from a dialysis -> urgent same-day retina referral, as for any retinal detachment',
+        'Any young patient with a history of significant blunt ocular trauma -> dilated peripheral examination with scleral depression, even if currently asymptomatic',
+      ],
+      complications: [
+        'Macula-involving retinal detachment with permanent central vision loss if diagnosis is missed or delayed',
+        'Proliferative vitreoretinopathy in long-standing detachments',
+      ],
+      monitoringParameters: [
+        'Extent of subretinal fluid and any detachment',
+        'Adequacy of laser chorioretinal scarring',
+        'Visual acuity',
+        'The fellow eye, given shared trauma-exposure risk',
+      ],
+      relatedExamTechniqueIds: ['scleral-depression', 'b-scan-ultrasonography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Prompt examination as soon as possible after trauma; if a dialysis is identified without detachment, close-interval follow-up (weeks) after laser demarcation to confirm adequate chorioretinal adhesion; standard postoperative retinal detachment follow-up if surgically repaired',
       monitor: 'Extent of subretinal fluid, progression of any detachment, adequacy of laser scarring, and the fellow eye given the potential for a similar mechanism with future trauma',
@@ -252,6 +320,43 @@ export const ocularTraumaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Concurrent cataract extraction and/or repair of associated retinal breaks or detachment at the time of foreign body removal as indicated' },
       { category: 'Observation', detail: 'Removal urgency is composition-dependent: organic/vegetable matter and copper-containing (especially high-copper) fragments require urgent removal given high infection/inflammation risk, while inert, non-iron materials (glass, certain inert metals) may occasionally be observed if surgical removal carries greater risk than leaving the fragment in place' },
     ],
+    managementProtocol: {
+      workup: [
+        'CT orbit, thin-cut axial and coronal (never MRI when a metallic fragment is suspected), to localize and characterize the foreign body',
+        'B-scan ultrasound to further localize the fragment and assess for vitreous hemorrhage or retinal detachment, using minimal probe pressure if globe integrity is uncertain',
+        'Electroretinography to detect early siderosis-related retinal toxicity — reduced b-wave amplitude is an early, sensitive finding that precedes clinically visible retinopathy and can arise before vision or exam findings change',
+        'Slit lamp examination with gonioscopy once safe, for iris/angle deposition patterns (rust-colored iris deposits in siderosis; Kayser-Fleischer-like ring in chalcosis)',
+        'Standard open globe workup (Seidel test, avoidance of IOP check/manipulation while suspected open) when the entry wound has not yet been shown to be sealed',
+      ],
+      initialTreatment:
+        'For any suspected open globe with a possible retained foreign body: rigid shield (never a pressure patch), strict NPO status, no further manipulation or IOP checks, broad-spectrum antibiotics, and tetanus prophylaxis, followed by urgent surgical removal — via a limbal/corneal approach for anterior fragments or pars plana vitrectomy (often with an intraocular magnet for ferrous fragments) for posterior fragments. Removal urgency is composition-dependent: organic material and copper-containing fragments (especially high-copper alloys) require urgent removal, while select inert, non-iron fragments may be observed if removal carries greater surgical risk than leaving the fragment in place.',
+      followUpSchedule:
+        'Close early postoperative follow-up to monitor for infection and inflammation after removal; periodic long-term monitoring (visual acuity, iris/lens exam, ERG) if an inert foreign body is retained and observed rather than removed.',
+      escalationCriteria: [
+        'New pupillary mydriasis, rust-colored iris discoloration, progressive cataract, or reduced ERG amplitude in an observed iron-containing foreign body — should prompt reconsideration of surgical removal',
+        'Any sign of endophthalmitis (increasing pain, hypopyon, vitritis)',
+        'Progressive signs of chalcosis (Kayser-Fleischer-like ring, sunflower cataract, worsening inflammation) in an observed copper-containing fragment',
+      ],
+      referralCriteria: [
+        'Any suspected or confirmed intraocular foreign body -> urgent, same-day referral to a vitreoretinal or ophthalmic surgeon',
+        'Organic material or a high-copper alloy fragment -> urgent removal given elevated infection/inflammation risk',
+        'Any developing sign of siderosis or chalcosis progression in an observed fragment -> prompt surgical reconsideration',
+      ],
+      complications: [
+        'Siderosis bulbi: pigmentary retinopathy, cataract, secondary glaucoma from trabecular iron deposition, and eventual severe vision loss if unremoved',
+        'Chalcosis: severe intraocular inflammation with high-copper alloys, or a sunflower cataract and Kayser-Fleischer-like ring with lower-copper alloys',
+        'Endophthalmitis, especially with organic material',
+        'Retinal detachment and sympathetic ophthalmia',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Iris color and pupil reactivity',
+        'Lens clarity',
+        'Electroretinogram amplitude if siderosis is a concern',
+        'Intraocular pressure and signs of infection',
+      ],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'electroretinogram', 'gonioscopy', 'seidel-test'],
+    },
     followUp: {
       typical: 'Close early postoperative follow-up after removal to monitor for infection and inflammation; periodic monitoring for any evolving toxic changes if an inert foreign body is retained and observed',
       monitor: 'Visual acuity, iris color/pupil reactivity, lens clarity, ERG if siderosis is a concern, intraocular pressure, and signs of infection or endophthalmitis',
@@ -344,6 +449,41 @@ export const ocularTraumaAdditional: Disease[] = [
       { category: 'First-line treatment', detail: 'Standard topical intraocular pressure-lowering therapy is used if and when angle-recession glaucoma develops, following the same treatment principles as open-angle glaucoma, though response to some agents may be reduced given trabecular meshwork damage' },
       { category: 'Advanced treatment', detail: 'Surgical intraocular pressure-lowering options (e.g., trabeculectomy, glaucoma drainage device) if angle-recession glaucoma becomes uncontrolled on maximum tolerated medical therapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Gonioscopy of both eyes for direct comparison, deferred until any acute hyphema has cleared given rebleed risk',
+        'Serial, long-term intraocular pressure measurement, since angle-recession glaucoma is typically asymptomatic until advanced',
+        'Slit lamp examination of the iris and pupil to characterize the size, location, and functional impact of an iridodialysis',
+        'Optic nerve evaluation (stereoscopic disc exam, OCT retinal nerve fiber layer, visual field) once elevated IOP or significant angle recession is identified',
+      ],
+      initialTreatment:
+        'A small, asymptomatic iridodialysis without functional complaints is observed; a large, symptomatic dialysis (monocular diplopia, glare) is managed with surgical repair (iridoplasty/direct suturing of the iris root). Angle recession itself requires no acute treatment — baseline gonioscopy and IOP assessment are obtained once safe, with topical IOP-lowering therapy started only if and when angle-recession glaucoma develops, following standard open-angle glaucoma treatment principles (recognizing that response to some agents may be blunted by the underlying trabecular damage).',
+      followUpSchedule:
+        'Baseline gonioscopy and intraocular pressure assessment once safe (after any hyphema resolves) following significant blunt trauma, with lifelong periodic monitoring thereafter (e.g., annually) given that angle-recession glaucoma can present years to decades after the inciting injury.',
+      escalationCriteria: [
+        'New intraocular pressure elevation, optic nerve change, or visual field defect in a patient with known angle recession',
+        'Progressive or extensive (e.g., greater than 180 degrees) angle recession, which carries a higher glaucoma risk',
+        'Intraocular pressure uncontrolled on maximum tolerated medical therapy once angle-recession glaucoma is established',
+      ],
+      referralCriteria: [
+        'Any gonioscopically confirmed angle recession -> ophthalmology/glaucoma specialty for baseline assessment and lifelong monitoring',
+        'A large, symptomatic iridodialysis -> ophthalmology for consideration of surgical repair',
+        'Angle-recession glaucoma uncontrolled on maximum medical therapy -> glaucoma surgical referral (trabeculectomy or drainage device)',
+      ],
+      complications: [
+        'Angle-recession glaucoma with associated optic nerve damage and visual field loss if unmonitored or undertreated',
+        'Glare and monocular diplopia from an untreated large iridodialysis',
+        'Cosmetic concerns from an untreated iridodialysis',
+      ],
+      monitoringParameters: [
+        'Intraocular pressure',
+        'Optic nerve appearance and OCT retinal nerve fiber layer',
+        'Visual fields',
+        'Stability of iris position/dialysis',
+      ],
+      relatedDrugIds: ['timolol', 'brimonidine', 'latanoprost'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry'],
+    },
     followUp: {
       typical: 'Baseline gonioscopy and intraocular pressure assessment once safe (after any hyphema resolves) following significant blunt trauma, with lifelong periodic monitoring thereafter (e.g., annually) given the delayed glaucoma risk',
       monitor: 'Intraocular pressure, optic nerve appearance/OCT retinal nerve fiber layer, visual fields, and stability of iris position/dialysis',
@@ -436,6 +576,50 @@ export const ocularTraumaAdditional: Disease[] = [
       { category: 'Observation', detail: 'A small, stable, visually insignificant posterior subcapsular opacity from blunt trauma without capsular violation may be observed if vision is not significantly affected' },
       { category: 'First-line treatment', detail: 'Topical corticosteroids and cycloplegia for associated traumatic inflammation while awaiting definitive surgical planning' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated slit lamp examination to characterize the pattern, location, and extent of lens opacification and assess capsular integrity',
+        'Assessment for phacodonesis/iridodonesis to determine zonular integrity, which changes surgical planning',
+        'B-scan ultrasound before surgery when the opacity precludes a posterior segment view, to exclude retinal detachment, vitreous hemorrhage, or a foreign body',
+        'CT orbit when a penetrating or high-velocity mechanism raises concern for an associated open globe, intraocular foreign body, or orbital fracture',
+        'Intraocular pressure measurement to screen for lens-material-induced secondary glaucoma',
+      ],
+      initialTreatment:
+        'For any penetrating/open globe injury with an associated cataract, first manage per the open globe emergency protocol (rigid shield, NPO status, IV antibiotics, tetanus prophylaxis, urgent surgical referral) — cataract extraction is addressed at the time of primary repair or as a planned staged procedure, not as an isolated urgent step ahead of globe stabilization. A small, stable, visually insignificant blunt-trauma opacity without capsular violation may simply be observed, with topical corticosteroids and cycloplegia used for associated inflammation while awaiting definitive surgical planning when extraction is indicated.',
+      followUpSchedule:
+        'Frequent early follow-up (days to weeks) if capsular rupture or significant inflammation is present, given the risk of rapidly progressive complications; longer intervals are appropriate for a stable, observed blunt-trauma opacity.',
+      escalationCriteria: [
+        'Rapid opacification progression after a penetrating injury',
+        'Rising intraocular pressure from lens material or angle obstruction',
+        'Increasing inflammation suggesting phacoanaphylactic uveitis',
+        'Visible lens material in the anterior chamber after capsular rupture',
+      ],
+      referralCriteria: [
+        'Any capsular rupture -> urgent ophthalmology/cataract-vitreoretinal referral, given the risk of phacoanaphylactic uveitis and secondary glaucoma from retained lens material',
+        'Concurrent open globe -> emergent combined or staged repair per open globe protocol',
+        'Significant zonular compromise (phacodonesis/iridodonesis) -> surgical planning for capsular tension ring or alternative fixation',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids control traumatic inflammation while awaiting definitive surgical planning, but are not a substitute for timely extraction once the capsule is ruptured and lens material is actively inciting phacoanaphylactic inflammation.',
+      cycloplegicConsiderations:
+        'Cycloplegia is used for comfort and to reduce posterior synechiae risk from associated traumatic iritis while awaiting surgery.',
+      complications: [
+        'Phacoanaphylactic uveitis',
+        'Secondary glaucoma from lens material or angle obstruction',
+        'Posterior capsule opacification after extraction',
+        'Retained lens fragments',
+        'Complications related to concurrent zonular damage (subluxation, vitreous loss during surgery)',
+      ],
+      monitoringParameters: [
+        'Rate of lens opacification progression',
+        'Intraocular pressure',
+        'Signs of phacoanaphylactic inflammation',
+        'Zonular stability',
+        'Posterior segment status',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Frequent early follow-up (days to weeks) if capsular rupture or significant inflammation is present, given the risk of rapidly progressive complications; longer intervals for a stable, observed blunt-trauma opacity',
       monitor: 'Rate of lens opacification progression, intraocular pressure, signs of phacoanaphylactic inflammation, zonular stability, and posterior segment status',
@@ -528,6 +712,45 @@ export const ocularTraumaAdditional: Disease[] = [
       { category: 'Referral', detail: 'Early referral to an oculoplastic surgeon or ophthalmologist for any significant eyelid burn, given the importance of preventing and, if needed, surgically addressing cicatricial ectropion or lagophthalmos before secondary exposure keratopathy develops' },
       { category: 'Second-line treatment', detail: 'Aggressive lubrication, including nighttime ointment or a moisture chamber, and, if lagophthalmos or ectropion develops, surgical eyelid reconstruction or release to restore adequate lid closure — see the existing Exposure Keratopathy entry in this library for the shared management principles once this complication is present' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination with fluorescein to assess the extent of any corneal thermal injury',
+        'Tear film pH testing (litmus paper) to exclude or confirm a concurrent chemical exposure, since flame/explosion mechanisms can occasionally involve both',
+        'Assessment of lid closure adequacy and the Bell phenomenon, since acute findings can be deceptively reassuring before cicatricial changes develop',
+        'Serial external photography to track eyelid burn depth and evolution over the following weeks',
+        'Screening for associated facial/airway burns or smoke inhalation as part of the overall trauma evaluation, particularly with flame or explosion mechanisms',
+      ],
+      initialTreatment:
+        'Copious irrigation/cooling of the ocular surface with sterile isotonic fluid (or the cleanest available fluid) immediately if there is any concern for direct corneal/conjunctival thermal exposure or possible concurrent chemical contamination, following similar initial principles to chemical burn management. This is followed by preservative-free lubrication, topical antibiotic prophylaxis for any corneal epithelial defect, and gentle wound care for periocular burns, alongside evaluation and management of any associated systemic burn injury.',
+      followUpSchedule:
+        'Close early follow-up (days) to monitor corneal epithelial healing and periocular burn evolution, with longer-term follow-up over weeks to months to monitor for cicatricial lid changes as the burn wound remodels and matures.',
+      escalationCriteria: [
+        'New lagophthalmos or ectropion developing during the healing period',
+        'Corneal exposure findings (punctate staining, drying) developing as the lids scar',
+        'Failure of a corneal epithelial defect to heal on the expected timeline',
+        'Full-thickness eyelid burn depth at presentation',
+      ],
+      referralCriteria: [
+        'Any significant eyelid burn -> early oculoplastic surgeon referral to help prevent, or promptly address, cicatricial ectropion or lagophthalmos',
+        'Direct, significant corneal thermal injury -> ophthalmology',
+        'Developing exposure keratopathy despite aggressive lubrication -> oculoplastics for surgical eyelid reconstruction or release',
+      ],
+      complications: [
+        'Cicatricial ectropion',
+        'Lagophthalmos',
+        'Secondary exposure keratopathy',
+        'Corneal scarring if direct thermal corneal injury was significant',
+        'Periocular cosmetic/functional deformity',
+      ],
+      monitoringParameters: [
+        'Corneal epithelial integrity',
+        'Adequacy of lid closure and the Bell phenomenon',
+        'Evidence of developing ectropion or lagophthalmos',
+        'Signs of secondary exposure keratopathy',
+      ],
+      relatedDrugIds: ['erythromycin-ophthalmic'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Close early follow-up (days) to monitor corneal epithelial healing and periocular burn evolution, with longer-term follow-up over weeks to months to monitor for cicatricial lid changes as the burn wound remodels and matures',
       monitor: 'Corneal epithelial integrity, adequacy of lid closure/Bell phenomenon, evidence of developing ectropion or lagophthalmos, and signs of exposure keratopathy',

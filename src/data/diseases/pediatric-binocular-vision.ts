@@ -69,6 +69,49 @@ export const pediatricBinocularVisionDiseases: Disease[] = [
       { category: 'Second-line treatment', detail: 'Treatment of underlying cause: strabismus surgery when indicated, or urgent cataract/ptosis surgery for deprivation amblyopia' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology for deprivation amblyopia (urgent), for surgical management of strabismus or media opacity, or for amblyopia refractory to standard occlusion/penalization therapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction to quantify anisometropia/bilateral ametropia and establish the spectacle prescription that will serve as the treatment foundation',
+        'Best-corrected visual acuity by age-appropriate, ideally crowded optotype in each eye to establish baseline severity and classify mild/moderate/severe',
+        'Dilated fundus exam to exclude organic pathology before attributing the acuity deficit to amblyopia and beginning occlusion/penalization',
+        'Assessment of fixation preference/stability and quantification of any associated strabismus angle',
+      ],
+      initialTreatment:
+        'Full spectacle correction of refractive error is prescribed first and worn full-time for 4-18 weeks of "refractive adaptation" before adding occlusion, since a meaningful proportion of anisometropic amblyopia resolves with glasses alone (PEDIG ATS5R); if a residual interocular acuity deficit persists, occlusion of the fellow eye or atropine 1% penalization is added, with patching hours set by severity per PEDIG (ATS) trials — 2 hours/day is as effective as 6 hours/day for moderate amblyopia (20/40-20/80), while severe amblyopia (20/100-20/400) is typically started at 2 hours/day and stepped up to 6 hours/day if response plateaus.',
+      followUpSchedule:
+        'Recheck 4-18 weeks after refractive correction alone to assess spectacle-only response before adding occlusion/penalization; once occlusion or atropine is started, reassess visual acuity and compliance roughly every 5-10 weeks, extending the interval once acuity stabilizes and the interocular difference narrows.',
+      escalationCriteria: [
+        'No improvement in amblyopic-eye acuity after a full trial (~5-10 weeks) of the prescribed occlusion or atropine dose',
+        'Plateau at 2 hours/day patching in severe amblyopia — step up to 6 hours/day',
+        'Signs of occlusion (iatrogenic) amblyopia developing in the treated better eye',
+        'Persistent or worsening strabismus angle suggesting need for surgical realignment alongside amblyopia therapy',
+      ],
+      referralCriteria: [
+        'Deprivation amblyopia (dense cataract, complete ptosis) -> urgent same/next-day pediatric ophthalmology referral',
+        'Amblyopia refractory to an adequate trial of occlusion/atropine per PEDIG-based dosing -> pediatric ophthalmology',
+        'Strabismus requiring surgical alignment -> pediatric ophthalmology',
+        'Structural findings on dilated exam not fully explained by amblyopia alone -> pediatric ophthalmology',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate is used for the diagnostic cycloplegic refraction that quantifies anisometropia/hyperopia and sets the glasses prescription; atropine 1% (dosed daily or weekend-only, per PEDIG findings that both regimens perform comparably to 6-hour patching for moderate amblyopia) is used separately for penalization — deliberately blurring the better eye at near to force use of the amblyopic eye — a distinct pharmacologic role from its use as a diagnostic cycloplegic.',
+      complications: [
+        'Persistent/permanent reduced acuity and stereopsis if treatment is delayed beyond the critical period',
+        'Occlusion (iatrogenic) amblyopia of the patched eye from excessive patching',
+        'Poor compliance with patching or atropine limiting treatment effect',
+        'Skin irritation from adhesive patches',
+        'Amblyopia recurrence after treatment is discontinued',
+      ],
+      monitoringParameters: [
+        'Best-corrected visual acuity in each eye at each visit',
+        'Fixation preference/stability',
+        'Compliance with patching or atropine regimen',
+        'Interocular acuity difference (lines)',
+        'Signs of occlusion amblyopia in the patched eye',
+        'Angle of any associated strabismus',
+      ],
+      relatedDrugIds: ['atropine', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'fixation-preference-occlusion-testing', 'cover-test'],
+    },
     followUp: {
       typical: 'Every 2-3 months while actively treating, with reassessment of visual acuity and treatment adherence',
       monitor: 'Best-corrected visual acuity in each eye, fixation preference, compliance with patching/atropine, and for occlusion amblyopia (iatrogenic reduction in the patched eye)',
@@ -157,6 +200,47 @@ export const pediatricBinocularVisionDiseases: Disease[] = [
       { category: 'Second-line treatment', detail: 'Amblyopia treatment (patching/penalization) if amblyopia is present in association with the esotropia' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology for surgical evaluation if a significant non-accommodative residual deviation persists despite optimal optical correction (partially accommodative esotropia)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction (cyclopentolate) to fully quantify the hyperopia driving the deviation',
+        'Cover test at distance and near, with and without correction in place, to classify fully accommodative, partially accommodative, or high-AC/A (non-refractive) esotropia',
+        'AC/A ratio calculation (gradient method) when a near-greater-than-distance esotropia persists despite full distance correction',
+        'Assessment of visual acuity and fixation preference for coexisting amblyopia',
+      ],
+      initialTreatment:
+        'Full cycloplegic hyperopic correction is prescribed and worn full-time as first-line treatment; if a near-greater-than-distance esotropia persists despite full distance correction (high AC/A ratio), a bifocal add — typically an executive-style segment with an add power individualized to the AC/A ratio, commonly in the +1.00 to +3.00D range and averaging around +2.50 to +3.00D — is prescribed for near work.',
+      followUpSchedule:
+        'Recheck within a few weeks of dispensing new glasses to confirm the deviation reduces or resolves with correction in place, then every 6-12 months once alignment is stable; the bifocal add power is reassessed and gradually reduced over subsequent years as the AC/A ratio and accommodative demand change with age.',
+      escalationCriteria: [
+        'Esotropia not fully controlled by maximum plus (full cycloplegic) correction',
+        'Persistent near esotropia despite a therapeutic bifocal add',
+        'New or progressive amblyopia despite optical correction',
+        'Emergence or growth of a non-accommodative (residual) component',
+      ],
+      referralCriteria: [
+        'Significant residual (partially accommodative) esotropia persisting despite full optical correction and, when indicated, a bifocal add -> pediatric ophthalmology for surgical evaluation',
+        'Amblyopia not responding to first-line occlusion/penalization -> pediatric ophthalmology',
+        'Diagnostic uncertainty distinguishing from infantile esotropia or CN VI palsy -> pediatric ophthalmology',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate cycloplegic refraction is essential before prescribing glasses — it is the only reliable way to reveal the full latent hyperopia driving the deviation, since manifest (non-cycloplegic) refraction under-corrects hyperopia due to accommodative relaxation during testing.',
+      complications: [
+        'Amblyopia from asymmetric or inconsistent alignment',
+        'Loss of binocular fusion/stereopsis if uncorrected',
+        'Persistent partially-accommodative component requiring surgery',
+        'Psychosocial impact of a visible eye turn',
+      ],
+      monitoringParameters: [
+        'Alignment (angle) with correction in place, distance and near',
+        'Visual acuity in each eye',
+        'Stereoacuity',
+        'Refractive error stability/change over time',
+        'Bifocal add requirement over time',
+      ],
+      relatedDrugIds: ['cyclopentolate'],
+      relatedCalculatorIds: ['aca-ratio'],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'cover-test', 'prism-cover-test'],
+    },
     followUp: {
       typical: 'Recheck within weeks of new glasses to assess alignment response, then every 6-12 months once stable',
       monitor: 'Alignment with correction on, visual acuity in each eye (amblyopia risk), stereopsis, and stability of refractive error over time',
@@ -243,6 +327,43 @@ export const pediatricBinocularVisionDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Strabismus surgery (lateral rectus recession, with or without medial rectus resection) for worsening control, increasing angle, or poor cosmesis' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology for surgical evaluation when control deteriorates, the angle increases, or stereopsis declines despite conservative management' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cover-uncover and alternate cover testing at distance and near to quantify the angle and characterize the deviation pattern',
+        'Grading of control (e.g., Newcastle Control Score or similar), spontaneously and after dissociation, at distance and near',
+        'Stereoacuity testing to assess the quality of binocular fusion when the eyes are aligned',
+        'Cycloplegic refraction to identify and correct significant myopia/anisometropia',
+      ],
+      initialTreatment:
+        'Good control with infrequent, brief manifest episodes and normal stereopsis is managed with observation and periodic reassessment; correction of significant refractive error (particularly myopia) is applied when present; for borderline or deteriorating control, part-time occlusion or office-based vision therapy targeting fusional convergence may be tried before surgery (lateral rectus recession, with or without medial rectus resection) is considered for poor/worsening control, an increasing angle, or declining stereopsis.',
+      followUpSchedule:
+        'Every 6-12 months while control is good and stable, shortened to every 3-6 months if control is borderline or deteriorating, reassessing control grade, angle at distance and near, and stereoacuity at each visit.',
+      escalationCriteria: [
+        'Declining control (more frequent or longer manifest episodes) on serial exams',
+        'Increasing angle of deviation at distance and/or near',
+        'Worsening stereoacuity',
+        'New or worsening amblyopia',
+      ],
+      referralCriteria: [
+        'Poor or deteriorating control despite refractive correction and/or vision therapy -> pediatric ophthalmology for surgical evaluation',
+        'Large or cosmetically significant angle -> pediatric ophthalmology',
+        'Amblyopia not responding to standard treatment -> pediatric ophthalmology',
+        'Cooperative candidate for structured office-based vision therapy -> orthoptics/binocular vision specialist',
+      ],
+      complications: [
+        'Amblyopia (less common than in constant strabismus but possible)',
+        'Progressive loss of stereopsis with declining control',
+        'Progression to constant exotropia',
+        'Postoperative overcorrection (consecutive esotropia) or undercorrection/recurrence if surgery is performed',
+      ],
+      monitoringParameters: [
+        'Control grade (frequency/duration of manifest deviation) at distance and near',
+        'Angle of deviation at distance and near',
+        'Stereoacuity',
+        'Visual acuity in each eye',
+      ],
+      relatedExamTechniqueIds: ['cover-test', 'prism-cover-test', 'stereoacuity-testing'],
+    },
     followUp: {
       typical: 'Every 6-12 months while control is good and stable; more frequently if control is borderline or deteriorating',
       monitor: 'Frequency/duration of the manifest deviation (control), angle of deviation at distance and near, stereoacuity, and visual acuity in each eye',
@@ -335,6 +456,46 @@ export const pediatricBinocularVisionDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'External beam radiotherapy reserved for refractory cases given risk of radiation-induced secondary malignancies, particularly in hereditary retinoblastoma' },
       { category: 'Referral', detail: 'Genetic counseling for all patients (and their families) with hereditary or bilateral retinoblastoma; oncology co-management for systemic chemotherapy and surveillance for secondary malignancies' },
     ],
+    managementProtocol: {
+      workup: [
+        'Emergent dilated fundus exam under anesthesia (EUA) with indirect ophthalmoscopy/scleral depression for tumor staging (International Intraocular Retinoblastoma Classification)',
+        'B-scan ocular ultrasound to detect calcification and characterize the mass',
+        'MRI of the orbits and brain to assess optic nerve invasion, extraocular extension, and trilateral (pineal) disease',
+        'RB1 germline genetic testing to determine heritable versus sporadic status',
+        'Baseline pediatric oncology consultation and staging workup if extraocular extension is suspected',
+      ],
+      initialTreatment:
+        'Any suspected leukocoria or retinoblastoma requires immediate referral for exam under anesthesia and staging; first-line treatment for salvageable intraocular disease is systemic chemoreduction (classically carboplatin, vincristine, and etoposide [CVE], repeated every 3-4 weeks for 6-8 cycles) or, for select eyes, intra-arterial melphalan, combined with focal consolidation therapy (laser photocoagulation/thermotherapy, cryotherapy); enucleation is reserved for advanced unilateral disease with no useful vision potential or for eyes that fail conservative therapy.',
+      followUpSchedule:
+        'Frequent exams under anesthesia (often every 3-4 weeks) during active chemoreduction cycles to track tumor response, spacing to longer intervals through early childhood once quiescent; hereditary-disease survivors require lifelong surveillance for secondary malignancies (e.g., osteosarcoma, soft tissue sarcoma) and periodic screening of at-risk siblings/offspring.',
+      escalationCriteria: [
+        'New tumor growth or new foci on serial EUA',
+        'Vitreous seeding or optic nerve involvement',
+        'Extraocular extension or CNS/orbital spread on imaging',
+        'Failure of focal consolidation to control a treated lesion',
+      ],
+      referralCriteria: [
+        'Any suspected leukocoria or abnormal red reflex -> urgent same/next-day pediatric ophthalmology/ocular oncology referral (a true ocular and systemic emergency)',
+        'Confirmed or suspected retinoblastoma -> pediatric oncology co-management for chemotherapy',
+        'Hereditary/bilateral disease or a positive RB1 mutation -> genetic counseling and lifelong secondary-malignancy surveillance',
+        'Extraocular extension or CNS involvement -> oncology/neuro-oncology',
+      ],
+      complications: [
+        'Vision loss, loss of the eye (enucleation)',
+        'Secondary glaucoma from neovascularization',
+        'Trilateral retinoblastoma (pineal involvement) in hereditary disease',
+        'Secondary malignancies (e.g., osteosarcoma) in hereditary-disease survivors, particularly after external beam radiation',
+        'Metastatic disease if diagnosis/treatment is delayed',
+      ],
+      monitoringParameters: [
+        'Tumor size/activity on serial EUA',
+        'New tumor foci, especially in hereditary disease',
+        'Treatment response to chemoreduction/focal therapy',
+        'Lifelong surveillance for secondary malignancies in hereditary-disease survivors',
+        'Screening status of at-risk siblings/offspring',
+      ],
+      relatedExamTechniqueIds: ['bruckner-test'],
+    },
     followUp: {
       typical: 'Frequent examinations under anesthesia (often every few weeks initially) during active treatment to monitor tumor response, then gradually spaced surveillance exams through early childhood',
       monitor: 'Tumor size/activity, new tumor foci (especially in hereditary disease), treatment response, and in survivors of hereditary disease, lifelong surveillance for secondary malignancies (e.g., osteosarcoma, soft tissue sarcoma)',
@@ -427,6 +588,49 @@ export const pediatricBinocularVisionDiseases: Disease[] = [
       { category: 'Second-line treatment', detail: 'Aggressive amblyopia therapy (occlusion/patching of the fellow eye) after surgery and optical correction, particularly critical and often intensive in unilateral cases' },
       { category: 'Referral', detail: 'Refer urgently to pediatric ophthalmology for any visually significant congenital cataract; refer to pediatrics/genetics/infectious disease as needed for systemic or metabolic workup' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated slit lamp/ophthalmoscopic exam (EUA in infants) to characterize morphology, density, laterality, and visual significance',
+        'B-scan ultrasound when the cataract is dense enough to obscure the view, to exclude a posterior segment mass (e.g., retinoblastoma) before assuming a purely lenticular cause',
+        'TORCH titers and urine reducing substances/galactosemia screening when indicated by laterality or systemic findings',
+        'Biometry (axial length/keratometry) for IOL power planning when primary intraocular lens implantation is being considered',
+        'Coordination of urgent surgical scheduling once visual significance is confirmed',
+      ],
+      initialTreatment:
+        'Small, non-visually-significant peripheral or partial opacities may be observed without surgery; dense, visually significant unilateral cataracts require urgent lensectomy, classically within about the first 6 weeks of life, and bilateral dense cataracts within about the first 10 weeks, to minimize the critical-period window for deprivation amblyopia; surgery is followed by optical correction of the resulting aphakia (contact lens or spectacles, with or without primary IOL depending on age) and aggressive post-operative amblyopia therapy.',
+      followUpSchedule:
+        'Very frequent postoperative visits in infancy (weekly to monthly) to update the aphakic optical correction as the eye grows and to monitor for complications, spacing out as the child matures and refraction/alignment stabilize.',
+      escalationCriteria: [
+        'Rising intraocular pressure suggesting aphakic glaucoma',
+        'Lack of expected fixation/visual behavior improvement postoperatively',
+        'Worsening nystagmus or new strabismus',
+        'Posterior capsule opacification obstructing the visual axis',
+      ],
+      referralCriteria: [
+        'Any visually significant congenital cataract -> urgent pediatric ophthalmology referral for surgical planning',
+        'Bilateral cataracts or associated systemic findings -> pediatrics/genetics/infectious disease for TORCH/metabolic workup',
+        'Positive galactosemia screening -> metabolic/genetics for dietary galactose restriction, which can halt or reverse early lens change',
+        'Aphakic glaucoma or other postoperative complication -> pediatric ophthalmology/glaucoma specialist',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate cycloplegic retinoscopy is used postoperatively to refract the aphakic eye (contact lens or spectacle power) and to monitor refractive change as the eye grows.',
+      complications: [
+        'Deprivation amblyopia (most severe in unilateral cases)',
+        'Aphakic (secondary) glaucoma requiring lifelong IOP monitoring',
+        'Nystagmus if treatment is delayed',
+        'Strabismus',
+        'Posterior capsule opacification requiring further intervention',
+      ],
+      monitoringParameters: [
+        'Visual acuity/fixation behavior',
+        'Alignment (strabismus)',
+        'Aphakic correction power as the eye grows',
+        'Amblyopia therapy compliance',
+        'Intraocular pressure (aphakic glaucoma surveillance)',
+      ],
+      relatedDrugIds: ['cyclopentolate'],
+      relatedExamTechniqueIds: ['bruckner-test', 'cycloplegic-retinoscopy'],
+    },
     followUp: {
       typical: 'Very frequent postoperative visits in infancy (weekly to monthly) to update optical correction as the eye grows and to monitor for complications, spacing out as the child matures',
       monitor: 'Visual acuity/fixation behavior, alignment (strabismus), optical correction status (aphakic glasses/contact lens power as the eye grows), amblyopia therapy compliance, and intraocular pressure (risk of aphakic glaucoma)',
@@ -514,6 +718,40 @@ export const pediatricBinocularVisionDiseases: Disease[] = [
       { category: 'Second-line treatment', detail: 'Home-based computer vergence/accommodative therapy or home pencil push-ups may be considered when office-based therapy is not accessible, with the understanding that the CITT found these less effective than office-based therapy' },
       { category: 'Referral', detail: 'Refer for comprehensive office-based vision therapy program (optometry specializing in binocular vision/vision therapy) for confirmed, symptomatic convergence insufficiency' },
     ],
+    managementProtocol: {
+      workup: [
+        'Near point of convergence (NPC) testing, repeated to confirm reproducibility of the receded break/recovery point',
+        'Positive fusional vergence (PFV) testing at near, assessed against Sheard\'s criterion',
+        'Convergence Insufficiency Symptom Survey (CISS) to establish baseline symptom severity and track treatment response',
+        'Exclusion of uncorrected refractive error and accommodative dysfunction as the primary driver of symptoms',
+      ],
+      initialTreatment:
+        'Mild, minimally symptomatic cases may be observed; for symptomatic CI, office-based vergence/accommodative vision therapy with home reinforcement is first-line, per the CITT trial (a structured 12-week program of weekly hour-long in-office sessions plus daily home exercises), which produced normal or improved NPC, PFV, and symptoms in about 75% of children compared with 43% for home-based pencil push-ups and 33% for home-based computer therapy; home-based computer vergence/accommodative therapy or pencil push-ups may be used when office-based therapy is inaccessible, understanding these are less effective per CITT.',
+      followUpSchedule:
+        'Reassessed roughly every 4 weeks during the 12-week office-based therapy program (matching the CITT masked-examiner assessment schedule), tracking NPC, PFV, and CISS score, with continued monitoring at 6 and 12 months post-therapy for symptom recurrence.',
+      escalationCriteria: [
+        'No improvement in NPC/PFV or persistently elevated CISS score after a full 12-week office-based therapy trial',
+        'Symptoms significantly limiting academic/near-work function despite a home-based therapy trial',
+      ],
+      referralCriteria: [
+        'Confirmed symptomatic CI not improving with correction of refractive error alone -> optometry/orthoptics specializing in vision therapy for a structured office-based program',
+        'Coexisting accommodative dysfunction complicating the clinical picture -> binocular vision specialist',
+        'Post-concussive convergence insufficiency -> vision therapy referral as part of multidisciplinary post-concussion care',
+      ],
+      complications: [
+        'Chronic near-work avoidance',
+        'Academic difficulty misattributed to attention/learning disorders',
+        'Reduced quality of life with sustained near/digital device use',
+      ],
+      monitoringParameters: [
+        'Near point of convergence',
+        'Positive fusional vergence at near',
+        'CISS symptom score',
+        'Near versus distance phoria',
+      ],
+      relatedCalculatorIds: ['sheards-criterion'],
+      relatedExamTechniqueIds: ['near-point-of-convergence', 'cover-test'],
+    },
     followUp: {
       typical: 'Reassessment at regular intervals during a structured vision therapy program (e.g., every 4-6 weeks) to track NPC, PFV, and symptom score (CISS) improvement',
       monitor: 'Near point of convergence, positive fusional vergence at near, and CISS symptom score',

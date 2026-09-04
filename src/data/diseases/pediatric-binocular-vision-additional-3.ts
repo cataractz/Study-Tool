@@ -66,6 +66,45 @@ export const pediatricBinocularVisionAdditional3: Disease[] = [
       { category: 'Second-line treatment', detail: 'Refractive surgery (e.g., corneal laser refractive procedures or phakic intraocular lens) in appropriate, refractively stable adult candidates who desire spectacle/contact lens independence; does not address or reduce the structural complication risk of high myopia since it corrects refractive power without altering axial length' },
       { category: 'Referral', detail: 'Refer to retina specialist for evaluation and management of peripheral retinal degeneration, retinal tears, or suspected retinal detachment identified on dilated exam in moderate-to-high myopes; refer for evaluation of myopic maculopathy or choroidal neovascularization when pathologic myopia is suspected' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction to confirm the true minus refractive error and exclude accommodative spasm/pseudomyopia before diagnosing or escalating treatment for myopia in a child',
+        'Baseline axial length by optical biometry — now central to modern myopia management alongside refraction, since serial axial length is often a more precise marker of progression and treatment response than refraction alone',
+        'Dilated fundus exam with peripheral retinal evaluation, particularly for moderate-to-high myopia',
+        'Corneal topography/keratometry when orthokeratology or another contact lens myopia-control modality is being considered',
+        'Documentation of key progression risk factors — age at onset, parental myopia, near-work load, outdoor time — to guide candidacy and urgency for myopia-control treatment',
+      ],
+      initialTreatment:
+        'Full spectacle or contact lens correction of the refractive error, and — for progressing school-age children — initiation of an evidence-based myopia-control modality: low-dose atropine 0.01% nightly (per the ATOM2 trial, 0.01% showed a more favorable long-term benefit-to-side-effect balance than higher concentrations owing to a smaller post-cessation rebound), orthokeratology (associated with roughly a 50% reduction in axial elongation versus single-vision spectacle wear over 2 years in pooled data), or soft multifocal/dual-focus contact lenses — paired with behavioral counseling for increased outdoor time.',
+      followUpSchedule:
+        'Annual comprehensive exam for stable, low myopia; every 6-12 months (per the specific treatment protocol) with cycloplegic refraction and axial length measurement for actively progressing school-age myopia or while on an active myopia-control regimen, to track progression and treatment response.',
+      escalationCriteria: [
+        'Continued clinically meaningful increase in myopic refractive error and/or axial length despite an adequate trial of the current myopia-control regimen — reassess the regimen and compliance, and consider switching or combining modalities',
+        'New-onset flashes, floaters, or a visual field defect in a moderate-to-high myope, which requires urgent dilated exam for retinal tear/detachment',
+        'Rapid, unexpected progression outside the expected decelerating course',
+      ],
+      referralCriteria: [
+        'Peripheral retinal degeneration, retinal tears, or suspected retinal detachment on dilated exam in a moderate-to-high myope -> retina specialist',
+        'Suspected myopic maculopathy or choroidal neovascularization (pathologic/degenerative myopia) -> retina specialist',
+        'Candidate for orthokeratology or another specialty contact lens myopia-control modality -> contact lens fitting service experienced with pediatric myopia control',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate 1% cycloplegic refraction is essential in children being evaluated for myopia to avoid overestimating the refractive error due to accommodation and to exclude pseudomyopia before committing to a minus correction or a myopia-control regimen.',
+      complications: [
+        'High myopia (approximately -6.00D or worse) carries significantly increased lifetime risk of pathologic/degenerative myopia with myopic maculopathy, retinal detachment, open-angle glaucoma, and earlier-onset cataract',
+        'Low-dose atropine: mild photophobia and, less commonly, reduced accommodative amplitude or near blur; a rebound in progression can occur after abrupt cessation, particularly with higher concentrations',
+        'Orthokeratology and other contact lens modalities carry a small but real risk of microbial keratitis and corneal staining with lens wear',
+      ],
+      monitoringParameters: [
+        'Cycloplegic refractive error (spherical equivalent) over time',
+        'Axial length by optical biometry',
+        'Peripheral retinal status on dilated exam in moderate-to-high myopes',
+        'Contact lens fit and ocular surface health in patients on orthokeratology or soft multifocal lenses',
+      ],
+      relatedDrugIds: ['atropine', 'cyclopentolate'],
+      relatedCalculatorIds: ['spherical-equivalent'],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'optical-biometry', 'orthokeratology-fitting-assessment'],
+    },
     followUp: {
       typical: 'Annual comprehensive eye exams for stable, low myopia; every 6-12 months for actively progressing school-age myopia or while on an active myopia-control regimen, to monitor refraction and axial length',
       monitor: 'Refractive error progression (cycloplegic refraction), axial length by optical biometry, and — in moderate-high myopes — peripheral retinal status on dilated exam',
@@ -159,6 +198,44 @@ export const pediatricBinocularVisionAdditional3: Disease[] = [
       { category: 'Second-line treatment', detail: 'Refractive surgery in appropriately selected, refractively stable adult candidates seeking spectacle/contact lens independence' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology when uncorrected hyperopia has produced accommodative esotropia requiring specialized management (including possible bifocal correction or surgical evaluation for a non-accommodative residual component)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction to reveal the true hyperopic error masked by accommodation on manifest refraction — essential in every child being evaluated for hyperopia',
+        'Cover test/ocular motility exam to screen for accommodative esotropia',
+        'Best-corrected visual acuity in each eye to screen for isoametropic (bilateral) or anisometropic (unilateral) amblyopia',
+        'Amplitude of accommodation testing in adults with new or worsening near symptoms to assess remaining accommodative reserve',
+      ],
+      initialTreatment:
+        'Full or partial plus-lens correction tailored to age, symptoms, degree of hyperopia, and any strabismus/amblyopia; full cycloplegic correction is prescribed whenever accommodative esotropia is present or amblyopia risk exists. Low, asymptomatic physiologic hyperopia in infants and young children with normal alignment and no amblyopia risk may instead be monitored through the expected course of emmetropization.',
+      followUpSchedule:
+        'Routine pediatric screening intervals to monitor emmetropization when observing; every 3-6 months while accommodative esotropia or amblyopia is being actively managed; annual or biennial exams once stable and corrected in older children/adults.',
+      escalationCriteria: [
+        'New-onset esotropia or an emerging interocular acuity difference in a child previously being observed -> move to full cycloplegic correction, with amblyopia therapy added if amblyopia is confirmed',
+        'Esotropia that does not fully resolve with full cycloplegic hyperopic correction in place, suggesting a residual non-accommodative component',
+        'Failure of expected physiologic hyperopia to decrease appropriately with age',
+      ],
+      referralCriteria: [
+        'Accommodative esotropia develops with uncorrected hyperopia, especially with a residual non-accommodative component after full correction -> pediatric ophthalmology for specialized management (possible bifocal correction or surgical evaluation)',
+        'Hyperopia meeting or exceeding approximately +4.00D on instrument-based vision screening (2021 AAPOS uniform guidelines referral threshold) -> comprehensive cycloplegic exam',
+        'Hyperopia in the +2.00 to +3.00D range in a young child carries a markedly increased (reported >6-fold in some studies) esotropia risk and warrants full correction with close monitoring rather than observation',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate 1% is the standard cycloplegic agent for routine hyperopic refraction in children; atropine (0.5-1%, dosed for several days before the exam) is reserved for maximal cycloplegia in complex or high accommodative esotropia workups where cyclopentolate is thought to be under-cycloplegic — a genuinely distinct indication from atropine\'s amblyopia-penalization use.',
+      complications: [
+        'Accommodative esotropia in children with significant uncorrected hyperopia',
+        'Isoametropic (bilateral) or anisometropic (unilateral) amblyopia if significant/asymmetric hyperopia is uncorrected during the critical period',
+        'Asthenopia, headaches, and functional near-vision impairment in adults with uncorrected hyperopia, compounding with presbyopia over time',
+      ],
+      monitoringParameters: [
+        'Cycloplegic refractive error over time',
+        'Ocular alignment (esotropia risk) on cover testing',
+        'Visual acuity in each eye',
+        'Amplitude of accommodation in older/presbyopic-age patients',
+      ],
+      relatedDrugIds: ['cyclopentolate', 'atropine'],
+      relatedCalculatorIds: ['aca-ratio'],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'cover-test'],
+    },
     followUp: {
       typical: 'Routine pediatric eye exams per standard screening schedules to monitor emmetropization; annual or biennial exams for corrected, stable hyperopia in older children and adults, more frequent if amblyopia or accommodative esotropia is being actively managed',
       monitor: 'Cycloplegic refractive error over time, ocular alignment (esotropia risk), visual acuity in each eye, and amplitude of accommodation in older patients',
@@ -250,6 +327,40 @@ export const pediatricBinocularVisionAdditional3: Disease[] = [
       { category: 'Second-line treatment', detail: 'Refractive surgery (e.g., astigmatism-correcting corneal laser procedures or toric intraocular lenses) in appropriately selected, stable adult candidates with regular astigmatism' },
       { category: 'Referral', detail: 'Refer to cornea specialty care for suspected progressive corneal ectasia (keratoconus, pellucid marginal degeneration) underlying irregular astigmatism, and for evaluation of specialty rigid/scleral contact lens fitting' },
     ],
+    managementProtocol: {
+      workup: [
+        'Retinoscopy and subjective refraction to establish the axis and power of the astigmatic error, noting any scissoring reflex suggesting irregular astigmatism',
+        'Corneal topography to distinguish regular from irregular astigmatism and screen for underlying ectatic disease',
+        'Keratometry to quantify corneal power in the two principal meridians, particularly before any contact lens fitting',
+        'Best-corrected visual acuity with trial spherocylindrical correction to confirm the substantial, predictable improvement expected in regular astigmatism',
+      ],
+      initialTreatment:
+        'Cylindrical spectacle correction matched to the axis and power identified on refraction (or toric soft contact lenses) for regular astigmatism; rigid gas permeable or scleral contact lenses for irregular astigmatism that is not adequately corrected with standard spectacle or soft toric lenses, since the trapped tear film beneath a rigid lens creates a new, effectively regular refracting surface.',
+      followUpSchedule:
+        'Routine comprehensive exam (annually or per standard schedule) to reassess refraction in stable regular astigmatism; more frequent monitoring (e.g., every 6 months) for known or suspected progressive corneal ectasia, and closer follow-up for children at amblyopia risk from high or asymmetric astigmatism.',
+      escalationCriteria: [
+        'Rapidly changing or markedly asymmetric astigmatism in a child, which carries amblyopia risk and warrants shortened recall',
+        'Documented topographic progression (worsening inferior steepening, increasing irregularity) suggestive of active keratoconus or another ectatic process',
+        'Persistent reduced best-corrected acuity despite an apparently adequate cylindrical correction',
+      ],
+      referralCriteria: [
+        'Suspected progressive corneal ectasia (keratoconus, pellucid marginal degeneration) on topography or scissoring retinoscopic reflex -> cornea specialty care',
+        'Irregular astigmatism not adequately corrected with spectacles or soft toric lenses -> specialty rigid gas permeable or scleral contact lens fitting',
+        'High or asymmetric astigmatism identified in a child during the critical period -> amblyopia management alongside full correction',
+      ],
+      complications: [
+        'Meridional (astigmatic) amblyopia if high or asymmetric astigmatism is uncorrected during the critical period',
+        'Persistent reduced best-corrected acuity in irregular astigmatism despite standard spectacle correction, often requiring specialty contact lenses',
+        'Progressive corneal ectasia (keratoconus, pellucid marginal degeneration) if unrecognized and unmonitored',
+      ],
+      monitoringParameters: [
+        'Refractive astigmatism (axis and power) over time',
+        'Corneal topography in patients with or at risk for ectatic disease',
+        'Best-corrected visual acuity',
+      ],
+      relatedCalculatorIds: ['meridional-power', 'keratometry'],
+      relatedExamTechniqueIds: ['corneal-topography'],
+    },
     followUp: {
       typical: 'Routine comprehensive eye exams (annually or per standard schedule) to reassess refraction; more frequent monitoring for children at amblyopia risk or for patients with known or suspected progressive corneal ectasia',
       monitor: 'Refractive astigmatism (axis and power) over time, corneal topography in patients with or at risk for ectatic disease, and best-corrected visual acuity',
@@ -343,6 +454,43 @@ export const pediatricBinocularVisionAdditional3: Disease[] = [
       { category: 'Second-line treatment', detail: 'Monovision or other individualized optical approaches in select adult cases where standard correction cannot achieve comfortable binocular fusion' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology/optometry for aggressive early correction and amblyopia management in children with significant anisometropia; refer for specialty contact lens or iseikonic lens fitting in adults with persistent, disabling aniseikonic symptoms despite standard correction' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction of both eyes to accurately quantify the interocular refractive difference — essential in children, where accommodation can mask true anisometropia on manifest refraction',
+        'Best-corrected visual acuity tested in each eye separately to detect amblyopia in the more ametropic eye',
+        'Stereoacuity testing to assess the quality of binocular fusion, which is compromised by both amblyopia and significant aniseikonia',
+        'Aniseikonia testing (size-matching/comparator instruments) or trial-frame subjective assessment of comfort, particularly when high anisometropic correction is required in a symptomatic patient',
+      ],
+      initialTreatment:
+        'Full, age-appropriate optical correction of the anisometropia as early as possible in children; when anisometropic amblyopia is present, follow with occlusion or penalization therapy dosed by severity per PEDIG evidence — 2 hours/day patching of the sound eye is as effective as 6 hours/day or full-time patching for moderate amblyopia (visual acuity 20/40-20/100) in children 3-7 years old, with more intensive (near-full-time) occlusion or atropine penalization reserved for severe amblyopia.',
+      followUpSchedule:
+        'Routine pediatric vision screening at recommended intervals to catch otherwise asymptomatic anisometropia before amblyopia develops; every 2-3 months during active amblyopia treatment to reassess acuity and compliance — PEDIG data show roughly 62% of children achieve 20/30 acuity or at least a 3-line improvement within about 4 months of an appropriately dosed patching regimen; periodic reassessment in adults adapting to new anisometropic correction.',
+      escalationCriteria: [
+        'No meaningful visual acuity improvement after an adequate initial patching or penalization trial (several months at the prescribed dose)',
+        'Poor compliance with the prescribed occlusion dose at follow-up',
+        'Significant new asthenopia or diplopia in an adult following a change in anisometropic spectacle correction',
+      ],
+      referralCriteria: [
+        'Significant anisometropia in a child, especially with amblyopia -> pediatric ophthalmology/optometry for aggressive early correction and amblyopia management',
+        'Persistent, disabling aniseikonic symptoms in an adult despite standard spectacle correction -> specialty contact lens or iseikonic (size-lens) fitting',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate 1% cycloplegic refraction of both eyes is essential to accurately quantify true anisometropia in children. Atropine is used in this category for a distinct purpose — amblyopia penalization of the sound/dominant eye per PEDIG ATS1 evidence — as an alternative to occlusion patching, not as the primary cycloplegic refraction agent.',
+      complications: [
+        'Amblyopia in children, with lasting reduced acuity and stereopsis if uncorrected during the critical period',
+        'Chronic asthenopia, diplopia, and impaired stereoscopic function from unmanaged aniseikonia in adults',
+        'Historically, profound aniseikonia with unilateral aphakia (largely prevented now by primary intraocular lens implantation, including in pediatric cataract surgery)',
+      ],
+      monitoringParameters: [
+        'Interocular refractive difference over time',
+        'Best-corrected visual acuity in each eye',
+        'Stereoacuity',
+        'Comfort and fusional status with the current correction modality in symptomatic adults',
+      ],
+      relatedDrugIds: ['cyclopentolate', 'atropine'],
+      relatedCalculatorIds: ['anisometropia', 'retinal-image-aniseikonia'],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'cover-test', 'stereopsis-test-comparison', 'fixation-preference-occlusion-testing'],
+    },
     followUp: {
       typical: 'Routine pediatric vision screening at recommended intervals to catch otherwise asymptomatic anisometropia early; more frequent visits (every 2-3 months) during active amblyopia treatment; periodic reassessment in adults adapting to new anisometropic correction',
       monitor: 'Interocular refractive difference over time, best-corrected visual acuity in each eye, stereoacuity, and — in symptomatic adults — comfort and fusional status with the current correction modality',

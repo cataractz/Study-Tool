@@ -66,6 +66,47 @@ export const pediatricBinocularVisionAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Additional surgery (e.g., inferior oblique weakening, DVD surgery) as these associated findings emerge and become clinically significant, often as a staged procedure separate from the initial horizontal alignment surgery' },
       { category: 'Referral', detail: 'Refer promptly to pediatric ophthalmology upon recognition of a large-angle infantile esotropia for surgical planning and to establish amblyopia surveillance' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction to exclude significant hyperopia and distinguish from accommodative esotropia',
+        'Monocular abduction testing (occlude the fellow eye) or the doll\'s head (oculocephalic) maneuver to rule out a true CN VI palsy versus pseudo-limitation from cross-fixation',
+        'Cover/alternate cover testing (or Hirschberg/Krimsky estimation in a preverbal infant unable to fixate a target) to quantify the large-angle comitant deviation',
+        'Dilated fundus exam to exclude a sensory/organic cause of the esotropia',
+        'Serial screening for DVD, inferior oblique overaction, and latent nystagmus as the child matures, since these often develop later rather than at initial presentation',
+      ],
+      initialTreatment:
+        'Full correction of any refractive error present optimizes visual development, and coexisting amblyopia is treated aggressively with occlusion/penalization before and after alignment; because infantile esotropia does not resolve with glasses, surgical alignment (typically bilateral medial rectus recession) is the primary treatment for the deviation itself, classically performed early — commonly cited as before age 2 — to maximize the potential for at least peripheral/gross binocular fusion.',
+      followUpSchedule:
+        'Regular monitoring every few months in infancy for amblyopia surveillance and surgical planning; postoperatively, periodic visits to confirm alignment stability and specifically screen for emergence of DVD, inferior oblique overaction, or latent nystagmus.',
+      escalationCriteria: [
+        'Amblyopia present or worsening despite occlusion/penalization',
+        'Angle not adequately reduced by surgical alignment (residual or consecutive deviation)',
+        'New or progressive DVD or inferior oblique overaction requiring staged surgery',
+        'Any finding suggesting a true CN VI or III palsy rather than cross-fixation on re-examination',
+      ],
+      referralCriteria: [
+        'Recognition of a large-angle (>40 PD), constant esotropia with onset before 6 months -> prompt pediatric ophthalmology referral for surgical planning',
+        'Amblyopia requiring aggressive occlusion/penalization surveillance -> pediatric ophthalmology',
+        'Emergence of DVD, inferior oblique overaction, or latent nystagmus needing staged surgery -> pediatric ophthalmology/strabismus surgery',
+        'Developmental delay or other neurologic findings accompanying the esotropia -> broader neurologic evaluation',
+      ],
+      cycloplegicConsiderations:
+        'Cyclopentolate cycloplegic refraction is used to confirm the absence of significant hyperopia, distinguishing infantile from accommodative esotropia, and to optimize any refractive correction present.',
+      complications: [
+        'Amblyopia (high risk given early, often asymmetric fixation)',
+        'Absent or severely limited stereopsis — peripheral fusion at best is a realistic outcome even with early treatment',
+        'DVD, inferior oblique overaction, latent nystagmus',
+        'Need for reoperation for consecutive/residual deviation or staged surgery for associated findings',
+      ],
+      monitoringParameters: [
+        'Fixation preference/amblyopia status',
+        'Angle of deviation',
+        'Development of DVD, inferior oblique overaction, latent nystagmus',
+        'Postoperative alignment stability',
+      ],
+      relatedDrugIds: ['cyclopentolate', 'atropine'],
+      relatedExamTechniqueIds: ['cover-test', 'cycloplegic-retinoscopy', 'hirschberg-krimsky-test'],
+    },
     followUp: {
       typical: 'Regular monitoring every few months in infancy for amblyopia surveillance and surgical planning, then periodically postoperatively to monitor alignment stability and for emergence of DVD/inferior oblique overaction/nystagmus',
       monitor: 'Fixation preference and amblyopia status, angle of deviation, and development of associated findings (DVD, inferior oblique overaction, latent nystagmus) that may require additional surgery',
@@ -163,6 +204,44 @@ export const pediatricBinocularVisionAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Brown syndrome: superior oblique tendon surgery (e.g., tenotomy/tendon lengthening procedures) reserved for cases with a significant compensatory head posture, primary-position hypotropia, or a large restrictive deviation that does not resolve or improve with observation/anti-inflammatory treatment' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology/strabismus surgery for surgical evaluation in either condition when the deviation, head posture, or amblyopia risk is functionally or cosmetically significant, and for any atypical presentation warranting neuroimaging or systemic workup (e.g., possible Goldenhar syndrome association with Duane syndrome)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Ocular motility exam/versions to characterize the specific restriction pattern (horizontal for Duane; elevation-in-adduction for Brown)',
+        'Forced duction testing to confirm mechanical restriction (positive in Brown syndrome) rather than a paretic process',
+        'Cover/alternate cover testing in multiple gaze positions to quantify the primary-position deviation and document comitancy',
+        'Assessment for compensatory head posture (face turn for Duane; chin-up for Brown)',
+        'Orbital/neuroimaging (MRI) in atypical or syndromic presentations, and screening for associated craniofacial/skeletal anomalies (e.g., Goldenhar syndrome) when Duane syndrome is identified',
+      ],
+      initialTreatment:
+        'Both conditions are observed when the primary-position deviation is small, head posture is minimal, and binocular function/amblyopia risk is not threatened; refractive correction and amblyopia treatment are applied when present; acquired inflammatory Brown syndrome (trochleitis) may respond to anti-inflammatory treatment without surgery, while symptomatic congenital cases of either syndrome are managed surgically when the deviation, head posture, or amblyopia risk becomes functionally or cosmetically significant — horizontal rectus recession (avoiding resection, which can worsen retraction) for Duane syndrome, and superior oblique tendon lengthening/tenotomy procedures for Brown syndrome.',
+      followUpSchedule:
+        'Periodic monitoring (roughly every 6-12 months) in stable, non-progressive congenital cases to track alignment, head posture, and amblyopia status; more frequent monitoring initially for acquired/inflammatory Brown syndrome to assess for spontaneous improvement or response to anti-inflammatory treatment.',
+      escalationCriteria: [
+        'Progressive or new primary-position deviation — true congenital forms should be stable, so any progression should prompt reconsideration of the diagnosis',
+        'Worsening or new compensatory head posture affecting function/cosmesis',
+        'Amblyopia developing or progressing',
+        'Acquired Brown syndrome with persistent inflammatory signs despite anti-inflammatory treatment',
+      ],
+      referralCriteria: [
+        'Significant primary-position deviation, cosmetically/functionally significant head turn or chin-up posture, or marked upshoot/downshoot -> pediatric ophthalmology/strabismus surgery',
+        'Atypical presentation warranting neuroimaging or systemic workup (e.g., possible Goldenhar syndrome association) -> pediatric ophthalmology and appropriate subspecialty (genetics/craniofacial)',
+        'Acquired inflammatory Brown syndrome with orbital tenderness or mass concern -> orbital imaging and possible orbital/rheumatology referral',
+        'Diagnostic uncertainty distinguishing from a true cranial nerve palsy -> pediatric ophthalmology',
+      ],
+      complications: [
+        'Amblyopia if a significant primary-position tropia is left uncorrected',
+        'Torticollis/musculoskeletal effects from chronic compensatory head posture',
+        'Cosmetic concern from globe retraction/fissure narrowing (Duane syndrome)',
+        'Under- or overcorrection with surgery if forced duction testing is not used to guide planning',
+      ],
+      monitoringParameters: [
+        'Primary-position alignment',
+        'Compensatory head posture',
+        'Visual acuity/amblyopia status in each eye',
+        'Resolution or persistence of the elevation restriction (Brown syndrome)',
+      ],
+      relatedExamTechniqueIds: ['cover-test', 'forced-duction-test'],
+    },
     followUp: {
       typical: 'Periodic monitoring (e.g., every 6-12 months) in stable, non-progressive congenital cases to track alignment, head posture, and amblyopia status; more frequent monitoring initially for acquired/inflammatory Brown syndrome to assess for spontaneous improvement',
       monitor: 'Primary-position alignment, compensatory head posture, visual acuity/amblyopia status in each eye, and — for Brown syndrome — resolution or persistence of the elevation restriction',

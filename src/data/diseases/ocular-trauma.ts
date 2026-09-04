@@ -67,6 +67,50 @@ export const ocularTraumaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Amniotic membrane transplantation to promote re-epithelialization in moderate-severe injury; limbal stem cell transplantation for established limbal stem cell deficiency; tectonic keratoplasty for impending or actual perforation' },
       { category: 'Referral', detail: 'Urgent same-day referral to a cornea specialist/ophthalmologist for any moderate-severe burn (Roper-Hall Grade II or higher, or any significant limbal ischemia) for consideration of amniotic membrane, tissue adhesive, or surgical intervention' },
     ],
+    managementProtocol: {
+      workup: [
+        'Tear film/fornix pH testing with litmus paper immediately on presentation and repeated with each irrigation cycle until two checks 5-10 minutes apart confirm a stable, normal pH',
+        'Roper-Hall or Dua grading via slit lamp once irrigation is complete: corneal clarity and, most importantly, the clock hours of perilimbal ischemia',
+        'Fornix sweep and double eversion of the eyelids to remove any retained particulate chemical (lime, cement) that could act as an ongoing source of alkali',
+        'Intraocular pressure measurement once irrigation is complete, to screen for acute pressure elevation from collagen shrinkage/trabecular damage',
+        'Careful screen for any coexisting mechanical injury (globe rupture, foreign body) from the same event, since chemical exposures can occur alongside blunt or penetrating trauma',
+      ],
+      initialTreatment:
+        'Immediate copious irrigation with sterile isotonic fluid (or plain water if nothing else is available) for a minimum of 15-30 minutes, continued until fornix pH is stable in the normal range on two checks 5-10 minutes apart, BEFORE history, vision check, or formal exam. Once irrigation is complete: topical antibiotic prophylaxis, a cycloplegic agent for comfort and synechiae prevention, aggressive preservative-free lubrication, and a topical corticosteroid for the first 7-10 days to control inflammation in moderate-severe injury.',
+      followUpSchedule:
+        'Daily follow-up during the acute phase (first 1-2 weeks) for mild-moderate injury; multiple times per week to daily for severe (Grade III-IV) injury given the ongoing risk of stromal melt/perforation, tapering interval as the epithelium heals and inflammation quiets.',
+      escalationCriteria: [
+        'Any new stromal thinning or evidence of impending/actual corneal melt',
+        'Failure of the epithelial defect to close within about 2 weeks',
+        'Rising intraocular pressure despite initial control measures',
+        'Extensive (approaching or exceeding 50%) limbal ischemia at presentation',
+      ],
+      referralCriteria: [
+        'Roper-Hall Grade II or higher, or any significant limbal ischemia -> urgent same-day cornea specialist/ophthalmologist',
+        'Impending or actual corneal perforation -> emergent cornea specialist for tissue adhesive or tectonic keratoplasty',
+        'Persistent epithelial defect or conjunctivalization suggesting limbal stem cell deficiency -> cornea specialist for amniotic membrane or limbal stem cell transplantation',
+      ],
+      steroidConsiderations:
+        'A topical corticosteroid is used for the first 7-10 days in moderate-severe injury to control inflammation and reduce ulceration risk, balanced against the risk of stromal melt with prolonged use — steroid potency/frequency is tapered or discontinued around day 10-14 in favor of ascorbate/citrate and lubrication as the epithelium heals.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent (e.g., cyclopentolate for shorter, more comfortable dosing, or atropine for longer duration in more severe injury) is given for comfort from associated ciliary spasm/traumatic iritis and to reduce posterior synechiae risk.',
+      complications: [
+        'Limbal stem cell deficiency and persistent epithelial defect',
+        'Corneal scarring, vascularization, or perforation',
+        'Symblepharon',
+        'Secondary glaucoma and cataract',
+        'Chronic dry eye from goblet cell/lacrimal gland loss',
+      ],
+      monitoringParameters: [
+        'Epithelial defect size and rate of healing',
+        'Corneal clarity and vascularization',
+        'Intraocular pressure',
+        'Evidence of stromal thinning or melt',
+        'Extent of limbal ischemia over time',
+      ],
+      relatedDrugIds: ['moxifloxacin', 'cyclopentolate', 'atropine', 'prednisolone-acetate'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining', 'goldmann-applanation-tonometry'],
+    },
     followUp: {
       typical: 'Daily follow-up during the acute phase (first 1-2 weeks) for mild-moderate injury; multiple times per week to daily for severe injury given high risk of melt/perforation',
       monitor: 'Rate of epithelial healing, corneal clarity, intraocular pressure, evidence of stromal thinning or melt, and signs of infection',
@@ -162,6 +206,48 @@ export const ocularTraumaDiseases: Disease[] = [
       { category: 'Emergency management', detail: 'Control pain and nausea/vomiting (antiemetics) to avoid Valsalva-induced further extrusion of intraocular contents' },
       { category: 'Referral', detail: 'Immediate emergent transfer/referral to an ophthalmic surgeon (oculoplastics or vitreoretinal specialist) for urgent surgical exploration and primary wound repair, ideally within 24 hours' },
     ],
+    managementProtocol: {
+      workup: [
+        'Seidel test (topical fluorescein only, no globe contact) to confirm active aqueous leakage from a visible or suspected wound',
+        'CT orbit, thin-cut axial and coronal, to evaluate for globe rupture, orbital fracture, and intraocular/intraorbital foreign body, especially when a posterior wound cannot be directly visualized',
+        'Baseline visual acuity, which carries strong prognostic value and is a core input to the Ocular Trauma Score',
+        'Explicitly avoid intraocular pressure measurement, gonioscopy, scleral depression, or any other contact/manipulation of the globe once open globe is suspected',
+        'B-scan ultrasound only after globe integrity is otherwise addressed (typically post-repair), using minimal pressure, since probe contact can extrude intraocular contents through an open wound',
+      ],
+      initialTreatment:
+        'Immediately place a rigid protective shield (never a pressure patch), avoid any further manipulation of the eye (no IOP check, gonioscopy, or drops), keep the patient strictly NPO in anticipation of emergent repair under general anesthesia, administer tetanus prophylaxis per immunization status, begin broad-spectrum intravenous antibiotics to reduce endophthalmitis risk, and control pain/nausea to avoid Valsalva-related further extrusion of intraocular contents — followed by emergent surgical exploration and primary wound repair, ideally within 24 hours.',
+      followUpSchedule:
+        'Frequent postoperative visits in the days to weeks following primary repair, with additional visits dictated by need for secondary vitreoretinal surgery; the fellow, uninjured eye requires open-ended monitoring given the lifelong sympathetic ophthalmia risk.',
+      escalationCriteria: [
+        'Increasing pain, worsening vision, hypopyon, or vitritis after repair, raising concern for post-traumatic endophthalmitis',
+        'Rising or falling intraocular pressure postoperatively suggesting a wound leak or expulsive hemorrhage',
+        'Organic/dirty mechanism of injury or delayed presentation, both of which sharply increase endophthalmitis risk and warrant closer early follow-up',
+        'New redness, pain, or photophobia in the FELLOW, uninjured eye at any point (days to decades) after the injury, which must be urgently evaluated for sympathetic ophthalmia',
+      ],
+      referralCriteria: [
+        'Any suspected or confirmed open globe injury -> emergent transfer to a vitreoretinal or oculoplastic ophthalmic surgeon for repair, ideally within 24 hours',
+        'Suspected retained intraocular foreign body -> vitreoretinal surgeon',
+        'A severely injured eye with no light perception and poor anatomic prognosis -> shared decision-making regarding primary enucleation, since the sympathetic ophthalmia risk to the fellow eye is lowest when enucleation is performed within about 2 weeks of injury (though sympathetic ophthalmia has rarely been reported as early as 5-10 days, so this window reduces but does not eliminate risk)',
+        'Any fellow-eye symptoms after penetrating trauma, at any time interval -> emergent ophthalmology/uveitis evaluation for sympathetic ophthalmia',
+      ],
+      cycloplegicConsiderations:
+        'Cycloplegic drops are withheld during the acute pre-repair stabilization period, since no topical medication or manipulation should be applied to a suspected open globe; a cycloplegic agent is started postoperatively, once the globe is closed, to reduce pain and posterior synechiae risk.',
+      complications: [
+        'Endophthalmitis, particularly with organic contamination or delayed repair',
+        'Traumatic cataract',
+        'Retinal detachment and proliferative vitreoretinopathy',
+        'Phthisis bulbi',
+        'Sympathetic ophthalmia affecting the previously uninjured fellow eye (incidence roughly 0.2-0.5% after penetrating injury)',
+      ],
+      monitoringParameters: [
+        'Wound integrity',
+        'Intraocular pressure',
+        'Anterior chamber reaction/hypopyon and vitreous clarity as signs of infection',
+        'Retinal status via exam and B-scan',
+        'Fellow eye symptoms indefinitely, given the lifelong sympathetic ophthalmia risk',
+      ],
+      relatedExamTechniqueIds: ['seidel-test', 'b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Frequent postoperative visits in the days to weeks following primary repair, with additional follow-up dictated by need for secondary vitreoretinal surgery',
       monitor: 'Wound integrity, intraocular pressure, signs of infection/endophthalmitis, retinal status, and development of proliferative vitreoretinopathy',
@@ -251,6 +337,48 @@ export const ocularTraumaDiseases: Disease[] = [
       { category: 'First-line treatment', detail: 'Topical corticosteroid drops to reduce anterior chamber inflammation, tapered gradually as cell and flare improve' },
       { category: 'Referral', detail: 'Refer urgently to ophthalmology if there is any sign of open globe, significant hyphema, elevated IOP not responding to initial measures, or suspicion of posterior segment injury' },
     ],
+    managementProtocol: {
+      workup: [
+        'First rule out open globe injury (Seidel test, chamber depth, IOP, pupil shape) before attributing findings to isolated iritis',
+        'Slit lamp grading of anterior chamber cell and flare to establish baseline severity',
+        'Intraocular pressure measurement, since it may be reduced (ciliary shutdown) or elevated (angle recession/trabecular damage) depending on the coexisting injury pattern',
+        'Gonioscopy once safe (deferred while any hyphema is present, given rebleed risk) to screen for angle recession',
+        'Dilated fundus examination to exclude concurrent posterior segment trauma (retinal dialysis, choroidal rupture, commotio retinae)',
+      ],
+      initialTreatment:
+        'A topical cycloplegic agent (cyclopentolate or homatropine) to relieve ciliary spasm, reduce pain, and prevent posterior synechiae, combined with topical corticosteroid drops to reduce anterior chamber inflammation, tapered gradually as cell and flare improve.',
+      followUpSchedule:
+        'Re-examine within 3-7 days of starting treatment to confirm improvement, then extend the interval and taper the steroid as inflammation resolves, typically over 1-3 weeks total.',
+      escalationCriteria: [
+        'No improvement in anterior chamber cell/flare grade after about 1 week of appropriately dosed therapy',
+        'New hyphema or rising intraocular pressure while on treatment',
+        'Development of posterior synechiae despite cycloplegia',
+        'Any finding on re-examination suggesting open globe, angle recession, lens subluxation, or retinal injury not previously identified',
+      ],
+      referralCriteria: [
+        'Any sign of open globe, significant hyphema, elevated IOP unresponsive to initial measures, or suspected posterior segment injury -> urgent ophthalmology referral',
+        'Chronic (beyond 3 months) or recurrent iritis not following the expected self-limited trauma course -> uveitis specialist workup for a non-traumatic etiology',
+        'Gonioscopically confirmed angle recession -> ophthalmology/glaucoma specialty for lifelong intraocular pressure monitoring',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate 1%) dosed by severity and tapered gradually over the expected 1-3 week course as inflammation resolves; check IOP at each visit given the risk of a steroid response superimposed on any traumatic pressure changes.',
+      cycloplegicConsiderations:
+        'Cyclopentolate (faster onset, shorter duration) or homatropine (longer duration, useful for more pronounced inflammation) relieves ciliary spasm and keeps the pupil mobile to reduce posterior synechiae formation.',
+      complications: [
+        'Posterior synechiae if cycloplegia is inadequate',
+        'Steroid-induced intraocular pressure elevation',
+        'Angle-recession glaucoma from the underlying contusive injury (distinct from and outlasting the iritis itself)',
+        'Traumatic cataract or retinal injury from the same blunt trauma',
+      ],
+      monitoringParameters: [
+        'Anterior chamber cell/flare grade',
+        'Intraocular pressure (both from disease and from steroid response)',
+        'Pupil shape and mobility for synechiae',
+        'Gonioscopy once safe, for angle recession',
+      ],
+      relatedDrugIds: ['cyclopentolate', 'homatropine', 'prednisolone-acetate'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'gonioscopy', 'seidel-test'],
+    },
     followUp: {
       typical: 'Re-examine within 3-7 days of starting treatment to confirm improvement, then taper steroid and extend interval as inflammation resolves',
       monitor: 'Anterior chamber cell/flare grade, intraocular pressure (both from disease and from steroid response), and evidence of any missed traumatic sequela',
@@ -338,6 +466,47 @@ export const ocularTraumaDiseases: Disease[] = [
       { category: 'First-line treatment', detail: 'After removal, treat the resulting epithelial defect with topical prophylactic antibiotic and consider cycloplegia for comfort if significant iritis/photophobia is present; avoid topical anesthetic for home use' },
       { category: 'Referral', detail: 'Urgent referral to ophthalmology for suspected globe penetration, intraocular foreign body, deeply embedded foreign body near the visual axis, or failure to fully remove a rust ring or foreign body in the primary care setting' },
     ],
+    managementProtocol: {
+      workup: [
+        'Seidel test, especially with any high-velocity mechanism, to exclude occult globe penetration before treating as a simple surface foreign body',
+        'Slit lamp examination with fluorescein to localize the foreign body and characterize the corneal staining pattern (vertical linear staining suggests a retained subtarsal foreign body)',
+        'Mandatory upper eyelid eversion (double eversion if needed) to inspect the superior tarsal conjunctiva',
+        'CT orbit (not MRI) if a high-velocity, metal-on-metal mechanism raises concern for occult penetration despite a benign external exam',
+        'Baseline visual acuity',
+      ],
+      initialTreatment:
+        'Topical anesthetic followed by removal of the foreign body at the slit lamp with a sterile needle, foreign body spud, or fine forceps; mandatory upper lid eversion to find and remove any subtarsal foreign body; a metallic rust ring is removed at the same visit or at short-interval follow-up once softened; the resulting epithelial defect is treated with a topical prophylactic antibiotic (never a topical anesthetic for home use).',
+      followUpSchedule:
+        '24-48 hours after removal to confirm epithelial healing and check for infection or a residual rust ring.',
+      escalationCriteria: [
+        'Worsening pain or a new corneal infiltrate suggesting infection',
+        'Failure of the epithelial defect to heal on schedule',
+        'Any finding suggesting occult penetration (disproportionate pain/vision loss, positive Seidel sign) not appreciated at the initial visit',
+        'Incomplete rust ring removal with persistent staining',
+      ],
+      referralCriteria: [
+        'Suspected globe penetration or intraocular foreign body -> emergent ophthalmology',
+        'Deeply embedded foreign body near the visual axis -> ophthalmology',
+        'Failure to fully remove the foreign body or rust ring in the primary care setting -> ophthalmology',
+        'Organic material with a developing infiltrate, given elevated infection risk -> urgent cornea evaluation',
+      ],
+      cycloplegicConsiderations:
+        'A short-acting cycloplegic (e.g., cyclopentolate) is added for comfort when significant traumatic iritis or photophobia accompanies the defect.',
+      complications: [
+        'Corneal scarring, especially with a central, deep, or organic foreign body',
+        'Infectious keratitis',
+        'Residual rust staining if incompletely removed',
+        'Endophthalmitis or retained intraocular foreign body sequelae if penetration is missed',
+      ],
+      monitoringParameters: [
+        'Epithelial defect size and healing',
+        'Corneal clarity',
+        'Anterior chamber for any delayed sign of occult injury',
+        'Residual rust staining',
+      ],
+      relatedDrugIds: ['moxifloxacin', 'cyclopentolate'],
+      relatedExamTechniqueIds: ['seidel-test', 'lid-eversion', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: '24-48 hours after removal to confirm epithelial healing and check for infection or residual rust ring',
       monitor: 'Epithelial defect size/healing, corneal clarity, anterior chamber for any delayed sign of occult injury, and residual rust staining',
