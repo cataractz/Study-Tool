@@ -45,6 +45,35 @@ export interface ManagementItem {
   detail: string
 }
 
+/**
+ * The deep clinical playbook for a disease — workup through monitoring — distinct from the
+ * existing flat `management: ManagementItem[]` quick-scan summary, which stays as-is. This is a
+ * process/workflow object embedded in Disease (a content type), so it's the one place a Disease
+ * carries curated outbound links, mirroring how ExamTechnique/ClinicalWorkup/EmergencyProtocol
+ * link out to content types elsewhere in the app.
+ */
+export interface ManagementProtocol {
+  /** Management-relevant workup steps once the diagnosis is made/suspected — distinct from
+   * diagnosticTesting's differential-focused table. */
+  workup: string[]
+  initialTreatment: string
+  followUpSchedule: string
+  escalationCriteria: string[]
+  referralCriteria: string[]
+  /** Only present when a corticosteroid is genuinely part of this disease's real management. */
+  steroidConsiderations?: string
+  /** Only present when a cycloplegic/mydriatic agent is genuinely part of this disease's real management. */
+  cycloplegicConsiderations?: string
+  complications: string[]
+  monitoringParameters: string[]
+  /** -> Drug.id, curated */
+  relatedDrugIds?: string[]
+  /** -> CalculatorMeta.id, curated */
+  relatedCalculatorIds?: string[]
+  /** -> ExamTechnique.id, curated */
+  relatedExamTechniqueIds?: string[]
+}
+
 export interface QuizQuestion {
   id: string
   question: string
@@ -114,6 +143,7 @@ export interface Disease {
     classification?: string
   }
   management: ManagementItem[]
+  managementProtocol?: ManagementProtocol
   followUp: {
     typical: string
     monitor: string

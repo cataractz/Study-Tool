@@ -10,6 +10,7 @@ import { EmptyState } from '../components/ui/EmptyState'
 import { SignsByArea } from '../components/disease/SignsByArea'
 import { RiskFactorList } from '../components/disease/RiskFactorList'
 import { ManagementList } from '../components/disease/ManagementList'
+import { ManagementProtocolPanel } from '../components/disease/ManagementProtocolPanel'
 import { CompareDiseasesPanel } from '../components/disease/CompareDiseasesPanel'
 import { Linkify, LinkifyLine } from '../components/shared/Linkify'
 import { getDiseaseById } from '../services/diseaseService'
@@ -253,7 +254,15 @@ export function DiseaseDetail() {
         </Card>
       </Section>
 
-      <Section title="11. Follow-Up">
+      {disease.managementProtocol && (
+        <Section title="11. Management & Treatment Protocol">
+          <Card>
+            <ManagementProtocolPanel protocol={disease.managementProtocol} excludeId={disease.id} />
+          </Card>
+        </Section>
+      )}
+
+      <Section title="12. Follow-Up">
         <Card className="space-y-2 text-sm text-slate-700">
           <p><span className="font-medium text-slate-900">Typical follow-up: </span><Linkify text={disease.followUp.typical} excludeId={disease.id} /></p>
           <p><span className="font-medium text-slate-900">What to monitor: </span><Linkify text={disease.followUp.monitor} excludeId={disease.id} /></p>
@@ -262,7 +271,7 @@ export function DiseaseDetail() {
         </Card>
       </Section>
 
-      <Section title="12. Prognosis">
+      <Section title="13. Prognosis">
         <Card className="space-y-2 text-sm text-slate-700">
           <p><span className="font-medium text-slate-900">Typical course: </span><Linkify text={disease.prognosis.typicalCourse} excludeId={disease.id} /></p>
           <p><span className="font-medium text-slate-900">Risk of progression: </span><Linkify text={disease.prognosis.progressionRisk} excludeId={disease.id} /></p>
@@ -271,7 +280,7 @@ export function DiseaseDetail() {
         </Card>
       </Section>
 
-      <Section title="13. Clinical Pearls">
+      <Section title="14. Clinical Pearls">
         <Card className="bg-amber-50 border-amber-200">
           <ul className="space-y-2">
             {disease.clinicalPearls.map((p, i) => (
@@ -285,7 +294,7 @@ export function DiseaseDetail() {
       </Section>
 
       {showHighYield && (
-        <Section title="14. NBEO / Exam High-Yield">
+        <Section title="15. NBEO / Exam High-Yield">
           <Card className="bg-violet-50 border-violet-200">
             <ul className="space-y-2">
               {disease.highYield.map((p, i) => (
