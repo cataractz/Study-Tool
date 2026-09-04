@@ -451,6 +451,38 @@ export const anteriorSegmentAdditional2: Disease[] = [
       { category: 'Referral', detail: 'Refer to rheumatology for a positive HLA-B27 result or symptoms/signs suggestive of an associated spondyloarthropathy (inflammatory back pain, peripheral arthritis, psoriasis, IBD symptoms) for further systemic workup, including sacroiliac imaging when indicated' },
       { category: 'Emergency management', detail: 'Prompt, same-day treatment for severe attacks with hypopyon, fibrin, or marked IOP elevation to prevent synechiae formation and secondary glaucoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline visual acuity and IOP measurement',
+        'Slit lamp grading of AC cell/flare, and assessment for fibrin or hypopyon',
+        'Gonioscopy if IOP is elevated or attacks are frequent/recurrent, to assess for synechial angle involvement',
+        'Targeted review of systems for inflammatory back pain, peripheral arthritis, psoriasis, or GI symptoms suggestive of spondyloarthropathy',
+        'HLA-B27 testing if not already known, particularly on first presentation of acute, severe, or recurrent unilateral-alternating anterior uveitis',
+      ],
+      initialTreatment:
+        'Aggressive cycloplegic/mydriatic therapy to relieve pain and prevent posterior synechiae, combined with frequent topical corticosteroid (e.g., prednisolone acetate 1%, dosed up to hourly in severe attacks) with a gradual taper as inflammation improves.',
+      followUpSchedule:
+        'Recheck within a few days to a week after starting treatment to confirm response, then space out follow-up as AC cell/flare grade improves and steroid is tapered; the fellow eye should be monitored for a new attack given the classic alternating pattern.',
+      escalationCriteria: [
+        'No improvement in AC cell/flare grade after about 1 week of appropriate topical therapy',
+        'New or worsening fibrin or hypopyon',
+        'IOP rise from trabeculitis or synechial angle involvement',
+        'Progressive posterior synechiae formation despite cycloplegia',
+      ],
+      referralCriteria: [
+        'Positive HLA-B27 result or symptoms/signs suggestive of an associated spondyloarthropathy -> rheumatology for further systemic workup, including sacroiliac imaging when indicated',
+        'Frequently recurrent, severe, or treatment-refractory disease -> uveitis specialist for consideration of systemic immunomodulatory therapy',
+        'Severe attack with hypopyon, fibrin, or marked IOP elevation -> same-day ophthalmology evaluation',
+      ],
+      steroidConsiderations:
+        'Topical prednisolone acetate 1% dosed up to hourly in severe attacks, tapered gradually over several weeks as inflammation resolves; monitor IOP closely given trabeculitis risk.',
+      cycloplegicConsiderations:
+        'Cyclopentolate or homatropine started promptly to relieve ciliary spasm and reduce posterior synechiae risk; a longer-acting agent (e.g., atropine) may be used for severe fibrinous reactions to break or prevent synechiae.',
+      complications: ['Posterior synechiae', 'Secondary glaucoma (trabeculitis or synechial angle closure)', 'Cataract (recurrent inflammation and chronic steroid use)', 'Cystoid macular edema with frequent severe attacks'],
+      monitoringParameters: ['AC cell/flare grade', 'IOP', 'Presence/progression of posterior synechiae', 'Symptom resolution', 'New attacks in the fellow eye'],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'homatropine', 'atropine'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'gonioscopy'],
+    },
     followUp: {
       typical: 'Recheck within a few days to a week after starting treatment for an acute attack to confirm response, then taper follow-up as inflammation resolves',
       monitor: 'Anterior chamber cell/flare grade, IOP, development of synechiae, and symptom resolution; monitor the fellow eye for new attacks given the classic alternating pattern',

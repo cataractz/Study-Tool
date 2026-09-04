@@ -74,6 +74,38 @@ export const anteriorSegmentAdditional4: Disease[] = [
       { category: 'Advanced treatment', detail: 'Eyelid surgery (e.g., tarsal rotation procedures) for trichiasis/entropion to prevent ongoing corneal trauma in cicatricial trachoma' },
       { category: 'Referral', detail: 'Refer to primary care/infectious disease or public health for systemic antibiotic coordination and partner treatment (adult disease); refer to oculoplastics for surgical correction of trichiasis/entropion (trachoma); public health referral for community-level intervention in endemic settings' },
     ],
+    managementProtocol: {
+      workup: [
+        'Conjunctival swab NAAT/PCR to confirm C. trachomatis infection',
+        'Testing/referral for concurrent genital chlamydial infection given the mucosal-systemic nature of adult inclusion conjunctivitis',
+        'Slit lamp exam with lid eversion to characterize the follicular pattern and screen for limbal Herbert pits',
+        'WHO simplified trachoma grading (TF/TI/TS/TT/CO) via lid eversion in endemic/field settings',
+        'Assessment for entropion, trichiasis, and corneal pannus/scarring in chronic or suspected trachoma',
+      ],
+      initialTreatment:
+        'Systemic (oral) antibiotic therapy targeting Chlamydia (a macrolide- or tetracycline-class regimen, e.g., doxycycline, per current treatment guidelines) — topical antibiotics alone are inadequate given the organism\'s intracellular, mucosal-systemic nature; partner notification and treatment are essential for adult inclusion conjunctivitis.',
+      followUpSchedule:
+        'Recheck in 2-4 weeks after completing systemic antibiotic therapy to confirm clinical resolution; in trachoma-endemic settings, patients are followed per WHO SAFE strategy community protocols with periodic clinical grading given ongoing reinfection risk.',
+      escalationCriteria: [
+        'Persistent follicular conjunctivitis or discharge after a completed systemic antibiotic course',
+        'Trichiasis actively contacting and traumatizing the cornea',
+        'Progressive corneal pannus or scarring',
+        'Symptoms suggesting reinfection or partner non-treatment',
+      ],
+      referralCriteria: [
+        'Refer to primary care/infectious disease or public health for systemic antibiotic coordination and partner treatment in adult inclusion conjunctivitis',
+        'Refer to oculoplastics for surgical correction (e.g., tarsal rotation) of trichiasis/entropion in cicatricial trachoma',
+        'Public health referral for community-level SAFE strategy intervention in endemic regions',
+      ],
+      complications: [
+        'Corneal scarring and vascularization (pannus) from chronic trichiasis-related trauma in trachoma — the leading cause of trachoma-related blindness',
+        'Recurrent trichiasis after surgical correction',
+        'Pelvic inflammatory disease or infertility from untreated genital chlamydial infection (adult inclusion conjunctivitis)',
+      ],
+      monitoringParameters: ['Resolution of follicular conjunctivitis and discharge', 'WHO trachoma grade (TF/TI/TS/TT/CO) in endemic disease', 'Corneal status/scarring', 'Recurrence of trichiasis after surgery', 'Partner treatment status'],
+      relatedDrugIds: ['doxycycline'],
+      relatedExamTechniqueIds: ['lid-eversion'],
+    },
     followUp: {
       typical: 'Recheck in 2-4 weeks after completing systemic antibiotic therapy to confirm clinical resolution',
       monitor: 'Resolution of follicular conjunctivitis and discharge; in trachoma, monitor for recurrence of trichiasis after surgical correction and for progression of corneal scarring',
@@ -166,6 +198,33 @@ export const anteriorSegmentAdditional4: Disease[] = [
       { category: 'First-line treatment', detail: 'Partner notification and treatment; screening for other sexually transmitted infections (adult cases)' },
       { category: 'Referral', detail: 'Same-day ophthalmology referral/comanagement for any corneal involvement; infectious disease/public health involvement for reporting (gonorrhea is a reportable disease) and partner services' },
     ],
+    managementProtocol: {
+      workup: [
+        'Gram stain of conjunctival discharge for rapid presumptive diagnosis (gram-negative intracellular diplococci)',
+        'Conjunctival culture on chocolate agar/Thayer-Martin selective media for definitive confirmation and susceptibility testing',
+        'NAAT/PCR for N. gonorrhoeae and concurrent C. trachomatis given high coinfection rates',
+        'Slit lamp examination with fluorescein staining to assess for corneal epithelial defect, infiltrate, or thinning',
+      ],
+      initialTreatment:
+        'Treat as a true ocular emergency: urgent, same-day systemic (not topical-only) antibiotic therapy targeting N. gonorrhoeae per current treatment guidelines, combined with empiric concurrent treatment for chlamydial coinfection, frequent saline irrigation/lavage of the ocular surface, and adjunctive topical antibiotic coverage.',
+      followUpSchedule:
+        'Daily follow-up initially until marked clinical improvement is confirmed, given the risk of rapid progression to corneal perforation; visits can be spaced out once discharge, chemosis, and corneal status are clearly improving.',
+      escalationCriteria: [
+        'Any new or worsening corneal infiltrate, epithelial defect, or thinning',
+        'Poor response to initial systemic therapy within 24-48 hours',
+        'Progression toward or evidence of corneal perforation',
+        'Neonatal presentation (ophthalmia neonatorum), which requires urgent pediatric/neonatology co-management',
+      ],
+      referralCriteria: [
+        'Same-day ophthalmology referral/comanagement for any corneal involvement',
+        'Infectious disease/public health referral for mandatory reporting (gonorrhea is a reportable disease) and partner services',
+        'Same-day referral for any neonatal presentation',
+      ],
+      complications: ['Corneal ulceration', 'Corneal perforation', 'Endophthalmitis', 'Permanent vision loss if treatment is delayed', 'Disseminated gonococcal infection (systemic)'],
+      monitoringParameters: ['Discharge volume and character', 'Degree of chemosis and lid edema', 'Corneal integrity on fluorescein staining', 'Clinical response to systemic antibiotics'],
+      relatedDrugIds: ['erythromycin-ophthalmic'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Daily follow-up initially until marked clinical improvement is confirmed, given the risk of rapid progression to corneal perforation',
       monitor: 'Discharge volume, chemosis, corneal integrity/epithelial status, response to systemic antibiotics',
@@ -256,6 +315,33 @@ export const anteriorSegmentAdditional4: Disease[] = [
       { category: 'Advanced treatment', detail: 'Systemic anti-tuberculous therapy (multi-drug regimen per infectious disease/pulmonology guidance) when tuberculosis is confirmed as the underlying trigger, in addition to topical steroid for the acute ocular lesion' },
       { category: 'Referral', detail: 'Refer to primary care/infectious disease for PPD/IGRA and chest imaging when TB is suspected, especially in endemic regions, recurrent cases, or absence of blepharitis; refer to cornea specialist for recurrent, vision-threatening, or extensively scarring corneal disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam to characterize the nodule location (limbal, bulbar conjunctival, or corneal) and identify a "feeder" vessel',
+        'Lid margin examination for staphylococcal blepharitis as the underlying trigger',
+        'PPD/IGRA and chest radiograph if tuberculosis is suspected — endemic region, relevant exposure history, recurrent presentation, or absence of blepharitis',
+      ],
+      initialTreatment:
+        'Topical corticosteroid to suppress the hypersensitivity reaction, typically producing rapid symptomatic and clinical improvement, combined with concurrent treatment of the underlying trigger (lid hygiene, warm compresses, and a topical antibiotic/antibiotic-steroid combination for staphylococcal blepharitis-associated cases).',
+      followUpSchedule:
+        'Recheck in 1-2 weeks after starting topical steroid to confirm resolution and taper therapy; longer-interval monitoring afterward for recurrence and control of the underlying blepharitis.',
+      escalationCriteria: [
+        'New or migrating corneal lesions',
+        'Worsening corneal scarring or vascularization',
+        'Recurrence despite adequate lid hygiene',
+        'Poor response to topical steroid, raising suspicion for an unaddressed trigger such as tuberculosis',
+      ],
+      referralCriteria: [
+        'Refer to primary care/infectious disease for PPD/IGRA and chest imaging when TB is suspected (endemic region, recurrent cases, or absence of blepharitis)',
+        'Refer to a cornea specialist for recurrent, vision-threatening, or extensively scarring corneal disease',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid is the mainstay of acute treatment, since the pathology is a hypersensitivity reaction rather than an active infection of the lesion itself; taper over roughly 1-2 weeks as the nodule resolves.',
+      complications: ['Corneal scarring', 'Corneal vascularization (pannus)', 'Irregular astigmatism from recurrent or migratory corneal phlyctenules'],
+      monitoringParameters: ['Resolution of the nodule', 'Corneal involvement/scarring', 'Recurrence frequency', 'Control of underlying blepharitis'],
+      relatedDrugIds: ['prednisolone-acetate', 'isoniazid', 'rifampin', 'ethambutol'],
+      relatedExamTechniqueIds: ['lid-margin-blepharitis-assessment'],
+    },
     followUp: {
       typical: 'Recheck in 1-2 weeks after starting topical steroid to confirm resolution and taper therapy',
       monitor: 'Resolution of the nodule, corneal involvement/scarring, recurrence, and control of underlying blepharitis',
@@ -351,6 +437,31 @@ export const anteriorSegmentAdditional4: Disease[] = [
       { category: 'Advanced treatment', detail: 'Wider surgical resection with amniotic membrane grafting or other ocular surface reconstruction for extensive lesions; orbital exenteration reserved for rare cases of extensive invasive disease with orbital extension' },
       { category: 'Referral', detail: 'Refer to a corneal/ocular oncology specialist for biopsy, definitive excision, and management of topical chemotherapy regimens; refer for HIV testing/infectious disease evaluation if immunosuppression is suspected based on age or presentation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with fluorescein and rose bengal staining to define the lesion\'s borders, keratinization, and vascular pattern',
+        'Anterior segment OCT to assess epithelial thickening and help distinguish OSSN from pterygium/pinguecula and other surface lesions',
+        'Incisional or excisional biopsy with histopathology using a "no-touch" technique for definitive diagnosis and grading',
+        'HIV testing when not already known, particularly for younger, aggressive, or recurrent presentations',
+      ],
+      initialTreatment:
+        'Surgical excision with wide margins using a "no-touch" technique (avoiding direct instrument contact with the tumor to prevent seeding), often combined with adjunctive cryotherapy to the excision bed/margins; adjunctive topical chemotherapeutic agents are used for margin control, diffuse disease not amenable to complete excision, or recurrent disease.',
+      followUpSchedule:
+        'Close follow-up every 1-3 months in the first year after treatment given meaningful recurrence risk, extending to every 6-12 months if stable.',
+      escalationCriteria: [
+        'New growth, thickening, or leukoplakic/gelatinous surface change at or near a prior excision site',
+        'Positive or narrow margins on histopathology',
+        'Invasive squamous cell carcinoma on final pathology',
+        'New corneal, forniceal, or scleral extension',
+      ],
+      referralCriteria: [
+        'Refer to a corneal/ocular oncology specialist for biopsy, definitive excision, and management of topical chemotherapy regimens',
+        'Refer for HIV testing/infectious disease evaluation if immunosuppression is suspected based on age or presentation',
+      ],
+      complications: ['Local recurrence', 'Corneal scarring/astigmatism from lesion or treatment', 'Rare orbital invasion', 'Rare distant metastasis with advanced invasive squamous cell carcinoma'],
+      monitoringParameters: ['Recurrence at the surgical site or margins', 'New leukoplakic/gelatinous change', 'Lesion thickness on AS-OCT', 'Progression of any residual lesion'],
+      relatedExamTechniqueIds: ['anterior-segment-oct'],
+    },
     followUp: {
       typical: 'Close follow-up every 1-3 months in the first year after treatment given meaningful recurrence risk, then extending to every 6-12 months if stable',
       monitor: 'Recurrence at the surgical site or margins, new leukoplakic/gelatinous change, progression of any residual lesion',

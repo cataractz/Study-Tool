@@ -72,6 +72,31 @@ export const anteriorSegmentAdditional5: Disease[] = [
       { category: 'Advanced treatment', detail: 'Extensive or recurrent disease, orbital invasion, or failure of globe-sparing therapy may require more extensive excision, orbital exenteration in severe cases, and coordination with oncology for regional/systemic disease' },
       { category: 'Referral', detail: 'Confirmed melanoma requires systemic oncology evaluation for regional lymph node and distant metastatic screening given its potential for lymphatic and hematogenous spread' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination with photographic documentation to establish a baseline for serial comparison',
+        'Lid eversion and fornix examination to assess for forniceal or palpebral extension, which carries prognostic significance',
+        'Anterior segment OCT to assess lesion thickness and internal architecture (cystic spaces vs. homogeneous hyperreflective tissue)',
+        'Excisional biopsy with wide margins using a "no-touch" technique and histopathology for any lesion with suspicious features',
+      ],
+      initialTreatment:
+        'Typical, stable nevus with classic cystic spaces and no suspicious features is managed with observation and serial photography; any lesion with documented growth, feeder vessels, absence of cystic spaces, or forniceal/palpebral/corneal extension is referred for excisional biopsy, and confirmed melanoma or high-risk PAM with atypia is treated with wide local excision using a "no-touch" technique with clear margins plus adjunctive topical chemotherapy (e.g., mitomycin C) and/or cryotherapy to the margins.',
+      followUpSchedule:
+        'Stable nevus: annual or biennial slit lamp exam with photographic comparison. PAM with atypia or treated melanoma: frequent surveillance (every 3-6 months initially) per ocular oncology protocol given local recurrence risk.',
+      escalationCriteria: [
+        'Interval growth on serial photography',
+        'New vascularity or feeder vessels',
+        'Loss of previously visible cystic spaces in a lesion followed as a nevus',
+        'New extension onto the cornea or into the fornix/palpebral conjunctiva',
+      ],
+      referralCriteria: [
+        'Any lesion with documented growth, feeder vessels, absence of cystic spaces, or forniceal/palpebral/corneal extension -> ocular oncology specialist for biopsy',
+        'Confirmed melanoma -> systemic oncology evaluation for regional lymph node and distant metastatic screening',
+      ],
+      complications: ['Local recurrence after excision', 'Regional lymph node metastasis', 'Distant metastasis (drives melanoma-related mortality)', 'Orbital invasion in advanced, poorly controlled disease'],
+      monitoringParameters: ['Lesion size/thickness', 'Pigmentation pattern', 'Presence of feeder vessels', 'Cystic architecture', 'New corneal, forniceal, or palpebral involvement'],
+      relatedExamTechniqueIds: ['anterior-segment-oct', 'lid-eversion'],
+    },
     followUp: {
       typical: 'Stable nevus: annual or biennial slit lamp exam with photographic comparison; PAM with atypia or treated melanoma: frequent surveillance (every 3-6 months initially) per ocular oncology protocol',
       monitor: 'Lesion size/thickness, pigmentation pattern, presence of feeder vessels, cystic architecture, and any new corneal, forniceal, or palpebral involvement',
@@ -174,6 +199,33 @@ export const anteriorSegmentAdditional5: Disease[] = [
       { category: 'Advanced treatment', detail: 'Large melanoma, diffuse angle involvement with uncontrolled secondary glaucoma, or extensive ciliary body extension may require enucleation when globe-sparing therapy is not feasible or has failed' },
       { category: 'Referral', detail: 'Confirmed melanoma warrants systemic oncology evaluation (liver function tests, liver imaging) for metastatic screening, as with other uveal melanoma locations' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination with photographic documentation and gonioscopy to characterize lesion size, margins, vascularity, and angle involvement',
+        'Serial photography to document growth, the single most decisive risk factor',
+        'Anterior segment OCT for reproducible thickness measurement',
+        'Ultrasound biomicroscopy to assess internal reflectivity and posterior extent (e.g., ciliary body involvement)',
+        'Intraocular pressure measurement and gonioscopy to assess for secondary glaucoma from angle involvement',
+      ],
+      initialTreatment:
+        'Typical, low-risk iris nevus (flat, thin, stable, no vascularity/ectropion uveae/cataract/glaucoma) is managed with serial slit lamp exam and photography; small, growing, or high-risk iris melanoma is treated with plaque brachytherapy (episcleral radioactive plaque) or, for well-localized lesions, surgical resection (iridectomy or iridocyclectomy).',
+      followUpSchedule:
+        'Stable low-risk nevus: annual slit lamp exam with photography. Suspicious/indeterminate lesions: every 3-6 months with photography and anterior segment OCT/UBM until stability is established. Treated melanoma: per ocular oncology protocol.',
+      escalationCriteria: [
+        'Documented increase in lesion thickness or basal diameter on serial imaging',
+        'New intrinsic tumor vascularity',
+        'New ectropion uveae',
+        'New sectoral cataract from lesion-lens contact',
+        'New or worsening secondary glaucoma',
+      ],
+      referralCriteria: [
+        'Any lesion with multiple risk features (thickness >1 mm, documented growth, vascularity, ectropion uveae, sectoral cataract, or secondary glaucoma) -> ocular oncology specialist',
+        'Confirmed melanoma -> systemic oncology evaluation (liver function tests, liver imaging) for metastatic screening',
+      ],
+      complications: ['Sectoral cataract', 'Secondary glaucoma from angle involvement or pigment dispersion', 'Local recurrence after resection', 'Hematogenous metastasis (most often to the liver) in confirmed melanoma'],
+      monitoringParameters: ['Lesion thickness and basal diameter', 'Vascularity', 'Presence of ectropion uveae', 'Lens clarity (sectoral cataract)', 'Intraocular pressure/angle status', 'Visual acuity'],
+      relatedExamTechniqueIds: ['gonioscopy', 'ultrasound-biomicroscopy', 'anterior-segment-oct'],
+    },
     followUp: {
       typical: 'Stable low-risk nevus: annual slit lamp exam with photography; suspicious/indeterminate lesions: every 3-6 months with photography and anterior segment OCT/UBM until stability is established; treated melanoma: per ocular oncology protocol',
       monitor: 'Lesion thickness and basal diameter, vascularity, presence of ectropion uveae, lens clarity (sectoral cataract), intraocular pressure/angle status, and visual acuity',
@@ -261,6 +313,26 @@ export const anteriorSegmentAdditional5: Disease[] = [
       { category: 'First-line treatment', detail: 'Nd:YAG laser posterior capsulotomy — a simple, quick, in-office procedure that creates a clear central opening in the opacified capsule directly in the visual axis — is the definitive treatment once PCO becomes visually significant' },
       { category: 'Referral', detail: 'Referral to the treating cataract surgeon or a comprehensive/anterior segment ophthalmologist for Nd:YAG capsulotomy when symptomatic PCO is confirmed' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp biomicroscopy with dilated pupil to directly visualize capsular wrinkling, fibrosis, or Elschnig pearl formation',
+        'Best corrected visual acuity and glare/contrast sensitivity testing to confirm the visual complaint is not explained by refractive error',
+        'Macular OCT when the diagnosis is uncertain or a macular cause is suspected, to exclude cystoid macular edema',
+      ],
+      initialTreatment:
+        'Nd:YAG laser posterior capsulotomy — a simple, quick, in-office procedure that creates a clear central opening in the opacified capsule directly in the visual axis — is the definitive treatment once PCO becomes visually significant; mild opacification with minimal functional impact may be observed periodically.',
+      followUpSchedule:
+        'Recheck intraocular pressure within the first hour or so after Nd:YAG capsulotomy and again within 1-2 weeks to confirm resolution of symptoms and stable IOP.',
+      escalationCriteria: [
+        'Persistent or worsening glare and blur despite a patent capsulotomy (reevaluate for an alternative cause, e.g., macular pathology or IOL malposition)',
+        'New floaters, flashes, or vision changes after Nd:YAG capsulotomy, given the rare but recognized risk of retinal detachment',
+        'IOP spike after capsulotomy that does not resolve promptly',
+      ],
+      referralCriteria: ['Referral to the treating cataract surgeon or a comprehensive/anterior segment ophthalmologist for Nd:YAG capsulotomy when symptomatic PCO is confirmed'],
+      complications: ['Transient postoperative IOP spike after Nd:YAG capsulotomy', 'Cystoid macular edema', 'Rare retinal detachment', 'IOL pitting from imprecise laser focusing (usually visually insignificant)'],
+      monitoringParameters: ['Visual acuity/glare symptoms before and after treatment', 'Intraocular pressure immediately post-capsulotomy', 'Macular status if new floaters or vision changes occur after the procedure'],
+      relatedExamTechniqueIds: ['oct-macula'],
+    },
     followUp: {
       typical: 'Recheck intraocular pressure within the first hour or so after Nd:YAG capsulotomy and again within 1-2 weeks to confirm resolution of symptoms and stable IOP',
       monitor: 'Visual acuity/glare symptoms before and after treatment, intraocular pressure immediately post-capsulotomy, and macular status if new floaters or vision changes occur after the procedure',
@@ -353,6 +425,39 @@ export const anteriorSegmentAdditional5: Disease[] = [
       { category: 'Referral', detail: 'Refer for evaluation and management of posterior capsular opacification (Nd:YAG capsulotomy) or of IOL subluxation/dislocation (observation vs. surgical repositioning/exchange), particularly in patients with pseudoexfoliation syndrome or prior trauma' },
       { category: 'Referral', detail: 'Pediatric aphakia (deferred IOL implantation in very young infants) requires close co-management with pediatric ophthalmology for contact lens fitting, amblyopia therapy, and timing of secondary IOL implantation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Manifest refraction to quantify the refractive error in aphakia or confirm the refractive outcome in pseudophakia',
+        'Slit lamp biomicroscopy with dilated pupil to assess lens/IOL status, capsular clarity, and IOL centration/stability',
+        'Keratometry and biometry (axial length, anterior chamber depth) with IOL power calculation when planning secondary or exchange IOL implantation',
+        'Dilated fundus examination given the elevated lifetime retinal detachment risk after lens removal',
+      ],
+      initialTreatment:
+        'Aphakia: correct the substantial hyperopic refractive error with contact lenses (preferred in most cases, especially in children, for a more physiologic image size and better peripheral field) or aphakic spectacles as a last resort given their magnification/aberration and field restriction, with secondary IOL implantation generally preferred long-term when feasible. Pseudophakia: prescribe reading correction for near vision with a standard monofocal IOL, since accommodation is not restored unless a presbyopia-correcting design was used.',
+      followUpSchedule:
+        'Aphakic patients: regular follow-up for contact lens/spectacle fitting and refinement, with pediatric aphakic patients followed frequently for amblyopia management. Pseudophakic patients: routine periodic comprehensive eye exams, with attention to capsular clarity and IOL stability over time.',
+      escalationCriteria: [
+        'New blur or glare in a pseudophakic eye suggesting posterior capsular opacification',
+        'New phacodonesis or IOL decentration suggesting subluxation',
+        'New flashes or floaters suggesting retinal detachment',
+        'Lack of progress with amblyopia therapy in pediatric aphakia during the critical developmental period',
+      ],
+      referralCriteria: [
+        'Refer for Nd:YAG capsulotomy when posterior capsular opacification becomes visually significant',
+        'Refer for surgical repositioning or IOL exchange when subluxation/dislocation is found, particularly in pseudoexfoliation syndrome or prior trauma',
+        'Pediatric aphakia (deferred IOL implantation in very young infants) requires close co-management with pediatric ophthalmology for contact lens fitting, amblyopia therapy, and timing of secondary IOL implantation',
+      ],
+      complications: [
+        'Amblyopia risk in children if aphakic correction is delayed',
+        'Image magnification and peripheral field restriction with aphakic spectacle correction',
+        'Posterior capsular opacification',
+        'IOL decentration, subluxation, or dislocation (notably with pseudoexfoliation-related zonular weakness)',
+        'Elevated lifetime retinal detachment risk relative to the phakic state in both aphakic and pseudophakic eyes',
+      ],
+      monitoringParameters: ['Refractive stability and visual acuity', 'Lens/IOL position and centration', 'Posterior capsule clarity', 'Intraocular pressure', 'Peripheral retina'],
+      relatedCalculatorIds: ['spectacle-contact-lens', 'vertex-effective-power'],
+      relatedExamTechniqueIds: ['optical-biometry'],
+    },
     followUp: {
       typical: 'Aphakic patients: regular follow-up for contact lens/spectacle fitting and refinement, with pediatric aphakic patients followed frequently for amblyopia management; pseudophakic patients: routine periodic comprehensive eye exams, with attention to capsular clarity and IOL stability over time',
       monitor: 'Refractive stability and visual acuity, lens/IOL position and centration, posterior capsule clarity, intraocular pressure, and peripheral retina (given elevated lifetime retinal detachment risk after lens removal)',
