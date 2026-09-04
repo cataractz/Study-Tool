@@ -74,6 +74,46 @@ export const glaucomaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Selective laser trabeculoplasty (SLT) if not already used; incisional surgery (trabeculectomy, tube shunt) or minimally invasive glaucoma surgery (MIGS) for progression despite maximal medical/laser therapy' },
       { category: 'Referral', detail: 'Refer to glaucoma specialist for surgical evaluation when target IOP is not achieved medically, for progression despite treatment, or for advanced disease at presentation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline IOP measurement via Goldmann applanation tonometry, ideally with attention to diurnal variation',
+        'Central corneal pachymetry to correct/interpret IOP readings and refine risk stratification',
+        'Gonioscopy to confirm an open angle and exclude secondary or angle-closure mechanisms',
+        'Stereoscopic optic disc photography and OCT of the RNFL/ganglion cell complex to establish a structural baseline',
+        'Baseline standard automated perimetry (24-2) to establish functional baseline and stage severity',
+      ],
+      initialTreatment:
+        'Topical prostaglandin analog (e.g., latanoprost) once daily is first-line given efficacy, once-daily dosing, and favorable systemic safety; selective laser trabeculoplasty (SLT) is an equally acceptable first-line option per the LiGHT trial. Initial target is at least a 25% reduction from pretreatment baseline IOP, individualized upward for more severe or rapidly progressing disease.',
+      followUpSchedule:
+        'Recheck IOP 4-6 weeks after starting or changing therapy to confirm target reduction; once stable, follow every 3-6 months for IOP, with optic nerve photos/OCT RNFL and visual fields typically repeated every 6-12 months (every 3-4 months for moderate-to-advanced disease or documented progressors).',
+      escalationCriteria: [
+        'IOP not at target (at least 25-30% reduction from baseline) on maximally tolerated single-agent therapy',
+        'Progressive RNFL/GCC thinning on serial OCT beyond expected test-retest variability',
+        'Enlarging or deepening visual field defects confirmed on 2 or more consecutive reliable fields',
+        'New optic disc hemorrhage, a recognized marker of ongoing progression',
+      ],
+      referralCriteria: [
+        'Target IOP not achieved despite maximal tolerated topical/laser therapy -> glaucoma specialist for surgical evaluation (MIGS, trabeculectomy, tube shunt)',
+        'Documented structural or functional progression despite treatment',
+        'Advanced disease at presentation with limited visual field reserve',
+      ],
+      complications: [
+        'Progressive retinal nerve fiber layer and ganglion cell loss',
+        'Peripheral then eventually central visual field constriction',
+        'Ocular surface disease from chronic topical medication/preservative exposure',
+        'Irreversible blindness if untreated or inadequately controlled',
+      ],
+      monitoringParameters: [
+        'IOP at each visit',
+        'Optic disc appearance/stereo photos',
+        'OCT RNFL and ganglion cell complex thickness',
+        'Visual field mean deviation and pattern standard deviation',
+        'Medication adherence and ocular surface tolerance',
+      ],
+      relatedDrugIds: ['latanoprost', 'travoprost', 'bimatoprost', 'tafluprost', 'timolol', 'betaxolol', 'brimonidine', 'dorzolamide', 'brinzolamide', 'netarsudil', 'dorzolamide-timolol'],
+      relatedCalculatorIds: ['ocular-perfusion-pressure'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'humphrey-visual-field', 'optic-nerve-head-cup-disc-ratio-assessment'],
+    },
     followUp: {
       typical: 'Every 3-6 months once stable on treatment; more frequently (4-6 weeks) after starting or changing therapy to assess IOP response',
       monitor: 'IOP, optic nerve appearance/OCT RNFL, visual fields (typically annually, more often if progressing), medication adherence and side effects',
@@ -174,6 +214,48 @@ export const glaucomaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Clear lens extraction (cataract surgery) can deepen the anterior chamber and relieve pupillary block, especially useful in patients with coexisting cataract or persistently narrow angles after LPI; trabeculectomy or tube shunt for eyes with extensive synechial closure and uncontrolled IOP' },
       { category: 'Referral', detail: 'Immediate same-day referral/co-management with an ophthalmologist for any acute angle-closure attack; refer for prophylactic LPI in fellow eye of a patient who has had an acute attack, and in any patient with an occludable angle on gonioscopy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Immediate IOP measurement and slit lamp exam of both eyes',
+        'Gonioscopy of the affected eye once the view allows, and of the fellow eye, to confirm mechanism and anatomic risk',
+        'Slit lamp exam with van Herick technique as a rapid peripheral chamber depth screen when gonioscopy is not immediately available',
+        'Anterior segment OCT or ultrasound biomicroscopy to characterize angle anatomy and detect plateau iris configuration',
+        'Post-attack visual field testing and OCT RNFL once the acute episode resolves, to assess for glaucomatous damage',
+      ],
+      initialTreatment:
+        'Emergency medical IOP-lowering (see management) is followed by laser peripheral iridotomy (LPI) once the cornea clears and inflammation is controlled — definitive treatment for the pupillary block mechanism. The asymptomatic fellow eye should also be scheduled for prophylactic LPI given its high shared anatomic risk.',
+      followUpSchedule:
+        'Daily until IOP is controlled during the acute attack; recheck within 1-2 weeks after LPI to confirm iridotomy patency, IOP control, and angle widening on gonioscopy, then every 3-6 months if chronic damage is present or the angle remains narrow, extending to annual once the angle has widened adequately with no damage.',
+      escalationCriteria: [
+        'IOP not controlled within 1-2 hours of initial medical therapy during an acute attack -> escalate hyperosmotic therapy and expedite laser',
+        'Non-patent iridotomy or persistent angle narrowing on post-LPI gonioscopy',
+        'Progressive peripheral anterior synechiae or rising IOP after a patent iridotomy, suggesting plateau iris or ongoing synechial closure',
+        'Recurrent subacute attacks despite a documented patent iridotomy',
+      ],
+      referralCriteria: [
+        'Any acute angle-closure attack -> immediate same-day ophthalmology referral/co-management',
+        'Occludable angle on gonioscopy in an asymptomatic patient -> prophylactic LPI',
+        'Fellow eye of a patient with a prior acute attack -> prophylactic LPI given shared anatomic risk',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate 1%) is used briefly during the acute attack to reduce IOP-elevation-related inflammation and improve comfort; this is short-course adjunctive use only, not a long-term component of management.',
+      cycloplegicConsiderations:
+        'Cycloplegics/mydriatics are generally AVOIDED or used with great caution in angle-closure disease — dilating a shallow or occludable angle can precipitate or worsen pupillary block. Pilocarpine (a miotic, not a cycloplegic) is used instead once IOP is pharmacologically lowered enough for the ischemic sphincter to respond, to pull the peripheral iris away from the angle.',
+      complications: [
+        'Permanent peripheral anterior synechiae despite iridotomy',
+        'Chronic elevated IOP and glaucomatous optic neuropathy',
+        'Central retinal artery or vein occlusion from extreme acute IOP spikes',
+        'Glaukomflecken (anterior subcapsular lens opacities) from the acute attack',
+        'Iris atrophy',
+      ],
+      monitoringParameters: [
+        'IOP',
+        'Gonioscopy for iridotomy patency and residual angle narrowing/PAS',
+        'Optic nerve appearance/OCT RNFL and visual fields when chronic damage is present',
+      ],
+      relatedDrugIds: ['timolol', 'brimonidine', 'apraclonidine', 'acetazolamide', 'prednisolone-acetate', 'pilocarpine'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'van-herick-test', 'anterior-segment-oct'],
+    },
     followUp: {
       typical: 'Fellow eye should undergo prophylactic LPI promptly, as it carries high risk of a future acute attack; post-LPI patients monitored for residual narrow angle, PAS, and IOP control',
       monitor: 'IOP, gonioscopy for patency of iridotomy and residual angle narrowing/PAS, optic nerve and visual fields if chronic damage present',
@@ -266,6 +348,42 @@ export const glaucomaDiseases: Disease[] = [
       { category: 'Second-line treatment', detail: 'Additional or alternative topical agents (beta-blockers, alpha-2 agonists, carbonic anhydrase inhibitors) if further IOP lowering is needed and risk remains elevated' },
       { category: 'Referral', detail: 'Refer to glaucoma specialist if risk stratification is uncertain, IOP is very high, or conversion to POAG is suspected' },
     ],
+    managementProtocol: {
+      workup: [
+        'Repeated/diurnal Goldmann applanation tonometry to confirm persistent IOP elevation',
+        'Central corneal pachymetry',
+        'Gonioscopy to confirm an open angle and exclude secondary or occludable-angle causes',
+        'Baseline OCT RNFL/ganglion cell complex and standard automated perimetry',
+        'Formal risk stratification using OHTS/European Glaucoma Prevention Study risk factors (IOP, central corneal thickness, cup-to-disc ratio, age, visual field pattern standard deviation)',
+      ],
+      initialTreatment:
+        'Low-risk patients are typically observed without treatment. When treatment is indicated (higher OHTS risk score, patient preference, or borderline structural findings), a topical prostaglandin analog once daily is first-line, targeting at least a 20% reduction from baseline IOP and IOP below 24 mmHg per the OHTS treatment protocol.',
+      followUpSchedule:
+        'Untreated low-risk patients: every 6-12 months. Treated or higher-risk patients: every 3-6 months for IOP, with OCT RNFL and visual fields repeated roughly annually to detect conversion to POAG.',
+      escalationCriteria: [
+        'Any reproducible structural (OCT RNFL/GCC) change from baseline',
+        'Any reproducible glaucomatous visual field defect — by definition this converts the diagnosis to POAG and requires treatment escalation',
+        'IOP trending upward despite treatment, or failing to reach the 20% reduction target',
+      ],
+      referralCriteria: [
+        'Uncertain risk stratification or borderline/inconsistent baseline testing',
+        'Very high IOP (e.g., >30 mmHg) regardless of calculated risk score',
+        'Suspected conversion to POAG requiring specialist confirmation',
+      ],
+      complications: [
+        'Conversion to POAG with associated structural and functional glaucomatous damage if high-risk disease goes untreated',
+      ],
+      monitoringParameters: [
+        'IOP',
+        'Optic nerve photos',
+        'OCT RNFL/ganglion cell complex',
+        'Periodic visual field testing',
+        'Reassessment of OHTS risk factors over time',
+      ],
+      relatedDrugIds: ['latanoprost', 'timolol', 'brimonidine', 'dorzolamide'],
+      relatedCalculatorIds: ['ocular-perfusion-pressure'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'Every 6-12 months for low-risk untreated patients; every 3-6 months if treated or higher risk',
       monitor: 'IOP, optic nerve appearance/photos, OCT RNFL, and periodic visual field testing to detect conversion to POAG',
@@ -362,6 +480,45 @@ export const glaucomaDiseases: Disease[] = [
       { category: 'Advanced treatment', detail: 'Selective laser trabeculoplasty or incisional surgery (trabeculectomy, tube shunt) for progression despite maximal tolerated medical therapy' },
       { category: 'Referral', detail: 'Refer to glaucoma specialist for surgical evaluation, and to neurology/neuro-ophthalmology or for neuroimaging if atypical features suggest a compressive or vascular optic neuropathy rather than NTG; consider referral to primary care/cardiology regarding nocturnal blood pressure management' },
     ],
+    managementProtocol: {
+      workup: [
+        'Diurnal IOP curve/repeated tonometry to exclude undetected IOP peaks',
+        'Central corneal pachymetry to exclude a thin-cornea artifact masking true POAG',
+        'Gonioscopy to confirm an open angle',
+        'OCT RNFL/ganglion cell complex and standard automated perimetry',
+        'Neuroimaging (MRI brain/orbits) when atypical features (disc pallor exceeding cupping, vertical field defects, young age, rapid progression) are present',
+        '24-hour ambulatory blood pressure monitoring when vascular dysregulation or nocturnal hypotension is suspected',
+      ],
+      initialTreatment:
+        'Topical prostaglandin analog (e.g., latanoprost) is first-line, since the Collaborative Normal-Tension Glaucoma Study (CNTGS) demonstrated that a 30% IOP reduction from untreated baseline significantly slows progression even when baseline IOP is normal-range.',
+      followUpSchedule:
+        'Every 3-6 months once stable on treatment; closer monitoring (every 4-6 weeks) at diagnosis and after therapy changes, given the tendency of NTG field defects to threaten fixation.',
+      escalationCriteria: [
+        'Progressive RNFL thinning on OCT beyond test-retest variability',
+        'Enlarging or deepening field defects, especially those approaching fixation',
+        'New optic disc hemorrhage',
+        'Continued progression despite a documented 30% IOP reduction from baseline',
+      ],
+      referralCriteria: [
+        'Glaucoma specialist for surgical evaluation (SLT, incisional surgery) if progressing despite maximally tolerated medical therapy',
+        'Neurology/neuro-ophthalmology or neuroimaging for atypical features (disc pallor out of proportion to cupping, vertical field defects, rapid progression, young age)',
+        'Primary care/cardiology regarding nocturnal antihypertensive dosing when excessive nocturnal blood pressure dipping is identified',
+      ],
+      complications: [
+        'Progressive, often centrally-threatening visual field loss',
+        'Irreversible blindness if unrecognized or untreated',
+      ],
+      monitoringParameters: [
+        'IOP',
+        'Optic nerve appearance/OCT RNFL',
+        'Visual fields',
+        'New disc hemorrhages',
+        'Systemic blood pressure management/nocturnal dipping when relevant',
+      ],
+      relatedDrugIds: ['latanoprost', 'brimonidine', 'dorzolamide', 'brinzolamide'],
+      relatedCalculatorIds: ['ocular-perfusion-pressure'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'Every 3-6 months once stable on treatment; closer monitoring at diagnosis and after therapy changes',
       monitor: 'IOP, optic nerve appearance/OCT RNFL, visual fields, and review of systemic blood pressure management/nocturnal dipping when relevant',

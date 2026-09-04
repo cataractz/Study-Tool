@@ -73,6 +73,42 @@ export const glaucomaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Laser peripheral iridotomy may be considered in select patients with demonstrated reverse pupillary block to flatten iris configuration and reduce further pigment release, though evidence for preventing glaucoma progression is mixed; incisional surgery (trabeculectomy, tube shunt) or MIGS for eyes progressing despite maximal medical/laser therapy' },
       { category: 'Referral', detail: 'Refer to glaucoma specialist for laser or surgical evaluation when IOP control is inadequate or for progression despite treatment; counsel patients regarding activity-related IOP spikes' },
     ],
+    managementProtocol: {
+      workup: [
+        'Gonioscopy to grade trabecular meshwork pigmentation and confirm the open-angle mechanism',
+        'Slit lamp exam with retroillumination for mid-peripheral iris transillumination defects and Krukenberg spindle',
+        'Goldmann applanation tonometry, including consideration of post-exercise readings, given pigment-shower-related spikes',
+        'OCT RNFL/ganglion cell complex and visual field testing to distinguish PDS from pigmentary glaucoma',
+        'Anterior segment OCT or ultrasound biomicroscopy to assess iris concavity/reverse pupillary block in select cases',
+      ],
+      initialTreatment:
+        'Isolated PDS with normal IOP and no damage is observed without treatment. For pigmentary glaucoma, a topical prostaglandin analog is first-line; selective laser trabeculoplasty is often particularly effective given the heavily pigmented trabecular meshwork.',
+      followUpSchedule:
+        'PDS without glaucoma: every 6-12 months. Pigmentary glaucoma: every 3-6 months once stable, similar to POAG, with closer intervals in younger, more myopic patients with denser trabecular pigmentation or documented IOP spikes.',
+      escalationCriteria: [
+        'Rising IOP or documented exercise-related IOP spikes',
+        'Progressive RNFL thinning on OCT',
+        'New or enlarging visual field defects',
+        'Conversion from isolated PDS to pigmentary glaucoma',
+      ],
+      referralCriteria: [
+        'Inadequate IOP control on maximally tolerated topical/laser therapy -> glaucoma specialist for surgical evaluation',
+        'Documented progression despite treatment',
+      ],
+      complications: [
+        'Glaucomatous optic neuropathy and visual field loss if pigmentary glaucoma progresses uncontrolled',
+        'Transient symptomatic IOP spikes with exercise',
+        'Accommodative spasm/myopic shift if miotic (pilocarpine) therapy is used in this typically young population',
+      ],
+      monitoringParameters: [
+        'IOP (including exercise-related spikes)',
+        'Optic nerve appearance/OCT RNFL',
+        'Visual fields',
+        'Degree of pigment dispersion/trabecular pigmentation over time',
+      ],
+      relatedDrugIds: ['latanoprost', 'timolol', 'brimonidine', 'dorzolamide', 'pilocarpine'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'PDS without glaucoma: every 6-12 months; pigmentary glaucoma: every 3-6 months once stable, similar to POAG',
       monitor: 'IOP (including consideration of exercise-related spikes), optic nerve appearance/OCT RNFL, visual fields, and degree of pigment dispersion over time',
@@ -171,6 +207,42 @@ export const glaucomaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Lower threshold for incisional surgery (trabeculectomy, tube shunt) or MIGS given typically higher IOP and more rapid progression; cataract surgery, when needed, requires careful planning (pupil expansion devices, capsular tension rings) given zonular weakness and poor dilation' },
       { category: 'Referral', detail: 'Refer to glaucoma specialist promptly given the more aggressive disease course; refer for cataract evaluation earlier than typical given accelerated cataract formation and to preemptively plan for zonular compromise' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam with a dilated pupil to identify the classic target-pattern lens capsule material',
+        'Gonioscopy for patchy trabecular meshwork pigmentation and to exclude a narrow-angle component (more common in PXF eyes)',
+        'Serial/diurnal Goldmann applanation tonometry given the characteristic IOP fluctuation',
+        'OCT RNFL/ganglion cell complex and visual field testing',
+        'Slit lamp assessment of zonular integrity (phacodonesis, iridodonesis) to inform cataract surgical planning',
+      ],
+      initialTreatment:
+        'Topical prostaglandin analog is first-line for pseudoexfoliation glaucoma; given the more aggressive, higher-pressure course, a lower threshold for adding a second agent or proceeding to selective laser trabeculoplasty (often effective given heavy trabecular pigmentation, though typically less durable than in POAG) is appropriate.',
+      followUpSchedule:
+        'PXF without glaucoma: every 6-12 months given elevated conversion risk. Pseudoexfoliation glaucoma: every 2-4 months, more frequent than typical POAG given the faster, more erratic IOP course.',
+      escalationCriteria: [
+        'Rising or fluctuating IOP on serial/diurnal testing',
+        'Progressive RNFL thinning',
+        'Enlarging visual field defects',
+        'New zonular instability affecting surgical planning',
+      ],
+      referralCriteria: [
+        'Prompt glaucoma specialist referral given the more aggressive disease course and lower threshold for incisional surgery/MIGS',
+        'Early cataract referral given accelerated cataract formation and the need to plan for zonular compromise (pupil expansion devices, capsular tension rings)',
+      ],
+      complications: [
+        'More rapid visual field loss than POAG if inadequately treated',
+        'Increased intraoperative cataract surgery complications (zonular dehiscence, vitreous loss, capsular rupture)',
+        'Lens subluxation/phacodonesis in advanced cases',
+      ],
+      monitoringParameters: [
+        'IOP with attention to fluctuation',
+        'Optic nerve appearance/OCT RNFL',
+        'Visual fields',
+        'Lens status and zonular stability',
+      ],
+      relatedDrugIds: ['latanoprost', 'timolol', 'brimonidine', 'dorzolamide'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'PXF without glaucoma: every 6-12 months given elevated conversion risk; pseudoexfoliation glaucoma: every 2-4 months, more frequent than typical POAG given faster progression',
       monitor: 'IOP (with attention to fluctuation), optic nerve appearance/OCT RNFL, visual fields, lens status and zonular stability',
@@ -268,6 +340,44 @@ export const glaucomaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Glaucoma drainage device (tube shunt) implantation is generally preferred over trabeculectomy for eyes with persistently elevated IOP despite anti-VEGF/PRP and maximal medical therapy, given the fibrovascular tissue and higher bleb failure risk with trabeculectomy in NVG; cyclophotocoagulation for IOP control in eyes with poor visual potential' },
       { category: 'Referral', detail: 'Urgent same-day/emergent referral to a retina specialist for anti-VEGF injection and PRP, and to a glaucoma specialist for IOP management and possible drainage surgery; address any underlying systemic vascular disease (e.g., carotid evaluation) with appropriate medical referral' },
     ],
+    managementProtocol: {
+      workup: [
+        'Gonioscopy (performed carefully, before pupillary dilation) to stage rubeosis/angle neovascularization and quantify synechial angle closure',
+        'Dilated fundus examination to identify the underlying ischemic driver',
+        'Fluorescein angiography to map the extent of retinal capillary non-perfusion',
+        'Carotid duplex ultrasound/vascular workup when ocular ischemic syndrome is suspected',
+        'Goldmann applanation tonometry to quantify IOP severity',
+      ],
+      initialTreatment:
+        'Intravitreal anti-VEGF injection combined with panretinal photocoagulation (PRP) is first-line — anti-VEGF provides rapid regression of neovascularization while PRP addresses the underlying ischemic drive; both are typically required together, alongside maximal aqueous suppressant therapy for IOP control. Miotics and prostaglandin analogs are avoided.',
+      followUpSchedule:
+        'Very close follow-up (days to weeks) during active treatment; recheck IOP and rubeosis/angle neovascularization status roughly 1-2 weeks after each anti-VEGF injection, extending the interval only once neovascularization has regressed and IOP is controlled.',
+      escalationCriteria: [
+        'Persistent or recurrent rubeosis/angle neovascularization despite anti-VEGF and PRP',
+        'Progressive synechial angle closure',
+        'Rising IOP despite maximal aqueous suppressant therapy',
+        'New hyphema from friable new vessels',
+      ],
+      referralCriteria: [
+        'Urgent/emergent same-day referral to a retina specialist for anti-VEGF injection and PRP',
+        'Glaucoma specialist for IOP management and possible drainage device surgery',
+        'Vascular medicine/carotid workup when ocular ischemic syndrome is suspected',
+      ],
+      complications: [
+        'Painful blind eye in advanced, uncontrolled cases',
+        'Hyphema from friable new vessels',
+        'Corneal decompensation from sustained severe IOP elevation',
+        'Vision loss from both the glaucoma and the underlying retinal ischemic disease',
+      ],
+      monitoringParameters: [
+        'IOP',
+        'Degree of rubeosis/angle neovascularization',
+        'Response to anti-VEGF and PRP',
+        'Progression or regression of retinal ischemia',
+      ],
+      relatedDrugIds: ['bevacizumab', 'aflibercept', 'timolol', 'brimonidine', 'acetazolamide'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry'],
+    },
     followUp: {
       typical: 'Very close follow-up (days to weeks) during active treatment given the aggressive, rapidly progressive nature of the disease',
       monitor: 'IOP, degree of rubeosis/angle neovascularization, response to anti-VEGF and PRP, and progression or regression of retinal ischemia',
@@ -365,6 +475,49 @@ export const glaucomaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Incisional glaucoma surgery (trabeculectomy with antimetabolite or glaucoma drainage device) for IOP uncontrolled despite maximal medical therapy and control of inflammation; MIGS options are more limited given active/recurrent inflammation and synechiae risk' },
       { category: 'Referral', detail: 'Co-management with a uveitis specialist for underlying disease control and systemic workup, and with a glaucoma specialist for surgical planning when medical therapy is insufficient' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam grading anterior chamber cell/flare per SUN criteria and identifying keratic precipitates/synechiae',
+        'Gonioscopy to assess peripheral anterior synechiae, angle status, and exclude true neovascularization',
+        'Goldmann applanation tonometry, recognizing IOP may be low during severe active inflammation (ciliary body hyposecretion)',
+        'Uveitis etiologic workup (HLA-B27, ACE/chest imaging, syphilis serology, etc.) as clinically indicated for recurrent/chronic disease',
+        'OCT RNFL/ganglion cell complex and visual field testing to assess cumulative glaucomatous damage',
+      ],
+      initialTreatment:
+        'Aggressive treatment of the underlying uveitis with topical (and periocular/systemic as needed) corticosteroids and cycloplegic agents, combined with aqueous suppressants (beta-blockers, alpha-2 agonists, carbonic anhydrase inhibitors) for IOP control; prostaglandin analogs are used cautiously and miotics are avoided during active inflammation.',
+      followUpSchedule:
+        'Frequent follow-up (days to weeks) during active inflammatory flares; extend to standard glaucoma intervals (every 3-6 months) once quiescent and IOP is stable.',
+      escalationCriteria: [
+        'Recurrent flares with progressive synechiae formation',
+        'Rising IOP despite aqueous suppressant therapy',
+        'New glaucomatous structural or functional damage on OCT/visual field',
+        'Acute pupillary block from seclusio pupillae with iris bombé',
+      ],
+      referralCriteria: [
+        'Co-management with a uveitis specialist for underlying disease control and systemic workup',
+        'Glaucoma specialist for surgical planning when medical therapy is insufficient',
+        'Urgent referral for laser or surgical iridotomy if seclusio pupillae with iris bombé develops',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid (e.g., prednisolone acetate 1%) dosed by severity is central to controlling the underlying uveitis driving trabeculitis; taper carefully once inflammation is controlled and monitor IOP closely, since a subset of patients are steroid responders whose IOP may rise further even as inflammation-driven elevation improves.',
+      cycloplegicConsiderations:
+        'Cycloplegic agents (e.g., cyclopentolate, homatropine) serve a dual purpose — comfort from ciliary spasm and prevention/breaking of posterior synechiae. Miotics (pilocarpine) are avoided, as they increase inflammation and promote further synechiae formation.',
+      complications: [
+        'Progressive synechial angle closure',
+        'Glaucomatous optic neuropathy',
+        'Cataract from both inflammation and chronic corticosteroid use',
+        'Corneal decompensation from sustained IOP elevation or chronic inflammation',
+      ],
+      monitoringParameters: [
+        'Anterior chamber inflammation grade',
+        'IOP',
+        'Gonioscopy for progressive synechiae',
+        'Optic nerve/OCT RNFL and visual fields',
+        'Corticosteroid dose and duration',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'homatropine', 'timolol', 'brimonidine', 'dorzolamide'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'anterior-chamber-cell-flare-grading', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'Frequent follow-up (days to weeks) during active inflammatory flares; extended intervals once quiescent and IOP stable',
       monitor: 'Anterior chamber inflammation grade, IOP, gonioscopy for progressive synechiae, optic nerve/OCT RNFL and visual fields, and corticosteroid dose/duration',
@@ -457,6 +610,40 @@ export const glaucomaAdditional: Disease[] = [
       { category: 'Advanced treatment', detail: 'Laser trabeculoplasty or incisional glaucoma surgery/MIGS in refractory cases, particularly relevant for eyes with a sustained-release intravitreal steroid implant that cannot be removed and continued marked IOP elevation despite maximal medical therapy' },
       { category: 'Referral', detail: 'Refer to glaucoma specialist for cases with marked or refractory IOP elevation, established optic nerve damage, or need for surgical intervention; coordinate with the prescribing physician regarding alternatives to corticosteroid therapy when possible' },
     ],
+    managementProtocol: {
+      workup: [
+        'Detailed medication history covering ALL corticosteroid routes (topical, periocular, intravitreal, inhaled, nasal, dermatologic, systemic)',
+        'Serial Goldmann applanation tonometry to document the IOP trend relative to steroid exposure and any taper',
+        'Gonioscopy to confirm an open angle and exclude other secondary causes',
+        'OCT RNFL/ganglion cell complex and visual field testing if exposure was prolonged or unrecognized',
+      ],
+      initialTreatment:
+        'Discontinue or taper the corticosteroid if medically feasible, or substitute a lower-IOP-risk anti-inflammatory alternative (e.g., a site-specific "soft" steroid such as loteprednol etabonate or fluorometholone, or an NSAID where appropriate) in coordination with the prescribing provider; IOP typically normalizes over days to weeks after topical steroid cessation.',
+      followUpSchedule:
+        'Recheck IOP within 2-6 weeks of starting any corticosteroid in an at-risk patient (known responder, POAG family history); more frequent monitoring (every 1-2 weeks initially) with periocular or intravitreal steroid administration.',
+      escalationCriteria: [
+        'IOP remains elevated despite steroid taper or discontinuation',
+        'New or progressive optic nerve or visual field changes',
+        'Steroid cannot be discontinued (e.g., sustained-release intravitreal implant) and IOP remains uncontrolled on topical therapy',
+      ],
+      referralCriteria: [
+        'Glaucoma specialist for marked or refractory IOP elevation, established optic nerve damage, or need for surgical intervention',
+        'Coordinate with the prescribing physician regarding corticosteroid alternatives when possible',
+      ],
+      steroidConsiderations:
+        'This disease IS the steroid response, and any route of corticosteroid administration can trigger it. When the steroid must be continued, switching to a lower-IOP-risk agent (loteprednol etabonate, fluorometholone, or rimexolone) reduces but does not eliminate risk; check IOP at every visit while any steroid is in use, especially in known responders and patients with a POAG family history.',
+      complications: [
+        'Permanent glaucomatous optic neuropathy and visual field loss if IOP elevation is prolonged and unrecognized',
+        'Posterior subcapsular cataract from chronic corticosteroid use, a separate complication that often coexists',
+      ],
+      monitoringParameters: [
+        'IOP trend relative to corticosteroid dose/potency/duration',
+        'Optic nerve appearance and OCT RNFL if exposure was prolonged',
+        'Visual fields if glaucomatous damage is suspected',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'dexamethasone', 'loteprednol-etabonate', 'fluorometholone', 'difluprednate', 'rimexolone', 'triamcinolone-intravitreal', 'timolol', 'brimonidine', 'dorzolamide'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'Recheck IOP within 2-6 weeks of starting a new corticosteroid in any at-risk patient (known responder, POAG history/family history); more frequent monitoring with periocular or intravitreal steroid administration',
       monitor: 'IOP trend relative to corticosteroid dose/potency/duration, optic nerve appearance and OCT RNFL if exposure is prolonged, visual fields if glaucomatous damage is suspected',
@@ -552,6 +739,42 @@ export const glaucomaAdditional: Disease[] = [
       { category: 'Second-line treatment', detail: 'Topical IOP-lowering medications (beta-blockers, carbonic anhydrase inhibitors, alpha-2 agonists used cautiously given CNS side-effect risk in infants) may be used as a temporizing measure before surgery or as an adjunct if IOP remains elevated after initial angle surgery' },
       { category: 'Advanced treatment', detail: 'Repeat goniotomy/trabeculotomy, combined trabeculotomy-trabeculectomy, glaucoma drainage device implantation, or cyclophotocoagulation for eyes with persistently uncontrolled IOP after initial angle surgery' },
     ],
+    managementProtocol: {
+      workup: [
+        'Examination under anesthesia (EUA) with tonometry, corneal diameter measurement, gonioscopy, and dilated fundus exam',
+        'Corneal diameter measurement with calipers to assess for buphthalmos',
+        'Axial length measurement by ultrasound biometry to objectively quantify globe enlargement',
+        'Cycloplegic refraction to assess myopic shift and screen for amblyopia risk',
+      ],
+      initialTreatment:
+        'Angle surgery — goniotomy (when the cornea is clear enough for a direct gonioscopic view) or trabeculotomy (external approach, preferred when corneal clouding limits visualization) — is first-line and preferred over medical therapy, in contrast to adult glaucomas; topical medications are used only as a temporizing bridge to surgery.',
+      followUpSchedule:
+        'Very close follow-up (weeks) in the first months after diagnosis and surgery, given the rapid potential for globe/corneal changes and amblyopia development in infancy; IOP measured under anesthesia as needed until the child can cooperate, transitioning to standard office visits with lifelong monitoring thereafter.',
+      escalationCriteria: [
+        'Rising IOP, increasing corneal diameter, or increasing axial length on serial measurement',
+        'Worsening corneal clouding',
+        'Progressive optic nerve cupping',
+        'Persistently uncontrolled IOP after initial angle surgery -> repeat angle surgery or drainage device implantation',
+      ],
+      referralCriteria: [
+        'Immediate referral to a pediatric ophthalmologist/glaucoma specialist upon suspicion of the classic triad (epiphora, photophobia, blepharospasm) or corneal clouding/enlargement in an infant — this is not managed in primary optometric practice',
+      ],
+      complications: [
+        'Amblyopia from corneal clouding, induced astigmatism, and anisometropia',
+        'Progressive myopia',
+        'Corneal scarring',
+        'Glaucomatous optic atrophy if IOP is not adequately controlled',
+      ],
+      monitoringParameters: [
+        'IOP (under anesthesia as needed)',
+        'Corneal diameter and clarity',
+        'Axial length',
+        'Optic nerve appearance',
+        'Refractive error and amblyopia/visual development status',
+      ],
+      relatedDrugIds: ['timolol', 'dorzolamide', 'acetazolamide'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'rebound-tonometry'],
+    },
     followUp: {
       typical: 'Very close follow-up in the first weeks to months after diagnosis and surgery, given the rapid potential for globe/corneal changes and amblyopia development in infancy; lifelong monitoring as glaucoma risk and structural changes persist through childhood and adulthood',
       monitor: 'IOP (under anesthesia as needed until the child can cooperate), corneal diameter and clarity, axial length, optic nerve appearance, refractive error, and amblyopia status/visual development',

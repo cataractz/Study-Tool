@@ -94,6 +94,44 @@ export const glaucomaAdditional3: Disease[] = [
           'Urgent/emergent same-day referral to an ophthalmologist for IOP control and surgical planning; these are surgical emergencies, and optometric management is limited to recognition, initial medical IOP-lowering when appropriate, and rapid referral for definitive cataract extraction',
       },
     ],
+    managementProtocol: {
+      workup: [
+        'Goldmann applanation tonometry to confirm and quantify IOP elevation',
+        'Gonioscopy once the cornea allows a view — the key test distinguishing phacomorphic (closed angle) from phacolytic (open angle) mechanism',
+        'Slit lamp exam of the lens and anterior chamber to characterize cataract morphology and chamber reaction',
+        'B-scan ultrasonography to exclude posterior segment pathology when the dense cataract precludes a fundus view',
+        'Corneal pachymetry/clarity assessment to gauge surgical feasibility and timing',
+      ],
+      initialTreatment:
+        'Both are true ophthalmic emergencies. Phacomorphic is treated as an angle-closure emergency (topical beta-blocker, alpha-2 agonist, and topical/oral carbonic anhydrase inhibitor plus a hyperosmotic agent, avoiding miotics); phacolytic is treated with aggressive aqueous suppressant therapy plus a topical corticosteroid for the inflammatory reaction. Medical therapy is a bridge — definitive treatment for both is cataract extraction once IOP and inflammation are controlled enough for a safe surgical view.',
+      followUpSchedule:
+        'Preoperative visits are frequent (daily to every few days) until IOP is adequately controlled for safe surgery; postoperative follow-up then follows standard cataract surgery protocols, with IOP rechecked to confirm normalization.',
+      escalationCriteria: [
+        'Persistently elevated IOP despite maximal medical therapy',
+        'Worsening corneal edema threatening surgical visualization',
+        'Progressive angle closure in phacomorphic glaucoma',
+        'Significant optic nerve damage at presentation',
+      ],
+      referralCriteria: [
+        'Urgent/emergent same-day referral to ophthalmology for IOP control and surgical planning — these are surgical emergencies, and optometric management is limited to recognition, initial medical IOP-lowering, and rapid referral',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroid is used in phacolytic glaucoma to control the macrophage-mediated inflammatory reaction to leaked lens protein, as a bridge to cataract extraction; it is not a primary component of phacomorphic management, where the mechanism is purely mechanical.',
+      complications: [
+        'Permanent peripheral anterior synechiae and chronic angle-closure glaucoma if phacomorphic angle closure is prolonged before surgery',
+        'Permanent optic nerve damage and corneal decompensation from delayed treatment',
+        'Long-term glaucoma therapy needed even after successful cataract surgery in prolonged phacomorphic cases',
+      ],
+      monitoringParameters: [
+        'IOP',
+        'Corneal clarity',
+        'Anterior chamber reaction',
+        'Angle status once view permits',
+        'Postoperative IOP normalization and resolution of inflammation',
+      ],
+      relatedDrugIds: ['timolol', 'brimonidine', 'acetazolamide', 'prednisolone-acetate'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry'],
+    },
     followUp: {
       typical:
         'Postoperative follow-up follows standard cataract surgery protocols once IOP and inflammation are controlled and surgery performed; preoperative visits are frequent (daily to every few days) until IOP is adequately controlled for safe surgery',

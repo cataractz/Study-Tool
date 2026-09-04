@@ -75,6 +75,43 @@ export const glaucomaAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Pars plana vitrectomy with disruption of the anterior hyaloid face (and often anterior chamber reformation) is the definitive treatment for medically refractory cases, particularly in phakic eyes where laser hyaloidotomy is not feasible; in phakic eyes with visually significant cataract, combined lens extraction and vitrectomy may be performed to further deepen the chamber' },
       { category: 'Referral', detail: 'Urgent same-day referral to (or co-management with) a glaucoma or retina specialist for consideration of laser hyaloidotomy or vitrectomy if the condition does not respond promptly to maximal medical cycloplegic/aqueous-suppressant therapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Gonioscopy to confirm angle closure and directly visualize/confirm patency of any prior peripheral iridotomy',
+        'Ultrasound biomicroscopy (UBM) to image ciliary body-lens/IOL apposition and anterior vitreous fluid pockets — the most direct confirmatory test',
+        'B-scan ultrasonography to exclude suprachoroidal hemorrhage or choroidal effusion, the most important sight-threatening mimics',
+        'Anterior segment OCT to quantify and document uniform central-plus-peripheral chamber shallowing',
+        'Goldmann applanation tonometry to quantify IOP and its response to a diagnostic cycloplegic-versus-miotic trial',
+      ],
+      initialTreatment:
+        'Immediate discontinuation of any miotic; initiate aggressive cycloplegia/mydriasis (e.g., combined atropine and phenylephrine) to relax the ciliary muscle, tighten zonules, and pull the lens-iris diaphragm posteriorly, together with aqueous suppressants and hyperosmotic agents for acute IOP control.',
+      followUpSchedule:
+        'Very close follow-up (daily to every few days) during the acute episode until the chamber deepens and IOP normalizes; cycloplegic therapy is often continued long-term (sometimes indefinitely) once effective, with periodic follow-up thereafter given recurrence risk.',
+      escalationCriteria: [
+        'No improvement in chamber depth or IOP within 24-48 hours of intensive cycloplegic and aqueous-suppressant therapy -> Nd:YAG laser hyaloidotomy (pseudophakic/aphakic) or pars plana vitrectomy (phakic or refractory cases)',
+        'Recurrent chamber shallowing or IOP elevation when cycloplegic therapy is tapered',
+      ],
+      referralCriteria: [
+        'Urgent same-day referral to (or co-management with) a glaucoma or retina specialist if there is no prompt response to maximal medical cycloplegic/aqueous-suppressant therapy',
+      ],
+      cycloplegicConsiderations:
+        'Aggressive cycloplegia/mydriasis (e.g., atropine plus phenylephrine) is BOTH diagnostic and therapeutic in malignant glaucoma — chamber deepening and IOP improvement support the diagnosis and may resolve the episode. Unlike pupillary block, miotics worsen this condition by relaxing zonular tension and must be avoided.',
+      complications: [
+        'Permanent peripheral anterior synechiae and chronic angle-closure glaucoma',
+        'Corneal decompensation from prolonged IOP elevation or corneal-lens/IOL touch',
+        'Cataract progression (phakic eyes) or IOL-related complications',
+        'Recurrence after apparent resolution',
+        'Risk of a similar episode in the fellow eye if it undergoes comparable surgery',
+      ],
+      monitoringParameters: [
+        'Anterior chamber depth (central and peripheral)',
+        'IOP',
+        'Gonioscopic angle status',
+        'Adherence to long-term cycloplegic therapy',
+      ],
+      relatedDrugIds: ['atropine', 'phenylephrine', 'timolol', 'brimonidine', 'apraclonidine', 'acetazolamide'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'anterior-segment-oct'],
+    },
     followUp: {
       typical: 'Very close follow-up (daily to every few days) during the acute episode until the chamber deepens and IOP normalizes; long-term follow-up thereafter given risk of recurrence and the fellow eye considerations',
       monitor: 'Anterior chamber depth (central and peripheral), IOP, gonioscopic angle status, and adherence to long-term cycloplegic therapy',
@@ -167,6 +204,43 @@ export const glaucomaAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Incisional glaucoma surgery (trabeculectomy with antimetabolite or glaucoma drainage device implantation) is often required given the frequently severe and medically refractory nature of ICE-syndrome glaucoma; penetrating or endothelial keratoplasty (e.g., DSEK/DMEK) may be indicated for visually significant corneal decompensation, generally performed after IOP is controlled' },
       { category: 'Referral', detail: 'Refer to a glaucoma specialist given the typically difficult-to-control IOP and frequent need for surgical intervention; refer to cornea specialist if progressive corneal decompensation threatens vision' },
     ],
+    managementProtocol: {
+      workup: [
+        'Specular microscopy to characterize the abnormal ICE-cell endothelium',
+        'Gonioscopy to characterize synechiae extent (anterior to Schwalbe line) and angle involvement',
+        'Slit lamp exam with retroillumination to classify the clinical variant (progressive iris atrophy, Chandler, Cogan-Reese)',
+        'Ultrasound biomicroscopy or anterior segment OCT to assess synechiae extent and help exclude an iris mass in the Cogan-Reese variant',
+        'Corneal pachymetry to quantify corneal edema, particularly relevant in Chandler syndrome',
+      ],
+      initialTreatment:
+        'Topical aqueous suppressants (beta-blockers, alpha-2 agonists, carbonic anhydrase inhibitors) are first-line for the secondary angle-closure glaucoma; prostaglandin analogs may be tried but are less predictably effective given the synechial mechanism, and laser trabeculoplasty is generally ineffective since the abnormal membrane covers the trabecular meshwork.',
+      followUpSchedule:
+        'Every 3-6 months, or more frequently if IOP is uncontrolled or corneal edema is progressive, given that the underlying endothelial migration process does not spontaneously resolve or "burn out."',
+      escalationCriteria: [
+        'Progressive synechial angle closure on serial gonioscopy',
+        'Worsening corectopia/iris atrophy',
+        'Increasing corneal edema on pachymetry',
+        'Rising IOP despite maximally tolerated medical therapy',
+      ],
+      referralCriteria: [
+        'Glaucoma specialist given typically difficult-to-control IOP and frequent need for incisional surgery (trabeculectomy with antimetabolite or drainage device)',
+        'Cornea specialist if progressive corneal decompensation threatens vision (endothelial keratoplasty, e.g., DSEK/DMEK, generally performed after IOP control)',
+      ],
+      complications: [
+        'Progressive glaucomatous optic neuropathy and vision loss',
+        'Corneal decompensation requiring keratoplasty',
+        'Recurrent synechial closure and bleb/tube failure after glaucoma surgery from continued membrane growth',
+      ],
+      monitoringParameters: [
+        'IOP',
+        'Corneal clarity/pachymetry',
+        'Extent of synechiae and iris changes on serial exams',
+        'Optic nerve appearance/OCT RNFL',
+        'Visual fields',
+      ],
+      relatedDrugIds: ['timolol', 'brimonidine', 'dorzolamide', 'latanoprost'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'Every 3-6 months, or more frequently if IOP is uncontrolled or corneal edema is progressive',
       monitor: 'IOP, corneal clarity/pachymetry, extent of synechiae and iris changes on serial exams, optic nerve appearance/OCT RNFL, and visual fields',
@@ -262,6 +336,39 @@ export const glaucomaAdditional2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Clear lens extraction can be considered in select eyes with coexisting visually significant cataract or when other measures fail to adequately control angle-closure risk, though the benefit is less predictable than in pupillary block-dominant disease since the plateau mechanism is ciliary-body- rather than lens-driven' },
       { category: 'Referral', detail: 'Refer to a glaucoma specialist for iridoplasty or further management when gonioscopy after iridotomy demonstrates a persistently occludable angle, or for any acute angle-closure attack occurring despite a patent iridotomy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Gonioscopy, including indentation/dynamic gonioscopy, performed both before and after laser peripheral iridotomy to assess for persistent occludability',
+        'Ultrasound biomicroscopy (UBM) to directly image ciliary body position relative to the iris root — the definitive imaging study',
+        'Anterior segment OCT for central chamber depth and peripheral iris configuration',
+        'Provocative pupillary dilation testing with pre/post gonioscopy in select cases to confirm dilation-related closure risk despite a patent iridotomy',
+      ],
+      initialTreatment:
+        'Laser peripheral iridotomy is performed first in essentially all angle-closure-suspect eyes to eliminate any pupillary block component; post-iridotomy gonioscopy then determines whether the angle remains occludable, and argon laser peripheral iridoplasty is added for eyes with persistent plateau iris syndrome to directly flatten the peripheral iris away from the angle.',
+      followUpSchedule:
+        'Regular gonioscopic follow-up every 6-12 months (sooner after any intervention) given the chronic, unresolving nature of the underlying ciliary body anatomy.',
+      escalationCriteria: [
+        'Development of new peripheral anterior synechiae',
+        'Rising IOP',
+        'Recurrent symptomatic angle-closure episodes despite iridotomy and/or iridoplasty',
+        'Angle remains occludable on repeat gonioscopy after iridoplasty',
+      ],
+      referralCriteria: [
+        'Glaucoma specialist for iridoplasty or further management when post-iridotomy gonioscopy shows a persistently occludable angle',
+        'Any acute angle-closure attack occurring despite a documented patent iridotomy',
+      ],
+      complications: [
+        'Peripheral anterior synechiae formation',
+        'Chronic secondary angle-closure glaucoma with progressive optic neuropathy if recurrent or unrecognized angle closure is not adequately treated',
+      ],
+      monitoringParameters: [
+        'Gonioscopy (angle occludability, double hump sign, new peripheral anterior synechiae)',
+        'IOP',
+        'Optic nerve/visual field status if glaucomatous damage has occurred',
+      ],
+      relatedDrugIds: ['pilocarpine'],
+      relatedExamTechniqueIds: ['gonioscopy', 'goldmann-applanation-tonometry', 'anterior-segment-oct'],
+    },
     followUp: {
       typical: 'Regular gonioscopic follow-up (every 6-12 months, or sooner after any intervention) given the persistent, chronic nature of the underlying anatomic risk',
       monitor: 'Gonioscopy (angle occludability, presence of the double hump sign, any new peripheral anterior synechiae), IOP, and optic nerve/visual field status if any glaucomatous damage has occurred',
