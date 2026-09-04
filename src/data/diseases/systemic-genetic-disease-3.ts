@@ -74,6 +74,42 @@ export const systemicGeneticDisease3: Disease[] = [
       { category: 'Second-line treatment', detail: 'Low vision rehabilitation services (magnification, large print, preferential seating) tailored to the degree of reduced acuity from foveal hypoplasia; prism or base-out correction has been used in select cases to dampen nystagmus, though efficacy is variable' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology/strabismus specialist for evaluation and management of strabismus or significant nystagmus; genetics referral for confirmatory testing and family counseling given inheritance implications; dermatology referral for skin cancer surveillance in oculocutaneous albinism' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction to quantify the typically high refractive error and guide optical correction',
+        'OCT of the macula to confirm and grade foveal hypoplasia as the structural correlate of reduced acuity',
+        'Iris transillumination on slit lamp retroillumination to document pigment epithelial loss',
+        'VEP with monocular stimulation when the diagnosis is uncertain (e.g., isolated ocular albinism without cutaneous findings) to demonstrate abnormal chiasmal decussation',
+        'Cover testing and assessment of nystagmus characteristics/null point',
+      ],
+      initialTreatment:
+        'There is no treatment that restores melanin or corrects foveal hypoplasia, so management is entirely supportive: full cycloplegic refractive correction with spectacles or contact lenses to maximize best-corrected acuity, tinted/photochromic lenses or sunglasses for photophobia and glare, and UV protection given reduced ocular and cutaneous pigment.',
+      followUpSchedule:
+        'Regular pediatric eye examinations, at least annually, to monitor refractive error, visual development, and ocular alignment; shorten when new or worsening strabismus is suspected or when optical/low vision needs change with increasing visual demands (e.g., school entry).',
+      escalationCriteria: [
+        'New or worsening ocular misalignment on serial cover testing',
+        'Refractive error or acuity not stabilizing with optimal optical correction',
+        'Functional limitation from photophobia/glare not adequately addressed by tints',
+      ],
+      referralCriteria: [
+        'Significant nystagmus or strabismus -> pediatric ophthalmology/strabismus specialist',
+        'Need for confirmatory genetic testing, subtype classification, or family counseling -> genetics',
+        'Oculocutaneous albinism -> dermatology for lifelong skin cancer surveillance given loss of protective cutaneous melanin',
+        'Reduced acuity limiting function despite optimal correction -> low vision rehabilitation services',
+      ],
+      complications: [
+        'Amblyopia/strabismus if not appropriately managed',
+        'Photophobia-related functional limitations',
+        'Markedly increased lifetime cutaneous skin cancer risk in oculocutaneous albinism',
+      ],
+      monitoringParameters: [
+        'Best-corrected visual acuity',
+        'Refractive error stability',
+        'Ocular alignment/strabismus',
+        'Nystagmus characteristics (amplitude, null point)',
+      ],
+      relatedExamTechniqueIds: ['oct-macula', 'iris-transillumination-testing', 'visual-evoked-potential', 'cycloplegic-retinoscopy', 'cover-test'],
+    },
     followUp: {
       typical: 'Regular pediatric eye examinations, at least annually, to monitor refractive error, visual development, and ocular alignment',
       monitor: 'Best-corrected visual acuity, refractive error stability, ocular alignment/strabismus, and nystagmus characteristics',
@@ -166,6 +202,39 @@ export const systemicGeneticDisease3: Disease[] = [
       { category: 'Emergency management', detail: 'Corneal ulceration or keratomalacia represents a sight-threatening emergency requiring urgent systemic vitamin A repletion, aggressive ocular lubrication, prophylactic topical antimicrobial coverage to prevent secondary infection, and same-day ophthalmology evaluation to reduce the risk of perforation' },
       { category: 'Referral', detail: 'Urgent referral to ophthalmology (cornea specialist) for any corneal xerosis, ulceration, or suspected keratomalacia; referral to primary care/nutrition or gastroenterology to identify and treat the underlying nutritional or malabsorptive cause' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination of the conjunctiva and cornea to stage ocular surface involvement per the WHO xerophthalmia classification (night blindness, conjunctival xerosis, Bitot spots, corneal xerosis, ulceration/keratomalacia, scarring)',
+        'Serum retinol level to confirm the biochemical diagnosis',
+        'History-based assessment of dark adaptation/night blindness, since this can precede any visible ocular surface signs',
+        'Coordinate with primary care/nutrition or gastroenterology to identify the underlying dietary or malabsorptive cause',
+      ],
+      initialTreatment:
+        'High-dose oral vitamin A supplementation is first-line and follows a standard age-based WHO protocol — 50,000 IU for infants under 6 months, 100,000 IU for 6-11 months, and 200,000 IU for children 12 months and older — given as a dose on day 1, repeated on day 2, and again at 2 weeks; this is paired with preservative-free lubrication for ocular surface xerosis while systemic repletion takes effect, and treatment of the underlying nutritional or malabsorptive cause.',
+      followUpSchedule:
+        'Close interval follow-up (days) during acute treatment of any corneal involvement to confirm response to supplementation and lubrication; once stable, longer-interval follow-up to confirm resolution of conjunctival/corneal xerosis and to monitor for recurrence if the underlying cause is not fully corrected.',
+      escalationCriteria: [
+        'Worsening corneal haze, new epithelial defect, or stromal thinning during treatment, indicating progression toward keratomalacia',
+        'Any corneal involvement present at initial presentation',
+        'Failure of night blindness or conjunctival xerosis to improve within days of starting supplementation',
+      ],
+      referralCriteria: [
+        'Any corneal xerosis, ulceration, or suspected keratomalacia -> urgent same-day ophthalmology (cornea specialist) referral given the risk of rapid progression to perforation',
+        'Underlying malabsorptive disease (cystic fibrosis, celiac disease, bariatric surgery) or chronic alcoholism suspected -> primary care/nutrition or gastroenterology',
+      ],
+      complications: [
+        'Corneal scarring or perforation from keratomalacia if treatment is delayed',
+        'Permanent visual loss from advanced, unmonitored keratomalacia',
+        'Secondary microbial infection of the compromised ocular surface',
+      ],
+      monitoringParameters: [
+        'Corneal clarity/integrity',
+        'Conjunctival xerosis and Bitot spot resolution',
+        'Night vision/dark adaptation history',
+        'Serum retinol trend',
+      ],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Close interval follow-up (days) during acute treatment of corneal involvement to confirm response to supplementation and lubrication; longer-interval follow-up once stable to confirm resolution of conjunctival/corneal xerosis and monitor for recurrence if the underlying cause is not fully corrected',
       monitor: 'Corneal clarity/integrity, conjunctival xerosis and Bitot spot resolution, night vision/dark adaptation history, and serum retinol trend',

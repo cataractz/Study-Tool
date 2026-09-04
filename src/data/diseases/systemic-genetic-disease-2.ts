@@ -65,6 +65,43 @@ export const systemicGeneticDisease2: Disease[] = [
       { category: 'Referral', detail: 'Refer eyelid/conjunctival lesions suspicious for Kaposi sarcoma for biopsy and oncologic/infectious disease co-management; refer all suspected opportunistic retinitis urgently to retina specialist' },
       { category: 'Emergency management', detail: 'New or progressive necrotizing retinitis in a patient with advanced AIDS is a vision- and eye-threatening emergency requiring same-day retina referral, given the risk of rapid progression and retinal detachment' },
     ],
+    managementProtocol: {
+      workup: [
+        'Obtain current CD4+ T-cell count and HIV viral load to stratify risk and set the screening interval',
+        'Dilated fundus examination with indirect ophthalmoscopy, documented with fundus photography when possible to allow objective comparison on follow-up',
+        'Coordinate with the patient\'s HIV/infectious disease provider on antiretroviral therapy status and adherence, since immune reconstitution is central to long-term control of all opportunistic ocular disease',
+      ],
+      initialTreatment:
+        'HIV microvasculopathy (cotton wool spots) requires no direct ocular treatment and is followed expectantly, improving as antiretroviral therapy restores CD4 count. Any suspected opportunistic retinitis (most importantly CMV) is a same-day referral to a retina specialist for systemic and/or intravitreal antiviral therapy coordinated with infectious disease — the optometrist\'s primary role is screening detection and triage, not direct treatment of retinitis.',
+      followUpSchedule:
+        'Dilated fundus screening interval is driven by CD4 count: every 2-3 months when CD4 is below 50 cells/microL (the classic CMV retinitis risk threshold), every 3-4 months for CD4 51-250, and every 5-6 months for CD4 250-500; shorten further with any prior opportunistic ocular disease or poor antiretroviral adherence.',
+      escalationCriteria: [
+        'CD4 count newly falling below 50 cells/microL',
+        'Any new retinal whitening, hemorrhage pattern, or vitreous change atypical for benign HIV microvasculopathy',
+        'New floaters, photopsias, or painless vision loss in a patient with a low CD4 count',
+        'Poor antiretroviral adherence or rising viral load reported by the patient\'s HIV provider',
+      ],
+      referralCriteria: [
+        'Any fundus finding suspicious for CMV retinitis, toxoplasmic retinochoroiditis, or acute retinal necrosis -> same-day retina specialist referral',
+        'Eyelid/conjunctival lesion suspicious for Kaposi sarcoma -> biopsy and oncologic/infectious disease co-management',
+        'Herpes zoster ophthalmicus, especially in a young patient without other risk factors -> consider HIV testing and refer for antiviral therapy and corneal/uveitis evaluation',
+        'Vision changes after starting or intensifying antiretroviral therapy in a patient with prior CMV retinitis -> retina specialist to evaluate for immune recovery uveitis',
+      ],
+      complications: [
+        'Retinal detachment (often rhegmatogenous) from thin necrotic retina in up to a third of CMV retinitis cases',
+        'Immune recovery uveitis after CD4 reconstitution on antiretroviral therapy',
+        'Permanent visual field loss from areas of retinal necrosis',
+        'Blindness if opportunistic retinitis is untreated or diagnosed late',
+      ],
+      monitoringParameters: [
+        'CD4+ T-cell count and HIV viral load trend',
+        'Fundus appearance/photographs for new or progressive retinitis',
+        'Visual acuity',
+        'Antiretroviral therapy adherence',
+      ],
+      relatedDrugIds: ['valganciclovir', 'cidofovir'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'fundus-photography'],
+    },
     followUp: {
       typical: 'Dilated fundus screening recommended periodically once CD4 count falls below 50 cells/microL, given the risk of CMV retinitis; frequency increases with lower CD4 counts or prior opportunistic ocular disease',
       monitor: 'CD4 count and HIV viral load trends, fundus appearance/photographs to detect new or progressive retinitis, visual acuity, and treatment adherence',
@@ -159,6 +196,44 @@ export const systemicGeneticDisease2: Disease[] = [
       { category: 'Advanced treatment', detail: 'Pars plana vitrectomy for dense vitreous membranes, tractional retinal detachment, or epiretinal membrane affecting the macula' },
       { category: 'Referral', detail: 'Referral to a pediatric retina specialist for any child with a suspicious intraocular mass to rule out retinoblastoma and coordinate management' },
     ],
+    managementProtocol: {
+      workup: [
+        'B-scan ultrasonography to characterize the mass, confirm absence of calcification, and assess for vitreous membranes/traction or retinal detachment before committing to a diagnosis of toxocariasis over retinoblastoma',
+        'Toxocara serology (ideally comparing intraocular to serum antibody titer) to support the clinical diagnosis',
+        'Dilated examination to classify the presentation (peripheral granuloma, posterior pole granuloma, or diffuse endophthalmitis), which drives both prognosis and treatment intensity',
+        'Amblyopia risk assessment given the child\'s age and duration of unilateral visual compromise',
+      ],
+      initialTreatment:
+        'Active inflammation is treated with a combination of an oral anthelmintic (e.g., albendazole) to eliminate any residual larva and systemic and/or periocular corticosteroids to control the granulomatous reaction and limit traction/scarring; inactive, longstanding peripheral granulomas without active inflammation may simply be observed. This is typically managed jointly with a pediatric retina specialist rather than solely by the optometrist.',
+      followUpSchedule:
+        'Close follow-up (weeks) during active inflammation to confirm response to anthelmintic/corticosteroid therapy, then regular interval follow-up to monitor for progression of vitreous traction or macular involvement and to manage amblyopia with patching/vision therapy as needed.',
+      escalationCriteria: [
+        'Increasing vitreoretinal traction or new tractional retinal detachment on serial exam',
+        'Extension of inflammation or granuloma toward the macula',
+        'Failure of active inflammation to respond to anthelmintic/corticosteroid therapy',
+        'Development or worsening of amblyopia despite treatment',
+      ],
+      referralCriteria: [
+        'Any child with a suspicious intraocular mass, especially posterior pole leukocoria -> urgent pediatric retina specialist referral to rule out retinoblastoma before treatment is initiated',
+        'Dense vitreous membranes, tractional retinal detachment, or epiretinal membrane threatening the macula -> pediatric retina specialist for consideration of pars plana vitrectomy',
+        'Amblyopia from a unilateral granuloma -> pediatric ophthalmology for patching/vision therapy',
+      ],
+      steroidConsiderations:
+        'Systemic and/or periocular corticosteroids are used to control the eosinophilic granulomatous response to the dying larva and to limit fibrovascular scarring/traction; typically initiated together with anthelmintic therapy and managed jointly with pediatric retina given the need to balance inflammation control against steroid side effects in a child.',
+      complications: [
+        'Amblyopia, especially with early-onset posterior pole disease',
+        'Tractional or combined retinal detachment from chronic vitreous scarring',
+        'Cataract and cyclitic membrane formation in severe chronic endophthalmitis',
+        'Misdiagnosis as retinoblastoma (or the reverse) if B-scan/imaging workup is incomplete',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Presence/progression of vitreous membranes or traction',
+        'Retinal status (attached vs. detached)',
+        'Development or progression of amblyopia',
+      ],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Regular follow-up to monitor for progression of vitreous traction, macular involvement, or development of amblyopia, with pediatric vision therapy/patching as needed for the amblyogenic effect of a unilateral granuloma',
       monitor: 'Visual acuity, presence/progression of vitreous membranes or traction, retinal status (attached vs. detached), and development of amblyopia',
@@ -250,6 +325,38 @@ export const systemicGeneticDisease2: Disease[] = [
       { category: 'Second-line treatment', detail: 'Photodynamic therapy has historically been used for select CNV lesions not amenable to or responsive to anti-VEGF therapy' },
       { category: 'Referral', detail: 'Refer to a retina specialist promptly for any new or suspected CNV given the time-sensitive nature of treatment' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT of the macula to detect subretinal/sub-RPE fluid or a hyperreflective CNV lesion when new symptoms or exam changes are reported',
+        'Fluorescein angiography to confirm and classify CNV when suspected clinically or on OCT',
+        'Baseline Amsler grid testing and patient education on home self-monitoring for patients with known histo spots but no current CNV',
+      ],
+      initialTreatment:
+        'Inactive histo spots without CNV require no treatment beyond periodic monitoring and Amsler grid education. Active CNV arising from a histo spot or the peripapillary area is treated first-line with intravitreal anti-VEGF therapy (bevacizumab, ranibizumab, or aflibercept), managed by a retina specialist; the optometrist\'s role is early detection and prompt referral, since CNV treatment outcomes are highly time-sensitive.',
+      followUpSchedule:
+        'Patients with histo spots but no CNV are seen periodically (e.g., annually) with ongoing Amsler grid self-monitoring between visits; patients with treated CNV are followed closely by retina, often monthly initially, per anti-VEGF treatment protocols, then extended based on OCT/exam response.',
+      escalationCriteria: [
+        'New metamorphopsia or central/paracentral scotoma reported on history or Amsler grid',
+        'New subretinal fluid, hemorrhage, or lipid exudate on OCT or exam at a histo spot or peripapillary site',
+        'Any new lesion location threatening or involving the fovea',
+      ],
+      referralCriteria: [
+        'New or suspected CNV on OCT or exam -> prompt retina specialist referral given the time-sensitive nature of anti-VEGF treatment',
+        'New peripapillary lesion with subretinal fluid -> retina specialist, since peripapillary CNV can be more subtle than macular CNV',
+      ],
+      complications: [
+        'Subfoveal or juxtafoveal CNV leading to disciform scarring and permanent central vision loss if diagnosis or treatment is delayed',
+        'Fellow-eye CNV in patients with a prior history of CNV in one eye',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Amsler grid results',
+        'OCT for subretinal/intraretinal fluid',
+        'Clinical exam for new hemorrhage or exudate at histo spot sites',
+      ],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept'],
+      relatedExamTechniqueIds: ['oct-macula', 'fluorescein-angiography', 'amsler-grid-testing'],
+    },
     followUp: {
       typical: 'Patients with known histo spots but no CNV are educated on home Amsler grid monitoring and seen periodically; patients with treated CNV are followed closely (often monthly initially) per anti-VEGF treatment protocols',
       monitor: 'Visual acuity, Amsler grid results, OCT for subretinal/intraretinal fluid, and clinical exam for new hemorrhage or exudate at histo spot sites',
@@ -344,6 +451,44 @@ export const systemicGeneticDisease2: Disease[] = [
       { category: 'Referral', detail: 'Refer any infant/child (or adult) with a V1-distribution facial port-wine stain to ophthalmology for baseline and lifelong glaucoma screening, and to neurology for evaluation of leptomeningeal angiomatosis' },
       { category: 'Emergency management', detail: 'Markedly elevated IOP with corneal edema/buphthalmos in an infant requires urgent pediatric glaucoma specialist referral' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline and serial intraocular pressure measurement, since glaucoma can be entirely asymptomatic and must be actively screened for rather than awaited symptomatically',
+        'Gonioscopy to characterize the angle, which is often grossly open/normal-appearing despite elevated IOP given the elevated-episcleral-venous-pressure mechanism',
+        'Dilated fundus examination for optic nerve cupping and for diffuse choroidal hemangioma ("tomato ketchup" fundus) with or without serous retinal detachment',
+        'Corneal diameter and clarity assessment in infants, given the risk of congenital/early-onset glaucoma with buphthalmos',
+      ],
+      initialTreatment:
+        'Topical IOP-lowering medication is first-line, but the elevated-episcleral-venous-pressure mechanism means medical therapy alone is often insufficient and glaucoma is frequently difficult to control; many patients ultimately require surgical management (goniotomy/trabeculotomy in infants, trabeculectomy, or a glaucoma drainage device) by a glaucoma specialist.',
+      followUpSchedule:
+        'Lifelong periodic surveillance with IOP checks starting in infancy and continuing indefinitely, even without symptoms and even in a patient with normal IOP at baseline, since glaucoma can develop at any age; shorten the interval during infancy/early childhood (highest risk of amblyopia and structural damage) and whenever therapy is being actively titrated.',
+      escalationCriteria: [
+        'Rising IOP on serial measurement',
+        'Increasing cup-to-disc ratio or new optic nerve changes',
+        'New or enlarging serous retinal detachment from the choroidal hemangioma',
+        'Corneal enlargement, edema, or Haab striae suggesting early/uncontrolled congenital glaucoma',
+      ],
+      referralCriteria: [
+        'Any infant, child, or adult with a V1-distribution facial port-wine stain, especially involving the upper eyelid -> ophthalmology for baseline and lifelong glaucoma screening, and neurology for leptomeningeal angiomatosis evaluation',
+        'Elevated IOP not adequately controlled on topical therapy -> glaucoma specialist for surgical evaluation',
+        'Vision-threatening serous retinal detachment from diffuse choroidal hemangioma -> retina specialist',
+        'Markedly elevated IOP with corneal edema/buphthalmos in an infant -> urgent pediatric glaucoma specialist',
+      ],
+      complications: [
+        'Buphthalmos and amblyopia if congenital glaucoma is untreated',
+        'Optic nerve damage/blindness from uncontrolled glaucoma',
+        'Exudative retinal detachment and vision loss from choroidal hemangioma',
+      ],
+      monitoringParameters: [
+        'Intraocular pressure',
+        'Optic nerve appearance/cup-to-disc ratio',
+        'Corneal diameter and clarity in infants',
+        'Fundus appearance for choroidal hemangioma or serous detachment',
+      ],
+      relatedDrugIds: ['latanoprost', 'timolol', 'brimonidine', 'dorzolamide', 'acetazolamide'],
+      relatedCalculatorIds: ['ocular-perfusion-pressure'],
+      relatedExamTechniqueIds: ['goldmann-applanation-tonometry', 'gonioscopy', 'dilated-fundus-examination-systematic-approach', 'optic-nerve-head-cup-disc-ratio-assessment'],
+    },
     followUp: {
       typical: 'Lifelong periodic ophthalmologic surveillance with IOP checks, even in the absence of symptoms, starting in infancy and continuing indefinitely',
       monitor: 'Intraocular pressure, optic nerve appearance/cupping, corneal diameter and clarity in infants, and fundus appearance for choroidal hemangioma or serous detachment',

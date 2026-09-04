@@ -68,6 +68,47 @@ export const systemicGeneticDisease1: Disease[] = [
       { category: 'Referral', detail: 'Refer to rheumatology for systemic diagnosis/management and monitoring for lymphoma; refer to cornea specialist for filamentary keratitis, sterile ulceration, or threatened perforation' },
       { category: 'Emergency management', detail: 'Corneal thinning, sterile melt, or perforation requires urgent cornea specialist referral for tissue adhesive, bandage lens, or surgical repair, plus aggressive lubrication and cessation of any topical toxicity' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline Schirmer test (with and without anesthesia) and tear breakup time to quantify aqueous deficiency severity',
+        'Ocular surface staining (fluorescein and lissamine green) to grade corneal and conjunctival epitheliopathy and establish a baseline severity score',
+        'Slit lamp evaluation for filamentary keratitis, corneal thinning, or early sterile ulceration',
+        'Coordinate with rheumatology to confirm systemic diagnosis (anti-Ro/SSA, anti-La/SSB, minor salivary gland biopsy) if not already established',
+      ],
+      initialTreatment:
+        'Preservative-free artificial tears used frequently (often hourly initially) plus lubricating ointment at bedtime; once the ocular surface is stabilized, topical cyclosporine 0.05%/0.09% or lifitegrast 5% is added twice daily to address the underlying T-cell-mediated inflammation driving the aqueous deficiency — both require weeks to months for full effect, so lubrication is continued throughout.',
+      followUpSchedule:
+        'Recheck 4-6 weeks after starting a topical immunomodulator to assess tolerability and early response, then every 3-6 months once stable to reassess corneal staining, tear breakup time, and filament activity; shorten to weeks if filamentary keratitis or any corneal thinning is present.',
+      escalationCriteria: [
+        'New or worsening corneal filaments despite frequent lubrication',
+        'Punctate staining that progresses or fails to improve after 6-8 weeks of anti-inflammatory therapy',
+        'Any new corneal thinning, infiltrate, or epithelial defect that does not heal promptly',
+        'Symptom severity that limits daily function despite maximal topical therapy',
+      ],
+      referralCriteria: [
+        'New diagnosis of severe, disproportionate dry eye with suspected Sjögren -> rheumatology for systemic workup (serology, salivary gland biopsy) and lifelong lymphoma surveillance',
+        'Filamentary keratitis, sterile corneal ulceration, or any corneal thinning -> cornea specialist',
+        'Threatened or actual corneal perforation -> emergent cornea specialist referral',
+        'New parotid swelling, unexplained lymphadenopathy, or other findings raising concern for lymphoma -> rheumatology/hematology',
+      ],
+      complications: [
+        'Filamentary keratitis with recurrent corneal erosions',
+        'Sterile corneal ulceration, stromal thinning, and rarely perforation',
+        'Secondary microbial keratitis from a compromised ocular surface',
+        'Burning/stinging on instillation with topical cyclosporine or lifitegrast that can limit adherence',
+        'Long-term risk of non-Hodgkin (typically MALT-type) lymphoma requiring ongoing rheumatologic surveillance',
+      ],
+      monitoringParameters: [
+        'Corneal and conjunctival staining severity (fluorescein/lissamine green)',
+        'Tear breakup time and Schirmer values over time',
+        'Presence/extent of filamentary keratitis',
+        'Corneal integrity (thinning, epithelial defects)',
+        'Visual acuity',
+        'Adherence to and tolerability of topical immunomodulatory therapy',
+      ],
+      relatedDrugIds: ['cyclosporine-ophthalmic-emulsion', 'lifitegrast'],
+      relatedExamTechniqueIds: ['schirmer-test', 'tear-break-up-time', 'lissamine-green-rose-bengal-staining', 'fluorescein-corneal-staining'],
+    },
     followUp: {
       typical: 'Every 3-6 months to monitor ocular surface disease severity and treatment response; more frequent if unstable',
       monitor: 'Corneal staining, tear breakup time, filamentary keratitis, visual acuity, and corneal integrity',
@@ -156,6 +197,45 @@ export const systemicGeneticDisease1: Disease[] = [
       { category: 'Referral', detail: 'Refer to cardiology/genetics for systemic evaluation (echocardiogram, aortic imaging) given life-threatening aortic dissection risk; refer to retina specialist for prophylactic evaluation/treatment of lattice degeneration' },
       { category: 'Emergency management', detail: 'Acute pupillary block from lens subluxation into the anterior chamber, or symptomatic retinal detachment, requires urgent ophthalmologic/retinal referral' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated slit lamp examination to document lens position, degree of subluxation, and zonular integrity',
+        'Cycloplegic/manifest refraction to characterize lenticular astigmatism and myopia from lens tilt',
+        'Dilated peripheral retinal examination (with scleral depression) to assess for lattice degeneration or retinal breaks given the combination of high myopia and abnormal vitreous',
+        'Confirm coordination with cardiology/genetics for baseline and serial echocardiography, since aortic root status drives overall management priority',
+      ],
+      initialTreatment:
+        'Optical correction (spectacles or contact lenses) of the lens-induced astigmatism and myopia is first-line when the visual axis remains usable; the optometrist otherwise plays a monitoring and referral role, since the disease itself has no topical or medical ocular treatment and definitive management of a visually significant subluxation is surgical.',
+      followUpSchedule:
+        'Annual comprehensive dilated examination to reassess lens position, refractive error, and peripheral retina in stable disease; shorten to every 3-6 months if subluxation is progressing or peripheral retinal changes are present.',
+      escalationCriteria: [
+        'Progressive increase in lens subluxation or new phacodonesis/iridodonesis on serial exams',
+        'Refractive error that becomes difficult to correct optically due to lens tilt or edge effects',
+        'New peripheral retinal lattice, breaks, or pigmentary changes on dilated exam',
+        'Any acute IOP rise suggesting early pupillary block',
+      ],
+      referralCriteria: [
+        'New diagnosis or suspected Marfan syndrome (bilateral ectopia lentis, tall stature/long fingers) -> urgent cardiology/genetics referral to evaluate aortic root before any invasive ocular procedure',
+        'Lens subluxation significantly impairing best-corrected vision or approaching the pupillary axis -> retina/anterior segment surgeon for consideration of lens extraction with scleral-fixated or iris-claw IOL',
+        'Lattice degeneration or retinal break on screening exam -> retina specialist for prophylactic evaluation/treatment',
+        'New flashes, floaters, or visual field defect -> same-day retina referral to rule out retinal detachment',
+      ],
+      complications: [
+        'Complete lens dislocation into the vitreous or anterior chamber',
+        'Acute pupillary block glaucoma from anteriorly dislocated lens',
+        'Retinal detachment from lattice degeneration and abnormal vitreous',
+        'Amblyopia if refractive error from subluxation is uncorrected in childhood',
+        'Aortic root dissection — the dominant systemic threat to life, requiring lifelong cardiology co-management',
+      ],
+      monitoringParameters: [
+        'Degree and direction of lens subluxation',
+        'Refractive error and best-corrected visual acuity',
+        'Intraocular pressure',
+        'Peripheral retinal status (lattice, breaks, detachment)',
+        'Coordination with cardiology on aortic root diameter trend',
+      ],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'scleral-depression', 'cycloplegic-retinoscopy'],
+    },
     followUp: {
       typical: 'Annual comprehensive dilated eye exams to monitor lens position, refractive error, and peripheral retina',
       monitor: 'Degree of lens subluxation, refractive error changes, IOP (risk of secondary glaucoma), and peripheral retinal status',
@@ -244,6 +324,42 @@ export const systemicGeneticDisease1: Disease[] = [
       { category: 'Advanced treatment', detail: 'Cataract extraction for visually significant congenital or early-onset cataract; RGP/scleral lenses for keratoconus-related irregular astigmatism' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology for congenital cataract, significant strabismus, or persistent nasolacrimal duct obstruction (probing if not resolved by ~12 months); refer to cornea specialist for progressive keratoconus' },
     ],
+    managementProtocol: {
+      workup: [
+        'Comprehensive dilated examination including red reflex/Brückner testing for media opacity or asymmetry, cover testing for strabismus, and lid/nasolacrimal assessment',
+        'Cycloplegic refraction to characterize refractive error, since this population often cannot reliably subjectively respond',
+        'Corneal topography starting in adolescence, or earlier if eye rubbing is reported, to screen for subclinical keratoconus',
+      ],
+      initialTreatment:
+        'Full cycloplegic refractive correction with glasses is first-line to support visual development; caregiver counseling to reduce habitual eye rubbing is equally central, since rubbing is a major modifiable driver of keratoconus progression in this population. Because patients may not reliably report symptoms, management is screening-driven rather than symptom-driven.',
+      followUpSchedule:
+        'Annual comprehensive dilated examination for all individuals with Down syndrome starting in infancy; shorten the interval when eye rubbing is documented, when topography shows early keratoconus, or when a strabismus/amblyopia treatment plan is being actively titrated.',
+      escalationCriteria: [
+        'Any inferior steepening or asymmetric bowtie pattern on serial corneal topography',
+        'Progressive myopic shift or increasing irregular astigmatism suggesting corneal ectasia',
+        'New or worsening strabismus, or reduced fix-and-follow behavior suggesting cataract progression',
+        'Persistent tearing/discharge beyond 12 months of age suggesting unresolved nasolacrimal duct obstruction',
+      ],
+      referralCriteria: [
+        'Documented keratoconus progression on topography -> cornea specialist for consideration of corneal crosslinking',
+        'Visually significant congenital or early-onset cataract -> pediatric ophthalmology for extraction',
+        'Significant or new-onset strabismus -> pediatric ophthalmology/strabismus specialist',
+        'Nasolacrimal duct obstruction persisting beyond ~12 months -> pediatric ophthalmology for probing',
+      ],
+      complications: [
+        'Advanced keratoconus requiring keratoplasty if eye rubbing and progression go unaddressed',
+        'Amblyopia from uncorrected refractive error or untreated strabismus/cataract',
+        'Corneal hydrops in advanced, unmonitored keratoconus',
+      ],
+      monitoringParameters: [
+        'Corneal topography findings (especially in adolescents/young adults and known eye-rubbers)',
+        'Refractive error and best-corrected visual acuity',
+        'Ocular alignment/strabismus status',
+        'Lens clarity',
+        'Lid hygiene and nasolacrimal status',
+      ],
+      relatedExamTechniqueIds: ['corneal-topography', 'cycloplegic-retinoscopy', 'cover-test', 'bruckner-test'],
+    },
     followUp: {
       typical: 'Annual comprehensive eye examinations are recommended for all individuals with Down syndrome given the high prevalence of treatable ocular findings, starting in infancy',
       monitor: 'Refractive error, ocular alignment, corneal topography (especially adolescents/eye rubbers), lens clarity, and lid/nasolacrimal status',
@@ -329,6 +445,35 @@ export const systemicGeneticDisease1: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to hepatology/internal medicine for any patient found to have a Kayser-Fleischer ring, particularly if there is unexplained liver disease or new neurologic/psychiatric symptoms, for confirmatory testing and initiation of systemic copper chelation or zinc therapy' },
       { category: 'First-line treatment', detail: 'No topical ocular therapy is indicated; ocular findings are managed indirectly through systemic chelation therapy directed by hepatology/neurology' },
     ],
+    managementProtocol: {
+      workup: [
+        'Careful slit lamp examination of the peripheral cornea, using gonioscopy when the ring is subtle or early, to document presence, extent, and density of the Kayser-Fleischer ring at baseline',
+        'Slit lamp assessment of the lens for an associated sunflower cataract',
+        'Coordinate with hepatology/neurology to confirm the diagnosis is established (ceruloplasmin, urinary copper, ATP7B genetic testing) and to obtain the patient\'s chelation/zinc therapy status',
+      ],
+      initialTreatment:
+        'No topical or ocular treatment is directed at the Kayser-Fleischer ring or sunflower cataract themselves; the optometrist\'s role is to identify the ring (often the presenting clue to diagnosis), refer urgently for systemic evaluation if the diagnosis is not yet established, and then serially document the ring as a non-invasive marker of the treating team\'s systemic copper chelation/zinc therapy response.',
+      followUpSchedule:
+        'Periodic slit lamp examination coordinated with the patient\'s systemic treatment visits, more frequently (e.g., every few months) in the first one to two years after starting chelation therapy to help document treatment response, then less frequently once the ring is stable or regressing.',
+      escalationCriteria: [
+        'Kayser-Fleischer ring that fails to regress or that increases in density despite reported adherence to systemic chelation therapy — communicate to the treating physician as a possible marker of suboptimal treatment response or adherence',
+        'New visual symptoms, which are not expected from the ring or sunflower cataract and warrant a separate ocular evaluation',
+      ],
+      referralCriteria: [
+        'New Kayser-Fleischer ring identified in a patient without an established diagnosis, particularly with unexplained liver disease or new neurologic/psychiatric symptoms -> urgent referral to hepatology/internal medicine',
+        'Ring persistence or progression despite treatment -> communicate findings back to the treating hepatology/neurology team',
+      ],
+      complications: [
+        'The K-F ring and sunflower cataract are not themselves vision-threatening',
+        'Systemic complications of untreated Wilson disease (hepatic failure, irreversible neurologic injury) are the actual source of morbidity and mortality, underscoring the importance of prompt referral when first identified',
+      ],
+      monitoringParameters: [
+        'Kayser-Fleischer ring extent/density on serial slit lamp exam',
+        'Presence and any change in sunflower cataract',
+        'Communication of trend (regression vs. persistence/progression) to the treating systemic team',
+      ],
+      relatedExamTechniqueIds: ['gonioscopy', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Periodic slit lamp examination to document the presence and density of the Kayser-Fleischer ring as a non-invasive marker of systemic copper burden and treatment response, coordinated with the patient\'s systemic treatment team',
       monitor: 'Kayser-Fleischer ring density/extent and presence of sunflower cataract over time',
