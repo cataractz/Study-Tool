@@ -132,6 +132,36 @@ export const retinaAdditional7: Disease[] = [
           'Refer to a retina specialist for any lattice-associated retinal break, for extensive/atypical lattice degeneration (e.g., in the setting of Stickler syndrome), or for any patient with lattice degeneration who develops acute flashes/floaters',
       },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam with scleral depression to fully characterize lattice degeneration (extent, presence of holes) and to distinguish it from white without pressure',
+        'Fundus photography/widefield imaging to document lesion borders and lattice vessel pattern for future comparison',
+        'Refraction/axial length assessment to establish myopia severity, which stratifies overall detachment risk',
+        'Careful history for new flashes/floaters suggesting an acute PVD superimposed on known lattice degeneration',
+      ],
+      initialTreatment:
+        'Asymptomatic lattice degeneration without a break is observed — no prophylactic treatment is indicated for lattice alone. White without pressure requires no treatment of any kind; it is documented by photography and simply monitored as an entirely benign variant. Only a symptomatic, acute lattice-associated retinal tear (from a new PVD) is treated, with laser photocoagulation or cryopexy to wall off the tear.',
+      followUpSchedule:
+        'Stable asymptomatic lattice degeneration: annual to biennial dilated peripheral exam depending on myopia severity and family/fellow-eye history. White without pressure requires no dedicated follow-up interval beyond routine comprehensive exams.',
+      escalationCriteria: [
+        'New flashes or floaters in an eye with known lattice degeneration, suggesting an acute PVD with tractional tear',
+        'New pigment cells in the vitreous (tobacco dust/Shafer sign) on exam',
+        'A new hole or tear identified at lattice margins on repeat scleral depression exam',
+      ],
+      referralCriteria: [
+        'Any lattice-associated retinal break -> retina specialist for prompt laser/cryopexy',
+        'Extensive or atypical lattice degeneration (e.g., in the setting of Stickler syndrome) -> retina specialist',
+        'Acute flashes/floaters in a patient with known lattice degeneration -> prompt re-examination, retina referral if a break is found',
+      ],
+      complications: ['Atrophic hole or tractional horseshoe tear at lattice margins', 'Progression to rhegmatogenous retinal detachment if an acute tear is untreated'],
+      monitoringParameters: [
+        'Interval appearance of flashes/floaters',
+        'New vitreous pigment (tobacco dust)',
+        'New holes/tears at lattice margins on repeat scleral depression',
+        'Documented stability of white without pressure on serial photography',
+      ],
+      relatedExamTechniqueIds: ['scleral-depression', 'fundus-photography'],
+    },
     followUp: {
       typical:
         'Stable asymptomatic lattice degeneration: annual to biennial dilated peripheral exam depending on myopia severity and fellow-eye/family history; white without pressure: no dedicated follow-up interval required beyond routine comprehensive eye exams',
@@ -263,6 +293,33 @@ export const retinaAdditional7: Disease[] = [
       { category: 'Referral', detail: 'Bear-track (grouped, multifocal, often bilateral) pigmentation: refer promptly for genetic counseling and gastroenterology evaluation with colonoscopy given the strong association with FAP and its significant colorectal cancer risk' },
       { category: 'Referral', detail: 'Any atypical, elevated, enlarging, or otherwise concerning pigmented lesion should be referred to a retina specialist/ocular oncology to rule out choroidal nevus with risk features or melanoma' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam to characterize the lesion as solitary (halo, internal lacunae) versus grouped "bear track" pigmentation',
+        'Fundus photography for baseline documentation and future comparison',
+        'Genetic counseling referral and APC gene testing when bear-track pigmentation is identified',
+        'Colonoscopy/gastroenterology referral once bear-track pigmentation raises suspicion for FAP',
+      ],
+      initialTreatment:
+        'Solitary CHRPE requires no treatment beyond baseline photographic documentation and periodic observation, as it is entirely benign with no systemic association. Grouped bear-track pigmentation likewise requires no ocular treatment, but should prompt referral for genetic counseling and colorectal cancer screening given its strong association with FAP/Gardner syndrome.',
+      followUpSchedule:
+        'Solitary CHRPE: routine periodic monitoring at comprehensive eye exams, generally every 1-2 years, with photographic comparison. Bear-track pigmentation: ocular monitoring is similarly routine, but systemic (colonoscopy) surveillance follows gastroenterology/genetics guidance once FAP is confirmed or excluded.',
+      escalationCriteria: [
+        'Any documented growth or elevation of a previously flat, stable lesion',
+        'Development of orange pigment, subretinal fluid, or other atypical features overlying a suspected CHRPE lesion',
+        'A newly identified bear-track pattern without prior systemic (FAP) workup',
+      ],
+      referralCriteria: [
+        'Bear-track (grouped, multifocal, often bilateral) pigmentation -> genetic counseling and gastroenterology for colonoscopy given the FAP association',
+        'Any atypical, elevated, enlarging, or otherwise concerning pigmented lesion -> retina specialist/ocular oncology to exclude choroidal nevus with risk features or melanoma',
+      ],
+      complications: [
+        'None from the ocular lesion itself in either pattern',
+        'Untreated/undetected FAP carries a very high lifetime risk of colorectal cancer if bear-track pigmentation is not recognized and worked up',
+      ],
+      monitoringParameters: ['Lesion size, shape, elevation, and pigmentation pattern for interval change', 'Systemic FAP screening status (colonoscopy) once bear-track pigmentation is identified'],
+      relatedExamTechniqueIds: ['fundus-photography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Solitary CHRPE: routine periodic monitoring at comprehensive eye exams, generally every 1-2 years, with photographic comparison',
       monitor: 'Lesion size, shape, elevation, and pigmentation pattern for any interval change suggesting an alternative diagnosis',
@@ -391,6 +448,31 @@ export const retinaAdditional7: Disease[] = [
       { category: 'Advanced treatment', detail: 'Vitreous hemorrhage, tractional retinal detachment, or falciform fold threatening the macula: vitreoretinal surgery (vitrectomy with or without scleral buckle) by a retina specialist experienced in pediatric vitreoretinal disease' },
       { category: 'Referral', detail: 'All first-degree relatives of a diagnosed proband should be referred for dilated fundus screening (with fluorescein angiography if needed) given variable expressivity and the possibility of asymptomatic disease; genetics referral for counseling regarding inheritance pattern and family planning' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam with scleral depression (or exam under anesthesia in infants/young children) to identify peripheral avascular retina, neovascularization, exudation, or traction',
+        'Fluorescein angiography (widefield/ultra-widefield) to precisely map the avascular retina and detect subtle leakage not apparent on ophthalmoscopy',
+        'Genetic testing (FZD4, LRP5, TSPAN12, NDP) and pedigree review to confirm the diagnosis and inheritance pattern',
+        "Screening dilated exam (with FA as needed) of first-degree relatives, given the condition's variable expressivity and frequent asymptomatic presentation",
+      ],
+      initialTreatment:
+        'Mild disease with stable peripheral avascular retina and no active neovascularization/exudation is observed with periodic monitoring. Active peripheral neovascularization or leaking avascular retina is treated with laser photocoagulation of the avascular zone to reduce the ischemic VEGF drive, analogous to ROP treatment thresholds.',
+      followUpSchedule:
+        'Stable mild disease: annual to every-few-years dilated exam. Active neovascular/exudative disease: close interval monitoring (weeks to months), analogous to ROP follow-up protocols, until regression is confirmed.',
+      escalationCriteria: [
+        'New peripheral neovascularization or increasing exudation on serial exam',
+        'New vitreous hemorrhage',
+        'Progressive macular dragging or traction on exam/imaging',
+      ],
+      referralCriteria: [
+        'All first-degree relatives of a diagnosed proband -> dilated fundus screening (with FA if needed) given variable expressivity',
+        'Vitreous hemorrhage, tractional retinal detachment, or a falciform fold threatening the macula -> pediatric vitreoretinal surgeon',
+        'Confirmed or suspected diagnosis -> genetics referral for counseling on inheritance pattern and family planning',
+      ],
+      complications: ['Peripheral neovascularization', 'Vitreous hemorrhage', 'Exudative or tractional retinal detachment', 'Falciform retinal folds with macular dragging', 'Amblyopia/strabismus in children'],
+      monitoringParameters: ['Extent of peripheral avascular retina', 'Presence/activity of neovascularization or exudation', 'Macular status (dragging/falciform fold)', 'Visual acuity and strabismus status in children'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'scleral-depression', 'genetic-testing-inherited-retinal-disease'],
+    },
     followUp: {
       typical: 'Frequency individualized by stage and activity — stable mild disease may be followed annually to every few years, while active neovascular/exudative disease requires close interval monitoring (weeks to months) analogous to ROP follow-up protocols',
       monitor: 'Extent of peripheral avascular retina, presence/activity of neovascularization or exudation, macular status (dragging/falciform fold), and visual acuity/strabismus in children',
@@ -525,6 +607,37 @@ export const retinaAdditional7: Disease[] = [
       { category: 'Referral', detail: 'Refer to a retina specialist for any tractional detachment threatening the macula, and to the appropriate specialist (rheumatology/uveitis specialist for VKH, ocular oncology for a choroidal tumor, maternal-fetal medicine/obstetrics for preeclampsia-eclampsia) in parallel with retinal care for exudative detachment' },
       { category: 'Emergency management', detail: 'Severe preeclampsia/eclampsia with exudative RD requires urgent obstetric management, since definitive treatment is delivery; severe VKH with extensive exudative detachment requires urgent high-dose corticosteroid therapy to prevent chronic recurrent disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam with scleral depression to characterize configuration (smooth/concave/immobile for tractional vs. smooth/convex/shifting for exudative) and exclude a retinal break',
+        'B-scan ultrasonography when the view is limited, to assess mobility/configuration and to look for an underlying choroidal mass in suspected exudative detachment',
+        'OCT to characterize the subretinal fluid pattern and macular involvement',
+        'Targeted systemic workup guided by suspected etiology (e.g., blood pressure/urine protein for suspected preeclampsia-eclampsia; HbA1c/diabetes history for proliferative diabetic retinopathy; systemic review for VKH)',
+      ],
+      initialTreatment:
+        'Exudative detachment is managed by treating the underlying cause first — high-dose corticosteroid for VKH, blood pressure control and delivery for preeclampsia/eclampsia, or tumor-directed therapy for a causative choroidal tumor — since many exudative detachments resolve once the primary process is controlled, without retinal surgery. Tractional detachment threatening or involving the macula is managed with pars plana vitrectomy and membrane peeling/segmentation, combined with panretinal photocoagulation and/or anti-VEGF therapy to address the underlying proliferative disease; extrafoveal, stable tractional detachment may be observed.',
+      followUpSchedule:
+        'Tractional RD: interval determined by proximity to the macula and activity of the underlying proliferative disease, often every few months if stable and extrafoveal. Exudative RD: close follow-up during treatment of the underlying cause, tracking resolution of subretinal fluid as a marker of disease control.',
+      escalationCriteria: [
+        'Tractional detachment progressing toward the macula on serial exam',
+        'Exudative detachment failing to improve despite treatment of the presumed underlying cause',
+        'New vitreous hemorrhage or evidence of a combined tractional-rhegmatogenous component (new retinal break)',
+      ],
+      referralCriteria: [
+        'Any tractional detachment threatening the macula -> retina specialist for vitrectomy evaluation',
+        'Exudative detachment -> parallel referral to the underlying-disease specialist (rheumatology/uveitis for VKH, ocular oncology for a choroidal tumor, maternal-fetal medicine/obstetrics for preeclampsia-eclampsia) alongside retinal care',
+        'Severe preeclampsia/eclampsia with exudative RD -> emergent obstetric management (delivery is definitive treatment)',
+      ],
+      steroidConsiderations:
+        'High-dose systemic corticosteroid is first-line treatment for VKH-associated exudative retinal detachment, often started urgently given the risk of chronic recurrent disease and a "sunset-glow fundus" if undertreated.',
+      complications: [
+        'Tractional RD: macular involvement with permanent vision loss, combined tractional-rhegmatogenous detachment, recurrent proliferative vitreoretinopathy after surgery',
+        'Exudative RD: chronic RPE changes (sunset-glow fundus in chronic VKH), recurrent detachment with inadequately treated underlying disease',
+      ],
+      monitoringParameters: ['Extent and configuration of the detachment', 'Distance from the fovea', 'Resolution or progression of subretinal fluid', 'Status of the underlying systemic/proliferative disease'],
+      relatedDrugIds: ['methylprednisolone', 'prednisone', 'bevacizumab', 'ranibizumab', 'aflibercept'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'oct-macula', 'scleral-depression'],
+    },
     followUp: {
       typical: 'Tractional RD: interval determined by proximity to the macula and activity of the underlying proliferative disease, often every few months if stable and extrafoveal; Exudative RD: close follow-up during treatment of the underlying cause, with resolution of subretinal fluid tracked as a marker of disease control',
       monitor: 'Extent and configuration of the detachment, distance from the fovea, resolution or progression of subretinal fluid, and status of the underlying systemic/proliferative disease',

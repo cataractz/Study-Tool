@@ -134,6 +134,30 @@ export const neuroOphthalmologyAdditional5: Disease[] = [
       { category: 'Referral', detail: 'Refer to neuro-ophthalmology if the clinical picture is ambiguous, if true papilledema cannot be confidently excluded, or if there is progressive visual field loss or acute vision loss suggesting an ischemic event' },
       { category: 'Emergency management', detail: 'Sudden vision loss associated with drusen (rare AION-like event or vascular occlusion) warrants urgent neuro-ophthalmic evaluation and standard ischemic optic neuropathy/occlusion workup' },
     ],
+    managementProtocol: {
+      workup: [
+        'B-scan ultrasonography at low gain — the gold-standard confirmatory test for calcified drusen',
+        'Fundus autofluorescence as a rapid, non-invasive in-office screening test',
+        'OCT of the optic nerve head, including enhanced-depth imaging, to visualize buried drusen and quantify peripapillary RNFL thickness',
+        'Automated Humphrey visual field at baseline and on serial monitoring',
+        'Neuroimaging or lumbar puncture reserved for genuine diagnostic uncertainty or coexisting symptoms/signs of raised intracranial pressure',
+      ],
+      initialTreatment: 'No treatment is needed for the drusen themselves in the vast majority of patients; management is reassurance regarding the benign nature of the finding, plus baseline and periodic visual field monitoring, with optimization of modifiable vascular risk factors given the small associated risk of ischemic events.',
+      followUpSchedule: 'Annual comprehensive exam with visual field testing in stable, asymptomatic patients; children may be followed less frequently once the diagnosis is secure.',
+      escalationCriteria: [
+        'Documented visual field progression on serial testing',
+        'New afferent pupillary defect or acute vision loss suggesting an ischemic event (AION-like) or vascular occlusion',
+        'Diagnostic uncertainty persisting despite B-scan and autofluorescence',
+      ],
+      referralCriteria: [
+        'Neuro-ophthalmology if the clinical picture is ambiguous or true papilledema cannot be confidently excluded',
+        'Neuro-ophthalmology for documented, progressive visual field loss',
+        'Urgent evaluation for any acute vision loss event, following standard ischemic optic neuropathy/occlusion workup',
+      ],
+      complications: ['Non-arteritic AION-like events', 'Central or branch retinal artery or vein occlusion', 'Rarely, choroidal neovascularization at the disc margin'],
+      monitoringParameters: ['Visual acuity', 'Color vision', 'Automated visual fields', 'Optic nerve appearance/photographs for interval change'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'fundus-autofluorescence', 'oct-optic-nerve-rnfl', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'Annual comprehensive exam with visual field testing in stable, asymptomatic patients; children may be followed less frequently once diagnosis is secure',
       monitor: 'Visual acuity, color vision, automated visual fields, and optic nerve appearance/photographs for interval change',
@@ -292,6 +316,31 @@ export const neuroOphthalmologyAdditional5: Disease[] = [
       { category: 'Referral', detail: 'Refer to neurology for migraine management, and for any atypical features (aura lasting >60 minutes, focal neurologic deficits, first episode after age 50, or a significant change in pattern) to exclude secondary causes' },
       { category: 'Emergency management', detail: 'Sudden true monocular vision loss, especially in an older patient or one with vascular risk factors, should be urgently evaluated as amaurosis fugax/possible impending stroke or, if age >50 with systemic symptoms, as possible giant cell arteritis, rather than presumed retinal migraine' },
     ],
+    managementProtocol: {
+      workup: [
+        'Detailed clinical history — the primary diagnostic tool, focused on the gradual march of the scintillating scotoma and confirmed binocularity (each eye tested separately) plus personal/family migraine history',
+        'Comprehensive ophthalmic exam including dilated fundus exam to exclude structural or vascular ocular causes',
+        'Carotid duplex ultrasound and/or cardiac evaluation (echocardiogram, ECG/Holter) for atypical, monocular, or older-patient presentations',
+        'ESR/CRP (with temporal artery biopsy if indicated) in any patient over 50 with new transient visual symptoms',
+        'Neuroimaging (MRI brain, with MRA/MRV as indicated) reserved for atypical presentations',
+      ],
+      initialTreatment: 'Reassurance and trigger identification/avoidance (sleep hygiene, stress management, dietary triggers, hydration) for infrequent, classic episodes with a normal exam; acute headache treatment per standard migraine management guidelines, coordinated with the patient\'s primary care provider or neurologist.',
+      followUpSchedule: 'Routine follow-up as clinically indicated once the diagnosis is established and the exam is normal; no specific ophthalmic interval is mandated for classic, stable migraine with aura.',
+      escalationCriteria: [
+        'A change from the patient\'s established, stereotyped pattern',
+        'New focal neurologic signs',
+        'Persistent (non-resolving) visual symptoms',
+        'First episode after age 50, or aura lasting longer than 60 minutes',
+      ],
+      referralCriteria: [
+        'Neurology for migraine management, and for any atypical features (aura >60 minutes, focal neurologic deficits, first episode after age 50, or a significant change in pattern)',
+        'Emergent stroke/vascular workup for sudden, curtain-like monocular vision loss suggesting amaurosis fugax',
+        'Emergent giant cell arteritis workup (ESR/CRP, +/- biopsy, empiric steroids) for age >50 with new transient visual symptoms and systemic features',
+      ],
+      complications: ['Rare: persistent aura without infarction', 'Migrainous infarction (a true ischemic stroke temporally associated with a migraine aura)', 'In retinal migraine, cumulative retinal ischemic damage with repeated episodes'],
+      monitoringParameters: ['Frequency, character, and duration of episodes', 'Development of new neurologic symptoms', 'Change in laterality', 'Persistent visual field defect'],
+      relatedExamTechniqueIds: ['giant-cell-arteritis-laboratory-workup', 'confrontation-visual-fields'],
+    },
     followUp: {
       typical: 'Routine follow-up as clinically indicated once the diagnosis is established and the exam is normal; no specific ophthalmic interval is mandated for classic, stable migraine with aura',
       monitor: 'Frequency, character, and duration of episodes; development of any new neurologic symptoms, change in laterality, or persistent visual field defect',

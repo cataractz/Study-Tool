@@ -74,6 +74,46 @@ export const retinaAdditional4: Disease[] = [
       { category: 'Referral', detail: 'Refer to retina specialist for suspected myopic CNV, macular hole, or traction maculopathy; refer for prompt evaluation of any peripheral retinal break or detachment' },
       { category: 'Emergency management', detail: 'Urgent same-day referral for symptoms suggesting acute retinal detachment (new flashes, floaters, or a visual field curtain)' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction and axial length measurement to confirm high myopia and quantify baseline structural risk',
+        'Baseline OCT of the macula to document staphyloma contour, screen for early traction maculopathy/schisis, and serve as a comparison point for future visits',
+        'Dilated peripheral fundus exam with scleral depression to identify lattice degeneration or peripheral retinal breaks warranting prophylactic treatment',
+        'Fluorescein angiography and fundus autofluorescence when active or new CNV is suspected, to confirm leakage and define lesion extent before treatment',
+      ],
+      initialTreatment:
+        'Active myopic CNV is treated with intravitreal anti-VEGF (bevacizumab, ranibizumab, or aflibercept) on an as-needed basis guided by OCT fluid and vision; myopic CNV typically requires fewer injections than AMD-related CNV, often achieved with 1-3 loading injections followed by PRN dosing. Symptomatic myopic traction maculopathy or a macular hole with retinoschisis is managed surgically with pars plana vitrectomy and ILM peeling.',
+      followUpSchedule:
+        'Monthly OCT/exam during initial anti-VEGF loading, then extended based on treatment response (PRN or treat-and-extend); stable high myopia without complications is followed every 6-12 months with a peripheral dilated exam.',
+      escalationCriteria: [
+        'New subretinal fluid or hemorrhage on OCT/exam suggesting active or recurrent myopic CNV',
+        'Progressive metamorphopsia or visual acuity decline despite anti-VEGF therapy',
+        'Increasing macular schisis or new foveal detachment on serial OCT suggesting evolving traction maculopathy',
+        'New peripheral retinal break or symptoms of acute PVD (flashes/floaters) in a high myope',
+      ],
+      referralCriteria: [
+        'Any suspected myopic CNV, macular hole, or traction maculopathy -> retina specialist for anti-VEGF or surgical evaluation',
+        'Any peripheral retinal break or detachment found on exam -> urgent retina referral',
+        'Axial length >30 mm or extensive staphyloma with progressive visual decline -> retina specialist for baseline risk stratification',
+      ],
+      complications: [
+        'Myopic CNV with subretinal scarring',
+        'Macular atrophy (patchy/diffuse chorioretinal atrophy)',
+        'Myopic traction maculopathy, foveal detachment, or macular hole',
+        'Rhegmatogenous retinal detachment',
+        'Anti-VEGF injection-related endophthalmitis (rare)',
+        'Open-angle glaucoma and early cataract',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Amsler grid for metamorphopsia',
+        'OCT for subretinal/intraretinal fluid, schisis, and ellipsoid zone integrity',
+        'Dilated peripheral retinal exam for lattice degeneration/breaks',
+        'Axial length in progressive childhood myopia',
+      ],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept'],
+      relatedExamTechniqueIds: ['oct-macula', 'scleral-depression', 'fluorescein-angiography', 'fundus-autofluorescence', 'optical-biometry'],
+    },
     followUp: {
       typical: 'Routine dilated exams every 6-12 months in stable high myopia to monitor for peripheral breaks and macular degenerative changes; more frequent monitoring (monthly initially) during active anti-VEGF treatment for myopic CNV',
       monitor: 'Visual acuity, Amsler grid for metamorphopsia, dilated peripheral retinal exam, OCT for macular schisis/fluid/hole',
@@ -166,6 +206,35 @@ export const retinaAdditional4: Disease[] = [
       { category: 'Advanced treatment', detail: 'Progressive, vision-limiting VMT, broad adhesion, or VMT with a significant epiretinal membrane or impending macular hole: pars plana vitrectomy with induction of a complete PVD and membrane peeling as needed' },
       { category: 'Referral', detail: 'Refer to retina specialist for symptomatic or progressive VMT, or any suspicion of evolving macular hole' },
     ],
+    managementProtocol: {
+      workup: [
+        'Spectral-domain OCT to confirm the diagnosis, measure adhesion width, and characterize associated cystic or schitic change',
+        'Amsler grid to establish a baseline, patient-trackable measure of metamorphopsia severity',
+        'Assessment for a coexisting epiretinal membrane, since its presence changes the likelihood of spontaneous release and the preferred treatment approach',
+      ],
+      initialTreatment:
+        'Mild, minimally symptomatic VMT with good visual acuity is observed, since a meaningful proportion of cases release spontaneously. Symptomatic VMT with a focal adhesion (<=1500 microns) and no significant epiretinal membrane may be considered for pharmacologic vitreolysis in appropriately selected patients; more advanced, broad-adhesion, or vision-limiting cases proceed to pars plana vitrectomy with induction of a complete PVD.',
+      followUpSchedule:
+        'OCT and Amsler grid monitoring every 1-3 months in observed cases to assess for spontaneous release versus progression; closer interval (weeks) if symptoms or OCT findings are worsening.',
+      escalationCriteria: [
+        'Progressive decline in visual acuity or worsening metamorphopsia on serial visits',
+        'Increasing foveal cystic change or outer retinal thinning on OCT',
+        'OCT evidence of impending full-thickness macular hole (thinning of the bridging foveal tissue)',
+      ],
+      referralCriteria: [
+        'Symptomatic or progressive VMT -> retina specialist for vitreolysis or vitrectomy evaluation',
+        'Any suspicion of evolving or established full-thickness macular hole -> urgent retina referral',
+      ],
+      complications: [
+        'Progression to full-thickness macular hole',
+        'Persistent cystoid macular changes',
+        'Foveal schisis',
+        'Permanent central vision loss if traction is prolonged and untreated',
+        'Vitrectomy-related cataract progression and, rarely, retinal break/detachment',
+      ],
+      monitoringParameters: ['Visual acuity', 'Amsler grid metamorphopsia', 'OCT foveal contour and adhesion width', 'Presence/absence of coexisting epiretinal membrane'],
+      relatedExamTechniqueIds: ['oct-macula', 'amsler-grid-testing'],
+    },
     followUp: {
       typical: 'Observation cases: OCT and Amsler grid monitoring every 1-3 months initially to assess for spontaneous resolution or progression',
       monitor: 'Visual acuity, Amsler grid distortion, OCT foveal contour and adhesion status',
@@ -253,6 +322,37 @@ export const retinaAdditional4: Disease[] = [
       { category: 'Referral', detail: 'Refer to a retina specialist if foveal involvement (Berlin edema) is present, if the diagnosis is uncertain, or if there is a coexisting traumatic finding (choroidal rupture, retinal break, hemorrhage) requiring further management' },
       { category: 'Emergency management', detail: 'Ensure a full ocular trauma evaluation to exclude globe rupture, retinal break/detachment, or other vision-threatening associated injury, since these require urgent separate management' },
     ],
+    managementProtocol: {
+      workup: [
+        'Comprehensive dilated fundus exam to characterize the extent and location of retinal whitening and identify concurrent traumatic findings',
+        'OCT to confirm photoreceptor/ellipsoid zone disruption without significant intraretinal fluid, and to assess foveal involvement',
+        'Full anterior segment trauma exam (IOP, gonioscopy, lens, angle) to identify associated globe injury requiring separate management',
+      ],
+      initialTreatment:
+        'No specific pharmacologic or laser treatment is indicated for commotio retinae itself; management is observation, since the photoreceptor disruption is typically self-limited, plus treatment of any other traumatic ocular injury identified on exam.',
+      followUpSchedule: 'Re-examine in 1-2 weeks to confirm resolution of retinal whitening; extend or shorten based on foveal involvement and severity of associated trauma.',
+      escalationCriteria: [
+        'Retinal whitening persisting or worsening beyond the expected 1-2 week timeframe',
+        'New or worsening hemorrhage on follow-up exam',
+        'Any sign of a retinal break or detachment (new flashes, floaters, or a field defect) developing after the initial injury',
+      ],
+      referralCriteria: [
+        'Foveal involvement (Berlin edema) -> retina specialist for baseline OCT and visual prognosis counseling',
+        'Diagnostic uncertainty or a coexisting traumatic finding (choroidal rupture, retinal break, vitreous hemorrhage) -> retina specialist',
+      ],
+      complications: [
+        'Permanent RPE mottling and photoreceptor loss with foveal involvement (Berlin edema)',
+        'Reduced central visual acuity if the fovea is affected',
+        'Rare secondary macular hole or epiretinal membrane after severe trauma',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Dilated fundus appearance/resolution of whitening',
+        'OCT photoreceptor/ellipsoid zone integrity when the fovea is involved',
+        'Screening for other traumatic ocular findings',
+      ],
+      relatedExamTechniqueIds: ['oct-macula', 'dilated-fundus-examination-systematic-approach', 'b-scan-ultrasonography'],
+    },
     followUp: {
       typical: 'Re-examine in 1-2 weeks to confirm resolution of the retinal whitening and reassess for any evolving traumatic finding (e.g., delayed retinal break)',
       monitor: 'Visual acuity, dilated fundus appearance, OCT photoreceptor layer integrity in cases with foveal involvement',
@@ -342,6 +442,40 @@ export const retinaAdditional4: Disease[] = [
       { category: 'Referral', detail: 'Genetic counseling for the family given the X-linked recessive inheritance pattern; retina specialist referral for peripheral schisis to assess detachment risk and for any vitreous hemorrhage' },
       { category: 'Advanced treatment', detail: 'Complications such as progressive peripheral schisis-related retinal detachment or non-clearing vitreous hemorrhage may require pars plana vitrectomy or scleral buckle by a retina specialist; there is no proven medical therapy that reverses the foveal schisis itself, though this remains an area of active research' },
     ],
+    managementProtocol: {
+      workup: [
+        'Electroretinogram to confirm the electronegative pattern (reduced b-wave, preserved a-wave) supporting the diagnosis',
+        'OCT of the macula to document the foveal schisis pattern and severity as a baseline for monitoring treatment response',
+        'Dilated exam with scleral depression to assess for peripheral schisis, vitreous veils, or areas at risk for retinal break',
+        'RS1 genetic testing and family pedigree review to confirm the molecular diagnosis and guide genetic counseling',
+      ],
+      initialTreatment:
+        'There is no treatment that reverses the underlying structural schisis. For symptomatic foveal cystic changes, off-label topical carbonic anhydrase inhibitor therapy (e.g., dorzolamide 2%, dosed two to three times daily) is increasingly used based on case series showing reduction in macular cystic cavities and improved acuity, thought to work by enhancing RPE fluid pump activity; low-vision aids and educational support are provided for all affected children regardless of pharmacologic therapy.',
+      followUpSchedule:
+        'Pediatric ophthalmology/retina follow-up every 6-12 months to monitor visual acuity, foveal schisis on OCT, and the peripheral retina for schisis-related complications; more frequent visits if a trial of topical dorzolamide is initiated, to assess OCT response.',
+      escalationCriteria: [
+        'New peripheral visual field defect or vitreous hemorrhage suggesting a schisis-related retinal break',
+        'Progressive peripheral schisis with vessel involvement or vitreous veils on serial exam',
+        'No improvement or worsening of macular schisis after an adequate trial of topical carbonic anhydrase inhibitor therapy',
+      ],
+      referralCriteria: [
+        'All patients -> genetic counseling given X-linked recessive inheritance and implications for maternal relatives',
+        'Peripheral schisis, vitreous hemorrhage, or suspected retinal detachment -> retina specialist for surgical evaluation',
+      ],
+      complications: [
+        'Vitreous hemorrhage from a vessel within a schisis cavity',
+        'Retinal detachment from an inner or outer layer break',
+        'Amblyopia if uncorrected refractive error/strabismus accompanies early visual reduction',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'OCT foveal schisis/cystic cavity size',
+        'Peripheral fundus exam for schisis progression or vitreous hemorrhage',
+        'Response to topical carbonic anhydrase inhibitor therapy if used',
+      ],
+      relatedDrugIds: ['dorzolamide'],
+      relatedExamTechniqueIds: ['electroretinogram', 'oct-macula', 'scleral-depression', 'genetic-testing-inherited-retinal-disease'],
+    },
     followUp: {
       typical: 'Regular pediatric ophthalmology/retina follow-up, typically every 6-12 months, to monitor visual acuity, foveal schisis, and peripheral retina for schisis-related complications',
       monitor: 'Visual acuity, OCT foveal schisis appearance, peripheral fundus exam for schisis progression or vitreous hemorrhage',

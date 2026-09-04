@@ -67,6 +67,45 @@ export const retinaAdditional6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Prophylactic laser demarcation/retinopexy along the border of necrotic and healthy retina is considered in select cases to reduce the risk of subsequent rhegmatogenous retinal detachment; pars plana vitrectomy is performed for established retinal detachment or non-clearing vitreous hemorrhage' },
       { category: 'Referral', detail: 'Urgent same-day referral to a retina specialist (and often uveitis specialist) for any suspected case; coordinate with infectious disease for systemic antiviral dosing, especially in atypical or immunocompromised presentations' },
     ],
+    managementProtocol: {
+      workup: [
+        'Same-day dilated fundus exam applying American Uveitis Society clinical criteria to establish the diagnosis and stage the extent of necrosis',
+        'Aqueous or vitreous fluid PCR for HSV/VZV DNA to confirm the causative virus, without delaying empiric treatment',
+        'B-scan ultrasonography when vitritis obscures the view, to assess for early retinal detachment',
+        'HIV testing and immune status workup, particularly for atypical, bilateral, or severe presentations',
+      ],
+      initialTreatment:
+        'Emergent high-dose intravenous acyclovir (approximately 10-15 mg/kg every 8 hours) for 5-10 days is standard induction therapy, often combined with adjunctive intravitreal antiviral injection for rapid local drug concentration in posterior or vision-threatening involvement; IV therapy is then transitioned to a prolonged oral antiviral (high-dose acyclovir or valacyclovir) for an additional several weeks to months, with adjunctive oral or topical corticosteroid added once antiviral coverage is established to control anterior/vitreous inflammation.',
+      followUpSchedule:
+        'Very frequent follow-up during the acute phase (every few days to weekly) to monitor retinitis activity and detect early retinal breaks, continuing closely for weeks to months given the delayed detachment risk even after the retinitis is controlled.',
+      escalationCriteria: [
+        'Continued circumferential or posterior extension of necrosis despite antiviral therapy',
+        'New retinal break or evidence of evolving retinal detachment on serial exam',
+        'Worsening vitritis or new fellow-eye lesions (particularly with HSV-associated disease)',
+      ],
+      referralCriteria: [
+        'Any suspected case -> urgent same-day retina specialist (and often uveitis specialist) referral',
+        'Coordinate with infectious disease for systemic antiviral dosing, especially in atypical or immunocompromised presentations',
+      ],
+      steroidConsiderations:
+        'Oral or topical corticosteroid is added after antiviral coverage is established (typically 24-48 hours into antiviral therapy) to control anterior chamber and vitreous inflammation; steroids should never be started before antiviral coverage given the risk of accelerating viral replication.',
+      complications: [
+        'Rhegmatogenous retinal detachment (often multifocal, occurring in a large proportion of eyes)',
+        'Optic neuropathy',
+        'Macular ischemia or involvement',
+        'Vitreous hemorrhage',
+        'Fellow-eye involvement, particularly HSV-associated and bilateral (BARN) disease',
+      ],
+      monitoringParameters: [
+        'Extent/activity of retinal necrosis on serial exam',
+        'New or progressive retinal breaks',
+        'Vitreous inflammation grade',
+        'Intraocular pressure',
+        'Fellow-eye exam',
+      ],
+      relatedDrugIds: ['acyclovir-oral', 'valacyclovir-oral', 'prednisone'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'uveitis-laboratory-workup', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Very frequent follow-up during the acute phase (often every few days to weekly) to monitor for progression of retinitis and early signs of retinal detachment, continuing closely for weeks to months given the delayed detachment risk even after retinitis is controlled',
       monitor: 'Extent and activity of retinal necrosis, evidence of new or progressive retinal breaks, vitreous inflammation, intraocular pressure, and fellow-eye involvement (can occur, particularly with HSV)',
@@ -162,6 +201,46 @@ export const retinaAdditional6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Scatter (sector) laser photocoagulation of ischemic/nonperfused peripheral retina to prevent or treat neovascularization and reduce risk of vitreous hemorrhage; pars plana vitrectomy for non-clearing vitreous hemorrhage or associated tractional complications' },
       { category: 'Referral', detail: 'Refer to a retina/uveitis specialist for angiography-guided laser planning and to internal medicine/infectious disease/rheumatology as indicated by systemic workup findings' },
     ],
+    managementProtocol: {
+      workup: [
+        'Fluorescein angiography to define the extent of vascular sheathing, leakage, and peripheral capillary nonperfusion, and to guide laser planning',
+        'B-scan ultrasonography when vitreous hemorrhage obscures the fundus view, to exclude an associated retinal detachment',
+        'Directed systemic workup (interferon-gamma release assay/PPD and chest imaging for TB, treponemal serology for syphilis, autoimmune labs) to identify a treatable underlying cause before labeling the disease idiopathic (Eales)',
+        'OCT to assess for macular edema or epiretinal membrane as a complication of chronic or recurrent vasculitis',
+      ],
+      initialTreatment:
+        'Treatment targets the underlying cause when identified (antitubercular therapy for confirmed tubercular vasculitis, systemic immunosuppression for autoimmune vasculitis such as Behçet disease or sarcoidosis) alongside corticosteroid to control active intraocular inflammation. Scatter (sector) laser photocoagulation of ischemic, nonperfused peripheral retina is the mainstay for preventing or treating secondary neovascularization and reducing recurrent vitreous hemorrhage risk.',
+      followUpSchedule:
+        'Frequent follow-up (weeks to a few months) during active vasculitis or after laser treatment to confirm regression of neovascularization and resolution of active leakage on angiography; extend the interval once stable.',
+      escalationCriteria: [
+        'New areas of capillary nonperfusion or persistent/recurrent neovascularization despite laser treatment',
+        'Recurrent vitreous hemorrhage',
+        'Development of macular edema or epiretinal membrane',
+        'An unresolved or inadequately treated underlying systemic cause',
+      ],
+      referralCriteria: [
+        'Angiography-guided laser planning -> retina/uveitis specialist',
+        'Positive systemic workup findings -> internal medicine/infectious disease (confirmed or suspected TB, syphilis) or rheumatology (Behçet, sarcoidosis, other autoimmune vasculitis)',
+      ],
+      steroidConsiderations:
+        'Topical, periocular, or systemic corticosteroid controls active intraocular inflammation once (or while) an infectious cause is being excluded or treated; steroid-sparing systemic immunosuppression is used for recurrent or sight-threatening autoimmune-associated vasculitis, coordinated with rheumatology/uveitis specialists.',
+      complications: [
+        'Recurrent vitreous hemorrhage',
+        'Tractional retinal detachment from fibrovascular proliferation',
+        'Macular edema or epiretinal membrane',
+        'Neovascular glaucoma in advanced ischemic cases',
+        'Rubeosis iridis',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Extent of vascular sheathing/leakage on serial exam or angiography',
+        'Presence and regression of neovascularization',
+        'Recurrence of vitreous hemorrhage',
+        'Intraocular pressure (neovascular glaucoma risk)',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'prednisone'],
+      relatedExamTechniqueIds: ['fluorescein-angiography', 'b-scan-ultrasonography', 'uveitis-laboratory-workup', 'oct-macula'],
+    },
     followUp: {
       typical: 'Frequent follow-up (weeks to a few months) during active vasculitis or after laser treatment to confirm regression of neovascularization and resolution of active leakage on angiography',
       monitor: 'Visual acuity, extent of vascular sheathing/leakage on serial exam or angiography, presence and regression of neovascularization, recurrence of vitreous hemorrhage',
@@ -249,6 +328,34 @@ export const retinaAdditional6: Disease[] = [
       { category: 'Advanced treatment', detail: 'External beam or plaque radiotherapy is reserved for larger or diffuse lesions, or those with recurrent/refractory exudative detachment; management of associated glaucoma is essential in diffuse choroidal hemangioma with Sturge-Weber syndrome' },
       { category: 'Referral', detail: 'Refer to ocular oncology/retina specialist for definitive diagnosis (to exclude melanoma) and treatment planning; refer to glaucoma specialist for ipsilateral glaucoma in Sturge-Weber-associated diffuse hemangioma' },
     ],
+    managementProtocol: {
+      workup: [
+        'B-scan ultrasonography to characterize internal reflectivity (high reflectivity favors hemangioma over melanoma) and confirm the acoustically solid, non-excavated lesion structure',
+        'OCT to evaluate for subretinal fluid, cystic retinal change, and foveal involvement guiding the treatment decision',
+        'ICG angiography (with FA) to characterize the vascular architecture and support the diagnosis over other choroidal masses',
+        'Serial fundus photography to document baseline size for comparison, since documented stability supports the benign diagnosis',
+      ],
+      initialTreatment:
+        'Asymptomatic, extrafoveal lesions without significant subretinal fluid are observed. Photodynamic therapy is the commonly used first-line treatment for vision-threatening circumscribed choroidal hemangioma with subfoveal or juxtafoveal exudation, selectively targeting the abnormal choroidal vasculature; thermal laser photocoagulation is an alternative or adjunct for extrafoveal exudative lesions.',
+      followUpSchedule:
+        'Periodic monitoring every 3-12 months depending on lesion activity, with fundus exam, photography, and OCT to distinguish stability from new exudative change.',
+      escalationCriteria: [
+        'New or increasing subretinal fluid on OCT',
+        'Any documented growth of the lesion, which should prompt reconsideration of the diagnosis (e.g., melanoma) rather than being attributed to hemangioma progression',
+        'Worsening visual acuity from progressive exudation',
+      ],
+      referralCriteria: [
+        'All suspected choroidal hemangiomas -> ocular oncology/retina specialist for definitive diagnosis (exclude melanoma) and treatment planning',
+        'Ipsilateral glaucoma in diffuse (Sturge-Weber-associated) choroidal hemangioma -> glaucoma specialist',
+      ],
+      complications: [
+        'Exudative retinal detachment',
+        'Chronic cystoid macular changes/atrophy with permanent vision loss if longstanding',
+        'Secondary glaucoma, particularly with diffuse/Sturge-Weber-associated disease',
+      ],
+      monitoringParameters: ['Lesion size/appearance on serial photography', 'Subretinal fluid on OCT', 'Visual acuity', 'Intraocular pressure, particularly in Sturge-Weber-associated diffuse hemangioma'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'oct-macula', 'fluorescein-angiography'],
+    },
     followUp: {
       typical: 'Periodic monitoring (every 3-12 months depending on activity) with fundus exam, photography, and OCT to assess for stability versus new exudative change',
       monitor: 'Lesion size/appearance on serial photography, subretinal fluid on OCT, visual acuity, and intraocular pressure (particularly in Sturge-Weber-associated diffuse hemangioma)',
@@ -339,6 +446,31 @@ export const retinaAdditional6: Disease[] = [
       { category: 'First-line treatment', detail: 'Intravitreal anti-VEGF therapy is used for the subset of patients who develop subretinal/proliferative neovascularization, to reduce associated exudation and stabilize vision' },
       { category: 'Referral', detail: 'Refer to a retina specialist for baseline multimodal imaging confirmation, monitoring, and prompt evaluation of any new subretinal fluid or hemorrhage suggesting neovascular conversion' },
     ],
+    managementProtocol: {
+      workup: [
+        'OCT of the macula to characterize perifoveal cavitation and ellipsoid zone integrity, and to screen for early subretinal fluid suggesting neovascular conversion',
+        'Fluorescein angiography to confirm perifoveal capillary telangiectasia and exclude a discrete focal leak pattern (e.g., central serous chorioretinopathy)',
+        'Fundus autofluorescence to document macular pigment loss supporting the diagnosis',
+        'OCT angiography as a noninvasive option to visualize the telangiectatic capillary network and screen for subretinal neovascularization',
+      ],
+      initialTreatment:
+        'No proven treatment modifies the underlying neurodegenerative process; management for non-proliferative disease is observation with low-vision strategies as needed. Intravitreal anti-VEGF therapy is used specifically for the subset of patients who develop subretinal/proliferative neovascularization, to reduce exudation and stabilize vision.',
+      followUpSchedule:
+        'Periodic monitoring every 6-12 months in stable non-proliferative disease, with OCT to track ellipsoid zone status and screen for early neovascular change; any acute symptom change warrants prompt evaluation.',
+      escalationCriteria: [
+        'New subretinal fluid or hemorrhage suggesting neovascular conversion',
+        'Acute new metamorphopsia or vision change',
+        'Progressive ellipsoid zone loss/outer retinal atrophy affecting visual function',
+      ],
+      referralCriteria: [
+        'Baseline multimodal imaging confirmation and ongoing monitoring -> retina specialist',
+        'Any new subretinal fluid or hemorrhage suggesting neovascular conversion -> prompt retina specialist evaluation for anti-VEGF therapy',
+      ],
+      complications: ['Progressive ellipsoid zone loss and outer retinal atrophy', 'Subretinal neovascularization with exudation or hemorrhage', 'Rare full-thickness or lamellar macular hole'],
+      monitoringParameters: ['Visual acuity', 'Metamorphopsia (Amsler grid, including home monitoring)', 'OCT ellipsoid zone integrity', 'Evidence of subretinal fluid or neovascularization'],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept'],
+      relatedExamTechniqueIds: ['oct-macula', 'oct-angiography', 'fluorescein-angiography', 'fundus-autofluorescence', 'amsler-grid-testing'],
+    },
     followUp: {
       typical: 'Periodic monitoring, typically every 6-12 months in stable non-proliferative disease, with imaging (OCT) to track ellipsoid zone status and screen for early neovascular change',
       monitor: 'Visual acuity, metamorphopsia (Amsler grid can be used for home monitoring), OCT ellipsoid zone integrity, and evidence of subretinal fluid or neovascularization',
