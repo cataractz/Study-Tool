@@ -18,6 +18,8 @@ import { VisualFieldIndicesGuide, meta as visualFieldIndicesGuideMeta } from './
 import { ElectrophysiologyNormsTable, meta as electrophysiologyNormsTableMeta } from './ElectrophysiologyNormsTable'
 import { CorneaSpecularTopographyNormsTable, meta as corneaSpecularTopographyNormsTableMeta } from './CorneaSpecularTopographyNormsTable'
 import { ContactLensCareSolutions, meta as contactLensCareSolutionsMeta } from './ContactLensCareSolutions'
+import { VisualDevelopmentMilestones, meta as visualDevelopmentMilestonesMeta } from './VisualDevelopmentMilestones'
+import { PediatricCycloplegicComparison, meta as pediatricCycloplegicComparisonMeta } from './PediatricCycloplegicComparison'
 
 export interface ReferenceEntry {
   meta: ReferenceMeta
@@ -42,6 +44,8 @@ export const referenceRegistry: ReferenceEntry[] = [
   { meta: electrophysiologyNormsTableMeta, Component: ElectrophysiologyNormsTable },
   { meta: corneaSpecularTopographyNormsTableMeta, Component: CorneaSpecularTopographyNormsTable },
   { meta: contactLensCareSolutionsMeta, Component: ContactLensCareSolutions },
+  { meta: visualDevelopmentMilestonesMeta, Component: VisualDevelopmentMilestones },
+  { meta: pediatricCycloplegicComparisonMeta, Component: PediatricCycloplegicComparison },
 ]
 
 export function getReferenceById(id: string): ReferenceEntry | undefined {
