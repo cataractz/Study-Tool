@@ -204,6 +204,38 @@ export const systemicGeneticDisease15: Disease[] = [
       { category: 'Advanced treatment', detail: 'MMP: mucous membrane grafting or fornix reconstruction for severe forniceal shortening, scleral contact lenses for ocular surface protection, limbal stem cell transplantation and keratoprosthesis in end-stage corneal blindness; Pemphigus vulgaris: ocular surface disease, when present, is generally managed with lubrication and, if cicatricial changes occur, similar surgical approaches as MMP' },
       { category: 'Referral', detail: 'Urgent referral to a cornea/ocular surface specialist for biopsy and diagnosis confirmation, and to dermatology/rheumatology for systemic immunosuppressive therapy, which is essential to prevent blinding progression in MMP' },
     ],
+    managementProtocol: {
+      workup: [
+        'Conjunctival (or oral mucosal) biopsy with direct immunofluorescence from perilesional but clinically involved tissue to confirm basement membrane zone (MMP) versus intercellular (pemphigus vulgaris) antibody deposition',
+        'Serial objective fornix depth measurement/photography at each visit to detect subclinical progression, since disease activity can advance even when the eye looks quiet',
+        'Baseline tear breakup time and ocular surface staining to characterize cicatricial dry eye severity',
+        'Coordinate with dermatology/rheumatology for staging and initiation of systemic immunosuppression',
+      ],
+      initialTreatment:
+        'Preservative-free artificial tears and lubricating ointment provide symptomatic relief but do not halt the underlying fibrotic process in MMP; systemic immunosuppression — typically escalating from an antimetabolite such as azathioprine or mycophenolate to cyclophosphamide for more severe or rapidly progressive disease — managed by dermatology/rheumatology/oculoplastics, is required to arrest progressive conjunctival scarring, alongside epilation/cryotherapy for trichiasis and surgical fornix reconstruction when forniceal shortening is severe.',
+      followUpSchedule:
+        'Every 1-3 months in active MMP to closely monitor for progression and treatment response, with objective fornix depth measurement at each visit; less frequent for stable pemphigus vulgaris with minimal ocular involvement.',
+      escalationCriteria: [
+        'Any measurable decrease in fornix depth or new symblepharon on serial exams, even if the eye appears clinically quiet',
+        'New corneal involvement (keratinization, vascularization) or vision loss',
+        'Progression despite current systemic immunosuppression',
+      ],
+      referralCriteria: [
+        'Chronic progressive cicatrizing conjunctivitis suspicious for MMP -> cornea/ocular surface specialist for biopsy and diagnosis confirmation',
+        'Confirmed MMP -> dermatology/rheumatology for systemic immunosuppressive therapy, essential to prevent blinding progression',
+        'Severe forniceal shortening, trichiasis/entropion, or limbal stem cell deficiency -> oculoplastics/cornea for surgical reconstruction',
+      ],
+      complications: [
+        'Symblepharon and ankyloblepharon',
+        'Severe cicatricial (aqueous- and mucin-deficient) dry eye',
+        'Trichiasis and cicatricial entropion',
+        'Limbal stem cell deficiency with corneal keratinization',
+        'Blindness from progressive scarring if immunosuppression is inadequate or delayed',
+      ],
+      monitoringParameters: ['Fornix depth (serial objective measurement)', 'New symblepharon formation', 'Trichiasis', 'Corneal clarity/vascularization', 'Tear film status'],
+      relatedDrugIds: ['azathioprine', 'mycophenolate', 'cyclophosphamide', 'carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['lissamine-green-rose-bengal-staining', 'tear-break-up-time', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Every 1-3 months in active MMP to closely monitor for progression and treatment response, with objective fornix depth measurement at each visit; less frequent for stable pemphigus vulgaris with minimal ocular involvement',
       monitor: 'Fornix depth, new symblepharon formation, trichiasis, corneal clarity/vascularization, and tear film status',
@@ -291,6 +323,29 @@ export const systemicGeneticDisease15: Disease[] = [
       { category: 'Referral', detail: 'Refer to medical genetics/metabolic disease specialists for systemic workup and initiation of enzyme replacement therapy when corneal verticillata is identified without an alternative drug explanation, particularly with a suggestive family history or systemic symptoms (acroparesthesias, angiokeratomas, renal or cardiac disease)' },
       { category: 'First-line treatment', detail: 'No topical ocular therapy is indicated for verticillata; visually significant posterior subcapsular cataract is managed with standard cataract extraction if it impairs function' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination to characterize corneal verticillata and screen for posterior subcapsular (Fabry) cataract',
+        'Careful medication history (amiodarone and other phospholipidosis-inducing drugs such as chloroquine/hydroxychloroquine, tamoxifen, or indomethacin) to exclude a drug-induced mimic before pursuing a Fabry workup',
+        'Coordinate with medical genetics/metabolic specialists for alpha-galactosidase A enzyme assay (males) and/or GLA genetic testing (particularly needed in female carriers)',
+        'Conjunctival and retinal vascular exam for tortuosity',
+      ],
+      initialTreatment:
+        'No topical ocular therapy is indicated for corneal verticillata, which is monitored as a marker of systemic disease rather than treated directly; visually significant posterior subcapsular (Fabry) cataract is managed with standard cataract extraction if it impairs function, and confirmed or suspected cases are referred to medical genetics/metabolic disease specialists for systemic workup and consideration of enzyme replacement therapy.',
+      followUpSchedule:
+        'Periodic comprehensive eye examination to monitor corneal verticillata (typically stable) and screen for progression of posterior subcapsular cataract or retinal vascular changes, coordinated with the patient\'s systemic treatment team; closer documentation is reasonable around initiation of enzyme replacement therapy to record any ocular treatment response.',
+      escalationCriteria: [
+        'New visual symptoms suggesting cataract progression',
+        'Verticillata identified without a clear causative medication (no amiodarone or other phospholipidosis-inducing drug history), warranting systemic workup if Fabry disease is not already diagnosed',
+      ],
+      referralCriteria: [
+        'Corneal verticillata without an alternative drug explanation, particularly with a suggestive family history or systemic symptoms (acroparesthesias, angiokeratomas, renal or cardiac disease) -> medical genetics/metabolic disease specialists',
+        'Visually significant posterior subcapsular cataract -> cataract surgery evaluation',
+      ],
+      complications: ['Visually significant posterior subcapsular (Fabry) cataract', 'Systemic vasculopathy-related complications (renal failure, cardiomyopathy, stroke) that drive overall morbidity'],
+      monitoringParameters: ['Corneal verticillata appearance', 'Lens clarity', 'Conjunctival and retinal vascular tortuosity'],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Periodic comprehensive eye examination to monitor corneal verticillata (typically stable) and screen for progression of posterior subcapsular cataract or retinal vascular changes, coordinated with the patient\'s systemic treatment team',
       monitor: 'Corneal verticillata appearance (usually stable, sometimes improves with enzyme replacement therapy), lens clarity, and conjunctival/retinal vascular tortuosity',
@@ -380,6 +435,32 @@ export const systemicGeneticDisease15: Disease[] = [
       { category: 'Observation', detail: 'Periodic monitoring for early signs of vitamin A deficiency (night vision complaints, surface changes) or vitamin E-related pigmentary retinopathy in patients with a history of suboptimal vitamin levels' },
       { category: 'Referral', detail: 'Refer back to the CF care team/pulmonology-gastroenterology for vitamin level testing and supplementation adjustment if deficiency-related ocular findings are identified; refer to retina specialist if significant pigmentary retinopathy is found; note any concerning ocular findings that may be associated with specific chronic CF medications to the prescribing physician' },
     ],
+    managementProtocol: {
+      workup: [
+        'Ocular surface examination and tear film assessment (tear breakup time, staining) to characterize dry eye from generalized exocrine dysfunction',
+        'Dilated fundus exam to screen for vitamin E deficiency-related pigmentary retinopathy',
+        'History review of dark adaptation/night vision complaints and supplementation adherence, correlated with serum vitamin A/E levels obtained by the CF care team',
+        'Review of the current CF medication list for agents with recognized ocular side-effect profiles',
+      ],
+      initialTreatment:
+        'Preservative-free artificial tears for dry eye related to generalized exocrine gland dysfunction; the primary intervention for deficiency-related ocular findings is reinforcing and coordinating with the CF care team on adherence to pancreatic enzyme replacement therapy and fat-soluble vitamin A/E supplementation, since correcting the underlying malabsorption directly addresses the associated ocular findings.',
+      followUpSchedule:
+        'Comprehensive eye examination at regular intervals as part of coordinated CF multidisciplinary care, with frequency guided by vitamin status stability and any medications requiring ocular monitoring.',
+      escalationCriteria: [
+        'New night vision complaints or worsening ocular surface keratinization',
+        'New pigmentary retinal changes',
+        'A documented drop in serum vitamin A or E level',
+      ],
+      referralCriteria: [
+        'Deficiency-related ocular findings (night vision complaints, surface xerosis, pigmentary retinopathy) -> back to the CF care team/pulmonology-gastroenterology for vitamin level testing and supplementation adjustment',
+        'Significant pigmentary retinopathy -> retina specialist',
+        'Ocular findings potentially related to a specific chronic CF medication -> communicate to the prescribing physician',
+      ],
+      complications: ['Night blindness and ocular surface keratinization (vitamin A deficiency)', 'Pigmentary retinopathy (vitamin E deficiency)', 'Chronic dry eye from generalized exocrine dysfunction'],
+      monitoringParameters: ['Dry eye signs/symptoms', 'Dark adaptation/night vision complaints', 'Fundus appearance for pigmentary changes', 'Findings relevant to current CF medications'],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'tear-break-up-time'],
+    },
     followUp: {
       typical: 'Comprehensive eye examination at regular intervals as part of coordinated CF multidisciplinary care, with frequency guided by vitamin status stability and any medications requiring ocular monitoring',
       monitor: 'Dry eye signs/symptoms, dark adaptation/night vision complaints, fundus appearance for pigmentary changes, and any findings relevant to current CF medications',

@@ -188,6 +188,31 @@ export const systemicGeneticDisease12: Disease[] = [
       { category: 'First-line treatment', detail: 'No specific topical ocular therapy treats the underlying disease process; systemic antibiotic therapy directed at the identified organism, coordinated by internal medicine/infectious disease, is the definitive treatment' },
       { category: 'Advanced treatment', detail: 'Surgical valve repair/replacement may be required for heart failure, uncontrolled infection, or large/mobile vegetations at high embolic risk (managed by cardiothoracic surgery); intravitreal antibiotics and/or vitrectomy if endogenous endophthalmitis develops' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam to look for Roth spots, retinal artery occlusion, or vitritis in any patient with suspected endocarditis and fever/systemic illness',
+        'Correlate retinal findings with CBC and inflammatory markers to help exclude anemia or leukemia as an alternative cause of Roth spots',
+        'Coordinate the timing of blood cultures and echocardiography with internal medicine/cardiology when embolic-appearing retinal findings are the presenting sign',
+        'Baseline visual acuity and retinal photography if a retinal artery occlusion or endogenous endophthalmitis is identified, to document extent and monitor for change',
+      ],
+      initialTreatment:
+        'No topical ocular therapy treats the underlying disease process, so the optometrist\'s role is urgent recognition and referral: urgent same-day medical referral for blood cultures and echocardiography when embolic-appearing retinal findings accompany fever or systemic illness, with retina specialist involvement for retinal artery occlusion or suspected endogenous endophthalmitis and infectious disease/cardiology directing the definitive systemic antibiotic therapy.',
+      followUpSchedule:
+        'Ocular follow-up interval is dictated by the specific retinal finding and coordinated with the medical team managing the systemic antibiotic course; a retinal artery occlusion or evolving endophthalmitis warrants close short-interval monitoring, while isolated Roth spots are generally followed at the same pace as the underlying medical treatment.',
+      escalationCriteria: [
+        'New floaters, pain, or decreasing vision suggesting evolving endogenous endophthalmitis in a patient with known or suspected endocarditis',
+        'A new embolic-appearing retinal finding after treatment has already started',
+        'Any sign of recurrent embolic phenomena',
+      ],
+      referralCriteria: [
+        'Roth spots, retinal artery occlusion, or another embolic-appearing retinal finding plus fever/systemic illness and cardiac risk factors -> urgent same-day internal medicine/cardiology referral for blood cultures and echocardiography',
+        'Retinal artery occlusion -> retina specialist',
+        'Suspected endogenous endophthalmitis -> urgent retina specialist with continued infectious disease co-management',
+      ],
+      complications: ['Permanent vision loss from retinal artery occlusion', 'Endogenous endophthalmitis', 'Recurrent embolic events to the retina or other organs', 'Systemic complications including heart failure and stroke'],
+      monitoringParameters: ['Visual acuity', 'Resolution of Roth spots', 'Retinal perfusion status after an occlusive event', 'Signs of new or worsening intraocular inflammation'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'retinal-vascular-examination'],
+    },
     followUp: {
       typical: 'Close interval follow-up coordinated with the medical team while systemic antibiotic therapy is ongoing, with ocular follow-up dictated by the specific retinal finding',
       monitor: 'Visual acuity, resolution of Roth spots, retinal perfusion status after an occlusive event, and any signs of new/worsening intraocular inflammation',
@@ -279,6 +304,36 @@ export const systemicGeneticDisease12: Disease[] = [
       { category: 'Advanced treatment', detail: 'Ptosis surgery may be considered for functionally significant ptosis but must be undertaken cautiously and conservatively (often with undercorrection) because impaired orbicularis closure and absent/reduced Bell\'s phenomenon markedly increase the risk of postoperative exposure keratopathy' },
       { category: 'Referral', detail: 'Refer to neurology for mitochondrial disease workup (muscle biopsy, genetic testing); urgent cardiology referral is critical for any patient with confirmed or suspected Kearns-Sayre syndrome given the risk of life-threatening cardiac conduction abnormalities requiring pacemaker placement' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline measurement of palpebral fissure height, margin reflex distance, and levator function to document ptosis severity',
+        'Extraocular motility assessment in all fields of gaze to document baseline restriction',
+        'Ocular surface evaluation for exposure risk given impaired blink and reduced Bell\'s phenomenon',
+        'Coordinate with neurology for muscle biopsy/mitochondrial DNA testing and, when Kearns-Sayre syndrome is suspected, urgent cardiology referral for ECG given the risk of conduction abnormalities',
+      ],
+      initialTreatment:
+        'Lubrication and ocular surface protection are first-line, given the exposure risk from impaired blink and reduced Bell\'s phenomenon; ptosis crutches attached to spectacles are typically tried before surgery, and ptosis surgery, when pursued for functionally significant ptosis, is undertaken conservatively (often with intentional undercorrection) because impaired orbicularis closure and Bell\'s phenomenon markedly raise the risk of postoperative exposure keratopathy.',
+      followUpSchedule:
+        'Regular ophthalmic follow-up to monitor ptosis progression, ocular surface integrity, and exposure risk, at an interval individualized to surface findings; cardiology follow-up for Kearns-Sayre syndrome is scheduled independently by cardiology given the risk of progressive conduction disease.',
+      escalationCriteria: [
+        'New or worsening signs of exposure keratopathy',
+        'Ptosis progressing to obstruct the visual axis',
+        'Any new systemic symptoms (syncope, palpitations) in a patient with Kearns-Sayre syndrome, which should prompt urgent cardiology communication',
+      ],
+      referralCriteria: [
+        'Suspected mitochondrial myopathy (progressive ptosis/ophthalmoplegia without diplopia) -> neurology for muscle biopsy and mitochondrial DNA testing',
+        'Any patient meeting or approaching Kearns-Sayre criteria (pigmentary retinopathy, onset before age 20) -> urgent cardiology referral for conduction abnormality screening, given the risk of fatal heart block',
+        'Functionally significant ptosis -> oculoplastics, with counseling on the elevated exposure risk of surgery in this population',
+      ],
+      complications: [
+        'Exposure keratopathy (worsened by impaired blink/Bell\'s phenomenon and a particular risk after ptosis surgery)',
+        'Functional visual field loss from severe ptosis',
+        'Life-threatening cardiac arrhythmia/complete heart block in Kearns-Sayre syndrome',
+      ],
+      monitoringParameters: ['Degree of ptosis and levator function', 'Motility restriction', 'Corneal exposure/surface integrity', 'Retinal pigmentary changes (in KSS)'],
+      relatedDrugIds: ['carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['marginal-reflex-distance', 'extraocular-motility-testing'],
+    },
     followUp: {
       typical: 'Regular ophthalmic follow-up to monitor ptosis progression, ocular surface health, and exposure risk; cardiology follow-up (independently scheduled) is essential and potentially life-saving in KSS',
       monitor: 'Degree of ptosis and motility restriction, corneal exposure/surface integrity, and (in KSS) retinal pigmentary changes',
@@ -368,6 +423,27 @@ export const systemicGeneticDisease12: Disease[] = [
       { category: 'Referral', detail: 'Prompt referral to genetics and endocrinology for any patient with suspicious mucosal neuromas and thickened corneal nerves, particularly a child with marfanoid habitus, given the risk of aggressive, early-onset medullary thyroid carcinoma and pheochromocytoma' },
       { category: 'First-line treatment', detail: 'No topical or ocular-directed therapy is indicated; systemic management (often including early/prophylactic thyroidectomy and monitoring/treatment of pheochromocytoma) is directed by endocrinology and surgery' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination for thickened corneal nerves and conjunctival mucosal neuromas, particularly in a child with marfanoid habitus',
+        'Careful external exam of the lid margins, lips, and tongue for mucosal neuromas',
+        'Coordinate with genetics for RET proto-oncogene testing and with endocrinology for calcitonin/CEA and plasma or urine metanephrine screening once suspected',
+      ],
+      initialTreatment:
+        'No topical or ocular-directed therapy is indicated, since the mucosal neuromas and thickened corneal nerves are diagnostic markers rather than a source of visual morbidity; management is referral-driven, with prompt genetics and endocrinology referral for any patient with suspicious findings, particularly a child with marfanoid habitus, given the risk of aggressive, early-onset medullary thyroid carcinoma and pheochromocytoma.',
+      followUpSchedule:
+        'Routine periodic ocular examination, since the ophthalmic findings are typically stable; systemic surveillance intervals (thyroid, catecholamine screening) are set by the endocrinology/genetics team rather than by the eye exam.',
+      escalationCriteria: [
+        'New ocular surface irritation from mucosal neuromas causing mechanical symptoms (uncommon)',
+        'Suspicious findings identified in a patient not yet referred for genetic/endocrine evaluation',
+      ],
+      referralCriteria: [
+        'Thickened corneal nerves plus mucosal neuromas (conjunctiva, lid margin, lips, tongue), especially with marfanoid habitus -> genetics for RET proto-oncogene testing and endocrinology for medullary thyroid carcinoma/pheochromocytoma screening',
+      ],
+      complications: ['Medullary thyroid carcinoma (can be aggressive and early-onset)', 'Pheochromocytoma', 'Intestinal ganglioneuromatosis with constipation/megacolon'],
+      monitoringParameters: ['Stability/appearance of mucosal neuromas and corneal nerve thickening', 'General ocular surface comfort'],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Ophthalmic findings are typically stable and require only routine periodic ocular examination; systemic surveillance and treatment timelines are dictated by the endocrinology/genetics team',
       monitor: 'Progression or new appearance of mucosal neuromas is generally not a treatment trigger by itself; ocular follow-up focuses on general eye health while systemic monitoring proceeds independently',
