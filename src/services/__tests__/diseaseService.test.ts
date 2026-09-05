@@ -33,8 +33,7 @@ describe('disease data integrity', () => {
 })
 
 describe('managementProtocol coverage and integrity (Section 17)', () => {
-  // Un-skip once all 5 content waves have landed and every disease carries a managementProtocol.
-  it.skip('every disease has a managementProtocol with required fields populated', () => {
+  it('every disease has a managementProtocol with required fields populated', () => {
     for (const d of getAllDiseases()) {
       expect(d.managementProtocol, `${d.id} missing managementProtocol`).toBeDefined()
       const p = d.managementProtocol!
