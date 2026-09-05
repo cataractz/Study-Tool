@@ -425,6 +425,35 @@ export const systemicGeneticDisease11: Disease[] = [
       { category: 'Referral', detail: 'Refer to a cornea specialist for evolving neurotrophic keratopathy, persistent epithelial defects, or corneal ulceration; refer to oculoplastics for surgical lagophthalmos correction when indicated; coordinate with infectious disease/dermatology for systemic treatment and monitoring' },
       { category: 'Emergency management', detail: 'Corneal ulceration with thinning or impending perforation requires urgent cornea specialist evaluation for aggressive lubrication, bandage lens, tissue adhesive, or surgical intervention as needed' },
     ],
+    managementProtocol: {
+      workup: [
+        'Corneal sensation testing (cotton wisp or Cochet-Bonnet aesthesiometer), performed proactively in every diagnosed patient regardless of symptoms',
+        'Eyelid closure assessment (gentle and forced closure, Bell phenomenon) to detect lagophthalmos',
+        'Slit lamp exam with fluorescein staining for epithelial defects/ulceration',
+        'Anterior chamber exam for iridocyclitis',
+      ],
+      initialTreatment:
+        'Aggressive ocular surface protection is the first-line ocular measure given the compounded exposure and neurotrophic risk: frequent preservative-free lubrication, lubricating ointment at bedtime, and taping the lids closed at night if lagophthalmos is present, run in parallel with WHO multi-drug systemic antibiotic therapy (which halts further nerve damage but does not reverse existing injury).',
+      followUpSchedule:
+        'Regular ocular surface and corneal sensation exams for every patient diagnosed with leprosy, since significant corneal risk is frequently asymptomatic because of anesthesia — screening should not be symptom-driven.',
+      escalationCriteria: [
+        'Any new corneal epithelial defect',
+        'Declining corneal sensation on serial testing',
+        'Worsening lagophthalmos',
+        'New or active iridocyclitis',
+      ],
+      referralCriteria: [
+        'Evolving neurotrophic keratopathy, persistent epithelial defect, or corneal ulceration -> cornea specialist',
+        'Significant, non-resolving lagophthalmos -> oculoplastics for surgical lid closure correction',
+        'Corneal ulceration with thinning or impending perforation -> urgent same-day cornea specialist',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids are used for iridocyclitis under close monitoring, alongside systemic multi-drug antibiotic therapy directed by infectious disease/dermatology.',
+      complications: ['Exposure and neurotrophic keratopathy', 'Corneal ulceration, scarring, or perforation', 'Iridocyclitis-related complications (synechiae, secondary glaucoma or cataract)'],
+      monitoringParameters: ['Corneal sensation', 'Lid closure/lagophthalmos', 'Corneal epithelial integrity', 'Anterior chamber inflammation'],
+      relatedDrugIds: ['rifampin'],
+      relatedExamTechniqueIds: ['corneal-sensation-testing'],
+    },
     followUp: {
       typical: 'Regular ocular surface and corneal sensation examinations for all patients diagnosed with leprosy, given the frequently asymptomatic nature of significant corneal risk',
       monitor: 'Corneal sensation, lid closure/lagophthalmos, corneal epithelial integrity, and anterior chamber inflammation',

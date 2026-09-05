@@ -447,6 +447,40 @@ export const systemicGeneticDisease14: Disease[] = [
       { category: 'Second-line treatment', detail: 'Corneal crosslinking if progressive keratoconus is documented, following standard indications' },
       { category: 'Referral', detail: 'Refer to genetics/pediatrics or the patient\'s established OI care team for systemic diagnosis and management (bone health, fracture prevention, orthopedic care); refer to cornea specialist if keratoconus is identified or progressing; refer for audiology evaluation given associated hearing loss risk' },
     ],
+    managementProtocol: {
+      workup: [
+        'Baseline corneal topography to screen for subclinical keratoconus given the shared type I collagen defect, even when astigmatism is currently mild',
+        'Manifest and, in children, cycloplegic refraction to establish a baseline and screen for amblyogenic anisometropia',
+        'Slit lamp photography of scleral color for a stable baseline reference, since blue sclera itself is not expected to progress',
+        'Confirm the patient has an established OI diagnosis/care team; if not, gather fracture and family history to support a genetics referral',
+      ],
+      initialTreatment:
+        'Routine refractive correction with spectacles or, if needed, soft toric or rigid gas permeable/scleral contact lenses; blue sclera itself requires no treatment. Corneal crosslinking is added if progressive keratoconus is documented, following the same indications used in the general keratoconus population.',
+      followUpSchedule:
+        'Routine comprehensive eye exams with attention to corneal topography, shortened toward every 6-12 months if the patient reports new or increasing astigmatism, since this is the main progressive ocular finding to catch early.',
+      escalationCriteria: [
+        'New or worsening irregular astigmatism',
+        'Topographic steepening on serial exams',
+        'Reduced best-corrected visual acuity not explained by refractive error alone',
+      ],
+      referralCriteria: [
+        'No established systemic OI diagnosis/care team -> genetics/pediatrics for systemic evaluation, especially in a child with recurrent fractures and blue sclera',
+        'Documented keratoconus or its progression -> cornea specialist for contact lens fitting or crosslinking',
+        'No audiology evaluation on record -> audiology given the associated hearing loss risk',
+      ],
+      complications: [
+        'Progressive keratoconus with irregular astigmatism',
+        'Corneal scarring in advanced, untreated keratoconus',
+        'Amblyopia risk if significant anisometropic astigmatism is uncorrected in a young child',
+      ],
+      monitoringParameters: [
+        'Corneal topography/keratometry trend',
+        'Refractive error',
+        'Best-corrected visual acuity',
+        'Scleral appearance (expected to remain stable)',
+      ],
+      relatedExamTechniqueIds: ['corneal-topography'],
+    },
     followUp: {
       typical: 'Routine comprehensive eye exams with attention to corneal topography, particularly if the patient reports increasing or asymmetric astigmatism',
       monitor: 'Scleral appearance (largely stable), corneal topography/keratometry for early keratoconus signs, refractive error',

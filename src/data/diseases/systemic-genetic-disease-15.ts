@@ -69,6 +69,48 @@ export const systemicGeneticDisease15: Disease[] = [
       { category: 'Advanced treatment', detail: 'Surgical correction of cicatricial entropion/trichiasis, mucous membrane grafting for severe forniceal shortening, limbal stem cell transplantation for limbal stem cell deficiency, and keratoprosthesis (e.g., Boston KPro) in end-stage corneal blindness with severe surface disease' },
       { category: 'Referral', detail: 'Immediate multidisciplinary referral involving dermatology, the causative-drug prescriber, and ophthalmology/cornea specialty in the acute phase; lifelong ophthalmic follow-up with a cornea/ocular surface specialist for chronic disease' },
     ],
+    managementProtocol: {
+      workup: [
+        'Daily inpatient slit lamp grading of conjunctival injection, membrane/pseudomembrane extent, and corneal epithelial defect during acute hospitalization',
+        'Assessment for early symblepharon formation at each acute visit, since this determines the need for daily lysis',
+        'Evaluation of candidacy for early amniotic membrane transplantation over the ocular surface based on severity of acute involvement',
+        'Serial fornix depth measurement/photography once past the acute phase to establish a baseline for detecting chronic cicatricial progression',
+      ],
+      initialTreatment:
+        'Acute ocular involvement is an ophthalmic emergency: aggressive preservative-free lubrication, topical corticosteroid and antibiotic to control acute surface inflammation and prevent secondary infection, daily lysis of forming symblepharon with a glass rod or symblepharon ring, and early consideration of amniotic membrane transplantation over the entire ocular surface to reduce inflammation and limit cicatricial scarring — coordinated with the burn unit/ICU managing the systemic illness and with immediate discontinuation of the causative drug.',
+      followUpSchedule:
+        'Daily ophthalmic evaluation during acute hospitalization; lifelong periodic follow-up thereafter, as frequently as every few months during active chronic cicatricial disease, extending toward annual once the ocular surface has been stable for an extended period.',
+      escalationCriteria: [
+        'New or progressive symblepharon on serial exam',
+        'New corneal epithelial defect or thinning',
+        'Progressive fornix foreshortening on serial measurement',
+        'Any sign suggestive of impending corneal perforation',
+      ],
+      referralCriteria: [
+        'Any acute SJS/TEN diagnosis -> immediate multidisciplinary referral (dermatology, the causative-drug prescriber, and ophthalmology/cornea specialty)',
+        'All patients, regardless of systemic severity grading -> dedicated acute ophthalmic evaluation, since ocular involvement severity does not reliably parallel skin BSA involvement',
+        'Chronic cicatricial disease -> lifelong follow-up with a cornea/ocular surface specialist',
+        'Severe forniceal shortening, trichiasis/entropion, or limbal stem cell deficiency -> oculoplastics/cornea for surgical reconstruction',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids are used acutely to control ocular surface inflammation and reduce the risk of cicatricial scarring, balanced against the infection risk of a denuded, compromised epithelium — close monitoring for secondary infection is required while dosing is tapered as inflammation resolves.',
+      complications: [
+        'Symblepharon and ankyloblepharon',
+        'Severe cicatricial (aqueous- and mucin-deficient) dry eye',
+        'Trichiasis and cicatricial entropion',
+        'Limbal stem cell deficiency with corneal conjunctivalization',
+        'Corneal scarring, vascularization, and, in severe untreated acute disease, perforation',
+      ],
+      monitoringParameters: [
+        'Symblepharon formation/progression',
+        'Fornix depth (serial objective measurement)',
+        'Trichiasis',
+        'Corneal clarity and vascularization',
+        'Tear film status and visual acuity',
+      ],
+      relatedDrugIds: ['prednisolone-acetate', 'carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['fluorescein-corneal-staining', 'slit-lamp-illumination-techniques'],
+    },
     followUp: {
       typical: 'Daily ophthalmic evaluation during acute hospitalization; lifelong periodic follow-up thereafter (as frequently as every few months in active chronic cicatricial disease) given the risk of slow progression over years',
       monitor: 'Symblepharon formation/progression, fornix depth, trichiasis, corneal clarity and vascularization, tear film status, and visual acuity',

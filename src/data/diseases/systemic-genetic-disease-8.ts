@@ -70,6 +70,42 @@ export const systemicGeneticDisease8: Disease[] = [
       { category: 'First-line treatment', detail: 'Aggressive amblyopia therapy (optical correction, patching) following cataract surgery is essential given the high deprivation amblyopia risk in this population' },
       { category: 'Observation', detail: 'The salt-and-pepper pigmentary retinopathy itself requires no direct treatment and is monitored simply as a diagnostic marker' },
     ],
+    managementProtocol: {
+      workup: [
+        'Complete ophthalmic exam under anesthesia (or in-office if cooperative) including IOP, corneal diameter/clarity, and dilated fundus exam once systemic stability allows',
+        'Cycloplegic retinoscopy for refractive status, critical for aphakic/pseudophakic correction and amblyopia management after cataract surgery',
+        'Fix-and-follow/preferential looking assessment of visual behavior before and after surgical intervention',
+        'Coordination of exam and surgical timing with pediatrics/infectious disease given the possibility of live virus persisting in the lens',
+      ],
+      initialTreatment:
+        'Visually significant cataract requires surgical extraction within the critical period of visual development, with timing weighed against infection-control precautions for potential live viral shedding from the lens; congenital glaucoma is managed with standard infantile glaucoma medical and surgical approaches. Aggressive optical correction and amblyopia therapy (patching) follow surgery and are the single largest determinant of visual outcome.',
+      followUpSchedule:
+        'Very frequent follow-up in the first weeks after cataract and/or glaucoma surgery (days to 1-2 weeks) to monitor IOP, wound/capsule status, and fitting of aphakic correction, transitioning to monthly visits through the first year of life and then per standard pediatric amblyopia follow-up intervals as visual maturation continues.',
+      escalationCriteria: [
+        'Elevated IOP or corneal edema/enlargement after cataract surgery (secondary glaucoma)',
+        'Visual axis opacification (posterior capsule opacification) obstructing fixation',
+        'Poor fixation development or new nystagmus despite optical correction',
+        'Poor compliance with amblyopia therapy',
+      ],
+      referralCriteria: [
+        'Any suspected congenital cataract or glaucoma -> urgent pediatric ophthalmology',
+        'Confirmed or suspected rubella exposure/findings -> audiology, cardiology, and infectious disease/genetics for the systemic triad workup',
+        'Nystagmus or poor fixation despite treatment -> reassess for undertreated amblyopia or a missed structural cause',
+      ],
+      complications: [
+        'Deprivation amblyopia if surgery or optical correction is delayed',
+        'Secondary glaucoma after cataract surgery',
+        'Nystagmus from prolonged visual deprivation',
+        'Increased long-term retinal detachment risk',
+      ],
+      monitoringParameters: [
+        'IOP and corneal clarity/diameter',
+        'Visual fixation/acuity milestones appropriate for age',
+        'Refractive status and spectacle/contact lens fit after aphakic correction',
+        'Amblyopia therapy compliance and response',
+      ],
+      relatedExamTechniqueIds: ['cycloplegic-retinoscopy', 'fix-and-follow-assessment'],
+    },
     followUp: {
       typical: 'Close pediatric ophthalmology follow-up throughout the first year of life and beyond, given the ongoing critical period for visual development and amblyopia risk',
       monitor: 'Intraocular pressure, corneal clarity, visual fixation/acuity milestones, and compliance with amblyopia therapy after cataract and/or glaucoma surgery',
@@ -167,6 +203,44 @@ export const systemicGeneticDisease8: Disease[] = [
       { category: 'First-line treatment', detail: 'Treat the underlying triggering infection with appropriate antibiotics; supportive care (lubrication, cool compresses) for the typically self-limited sterile conjunctivitis; NSAIDs for arthritis symptoms' },
       { category: 'Second-line treatment', detail: 'Topical corticosteroid and cycloplegic therapy for anterior uveitis when present, managed per the general approach to HLA-B27-associated uveitis; disease-modifying antirheumatic therapy for persistent or refractory arthritis, directed by rheumatology' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp exam to distinguish isolated conjunctivitis from anterior uveitis',
+        'Anterior chamber cell/flare grading and IOP check if uveitis is present',
+        'Targeted review of systems for concurrent urethritis/cervicitis and joint symptoms, plus documentation of the preceding infection',
+        'Gonioscopy if recurrent uveitis raises concern for peripheral anterior synechiae',
+      ],
+      initialTreatment:
+        'Isolated conjunctivitis is self-limited and managed with supportive lubrication rather than antibiotics, since it is sterile. Anterior uveitis, when present, is treated with the same first-line approach as other HLA-B27-associated uveitis — a topical corticosteroid dosed by severity paired with a cycloplegic agent — while the triggering infection is treated systemically by primary care/infectious disease and joint symptoms are managed by rheumatology.',
+      followUpSchedule:
+        'Conjunctivitis is rechecked only if it fails to resolve within 1-2 weeks; anterior uveitis follows the standard HLA-B27 uveitis recheck interval of 3-7 days after starting treatment, with the steroid tapered over several weeks as inflammation resolves and dilated/gonioscopic exam performed if recurrent.',
+      escalationCriteria: [
+        'Anterior chamber inflammation not improving after 1 week of appropriately dosed topical steroid',
+        'Development of posterior synechiae',
+        'Conjunctivitis with worsening injection/discharge beyond the expected self-limited course (reconsider infectious conjunctivitis)',
+        'Recurrent uveitis episodes (3 or more)',
+      ],
+      referralCriteria: [
+        'Confirmed or suspected reactive arthritis triad -> rheumatology for systemic diagnosis/management',
+        'Documented triggering infection -> primary care/infectious disease for antibiotic treatment',
+        'Anterior uveitis -> co-manage per the standard HLA-B27 uveitis protocol; refer to a uveitis specialist if recurrent or poorly responsive',
+      ],
+      complications: [
+        'Posterior synechiae, secondary cataract, and secondary glaucoma from recurrent or undertreated anterior uveitis',
+        'Chronic/relapsing arthritis if rheumatologic treatment is delayed',
+      ],
+      monitoringParameters: [
+        'Conjunctival injection/discharge resolution',
+        'Anterior chamber cell/flare grade and IOP if uveitis is present',
+        'Recurrence frequency over time in coordination with rheumatology',
+      ],
+      steroidConsiderations:
+        'Prednisolone acetate 1% dosed by severity with a slow taper, following the same principles as other HLA-B27-associated anterior uveitis; monitor IOP at each visit for steroid response.',
+      cycloplegicConsiderations:
+        'Cyclopentolate or homatropine to relieve ciliary spasm and reduce the risk of posterior synechiae during an active uveitis flare.',
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'doxycycline', 'sulfasalazine'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading'],
+    },
     followUp: {
       typical: 'Close follow-up during the acute phase, with ophthalmology involved for any patient who develops anterior uveitis',
       monitor: 'Resolution of conjunctival injection and discharge, anterior chamber reaction if uveitis is present, and joint symptoms in coordination with rheumatology',
@@ -257,6 +331,42 @@ export const systemicGeneticDisease8: Disease[] = [
       { category: 'Referral', detail: 'Refer to sleep medicine for polysomnography and CPAP titration in any patient with floppy eyelid syndrome, NAION, papilledema/IIH, or normal-tension glaucoma and suspicious symptoms or risk factors; continue managing the specific ocular condition per its own standard protocol' },
       { category: 'Observation', detail: 'Mild floppy eyelid syndrome without significant conjunctivitis may be managed initially with nighttime eye shielding/taping while OSA workup is pursued' },
     ],
+    managementProtocol: {
+      workup: [
+        'In-office OSA risk screening (snoring, witnessed apnea, daytime somnolence) in any patient with floppy eyelid syndrome, unexplained NAION, papilledema/IIH, or normal-tension glaucoma',
+        'Lid eversion/tarsal laxity assessment for floppy eyelid syndrome',
+        'Dilated fundus exam with optic nerve OCT and automated visual field testing to characterize and stage the specific associated optic nerve condition',
+        'Body mass index/neck circumference documentation as supportive risk-factor evidence',
+      ],
+      initialTreatment:
+        "The optometrist does not manage OSA directly — CPAP therapy, weight loss, and positional therapy are initiated by sleep medicine once polysomnography confirms the diagnosis. Ocular care runs in parallel per the specific associated condition's own protocol: nighttime shielding/taping and topical lubrication for floppy eyelid syndrome-related exposure conjunctivitis while OSA workup is pursued, or standard NAION/papilledema/normal-tension glaucoma management for those diagnoses.",
+      followUpSchedule:
+        'Follow-up interval is set by the specific ocular diagnosis (e.g., glaucoma-interval visual fields/OCT, NAION fellow-eye monitoring, IIH papilledema rechecks); OSA-related questions (CPAP compliance, symptom changes) are revisited at each routine visit.',
+      escalationCriteria: [
+        'New fellow-eye optic nerve findings in a patient with known NAION',
+        'Progressive visual field loss or OCT thinning despite CPAP compliance',
+        'Worsening floppy eyelid conjunctivitis/keratopathy despite nighttime shielding',
+        'New or worsening papilledema',
+      ],
+      referralCriteria: [
+        'Positive OSA screening (snoring, witnessed apnea, daytime somnolence) in a patient with floppy eyelid syndrome, unexplained NAION, papilledema/IIH, or normal-tension glaucoma -> sleep medicine for polysomnography',
+        'Any new optic nerve finding concerning for NAION or papilledema -> neuro-ophthalmology',
+        'Poor CPAP tolerance/compliance affecting ocular disease control -> back to sleep medicine for alternative therapy',
+      ],
+      complications: [
+        'Irreversible vision loss from NAION',
+        'Progressive glaucomatous field loss in normal-tension glaucoma',
+        'Vision-threatening papilledema from uncontrolled IIH',
+        'Chronic papillary conjunctivitis and exposure keratopathy from unaddressed floppy eyelid syndrome',
+      ],
+      monitoringParameters: [
+        'Optic disc appearance and OCT RNFL trend',
+        'Automated visual field results',
+        'Tarsal laxity and conjunctival findings if floppy eyelid syndrome is present',
+        'CPAP compliance (as reported by the patient/sleep medicine)',
+      ],
+      relatedExamTechniqueIds: ['oct-optic-nerve-rnfl', 'humphrey-visual-field', 'lid-eversion'],
+    },
     followUp: {
       typical: 'Routine follow-up per the specific ocular diagnosis, with periodic reassessment of OSA symptoms and screening questions at subsequent visits',
       monitor: 'Resolution or improvement of floppy eyelid conjunctivitis with CPAP compliance, and stability of optic nerve/visual field findings over time',

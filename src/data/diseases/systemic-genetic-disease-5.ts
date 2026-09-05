@@ -329,6 +329,45 @@ export const systemicGeneticDisease5: Disease[] = [
       { category: 'Advanced treatment', detail: 'Neuro-ophthalmology or neurology co-management for diabetic cranial mononeuropathy, including supportive management of diplopia (prism or occlusion) while awaiting spontaneous resolution' },
       { category: 'Referral', detail: 'Urgent referral for neuroimaging with any pupil-involving CN III palsy or any ophthalmoplegia in a patient under 50 to rule out aneurysm; referral to endocrinology/primary care for glycemic optimization; glaucoma and cornea specialist referral as needed for advanced findings' },
     ],
+    managementProtocol: {
+      workup: [
+        'Cycloplegic refraction, deferred until glycemic stability is confirmed with the patient and, when needed, HbA1c',
+        'Intraocular pressure measurement and optic nerve evaluation (cup-to-disc ratio, RNFL OCT) given the increased open-angle glaucoma risk',
+        'Slit lamp assessment of corneal sensation and epithelial integrity, particularly before any planned intraocular surgery',
+        'Pupil and extraocular motility exam whenever acute diplopia or ptosis is reported',
+        'Neuroimaging (MRI/MRA or CTA) for any pupil-involving CN III palsy, or any ophthalmoplegia in a patient under 50, to rule out a compressive lesion',
+      ],
+      initialTreatment:
+        'Coordinate with the patient\'s physician on glycemic control, which is the foundation for managing refractive fluctuation and slowing progression of the other ocular complications. Defer a new spectacle prescription during known periods of unstable blood glucose. Standard topical therapy is used for comorbid open-angle glaucoma, and supportive prism or occlusion manages diplopia from cranial neuropathy while awaiting its typically spontaneous resolution.',
+      followUpSchedule:
+        'A comprehensive annual dilated eye exam is the cornerstone of ongoing care, addressing lens, angle, cornea, and cranial nerve status; recheck refraction only once blood glucose has been stable for several weeks before finalizing a new prescription.',
+      escalationCriteria: [
+        'Pupil involvement (anisocoria) in a CN III palsy — mandates urgent neuroimaging',
+        'Accelerating cataract progression or rising intraocular pressure',
+        'New-onset diplopia or ptosis',
+        'Non-healing corneal epithelial defect after minor trauma or surgery',
+      ],
+      referralCriteria: [
+        'Pupil-involving CN III palsy or any ophthalmoplegia in a patient under 50 -> urgent neuroimaging/neurology referral to rule out a compressive aneurysm',
+        'Visually significant cataract -> cataract surgery referral, with counseling on potentially delayed postoperative epithelial healing',
+        'Elevated IOP or glaucomatous optic nerve changes -> glaucoma management',
+        'Persistent epithelial defect or reduced corneal sensation before planned intraocular surgery -> cornea specialist',
+      ],
+      complications: [
+        'Repeated inaccurate refractive prescriptions if issued during unstable glycemic periods',
+        'Delayed corneal or surgical wound healing',
+        'Diplopia from cranial neuropathy',
+        'Cataract- and glaucoma-related visual morbidity if untreated',
+      ],
+      monitoringParameters: [
+        'Refractive stability',
+        'Lens clarity',
+        'Intraocular pressure and cup-to-disc ratio',
+        'Corneal sensation and epithelial integrity',
+        'Motility and pupillary status',
+      ],
+      relatedExamTechniqueIds: ['corneal-sensation-testing', 'goldmann-applanation-tonometry', 'oct-optic-nerve-rnfl', 'pupillary-examination', 'extraocular-motility-testing'],
+    },
     followUp: {
       typical: 'Comprehensive annual dilated eye examination is the cornerstone of ongoing diabetes ocular care, addressing lens, angle, cornea, and cranial nerve status in addition to the retina',
       monitor: 'Refractive stability, lens clarity, intraocular pressure/optic nerve status, corneal sensation and epithelial integrity, and any new motility/pupillary abnormality',

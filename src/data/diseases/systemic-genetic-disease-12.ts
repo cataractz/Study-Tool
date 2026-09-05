@@ -70,6 +70,31 @@ export const systemicGeneticDisease12: Disease[] = [
       { category: 'Advanced treatment', detail: 'Pars plana vitrectomy for eyes with significant vitreous abscess/opacity, both to debulk the fungal burden and to obtain material for culture; combined with intravitreal and systemic antifungal therapy' },
       { category: 'Emergency management', detail: 'Rapidly progressive vitreous involvement or threatened macular/visual loss warrants urgent same-week (or sooner) retina evaluation for consideration of intravitreal injection or vitrectomy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus exam to stage disease as chorioretinitis alone versus chorioretinitis with vitritis/vitreous abscess',
+        'B-scan ultrasonography when vitreous haze limits the fundus view',
+        'Confirm blood culture results and coordinate source-control status (e.g., line removal) with infectious disease',
+        'Vitreous tap/biopsy with culture when vitrectomy is being performed or diagnosis is uncertain',
+      ],
+      initialTreatment:
+        'Systemic antifungal therapy directed by infectious disease is first-line for chorioretinitis without significant vitreous involvement, with close interval fundus monitoring; intravitreal antifungal therapy is added for eyes with vitreous involvement or macular-threatening lesions, and pars plana vitrectomy is reserved for significant vitreous abscess, both to debulk fungal burden and obtain culture material.',
+      followUpSchedule:
+        'Frequent dilated exams, often weekly or more often initially, while on treatment to document lesion regression and detect any progression to vitreous involvement.',
+      escalationCriteria: [
+        'New or enlarging chorioretinal lesions',
+        'Increasing vitreous haze/opacity',
+        'A new "string of pearls" pattern of vitreous opacities',
+        'Lack of improvement on systemic antifungal therapy alone',
+      ],
+      referralCriteria: [
+        'Every patient with documented candidemia -> dilated fundus examination, since ocular involvement can be asymptomatic',
+        'Any positive chorioretinal or vitreous finding -> prompt retina specialist referral with continued infectious disease coordination',
+      ],
+      complications: ['Macular scarring', 'Retinal detachment', 'Vitreous abscess', 'Phthisis bulbi in severe, delayed cases'],
+      monitoringParameters: ['Size and activity of chorioretinal lesions', 'Degree of vitreous haze/opacity', 'Visual acuity'],
+      relatedExamTechniqueIds: ['b-scan-ultrasonography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Frequent interval dilated exams (often weekly or more often initially) while on treatment to document lesion regression and monitor for progression to vitreous involvement',
       monitor: 'Size and activity of chorioretinal lesions, degree of vitreous haze/opacity, and visual acuity',
