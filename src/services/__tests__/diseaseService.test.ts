@@ -27,8 +27,8 @@ describe('disease data integrity', () => {
     }
   })
 
-  it('has a representative-sized data set (248 diseases as of Section 17)', () => {
-    expect(getAllDiseases().length).toBe(248)
+  it('has a representative-sized data set (249 diseases as of Section 12)', () => {
+    expect(getAllDiseases().length).toBe(249)
   })
 })
 

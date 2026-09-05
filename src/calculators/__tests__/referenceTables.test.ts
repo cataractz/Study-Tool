@@ -25,6 +25,21 @@ describe('Reference registry', () => {
     expect(results.some((r) => r.meta.id === 'clinical-rules-of-thumb')).toBe(true)
   })
 
+  it('searchReferences finds the pediatric visual development milestones table by keyword', () => {
+    const results = searchReferences('milestones')
+    expect(results.some((r) => r.meta.id === 'visual-development-milestones')).toBe(true)
+  })
+
+  it('searchReferences finds the pediatric cycloplegic comparison table by keyword', () => {
+    const results = searchReferences('cycloplegic')
+    expect(results.some((r) => r.meta.id === 'pediatric-cycloplegic-comparison')).toBe(true)
+  })
+
+  it('getReferenceById resolves both new Section 12 reference ids', () => {
+    expect(getReferenceById('visual-development-milestones')).toBeDefined()
+    expect(getReferenceById('pediatric-cycloplegic-comparison')).toBeDefined()
+  })
+
   it('getReferenceById resolves a known id and returns undefined for unknown', () => {
     expect(getReferenceById('donders-table')).toBeDefined()
     expect(getReferenceById('not-a-real-id')).toBeUndefined()
