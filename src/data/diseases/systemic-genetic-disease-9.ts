@@ -68,6 +68,41 @@ export const systemicGeneticDisease9: Disease[] = [
       { category: 'First-line treatment', detail: 'Once confirmed, systemic management (antiplatelet therapy or anticoagulation, per stroke/neurology protocol) to reduce thromboembolic stroke risk is initiated by the treating medical team; this is not an ocular treatment decision' },
       { category: 'Advanced treatment', detail: 'Endovascular stenting or, rarely, surgical repair may be used for dissections with hemodynamically significant stenosis, pseudoaneurysm, or recurrent embolic events despite medical therapy' },
     ],
+    managementProtocol: {
+      workup: [
+        'Pupillary examination with topical apraclonidine (or cocaine) testing to pharmacologically confirm an oculosympathetic (Horner) pupil at the bedside',
+        'Eyelid position assessment (ptosis, subtle "upside-down" lower lid elevation) to document the degree of sympathetic denervation',
+        'Immediate coordination with the emergency department for CT angiography or MR angiography of the neck to visualize the arterial wall',
+        'Brain MRI with diffusion-weighted imaging, coordinated with the treating team, to assess for an acute embolic cerebral infarct',
+      ],
+      initialTreatment:
+        'Any acute, PAINFUL Horner syndrome must be treated as a carotid dissection until proven otherwise — the priority is immediate referral to an emergency department for urgent CTA/MRA of the neck, not a routine or next-day referral. Once confirmed, systemic antiplatelet therapy or anticoagulation to reduce thromboembolic stroke risk is initiated by the treating stroke/vascular team; this is not an ocular treatment decision.',
+      followUpSchedule:
+        'Ocular follow-up (ptosis, pupil findings) is coordinated with the treating stroke/vascular team once the patient is stabilized, to document resolution or persistence of the Horner syndrome after the acute workup.',
+      escalationCriteria: [
+        'A persistent or worsening Horner syndrome after the initial diagnosis',
+        'New amaurosis fugax or other transient vision loss episodes',
+        'New focal neurologic symptoms after the initial event',
+      ],
+      referralCriteria: [
+        'Any acute painful Horner syndrome -> emergency department for urgent CTA/MRA of the neck, same-day, never routine',
+        'Amaurosis fugax, TIA symptoms, or a focal neurologic deficit -> immediate emergency/stroke team referral',
+        'A persistent Horner syndrome after the dissection has healed -> neuro-ophthalmology for longer-term follow-up',
+      ],
+      complications: [
+        'Ischemic stroke and permanent neurologic deficit',
+        'Permanent monocular vision loss from embolic retinal artery occlusion',
+        'Recurrent embolization',
+        'Death from large-territory stroke in severe cases',
+      ],
+      monitoringParameters: [
+        'Degree of ptosis and anisocoria',
+        'Any new visual symptoms suggestive of recurrent embolization',
+        'Interval vascular imaging findings per the treating team',
+      ],
+      relatedDrugIds: ['apraclonidine'],
+      relatedExamTechniqueIds: ['pupillary-examination', 'marginal-reflex-distance'],
+    },
     followUp: {
       typical: 'Ocular follow-up (ptosis, pupil findings) is coordinated with the treating stroke/vascular team once the patient is stabilized; the optometrist typically sees the patient again after emergent workup to document resolution or persistence of the Horner syndrome',
       monitor: 'Degree of ptosis and anisocoria, any new visual symptoms suggestive of recurrent embolization, and interval vascular imaging findings per the treating team',
@@ -160,6 +195,41 @@ export const systemicGeneticDisease9: Disease[] = [
       { category: 'Observation', detail: 'Periorbital edema, madarosis, and mild ptosis are typically monitored and expected to gradually improve as systemic thyroid hormone replacement restores a euthyroid state; no direct ocular surgical or procedural intervention is indicated for these findings' },
       { category: 'Second-line treatment', detail: 'If ptosis remains visually significant or cosmetically bothersome despite adequate systemic treatment and a stable euthyroid state, referral for oculoplastic evaluation of persistent ptosis can be considered' },
     ],
+    managementProtocol: {
+      workup: [
+        'Coordinate serum TSH and free T4 testing with primary care/endocrinology when hypothyroidism is newly suspected from ocular/periocular findings',
+        'Anti-thyroid peroxidase and anti-thyroglobulin antibody testing (via the patient\'s physician) when an autoimmune (Hashimoto) etiology is suspected',
+        'Schirmer testing and ocular surface staining to quantify associated dry eye disease',
+        'Slit lamp assessment of lid position/ptosis and periorbital edema',
+        'Dilated fundus and optic nerve examination to rule out the rare optic neuropathy reported in severe, longstanding, untreated hypothyroidism',
+      ],
+      initialTreatment:
+        'Refer for systemic thyroid hormone replacement, which is the definitive treatment and the foundation for resolution of the periocular findings. In parallel, manage dry eye symptomatically with preservative-free artificial tears, lubricating ointment at bedtime, and warm compresses/lid hygiene for meibomian gland dysfunction; no direct ocular surgical or procedural intervention is indicated for periorbital edema, madarosis, or mild ptosis.',
+      followUpSchedule:
+        'Reassess at subsequent comprehensive exams as thyroid hormone replacement is optimized and the patient reaches a stable euthyroid state; recheck dry eye findings on a standard interval (e.g., 4-6 weeks) after starting symptomatic treatment.',
+      escalationCriteria: [
+        'New proptosis, lid retraction, lid lag, or restrictive extraocular motility, which suggests coexisting Graves orbitopathy rather than simple hypothyroid myxedema',
+        'Persistent or worsening periocular findings despite adequate systemic thyroid treatment',
+        'Dry eye unresponsive to standard symptomatic therapy',
+      ],
+      referralCriteria: [
+        'Newly suspected hypothyroidism based on ocular/periocular findings -> primary care/endocrinology for thyroid function testing',
+        'Persistent, visually significant ptosis despite a stable euthyroid state -> oculoplastics',
+        'Suspected coexisting Graves orbitopathy -> endocrinology plus neuro-ophthalmology/oculoplastics',
+      ],
+      complications: [
+        'Persistent dry eye disease if untreated',
+        'Rare optic neuropathy in severe, untreated (myxedema coma-range) hypothyroidism',
+      ],
+      monitoringParameters: [
+        'Degree of periorbital edema',
+        'Eyebrow density',
+        'Eyelid position (ptosis)',
+        'Dry eye signs and symptoms',
+      ],
+      relatedDrugIds: ['levothyroxine', 'carboxymethylcellulose-sodium'],
+      relatedExamTechniqueIds: ['schirmer-test', 'marginal-reflex-distance'],
+    },
     followUp: {
       typical: 'Routine follow-up in coordination with the patient reaching a stable euthyroid state on replacement therapy; ocular findings are generally reassessed at subsequent comprehensive exams',
       monitor: 'Degree of periorbital edema, eyebrow density, eyelid position (ptosis), and dry eye signs/symptoms over time as thyroid hormone replacement is optimized',
@@ -253,6 +323,40 @@ export const systemicGeneticDisease9: Disease[] = [
       { category: 'Advanced treatment', detail: 'Cataract extraction with intraocular lens implantation for visually significant hypocalcemic cataract once systemic calcium levels are stabilized' },
       { category: 'Emergency management', detail: 'New papilledema in the setting of severe hypocalcemia warrants urgent correction of serum calcium and neurologic/neuro-ophthalmic evaluation to protect the optic nerve and assess for other causes of elevated intracranial pressure' },
     ],
+    managementProtocol: {
+      workup: [
+        'Coordinate serum calcium (total and ionized), phosphate, and intact PTH testing with endocrinology/nephrology to establish the direction and cause of the calcium abnormality',
+        'Renal function panel when secondary hyperparathyroidism from chronic kidney disease is suspected',
+        'Slit lamp examination to evaluate for band keratopathy, conjunctival calcium deposits, or an early subcapsular cataract',
+        'Dilated fundus and optic nerve examination to screen for papilledema in patients with severe or symptomatic hypocalcemia',
+      ],
+      initialTreatment:
+        'Refer for systemic correction of the underlying calcium/PTH disorder, which is the definitive treatment. For band keratopathy that is symptomatic or encroaching the visual axis, chelation with topical EDTA or superficial keratectomy may be performed by a cornea specialist once the underlying calcium disorder is identified and addressed. Visually significant hypocalcemic cataract is extracted once systemic calcium levels are stabilized.',
+      followUpSchedule:
+        'Ocular follow-up is coordinated with the patient\'s systemic treatment timeline; band keratopathy and cataract are monitored at routine comprehensive exams once the underlying calcium disorder is being managed.',
+      escalationCriteria: [
+        'Band keratopathy progressing toward or into the visual axis',
+        'Worsening cataract-related vision loss',
+        'New or worsening papilledema',
+        'Any new visual symptom in a patient with known severe hypocalcemia',
+      ],
+      referralCriteria: [
+        'Unexplained bilateral band keratopathy or an atypical early cataract -> endocrinology for serum calcium/PTH workup',
+        'New papilledema in the setting of severe hypocalcemia -> urgent correction of serum calcium plus neuro-ophthalmic evaluation',
+        'Visually significant band keratopathy -> cornea specialist for chelation/keratectomy',
+        'Visually significant cataract -> cataract surgery referral once calcium is stabilized',
+      ],
+      complications: [
+        'Visually significant band keratopathy or cataract if untreated',
+        'Permanent optic nerve damage from prolonged, untreated papilledema in severe hypocalcemia',
+      ],
+      monitoringParameters: [
+        'Band keratopathy density and extent',
+        'Cataract progression and visual acuity',
+        'Optic disc appearance if papilledema was previously present',
+      ],
+      relatedExamTechniqueIds: ['slit-lamp-illumination-techniques', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Ocular follow-up is coordinated with the patient systemic treatment timeline; band keratopathy and cataract are monitored at routine comprehensive exams once the underlying calcium disorder is being managed',
       monitor: 'Progression of band keratopathy density/extent, cataract progression and visual acuity, and optic disc appearance if papilledema was previously present',
@@ -347,6 +451,42 @@ export const systemicGeneticDisease9: Disease[] = [
       { category: 'First-line treatment', detail: 'Antiplatelet therapy (as directed by the treating physician) and aggressive management of modifiable risk factors — blood pressure, lipid-lowering therapy, glycemic control, and smoking cessation counseling' },
       { category: 'Advanced treatment', detail: 'Carotid endarterectomy or stenting may be indicated for significant symptomatic carotid stenosis per vascular surgery evaluation; anticoagulation for identified cardioembolic sources such as atrial fibrillation' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination looking for a visible embolus (Hollenhorst plaque or other embolic material) and to rule out signs of a completed retinal artery occlusion',
+        'Coordinate carotid duplex ultrasound with the treating physician to evaluate for carotid artery stenosis as the embolic source',
+        'Coordinate echocardiography (transthoracic, with transesophageal if indicated) and ECG/cardiac telemetry or Holter monitoring to evaluate for a cardiac embolic source or atrial fibrillation',
+        'Coordinate brain MRI to assess for a concurrent or subclinical cerebral ischemic infarct',
+        'Fasting lipid panel, hemoglobin A1c, and blood pressure assessment to evaluate modifiable atherosclerotic risk factors',
+      ],
+      initialTreatment:
+        'Amaurosis fugax should be treated with the same urgency as any TIA — same-day or emergency department referral is warranted, particularly for a first episode or recurrent/crescendo episodes, given the significant short-term risk of stroke or permanent vision loss. Antiplatelet therapy and aggressive management of modifiable risk factors (blood pressure, lipid-lowering therapy, glycemic control, smoking cessation) are initiated by the treating physician, not as an ocular treatment decision.',
+      followUpSchedule:
+        'A dilated fundus exam is typically repeated to confirm no interval retinal artery occlusion has occurred and to document baseline findings, with ocular follow-up coordinated to the patient\'s systemic stroke workup timeline.',
+      escalationCriteria: [
+        'Recurrent transient episodes after the initial evaluation',
+        'Any episode that fails to fully resolve, suggesting a completed occlusion',
+        'A new persistent visual field defect',
+        'Associated transient neurologic symptoms (slurred speech, limb weakness/numbness)',
+      ],
+      referralCriteria: [
+        'Any first episode of amaurosis fugax -> same-day or emergency referral for stroke-equivalent workup (carotid imaging, cardiac evaluation)',
+        'Persistent vision loss -> re-evaluate for a completed retinal artery occlusion',
+        'Recurrent or crescendo episodes -> emergency department, given higher near-term stroke risk',
+      ],
+      complications: [
+        'Completed retinal artery occlusion with permanent vision loss',
+        'Ischemic stroke',
+        'Recurrent TIA episodes',
+      ],
+      monitoringParameters: [
+        'Recurrence of transient episodes',
+        'Any persistent visual field defect',
+        'Interval carotid/cardiac workup results',
+      ],
+      relatedDrugIds: ['aspirin', 'clopidogrel'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'humphrey-visual-field'],
+    },
     followUp: {
       typical: 'Ocular follow-up is coordinated with the patient systemic stroke workup; a dilated fundus exam is typically repeated to confirm no interval retinal artery occlusion has occurred and to document baseline findings',
       monitor: 'Recurrence of transient episodes, any persistent visual field defect (which would suggest a completed occlusion), and interval carotid/cardiac workup results',
@@ -439,6 +579,41 @@ export const systemicGeneticDisease9: Disease[] = [
       { category: 'First-line treatment', detail: 'Patient counseling on avoiding activities with risk of blunt ocular/head trauma (contact sports) given the fragility of Bruch membrane at streak sites, and on routine Amsler grid self-monitoring' },
       { category: 'Advanced treatment', detail: 'Intravitreal anti-VEGF injection therapy is the primary treatment for choroidal neovascularization arising from angioid streaks in PXE, aimed at halting leakage/hemorrhage and preserving central vision' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination to visualize angioid streaks and screen for early choroidal neovascularization',
+        'Optical coherence tomography of the macula to evaluate for subretinal fluid, hemorrhage, or other signs of CNV and to characterize Bruch membrane breaks',
+        'Fundus autofluorescence and fluorescein angiography or OCT angiography to characterize the streaks and detect active choroidal neovascularization',
+        'Coordinate skin biopsy and/or genetic testing for ABCC6 mutations with dermatology/genetics when PXE is newly suspected',
+        'Coordinate cardiovascular evaluation (echocardiogram, peripheral vascular assessment) with cardiology given the associated systemic risk',
+      ],
+      initialTreatment:
+        'Stable angioid streaks without active CNV are managed with regular dilated fundus examination and home Amsler grid monitoring, plus counseling to avoid contact sports and other activities with head/ocular trauma risk given the fragility of the calcified Bruch membrane. Intravitreal anti-VEGF injection therapy is the primary treatment once choroidal neovascularization develops, aimed at halting leakage/hemorrhage and preserving central vision.',
+      followUpSchedule:
+        'Dilated fundus examination roughly every 6-12 months in stable disease, with home Amsler grid self-monitoring between visits; more frequent OCT-based monitoring is warranted for streaks that are extensive or approach the fovea.',
+      escalationCriteria: [
+        'New or worsening metamorphopsia or a new central scotoma',
+        'OCT evidence of new subretinal or intraretinal fluid',
+        'Streak growth approaching or crossing the fovea',
+      ],
+      referralCriteria: [
+        'Newly discovered angioid streaks without a known systemic diagnosis -> dermatology/genetics for skin biopsy and ABCC6 testing',
+        'Suspected choroidal neovascularization -> retina specialist for anti-VEGF treatment',
+        'Cardiovascular symptoms or signs -> cardiology evaluation',
+      ],
+      complications: [
+        'Choroidal neovascularization with subretinal hemorrhage and fibrosis leading to central vision loss',
+        'Choroidal rupture from even minor blunt trauma',
+        'Systemic cardiovascular complications (premature atherosclerosis, mitral valve prolapse) and gastrointestinal bleeding',
+      ],
+      monitoringParameters: [
+        'Development of new subretinal fluid, hemorrhage, or metamorphopsia',
+        'Extent and progression of angioid streaks',
+        'Amsler grid changes reported by the patient',
+      ],
+      relatedDrugIds: ['bevacizumab', 'ranibizumab', 'aflibercept'],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'oct-macula', 'fundus-autofluorescence', 'fluorescein-angiography', 'amsler-grid-testing', 'oct-angiography'],
+    },
     followUp: {
       typical: 'Regular dilated fundus examinations (frequency individualized, often every 6-12 months in stable disease) to monitor angioid streaks for early signs of choroidal neovascularization; home Amsler grid monitoring between visits',
       monitor: 'Development of new subretinal fluid, hemorrhage, or metamorphopsia suggesting active CNV; extent and progression of angioid streaks over time',

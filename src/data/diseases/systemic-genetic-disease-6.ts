@@ -82,6 +82,45 @@ export const systemicGeneticDisease6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Chemotherapy for progressive, vision-threatening optic pathway glioma (surgery/radiation generally avoided as first-line given morbidity); cataract extraction for visually significant NF2-associated cataract' },
       { category: 'Referral', detail: 'Refer to pediatric ophthalmology/neuro-ophthalmology and oncology for suspected optic pathway glioma; refer to neurotology/neurosurgery for NF2 with vestibular schwannoma; refer to genetics for confirmatory testing and family counseling in both types' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination of the iris to count and document Lisch nodules (NF1)',
+        'Dilated fundus examination with near-infrared reflectance imaging to detect choroidal hamartomas (NF1) or the combined retina/RPE hamartoma (NF2)',
+        'Visual acuity, color vision, pupil (afferent defect), and optic disc assessment at every visit, given the risk of optic pathway glioma (NF1) or optic nerve sheath meningioma (NF2)',
+        'Serial ophthalmic exams +/- orbital/brain MRI in young children with NF1 to screen for optic pathway glioma during the highest-risk early childhood window',
+        'Coordinate audiometry and internal auditory canal MRI with neurotology when NF2 is suspected',
+      ],
+      initialTreatment:
+        'Lisch nodules and choroidal hamartomas require no treatment and are monitored only as diagnostic/surveillance markers. Refractive correction and patching treat ptosis-induced or anisometropic amblyopia from a plexiform neurofibroma in NF1 children; visually significant NF2-associated cataract is extracted when appropriate. Progressive, vision-threatening optic pathway glioma is treated with chemotherapy (managed by pediatric oncology), since surgery and radiation are generally avoided as first-line given their morbidity.',
+      followUpSchedule:
+        'NF1: annual comprehensive eye exam, increased to every 3-6 months in young children (typically under age 7-10) specifically to screen for optic pathway glioma during the highest-risk window. NF2: regular ophthalmic exams alongside audiologic/neurologic monitoring.',
+      escalationCriteria: [
+        'New proptosis, decreased acuity, afferent pupillary defect, or optic disc changes in a child with NF1',
+        'Progressive visual field loss or optic nerve imaging changes on serial testing',
+        'A growing plexiform neurofibroma threatening the visual axis or causing amblyopia',
+        'A new or enlarging NF2 combined hamartoma threatening the macula',
+      ],
+      referralCriteria: [
+        'Suspected optic pathway glioma -> pediatric ophthalmology/neuro-ophthalmology and oncology for imaging and treatment planning',
+        'Suspected NF2 (bilateral vestibular schwannoma) -> neurotology/neurosurgery and audiology',
+        'Visually significant plexiform neurofibroma or ptosis -> oculoplastics for debulking/ptosis repair',
+        'New or equivocal presentation -> genetics for confirmatory NF1/NF2 testing and family counseling',
+      ],
+      complications: [
+        'Amblyopia from ptosis or anisometropia (NF1)',
+        'Vision loss from progressive optic pathway glioma (NF1)',
+        'Glaucoma with periocular plexiform involvement (NF1)',
+        'Progressive cataract-related vision loss and retinal traction/distortion from combined hamartoma (NF2)',
+      ],
+      monitoringParameters: [
+        'Visual acuity and color vision',
+        'Pupils (afferent defect)',
+        'Optic disc appearance',
+        'Visual fields',
+        'Lisch nodule number and lid position (NF1); lens clarity (NF2)',
+      ],
+      relatedExamTechniqueIds: ['pupillary-examination', 'humphrey-visual-field', 'ishihara-color-vision-screening', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'NF1: annual comprehensive eye exams, with more frequent (every 3-6 month) surveillance exams in young children (typically under age 7-10) to screen for optic pathway glioma; NF2: regular ophthalmic exams alongside audiologic/neurologic monitoring',
       monitor: 'Visual acuity, color vision, pupils (afferent defect), optic disc appearance, visual fields, Lisch nodule number, lid position, and lens clarity',
@@ -170,6 +209,37 @@ export const systemicGeneticDisease6: Disease[] = [
       { category: 'Second-line treatment', detail: 'Laser photocoagulation or cryotherapy may rarely be considered for an actively growing or exudative hamartoma threatening the macula, though this is uncommon' },
       { category: 'Referral', detail: 'Refer to genetics/neurology/pediatrics for multidisciplinary systemic diagnosis and surveillance (seizure management, neurodevelopmental care, renal and cardiac imaging) upon identification of a retinal hamartoma suggestive of TSC; refer to retina specialist for any lesion showing growth, exudation, or macular threat' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination to identify and characterize a retinal astrocytic hamartoma (calcified "mulberry" versus flat translucent "fish-egg" morphology)',
+        'Optical coherence tomography and fundus autofluorescence to characterize hamartoma structure/calcification and distinguish it from mimics such as optic disc drusen',
+        'Coordinate brain MRI, renal ultrasound/MRI, and cardiac echocardiogram with neurology/genetics/pediatrics for systemic surveillance once a hamartoma is identified',
+        'Facilitate genetic testing for TSC1/TSC2 mutations through genetics when the diagnosis is not already established',
+      ],
+      initialTreatment:
+        'The large majority of retinal astrocytic hamartomas are benign, stable, and require no treatment — periodic monitoring only. Laser photocoagulation or cryotherapy is rarely considered for an actively growing or exudative hamartoma threatening the macula.',
+      followUpSchedule:
+        'Periodic dilated eye exams, roughly annual or per the multidisciplinary team\'s recommendation, to monitor hamartoma stability and coordinate with the patient\'s systemic TSC surveillance schedule.',
+      escalationCriteria: [
+        'Documented growth of a known hamartoma',
+        'New exudation or subretinal fluid',
+        'Vision change or a new lesion near the fovea or optic nerve',
+      ],
+      referralCriteria: [
+        'A newly identified retinal hamartoma suggestive of TSC -> genetics/neurology/pediatrics for multidisciplinary systemic workup (seizure management, neurodevelopmental care, renal/cardiac imaging)',
+        'A hamartoma showing growth, exudation, or macular threat -> retina specialist',
+      ],
+      complications: [
+        'Rarely, macular or optic nerve involvement, exudation, or vitreous seeding threatening vision',
+        'Systemic complications (subependymal giant cell astrocytoma causing hydrocephalus, renal angiomyolipoma hemorrhage) drive most overall morbidity',
+      ],
+      monitoringParameters: [
+        'Size, elevation, and calcification of known hamartomas',
+        'Development of new lesions',
+        'Exudation or macular involvement',
+      ],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'oct-macula', 'fundus-autofluorescence'],
+    },
     followUp: {
       typical: 'Periodic dilated eye exams (roughly annual, or per multidisciplinary team recommendation) to monitor hamartoma stability, coordinated with the patient\'s systemic TSC surveillance schedule',
       monitor: 'Size, elevation, and calcification of known hamartomas; development of new lesions; any exudation or macular involvement',
@@ -260,6 +330,42 @@ export const systemicGeneticDisease6: Disease[] = [
       { category: 'Advanced treatment', detail: 'Photodynamic therapy, anti-VEGF injection, or vitreoretinal surgery may be considered for large, juxtapapillary, or complicated lesions with significant exudation/detachment; early treatment before macular involvement is key to preserving vision' },
       { category: 'Referral', detail: 'Refer to retina specialist promptly upon identification of a suspected hemangioblastoma; refer to genetics/oncology for systemic VHL workup and lifelong multidisciplinary surveillance (neurosurgery, urology, endocrinology) given the disease drives mortality primarily through CNS and renal tumors' },
     ],
+    managementProtocol: {
+      workup: [
+        'Dilated fundus examination with scleral depression to detect peripheral retinal capillary hemangioblastoma, particularly in known or at-risk patients',
+        'Fluorescein angiography to characterize the vascular tumor and identify subtle or early lesions not obvious on exam',
+        'Optical coherence tomography to assess for subretinal/intraretinal fluid and macular involvement',
+        'Coordinate genetic testing for the VHL mutation, and systemic screening (brain/spinal MRI, abdominal imaging, plasma/urine metanephrines) with genetics/oncology',
+      ],
+      initialTreatment:
+        'Very small, asymptomatic peripheral hemangioblastomas without exudation may be monitored closely. Laser photocoagulation is first-line for small-to-moderate lesions away from the fovea; cryotherapy is used for peripheral lesions not amenable to or that fail laser. Photodynamic therapy, anti-VEGF injection, or vitreoretinal surgery are reserved for large, juxtapapillary, or complicated lesions with significant exudation/detachment — early treatment before macular involvement is key to preserving vision.',
+      followUpSchedule:
+        'Dilated fundus exam every 6-12 months (or per retina specialist guidance) for known/at-risk patients, coordinated with systemic surveillance imaging on an established multidisciplinary schedule.',
+      escalationCriteria: [
+        'New lesion growth',
+        'Increasing exudation or subretinal fluid',
+        'Vitreous hemorrhage',
+        'New floaters or vision change',
+      ],
+      referralCriteria: [
+        'Any suspected retinal capillary hemangioblastoma -> retina specialist promptly',
+        'Confirmed or newly suspected VHL disease -> genetics/oncology for systemic workup and lifelong multidisciplinary surveillance',
+        'First-degree relatives of a known VHL patient -> genetic testing and, if positive or untested, periodic dilated eye exams starting in childhood',
+      ],
+      complications: [
+        'Exudative retinal detachment',
+        'Vitreous hemorrhage',
+        'Neovascular glaucoma in advanced untreated cases',
+        'Systemically: CNS hemangioblastoma causing neurologic deficits, metastatic renal cell carcinoma, catecholamine crisis from pheochromocytoma',
+      ],
+      monitoringParameters: [
+        'Number, size, and location of retinal hemangioblastomas',
+        'Degree of exudation/subretinal fluid',
+        'Macular status',
+      ],
+      relatedDrugIds: ['bevacizumab'],
+      relatedExamTechniqueIds: ['scleral-depression', 'fluorescein-angiography', 'oct-macula', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Dilated fundus exam every 6-12 months (or per retina specialist guidance) for known/at-risk VHL patients, coordinated with systemic surveillance imaging on an established multidisciplinary schedule',
       monitor: 'Number, size, and location of retinal hemangioblastomas, degree of exudation/subretinal fluid, and macular status',
@@ -364,6 +470,42 @@ export const systemicGeneticDisease6: Disease[] = [
       { category: 'Referral', detail: 'Refer to genetics/metabolic specialist for homocystinuria confirmation and dietary/medical management; refer to genetics and appropriate specialists (vascular surgery, cardiology) for suspected vascular-type EDS given catastrophic rupture risk; refer to retina specialist for prophylactic evaluation of lattice degeneration (EDS) or urgent management of retinal vascular occlusion (homocystinuria)' },
       { category: 'Emergency management', detail: 'Any suspected globe rupture (even from minor/trivial trauma) in a patient with known or suspected EDS requires emergency ophthalmologic evaluation and shield placement without manipulation; acute retinal vascular occlusion in homocystinuria requires urgent evaluation and consideration of systemic thromboembolic workup' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination with dilation to assess lens position/zonular integrity (homocystinuria) and corneal shape/scleral color (EDS)',
+        'Corneal topography/tomography to detect and stage corneal ectasia in EDS',
+        'Coordinate plasma and urine homocysteine/methionine testing with the patient\'s physician to confirm homocystinuria biochemically',
+        'Coordinate genetic testing (CBS gene for homocystinuria; relevant collagen genes for EDS subtype) with genetics, which is critical for identifying high-risk vascular EDS',
+        'Dilated fundus examination to screen for lattice degeneration/retinal detachment risk (EDS) or signs of a retinal vascular occlusion (homocystinuria)',
+      ],
+      initialTreatment:
+        'Homocystinuria is managed with dietary methionine restriction and, in pyridoxine (B6)-responsive cases, high-dose vitamin B6 supplementation directed by a metabolic specialist, alongside refractive correction for lenticular astigmatism/myopia; stable ectopia lentis with preserved vision may simply be observed. EDS keratoconus/keratoglobus is managed with specialty (RGP/scleral) contact lenses for irregular astigmatism, with corneal crosslinking for documented progression.',
+      followUpSchedule:
+        'Annual (or more frequent if unstable) comprehensive dilated eye exams to monitor lens position/corneal shape, refractive error, and the peripheral retina in both conditions.',
+      escalationCriteria: [
+        'Any new trauma history, however minor, in EDS given the rupture risk',
+        'Increasing lens subluxation or any acute visual change in homocystinuria',
+        'Progressive corneal steepening/thinning in EDS',
+        'New peripheral retinal findings (lattice degeneration or detachment signs)',
+      ],
+      referralCriteria: [
+        'Suspected globe rupture, even from trivial trauma, in known or suspected EDS -> emergency ophthalmologic evaluation with shield placement and no manipulation',
+        'Confirmed or suspected homocystinuria -> genetics/metabolic specialist for confirmation and dietary/medical management',
+        'Suspected vascular (type IV) EDS -> genetics plus vascular surgery/cardiology given catastrophic rupture risk',
+        'Vision-threatening lens subluxation, pupillary block risk, or advanced keratoconus/keratoglobus not manageable with contact lenses -> lens extraction with specialized IOL fixation or penetrating keratoplasty',
+      ],
+      complications: [
+        'Globe rupture, retinal detachment, and corneal perforation in advanced keratoglobus (EDS)',
+        'Complete lens dislocation, pupillary block glaucoma, retinal vascular occlusion, and systemic thromboembolic events (homocystinuria)',
+      ],
+      monitoringParameters: [
+        'Corneal curvature/topography and scleral appearance (EDS)',
+        'Peripheral retina for lattice degeneration or detachment (EDS)',
+        'Degree of lens subluxation and intraocular pressure (homocystinuria)',
+        'Signs of retinal vascular occlusion (homocystinuria)',
+      ],
+      relatedExamTechniqueIds: ['corneal-topography', 'dilated-fundus-examination-systematic-approach'],
+    },
     followUp: {
       typical: 'Annual (or more frequent if unstable) comprehensive dilated eye exams to monitor lens position/corneal shape, refractive error, and peripheral retina in both conditions',
       monitor: 'EDS: corneal curvature/topography, scleral appearance, peripheral retina for lattice/detachment; Homocystinuria: degree of lens subluxation, IOP, and signs of retinal vascular occlusion',

@@ -461,6 +461,42 @@ export const systemicGeneticDisease5: Disease[] = [
       { category: 'Referral', detail: 'Urgent referral to obstetrics/maternal-fetal medicine for any pregnant patient with new visual symptoms and hypertension; the definitive management of the ocular findings is treatment of the underlying preeclampsia/eclampsia, not primary ophthalmic intervention' },
       { category: 'Observation', detail: 'Serous retinal detachment and mild retinal vasospasm are generally observed rather than directly treated, as they resolve with blood pressure control and delivery; serial OCT can document resolution' },
     ],
+    managementProtocol: {
+      workup: [
+        'Blood pressure measurement and urine protein assessment, coordinated with obstetrics, to confirm and stage preeclampsia severity',
+        'Dilated fundus examination to grade retinal arteriolar vasospasm/narrowing and screen for bilateral serous retinal detachment or Elschnig spots',
+        'Optical coherence tomography of the macula to confirm and quantify subretinal fluid when serous detachment is suspected',
+        'Pupillary examination and confrontation or formal visual field testing whenever cortical blindness is suspected, since normal pupils and a normal fundus with a field defect localizes the problem to the occipital cortex rather than the eye',
+        'Coordinate urgent neuroimaging (MRI) with obstetrics/neurology if eclampsia or PRES-related cortical blindness is suspected',
+      ],
+      initialTreatment:
+        'Immediate emergency obstetric referral is the priority for any pregnant or postpartum patient with new visual symptoms and hypertension — this is fundamentally an obstetric emergency, not a primary ocular treatment decision. Retinal vasospasm and serous retinal detachment are generally observed rather than directly treated, since they resolve as blood pressure is controlled and the pregnancy is delivered.',
+      followUpSchedule:
+        'Ocular findings are reassessed as blood pressure normalizes and after delivery, typically within days to a few weeks; serial OCT documents resolution of subretinal fluid, and vision/pupils are rechecked to confirm resolution of any cortical visual symptoms.',
+      escalationCriteria: [
+        'New or worsening visual symptoms (blurred vision, scotomata, photopsias) in a preeclamptic patient despite obstetric management',
+        'Development of cortical blindness or new seizure activity',
+        'Visual symptoms persisting beyond several weeks after delivery and blood pressure normalization',
+        'Worsening subretinal fluid or new macular involvement on serial OCT',
+      ],
+      referralCriteria: [
+        'Any new visual symptom in a pregnant or postpartum patient with hypertension -> immediate emergency obstetric evaluation, same-day, not routine',
+        'Suspected eclampsia or PRES with cortical blindness -> emergency obstetric/neurologic evaluation',
+        'Persistent visual field defect or vision loss after delivery and blood pressure normalization -> neuro-ophthalmology to reassess for an alternative diagnosis',
+      ],
+      complications: [
+        'Rarely, persistent visual field defects or permanent vision loss from severe or prolonged ischemic injury',
+        'Progression from preeclampsia to eclampsia with seizures and more severe visual complications',
+        'Primary maternal risk is from the systemic disease itself (seizures, stroke, HELLP syndrome) rather than permanent ocular damage',
+      ],
+      monitoringParameters: [
+        'Visual acuity',
+        'Blood pressure (coordinated with obstetrics)',
+        'Subretinal fluid on OCT',
+        'Pupillary responses and visual field status if cortical symptoms are present',
+      ],
+      relatedExamTechniqueIds: ['dilated-fundus-examination-systematic-approach', 'oct-macula', 'pupillary-examination', 'confrontation-visual-fields'],
+    },
     followUp: {
       typical: 'Close coordination with the obstetric team during the acute peripartum period; ocular findings are reassessed as blood pressure normalizes and after delivery',
       monitor: 'Visual acuity, blood pressure, resolution of subretinal fluid on OCT, and resolution of any visual field or cortical visual symptoms',

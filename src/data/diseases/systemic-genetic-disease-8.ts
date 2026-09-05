@@ -463,6 +463,48 @@ export const systemicGeneticDisease8: Disease[] = [
       { category: 'Second-line treatment', detail: 'Topical corticosteroids and cycloplegia for anterior segment inflammation (phlyctenule, anterior uveitis) as an adjunct once systemic anti-tuberculous therapy has been initiated, to reduce the risk of paradoxical worsening' },
       { category: 'Observation', detail: 'Mild, self-limited phlyctenular episodes may be managed with supportive topical therapy and lid hygiene while the systemic TB workup is pursued' },
     ],
+    managementProtocol: {
+      workup: [
+        'Slit lamp examination to characterize the presentation (phlyctenule versus granulomatous anterior uveitis with mutton-fat keratic precipitates and iris nodules)',
+        'Dilated fundus examination to detect choroidal tubercles, especially with miliary/disseminated TB, and to assess for vitritis in panuveitis',
+        'Tuberculin skin test (TST) or interferon-gamma release assay (IGRA), coordinated with infectious disease/pulmonology',
+        'Chest X-ray or CT chest to evaluate for active or prior pulmonary TB or a miliary pattern',
+        'HIV testing given the increased risk and severity of TB in immunocompromised patients',
+        'Aqueous or vitreous PCR for M. tuberculosis in atypical or treatment-refractory cases, understanding a negative result does not exclude the diagnosis',
+      ],
+      initialTreatment:
+        'Multi-drug systemic anti-tuberculous therapy directed by infectious disease/pulmonology is required — ocular TB is never managed with topical treatment alone. Topical corticosteroid and cycloplegia are added as an adjunct for anterior segment inflammation (phlyctenule or anterior uveitis) once systemic anti-tuberculous therapy has been initiated, to reduce the risk of paradoxical worsening.',
+      followUpSchedule:
+        'Close co-managed follow-up with infectious disease/pulmonology during induction anti-tuberculous therapy, with ophthalmic rechecks to monitor resolution of anterior chamber reaction and choroidal tubercles as systemic treatment proceeds.',
+      escalationCriteria: [
+        'Worsening intraocular inflammation despite adequate systemic anti-tuberculous therapy',
+        'New or enlarging choroidal tubercles',
+        'Development of posterior synechiae or rising intraocular pressure',
+        'New vitritis or vision loss suggesting progression to panuveitis',
+      ],
+      referralCriteria: [
+        'A compatible ocular finding with a positive TST/IGRA -> infectious disease/pulmonology for confirmatory workup and anti-tuberculous therapy',
+        'Granulomatous anterior uveitis or panuveitis -> uveitis specialist',
+        'Suspected immunocompromise -> HIV testing and appropriate referral',
+      ],
+      complications: [
+        'Posterior synechiae',
+        'Secondary glaucoma',
+        'Cataract',
+        'Macular scarring and vision loss',
+      ],
+      monitoringParameters: [
+        'Anterior chamber cell/flare grade',
+        'Appearance and resolution of choroidal tubercles on fundus exam and imaging',
+        'Visual acuity',
+      ],
+      steroidConsiderations:
+        'Topical corticosteroids are used only as an adjunct after systemic anti-tuberculous therapy is underway, to control anterior segment inflammation and reduce the risk of paradoxical worsening — never as monotherapy, given the risk of exacerbating the underlying infection.',
+      cycloplegicConsiderations:
+        'A cycloplegic agent is added for the anterior uveitis component, following standard granulomatous uveitis management, to relieve ciliary spasm and reduce the risk of posterior synechiae.',
+      relatedDrugIds: ['prednisolone-acetate', 'cyclopentolate', 'rifampin', 'isoniazid', 'ethambutol'],
+      relatedExamTechniqueIds: ['anterior-chamber-cell-flare-grading', 'dilated-fundus-examination-systematic-approach', 'uveitis-laboratory-workup'],
+    },
     followUp: {
       typical: 'Close co-managed follow-up with infectious disease/pulmonology during induction anti-tuberculous therapy, with ophthalmic follow-up to monitor resolution of ocular inflammation',
       monitor: 'Anterior chamber reaction, appearance and resolution of choroidal tubercles on fundus exam and imaging, and visual acuity',
