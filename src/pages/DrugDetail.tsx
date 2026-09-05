@@ -1,10 +1,11 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ChevronLeft, Pill, GraduationCap, BookMarked, Sparkles, ArrowRight } from 'lucide-react'
+import { Pill, GraduationCap, BookMarked, Sparkles, ArrowRight } from 'lucide-react'
 import { Badge } from '../components/ui/Badge'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
+import { BackLink } from '../components/shared/BackLink'
 import { getDrugById } from '../services/drugService'
 import { getDiseaseById } from '../services/diseaseService'
 import { buildDrugContext } from '../services/ai/contextService'
@@ -18,9 +19,9 @@ export function DrugDetail() {
   if (!drug) {
     return (
       <div className="space-y-4">
-        <Link to="/drugs" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to Drug Database
-        </Link>
+        <BackLink to="/drugs" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to Drug Database
+        </BackLink>
         <EmptyState icon={Pill} title="Drug not found" description="This medication isn't in the database yet." />
       </div>
     )
@@ -29,9 +30,9 @@ export function DrugDetail() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <Link to="/drugs" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
-          <ChevronLeft size={15} /> Back to Drug Database
-        </Link>
+        <BackLink to="/drugs" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
+          Back to Drug Database
+        </BackLink>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <div className="flex items-center gap-1.5 flex-wrap">

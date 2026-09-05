@@ -1,10 +1,11 @@
 import { Link, useParams } from 'react-router-dom'
-import { ChevronLeft, Siren, ArrowRight, AlertTriangle, XCircle, Clock, BookMarked } from 'lucide-react'
+import { Siren, ArrowRight, AlertTriangle, XCircle, Clock, BookMarked } from 'lucide-react'
 import { Badge, urgencyTierTone } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
 import { Linkify } from '../components/shared/Linkify'
+import { BackLink } from '../components/shared/BackLink'
 import { getEmergencyProtocolById } from '../services/emergencyProtocolService'
 import { getExamTechniqueById } from '../services/examTechniqueService'
 import { getClinicalWorkupById } from '../services/clinicalWorkupService'
@@ -18,9 +19,9 @@ export function EmergencyProtocolDetail() {
   if (!protocol) {
     return (
       <div className="space-y-4">
-        <Link to="/emergency-care" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to Emergency &amp; Urgent Eye Care
-        </Link>
+        <BackLink to="/emergency-care" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to Emergency &amp; Urgent Eye Care
+        </BackLink>
         <EmptyState icon={Siren} title="Protocol not found" description="This protocol isn't in the reference yet." />
       </div>
     )
@@ -45,9 +46,9 @@ export function EmergencyProtocolDetail() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <Link to="/emergency-care" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
-          <ChevronLeft size={15} /> Back to Emergency &amp; Urgent Eye Care
-        </Link>
+        <BackLink to="/emergency-care" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
+          Back to Emergency &amp; Urgent Eye Care
+        </BackLink>
         <div className="flex items-center gap-2 mb-1.5 flex-wrap">
           <Badge tone={urgencyTierTone(protocol.urgencyTier)}>{protocol.urgencyTier}</Badge>
           <Badge tone="default">{protocol.category}</Badge>

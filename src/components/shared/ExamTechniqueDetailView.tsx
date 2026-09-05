@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
-import { ChevronLeft, Stethoscope, Star, ArrowRight, Sparkles, AlertTriangle } from 'lucide-react'
+import { Stethoscope, Star, ArrowRight, Sparkles, AlertTriangle } from 'lucide-react'
 import { Badge } from '../ui/Badge'
 import { Card } from '../ui/Card'
 import { Section } from '../ui/Section'
 import { EmptyState } from '../ui/EmptyState'
 import { Linkify } from './Linkify'
+import { BackLink } from './BackLink'
 import { getExamTechniqueById } from '../../services/examTechniqueService'
 import { getWorkupsReferencingTechnique } from '../../services/clinicalWorkupService'
 import { getDiseaseById } from '../../services/diseaseService'
@@ -36,9 +37,9 @@ export function ExamTechniqueDetailView({
   if (!technique) {
     return (
       <div className="space-y-4">
-        <Link to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to {backLabel}
-        </Link>
+        <BackLink to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to {backLabel}
+        </BackLink>
         <EmptyState icon={Stethoscope} title="Technique not found" description="This technique isn't in the reference yet." />
       </div>
     )
@@ -65,9 +66,9 @@ export function ExamTechniqueDetailView({
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <Link to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
-          <ChevronLeft size={15} /> Back to {backLabel}
-        </Link>
+        <BackLink to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
+          Back to {backLabel}
+        </BackLink>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <div className="flex items-center gap-2 mb-1.5">

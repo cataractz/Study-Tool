@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ChevronLeft, GraduationCap, Stethoscope, GitCompare, Sparkles, EyeOff, Eye, Image as ImageIcon } from 'lucide-react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { GraduationCap, Stethoscope, GitCompare, Sparkles, EyeOff, Eye, Image as ImageIcon } from 'lucide-react'
 import { buildDiseaseContext } from '../services/ai/contextService'
 import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Button } from '../components/ui/Button'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
+import { BackLink } from '../components/shared/BackLink'
 import { SignsByArea } from '../components/disease/SignsByArea'
 import { RiskFactorList } from '../components/disease/RiskFactorList'
 import { ManagementList } from '../components/disease/ManagementList'
@@ -32,9 +33,9 @@ export function DiseaseDetail() {
   if (!disease) {
     return (
       <div className="space-y-4">
-        <Link to="/diseases" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to Disease Library
-        </Link>
+        <BackLink to="/diseases" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to Disease Library
+        </BackLink>
         <EmptyState
           icon={Stethoscope}
           title="Disease not found"
@@ -49,9 +50,9 @@ export function DiseaseDetail() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <Link to="/diseases" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
-          <ChevronLeft size={15} /> Back to Disease Library
-        </Link>
+        <BackLink to="/diseases" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
+          Back to Disease Library
+        </BackLink>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <div className="flex items-center gap-2 mb-1.5">

@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ChevronLeft, ClipboardList, Star, ArrowRight, AlertTriangle } from 'lucide-react'
+import { ClipboardList, Star, ArrowRight, AlertTriangle } from 'lucide-react'
 import { Badge, urgencyTone } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
 import { Linkify } from '../components/shared/Linkify'
+import { BackLink } from '../components/shared/BackLink'
 import { getClinicalWorkupById } from '../services/clinicalWorkupService'
 import { getDiseaseById } from '../services/diseaseService'
 import { getExamTechniqueById } from '../services/examTechniqueService'
@@ -24,9 +25,9 @@ export function ClinicalWorkupDetail() {
   if (!workup) {
     return (
       <div className="space-y-4">
-        <Link to="/exam-workup" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to Clinical Examination &amp; Workup
-        </Link>
+        <BackLink to="/exam-workup" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to Clinical Examination &amp; Workup
+        </BackLink>
         <EmptyState icon={ClipboardList} title="Workup not found" description="This clinical workup isn't in the reference yet." />
       </div>
     )
@@ -43,9 +44,9 @@ export function ClinicalWorkupDetail() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <Link to="/exam-workup" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
-          <ChevronLeft size={15} /> Back to Clinical Examination &amp; Workup
-        </Link>
+        <BackLink to="/exam-workup" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
+          Back to Clinical Examination &amp; Workup
+        </BackLink>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <div className="flex items-center gap-2 mb-1.5">

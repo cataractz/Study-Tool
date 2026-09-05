@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { ChevronLeft, ChevronRight, RotateCcw, Stethoscope } from 'lucide-react'
+import { ChevronRight, RotateCcw, Stethoscope } from 'lucide-react'
 import { Button } from '../ui/Button'
 import { EmptyState } from '../ui/EmptyState'
 import { DecisionNodeCard } from './DecisionNodeCard'
 import { DecisionOutcomeSummary } from './DecisionOutcomeSummary'
+import { BackLink } from './BackLink'
 import type { DecisionTree, DecisionOption } from '../../types/decisionTree'
 
 interface PathStep {
@@ -47,9 +47,9 @@ export function DecisionTreePlayer({
   if (!currentNode) {
     return (
       <div className="space-y-4">
-        <Link to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to {backLabel}
-        </Link>
+        <BackLink to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to {backLabel}
+        </BackLink>
         <EmptyState icon={Stethoscope} title="Pathway error" description="This decision tree has a broken node reference." />
       </div>
     )
@@ -58,9 +58,9 @@ export function DecisionTreePlayer({
   return (
     <div className="max-w-3xl mx-auto space-y-6">
       <div>
-        <Link to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
-          <ChevronLeft size={15} /> Back to {backLabel}
-        </Link>
+        <BackLink to={backTo} className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
+          Back to {backLabel}
+        </BackLink>
         <div className="flex items-start justify-between gap-3 flex-wrap">
           <h1 className="text-xl font-semibold text-slate-900 tracking-tight">{tree.name}</h1>
           <div className="flex items-center gap-2 shrink-0">

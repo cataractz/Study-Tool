@@ -1,7 +1,8 @@
-import { Link, useParams } from 'react-router-dom'
-import { ChevronLeft, GitBranch } from 'lucide-react'
+import { useParams } from 'react-router-dom'
+import { GitBranch } from 'lucide-react'
 import { EmptyState } from '../components/ui/EmptyState'
 import { DecisionTreePlayer } from '../components/shared/DecisionTreePlayer'
+import { BackLink } from '../components/shared/BackLink'
 import { getDecisionTreeById } from '../services/decisionTreeService'
 
 export function DecisionTreeDetail() {
@@ -11,9 +12,9 @@ export function DecisionTreeDetail() {
   if (!tree) {
     return (
       <div className="space-y-4">
-        <Link to="/decision-trees" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to Clinical Decision Trees
-        </Link>
+        <BackLink to="/decision-trees" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to Clinical Decision Trees
+        </BackLink>
         <EmptyState icon={GitBranch} title="Decision tree not found" description="This pathway isn't in the library yet." />
       </div>
     )

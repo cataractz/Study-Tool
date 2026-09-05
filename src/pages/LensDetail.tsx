@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ChevronLeft, Disc, Star, Calculator as Calc, CheckCircle2, XCircle } from 'lucide-react'
+import { Disc, Star, Calculator as Calc, CheckCircle2, XCircle } from 'lucide-react'
 import { Badge } from '../components/ui/Badge'
 import { Card } from '../components/ui/Card'
 import { Section } from '../components/ui/Section'
 import { EmptyState } from '../components/ui/EmptyState'
+import { BackLink } from '../components/shared/BackLink'
 import { getLensById, formatBaseCurveDiopters } from '../services/lensService'
 import { isLensFavorite, toggleLensFavorite } from '../services/lensFavorites'
 import { calculatorRegistry } from '../calculators/registry'
@@ -22,9 +23,9 @@ export function LensDetail() {
   if (!lens) {
     return (
       <div className="space-y-4">
-        <Link to="/lenses" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
-          <ChevronLeft size={15} /> Back to Contact Lens Database
-        </Link>
+        <BackLink to="/lenses" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline">
+          Back to Contact Lens Database
+        </BackLink>
         <EmptyState icon={Disc} title="Lens not found" description="This lens isn't in the database yet." />
       </div>
     )
@@ -37,9 +38,9 @@ export function LensDetail() {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       <div>
-        <Link to="/lenses" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
-          <ChevronLeft size={15} /> Back to Contact Lens Database
-        </Link>
+        <BackLink to="/lenses" className="inline-flex items-center gap-1 text-sm text-brand-600 hover:underline mb-3">
+          Back to Contact Lens Database
+        </BackLink>
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
             <Badge tone="purple">{lens.design}</Badge>

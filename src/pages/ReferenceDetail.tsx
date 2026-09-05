@@ -1,6 +1,7 @@
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { getReferenceById } from '../reference/registry'
+import { BackLink } from '../components/shared/BackLink'
 import { NotFound } from './NotFound'
 
 export function ReferenceDetail() {
@@ -13,9 +14,14 @@ export function ReferenceDetail() {
 
   return (
     <div className="space-y-4">
-      <Link to="/references" className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800">
-        <ArrowLeft size={14} /> All References
-      </Link>
+      <BackLink
+        to="/references"
+        icon={ArrowLeft}
+        iconSize={14}
+        className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800"
+      >
+        All References
+      </BackLink>
       <Component />
     </div>
   )

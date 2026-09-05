@@ -1,8 +1,9 @@
 import { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { getCalculatorById } from '../calculators/registry'
 import { addRecent } from '../calculators/shared/storage'
+import { BackLink } from '../components/shared/BackLink'
 import { NotFound } from './NotFound'
 
 export function CalculatorDetail() {
@@ -19,9 +20,14 @@ export function CalculatorDetail() {
 
   return (
     <div className="space-y-4">
-      <Link to="/calculators" className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800">
-        <ArrowLeft size={14} /> All Calculators
-      </Link>
+      <BackLink
+        to="/calculators"
+        icon={ArrowLeft}
+        iconSize={14}
+        className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-800"
+      >
+        All Calculators
+      </BackLink>
       <Component />
     </div>
   )
