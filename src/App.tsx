@@ -22,6 +22,7 @@ import { EmergencyCareHub } from './pages/EmergencyCareHub'
 import { EmergencyProtocolDetail } from './pages/EmergencyProtocolDetail'
 import { DecisionTreesHub } from './pages/DecisionTreesHub'
 import { DecisionTreeDetail } from './pages/DecisionTreeDetail'
+import { PediatricsHub } from './pages/PediatricsHub'
 import { NotFound } from './pages/NotFound'
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Route path="/emergency-care/:protocolId" element={<EmergencyProtocolDetail />} />
         <Route path="/decision-trees" element={<DecisionTreesHub />} />
         <Route path="/decision-trees/:treeId" element={<DecisionTreeDetail />} />
+        <Route path="/pediatrics" element={<PediatricsHub />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

@@ -15,6 +15,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Calculations & Conversions', path: '/calculators', icon: 'calculator' },
   { label: 'References', path: '/references', icon: 'library' },
   { label: 'Contact Lenses', path: '/lenses', icon: 'disc' },
+  { label: 'Pediatrics', path: '/pediatrics', icon: 'baby' },
   { label: 'Clinical Exam & Workups', path: '/exam-workup', icon: 'clipboard-check' },
   { label: 'Diagnostic Testing & Imaging', path: '/diagnostic-testing', icon: 'scan-eye' },
   { label: 'Emergency & Urgent Eye Care', path: '/emergency-care', icon: 'siren' },
